@@ -5,7 +5,7 @@ const Button = () => {
   return (
     <div className={styles.buttonBox}>
         <div className={styles.outerButton}>
-        <a href="#" className={styles.innerButton}>Read more  →</a>
+        <a href="#" className={styles.innerButton} draggable="false">Read more  →</a>
     </div>
     </div>
     
