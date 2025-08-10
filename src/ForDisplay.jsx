@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from './components/Button'
 import './css/reset.css'
-import './css/App0810.css'
+import './css/ForDisplay.css'
 
 const App0810 = () => {
     return (
