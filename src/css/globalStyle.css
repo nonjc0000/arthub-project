@@ -1,0 +1,18 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+:root {
+    /*  品牌識別色 */
+    --accent: #ED972E;
+    --accent-dark: #E08C22;
+    --background: #FDF7EB;
+    --primary: #BEC7B4;
+    --secondary: #DEBFA0;
+    --text: #39413A;
+    --dark: #413B35;
+    --light: #fff;
+
+    /* 圓角定義 */
+    --radius: 30px;
+    --exRadius: 999px;
+}
