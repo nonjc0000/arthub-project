@@ -8,7 +8,7 @@ const App0810 = () => {
     return (
         <>
             <div className='container'>
-                <GoTop/>
+                <Button/>
             </div>
 
         </>
