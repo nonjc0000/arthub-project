@@ -1,6 +1,7 @@
 import { HashRouter } from 'react-router-dom'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import './sass/all.scss'
 import App from './ForDisplay'
 
 createRoot(document.getElementById('root')).render(
