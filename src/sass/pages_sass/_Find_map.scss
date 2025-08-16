@@ -1,0 +1,7 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+div{
+    color: $accent;
+    font-family: $family-tc;
+}

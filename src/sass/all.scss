@@ -1,1 +1,11 @@
-@use './pages_sass/Find_map.scss'
+@use './variables/' as *;
+@use './functions/' as *;
+@use './reset';
+@use './pages_sass/' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+@font-face {
+    font-family: 'ChenYuluoyan-2.0-Thin';
+    src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
+}
