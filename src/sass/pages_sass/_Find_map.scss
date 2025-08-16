@@ -1,2 +1,6 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
+
+.guitar{
+    font-family: $family-display;
+}

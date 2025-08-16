@@ -44,11 +44,6 @@ a {
   text-decoration: none;
 }
 
-div {
-  color: #ED972E;
-  font-family: "Noto Sans TC", san-serif;
-}
-
 @font-face {
   font-family: "ChenYuluoyan-2.0-Thin";
   src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
