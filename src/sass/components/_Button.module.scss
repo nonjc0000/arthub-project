@@ -1,0 +1,39 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.buttonBox {
+    user-select: none;
+}
+
+.outerButton {
+    display: inline-block;
+    justify-content: center;
+    background-color: $accent;
+    padding: $spacing-xxs $spacing-xxs;
+    border-radius: $rad-ex;
+    box-shadow: 7px 7px $dark;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.outerButton:hover {
+    background-color: $accent-600;
+    box-shadow: $spacing-xxs $spacing-xxs;
+}
+
+.outerButton:active {
+    translate: $spacing-xxs $spacing-xxs;
+    box-shadow: 0 0;
+}
+
+.innerButton {
+    display: block;
+    border: solid 3px $white;
+    border-radius: $rad-ex;
+    text-align: center;
+    font-size: $f-s-lg;
+    font-family: $family-en;
+    font-weight: $f-w-b;
+    color: $white;
+    padding: $spacing-xs $spacing-xl;
+}

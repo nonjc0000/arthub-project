@@ -44,6 +44,47 @@ a {
   text-decoration: none;
 }
 
+.buttonBox {
+  user-select: none;
+}
+
+.outerButton {
+  display: inline-block;
+  justify-content: center;
+  background-color: #ED972E;
+  padding: 5px 5px;
+  border-radius: 999px;
+  box-shadow: 7px 7px #413B35;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.outerButton:hover {
+  background-color: #E08C22;
+  box-shadow: 5px 5px;
+}
+
+.outerButton:active {
+  translate: 5px 5px;
+  box-shadow: 0 0;
+}
+
+.innerButton {
+  display: block;
+  border: solid 3px #fff;
+  border-radius: 999px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-family: "DM Sans", san-serif;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 30px;
+}
+
+.guitar {
+  font-family: "ChenYuluoyan-2.0-Thin", cursive;
+}
+
 @font-face {
   font-family: "ChenYuluoyan-2.0-Thin";
   src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
