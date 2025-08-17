@@ -1,0 +1,40 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.FooterBox {
+    background-image: url(../../images/Footer/Footer.svg);
+    overflow: hidden;
+    padding: $spacing-ex $spacing-xl $spacing-xs;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sitemap {
+    display: flex;
+    justify-content: flex-end;
+    gap: $spacing-lg;
+    color: $white;
+
+    $icons: find_type, find_map, find_schedule, blog, about, user;
+
+    @each $icon in $icons {
+
+        .#{$icon} .sitemap_item_content{
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: $spacing-xs $spacing-sm;
+        }
+
+        .#{$icon} img {
+            display: inline;
+        }
+    }
+}
+
+.copyright {
+    align-self: center;
+    color: $white;
+    margin-top: $spacing-xl;
+}
