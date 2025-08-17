@@ -44,6 +44,82 @@ a {
   text-decoration: none;
 }
 
+.FooterBox {
+  background-image: url(../../images/Footer/Footer.svg);
+  overflow: hidden;
+  padding: 110px 30px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sitemap {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  color: #fff;
+}
+.sitemap .find_type {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+}
+.sitemap .find_type img {
+  display: inline;
+}
+.sitemap .find_map {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+}
+.sitemap .find_map img {
+  display: inline;
+}
+.sitemap .find_schedule {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+}
+.sitemap .find_schedule img {
+  display: inline;
+}
+.sitemap .blog {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+}
+.sitemap .blog img {
+  display: inline;
+}
+.sitemap .about {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+}
+.sitemap .about img {
+  display: inline;
+}
+.sitemap .user {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+}
+.sitemap .user img {
+  display: inline;
+}
+
+.copyright {
+  align-self: center;
+  color: #fff;
+  margin-top: 30px;
+}
+
 .buttonBox {
   user-select: none;
 }
