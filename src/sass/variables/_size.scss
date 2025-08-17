@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 // spacing
 $spacing-xxs: 5px;
 $spacing-xs: 10px;
@@ -20,9 +22,11 @@ $spacing-y-lg: 25px 0;
 $spacing-y-xl: 30px 0;
 
 // radius
-$rad-sm: 7.5px;
-$rad-md: 15px;
-$rad-lg: 30px;
+$rad-basic: 15px;
+
+$rad-sm: math.div($rad-basic, 2);
+$rad-md: $rad-basic;
+$rad-lg: 2 * $rad-basic;
 $rad-ex: 999px;
 
 // width

@@ -53,7 +53,7 @@ $dark: #413B35;
 
 // basic color system
 // neutral
-$white:    #fff;
+$white: #fff;
 $gray-100: #f8f9fa;
 $gray-200: #e9ecef;
 $gray-300: #dee2e6;
@@ -63,7 +63,20 @@ $gray-600: #6c757d;
 $gray-700: #495057;
 $gray-800: #343a40;
 $gray-900: #212529;
-$black:    #000;
+$black: #000;
+
+// color palette
+$colors: (
+    'accent': $accent,
+    'primary': $primary,
+    'secondary': $secondary,
+    'background': $background,
+    'text': $text,
+    'dark': $dark,
+    'white': $white,
+    'gray': $gray-500,
+    'black': $black,
+);
 
 // alpha
 $alpha-10: 0.1;
@@ -76,5 +89,3 @@ $alpha-70: 0.7;
 $alpha-80: 0.8;
 $alpha-90: 0.9;
 $alpha-100: 1;
-
-// 

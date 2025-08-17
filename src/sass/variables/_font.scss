@@ -4,16 +4,18 @@ $family-tc: "Noto Sans TC", san-serif;
 $family-display: "ChenYuluoyan-2.0-Thin", cursive;
 
 // font-size
-$f-s-xs: .75rem;
-$f-s-sm: .875rem;
-$f-s-md: 1rem;
-$f-s-lg: 1.25rem;
-$f-s-xl: 1.5rem;
-$f-s-xxl: 1.75rem;
-$f-s-xxxl: 2rem;
-$f-s-xxxxl: 2.25rem;
-$f-s-xxxxxl: 2.5rem;
-$f-s-ex: 4rem;
+$f-s-basic: 1rem;
+
+$f-s-xs: .75 * $f-s-basic;
+$f-s-sm: .875 * $f-s-basic;
+$f-s-md: 1 * $f-s-basic;
+$f-s-lg: 1.25 * $f-s-basic;
+$f-s-xl: 1.5 * $f-s-basic;
+$f-s-xxl: 1.75 * $f-s-basic;
+$f-s-xxxl: 2 * $f-s-basic;
+$f-s-xxxxl: 2.25 * $f-s-basic;
+$f-s-xxxxxl: 2.5 * $f-s-basic;
+$f-s-ex: 4 * $f-s-basic;
 
 // font-weight
 $f-w-r: 400;

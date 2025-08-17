@@ -83,6 +83,9 @@ a {
 
 .guitar {
   font-family: "ChenYuluoyan-2.0-Thin", cursive;
+  padding: 25px;
+  border: solid 2px #000;
+  border-radius: 7.5px;
 }
 
 @font-face {
