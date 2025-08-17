@@ -20,7 +20,7 @@
 
     @each $icon in $icons {
 
-        .#{$icon}{
+        .#{$icon} .sitemap_item_content{
             display: flex;
             justify-content: center;
             gap: 8px;

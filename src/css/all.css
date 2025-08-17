@@ -59,7 +59,7 @@ a {
   gap: 25px;
   color: #fff;
 }
-.sitemap .find_type {
+.sitemap .find_type .sitemap_item_content {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -68,7 +68,7 @@ a {
 .sitemap .find_type img {
   display: inline;
 }
-.sitemap .find_map {
+.sitemap .find_map .sitemap_item_content {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -77,7 +77,7 @@ a {
 .sitemap .find_map img {
   display: inline;
 }
-.sitemap .find_schedule {
+.sitemap .find_schedule .sitemap_item_content {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -86,7 +86,7 @@ a {
 .sitemap .find_schedule img {
   display: inline;
 }
-.sitemap .blog {
+.sitemap .blog .sitemap_item_content {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -95,7 +95,7 @@ a {
 .sitemap .blog img {
   display: inline;
 }
-.sitemap .about {
+.sitemap .about .sitemap_item_content {
   display: flex;
   justify-content: center;
   gap: 8px;
@@ -104,7 +104,7 @@ a {
 .sitemap .about img {
   display: inline;
 }
-.sitemap .user {
+.sitemap .user .sitemap_item_content {
   display: flex;
   justify-content: center;
   gap: 8px;
