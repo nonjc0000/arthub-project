@@ -1,9 +1,8 @@
 // variables & functions
-@use './variables/' as *;
-@use './functions/' as *;
+@use '../variables/' as *;
+@use '../functions/' as *;
 
-// css reset
-@use './reset';
+
 
 * {
     background-color: $background;

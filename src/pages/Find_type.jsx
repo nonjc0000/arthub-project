@@ -1,5 +1,5 @@
 import React from 'react'
-import "../css/test.css"
+
 
 const Find_type = () => {
 
