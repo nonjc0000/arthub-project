@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
 * {
   box-sizing: border-box;
@@ -40,6 +41,7 @@ img {
 }
 
 a {
+  color: black;
   text-decoration: none;
 }
 
@@ -156,11 +158,392 @@ a {
   padding: 10px 30px;
 }
 
-.guitar {
-  font-family: "ChenYuluoyan-2.0-Thin", cursive;
-  padding: 25px;
-  border: solid 2px #000;
-  border-radius: 7.5px;
+.findType {
+  padding: 0 30px 0 30px;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 110px;
+}
+
+.searchTable {
+  padding: 45px 35px 0 35px;
+  width: 400px;
+  height: 100%;
+  border-radius: 30px;
+  border: 1px solid red;
+  background-color: #fff;
+}
+.searchTable .serch input {
+  width: 100%;
+  border-radius: 30px;
+}
+.searchTable select {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-bottom: 1px solid #413B35;
+  appearance: none;
+  -webkit-appearance: none;
+  background: url("../images/Polygon_select.svg") no-repeat right 10px center;
+  background-size: 10px;
+  margin: 0 0 60px 0;
+}
+.searchTable .Select label {
+  padding-bottom: 15px;
+}
+.searchTable .Select .btn {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  gap: 25px;
+  margin-bottom: 60px;
+}
+.searchTable .Select .btn button {
+  width: 175px;
+  height: 45px;
+  background-color: #ED972E;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  flex: 1 0 45%;
+}
+
+.event .card {
+  width: 300px;
+  border: 1px solid red;
+}
+.event .card .cardHeader .cardDate figure {
+  width: 115px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 999px;
+  overflow: hidden;
+  padding: 0 5px 0 5px;
+  background-color: #ED972E;
+  justify-content: space-between;
+}
+.event .card .cardHeader .cardDate figure img {
+  width: 13px;
+  height: auto;
+  background-color: transparent;
+}
+.event .card .cardHeader .cardDate figure p {
+  color: #fff;
+  background-color: transparent;
+  font-size: 0.75rem;
+}
+
+/* 頁面外層 */
+.blog-page {
+  box-sizing: border-box;
+}
+
+/* 1) 標題 */
+.blog-hero {
+  width: 35vh;
+  margin: 0 auto; /* 左右自動 → 水平置中 */
+  display: flex; /* 如果要置中文字/圖片 */
+  align-items: center; /* 讓內部內容置中 */
+}
+
+/* 2) 描述段落 */
+.blog-desc {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+.blog-desc .desc {
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.9;
+  font-size: 14px;
+  color: #333;
+  margin: 0 16px 14px;
+}
+
+/* 裝飾條：base64 + repeat-x */
+.blog-hero {
+  width: 35vh;
+  justify-content: center;
+}
+
+/* ===========================
+   Blog 裝飾條（兩排交錯圓點）
+   =========================== */
+.blog-deco {
+  background: url("../images/blog/blog_deco.svg") repeat-x;
+  background-size: auto 100%;
+  height: 10px;
+  width: 100%;
+}
+
+/* 4) 黑框主內容區 */
+.blog-shell {
+  max-width: 1240px;
+  margin: 0 auto 56px;
+  border: 4px solid #111;
+  border-radius: 6px;
+  background: #fffaf4;
+  padding: 14px 18px 22px;
+}
+
+/* 兩欄：左側 170 + 右側 1fr */
+.blog-body {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 26px;
+}
+
+/* 左欄固定在視窗上方一點點 */
+.blog-select-col {
+  padding-top: 8vh;
+  position: sticky;
+  top: 12px;
+  align-self: start;
+}
+
+/* 右側主體容器 */
+.blog-panel {
+  min-width: 0;
+}
+
+/* 工具列（熱門/最新 + 搜尋/撰寫） */
+.blog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 14px;
+}
+.blog-toolbar .tabs .tab {
+  border: 1.5px solid #1d1d1d;
+  background: #fff;
+  padding: 6px 14px;
+  margin-right: 8px;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.blog-toolbar .tabs .tab.is-active {
+  background: #111;
+  color: #fff;
+}
+.blog-toolbar .actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.blog-toolbar .actions .search {
+  display: flex;
+  align-items: center;
+  border: 2px solid #111;
+  border-radius: 999px;
+  padding: 5px 6px 5px 12px;
+  min-height: 34px;
+  background: #fff;
+}
+.blog-toolbar .actions .search input {
+  width: 360px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 14px;
+}
+.blog-toolbar .actions .icon-btn {
+  border: 1.5px solid #111;
+  background: #fff;
+  border-radius: 10px;
+  min-width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.blog-toolbar .actions .icon-btn.write {
+  font-weight: 700;
+}
+
+/* 卡片 3 欄 */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 34px;
+  row-gap: 44px;
+}
+
+/* 分頁 */
+.blog-pagination {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+  margin: 26px 0 6px;
+}
+.blog-pagination .page-btn {
+  border: 1.5px solid #111;
+  background: #fff;
+  border-radius: 8px;
+  min-width: 36px;
+  height: 28px;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+}
+.blog-pagination .track {
+  position: relative;
+  height: 28px;
+  border: 1.5px solid #111;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fff;
+}
+.blog-pagination .track .page-num {
+  border: 1px solid #111;
+  background: #fff;
+  border-radius: 6px;
+  min-width: 28px;
+  height: 22px;
+  line-height: 20px;
+  font-size: 13px;
+  text-align: center;
+  cursor: pointer;
+}
+.blog-pagination .track .page-num.is-active {
+  background: #111;
+  color: #fff;
+}
+.blog-pagination .track .dots {
+  padding: 0 4px;
+}
+
+/* RWD */
+@media (max-width: 1100px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blog-toolbar .actions .search input {
+    width: 260px;
+  }
+}
+@media (max-width: 760px) {
+  .blog-body {
+    grid-template-columns: 1fr;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-toolbar .actions .search input {
+    width: 180px;
+  }
+}
+.blog-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+.blog-card .img-box {
+  position: relative;
+  width: 100%;
+  padding-top: 66.66%;
+  overflow: hidden;
+}
+.blog-card .img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.blog-card .img-box .badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #f39b0b;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.blog-card .img-box .badge::before {
+  content: "🔥";
+}
+.blog-card .text-box {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.blog-card .text-box h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.4;
+}
+.blog-card .text-box p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+.blog-card .text-box .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.blog-card .text-box .tags .tag {
+  font-size: 13px;
+  background: #ED972E;
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.blog-select {
+  border: 1px solid #f3d8be;
+  border-radius: 30px;
+  background: #fff;
+  padding: 12px 8px;
+}
+.blog-select ul {
+  list-style: none;
+  margin: 0;
+  padding: 4px 0;
+}
+.blog-select li a {
+  display: block;
+  padding: 12px 16px;
+  border-radius: 12px;
+  color: #222;
+  text-decoration: none;
+  font-size: 15px;
+  transition: background-color 0.2s;
+}
+.blog-select li a:hover {
+  background: #fff6ec;
+}
+.blog-select li a.active {
+  background: #fff1df;
+  border: 1px solid #ed972e;
 }
 
 @font-face {

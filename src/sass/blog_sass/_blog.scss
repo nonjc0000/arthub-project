@@ -1,0 +1,219 @@
+/* 頁面外層 */
+.blog-page {
+  background-image: url("../../images/blog/blog_bg.svg");
+  background-size: cover; // 覆蓋整個容器
+  background-repeat: no-repeat; // 不重複
+  background-position: center center; // 居中
+  background-attachment: fixed; // 背景固定，捲動時不移動
+  
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  min-height: 100vh; // 最小高度為視窗高度
+  width: 100%;
+}
+/* 1) 標題 */
+.blog-hero {
+  background: url("../../images/blog/blog_sign.svg") center/auto no-repeat;
+  height: 200px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 2) 描述段落 */
+.blog-desc {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+
+  .desc {
+    max-width: 900px;
+    text-align: center;
+    line-height: 1.9;
+    font-size: 14px;
+    color: #333;
+    margin: 0 16px 14px;
+  }
+}
+
+  /* 裝飾條：base64 + repeat-x */
+.blog-hero {
+  width: 35vh;
+  justify-content: center;
+}
+
+/* ===========================
+   Blog 裝飾條（兩排交錯圓點）
+   =========================== */
+.blog-deco {
+  background-image: url("../../images/blog/blog_deco.svg");
+  background-repeat: repeat;
+  height: 70px; // 兩行的高度 (20px × 2)
+  width: 100%;
+  overflow: hidden; // 隱藏超出的部分
+  margin: 40px 100px;
+}
+
+
+/* 4) 黑框主內容區 */
+.blog-shell {
+  max-width: 1240px;
+  margin: 0 auto 56px;
+  border-radius: 6px;
+  background: #fffaf4;
+  padding: 14px 18px 22px;
+}
+
+/* 兩欄：左側 170 + 右側 1fr */
+.blog-body {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 26px;
+}
+
+/* 左欄固定在視窗上方一點點 */
+.blog-select-col {
+  padding-top: 8vh;
+  position: sticky;
+  top: 12px;
+  align-self: start;
+}
+
+/* 右側主體容器 */
+.blog-panel { min-width: 0; }
+
+/* 工具列（熱門/最新 + 搜尋/撰寫） */
+.blog-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0 14px;
+
+  .tabs {
+    .tab {
+      border: 1.5px solid #1d1d1d;
+      background: #fff;
+      padding: 6px 14px;
+      margin-right: 8px;
+      border-radius: 10px;
+      font-size: 13px;
+      cursor: pointer;
+
+      &.is-active {
+        background: #111;
+        color: #fff;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .search {
+      display: flex;
+      align-items: center;
+      border: 2px solid #111;
+      border-radius: 999px;
+      padding: 5px 6px 5px 12px;
+      min-height: 34px;
+      background: #fff;
+
+      input {
+        width: 360px;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        font-size: 14px;
+      }
+    }
+
+    .icon-btn {
+      border: 1.5px solid #111;
+      background: #fff;
+      border-radius: 10px;
+      min-width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &.write { font-weight: 700; }
+    }
+  }
+}
+
+/* 卡片 3 欄 */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 34px;
+  row-gap: 44px;
+}
+
+/* 分頁 */
+.blog-pagination {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  gap: 10px;
+  margin: 26px 0 6px;
+
+  .page-btn {
+    border: 1.5px solid #111;
+    background: #fff;
+    border-radius: 8px;
+    min-width: 36px;
+    height: 28px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .track {
+    position: relative;
+    height: 28px;
+    border: 1.5px solid #111;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #fff;
+
+    .page-num {
+      border: 1px solid #111;
+      background: #fff;
+      border-radius: 6px;
+      min-width: 28px;
+      height: 22px;
+      line-height: 20px;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+
+      &.is-active { background: #111; color: #fff; }
+    }
+
+    .dots { padding: 0 4px; }
+  }
+}
+
+/* RWD */
+@media (max-width: 1100px) {
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-toolbar .actions .search input { width: 260px; }
+}
+@media (max-width: 760px) {
+  .blog-body { grid-template-columns: 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-toolbar .actions .search input { width: 180px; }
+}
+
+
+
