@@ -1,3 +1,11 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
+.container{
+
+ background-color:$background ;
+}
+
+.intro_photo {
+    width: 50%;
+}
