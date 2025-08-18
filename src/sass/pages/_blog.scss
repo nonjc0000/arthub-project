@@ -1,6 +1,6 @@
 /* 頁面外層 */
 .blog-page {
-  background-image: url("../../images/blog/blog_bg.svg");
+  background-image: url("../../images/blog/blog_bg.jpg");
   background-size: cover; // 覆蓋整個容器
   background-repeat: no-repeat; // 不重複
   background-position: center center; // 居中
@@ -16,13 +16,23 @@
 }
 /* 1) 標題 */
 .blog-hero {
-  background: url("../../images/blog/blog_sign.svg") center/auto no-repeat;
-  height: 200px;
+
+  height: 150px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .hero-title{
+    background-image: url("../../images/blog/blog_sign.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+  }
 }
+
 /* 2) 描述段落 */
 .blog-desc {
   margin-top: 18px;
@@ -52,7 +62,7 @@
   background-image: url("../../images/blog/blog_deco.svg");
   background-repeat: repeat;
   height: 70px; // 兩行的高度 (20px × 2)
-  width: 100%;
+  width: 60.3%;
   overflow: hidden; // 隱藏超出的部分
   margin: 40px 100px;
 }
