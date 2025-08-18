@@ -1,9 +1,2 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
-
-.guitar{
-    font-family: $family-display;
-    padding: $spacing-lg;
-    border: solid 2px $black;
-    border-radius: $rad-sm;
-}
