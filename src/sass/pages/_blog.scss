@@ -1,10 +1,11 @@
 /* 頁面外層 */
 .blog-page {
+  padding-top: 80px;
   background-image: url("../../images/blog/blog_bg.jpg");
   background-size: cover; // 覆蓋整個容器
   background-repeat: no-repeat; // 不重複
   background-position: center center; // 居中
-  background-attachment: fixed; // 背景固定，捲動時不移動
+  // background-attachment: fixed; // 背景固定，捲動時不移動
   
   box-sizing: border-box;
   display: flex;
@@ -43,7 +44,7 @@
     max-width: 900px;
     text-align: center;
     line-height: 1.9;
-    font-size: 14px;
+    font-size: 16px;
     color: #333;
     margin: 0 16px 14px;
   }
@@ -70,12 +71,11 @@
 }
 
 
-/* 4) 黑框主內容區 */
+/* 4) 主內容區 */
 .blog-shell {
   max-width: 1240px;
   margin: 0 auto 56px;
   border-radius: 6px;
-  background: #fffaf4;
   padding: 14px 18px 22px;
 }
 
@@ -88,7 +88,7 @@
 
 /* 左欄固定在視窗上方一點點 */
 .blog-select-col {
-  padding-top: 7.3vh;
+  padding-top: 6vh;
   top: 12px;
   align-self: start;
 }
@@ -181,9 +181,9 @@
 
 /* 分頁 */
 .blog-pagination {
-  display: grid;
-  grid-template-columns: 40px 1fr 40px;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin: 26px 0 6px;
 
@@ -201,17 +201,18 @@
   .track {
     position: relative;
     height: 28px;
-    border: 1.5px solid #111;
-    border-radius: 999px;
+    border: 1.5px solid #111;  // 加回邊框
+    border-radius: 8px;        // 改成跟左右箭頭一樣的圓角
+    background: #fff;          // 加回背景
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
-    background: #fff;
+    padding: 0 8px;
 
     .page-num {
-      border: 1px solid #111;
-      background: #fff;
+      border: none;              // 移除個別頁碼的邊框
+      background: transparent;   // 移除個別頁碼的背景
       border-radius: 6px;
       min-width: 28px;
       height: 22px;
@@ -220,7 +221,14 @@
       text-align: center;
       cursor: pointer;
 
-      &.is-active { background: #111; color: #fff; }
+      &.is-active { 
+        background: #111; 
+        color: #fff; 
+      }
+      
+      &:hover:not(.is-active) {
+        background: rgba(219, 40, 40, 0.1);  // hover 效果
+      }
     }
 
     .dots { padding: 0 4px; }
