@@ -60,10 +60,12 @@
    =========================== */
 .blog-deco {
   background-image: url("../../images/blog/blog_deco.svg");
-  background-repeat: repeat;
-  height: 70px; // 兩行的高度 (20px × 2)
+  background-repeat: no-repeat;  // 不要無限延伸
+  background-size: contain;      // 等比縮小，完全顯示在容器內
+  background-position: center;   // 置中
+  height: 70px; 
   width: 60.3%;
-  overflow: hidden; // 隱藏超出的部分
+  overflow: hidden;
   margin: 40px 100px;
 }
 
@@ -86,8 +88,7 @@
 
 /* 左欄固定在視窗上方一點點 */
 .blog-select-col {
-  padding-top: 8vh;
-  position: sticky;
+  padding-top: 7.3vh;
   top: 12px;
   align-self: start;
 }
@@ -104,58 +105,70 @@
 
   .tabs {
     .tab {
-      border: 1.5px solid #1d1d1d;
       background: #fff;
-      padding: 6px 14px;
+      padding: 6px 8px;
       margin-right: 8px;
       border-radius: 10px;
-      font-size: 13px;
+      font-size: 14px;
       cursor: pointer;
-
-      &.is-active {
-        background: #111;
-        color: #fff;
-      }
     }
   }
+
+.icon-btn {
+  background: #fff;
+  min-width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-size: 20px 20px; // icon 大小
+  background-repeat: no-repeat;
+  background-position: center;
+
+  // 搜尋按鈕
+  &.search {
+    background-image: url("../../images/blog/blog_serch.svg");
+  }
+
+  // 撰寫按鈕
+  &.write {
+    background-image: url("../../images/blog/blog_write.png");
+    background-color: transparent; // 這裡也可以拿掉底色
+    border: none;
+  }
+}
 
   .actions {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 
     .search {
       display: flex;
       align-items: center;
-      border: 2px solid #111;
-      border-radius: 999px;
-      padding: 5px 6px 5px 12px;
-      min-height: 34px;
-      background: #fff;
+      border: 1px solid #000;
+      border-radius: 30px;
+      padding: 0 6px;
 
       input {
-        width: 360px;
-        border: 0;
-        outline: 0;
-        background: transparent;
+        border: none;
+        outline: none;
+        padding: 8px 12px;
+        flex: 1;
         font-size: 14px;
+        background: transparent;
+      }
+
+      .icon-btn.search {
+        border: none;
+        background-color: transparent;
+        min-width: 30px;
+        height: 30px;
       }
     }
-
-    .icon-btn {
-      border: 1.5px solid #111;
-      background: #fff;
-      border-radius: 10px;
-      min-width: 34px;
-      height: 34px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-
-      &.write { font-weight: 700; }
-    }
   }
+
 }
 
 /* 卡片 3 欄 */

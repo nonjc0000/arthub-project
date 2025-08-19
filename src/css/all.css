@@ -46,6 +46,7 @@ a {
 }
 
 .FooterBox {
+  background-color: #FDF7EB;
   background-image: url(../../images/Footer/Footer.svg);
   overflow: hidden;
   padding: 110px 30px 10px;
@@ -199,7 +200,12 @@ a {
   gap: 4px;
 }
 .blog-card .img-box .badge::before {
-  content: "🔥";
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/src/images/blog/hot.svg") no-repeat center;
+  background-size: contain;
 }
 .blog-card .text-box {
   padding: 16px;
@@ -338,6 +344,14 @@ a {
   color: #fff;
   background-color: transparent;
   font-size: 0.75rem;
+}
+
+.container {
+  background-color: #FDF7EB;
+}
+
+.intro_photo {
+  width: 50%;
 }
 
 /* 頁面外層 */

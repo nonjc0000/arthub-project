@@ -54,13 +54,9 @@ function Blog() {
               <div className="actions">
                 <div className="search">
                   <input type="text" placeholder="搜尋文章" />
-                  <button className="icon-btn" aria-label="search">
-                    🔍
-                  </button>
+                  <button className="icon-btn search" z aria-label="search"></button>
                 </div>
-                <button className="icon-btn write" aria-label="撰寫文章">
-                  ✎
-                </button>
+                <button className="icon-btn write" aria-label="撰寫文章"></button>
               </div>
             </div>
 
