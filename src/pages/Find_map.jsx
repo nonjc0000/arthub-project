@@ -34,9 +34,9 @@ const Find_map = () => {
             </form>
 
             <div className='map_search_result'>
-              <Find_map_card/>
-              <Find_map_card/>
-              <Find_map_card/>
+              <Find_map_card />
+              <Find_map_card />
+              <Find_map_card />
             </div>
           </div>
 
@@ -46,6 +46,15 @@ const Find_map = () => {
 
         </div>
 
+        <div className='map_deco-box'>
+          <figure className='map_deco1'>
+            <img src="../images/decorations/deco-road_sign.svg" alt="路牌裝飾" />
+          </figure>
+
+          <figure className='map_deco2'>
+            <img src="../images/decorations/deco-raisehand_allegator.svg" alt="" />
+          </figure>
+        </div>
 
       </section>
 
