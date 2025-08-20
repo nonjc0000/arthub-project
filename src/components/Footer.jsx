@@ -6,51 +6,51 @@ const Footer = () => {
             <ul className='sitemap'>
                 <li className='find_type'>
                     <Link to="/Find_type">
-                        <span className='sitemap_item_content'>
-                            <img src="src/images/icons/find_type.svg" style={{ width: '24px' }} />
-                            <span>找類型</span>
-                        </span>
+                        <p className='sitemap_item_content'>
+                            <img src="../images/icons/find_type.svg" style={{ width: '24px' }} />
+                            找類型
+                        </p>
                     </Link>
                 </li>
                 <li className='find_map'>
                     <Link to="/Find_map">
-                        <span className='sitemap_item_content'>
-                            <img src="src/images/icons/find_map.svg" style={{ width: '24px' }} />
-                            <span>找地圖</span>
-                        </span>
+                        <p className='sitemap_item_content'>
+                            <img src="../images/icons/find_map.svg" style={{ width: '24px' }} />
+                            找地圖
+                        </p>
                     </Link>
                 </li>
                 <li className='find_schedule'>
 
                     <Link to="/Find_schedule">
-                        <span className='sitemap_item_content'>
-                            <img src="src/images/icons/find_schedule.svg" style={{ width: '24px' }} />
-                            <span>找行程</span>
-                        </span>
+                        <p className='sitemap_item_content'>
+                            <img src="../images/icons/find_schedule.svg" style={{ width: '24px' }} />
+                            找行程
+                        </p>
                     </Link>
                 </li>
                 <li className='blog'>
                     <Link to="/Blog">
-                    <span className='sitemap_item_content'>
-                    <img src="src/images/icons/blog.svg" style={{ width: '24px' }} />
-                    <span>部落格</span>
-                    </span>
+                    <p className='sitemap_item_content'>
+                    <img src="../images/icons/blog.svg" style={{ width: '24px' }} />
+                    部落格
+                    </p>
                     </Link>
                 </li>
                 <li className='about'>
                     <Link to="/About">
-                    <span className='sitemap_item_content'>
-                    <img src="src/images/icons/about.svg" style={{ width: '24px' }} />
-                    <span>關於我們</span>
-                    </span>
+                    <p className='sitemap_item_content'>
+                    <img src="../images/icons/about.svg" style={{ width: '24px' }} />
+                    關於我們
+                    </p>
                     </Link>
                 </li>
                 <li className='user'>
                     <Link to="/User">
-                    <span className='sitemap_item_content'>
-                    <img src="src/images/icons/user.svg" style={{ width: '24px' }} />
-                    <span>會員登入</span>
-                    </span>
+                    <p className='sitemap_item_content'>
+                    <img src="../images/icons/user.svg" style={{ width: '24px' }} />
+                    會員登入
+                    </p>
                     </Link>
                 </li>
             </ul>

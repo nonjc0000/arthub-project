@@ -4,6 +4,7 @@
 .FooterBox {
     background-color: $background;
     background-image: url(../../images/Footer/Footer.svg);
+    background-size: cover;
     overflow: hidden;
     padding: $spacing-ex $spacing-xl $spacing-xs;
     display: flex;
@@ -22,14 +23,17 @@
     @each $icon in $icons {
 
         .#{$icon} .sitemap_item_content{
-            display: flex;
-            justify-content: center;
-            gap: 8px;
+            // display: flex;
+            // gap: 8px;
+            // justify-content: center;
             padding: $spacing-xs $spacing-sm;
         }
 
         .#{$icon} img {
-            display: inline;
+            display: inline-block;
+            vertical-align: bottom;
+            margin-right: 8px;
+            margin-bottom: 1px;
         }
     }
 }
