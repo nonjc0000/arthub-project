@@ -48,72 +48,93 @@ a {
 .FooterBox {
   background-color: #FDF7EB;
   background-image: url(../../images/Footer/Footer.svg);
+  background-size: cover;
   overflow: hidden;
   padding: 110px 30px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: "Noto Sans TC", san-serif;
 }
 
 .sitemap {
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   gap: 25px;
   color: #fff;
 }
+.sitemap a {
+  color: #fff;
+}
 .sitemap .find_type .sitemap_item_content {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
 }
-.sitemap .find_type img {
-  display: inline;
+.sitemap .find_type .sitemap_item_content img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.sitemap a {
+  color: #fff;
 }
 .sitemap .find_map .sitemap_item_content {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
 }
-.sitemap .find_map img {
-  display: inline;
+.sitemap .find_map .sitemap_item_content img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.sitemap a {
+  color: #fff;
 }
 .sitemap .find_schedule .sitemap_item_content {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
 }
-.sitemap .find_schedule img {
-  display: inline;
+.sitemap .find_schedule .sitemap_item_content img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.sitemap a {
+  color: #fff;
 }
 .sitemap .blog .sitemap_item_content {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
 }
-.sitemap .blog img {
-  display: inline;
+.sitemap .blog .sitemap_item_content img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.sitemap a {
+  color: #fff;
 }
 .sitemap .about .sitemap_item_content {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
 }
-.sitemap .about img {
-  display: inline;
+.sitemap .about .sitemap_item_content img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  margin-bottom: 1px;
+}
+.sitemap a {
+  color: #fff;
 }
 .sitemap .user .sitemap_item_content {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
   padding: 10px 15px;
 }
-.sitemap .user img {
-  display: inline;
+.sitemap .user .sitemap_item_content img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 8px;
+  margin-bottom: 1px;
 }
 
 .copyright {
@@ -161,7 +182,7 @@ a {
 
 .blog-card {
   background: #fff;
-  border-radius: 20px;
+  border-radius: 0px 40px 0px 0px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
@@ -172,6 +193,7 @@ a {
   transform: translateY(-4px);
 }
 .blog-card .img-box {
+  border-radius: 0px 0px 0px 40px;
   position: relative;
   width: 100%;
   padding-top: 66.66%;
@@ -189,7 +211,7 @@ a {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #f39b0b;
+  background: #ED972E;
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -220,7 +242,7 @@ a {
   line-height: 1.4;
 }
 .blog-card .text-box p {
-  font-size: 15px;
+  font-size: 14px;
   color: #444;
   line-height: 1.6;
 }
@@ -241,7 +263,7 @@ a {
 
 .blog-select {
   border: 1px solid #f3d8be;
-  border-radius: 30px;
+  border-radius: 20px;
   background: #fff;
   padding: 12px 8px;
 }
@@ -264,7 +286,11 @@ a {
 }
 .blog-select li a.active {
   background: #fff1df;
-  border: 1px solid #ed972e;
+  border: 1px solid #ED972E;
+}
+
+.titleBox_h1 {
+  width: 510px;
 }
 
 .findType {
@@ -356,11 +382,11 @@ a {
 
 /* 頁面外層 */
 .blog-page {
+  padding-top: 80px;
   background-image: url("../../images/blog/blog_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: fixed;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -396,7 +422,7 @@ a {
   max-width: 900px;
   text-align: center;
   line-height: 1.9;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   margin: 0 16px 14px;
 }
@@ -412,19 +438,20 @@ a {
    =========================== */
 .blog-deco {
   background-image: url("../../images/blog/blog_deco.svg");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   height: 70px;
   width: 60.3%;
   overflow: hidden;
   margin: 40px 100px;
 }
 
-/* 4) 黑框主內容區 */
+/* 4) 主內容區 */
 .blog-shell {
   max-width: 1240px;
   margin: 0 auto 56px;
   border-radius: 6px;
-  background: #fffaf4;
   padding: 14px 18px 22px;
 }
 
@@ -437,8 +464,7 @@ a {
 
 /* 左欄固定在視窗上方一點點 */
 .blog-select-col {
-  padding-top: 8vh;
-  position: sticky;
+  padding-top: 6vh;
   top: 12px;
   align-self: start;
 }
@@ -456,52 +482,58 @@ a {
   margin: 4px 0 14px;
 }
 .blog-toolbar .tabs .tab {
-  border: 1.5px solid #1d1d1d;
   background: #fff;
-  padding: 6px 14px;
+  padding: 6px 8px;
   margin-right: 8px;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: 14px;
   cursor: pointer;
 }
-.blog-toolbar .tabs .tab.is-active {
-  background: #111;
-  color: #fff;
-}
-.blog-toolbar .actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.blog-toolbar .actions .search {
-  display: flex;
-  align-items: center;
-  border: 2px solid #111;
-  border-radius: 999px;
-  padding: 5px 6px 5px 12px;
-  min-height: 34px;
+.blog-toolbar .icon-btn {
   background: #fff;
-}
-.blog-toolbar .actions .search input {
-  width: 360px;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  font-size: 14px;
-}
-.blog-toolbar .actions .icon-btn {
-  border: 1.5px solid #111;
-  background: #fff;
-  border-radius: 10px;
   min-width: 34px;
   height: 34px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-.blog-toolbar .actions .icon-btn.write {
-  font-weight: 700;
+.blog-toolbar .icon-btn.search {
+  background-image: url("../../images/blog/blog_serch.svg");
+}
+.blog-toolbar .icon-btn.write {
+  background-image: url("../../images/blog/blog_write.png");
+  background-color: transparent;
+  border: none;
+}
+.blog-toolbar .actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.blog-toolbar .actions .search {
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  border-radius: 30px;
+  padding: 0 6px;
+}
+.blog-toolbar .actions .search input {
+  border: none;
+  outline: none;
+  padding: 8px 12px;
+  flex: 1;
+  font-size: 14px;
+  background: transparent;
+}
+.blog-toolbar .actions .search .icon-btn.search {
+  border: none;
+  background-color: transparent;
+  min-width: 30px;
+  height: 30px;
 }
 
 /* 卡片 3 欄 */
@@ -514,9 +546,9 @@ a {
 
 /* 分頁 */
 .blog-pagination {
-  display: grid;
-  grid-template-columns: 40px 1fr 40px;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin: 26px 0 6px;
 }
@@ -534,16 +566,17 @@ a {
   position: relative;
   height: 28px;
   border: 1.5px solid #111;
-  border-radius: 999px;
+  border-radius: 8px;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: #fff;
+  padding: 0 8px;
 }
 .blog-pagination .track .page-num {
-  border: 1px solid #111;
-  background: #fff;
+  border: none;
+  background: transparent;
   border-radius: 6px;
   min-width: 28px;
   height: 22px;
@@ -555,6 +588,9 @@ a {
 .blog-pagination .track .page-num.is-active {
   background: #111;
   color: #fff;
+}
+.blog-pagination .track .page-num:hover:not(.is-active) {
+  background: rgba(219, 40, 40, 0.1);
 }
 .blog-pagination .track .dots {
   padding: 0 4px;

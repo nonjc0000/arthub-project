@@ -10,11 +10,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: $family-tc;
 }
 
 .sitemap {
     display: flex;
     justify-content: flex-end;
+    flex-wrap: wrap;
     gap: $spacing-lg;
     color: $white;
 
@@ -22,19 +24,26 @@
 
     @each $icon in $icons {
 
-        .#{$icon} .sitemap_item_content{
+        a {
+            color: $white;
+        }
+
+        .#{$icon} .sitemap_item_content {
             // display: flex;
             // gap: 8px;
             // justify-content: center;
             padding: $spacing-xs $spacing-sm;
+
+
+            img {
+                display: inline-block;
+                vertical-align: bottom;
+                margin-right: 8px;
+                margin-bottom: 1px;
+            }
+
         }
 
-        .#{$icon} img {
-            display: inline-block;
-            vertical-align: bottom;
-            margin-right: 8px;
-            margin-bottom: 1px;
-        }
     }
 }
 
