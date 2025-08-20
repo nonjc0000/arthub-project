@@ -6,8 +6,8 @@ const Find_map = () => {
   return (
     <>
       <section className='find_map_main'>
-        <h1>
-          <img className='titleBox' src="src/images/titlebox/find_map_titlebox.svg" style={{ width: '510px' }} alt='市集地圖Market Map' />
+        <h1 className='titleBox_h1'>
+          <img className='titleBox' src="../images/titlebox/find_map_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
         </h1>
 
         <div className='find_map_content_box'>
