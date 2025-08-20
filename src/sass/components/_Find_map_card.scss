@@ -1,0 +1,57 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.find_map_card {
+    border: solid 2px red;
+    height: $h-20vh;
+    width: $w-50;
+    display: flex;
+    gap: $spacing-lg;
+    padding: $spacing-sm;
+    background-color: $secondary;
+    border-radius: $rad-basic;
+
+    img {
+        width: 25%;
+        object-fit: cover;
+        border-radius: $rad-sm;
+    }
+
+    .find_map_card_desc {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-xs;
+        margin: auto 0;
+
+        h2 {
+            font-size: $f-s-lg;
+            font-weight: $f-w-b;
+        }
+
+        p {
+            font-size: $f-s-sm;
+        }
+
+        a {
+            display: block;
+            font-size: $f-s-sm;
+            background-color: $accent;
+            color: $white;
+            padding: 0 $spacing-sm;
+            padding-top: calc($spacing-xxs + 1.5px);
+            padding-bottom: $spacing-xxs;
+            border-radius: $rad-ex;
+        }
+
+        .anchors {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+    }
+
+    svg {
+        min-width: $spacing-xl;
+        margin-left: auto;
+    }
+}

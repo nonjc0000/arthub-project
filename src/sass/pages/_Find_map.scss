@@ -1,10 +1,33 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
-.titleBox_h1{
-    width: 510px;
+
+.find_map_main {
+    background-color: $background;
+    height: $h-100vh;
+    @extend %main_font-family_setting;
+    color: $text;
 }
 
-// .titleBox{
-//     width: 510px;
-// }
+.titleBox_h1 {
+    width: $w-30;
+    min-width: 432px;
+    margin: 0 auto;
+}
+
+.map_search_result {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+}
+
+.map_deco1 {
+    width: $w-10;
+    min-width: 140px;
+    transform: rotate(4deg);
+}
+
+.map_deco2 {
+    width: $w-10;
+    min-width: 150px;
+}

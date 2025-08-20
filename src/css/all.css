@@ -1,5 +1,9 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
+.find_map_main {
+  font-family: "DM Sans", "Noto Sans TC", san-serif;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -289,8 +293,81 @@ a {
   border: 1px solid #ED972E;
 }
 
+.find_map_card {
+  border: solid 2px red;
+  height: 20vh;
+  width: 50%;
+  display: flex;
+  gap: 25px;
+  padding: 15px;
+  background-color: #DEBFA0;
+  border-radius: 15px;
+}
+.find_map_card img {
+  width: 25%;
+  object-fit: cover;
+  border-radius: 7.5px;
+}
+.find_map_card .find_map_card_desc {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto 0;
+}
+.find_map_card .find_map_card_desc h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.find_map_card .find_map_card_desc p {
+  font-size: 0.875rem;
+}
+.find_map_card .find_map_card_desc a {
+  display: block;
+  font-size: 0.875rem;
+  background-color: #ED972E;
+  color: #fff;
+  padding: 0 15px;
+  padding-top: 6.5px;
+  padding-bottom: 5px;
+  border-radius: 999px;
+}
+.find_map_card .find_map_card_desc .anchors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.find_map_card svg {
+  min-width: 30px;
+  margin-left: auto;
+}
+
+.find_map_main {
+  background-color: #FDF7EB;
+  height: 100vh;
+  color: #39413A;
+}
+
 .titleBox_h1 {
-  width: 510px;
+  width: 30%;
+  min-width: 432px;
+  margin: 0 auto;
+}
+
+.map_search_result {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.map_deco1 {
+  width: 10%;
+  min-width: 140px;
+  transform: rotate(4deg);
+}
+
+.map_deco2 {
+  width: 10%;
+  min-width: 150px;
 }
 
 .findType {

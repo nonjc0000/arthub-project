@@ -5,12 +5,12 @@ import Button from '../components/Button'
 const Find_map = () => {
   return (
     <>
-      <section className='find_map_main'>
+      <main className='find_map_main'>
         <h1 className='titleBox_h1'>
           <img className='titleBox' src="../images/titlebox/find_map_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
         </h1>
 
-        <div className='find_map_content_box'>
+        <section className='find_map_content_box'>
 
           <div className='map_search-box'>
             <form name="map_search_filter" id="map_search_filter" method="post" accept-charset="UTF-8">
@@ -44,7 +44,7 @@ const Find_map = () => {
 
           </div>
 
-        </div>
+        </section>
 
         <div className='map_deco-box'>
           <figure className='map_deco1'>
@@ -56,9 +56,7 @@ const Find_map = () => {
           </figure>
         </div>
 
-      </section>
-
-
+      </main>
     </>
   )
 }
