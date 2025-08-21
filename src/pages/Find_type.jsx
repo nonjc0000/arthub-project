@@ -1,16 +1,20 @@
 import React from 'react'
 import Find_type_card from '../components/Find_type_card'
+import '../css/all.css'
 
 const Find_type = () => {
 
 
 
 
-  return (
+    return (
         <section className='find_type_main'>
             <div className='find_type_content_box'>
                 <form className='type_search-box'>
-                    <search></search>
+                    <div className='search'>
+                        <input type="serch" />
+                        <img src="public\images\icon_search.svg" alt="search" />
+                    </div>
                     <select name="find_type_city" id="find_type_city">
                         <option value="#">選擇縣市</option>
                     </select>
@@ -30,10 +34,10 @@ const Find_type = () => {
                 </form>
             </div>
             <div className='find_type_result'>
-                <Find_type_card/>
+                <Find_type_card />
             </div>
         </section>
-  )
+    )
 }
 
 export default Find_type

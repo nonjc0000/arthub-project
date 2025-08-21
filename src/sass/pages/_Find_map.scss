@@ -3,31 +3,51 @@
 
 
 .find_map_main {
+
     background-color: $background;
     height: $h-100vh;
     @extend %main_font-family_setting;
     color: $text;
-}
 
-.titleBox_h1 {
-    width: $w-30;
-    min-width: 432px;
-    margin: 0 auto;
-}
+    .titleBox_h1 {
+        width: $w-30;
+        min-width: 432px;
+        margin: 0 auto;
+    }
+    
+    .find_map_content_box{
+        border: solid 2px red;
+        width: 80%;
 
-.map_search_result {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-xl;
-}
+        .map_search_result {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-xl;
+        }
+    }
 
-.map_deco1 {
-    width: $w-10;
-    min-width: 140px;
-    transform: rotate(4deg);
-}
+    
+    .map_deco-box{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+    
+        .map_deco1 {
+            position: relative;
+            width: $w-10;
+            min-width: 140px;
+            transform: rotate(4deg);
+            margin-left: $w-10;
+        }
+        
+        .map_deco2 {
+            position: relative;
+            z-index: 2;
+            width: $w-10;
+            min-width: 150px;
+            margin-right: $w-20;
+        }
 
-.map_deco2 {
-    width: $w-10;
-    min-width: 150px;
+    }
+    
 }

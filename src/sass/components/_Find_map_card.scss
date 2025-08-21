@@ -53,5 +53,10 @@
     svg {
         min-width: $spacing-xl;
         margin-left: auto;
+        cursor: pointer;
+
+        &:hover{
+            // fill: $white;
+        }
     }
 }

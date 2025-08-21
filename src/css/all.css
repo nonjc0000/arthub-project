@@ -370,83 +370,59 @@ a {
   min-width: 150px;
 }
 
-.findType {
-  padding: 0 30px 0 30px;
+.find_type_main {
+  background-color: #FDF7EB;
+}
+.find_type_main img {
+  width: 10px;
+  height: 10px;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  margin-top: 110px;
-}
-
-.searchTable {
-  padding: 45px 35px 0 35px;
-  width: 400px;
-  height: 100%;
-  border-radius: 30px;
-  border: 1px solid red;
+.type_search-box {
   background-color: #fff;
-}
-.searchTable .serch input {
-  width: 100%;
+  display: flex;
+  width: 465px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
   border-radius: 30px;
+  padding: 20px;
 }
-.searchTable select {
-  width: 100%;
-  height: 48px;
+.type_search-box select {
+  width: 250px;
+  height: 50px;
   border: none;
-  border-bottom: 1px solid #413B35;
-  appearance: none;
+  border-bottom: 1px solid #000;
   -webkit-appearance: none;
-  background: url("../images/Polygon_select.svg") no-repeat right 10px center;
-  background-size: 10px;
-  margin: 0 0 60px 0;
+  background: url(publicimagesPolygon_select.svg);
+  background-size: 22px;
 }
-.searchTable .Select label {
-  padding-bottom: 15px;
+.type_search-box p {
+  text-align: left;
 }
-.searchTable .Select .btn {
+.type_search-box .find_type_btn_box {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  width: 380px;
   gap: 25px;
-  margin-bottom: 60px;
 }
-.searchTable .Select .btn button {
+.type_search-box .find_type_btn_box button {
+  flex: 1 1 45%;
   width: 175px;
   height: 45px;
-  background-color: #ED972E;
-  color: #fff;
   border: none;
-  border-radius: 30px;
-  flex: 1 0 45%;
+  color: #fff;
+  background-color: #ED972E;
+  border-radius: 999px;
 }
 
-.event .card {
-  width: 300px;
-  border: 1px solid red;
-}
-.event .card .cardHeader .cardDate figure {
-  width: 115px;
-  height: 20px;
+.search {
   display: flex;
-  align-items: center;
   border-radius: 999px;
-  overflow: hidden;
-  padding: 0 5px 0 5px;
-  background-color: #ED972E;
-  justify-content: space-between;
 }
-.event .card .cardHeader .cardDate figure img {
-  width: 13px;
-  height: auto;
-  background-color: transparent;
-}
-.event .card .cardHeader .cardDate figure p {
-  color: #fff;
-  background-color: transparent;
-  font-size: 0.75rem;
+.search input {
+  width: 250px;
+  border: none;
 }
 
 .container {
