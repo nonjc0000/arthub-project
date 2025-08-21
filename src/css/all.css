@@ -26,6 +26,7 @@ time, mark, audio, video {
 }
 
 body {
+  background-color: #FDF7EB;
   font-family: sans-serif;
   font-size: 100%;
   line-height: 1.5;
@@ -50,7 +51,7 @@ a {
 }
 
 .FooterBox {
-  background-color: #FDF7EB;
+  position: relative;
   background-image: url(../../images/Footer/Footer.svg);
   background-size: cover;
   overflow: hidden;
@@ -296,7 +297,6 @@ a {
 .find_map_card {
   border: solid 2px red;
   height: 20vh;
-  width: 50%;
   display: flex;
   gap: 25px;
   padding: 15px;
@@ -339,35 +339,54 @@ a {
 .find_map_card svg {
   min-width: 30px;
   margin-left: auto;
+  cursor: pointer;
 }
-
 .find_map_main {
   background-color: #FDF7EB;
   height: 100vh;
+  padding: 30px;
   color: #39413A;
 }
-
-.titleBox_h1 {
+.find_map_main .titleBox_h1 {
   width: 30%;
   min-width: 432px;
   margin: 0 auto;
 }
-
-.map_search_result {
+.find_map_main .find_map_content_box {
+  border: solid 2px red;
+  display: flex;
+  justify-content: space-between;
+}
+.find_map_main .find_map_content_box .map_search-box {
+  width: 50%;
+}
+.find_map_main .find_map_content_box .map_search-box .map_search_result {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-
-.map_deco1 {
+.find_map_main .find_map_content_box .map_api {
+  width: 40%;
+  background-color: gray;
+}
+.find_map_main .map_deco-box {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.find_map_main .map_deco-box .map_deco1 {
+  position: relative;
   width: 10%;
   min-width: 140px;
   transform: rotate(4deg);
+  margin-left: 10%;
 }
-
-.map_deco2 {
+.find_map_main .map_deco-box .map_deco2 {
+  position: relative;
+  z-index: 2;
   width: 10%;
   min-width: 150px;
+  margin-right: 20%;
 }
 
 .find_type_main {
@@ -427,6 +446,10 @@ a {
 
 .container {
   background-color: #FDF7EB;
+}
+
+.dr-box {
+  width: 50%;
 }
 
 .intro_photo {

@@ -6,6 +6,7 @@
 
     background-color: $background;
     height: $h-100vh;
+    padding: $spacing-xl;
     @extend %main_font-family_setting;
     color: $text;
 
@@ -17,12 +18,26 @@
     
     .find_map_content_box{
         border: solid 2px red;
-        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        // width: 80%;
 
-        .map_search_result {
-            display: flex;
-            flex-direction: column;
-            gap: $spacing-xl;
+        .map_search-box{
+            width: $w-50;
+
+            .map_search_result {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-xl;
+            }
+
+
+        }
+
+        .map_api{
+            width: 40%;
+            // height: 90%;
+            background-color: gray;
         }
     }
 
