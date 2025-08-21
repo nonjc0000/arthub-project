@@ -2,7 +2,8 @@
 @use '../functions/' as *;
 
 .FooterBox {
-    background-color: $background;
+    position: relative;
+    // background-color: $background;
     background-image: url(../../images/Footer/Footer.svg);
     background-size: cover;
     overflow: hidden;
