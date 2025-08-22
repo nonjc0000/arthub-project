@@ -2,7 +2,7 @@
 @use '../functions/' as *;
 
 .find_map_card {
-    border: solid 2px red;
+    // border: solid 2px red;
     height: $h-20vh;
     // width: 80%;
     display: flex;
@@ -55,8 +55,8 @@
         margin-left: auto;
         cursor: pointer;
 
-        &:hover{
-            // fill: $white;
-        }
+        // &:hover{
+        //     // svg現在是fill，之後要換
+        // }
     }
 }

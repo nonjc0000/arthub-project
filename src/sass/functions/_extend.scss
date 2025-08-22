@@ -1,3 +1,21 @@
-%main_font-family_setting{
-    font-family:  "DM Sans", "Noto Sans TC", san-serif;
+%main_font-family_setting {
+    font-family: "DM Sans", "Noto Sans TC", san-serif;
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+%remove_form_style {
+    border: none;
+    outline: none;
+    background: none;
 }
