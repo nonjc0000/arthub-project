@@ -1,8 +1,17 @@
 import React from 'react'
+import My_footprint from './My_footprint'
 
 const User = () => {
   return (
-    <div>User</div>
+    <main className='user_main'>
+      <My_footprint/>
+
+
+
+
+
+
+    </main>
   )
 }
 

@@ -321,6 +321,7 @@ a {
   padding: 15px;
   background-color: #DEBFA0;
   border-radius: 15px;
+  margin-bottom: 25px;
 }
 .find_map_card img {
   width: 25%;
@@ -367,12 +368,6 @@ a {
   padding: 30px;
   color: #39413A;
 }
-.find_map_main .titleBox_h1 {
-  width: 30%;
-  min-width: 432px;
-  margin: 0 auto;
-  margin-bottom: 30px;
-}
 .find_map_main .find_map_content_box {
   display: flex;
   justify-content: space-between;
@@ -415,8 +410,8 @@ a {
   object-fit: cover;
 }
 .find_map_main .find_map_content_box .map_search-box .map_search_result {
-  display: flex;
-  flex-direction: column;
+  height: 60vh;
+  overflow: auto;
   gap: 30px;
 }
 .find_map_main .find_map_content_box .map_api {
@@ -749,4 +744,10 @@ a {
 @font-face {
   font-family: "ChenYuluoyan-2.0-Thin";
   src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
+}
+.titleBox_h1 {
+  width: 30%;
+  min-width: 432px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }

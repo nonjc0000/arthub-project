@@ -43,6 +43,8 @@ const Find_map = () => {
               <Find_map_card />
               <Find_map_card />
               <Find_map_card />
+              <Find_map_card />
+              <Find_map_card />
             </div>
           </div>
 

@@ -10,13 +10,6 @@
     @extend %main_font-family_setting;
     color: $text;
 
-    .titleBox_h1 {
-        width: $w-30;
-        min-width: 432px;
-        margin: 0 auto;
-        margin-bottom: $spacing-xl;
-    }
-
     .find_map_content_box {
         // border: solid 2px red;
         display: flex;
@@ -82,8 +75,10 @@
             }
 
             .map_search_result {
-                display: flex;
-                flex-direction: column;
+                height: $h-60vh;
+                overflow: auto;
+                // display: flex;
+                // flex-direction: column;
                 gap: $spacing-xl;
             }
 
