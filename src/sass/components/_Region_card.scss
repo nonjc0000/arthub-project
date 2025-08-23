@@ -1,0 +1,58 @@
+@use "../variables/" as *;
+@use "../functions/" as *;
+
+.region_card {
+  display: grid;
+  text-align: center;
+  padding: $spacing-md;
+}
+
+.region_card__wrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.region_card_img {
+  display: block;
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+}
+
+.btn_top {
+  position: absolute;
+  top: $spacing-sm;
+  left: $spacing-sm;
+  z-index: 1;
+
+  writing-mode: vertical-lr;
+  background-color: $white;
+  border-radius: $rad-ex;
+  padding: $spacing-md $spacing-xs;
+  border: 3px solid $accent;
+  text-align: center;
+  letter-spacing: $spacing-xxs;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: $accent;
+    color: $white;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.btn {
+  position: absolute;
+  right: $spacing-sm;
+  bottom: $spacing-sm;
+  z-index: 1;
+
+  background-color: $white;
+  border-radius: $rad-ex;
+  padding: $spacing-md $spacing-sm;
+  border: 2px solid $accent;
+  letter-spacing: $spacing-xxs;
+}

@@ -1,11 +1,39 @@
-@use '../variables/' as *;
-@use '../functions/' as *;
+@use "../variables/" as *;
+@use "../functions/" as *;
 
-.container{
+.container {
+  background-color: $background;
+}
 
- background-color:$background ;
+.titlebox {
+  display: flex;
+  justify-content: center;
+}
+.deco_line {
+  display: flex;
+  justify-content: center;
+}
+
+.region {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
 .intro_photo {
-    width: 50%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.intro_down {
+  background-image: url("/public/images/Find_schedule/green_bg.png");
+
+  .txt {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
 }
