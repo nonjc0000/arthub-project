@@ -3,31 +3,125 @@
 
 
 .find_map_main {
+
     background-color: $background;
     height: $h-100vh;
+    padding: $spacing-xl;
     @extend %main_font-family_setting;
     color: $text;
-}
 
-.titleBox_h1 {
-    width: $w-30;
-    min-width: 432px;
-    margin: 0 auto;
-}
+    .find_map_content_box {
+        // border: solid 2px red;
+        display: flex;
+        justify-content: space-between;
+        padding: $spacing-lg $spacing-xl;
+        background-color: $white;
+        border-radius: $rad-basic;
+        margin-bottom: 30px;
+        // width: 80%;
 
-.map_search_result {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-xl;
-}
+        .map_search-box {
+            width: 45%;
 
-.map_deco1 {
-    width: $w-10;
-    min-width: 140px;
-    transform: rotate(4deg);
-}
+            #map_search_filter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: $spacing-lg;
 
-.map_deco2 {
-    width: $w-10;
-    min-width: 150px;
+                >* {
+                    display: block;
+                }
+
+                .select_border {
+                    @extend %flex-center;
+                    border: $black solid 2px;
+                    border-radius: $rad-ex;
+                    padding: $spacing-xxs $spacing-lg;
+                    width: $w-30;
+                    height: 100%;
+
+                    select {
+                        // border: solid 1px black;
+                        @extend %remove_form_style;
+                    }
+                }
+
+
+                .input_border {
+                    @extend %flex-space-between;
+                    border: $black solid 2px;
+                    border-radius: $rad-ex;
+                    border-radius: $rad-ex;
+                    padding: $spacing-xxs $spacing-lg;
+                    width: 35%;
+                    height: 100%;
+
+                    input {
+                        @extend %remove_form_style;
+                        width: $w-100;
+                    }
+
+                    button {
+                        @extend %remove_form_style;
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+
+            }
+
+            .map_search_result {
+                height: $h-60vh;
+                overflow: auto;
+                // display: flex;
+                // flex-direction: column;
+                gap: $spacing-xl;
+            }
+
+
+        }
+
+        .map_api {
+            width: $w-50;
+            // height: 90%;
+            background-color: gray;
+            border-radius: $rad-sm;
+        }
+    }
+
+
+    .map_deco-box {
+        // border: solid 2px red;
+        display: flex;
+        justify-content: space-between;
+        // position: relative;
+
+        .map_deco1 {
+            // margin-top: 40px;
+            position: relative;
+            // bottom: clamp(-85px, -4.5vh, -33px);
+            // bottom: max(-30px, -9vh);
+            width: $w-10;
+            min-width: 140px;
+            transform: rotate(4deg);
+            margin-left: $w-10;
+        }
+
+        .map_deco2 {
+            // margin-top: 20px;
+            position: relative;
+            // bottom: -90px;
+            // bottom: max(-10px, -9vh);
+            z-index: 2;
+            width: $w-10;
+            min-width: 150px;
+            margin-right: $w-20;
+        }
+
+    }
+
 }

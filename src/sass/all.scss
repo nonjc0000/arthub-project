@@ -16,3 +16,10 @@
     font-family: 'ChenYuluoyan-2.0-Thin';
     src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
 }
+
+.titleBox_h1 {
+        width: $w-30;
+        min-width: 432px;
+        margin: 0 auto;
+        margin-bottom: $spacing-xl;
+    }

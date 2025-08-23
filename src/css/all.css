@@ -4,6 +4,24 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
+  border: none;
+  outline: none;
+  background: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -26,6 +44,7 @@ time, mark, audio, video {
 }
 
 body {
+  background-color: #FDF7EB;
   font-family: sans-serif;
   font-size: 100%;
   line-height: 1.5;
@@ -50,11 +69,13 @@ a {
 }
 
 .FooterBox {
-  background-color: #FDF7EB;
+  position: relative;
   background-image: url(../../images/Footer/Footer.svg);
   background-size: cover;
+  background-position: top;
   overflow: hidden;
   padding: 110px 30px 10px;
+  margin-top: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -294,14 +315,13 @@ a {
 }
 
 .find_map_card {
-  border: solid 2px red;
   height: 20vh;
-  width: 50%;
   display: flex;
   gap: 25px;
   padding: 15px;
   background-color: #DEBFA0;
   border-radius: 15px;
+  margin-bottom: 25px;
 }
 .find_map_card img {
   width: 25%;
@@ -339,118 +359,146 @@ a {
 .find_map_card svg {
   min-width: 30px;
   margin-left: auto;
+  cursor: pointer;
 }
 
 .find_map_main {
   background-color: #FDF7EB;
   height: 100vh;
+  padding: 30px;
   color: #39413A;
 }
-
-.titleBox_h1 {
-  width: 30%;
-  min-width: 432px;
-  margin: 0 auto;
-}
-
-.map_search_result {
+.find_map_main .find_map_content_box {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+.find_map_main .find_map_content_box .map_search-box {
+  width: 45%;
+}
+.find_map_main .find_map_content_box .map_search-box #map_search_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.find_map_main .find_map_content_box .map_search-box #map_search_filter > * {
+  display: block;
+}
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+  border: #000 solid 2px;
+  border-radius: 999px;
+  padding: 5px 25px;
+  width: 30%;
+  height: 100%;
+}
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+  border: #000 solid 2px;
+  border-radius: 999px;
+  border-radius: 999px;
+  padding: 5px 25px;
+  width: 35%;
+  height: 100%;
+}
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input {
+  width: 100%;
+}
+.find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button img {
+  object-fit: cover;
+}
+.find_map_main .find_map_content_box .map_search-box .map_search_result {
+  height: 60vh;
+  overflow: auto;
   gap: 30px;
 }
-
-.map_deco1 {
+.find_map_main .find_map_content_box .map_api {
+  width: 50%;
+  background-color: gray;
+  border-radius: 7.5px;
+}
+.find_map_main .map_deco-box {
+  display: flex;
+  justify-content: space-between;
+}
+.find_map_main .map_deco-box .map_deco1 {
+  position: relative;
   width: 10%;
   min-width: 140px;
   transform: rotate(4deg);
+  margin-left: 10%;
 }
-
-.map_deco2 {
+.find_map_main .map_deco-box .map_deco2 {
+  position: relative;
+  z-index: 2;
   width: 10%;
   min-width: 150px;
+  margin-right: 20%;
 }
 
-.findType {
-  padding: 0 30px 0 30px;
+.find_type_main {
+  background-color: #FDF7EB;
+}
+.find_type_main img {
+  width: 10px;
+  height: 10px;
 }
 
-.title {
-  display: flex;
-  justify-content: center;
-  margin-top: 110px;
-}
-
-.searchTable {
-  padding: 45px 35px 0 35px;
-  width: 400px;
-  height: 100%;
-  border-radius: 30px;
-  border: 1px solid red;
+.type_search-box {
   background-color: #fff;
-}
-.searchTable .serch input {
-  width: 100%;
+  display: flex;
+  width: 465px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
   border-radius: 30px;
+  padding: 20px;
 }
-.searchTable select {
-  width: 100%;
-  height: 48px;
+.type_search-box select {
+  width: 250px;
+  height: 50px;
   border: none;
-  border-bottom: 1px solid #413B35;
-  appearance: none;
+  border-bottom: 1px solid #000;
   -webkit-appearance: none;
-  background: url("../images/Polygon_select.svg") no-repeat right 10px center;
-  background-size: 10px;
-  margin: 0 0 60px 0;
+  background: url(publicimagesPolygon_select.svg);
+  background-size: 22px;
 }
-.searchTable .Select label {
-  padding-bottom: 15px;
+.type_search-box p {
+  text-align: left;
 }
-.searchTable .Select .btn {
+.type_search-box .find_type_btn_box {
   display: flex;
   flex-wrap: wrap;
-  height: 100%;
+  width: 380px;
   gap: 25px;
-  margin-bottom: 60px;
 }
-.searchTable .Select .btn button {
+.type_search-box .find_type_btn_box button {
+  flex: 1 1 45%;
   width: 175px;
   height: 45px;
-  background-color: #ED972E;
-  color: #fff;
   border: none;
-  border-radius: 30px;
-  flex: 1 0 45%;
+  color: #fff;
+  background-color: #ED972E;
+  border-radius: 999px;
 }
 
-.event .card {
-  width: 300px;
-  border: 1px solid red;
-}
-.event .card .cardHeader .cardDate figure {
-  width: 115px;
-  height: 20px;
+.search {
   display: flex;
-  align-items: center;
   border-radius: 999px;
-  overflow: hidden;
-  padding: 0 5px 0 5px;
-  background-color: #ED972E;
-  justify-content: space-between;
 }
-.event .card .cardHeader .cardDate figure img {
-  width: 13px;
-  height: auto;
-  background-color: transparent;
-}
-.event .card .cardHeader .cardDate figure p {
-  color: #fff;
-  background-color: transparent;
-  font-size: 0.75rem;
+.search input {
+  width: 250px;
+  border: none;
 }
 
 .container {
   background-color: #FDF7EB;
+}
+
+.dr-box {
+  width: 50%;
 }
 
 .intro_photo {
@@ -696,4 +744,10 @@ a {
 @font-face {
   font-family: "ChenYuluoyan-2.0-Thin";
   src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
+}
+.titleBox_h1 {
+  width: 30%;
+  min-width: 432px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }

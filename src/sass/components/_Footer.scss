@@ -2,11 +2,14 @@
 @use '../functions/' as *;
 
 .FooterBox {
-    background-color: $background;
+    position: relative;
+    // background-color: $background;
     background-image: url(../../images/Footer/Footer.svg);
     background-size: cover;
+    background-position: top;
     overflow: hidden;
     padding: $spacing-ex $spacing-xl $spacing-xs;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     justify-content: center;

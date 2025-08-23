@@ -31,6 +31,7 @@ const arrCards = [
 const Find_schedule = () => {
   return (
     <>
+<<<<<<< HEAD
       <div className="container">
         <div className="titlebox">
           <h1>
@@ -72,5 +73,30 @@ const Find_schedule = () => {
     </>
   );
 };
+=======
+      <section>
+        <div className='titlebox'>
+          <h1>
+            <img src="../public/images/pages/Find_schedule/titlebox.svg" alt="活動行程" style={{ width: '510px' }} />
+          </h1>
+        </div>
+        <div className='dr-box'>
+          <img src="../public/images/pages/Find_schedule/dr-box.svg" alt="裝飾線" />
+        </div>
+      </section>
+      <section>
+        <div className='txt'>
+          不只逛市集，還有周邊的景點也可以一起安排，但怎麼安排才最好玩？我們規劃多種「市集＋週邊景點」的一日遊旅程。<br />
+          不只是走馬看花，更是一場有節奏的生活探索。<br />
+          無論你是第一次逛市集，還是資深週末生活家，都可以在這裡找到屬於你的散步提案。
+        </div>
+        <div className='intro_photo'>
+          <img src="../public/images/pages/Find_schedule/intro.jpg" alt="" />
+        </div>
+      </section>
+    </>
+  )
+}
+>>>>>>> fb16e4a00bfef12e1fbb7ba24d23228938111acf
 
 export default Find_schedule;

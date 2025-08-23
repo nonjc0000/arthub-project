@@ -15,25 +15,33 @@ const Find_map = () => {
           <div className='map_search-box'>
             <form name="map_search_filter" id="map_search_filter" method="post" accept-charset="UTF-8">
               {/* 選擇縣市 */}
-              <select name="city" id="city">
-                <option value="">選擇縣市</option>
-                <option value="臺北市">臺北市</option>
-                <option value="新北市">新北市</option>
-              </select>
+              <div className='select_border'>
+                <select name="city" id="city">
+                  <option value="">選擇縣市</option>
+                  <option value="臺北市">臺北市</option>
+                  <option value="新北市">新北市</option>
+                </select>
+              </div>
 
               {/* 選擇地區 */}
-              <select name="district" id="district">
-                <option value="">選擇地區</option>
-                <option value="大安區">大安區</option>
-                <option value="南港區">南港區</option>
-              </select>
+              <div className='select_border'>
+                <select name="district" id="district">
+                  <option value="">選擇地區</option>
+                  <option value="大安區">大安區</option>
+                  <option value="南港區">南港區</option>
+                </select>
+              </div>
 
               {/* 關鍵字搜尋 */}
-              <input type="search" name="search" id="search" size="15" />
-              <input type="submit" value="搜尋" />
+              <div className='input_border'>
+                <input type="search" name="search" id="search" size="15" placeholder='關鍵字搜尋'/>
+                <button type="submit" value="搜尋"><img src="./images/find_map/magnifier.svg" alt="搜尋" /></button>
+              </div>
             </form>
 
             <div className='map_search_result'>
+              <Find_map_card />
+              <Find_map_card />
               <Find_map_card />
               <Find_map_card />
               <Find_map_card />

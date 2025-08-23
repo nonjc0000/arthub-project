@@ -2,14 +2,15 @@
 @use '../functions/' as *;
 
 .find_map_card {
-    border: solid 2px red;
+    // border: solid 2px red;
     height: $h-20vh;
-    width: $w-50;
+    // width: 80%;
     display: flex;
     gap: $spacing-lg;
     padding: $spacing-sm;
     background-color: $secondary;
     border-radius: $rad-basic;
+    margin-bottom: $spacing-lg;
 
     img {
         width: 25%;
@@ -53,5 +54,10 @@
     svg {
         min-width: $spacing-xl;
         margin-left: auto;
+        cursor: pointer;
+
+        // &:hover{
+        //     // svg現在是fill，之後要換
+        // }
     }
 }
