@@ -12,31 +12,39 @@
 .deco_line {
   display: flex;
   justify-content: center;
+  padding-top: $spacing-xl;
+  margin: $spacing-x-xl;
+  img {
+    width: $w-100;
+    height: auto;
+  }
 }
 
 .region {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 45px;
+  padding: $spacing-ex;
 }
 
-.dr-box{
-    width: 50%;
+.dr-box {
+  width: $w-50;
 }
 .intro_photo {
-  width: 50%;
-  display: flex;
-  justify-content: center;
+  width: $w-50;
+  display: block;
+  margin: 0 auto;
 }
 
 .intro_down {
   background-image: url("/public/images/Find_schedule/green_bg.png");
+}
 
-  .txt {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-  }
+.txt {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-top: 135px;
+  padding-bottom: 60px;
 }

@@ -1,30 +1,31 @@
-import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Region_card from "../components/Find_schedule/Region_card";
+import Find_schedule_region_north from "./Find_schedule_region_north";
 
 const arrCards = [
   {
     id: 1,
-    img: "/public/images/Find_schedule/north.png",
+    img: "/images/Find_schedule/north.png",
     btnName: "北部地區",
-    btnUrl: "#",
+    btnUrl: "/North",
   },
   {
     id: 2,
-    img: "/public/images/Find_schedule/west.png",
+    img: "/images/Find_schedule/west.png",
     btnName: "中部地區",
-    btnUrl: "#",
+    btnUrl: "/West",
   },
   {
     id: 3,
-    img: "/public/images/Find_schedule/south.png",
+    img: "/images/Find_schedule/south.png",
     btnName: "南部地區",
-    btnUrl: "#",
+    btnUrl: "/South",
   },
   {
     id: 4,
-    img: "/public/images/Find_schedule/east.png",
+    img: "/images/Find_schedule/east.png",
     btnName: "東部地區",
-    btnUrl: "#",
+    btnUrl: "/East",
   },
 ];
 
@@ -43,6 +44,7 @@ const Find_schedule = () => {
         <div className="deco_line">
           <img src="/public/images/Find_schedule/deco_line.svg" alt="" />
         </div>
+
         <div className="region">
           {arrCards.map((region) => {
             return (

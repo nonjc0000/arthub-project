@@ -1,17 +1,18 @@
 import Button from "../Button";
+import { Link } from "react-router-dom";
 import "/src/sass/components/_Region_card.scss";
 
-const region_card = ({ img, btnName, btnUrl }) => {
+const Region_card = ({ img, btnName, btnUrl }) => {
   return (
     <div className="region_card">
       <img src={img} className="region_card_img" alt="" />
-      <a href={btnUrl} className="btn_top">
+      <Link to={btnUrl} className="btn_top">
         {btnName}
-      </a>
-      <a href={btnUrl} className="btn">
+      </Link>
+      <Link to={btnUrl} className="btn_right">
         <Button />
-      </a>
+      </Link>
     </div>
   );
 };
-export default region_card;
+export default Region_card;
