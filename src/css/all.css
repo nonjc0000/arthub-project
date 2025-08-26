@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.find_map_main {
+.user_main, .find_map_main, .footprint_card {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+.footprint_content_box, .type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@
   background: none;
 }
 
-.find_type_card .find_type_card_wrap, .find_type_card .find_type_card_wrap .date {
+.user_sidebar_left, .footprint_content, .find_type_card .find_type_card_wrap, .find_type_card .find_type_card_wrap .date {
   display: flex;
   flex-direction: column;
 }
@@ -223,6 +223,7 @@ a {
   transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 .blog-card:hover {
   transform: translateY(-4px);
@@ -233,6 +234,7 @@ a {
   width: 100%;
   padding-top: 66.66%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 .blog-card .img-box img {
   position: absolute;
@@ -246,7 +248,6 @@ a {
   position: absolute;
   top: 12px;
   left: 12px;
-  background: #ED972E;
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -256,12 +257,26 @@ a {
   align-items: center;
   gap: 4px;
 }
-.blog-card .img-box .badge::before {
+.blog-card .img-box .badge.badge-hot {
+  background: #ED972E;
+}
+.blog-card .img-box .badge.badge-hot::before {
   content: "";
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/src/images/blog/hot.svg") no-repeat center;
+  background: url("/images/blog/hot.svg") no-repeat center;
+  background-size: contain;
+}
+.blog-card .img-box .badge.badge-new {
+  background: #ED972E;
+}
+.blog-card .img-box .badge.badge-new::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/public/images/blog/new.svg") no-repeat center;
   background-size: contain;
 }
 .blog-card .text-box {
@@ -269,6 +284,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  flex: 1;
 }
 .blog-card .text-box h3 {
   font-size: 20px;
@@ -280,12 +296,14 @@ a {
   font-size: 14px;
   color: #444;
   line-height: 1.6;
+  flex: 1;
 }
 .blog-card .text-box .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: auto;
+  flex-shrink: 0;
 }
 .blog-card .text-box .tags .tag {
   font-size: 13px;
@@ -294,6 +312,13 @@ a {
   border-radius: 999px;
   padding: 4px 10px;
   white-space: nowrap;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
 .blog-select {
@@ -335,6 +360,7 @@ a {
 }
 .find_map_card img {
   width: 25%;
+  height: 100%;
   object-fit: cover;
   border-radius: 7.5px;
 }
@@ -370,6 +396,45 @@ a {
   min-width: 30px;
   margin-left: auto;
   cursor: pointer;
+}
+
+.footprint_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+.footprint_card .date {
+  width: 20%;
+  border-right: solid 2px #413B35;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-right: 15px;
+  gap: 5px;
+}
+.footprint_card .location {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footprint_card figure {
+  width: 35%;
+}
+.footprint_card h2 {
+  font-size: 1.5rem;
+}
+.footprint_card p {
+  font-size: 1rem;
+}
+.footprint_card img {
+  object-fit: cover;
+  border-radius: 7.5px;
 }
 
 .find_map_main {
@@ -862,6 +927,40 @@ a {
     width: 180px;
   }
 }
+.hr_square_deco {
+  width: 100%;
+  height: 70px;
+  background-image: url(./images/My_footprint/hr_square_deco.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.footprint_content_box {
+  align-items: flex-start;
+}
+
+.user_sidebar_left {
+  width: 50%;
+}
+.user_sidebar_left .sidebar_item {
+  display: flex;
+}
+.user_sidebar_left .pageToggle {
+  border: 1px solid #000;
+  width: 24px;
+  height: 24px;
+}
+
+.footprint_content .footprint_result {
+  width: 45%;
+}
+
+.user_main {
+  background-color: #FDF7EB;
+  padding: 30px;
+  color: #39413A;
+}
+
 @font-face {
   font-family: "ChenYuluoyan-2.0-Thin";
   src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);

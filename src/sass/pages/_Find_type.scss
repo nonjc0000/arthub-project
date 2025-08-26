@@ -115,7 +115,7 @@
         height: 240px;
         background-color: #ccc;
         padding: 10px;
-        @extend %flex-colum;
+        @extend %flex-column;
         .top {
             @extend %flex-space-between;
 
@@ -126,7 +126,7 @@
         }
 
         .date {
-            @extend %flex-colum;
+            @extend %flex-column;
             gap: $spacing-xxs;
 ;
 

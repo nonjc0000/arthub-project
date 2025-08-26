@@ -1,0 +1,50 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.footprint_card {
+    // height: $h-20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: $spacing-lg;
+    padding: $spacing-sm;
+    background-color: $white;
+    border-radius: $rad-basic;
+    margin-bottom: $spacing-lg;
+    @extend %main_font-family_setting;
+
+    .date{
+        width: 20%;
+        border-right: solid 2px $dark;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-right: $spacing-sm;
+        gap: $spacing-xxs;
+    }
+
+    .location{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-xs;
+    }
+
+    figure{
+        width: 35%;
+        // height: 100%;
+    }
+
+    h2{
+        font-size: $f-s-xl;
+    }
+
+    p{
+        font-size: $f-s-md;
+    }
+
+    img{
+        object-fit: cover;
+        border-radius: $rad-sm;
+    }
+}

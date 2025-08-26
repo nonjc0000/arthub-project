@@ -1,0 +1,40 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.hr_square_deco {
+    width: 100%;
+    height: 70px;
+    background-image: url(./images/My_footprint/hr_square_deco.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.footprint_content_box {
+    @extend %flex-space-between;
+    align-items: flex-start
+}
+
+.user_sidebar_left {
+    @extend %flex-column;
+    width: $w-50;
+
+    .sidebar_item {
+        display: flex
+    }
+
+    .pageToggle {
+        border: 1px solid $black;
+        width: 24px;
+        height: 24px;
+    }
+
+}
+
+
+.footprint_content {
+    @extend %flex-column;
+
+    .footprint_result {
+        width: 45%;
+    }
+}

@@ -6,6 +6,7 @@
   transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
+  height: 100%; // 重要：讓所有卡片等高
 
   &:hover {
     transform: translateY(-4px);
@@ -17,6 +18,7 @@
     width: 100%;
     padding-top: 66.66%; // 3:2 圖片比例
     overflow: hidden;
+    flex-shrink: 0; // 防止圖片區域被壓縮
 
     img {
       position: absolute;
@@ -31,7 +33,6 @@
       position: absolute;
       top: 12px;
       left: 12px;
-      background: #ED972E;
       color: white;
       font-size: 14px;
       font-weight: bold;
@@ -41,22 +42,43 @@
       align-items: center;
       gap: 4px;
 
-      &::before {
-        content: "";
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: url("/src/images/blog/hot.svg") no-repeat center;
-        background-size: contain;
+      // 熱門標章
+      &.badge-hot {
+        background: #ED972E;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url("/images/blog/hot.svg") no-repeat center;
+          background-size: contain;
+        }
+      }
+
+      // 最新標章
+      &.badge-new {
+        background: #ED972E;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          background: url("/public/images/blog/new.svg") no-repeat center;
+          background-size: contain;
       }
     }
   }
+}
+
 
   .text-box {
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 8px;
+    flex: 1; // 重要：讓文字區域填滿剩餘空間
 
     h3 {
       font-size: 20px;
@@ -69,13 +91,15 @@
       font-size: 14px;
       color: #444;
       line-height: 1.6;
+      flex: 1; // 讓摘要內容自動擴展
     }
 
     .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 8px;
+      margin-top: auto; // 重要：將標籤推到底部
+      flex-shrink: 0; // 防止標籤區域被壓縮
 
       .tag {
         font-size: 13px;
@@ -87,4 +111,12 @@
       }
     }
   }
+}
+
+// 確保網格容器也配合等高設定
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: stretch; // 重要：讓所有卡片等高
 }
