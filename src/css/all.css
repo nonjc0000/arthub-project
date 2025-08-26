@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.find_map_main {
+.find_map_main, .footprint_card {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
@@ -335,6 +335,7 @@ a {
 }
 .find_map_card img {
   width: 25%;
+  height: 100%;
   object-fit: cover;
   border-radius: 7.5px;
 }
@@ -370,6 +371,45 @@ a {
   min-width: 30px;
   margin-left: auto;
   cursor: pointer;
+}
+
+.footprint_card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+.footprint_card .date {
+  width: 20%;
+  border-right: solid 2px #413B35;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-right: 15px;
+  gap: 5px;
+}
+.footprint_card .location {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footprint_card figure {
+  width: 35%;
+}
+.footprint_card h2 {
+  font-size: 1.5rem;
+}
+.footprint_card p {
+  font-size: 1rem;
+}
+.footprint_card img {
+  object-fit: cover;
+  border-radius: 7.5px;
 }
 
 .find_map_main {
@@ -862,6 +902,10 @@ a {
     width: 180px;
   }
 }
+.footprint_result {
+  width: 40%;
+}
+
 @font-face {
   font-family: "ChenYuluoyan-2.0-Thin";
   src: url(../webfonts/ChenYuluoyan-2.0-Thin.ttf);
