@@ -14,15 +14,15 @@ const My_footprint = () => {
 
                 <aside className="user_sidebar_left">
                     <div className='sidebar_item'>
-                        <button></button>
+                        <div className='pageToggle'></div>
                         <p>我的足跡</p>
                     </div>
                     <div className='sidebar_item'>
-                        <button></button>
+                        <div className='pageToggle'></div>
                         <p>訊息通知</p>
                     </div>
                     <div className='sidebar_item'>
-                        <button></button>
+                        <div className='pageToggle'></div>
                         <p>訂單管理</p>
                     </div>
 
