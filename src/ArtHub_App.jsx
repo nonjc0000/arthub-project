@@ -10,6 +10,9 @@ import About from "./pages/About";
 import User from "./pages/User";
 import Footer from "./components/Footer";
 import Find_schedule_region_north from "./pages/Find_schedule_region_north";
+import Find_schedule_region_south from "./pages/Find_schedule_region_south";
+import Find_schedule_region_west from "./pages/Find_schedule_region_west";
+import Find_schedule_region_east from "./pages/Find_schedule_region_east";
 
 const ArtHub_App = () => {
   return (
@@ -24,6 +27,9 @@ const ArtHub_App = () => {
         <Route path="/About" element={<About />}></Route>
         <Route path="/User" element={<User />}></Route>
         <Route path="/North" element={<Find_schedule_region_north />}></Route>
+        <Route path="/South" element={<Find_schedule_region_south />}></Route>
+        <Route path="/West" element={<Find_schedule_region_west />}></Route>
+        <Route path="/East" element={<Find_schedule_region_east />}></Route>
       </Routes>
       <Footer />
     </div>
