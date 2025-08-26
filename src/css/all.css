@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.find_map_main, .footprint_card {
+.user_main, .find_map_main, .footprint_card {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
@@ -10,7 +10,7 @@
   align-items: center;
 }
 
-.type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+.footprint_content_box, .type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -902,8 +902,31 @@ a {
     width: 180px;
   }
 }
-.footprint_result {
+.hr_square_deco {
+  width: 100%;
+  height: 70px;
+  background-image: url(./images/My_footprint/hr_square_deco.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.user_sidebar_left {
+  display: flex;
+  flex-direction: column;
+}
+
+.footprint_content {
+  display: flex;
+  flex-direction: column;
+}
+.footprint_content .footprint_result {
   width: 40%;
+}
+
+.user_main {
+  background-color: #FDF7EB;
+  padding: 30px;
+  color: #39413A;
 }
 
 @font-face {
