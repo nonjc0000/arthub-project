@@ -1,11 +1,28 @@
 import React from "react";
 
-function BlogCard({ img, title, excerpt, tags = [] }) {
+function BlogCard({ img, title, excerpt, tags = [], type }) {
+    const getBadgeConfig = (type) => {
+        switch(type) {
+            case "熱門":
+                return { text: "熱門", className: "badge-hot" };
+            case "最新":
+                return { text: "最新", className: "badge-new" };
+            default:
+                return null;
+        }
+    };
+
+    const badgeConfig = getBadgeConfig(type);
+
     return (
         <div className="blog-card">
             <div className="img-box">
                 <img src={img} alt={title} />
-                <div className="badge">熱門</div>
+                {badgeConfig && (
+                    <div className={`badge ${badgeConfig.className}`}>
+                        {badgeConfig.text}
+                    </div>
+                )}
             </div>
             <div className="text-box">
                 <h3>{title}</h3>
