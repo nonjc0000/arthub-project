@@ -5,9 +5,12 @@
   background-color: $background;
 }
 
-.titlebox {
+.find_schedule_titlebox {
   display: flex;
   justify-content: center;
+  @media ($mediaSm) {
+    transform: scale(0.7);
+  }
 }
 .deco_line {
   display: flex;
@@ -16,6 +19,7 @@
   margin: $spacing-x-xl;
   img {
     width: $w-100;
+    max-width: 1600px;
     height: auto;
   }
 }
@@ -24,27 +28,22 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-content: center;
-  gap: 45px;
-  padding: $spacing-ex;
+
+  @media ($mediaSm) {
+    grid-template-columns: 1fr !important;
+  }
 }
 
-.dr-box {
-  width: $w-50;
-}
 .intro_photo {
   width: $w-50;
   display: block;
   margin: 0 auto;
 }
 
-.intro_down {
-  background-image: url("/public/images/Find_schedule/green_bg.png");
-}
-
 .txt {
   display: flex;
   text-align: center;
   justify-content: center;
-  padding-top: 135px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 30px;
 }

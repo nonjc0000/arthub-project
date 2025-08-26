@@ -10,7 +10,9 @@ const Region_card = ({ img, btnName, btnUrl }) => {
         {btnName}
       </Link>
       <Link to={btnUrl} className="btn_right">
-        <Button />
+        <div>
+          <Button />
+        </div>
       </Link>
     </div>
   );

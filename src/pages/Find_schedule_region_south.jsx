@@ -35,10 +35,10 @@ const Find_schedule_region_south = () => {
       </div>
       <section className="north">
         <figure>
-          <img
+          {/* <img
             src="/images/Find_schedule/beautiful-architecture-building-taipei-city.jpg"
             alt=""
-          />
+          /> */}
         </figure>
         <p>
           南部的市集，就是一場熱情與生活的展演。
@@ -48,7 +48,6 @@ const Find_schedule_region_south = () => {
           每一場都有濃濃的在地味與人情味。
           <br />
           適合喜歡人群、喜歡熱鬧、也喜歡邊逛邊吃邊聊的你。
-
         </p>
       </section>
       <div className="travelCard">

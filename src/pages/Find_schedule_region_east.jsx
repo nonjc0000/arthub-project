@@ -35,10 +35,10 @@ const Find_schedule_region_east = () => {
       </div>
       <section className="north">
         <figure>
-          <img
+          {/* <img
             src="/images/Find_schedule/beautiful-architecture-building-taipei-city.jpg"
             alt=""
-          />
+          /> */}
         </figure>
         <p>
           東部的市集像是自然延伸出的風景。

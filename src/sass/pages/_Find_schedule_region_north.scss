@@ -1,0 +1,38 @@
+@use "../variables/" as *;
+@use "../functions/" as *;
+
+.north_title h1 {
+  text-align: center;
+  margin: $spacing-y-lg;
+}
+
+.north_introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.north_slide {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: $w-60;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: $rad-lg;
+  }
+}
+
+.north_txt {
+  background-image: url("./images/Find_schedule/gr_bg02.png");
+  text-align: center;
+}
+
+.travelCard {
+  margin-top: $spacing-ex;
+  gap: $spacing-lg;
+  justify-items: center;
+}

@@ -35,10 +35,10 @@ const Find_schedule_region_west = () => {
       </div>
       <section className="north">
         <figure>
-          <img
+          {/* <img
             src="/images/Find_schedule/beautiful-architecture-building-taipei-city.jpg"
             alt=""
-          />
+          /> */}
         </figure>
         <p>
           中部總是剛剛好——不疾不徐、舒適寬闊。
@@ -48,7 +48,6 @@ const Find_schedule_region_west = () => {
           還是南投山城裡的農創小展，都藏著動人的風景與真誠的手工溫度。
           <br />
           來這裡，是放鬆，也是慢慢發現。
-    
         </p>
       </section>
       <div className="travelCard">
