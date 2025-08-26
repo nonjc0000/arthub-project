@@ -2,44 +2,71 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
-.find_type_main{
+.find_type_main {
     background-color: $background;
-    img{
-        width: 10px;
-        height: 10px;
+
+
+    .find_type_content_box{
+        display: flex;
+        margin-left: 80px;
+        gap: 125px;
+
+        .find_type_result{
+            width: 60%;
+            height: 800px;
+            margin-right: 150px;
+            outline:solid 1px red;
+            background-color: $white;
+            border-radius: $rad-lg;
+            @extend %flex-wrap;
+            gap: $spacing-xl;
+            padding-top:$spacing-xxl ;
+            overflow: auto;
+
+        }
+
     }
+
 }
 
-.type_search-box{
+
+.type_search-box {
     background-color: $white;
     display: flex;
-    width: 465px;
+    width: $w-30;
+    height: 660px;
     flex-direction: column;
     align-items: center;
     border: 1px solid red;
-    border-radius:$rad-lg ;
+    border-radius: $rad-lg ;
     padding: 20px;
-    
-    select{
-        width: 250px;
+    // margin-left: 80px ;
+    gap:auto;
+
+    .select {
+        
+        width: $w-80;
         height: 50px;
         border: none;
         border-bottom: 1px solid $black;
-        -webkit-appearance: none;
-        background: url(public\images\Polygon_select.svg);
+        
         background-size: 22px;
+        select{
+            @extend %remove_form_style;
+        }
     }
 
-    p{
+    p {
         text-align: left;
     }
 
-    .find_type_btn_box{
+    .find_type_btn_box {
         display: flex;
         flex-wrap: wrap;
         width: 380px;
         gap: 25px;
-        button{
+
+        button {
             flex: 1 1 45%;
             width: 175px;
             height: 45px;
@@ -49,13 +76,108 @@
             border-radius: $rad-ex;
         }
     }
-}
 
-.search{
-    display: flex;
-    border-radius: $rad-ex;
-    input{
-        width: 250px;
-        border: none;
+    .search {
+        @extend %flex-space-between;
+        border: $black solid 1px;
+        border-radius: $rad-ex;
+        border-radius: $rad-ex;
+        padding: $spacing-xxs $spacing-lg;
+        width: $w-80;
+        height: 40px;
+
+        input {
+            @extend %remove_form_style;
+            width: $w-100;
+        }
+
+        button {
+            @extend %remove_form_style;
+
+            img {
+                width: 25px;
+                height: 25px;
+                // object-fit: cover;
+            }
+        }
     }
 }
+
+.find_type_card {
+    width: 300px;
+    height: 360px;
+    background-color: $white;
+    border-radius: $rad-lg;
+    overflow: hidden;
+    border: solid 1px $black;
+
+    .find_type_card_wrap {
+        height: 240px;
+        background-color: #ccc;
+        padding: 10px;
+        @extend %flex-colum;
+        .top {
+            @extend %flex-space-between;
+
+            img {
+                width: 30px;
+                height: auto;
+            }
+        }
+
+        .date {
+            @extend %flex-colum;
+            gap: $spacing-xxs;
+;
+
+            figure {
+                width: 115px;
+                font-size: $f-s-xs;
+                color: $white;
+                background-color: $accent;
+                padding: 3px 5px;
+                border-radius: $rad-ex;
+                @extend %flex-space-between;
+
+                img {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+
+        }
+
+        .find_type_tag_box{
+            margin-top: auto;
+            display: flex;
+            gap: $spacing-xxs;
+;
+            button{
+                @extend %remove_form_style;
+                background-color: $accent;
+                color: $white;
+                border-radius: $rad-ex;
+             
+            }
+        }
+    }
+
+    .find_type_card_desc{
+        h2{
+            font-size: $f-s-basic;
+            font-weight: $f-w-b;
+            color:$text ;
+            padding:$spacing-xxs $spacing-md ;
+        }
+        p{
+            font-size: $f-s-xs;
+            font-weight: $f-w-r;
+            color:$text ;
+            @extend %flex-center ;
+            padding:0 $spacing-md ;
+            padding-bottom: $spacing-sm;
+        }
+    }
+
+}
+
