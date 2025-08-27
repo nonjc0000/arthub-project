@@ -1,0 +1,133 @@
+@use "../variables/" as *;
+@use "../functions/" as *;
+
+
+
+.container-home {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.home-bg {
+    background-color: $background;
+}
+
+.home-wrap {
+    aspect-ratio: 1920/900;
+    margin: 0 auto;
+    margin-top: 42px;
+}
+
+// 單純用flex並排
+.home-top {
+    display: flex;
+    position: relative;
+}
+
+.home-heading {
+    width: 40%;
+    margin-left: 100px;
+    margin-top: 200px;
+    margin-bottom: 250px;
+
+    h2 {
+        font-size: $f-s-xxxxxl;
+        font-family: $family-tc;
+        letter-spacing: 0.1rem;
+        padding-left: 40px;
+        font-weight: $f-w-m;
+        color: $dark;
+    }
+
+    .arrow {
+        width: 4%;
+        margin-top: 25px;
+        margin-left: 60px;
+    }
+}
+
+.stall-wrap {
+    margin-right: 100px;
+    width: 60%;
+    position: relative;
+    flex: 1;
+
+    .stall-item {
+        display: flex;
+
+        .stall-first {
+            position: absolute;
+            width: 50%;
+        }
+
+        .stall-second {
+            width: 60%;
+            position: absolute;
+            left: 35%;
+            top: 22%;
+        }
+
+        .stall-third {
+            width: 40%;
+            position: absolute;
+            top: 42%;
+            left: 5%;
+        }
+    }
+
+    .date-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        font-family: DM Sans;
+        color: $dark;
+        font-size: $f-s-xxxxl;
+        position: absolute;
+        bottom: 15%;
+        left: 60%;
+        .slash {
+            width: 2px;
+            height: 5rem;
+            background-color: $dark;
+            transform: rotate(40deg); 
+            margin-left:10px;
+            margin-top:60px;
+        }
+        .day {
+            margin-left:20px;
+            margin-top:100px;
+        }
+        .weekday {
+            font-weight: $f-w-m;
+            margin-top:100px;
+            margin-left:20px;
+        }
+        .weather {
+            width: 65px;
+            height: 65px;
+            margin-top: 90px;
+            margin-left:20px;
+        }
+        .temptemperature {
+            margin-left:20px;
+        }
+        .situation {
+            margin-left:20px;
+        }
+    }
+}
+
+// 第二塊
+.home-hot {
+    text-align: center;
+    font-family: $family-tc;
+    color: $dark;
+    h3 {
+        font-size: $f-s-xxxxl;
+    }
+    p {
+        font-family: $family-en;
+        font-size: $f-s-xl;
+    };
+}
