@@ -10,7 +10,7 @@ const Find_type = () => {
     return (
         <section className='find_type_main'>
             <h1 className='titleBox_h1'>
-                <img className='titleBox' src="../images/titlebox/find_type_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集分類Market Type' />
+                <img className='titleBox' src="./images/titlebox/find_type_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集分類Market Type' />
             </h1>
             <div className='find_type_content_box'>
 

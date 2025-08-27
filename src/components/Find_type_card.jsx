@@ -8,15 +8,15 @@ const Find_type_card = () => {
                     <div className='top'>
                         <div className='date'>
                             <figure>
-                                <img src="public\images\icon_date.svg" alt="" />
+                                <img src="./images/icon_date.svg" alt="" />
                                 <p>07/14-07/15</p>
                             </figure>
                             <figure>
-                                <img src="public\images\icon_time.svg" alt="" />
+                                <img src="./images/icon_time.svg" alt="" />
                                 <p>12:00~20:00</p>
                             </figure>
                         </div>
-                        <img src="public\images\likeBtn_fill.svg" alt="" />
+                        <img src="./images/likeBtn_fill.svg" alt="" />
                     </div>
                     <div className='find_type_tag_box'>
                         <button>#地區</button>
