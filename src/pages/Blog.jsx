@@ -319,6 +319,9 @@ function Blog() {
               selectedCategory={selectedCategory}
               onCategoryChange={handleCategoryChange}
             />
+            <div className="blog-illustration">
+              <img src="./images/blog/women-two.svg" alt="blog illustration" />
+            </div>
           </aside>
 
           {/* 右側：主要內容 */}

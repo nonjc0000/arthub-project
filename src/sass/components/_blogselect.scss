@@ -3,7 +3,6 @@
   border-radius: 20px;
   background: #fff;
   padding: 12px 8px;
-  
 
   ul {
     list-style: none;
@@ -13,19 +12,45 @@
 
   li {
     a {
-      display: block;
+      display: flex !important;
+      align-items: center !important;
+      flex-direction: row !important;
+      gap: 8px;
       padding: 12px 16px;
       border-radius: 12px;
       color: #222;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 16px;
       transition: background-color .2s;
 
-      &:hover { background: #fff6ec; }
+      .category-icon {
+        width: 26px;
+        height: 26px;
+        flex-shrink: 0;
+        opacity: 0.8;
+        transition: opacity .2s;
+      }
+
+      .category-name {
+        flex: 1;
+      }
+
+      &:hover { 
+        background: #fff6ec; 
+        
+        .category-icon {
+          opacity: 1;
+        }
+      }
 
       &.active {
         background: #fff1df;
         border: 1px solid #ED972E;
+        
+        .category-icon {
+          opacity: 1;
+          filter: brightness(0) saturate(100%) invert(60%) sepia(84%) saturate(2500%) hue-rotate(13deg); // 將圖示變成橘色
+        }
       }
     }
   }

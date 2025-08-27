@@ -71,6 +71,13 @@
   padding: 14px 18px 22px;
 }
 
+.blog-illustration img {
+  margin-top: 20px;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
 /* 兩欄：左側 170 + 右側 1fr */
 .blog-body {
   display: grid;
@@ -120,13 +127,13 @@
 
   // 搜尋按鈕
   &.search {
-    background-image: url("./images/blog/blog_serch.svg");
+    background-image: url("./images/blog/blog_search.svg");
   }
 
   // 撰寫按鈕
   &.write {
     background-image: url("./images/blog/blog_write.png");
-    background-color: transparent; // 這裡也可以拿掉底色
+    background-color: transparent; 
     border: none;
   }
 }
@@ -193,9 +200,9 @@
   .track {
     position: relative;
     height: 28px;
-    border: 1.5px solid #111;  // 加回邊框
-    border-radius: 8px;        // 改成跟左右箭頭一樣的圓角
-    background: #fff;          // 加回背景
+    border: none;              // 移除邊框
+    border-radius: 8px;
+    background: transparent;   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -203,8 +210,8 @@
     padding: 0 8px;
 
     .page-num {
-      border: none;              // 移除個別頁碼的邊框
-      background: transparent;   // 移除個別頁碼的背景
+      border: none;
+      background: transparent;
       border-radius: 6px;
       min-width: 28px;
       height: 22px;
@@ -213,17 +220,19 @@
       text-align: center;
       cursor: pointer;
 
-      &.is-active { 
-        background: #111; 
-        color: #fff; 
+      &.is-active {
+        background: #111;
+        color: #fff;
       }
-      
+
       &:hover:not(.is-active) {
-        background: rgba(219, 40, 40, 0.1);  // hover 效果
+        background: rgba(219, 40, 40, 0.1);
       }
     }
 
-    .dots { padding: 0 4px; }
+    .dots { 
+      padding: 0 4px; 
+    }
   }
 }
 

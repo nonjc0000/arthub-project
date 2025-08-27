@@ -332,20 +332,40 @@ a {
   padding: 4px 0;
 }
 .blog-select li a {
-  display: block;
+  display: flex !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 8px;
   padding: 12px 16px;
   border-radius: 12px;
   color: #222;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 16px;
   transition: background-color 0.2s;
+}
+.blog-select li a .category-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.blog-select li a .category-name {
+  flex: 1;
 }
 .blog-select li a:hover {
   background: #fff6ec;
 }
+.blog-select li a:hover .category-icon {
+  opacity: 1;
+}
 .blog-select li a.active {
   background: #fff1df;
   border: 1px solid #ED972E;
+}
+.blog-select li a.active .category-icon {
+  opacity: 1;
+  filter: brightness(0) saturate(100%) invert(60%) sepia(84%) saturate(2500%) hue-rotate(13deg);
 }
 
 .find_map_card {
@@ -882,6 +902,13 @@ a {
   padding: 14px 18px 22px;
 }
 
+.blog-illustration img {
+  margin-top: 20px;
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
 /* 兩欄：左側 170 + 右側 1fr */
 .blog-body {
   display: grid;
@@ -929,7 +956,7 @@ a {
   background-position: center;
 }
 .blog-toolbar .icon-btn.search {
-  background-image: url("./images/blog/blog_serch.svg");
+  background-image: url("./images/blog/blog_search.svg");
 }
 .blog-toolbar .icon-btn.write {
   background-image: url("./images/blog/blog_write.png");
@@ -992,9 +1019,9 @@ a {
 .blog-pagination .track {
   position: relative;
   height: 28px;
-  border: 1.5px solid #111;
+  border: none;
   border-radius: 8px;
-  background: #fff;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
