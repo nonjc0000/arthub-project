@@ -9,20 +9,25 @@
     .find_type_content_box{
         display: flex;
         margin-left: 80px;
-        gap: 125px;
+        gap: $spacing-xxl;
+
+        .result_box {
+            border: solid 1px $black;
+            width: $w-60;
+            padding: $spacing-md;
+            background-color: $white;
+            border-radius: $rad-lg ;
+            justify-content: center;
+            align-items: center;
+        }
 
         .find_type_result{
-            width: 60%;
-            height: 800px;
-            margin-right: 150px;
+            width: 95%;
             outline:solid 1px red;
             background-color: $white;
-            border-radius: $rad-lg;
             @extend %flex-wrap;
             gap: $spacing-xl;
-            padding-top:$spacing-xxl ;
             overflow: auto;
-
         }
 
     }
@@ -34,41 +39,50 @@
     background-color: $white;
     display: flex;
     width: $w-30;
-    height: 660px;
+    height: $h-80vh;
     flex-direction: column;
     align-items: center;
     border: 1px solid red;
     border-radius: $rad-lg ;
     padding: 20px;
-    // margin-left: 80px ;
-    gap:auto;
+    gap:$spacing-sm;
 
-    .select {
+    select {
         
-        width: $w-80;
+        width: $w-100;
         height: 50px;
         border: none;
         border-bottom: 1px solid $black;
         
         background-size: 22px;
-        select{
-            @extend %remove_form_style;
-        }
+      
+        @extend %remove_form_style;
+        
+    }
+
+    .button_box{
+        width: $w-80;
     }
 
     p {
+        border: solid 1px $black;
         text-align: left;
+        font-size: $f-s-sm;
     }
 
     .find_type_btn_box {
         display: flex;
         flex-wrap: wrap;
-        width: 380px;
+        justify-content: center;
+        width: $w-100;
         gap: 25px;
+        border: solid 1px $black;
 
         button {
-            flex: 1 1 45%;
-            width: 175px;
+            flex: 1 1 auto;
+            width: $w-30;
+            max-width: $w-40;
+            min-width: $w-20;
             height: 45px;
             border: none;
             color: $white;

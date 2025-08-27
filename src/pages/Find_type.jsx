@@ -40,7 +40,7 @@ const Find_type = () => {
                     </div>
 
                     {/* 按鈕篩選 */}
-                    <div>
+                    <div className='button_box'>
                         <p>篩選</p>
                         <div className='find_type_btn_box'>
                             <button>所有時間</button>
@@ -56,19 +56,21 @@ const Find_type = () => {
                         </select>
                     </div>
                 </form>
-
-                <div className='find_type_result'>
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
-                    <Find_type_card />
+                <div className='result_box'>
+                    <div className='find_type_result'>
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                        <Find_type_card />
+                    </div>
                 </div>
+
             </div>
         </section>
     )
