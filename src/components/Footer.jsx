@@ -7,7 +7,7 @@ const Footer = () => {
                 <li className='find_type'>
                     <Link to="/Find_type">
                         <p className='sitemap_item_content'>
-                            <img src="../images/icons/find_type.svg" style={{ width: '24px' }} />
+                            <img src="./images/icons/find_type.svg" style={{ width: '24px' }} />
                             找類型
                         </p>
                     </Link>
@@ -15,7 +15,7 @@ const Footer = () => {
                 <li className='find_map'>
                     <Link to="/Find_map">
                         <p className='sitemap_item_content'>
-                            <img src="../images/icons/find_map.svg" style={{ width: '24px' }} />
+                            <img src="./images/icons/find_map.svg" style={{ width: '24px' }} />
                             找地圖
                         </p>
                     </Link>
@@ -24,7 +24,7 @@ const Footer = () => {
 
                     <Link to="/Find_schedule">
                         <p className='sitemap_item_content'>
-                            <img src="../images/icons/find_schedule.svg" style={{ width: '24px' }} />
+                            <img src="./images/icons/find_schedule.svg" style={{ width: '24px' }} />
                             找行程
                         </p>
                     </Link>
@@ -32,7 +32,7 @@ const Footer = () => {
                 <li className='blog'>
                     <Link to="/Blog">
                     <p className='sitemap_item_content'>
-                    <img src="../images/icons/blog.svg" style={{ width: '24px' }} />
+                    <img src="./images/icons/blog.svg" style={{ width: '24px' }} />
                     部落格
                     </p>
                     </Link>
@@ -40,7 +40,7 @@ const Footer = () => {
                 <li className='about'>
                     <Link to="/About">
                     <p className='sitemap_item_content'>
-                    <img src="../images/icons/about.svg" style={{ width: '24px' }} />
+                    <img src="./images/icons/about.svg" style={{ width: '24px' }} />
                     關於我們
                     </p>
                     </Link>
@@ -48,7 +48,7 @@ const Footer = () => {
                 <li className='user'>
                     <Link to="/User">
                     <p className='sitemap_item_content'>
-                    <img src="../images/icons/user.svg" style={{ width: '24px' }} />
+                    <img src="./images/icons/user.svg" style={{ width: '24px' }} />
                     會員登入
                     </p>
                     </Link>

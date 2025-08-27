@@ -10,13 +10,13 @@ const Home = () => {
           <div className='home-top home-wrap'>
             <div className='home-heading'>
               <h2>周末不知道去哪?<br />就從一場市集開始吧!</h2>
-              <img className='arrow' src="../images/home/home_arrow.svg" alt="首頁箭頭" />
+              <img className='arrow' src="./images/home/home_arrow.svg" alt="首頁箭頭" />
             </div>
             <div className='stall-wrap'>
               <div className='stall-item'>
-                <img className='stall-first' src="../images/home/home-find_type.svg" alt="找類型攤位" />
-                <img className='stall-second' src="../images/home/home-find_map.svg" alt="找地圖攤位" />
-                <img className='stall-third' src="../images/home/home-find-schedule.svg" alt="找行程攤位" />
+                <img className='stall-first' src="./images/home/home-find_type.svg" alt="找類型攤位" />
+                <img className='stall-second' src="./images/home/home-find_map.svg" alt="找地圖攤位" />
+                <img className='stall-third' src="./images/home/home-find-schedule.svg" alt="找行程攤位" />
               </div>
               <div>
                 <div className="date-box">
