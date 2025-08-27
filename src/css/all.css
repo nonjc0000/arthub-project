@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.user_main, .find_map_main, .footprint_card {
+.user_main, .my_footprint_main, .find_map_main, .footprint_card {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
@@ -1070,10 +1070,15 @@ a {
     width: 180px;
   }
 }
+.my_footprint_main {
+  background-color: #FDF7EB;
+  padding: 30px;
+  color: #39413A;
+}
+
 .hr_square_deco {
   width: 100%;
   height: 70px;
-  background-image: url(./images/My_footprint/hr_square_deco.svg);
   background-position: center;
   background-repeat: no-repeat;
 }

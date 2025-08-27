@@ -8,7 +8,7 @@ const My_footprint = () => {
                 <img className='titleBox' src="./images/titlebox/my_footprint_titlebox.svg" alt='我的足跡My Footprints' />
             </h1>
 
-            <div className="hr_square_deco"></div>
+            <div className="hr_square_deco" style={{ backgroundImage: 'url("./images/My_footprint/hr_square_deco.svg")' }}></div>
 
             <section className="footprint_content_box">
 
