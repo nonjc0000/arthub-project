@@ -1,7 +1,7 @@
 /* 頁面外層 */
 .blog-page {
   padding-top: 80px;
-  background-image: url("/images/blog/blog_bg.jpg");
+  background-image: url("./images/blog/blog_bg.jpg");
   background-size: cover; // 覆蓋整個容器
   background-repeat: no-repeat; // 不重複
   background-position: center center; // 居中
@@ -24,14 +24,6 @@
   align-items: center;
   justify-content: center;
 
-  .hero-title{
-    background-image: url("../../images/blog/blog_sign.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-  }
 }
 
 /* 2) 描述段落 */
@@ -60,7 +52,7 @@
    Blog 裝飾條（兩排交錯圓點）
    =========================== */
 .blog-deco {
-  background-image: url("../../images/blog/blog_deco.svg");
+  background-image: url("./images/blog/blog_deco.svg");
   background-repeat: no-repeat;  // 不要無限延伸
   background-size: contain;      // 等比縮小，完全顯示在容器內
   background-position: center;   // 置中
@@ -128,12 +120,12 @@
 
   // 搜尋按鈕
   &.search {
-    background-image: url("../../images/blog/blog_serch.svg");
+    background-image: url("./images/blog/blog_serch.svg");
   }
 
   // 撰寫按鈕
   &.write {
-    background-image: url("../../images/blog/blog_write.png");
+    background-image: url("./images/blog/blog_write.png");
     background-color: transparent; // 這裡也可以拿掉底色
     border: none;
   }

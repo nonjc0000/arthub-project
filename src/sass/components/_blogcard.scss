@@ -51,7 +51,7 @@
           display: inline-block;
           width: 16px;
           height: 16px;
-          background: url("/images/blog/hot.svg") no-repeat center;
+          background: url("./images/blog/hot.svg") no-repeat center;
           background-size: contain;
         }
       }
@@ -65,7 +65,7 @@
           display: inline-block;
           width: 16px;
           height: 16px;
-          background: url("/public/images/blog/new.svg") no-repeat center;
+          background: url("./images/blog/new.svg") no-repeat center;
           background-size: contain;
       }
     }
