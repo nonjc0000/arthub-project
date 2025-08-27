@@ -41,17 +41,16 @@
       display: inline-flex;
       align-items: center;
       gap: 4px;
-
+      
       // 熱門標章
       &.badge-hot {
         background: #ED972E;
-
         &::before {
           content: "";
           display: inline-block;
           width: 16px;
           height: 16px;
-          background: url("./images/blog/hot.svg") no-repeat center;
+          background: url("/images/blog/hot.svg") no-repeat center;
           background-size: contain;
         }
       }
@@ -59,19 +58,17 @@
       // 最新標章
       &.badge-new {
         background: #ED972E;
-
         &::before {
           content: "";
           display: inline-block;
           width: 16px;
           height: 16px;
-          background: url("./images/blog/new.svg") no-repeat center;
+          background: url("/public/images/blog/new.svg") no-repeat center;
           background-size: contain;
+        }
       }
     }
   }
-}
-
 
   .text-box {
     padding: 16px;
@@ -85,6 +82,14 @@
       font-weight: 700;
       color: #222;
       line-height: 1.4;
+      
+      // 確保標題固定為兩行高度
+      height: calc(1.4em * 2); // 1.4em 是 line-height，2 是行數
+      
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2; // 將內容限制在兩行
+      overflow: hidden;
     }
 
     p {

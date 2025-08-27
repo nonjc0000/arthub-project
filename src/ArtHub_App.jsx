@@ -14,6 +14,7 @@ import Find_schedule_region_west from "./pages/Find_schedule_region_west";
 import Find_schedule_region_east from "./pages/Find_schedule_region_east";
 import My_footprint from "./pages/My_footprint";
 
+
 const ArtHub_App = () => {
   return (
     <div className="wrap">

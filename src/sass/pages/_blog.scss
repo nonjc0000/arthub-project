@@ -85,10 +85,10 @@
   gap: 26px;
 }
 
-/* 左欄固定在視窗上方一點點 */
+
 .blog-select-col {
-  padding-top: 6vh;
-  top: 12px;
+  padding-top: 0; 
+  top: 0; 
   align-self: start;
 }
 
@@ -100,16 +100,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4px 0 14px;
+  margin: 0 0 14px; 
 
   .tabs {
+    display: flex; 
     .tab {
-      background: #fff;
-      padding: 6px 8px;
+      
+      padding: 6px 12px; // 調整 padding 以容納圖示
       margin-right: 8px;
       border-radius: 10px;
       font-size: 14px;
       cursor: pointer;
+      border: none; // 移除邊框
+
+      display: flex;       
+      align-items: center; 
+      gap: 6px;            
+
+      img {
+        width: 16px;
+        height: 16px;
+        // 使用 CSS 濾鏡將白色 SVG 轉為黑色
+        filter: invert(1); 
+      }
     }
   }
 
