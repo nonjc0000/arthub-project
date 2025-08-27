@@ -80,7 +80,6 @@ a {
 
 .FooterBox {
   position: relative;
-  background-image: url(../../images/Footer/Footer.svg);
   background-size: cover;
   background-position: top;
   overflow: hidden;
@@ -265,7 +264,7 @@ a {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/images/blog/hot.svg") no-repeat center;
+  background: url("./images/blog/hot.svg") no-repeat center;
   background-size: contain;
 }
 .blog-card .img-box .badge.badge-new {
@@ -276,7 +275,7 @@ a {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("/public/images/blog/new.svg") no-repeat center;
+  background: url("./images/blog/new.svg") no-repeat center;
   background-size: contain;
 }
 .blog-card .text-box {
@@ -435,6 +434,130 @@ a {
 .footprint_card img {
   object-fit: cover;
   border-radius: 7.5px;
+}
+
+.region_card {
+  position: relative;
+}
+
+.region_card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width:640px) {
+  .region_card_img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.btn_top {
+  position: absolute;
+  top: -40px;
+  left: 40px;
+  background: #fff;
+  border: 2px solid #ED972E;
+  border-radius: 999px;
+  padding: 25px 15px;
+  writing-mode: vertical-lr;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.btn_top:hover {
+  background-color: #ED972E;
+  color: #fff;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: pulse 1s infinite;
+}
+@media (max-width:640px) {
+  .btn_top {
+    top: -15px;
+    left: 40px;
+    padding: 18px 8px;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+  }
+}
+
+/* 右下角按鈕 */
+.btn_right {
+  position: absolute;
+  right: -30px;
+  bottom: 40px;
+  display: inline-block;
+  transform: scale(0.8);
+}
+@media (max-width:640px) {
+  .btn_right {
+    right: 40px;
+    bottom: 20px;
+    transform: scale(0.3);
+  }
+}
+
+/* 呼吸動畫 keyframes */
+@keyframes pulse {
+  0% {
+    transform: translateY(-2px) scale(1.05);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.12);
+  }
+  100% {
+    transform: translateY(-2px) scale(1.05);
+  }
+}
+.travel-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.travel-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  max-width: 900px;
+}
+.travel-card .card-image {
+  flex: 1;
+}
+.travel-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.travel-card .card-content {
+  flex: 2;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.travel-card .card-content .card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+.travel-card .card-content .card-description {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.travel-card .card-content .card-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .find_map_main {
@@ -645,9 +768,14 @@ a {
   background-color: #FDF7EB;
 }
 
-.titlebox {
+.find_schedule_titlebox {
   display: flex;
   justify-content: center;
+}
+@media (max-width:640px) {
+  .find_schedule_titlebox {
+    transform: scale(0.7);
+  }
 }
 
 .deco_line {
@@ -658,6 +786,7 @@ a {
 }
 .deco_line img {
   width: 100%;
+  max-width: 1600px;
   height: auto;
 }
 
@@ -665,12 +794,11 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-content: center;
-  gap: 45px;
-  padding: 110px;
 }
-
-.dr-box {
-  width: 50%;
+@media (max-width:640px) {
+  .region {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .intro_photo {
@@ -679,22 +807,18 @@ a {
   margin: 0 auto;
 }
 
-.intro_down {
-  background-image: url("/public/images/Find_schedule/green_bg.png");
-}
-
 .txt {
   display: flex;
   text-align: center;
   justify-content: center;
-  padding-top: 135px;
-  padding-bottom: 60px;
+  padding-top: 50px;
+  padding-bottom: 30px;
 }
 
 /* 頁面外層 */
 .blog-page {
   padding-top: 80px;
-  background-image: url("/images/blog/blog_bg.jpg");
+  background-image: url("./images/blog/blog_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -713,14 +837,6 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.blog-hero .hero-title {
-  background-image: url("../../images/blog/blog_sign.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100%;
-  width: 100%;
 }
 
 /* 2) 描述段落 */
@@ -748,7 +864,7 @@ a {
    Blog 裝飾條（兩排交錯圓點）
    =========================== */
 .blog-deco {
-  background-image: url("../../images/blog/blog_deco.svg");
+  background-image: url("./images/blog/blog_deco.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -813,10 +929,10 @@ a {
   background-position: center;
 }
 .blog-toolbar .icon-btn.search {
-  background-image: url("../../images/blog/blog_serch.svg");
+  background-image: url("./images/blog/blog_serch.svg");
 }
 .blog-toolbar .icon-btn.write {
-  background-image: url("../../images/blog/blog_write.png");
+  background-image: url("./images/blog/blog_write.png");
   background-color: transparent;
   border: none;
 }
@@ -959,6 +1075,161 @@ a {
   background-color: #FDF7EB;
   padding: 30px;
   color: #39413A;
+}
+
+.north_title h1 {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.north_introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.north_slide {
+  display: flex;
+  justify-content: center;
+}
+.north_slide img {
+  width: 60%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 30px;
+}
+
+.north_txt {
+  background-image: url("./images/Find_schedule/intro.png");
+  text-align: center;
+}
+
+.travelCard {
+  margin-top: 110px;
+  gap: 25px;
+  justify-items: center;
+}
+
+.container-home {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.home-bg {
+  background-color: #FDF7EB;
+}
+
+.home-wrap {
+  aspect-ratio: 1920/900;
+  margin: 0 auto;
+  margin-top: 42px;
+}
+
+.home-top {
+  display: flex;
+  position: relative;
+}
+
+.home-heading {
+  width: 40%;
+  margin-left: 100px;
+  margin-top: 200px;
+  margin-bottom: 250px;
+}
+.home-heading h2 {
+  font-size: 2.5rem;
+  font-family: "Noto Sans TC", san-serif;
+  letter-spacing: 0.1rem;
+  padding-left: 40px;
+  font-weight: 500;
+  color: #413B35;
+}
+.home-heading .arrow {
+  width: 4%;
+  margin-top: 25px;
+  margin-left: 60px;
+}
+
+.stall-wrap {
+  margin-right: 100px;
+  width: 60%;
+  position: relative;
+  flex: 1;
+}
+.stall-wrap .stall-item {
+  display: flex;
+}
+.stall-wrap .stall-item .stall-first {
+  position: absolute;
+  width: 50%;
+}
+.stall-wrap .stall-item .stall-second {
+  width: 60%;
+  position: absolute;
+  left: 35%;
+  top: 22%;
+}
+.stall-wrap .stall-item .stall-third {
+  width: 40%;
+  position: absolute;
+  top: 42%;
+  left: 5%;
+}
+.stall-wrap .date-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: DM Sans;
+  color: #413B35;
+  font-size: 2.25rem;
+  position: absolute;
+  bottom: 15%;
+  left: 60%;
+}
+.stall-wrap .date-box .slash {
+  width: 2px;
+  height: 5rem;
+  background-color: #413B35;
+  transform: rotate(40deg);
+  margin-left: 10px;
+  margin-top: 60px;
+}
+.stall-wrap .date-box .day {
+  margin-left: 20px;
+  margin-top: 100px;
+}
+.stall-wrap .date-box .weekday {
+  font-weight: 500;
+  margin-top: 100px;
+  margin-left: 20px;
+}
+.stall-wrap .date-box .weather {
+  width: 65px;
+  height: 65px;
+  margin-top: 90px;
+  margin-left: 20px;
+}
+.stall-wrap .date-box .temptemperature {
+  margin-left: 20px;
+}
+.stall-wrap .date-box .situation {
+  margin-left: 20px;
+}
+
+.home-hot {
+  text-align: center;
+  font-family: "Noto Sans TC", san-serif;
+  color: #413B35;
+}
+.home-hot h3 {
+  font-size: 2.25rem;
+}
+.home-hot p {
+  font-family: "DM Sans", san-serif;
+  font-size: 1.5rem;
 }
 
 @font-face {

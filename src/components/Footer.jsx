@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
-        <div className='FooterBox'>
+        <div className='FooterBox' style={{ backgroundImage: 'url("./images/Footer/Footer.svg")' }}>
             <ul className='sitemap'>
                 <li className='find_type'>
                     <Link to="/Find_type">
