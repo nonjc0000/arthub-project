@@ -1,6 +1,14 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
+.my_footprint_main{
+     background-color: $background;
+    // height: $h-100vh;
+    padding: $spacing-xl;
+    @extend %main_font-family_setting;
+    color: $text;
+}
+
 .hr_square_deco {
     width: 100%;
     height: 70px;

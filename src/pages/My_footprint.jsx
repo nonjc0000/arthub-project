@@ -3,7 +3,7 @@ import My_footprint_card from '../components/My_footprint_card'
 
 const My_footprint = () => {
     return (
-        <section className='my_footprint_container'>
+        <main className='my_footprint_main'>
             <h1 className='titleBox_h1'>
                 <img className='titleBox' src="./images/titlebox/my_footprint_titlebox.svg" alt='我的足跡My Footprints' />
             </h1>
@@ -74,7 +74,7 @@ const My_footprint = () => {
 
 
 
-        </section>
+        </main>
     )
 }
 

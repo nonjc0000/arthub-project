@@ -9,7 +9,7 @@ const NavBar = () => {
                 <li><Link to="/Find_schedule">找行程</Link></li>
                 <li><Link to="/Blog">部落格</Link></li>
                 <li><Link to="/About">關於我們</Link></li>
-                <li><Link to="/User">會員登入</Link></li>
+                <li><Link to="/My_footprint">會員登入</Link></li>
             </ul>
         </div >
     )
