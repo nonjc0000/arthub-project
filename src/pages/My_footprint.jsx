@@ -5,7 +5,7 @@ const My_footprint = () => {
     return (
         <section className='my_footprint_container'>
             <h1 className='titleBox_h1'>
-                <img className='titleBox' src="../images/titlebox/my_footprint_titlebox.svg" alt='我的足跡My Footprints' />
+                <img className='titleBox' src="./images/titlebox/my_footprint_titlebox.svg" alt='我的足跡My Footprints' />
             </h1>
 
             <div className="hr_square_deco"></div>

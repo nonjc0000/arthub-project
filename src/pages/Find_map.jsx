@@ -7,7 +7,7 @@ const Find_map = () => {
     <>
       <main className='find_map_main'>
         <h1 className='titleBox_h1'>
-          <img className='titleBox' src="../images/titlebox/find_map_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
+          <img className='titleBox' src="./images/titlebox/find_map_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
         </h1>
 
         <section className='find_map_content_box'>
@@ -56,11 +56,11 @@ const Find_map = () => {
 
         <div className='map_deco-box'>
           <figure className='map_deco1'>
-            <img src="../images/decorations/deco-road_sign.svg" alt="路牌裝飾" />
+            <img src="./images/decorations/deco-road_sign.svg" alt="路牌裝飾" />
           </figure>
 
           <figure className='map_deco2'>
-            <img src="../images/decorations/deco-raisehand_allegator.svg" alt="" />
+            <img src="./images/decorations/deco-raisehand_allegator.svg" alt="" />
           </figure>
         </div>
 
