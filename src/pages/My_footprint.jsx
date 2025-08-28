@@ -1,5 +1,6 @@
 import React from 'react'
 import My_footprint_card from '../components/My_footprint_card'
+import { Link } from 'react-router-dom'
 
 const My_footprint = () => {
     return (
@@ -13,18 +14,19 @@ const My_footprint = () => {
             <section className="footprint_content_box">
 
                 <aside className="user_sidebar_left">
-                    <div className='sidebar_item'>
+                    
+                    <Link to={'/My_footprint'} className='sidebar_item'>
                         <div className='pageToggle'></div>
                         <p>我的足跡</p>
-                    </div>
-                    <div className='sidebar_item'>
+                    </Link>
+                    <Link to={'/Notifications'} className='sidebar_item'>
                         <div className='pageToggle'></div>
                         <p>訊息通知</p>
-                    </div>
-                    <div className='sidebar_item'>
+                    </Link>
+                    <Link to={'/Order_management'} className='sidebar_item'>
                         <div className='pageToggle'></div>
                         <p>訂單管理</p>
-                    </div>
+                    </Link>
 
                 </aside>
 

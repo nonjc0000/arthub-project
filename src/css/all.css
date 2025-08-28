@@ -1143,15 +1143,19 @@ a {
 }
 
 .user_sidebar_left {
-  width: 50%;
+  align-items: center;
+  padding: 20px;
+  width: 100%;
+  background-color: #DEBFA0;
 }
 .user_sidebar_left .sidebar_item {
   display: flex;
 }
 .user_sidebar_left .pageToggle {
-  border: 1px solid #000;
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
+  margin-right: 20px;
+  background-color: #fff;
 }
 
 .footprint_content .footprint_result {

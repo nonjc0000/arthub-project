@@ -7,12 +7,14 @@ import Find_map from "./pages/Find_map";
 import Find_schedule from "./pages/Find_schedule";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
+import My_footprint from "./pages/My_footprint";
+import Notifications from "./pages/Notifications";
+import Order_management from "./pages/Order_management";
 import Footer from "./components/Footer";
 import Find_schedule_region_north from "./pages/Find_schedule_region_north";
 import Find_schedule_region_south from "./pages/Find_schedule_region_south";
 import Find_schedule_region_west from "./pages/Find_schedule_region_west";
 import Find_schedule_region_east from "./pages/Find_schedule_region_east";
-import My_footprint from "./pages/My_footprint";
 
 
 const ArtHub_App = () => {
@@ -27,6 +29,8 @@ const ArtHub_App = () => {
         <Route path="/Blog" element={<Blog />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/My_footprint" element={<My_footprint/>}></Route>
+        <Route path="/Notifications" element={<Notifications/>}></Route>
+        <Route path="/Order_management" element={<Order_management/>}></Route>
         <Route path="/North" element={<Find_schedule_region_north />}></Route>
         <Route path="/South" element={<Find_schedule_region_south />}></Route>
         <Route path="/West" element={<Find_schedule_region_west />}></Route>

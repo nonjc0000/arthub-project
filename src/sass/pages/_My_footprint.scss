@@ -23,16 +23,21 @@
 
 .user_sidebar_left {
     @extend %flex-column;
-    width: $w-50;
+    align-items: center;
+    padding: $spacing-md;
+    width: $w-100;
+    background-color: $secondary;
 
     .sidebar_item {
         display: flex
     }
 
     .pageToggle {
-        border: 1px solid $black;
-        width: 24px;
-        height: 24px;
+        // border: 1px solid $black;
+        width: 21px;
+        height: 21px;
+        margin-right: $spacing-md;
+        background-color: $white;
     }
 
 }
