@@ -42,20 +42,13 @@
   }
 }
 
-  /* 裝飾條：base64 + repeat-x */
-.blog-hero {
-  width: 35vh;
-  justify-content: center;
-}
 
-/* ===========================
-  Blog 裝飾條（兩排交錯圓點）
-   =========================== */
+
 .blog-deco {
   background-image: url("./images/blog/blog_deco.svg");
-  background-repeat: no-repeat;  // 不要無限延伸
-  background-size: contain;      // 等比縮小，完全顯示在容器內
-  background-position: center;   // 置中
+  background-repeat: no-repeat;  
+  background-size: contain;      
+  background-position: center;   
   height: 70px; 
   width: 60.3%;
   overflow: hidden;
