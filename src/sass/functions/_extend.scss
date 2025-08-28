@@ -29,3 +29,11 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+%multiple-lines {
+    // 文字的多行省略
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}

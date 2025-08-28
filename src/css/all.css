@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-.type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
+.type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .top .like_button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
   border: none;
   outline: none;
   background: none;
@@ -30,6 +30,13 @@
 .find_type_main .find_type_content_box .find_type_result {
   display: flex;
   flex-wrap: wrap;
+}
+
+.find_type_card .find_type_card_desc p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
 }
 
 * {
@@ -264,7 +271,7 @@ a {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("./images/blog/hot.svg") no-repeat center;
+  background: url("/images/blog/hot.svg") no-repeat center;
   background-size: contain;
 }
 .blog-card .img-box .badge.badge-new {
@@ -275,7 +282,7 @@ a {
   display: inline-block;
   width: 16px;
   height: 16px;
-  background: url("./images/blog/new.svg") no-repeat center;
+  background: url("/public/images/blog/new.svg") no-repeat center;
   background-size: contain;
 }
 .blog-card .text-box {
@@ -290,6 +297,11 @@ a {
   font-weight: 700;
   color: #222;
   line-height: 1.4;
+  height: 2.8em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .blog-card .text-box p {
   font-size: 14px;
@@ -661,51 +673,83 @@ a {
 .find_type_main .find_type_content_box {
   display: flex;
   margin-left: 80px;
-  gap: 125px;
+  gap: 40px;
 }
-.find_type_main .find_type_content_box .find_type_result {
-  width: 60%;
-  height: 800px;
-  margin-right: 150px;
-  outline: solid 1px red;
+.find_type_main .find_type_content_box .result_box {
+  display: flex;
+  width: 70%;
+  height: 910px;
+  padding: 50px 50px 40px 50px;
   background-color: #fff;
   border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.find_type_main .find_type_content_box .find_type_result {
+  width: 89%;
+  height: 100%;
+  background-color: #fff;
+  align-items: center;
   gap: 30px;
-  padding-top: 40px;
   overflow: auto;
+}
+.find_type_main .find_type_img1,
+.find_type_main .find_type_img2 {
+  position: absolute;
+  width: 200px;
+}
+.find_type_main .find_type_img1 {
+  bottom: -640px;
+  left: 110px;
+  z-index: 2;
+}
+.find_type_main .find_type_img2 {
+  bottom: -675px;
+  left: 365px;
+  transform: rotate(2deg);
 }
 
 .type_search-box {
   background-color: #fff;
   display: flex;
-  width: 30%;
-  height: 660px;
+  width: 25%;
+  height: 80%;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border: 1px solid red;
   border-radius: 30px;
-  padding: 20px;
-  gap: auto;
+  padding: 45px 20px;
+  gap: 60px;
 }
 .type_search-box .select {
+  display: flex;
   width: 80%;
   height: 50px;
   border: none;
   border-bottom: 1px solid #000;
   background-size: 22px;
 }
+.type_search-box .select select {
+  width: 100%;
+}
+.type_search-box .button_box {
+  width: 80%;
+}
 .type_search-box p {
+  padding-left: 5px;
   text-align: left;
+  font-size: 0.875rem;
 }
 .type_search-box .find_type_btn_box {
-  display: flex;
-  flex-wrap: wrap;
-  width: 380px;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  padding-top: 10px;
+  justify-content: center;
+  width: 100%;
   gap: 25px;
 }
 .type_search-box .find_type_btn_box button {
-  flex: 1 1 45%;
-  width: 175px;
+  max-width: 170px;
   height: 45px;
   border: none;
   color: #fff;
@@ -729,27 +773,27 @@ a {
 }
 
 .find_type_card {
-  width: 300px;
-  height: 360px;
+  width: 230px;
+  height: 300px;
   background-color: #fff;
   border-radius: 30px;
   overflow: hidden;
   border: solid 1px #000;
 }
 .find_type_card .find_type_card_wrap {
-  height: 240px;
+  height: 200px;
   background-color: #ccc;
   padding: 10px;
 }
-.find_type_card .find_type_card_wrap .top img {
-  width: 30px;
+.find_type_card .find_type_card_wrap .top .like_button img {
+  width: 25px;
   height: auto;
 }
 .find_type_card .find_type_card_wrap .date {
   gap: 5px;
 }
 .find_type_card .find_type_card_wrap .date figure {
-  width: 115px;
+  width: 100px;
   font-size: 0.75rem;
   color: #fff;
   background-color: #ED972E;
@@ -782,6 +826,7 @@ a {
   color: #39413A;
   padding: 0 20px;
   padding-bottom: 15px;
+  -webkit-line-clamp: 3;
 }
 
 .container {
@@ -916,10 +961,9 @@ a {
   gap: 26px;
 }
 
-/* 左欄固定在視窗上方一點點 */
 .blog-select-col {
-  padding-top: 6vh;
-  top: 12px;
+  padding-top: 0;
+  top: 0;
   align-self: start;
 }
 
@@ -933,15 +977,26 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 4px 0 14px;
+  margin: 0 0 14px;
+}
+.blog-toolbar .tabs {
+  display: flex;
 }
 .blog-toolbar .tabs .tab {
-  background: #fff;
-  padding: 6px 8px;
+  padding: 6px 12px;
   margin-right: 8px;
   border-radius: 10px;
   font-size: 14px;
   cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.blog-toolbar .tabs .tab img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
 }
 .blog-toolbar .icon-btn {
   background: #fff;

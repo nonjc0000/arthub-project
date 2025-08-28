@@ -8,15 +8,17 @@ const Find_type_card = () => {
                     <div className='top'>
                         <div className='date'>
                             <figure>
-                                <img src="./images/Find_type/icon_date.svg" alt="" />
+                                <img src="./images/Find_type/icon_date.svg" alt="日曆裝飾圖片" />
                                 <p>07/14-07/15</p>
                             </figure>
                             <figure>
-                                <img src="./images/Find_type/icon_time.svg" alt="" />
+                                <img src="./images/Find_type/icon_time.svg" alt="時間裝飾圖片" />
                                 <p>12:00~20:00</p>
                             </figure>
                         </div>
-                        <img src="./images/Find_type/likeBtn_fill.svg" alt="" />
+                        <button className='like_button'>
+                            <img src="./images/Find_type/likeBtn_fill.svg" alt="" />
+                        </button>
                     </div>
                     <div className='find_type_tag_box'>
                         <button>#地區</button>

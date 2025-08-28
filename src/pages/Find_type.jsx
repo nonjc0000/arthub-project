@@ -15,7 +15,7 @@ const Find_type = () => {
             <div className='find_type_content_box'>
 
                 {/* 搜尋表單 */}
-                <form className='type_search-box' /* id='type_serch' method="post" accept-charset="UTF-8" */>
+                <form className='type_search-box' id='type_serch' method="post" accept-charset="UTF-8">
 
                     {/* 關鍵字搜尋 */}
                     <div className='search'>
@@ -70,7 +70,8 @@ const Find_type = () => {
                         <Find_type_card />
                     </div>
                 </div>
-
+                <figure className='find_type_img1'><img  src="./images/Find_type/normal_wani.svg" alt="鱷魚裝飾" /></figure>
+                <figure className='find_type_img2'><img src="./images/Find_type/road_sign.svg" alt="路牌裝飾" /></figure>
             </div>
         </section>
     )
