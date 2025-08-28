@@ -28,7 +28,6 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-content: center;
-
   @media ($mediaSm) {
     grid-template-columns: 1fr !important;
   }
