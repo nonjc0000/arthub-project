@@ -1399,12 +1399,16 @@ a {
   color: #555;
   font-size: 1rem;
   border-radius: 8px;
-  transition: background-color 0.2s, color 0.2s;
+  transition: color 0.2s;
 }
-.blog-select ul li a.active, .blog-select ul li a:hover {
-  background-color: #e6f7ff;
-  color: #007bff;
+.blog-select ul li a.active {
+  background-color: transparent;
+  color: #ff5722;
   font-weight: bold;
+}
+.blog-select ul li a:hover {
+  background-color: transparent;
+  color: #ff5722;
 }
 .blog-select ul li a .category-icon {
   width: 20px;

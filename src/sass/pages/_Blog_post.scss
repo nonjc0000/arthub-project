@@ -80,7 +80,6 @@
   }
 }
 
-
 // BlogSelect.jsx 的 ul 列表樣式
 .blog-select {
   ul {
@@ -99,12 +98,18 @@
         color: #555;
         font-size: 1rem;
         border-radius: 8px;
-        transition: background-color 0.2s, color 0.2s;
+        transition: color 0.2s; // 只保留文字顏色的過渡效果
         
-        &.active, &:hover {
-          background-color: #e6f7ff;
-          color: #007bff;
+        &.active {
+          // 選中狀態，純粹改變文字顏色和粗細
+          background-color: transparent; // 移除背景顏色
+          color: #ff5722; // 選中時改為橘色
           font-weight: bold;
+        }
+
+        &:hover {
+          background-color: transparent; // 移除滑鼠懸停時的背景顏色
+          color: #ff5722; // 懸停時也變為橘色
         }
 
         .category-icon {
