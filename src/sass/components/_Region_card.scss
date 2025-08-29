@@ -1,79 +1,112 @@
 @use "../variables/" as *;
 @use "../functions/" as *;
 
+/* 卡片：定位基準 */
 .region_card {
   position: relative;
-  // border-radius: 16px;
-  // overflow: hidden;
-}
-.region_card_img {
-  width: $w-100;
-  height: $w-100;
-  // aspect-ratio: 4/3;
-  object-fit: cover;
-  display: block;
+  overflow: visible; // 若要只裁圖片，改用 .media 包一層（見下方備註）
+  z-index: 0;
+
   @media ($mediaSm) {
-    width: $w-100;
-    height: auto;
-    object-fit: cover;
+    width: clamp(220px, 85vw, 340px);
+    /* ↓自己調上限 */
+    margin-inline: auto;
   }
 }
-// 左上角按鈕
+
+.region_card_img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  /* 手機也維持 100% 寬，避免按鈕基準與圖片不同步 */
+  @media ($mediaSm) {
+    // 若你用變數，請確認用法：@media #{$mediaSm}
+    width: 100%;
+    height: auto;
+    object-fit: cover; // 若有固定高/比例才生效
+  }
+}
+
+/* 覆蓋層：鋪滿整張卡片，讓 z-index 在圖片之上即可 */
+.regionButton {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  /* 不要關掉 pointer-events，避免 Link 點不到 */
+}
+
+/* 左上角按鈕 */
 .btn_top {
   position: absolute;
-  top: -40px;
-  left: 40px;
+  top: 0;
+  left: 0;
+  translate: 40% -20%;
+  transform-origin: top left;
+  scale: .8;
+  z-index: 2;
+
   background: $white;
   border: 2px solid $accent;
   border-radius: $rad-ex;
   padding: 25px 15px;
   writing-mode: vertical-lr;
-  font-weight: $f-w-m;
+  text-orientation: upright;
   letter-spacing: 3px;
   text-decoration: none;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  pointer-events: auto;
+
+  transition: translate .25s ease, scale .25s ease,
+  box-shadow .25s ease, background-color .25s ease, color .25s ease;
+
+  @media($mediaSm) {
+
+    translate: -15% -15%;
+    transform-origin: top left;
+    scale: .6;
+
+  }
 
   &:hover {
     background-color: $accent;
     color: $white;
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    animation: pulse 1s infinite;
+    scale: 1.05;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .2);
+    animation: pulse 1.1s ease-in-out infinite; // ★ 把動畫套上
   }
+  
 
-  @media ($mediaSm) {
-    top: -15px;
-    left: 40px;
-    padding: 18px 8px;
-    font-size: $f-s-xs;
-    letter-spacing: 2px;
-  }
 }
 
 /* 右下角按鈕 */
 .btn_right {
   position: absolute;
-  right: -30px;
-  bottom: 40px;
+  right: 0;
+  bottom: 0;
+  translate: 24% 24%; // 往外飄（X 正、Y 正）
+  transform-origin: bottom right;
+  scale: .7;
   display: inline-block;
-  transform: scale(0.8);
+  z-index: 2;
+  pointer-events: auto;
 
   @media ($mediaSm) {
-    right: 40px;
-    bottom: 20px;
-    transform: scale(0.3);
+    translate: 8% 14%;
+    scale: .5;
   }
 }
 
-/* 呼吸動畫 keyframes */
+/* 呼吸動畫 */
 @keyframes pulse {
-  0% {
-    transform: translateY(-2px) scale(1.05);
-  }
-  50% {
-    transform: translateY(-2px) scale(1.12);
-  }
+
+  0%,
   100% {
-    transform: translateY(-2px) scale(1.05);
+    scale: 0.8;
   }
+
+  50% {
+    scale: 0.85;
+  }
+
+
 }

@@ -8,15 +8,18 @@
 .find_schedule_titlebox {
   display: flex;
   justify-content: center;
+
   @media ($mediaSm) {
     transform: scale(0.7);
   }
 }
+
 .deco_line {
   display: flex;
   justify-content: center;
   padding-top: $spacing-xl;
   margin: $spacing-x-xl;
+
   img {
     width: $w-100;
     max-width: 1600px;
@@ -28,15 +31,16 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   justify-content: center;
-  @media ($mediaSm) {
-    grid-template-columns: 1fr !important;
-  }
-}
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: 60px;
+  gap: 70px;
 
-.intro_photo {
-  width: $w-50;
-  display: block;
-  margin: 0 auto;
+  @media ($mediaSm) {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
 }
 
 .txt {
@@ -44,5 +48,19 @@
   text-align: center;
   justify-content: center;
   padding-top: 50px;
-  padding-bottom: 30px;
+  padding-bottom: $spacing-ex;
+
+  @media($mediaSm) {
+    font-size: $f-s-xs;
+  }
+}
+
+.intro_photo {
+  width: $w-70;
+  display: block;
+  margin: 0 auto;
+
+  @media ($mediaSm) {
+    width: $w-80;
+  }
 }
