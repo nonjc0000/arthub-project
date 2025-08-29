@@ -4,20 +4,16 @@
 
 // 外層容器，設定頁面背景
 .post-page-container {
-  background-color: #f7f7f7; // 淺灰色背景
+  background-image: url("./images/blog/blog_bg.jpg");
   min-height: 100vh;
-  padding: 0; // 移除多餘內距
+  padding: 0;
 }
 
-// 主內容的白色「卡片」外框
 .post-wrapper {
   max-width: 1200px;
-  margin: 40px auto; // 增加上下邊距，並居中
-  border: 1px solid #e0e0e0;
+  margin: 40px auto;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  overflow: hidden; // 防止內容溢出
+  overflow: hidden;
   display: flex;
 
   @media (max-width: 992px) {
@@ -29,21 +25,29 @@
 // 雙欄佈局容器
 .post-body-container {
   display: flex;
-  width: 100%; // 確保佔滿父容器
+  width: 100%;
 }
 
 // 左側選單欄位容器
 .post-select-col {
   flex-shrink: 0;
-  width: 250px;
   padding: 30px 20px;
-  border-right: 1px solid #eee;
 
   @media (max-width: 992px) {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #eee;
     padding: 20px;
+  }
+}
+
+// 讓 BlogSelect 標題與搜尋框更協調
+.post-select-col {
+  h2.select-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 25px; // 確保標題下方有足夠空間
   }
 }
 
@@ -55,7 +59,7 @@
   .search-box {
     width: 100%;
     padding: 10px 15px;
-    padding-right: 40px; // 為圖標留出空間
+    padding-right: 40px;
     border: 1px solid #ddd;
     border-radius: 20px;
     font-size: 1rem;
@@ -64,8 +68,8 @@
 
     &:focus {
       outline: none;
-      border-color: #007bff;
-      box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+      border-color: #ff5722; // 調整為與設計更匹配的顏色
+      box-shadow: 0 0 5px rgba(255, 87, 34, 0.25);
     }
   }
 
@@ -80,48 +84,10 @@
   }
 }
 
-// BlogSelect.jsx 的 ul 列表樣式
-.blog-select {
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin-bottom: 15px;
-      
-      a {
-        display: flex;
-        align-items: center;
-        padding: 12px 15px;
-        text-decoration: none;
-        color: #555;
-        font-size: 1rem;
-        border-radius: 8px;
-        transition: color 0.2s; // 只保留文字顏色的過渡效果
-        
-        &.active {
-          // 選中狀態，純粹改變文字顏色和粗細
-          background-color: transparent; // 移除背景顏色
-          color: #ff5722; // 選中時改為橘色
-          font-weight: bold;
-        }
-
-        &:hover {
-          background-color: transparent; // 移除滑鼠懸停時的背景顏色
-          color: #ff5722; // 懸停時也變為橘色
-        }
-
-        .category-icon {
-          width: 20px;
-          height: 20px;
-          margin-right: 10px;
-        }
-      }
-    }
-  }
+// 讓 BlogSelect 元件在左側選單中正確顯示
+.blog-select-wrapper {
+  margin-top: 15px; // 新增這行，確保搜尋框與選單之間有間隔
 }
-
 
 // 右側主要內容面板
 .post-content-panel {
@@ -342,28 +308,5 @@
         }
       }
     }
-  }
-}
-
-// 響應式設計
-@media (max-width: 768px) {
-  .post-body-container {
-    flex-direction: column;
-  }
-  .post-select-col {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-  }
-  .post-content-panel {
-    padding: 20px;
-  }
-  .search-area {
-    justify-content: center;
-  }
-  .post-meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
   }
 }

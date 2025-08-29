@@ -28,7 +28,7 @@
 
 /* 2) 描述段落 */
 .blog-desc {
-  margin-top: 18px;
+  margin-top: 65px;
   display: flex;
   justify-content: center;
 
@@ -38,7 +38,6 @@
     line-height: 1.9;
     font-size: 16px;
     color: #333;
-    margin: 0 16px 14px;
   }
 }
 
@@ -95,29 +94,58 @@
   align-items: center;
   margin: 0 0 14px; 
 
-  .tabs {
-    display: flex; 
-    .tab {
-      
-      padding: 6px 12px; // 調整 padding 以容納圖示
-      margin-right: 8px;
-      border-radius: 10px;
-      font-size: 14px;
-      cursor: pointer;
-      border: none; // 移除邊框
+.tabs {
+  display: flex;
+  margin-top: 10px;
 
-      display: flex;       
-      align-items: center; 
-      gap: 6px;            
+  .tab {
+    padding: 6px 12px;
+    margin-right: 8px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid transparent; // 初始邊框設為透明
+    white-space: nowrap; // 防止換行
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    // 預設狀態 (未選中、未懸停)
+    background-color: transparent;
+    color: #000000;
+
+    img {
+      width: 20px;
+      height: 20px;
+      // 將圖示預設為黑色，保持清晰
+      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+      transition: filter 0.2s;
+    }
+
+    // 懸停狀態
+    &:hover {
+      background-color: #ED972E;
+      color: #ffffff;
+      
+      img {
+        // 懸停時圖示變白色
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+      }
+    }
+
+    // 選中狀態
+    &.active {
+      background-color: #ff5722;
+      color: #fff;
 
       img {
-        width: 16px;
-        height: 16px;
-        // 使用 CSS 濾鏡將白色 SVG 轉為黑色
-        filter: invert(1); 
+        // 選中時圖示也變白色
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
       }
     }
   }
+}
 
 .icon-btn {
   background: #fff;
