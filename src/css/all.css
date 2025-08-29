@@ -417,6 +417,7 @@ a {
 }
 
 .footprint_card {
+  height: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -445,6 +446,11 @@ a {
 }
 .footprint_card figure {
   width: 35%;
+  height: 100%;
+}
+.footprint_card figure img {
+  height: 100%;
+  object-fit: cover;
 }
 .footprint_card h2 {
   font-size: 1.5rem;

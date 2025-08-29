@@ -2,7 +2,7 @@
 @use '../functions/' as *;
 
 .footprint_card {
-    // height: $h-20vh;
+    height: 25%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +15,7 @@
     max-height: 175px;
     min-width: 530px;
 
-    .date{
+    .date {
         width: 20%;
         border-right: solid 2px $dark;
         display: flex;
@@ -25,27 +25,32 @@
         gap: $spacing-xxs;
     }
 
-    .location{
+    .location {
         width: 30%;
         display: flex;
         flex-direction: column;
         gap: $spacing-xs;
     }
 
-    figure{
+    figure {
         width: 35%;
-        // height: 100%;
+        height: 100%;
+
+        img{
+            height: 100%;
+            object-fit: cover;
+        }
     }
 
-    h2{
+    h2 {
         font-size: $f-s-xl;
     }
 
-    p{
+    p {
         font-size: $f-s-md;
     }
 
-    img{
+    img {
         object-fit: cover;
         border-radius: $rad-sm;
     }
