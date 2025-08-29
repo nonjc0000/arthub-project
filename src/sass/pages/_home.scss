@@ -3,10 +3,6 @@
 
 
 
-.container-home {
-    max-width: 1500px;
-    margin: 0 auto;
-}
 
 .home-bg {
     background-color: $background;
@@ -25,8 +21,8 @@
 }
 
 .home-heading {
-    width: 40%;
-    margin-left: 100px;
+    width: $w-40;
+    margin-left: 30px;
     margin-top: 200px;
     margin-bottom: 250px;
 
@@ -47,8 +43,8 @@
 }
 
 .stall-wrap {
-    margin-right: 100px;
-    width: 60%;
+    // margin-right: 100px;
+    width: $w-60;
     position: relative;
     flex: 1;
 
@@ -57,11 +53,11 @@
 
         .stall-first {
             position: absolute;
-            width: 50%;
+            width: $w-50;
         }
 
         .stall-second {
-            width: 60%;
+            width: $w-60;
             position: absolute;
             left: 35%;
             top: 22%;
@@ -77,43 +73,51 @@
 
     .date-box {
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         font-family: DM Sans;
         color: $dark;
         font-size: $f-s-xxxxl;
         position: absolute;
-        bottom: 15%;
-        left: 60%;
+        bottom: 10%;
+        left: 50%;
+
         .slash {
             width: 2px;
             height: 5rem;
             background-color: $dark;
-            transform: rotate(40deg); 
-            margin-left:10px;
-            margin-top:60px;
+            transform: rotate(40deg);
+            margin-left: 10px;
+            margin-top: 60px;
         }
+
         .day {
-            margin-left:20px;
-            margin-top:100px;
+            margin-left: 20px;
+            margin-top: 100px;
         }
+
         .weekday {
             font-weight: $f-w-m;
-            margin-top:100px;
-            margin-left:20px;
+            margin-top: 100px;
+            margin-left: 20px;
         }
+
         .weather {
             width: 65px;
             height: 65px;
             margin-top: 90px;
-            margin-left:20px;
+            margin-left: 20px;
         }
+
         .temptemperature {
-            margin-left:20px;
+            margin-left: 20px;
+            margin-top: 90px;
         }
+
         .situation {
-            margin-left:20px;
+            font-size: $f-s-xs;
+            margin-left: 20px;
+            margin-top: 110px;
         }
     }
 }
@@ -123,11 +127,80 @@
     text-align: center;
     font-family: $family-tc;
     color: $dark;
+    margin-bottom: 60px;
+
     h3 {
         font-size: $f-s-xxxxl;
     }
+
     p {
         font-family: $family-en;
         font-size: $f-s-xl;
-    };
+    }
+
+    ;
+}
+
+.pic-wrap {
+    max-width: 1500px;
+    margin: 0 auto;
+
+    .home-pic {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        .home-pic-fsb {
+            max-width: 750px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .home-pic-item {
+                display: flex;
+                justify-content: space-between;
+                .type-img-one{
+                    width: 49%;
+                }
+
+                .type-img-tw {
+                    width: 49%;
+                }
+
+            }
+        }
+
+        .home-pic-se {
+            max-width: 750px;
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            width: 50%; 
+
+
+
+            .type-img {
+                margin-bottom: 16px;
+            }
+        }
+
+        img {
+            // max-width: 100%; 
+            height: auto; 
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
+
+.home-blog {
+    margin-top: 112px;
+    margin-right: 350px;
+    text-align: center;
+    color: $dark;
+    transform:rotate(5deg);
+    h3 {
+        font-family: $family-display;
+        font-size: $f-s-xxxxl;
+        display: inline-block;
+    }
 }
