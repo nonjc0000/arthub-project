@@ -16,15 +16,15 @@ const My_footprint = () => {
                 <aside className="user_sidebar_left">
 
                     <Link to={'/My_footprint'} className='sidebar_item'>
-                        <div className='pageToggle'></div>
+                        <div className='pageToggle My_footprint'></div>
                         <p>我的足跡</p>
                     </Link>
                     <Link to={'/Notifications'} className='sidebar_item'>
-                        <div className='pageToggle'></div>
+                        <div className='pageToggle Notifications'></div>
                         <p>訊息通知</p>
                     </Link>
                     <Link to={'/Order_management'} className='sidebar_item'>
-                        <div className='pageToggle'></div>
+                        <div className='pageToggle Order_management'></div>
                         <p>訂單管理</p>
                     </Link>
 
@@ -32,7 +32,7 @@ const My_footprint = () => {
 
                 <div className="footprint_content">
                     <div className='footprint_content_topbar'>
-                        
+
                         <p className='year_box'>2025</p>
                         <svg width="807" height="19" viewBox="0 0 807 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="807" height="19" fill="#DFE5D3" />
