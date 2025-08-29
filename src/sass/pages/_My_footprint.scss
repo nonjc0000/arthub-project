@@ -1,12 +1,12 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
-.my_footprint_main{
-     background-color: $background;
-    // height: $h-100vh;
+.my_footprint_main {
+    background-color: $background;
     padding: $spacing-xl;
     @extend %main_font-family_setting;
     color: $text;
+    margin-bottom: $h-10vh;
 }
 
 .hr_square_deco {
@@ -14,29 +14,38 @@
     height: 70px;
     background-position: center;
     background-repeat: no-repeat;
+    margin-bottom: $spacing-xxl;
 }
 
 .footprint_content_box {
     @extend %flex-space-between;
-    align-items: flex-start
+    align-items: flex-start;
+    padding: $spacing-md $spacing-xl;
+    height: $h-100vh;
 }
 
 .user_sidebar_left {
     @extend %flex-column;
     align-items: center;
-    padding: $spacing-md;
-    width: $w-100;
+    padding: $spacing-sm $spacing-xl;
+    width: $w-20;
     background-color: $secondary;
+    gap: $spacing-md;
+    border-radius: $rad-md;
+    min-width: 230px;
 
     .sidebar_item {
-        display: flex
+        font-size: $f-s-lg;
+        display: flex;
+        width: $w-100;
+        margin-right: auto;
     }
 
     .pageToggle {
         // border: 1px solid $black;
         width: 21px;
         height: 21px;
-        margin-right: $spacing-md;
+        margin: auto $spacing-md;
         background-color: $white;
     }
 
@@ -45,8 +54,35 @@
 
 .footprint_content {
     @extend %flex-column;
+    align-items: center;
+    width: 55%;
+    height: 100%;
+
+    .footprint_content_topbar {
+        width: $w-100;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: $spacing-lg;
+
+        .year_box {
+            width: 95px;
+            height: 35px;
+            padding: 2.5px $spacing-xxs 0;
+            background-color: $primary;
+            @include bordered;
+            font-size: $f-s-xxl;
+            @extend %text-center;
+        }
+    }
 
     .footprint_result {
-        width: 45%;
+        height: 100%;
+        width: $w-90;
+        overflow: auto;
     }
+}
+
+.user_sidebar_right {
+    margin-left: 7%;
 }

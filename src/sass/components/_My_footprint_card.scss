@@ -12,6 +12,8 @@
     border-radius: $rad-basic;
     margin-bottom: $spacing-lg;
     @extend %main_font-family_setting;
+    max-height: 175px;
+    min-width: 530px;
 
     .date{
         width: 20%;
