@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.home-blog-item, .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,7 +118,9 @@ a {
 }
 
 .buttonBox {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .outerButton {
@@ -189,7 +191,8 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   transition: transform 0.5s ease;
 }
 .blog-card .badge {
@@ -329,7 +332,8 @@ a {
 .find_map_card img {
   width: 25%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 7.5px;
 }
 .find_map_card .find_map_card_desc {
@@ -400,7 +404,8 @@ a {
 }
 .footprint_card figure img {
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .footprint_card h2 {
   font-size: 1.5rem;
@@ -409,7 +414,8 @@ a {
   font-size: 1rem;
 }
 .footprint_card img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 7.5px;
 }
 
@@ -437,7 +443,8 @@ a {
   .region_card_img {
     width: 100%;
     height: auto;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
@@ -533,7 +540,8 @@ a {
 .travel-card .card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .travel-card .card-content {
   flex: 2;
@@ -667,7 +675,8 @@ a {
   width: 100%;
 }
 .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button img {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .find_map_main .find_map_content_box .map_search-box .map_search_result {
   height: 60vh;
@@ -979,7 +988,8 @@ a {
   margin-top: 20px;
   width: 80px;
   height: auto;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .blog-body {
@@ -1093,7 +1103,8 @@ a {
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  column-gap: 34px;
+  -moz-column-gap: 34px;
+       column-gap: 34px;
   row-gap: 44px;
 }
 
@@ -1271,7 +1282,8 @@ a {
   width: 60%;
   height: auto;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 30px;
 }
 
@@ -1302,7 +1314,7 @@ a {
 
 .home-heading {
   width: 40%;
-  margin-left: 30px;
+  margin-left: 120px;
   margin-top: 200px;
   margin-bottom: 250px;
 }
@@ -1420,12 +1432,13 @@ a {
 .pic-wrap .home-pic .home-pic-fsb .home-pic-item {
   display: flex;
   justify-content: space-between;
+  gap: 16px;
 }
 .pic-wrap .home-pic .home-pic-fsb .home-pic-item .type-img-one {
-  width: 49%;
+  width: 100%;
 }
 .pic-wrap .home-pic .home-pic-fsb .home-pic-item .type-img-tw {
-  width: 49%;
+  width: 100%;
 }
 .pic-wrap .home-pic .home-pic-se {
   max-width: 750px;
@@ -1440,13 +1453,15 @@ a {
 .pic-wrap .home-pic img {
   height: auto;
   border-radius: 20px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 
 .home-blog {
   margin-top: 112px;
   margin-right: 350px;
+  margin-bottom: 120px;
   text-align: center;
   color: #413B35;
   transform: rotate(5deg);
@@ -1455,6 +1470,20 @@ a {
   font-family: "ChenYuluoyan-2.0-Thin", cursive;
   font-size: 2.25rem;
   display: inline-block;
+}
+
+.home-blog-item .home-left-img {
+  width: 100%;
+}
+.home-blog-item .home-left-img img {
+  display: block;
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+.home-blog-item .home-right-blog {
+  width: 100%;
+  height: 40.5vh;
+  background-color: #CBD4C1;
 }
 
 .back-chip {
@@ -1543,7 +1572,8 @@ a {
 .post-image-box.hero-round img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 保持比例裁切 */
+  -o-object-fit: cover;
+     object-fit: cover; /* 保持比例裁切 */
   display: block;
 }
 
@@ -1583,7 +1613,8 @@ a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .post-header .post-meta .post-date {
   letter-spacing: 0.15em;
@@ -1739,13 +1770,17 @@ a {
   box-shadow: none !important; /* 移除陰影 */
   background: transparent !important; /* 透明，露出 wrapper 底色 */
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   background-clip: padding-box;
   color: #fff;
   font-size: 0.95rem;
   line-height: 1.4;
   resize: none; /* 禁止拖拉 */
   caret-color: #fff; /* 游標顏色 */
+}
+.comment-input-area .comment-input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.85);
 }
 .comment-input-area .comment-input::placeholder {
   color: rgba(255, 255, 255, 0.85);

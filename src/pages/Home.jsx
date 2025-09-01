@@ -44,20 +44,20 @@ const Home = () => {
               <div className='home-pic'>
                 <div className='home-pic-fsb'>
                   <div className='home-pic-item'>
-                  <img className='type-img-one' src="./images/home/home-pic-01.svg" alt="種類圖01" />
-                  <img className='type-img-tw' src="./images/home/home-pic-02.svg" alt="種類圖02" />
-                </div>
-                <div className='type-img-th'>
-                  <img src="./images/home/home-pic-03.svg" alt="種類圖03" />
-                </div>
+                    <a href="#"><img className='type-img-one' src="./images/home/home-pic-01.svg" alt="種類圖01" /></a>
+                    <a href="#"><img className='type-img-tw' src="./images/home/home-pic-02.svg" alt="種類圖02" /></a>
+                  </div>
+                  <div className='type-img-th'>
+                    <a href="#"><img src="./images/home/home-pic-03.svg" alt="種類圖03" /></a>
+                  </div>
                 </div>
                 <div className='home-pic-se'>
                   <div className='type-img-fo'>
-                    <img src="./images/home/home-pic-04.svg" alt="種類圖04" />
+                    <a href="#"><img src="./images/home/home-pic-04.svg" alt="種類圖04" /></a>
                   </div>
                   <div>
-                    <img className='type-img' src="./images/home/home-pic-05.svg" alt="種類圖05" />
-                    <img src="./images/home/home-pic-06.svg" alt="種類圖06" />
+                    <a href="#"><img className='type-img' src="./images/home/home-pic-05.svg" alt="種類圖05" /></a>
+                    <a href="#"><img src="./images/home/home-pic-06.svg" alt="種類圖06" /></a>
                   </div>
                 </div>
               </div>
@@ -67,10 +67,16 @@ const Home = () => {
         {/* 第三區塊 */}
         <section>
           <div className='home-blog'>
-            <h3>這不是一張單純的活動地圖，<br/>而是你與生活靈感之間的導航線。</h3>
+            <h3>這不是一張單純的活動地圖，<br />而是你與生活靈感之間的導航線。</h3>
           </div>
-          <div>
-            <img src="./images/home/左下圖片.svg" alt="左下圖片.svg" />
+          <div className='home-blog-item'>
+            <div className='home-left-img'>
+              <img src="./images/home/左下圖片.svg" alt="左下圖片.svg" />
+            </div>
+            <div className='home-right-blog'>
+              <h3>部落格</h3>
+              <p>Blog</p>
+            </div>
           </div>
         </section>
       </main>
