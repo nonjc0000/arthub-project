@@ -118,9 +118,7 @@ a {
 }
 
 .buttonBox {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 
 .outerButton {
@@ -191,8 +189,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 .blog-card .badge {
@@ -332,8 +329,7 @@ a {
 .find_map_card img {
   width: 25%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 7.5px;
 }
 .find_map_card .find_map_card_desc {
@@ -404,8 +400,7 @@ a {
 }
 .footprint_card figure img {
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .footprint_card h2 {
   font-size: 1.5rem;
@@ -414,8 +409,7 @@ a {
   font-size: 1rem;
 }
 .footprint_card img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 7.5px;
 }
 
@@ -443,8 +437,7 @@ a {
   .region_card_img {
     width: 100%;
     height: auto;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 }
 
@@ -540,8 +533,7 @@ a {
 .travel-card .card-image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .travel-card .card-content {
   flex: 2;
@@ -675,8 +667,7 @@ a {
   width: 100%;
 }
 .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button img {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .find_map_main .find_map_content_box .map_search-box .map_search_result {
   height: 60vh;
@@ -988,8 +979,7 @@ a {
   margin-top: 20px;
   width: 80px;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .blog-body {
@@ -1103,8 +1093,7 @@ a {
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  -moz-column-gap: 34px;
-       column-gap: 34px;
+  column-gap: 34px;
   row-gap: 44px;
 }
 
@@ -1282,8 +1271,7 @@ a {
   width: 60%;
   height: auto;
   display: block;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 30px;
 }
 
@@ -1453,8 +1441,7 @@ a {
 .pic-wrap .home-pic img {
   height: auto;
   border-radius: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   display: block;
 }
 
@@ -1572,8 +1559,7 @@ a {
 .post-image-box.hero-round img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover; /* 保持比例裁切 */
+  object-fit: cover; /* 保持比例裁切 */
   display: block;
 }
 
@@ -1613,8 +1599,7 @@ a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .post-header .post-meta .post-date {
   letter-spacing: 0.15em;
@@ -1770,17 +1755,13 @@ a {
   box-shadow: none !important; /* 移除陰影 */
   background: transparent !important; /* 透明，露出 wrapper 底色 */
   -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   background-clip: padding-box;
   color: #fff;
   font-size: 0.95rem;
   line-height: 1.4;
   resize: none; /* 禁止拖拉 */
   caret-color: #fff; /* 游標顏色 */
-}
-.comment-input-area .comment-input::-moz-placeholder {
-  color: rgba(255, 255, 255, 0.85);
 }
 .comment-input-area .comment-input::placeholder {
   color: rgba(255, 255, 255, 0.85);
