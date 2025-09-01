@@ -1,68 +1,62 @@
-/* 頁面外層 */
+// 頁面外層容器
 .blog-page {
   padding-top: 80px;
   background-image: url("./images/blog/blog_bg.jpg");
-  background-size: cover; // 覆蓋整個容器
-  background-repeat: no-repeat; // 不重複
-  background-position: center center; // 居中
-  // background-attachment: fixed; // 背景固定，捲動時不移動
-  
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  min-height: 100vh; // 最小高度為視窗高度
+  min-height: 100vh;
   width: 100%;
-}
-/* 1) 標題 */
-.blog-hero {
 
-  height: 150px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // 1) 標題區
+  .blog-hero {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-}
+  // 2) 描述段落
+  .blog-desc {
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    .desc {
+      max-width: 900px;
+      text-align: center;
+      line-height: 1.9;
+      font-size: 16px;
+      color: #333;
+    }
+  }
 
-/* 2) 描述段落 */
-.blog-desc {
-  margin-top: 65px;
-  display: flex;
-  justify-content: center;
+  // 裝飾圖片區
+  .blog-deco {
+    background-image: url("./images/blog/blog_deco.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 70px;
+    width: 60.3%;
+    overflow: hidden;
+    margin: 40px 100px;
+  }
 
-  .desc {
-    max-width: 900px;
-    text-align: center;
-    line-height: 1.9;
-    font-size: 16px;
-    color: #333;
+  // 4) 主內容區外框
+  .blog-shell {
+    max-width: 1240px;
+    margin: 0 auto 56px;
+    border-radius: 6px;
+    padding: 14px 18px 22px;
   }
 }
 
-
-
-.blog-deco {
-  background-image: url("./images/blog/blog_deco.svg");
-  background-repeat: no-repeat;  
-  background-size: contain;      
-  background-position: center;   
-  height: 70px; 
-  width: 60.3%;
-  overflow: hidden;
-  margin: 40px 100px;
-}
-
-
-/* 4) 主內容區 */
-.blog-shell {
-  max-width: 1240px;
-  margin: 0 auto 56px;
-  border-radius: 6px;
-  padding: 14px 18px 22px;
-}
-
+// 部落格插圖
 .blog-illustration img {
   margin-top: 20px;
   width: 80px;
@@ -70,33 +64,24 @@
   object-fit: contain;
 }
 
-/* 兩欄：左側 170 + 右側 1fr */
+// 兩欄布局：左側選單 + 右側內容
 .blog-body {
   display: grid;
   grid-template-columns: 170px 1fr;
   gap: 26px;
 }
 
-
-.blog-select-col {
-  padding-top: 0; 
-  top: 0; 
-  align-self: start;
+// 右側主體容器
+.blog-panel {
+  min-width: 0;
 }
 
-/* 右側主體容器 */
-.blog-panel { min-width: 0; }
-
-/* 工具列（熱門/最新 + 搜尋/撰寫） */
+// 工具列（熱門/最新 + 搜尋/撰寫）
 .blog-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 14px; 
-
-.tabs {
-  display: flex;
-  margin-top: 10px;
+  margin: 0 0 14px;
 
   .tab {
     padding: 6px 12px;
@@ -104,73 +89,52 @@
     border-radius: 10px;
     font-size: 16px;
     cursor: pointer;
-    border: 1px solid transparent; // 初始邊框設為透明
-    white-space: nowrap; // 防止換行
-
+    border: 1px solid transparent;
+    white-space: nowrap;
     display: flex;
     align-items: center;
     gap: 6px;
-
-    // 預設狀態 (未選中、未懸停)
+    transition: all 0.2s ease;
     background-color: transparent;
     color: #000000;
+
+    i {
+      font-size: 16px;
+      transition: color 0.2s ease;
+    }
 
     img {
       width: 20px;
       height: 20px;
-      // 將圖示預設為黑色，保持清晰
       filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
-      transition: filter 0.2s;
+      transition: filter 0.2s ease;
     }
 
-    // 懸停狀態
     &:hover {
       background-color: #ED972E;
       color: #ffffff;
-      
+
+      i {
+        color: #ffffff;
+      }
       img {
-        // 懸停時圖示變白色
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
       }
     }
 
-    // 選中狀態
     &.active {
+      
       background-color: #ff5722;
       color: #fff;
 
+      i {
+        color: #ffffff;
+      }
       img {
-        // 選中時圖示也變白色
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
       }
     }
   }
-}
-
-.icon-btn {
-  background: #fff;
-  min-width: 34px;
-  height: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background-size: 20px 20px; // icon 大小
-  background-repeat: no-repeat;
-  background-position: center;
-
-  // 搜尋按鈕
-  &.search {
-    background-image: url("./images/blog/blog_search.svg");
-  }
-
-  // 撰寫按鈕
-  &.write {
-    background-image: url("./images/blog/blog_write.png");
-    background-color: transparent; 
-    border: none;
-  }
-}
 
   .actions {
     display: flex;
@@ -183,7 +147,6 @@
       border: 1px solid #000;
       border-radius: 30px;
       padding: 0 6px;
-
       input {
         border: none;
         outline: none;
@@ -202,9 +165,31 @@
     }
   }
 
+  .icon-btn {
+    background: #fff;
+    min-width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &.search {
+      background-image: url("./images/blog/blog_search.svg");
+    }
+
+    &.write {
+      background-image: url("./images/blog/blog_write.png");
+      background-color: transparent;
+      border: none;
+    }
+  }
 }
 
-/* 卡片 3 欄 */
+// 卡片 3 欄
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -212,7 +197,7 @@
   row-gap: 44px;
 }
 
-/* 分頁 */
+// 分頁導航
 .blog-pagination {
   display: flex;
   align-items: center;
@@ -221,7 +206,7 @@
   margin: 26px 0 6px;
 
   .page-btn {
-    border: 1.5px solid #111;
+    border: none !important;
     background: #fff;
     border-radius: 8px;
     min-width: 36px;
@@ -234,9 +219,9 @@
   .track {
     position: relative;
     height: 28px;
-    border: none;              // 移除邊框
+    border: none;
     border-radius: 8px;
-    background: transparent;   
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -264,22 +249,30 @@
       }
     }
 
-    .dots { 
-      padding: 0 4px; 
+    .dots {
+      padding: 0 4px;
     }
   }
 }
 
-/* RWD */
+// 響應式設計 (RWD)
 @media (max-width: 1100px) {
-  .blog-grid { grid-template-columns: repeat(2, 1fr); }
-  .blog-toolbar .actions .search input { width: 260px; }
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .blog-toolbar .actions .search input {
+    width: 260px;
+  }
 }
+
 @media (max-width: 760px) {
-  .blog-body { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .blog-toolbar .actions .search input { width: 180px; }
+  .blog-body {
+    grid-template-columns: 1fr;
+  }
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-toolbar .actions .search input {
+    width: 180px;
+  }
 }
-
-
-
