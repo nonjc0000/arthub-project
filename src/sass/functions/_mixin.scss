@@ -3,3 +3,7 @@
 @mixin bordered($width: 2px, $color: $dark) {
     border: solid $width $color;
 }
+
+@mixin ani-basic ($name, $duration: .75s) {
+    animation: $name $duration both;
+}

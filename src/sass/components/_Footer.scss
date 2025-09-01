@@ -23,31 +23,31 @@
     gap: $spacing-lg;
     color: $white;
 
-    $icons: find_type, find_map, find_schedule, blog, about, user;
+    // $icons: find_type, find_map, find_schedule, blog, about, user;
 
-    @each $icon in $icons {
+    // @each $icon in $icons {
 
-        a {
-            color: $white;
-        }
+    //     a {
+    //         color: $white;
+    //     }
 
-        .#{$icon} .sitemap_item_content {
-            // display: flex;
-            // gap: 8px;
-            // justify-content: center;
-            padding: $spacing-xs $spacing-sm;
+    //     .#{$icon} .sitemap_item_content {
+    //         // display: flex;
+    //         // gap: 8px;
+    //         // justify-content: center;
+    //         padding: $spacing-xs $spacing-sm;
 
 
-            img {
-                display: inline-block;
-                vertical-align: bottom;
-                margin-right: 8px;
-                margin-bottom: 1px;
-            }
+    //         img {
+    //             display: inline-block;
+    //             vertical-align: bottom;
+    //             margin-right: 8px;
+    //             margin-bottom: 1px;
+    //         }
 
-        }
+    //     }
 
-    }
+    // }
 }
 
 .copyright {

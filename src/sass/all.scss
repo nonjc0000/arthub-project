@@ -9,6 +9,9 @@
 @use './components/' as *;
 @use './pages/' as *;
 
+// keyframes
+@use './keyframes';
+
 // google fonts & others webfonts
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap');
 
@@ -18,8 +21,34 @@
 }
 
 .titleBox_h1 {
-        width: $w-30;
-        min-width: 432px;
-        margin: 0 auto;
-        margin-bottom: $spacing-xl;
+    width: $w-30;
+    min-width: 432px;
+    margin: 0 auto;
+    margin-bottom: $spacing-xl;
+}
+
+$icons: find_type, find_map, find_schedule, blog, about, user;
+
+@each $icon in $icons {
+
+    a {
+        color: $white;
     }
+
+    .#{$icon} .sitemap_item_content {
+        // display: flex;
+        // gap: 8px;
+        // justify-content: center;
+        padding: $spacing-xs $spacing-sm;
+
+
+        img {
+            display: inline-block;
+            vertical-align: bottom;
+            margin-right: 8px;
+            margin-bottom: 1px;
+        }
+
+    }
+
+}
