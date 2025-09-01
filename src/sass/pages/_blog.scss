@@ -12,6 +12,7 @@
   min-height: 100vh;
   width: 100%;
 
+
   // 1) 標題區
   .blog-hero {
     height: 150px;
@@ -20,6 +21,7 @@
     align-items: center;
     justify-content: center;
   }
+
 
   // 2) 描述段落
   .blog-desc {
@@ -35,6 +37,7 @@
     }
   }
 
+
   // 裝飾圖片區
   .blog-deco {
     background-image: url("./images/blog/blog_deco.svg");
@@ -47,6 +50,7 @@
     margin: 40px 100px;
   }
 
+
   // 4) 主內容區外框
   .blog-shell {
     max-width: 1240px;
@@ -56,6 +60,7 @@
   }
 }
 
+
 // 部落格插圖
 .blog-illustration img {
   margin-top: 20px;
@@ -64,6 +69,7 @@
   object-fit: contain;
 }
 
+
 // 兩欄布局：左側選單 + 右側內容
 .blog-body {
   display: grid;
@@ -71,10 +77,12 @@
   gap: 26px;
 }
 
+
 // 右側主體容器
 .blog-panel {
   min-width: 0;
 }
+
 
 // 工具列（熱門/最新 + 搜尋/撰寫）
 .blog-toolbar {
@@ -82,6 +90,15 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 0 14px;
+
+
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
 
   .tab {
     padding: 6px 12px;
@@ -98,10 +115,12 @@
     background-color: transparent;
     color: #000000;
 
+
     i {
       font-size: 16px;
       transition: color 0.2s ease;
     }
+
 
     img {
       width: 20px;
@@ -110,9 +129,11 @@
       transition: filter 0.2s ease;
     }
 
+
     &:hover {
       background-color: #ED972E;
       color: #ffffff;
+
 
       i {
         color: #ffffff;
@@ -122,10 +143,12 @@
       }
     }
 
+
     &.active {
-      
+     
       background-color: #ff5722;
       color: #fff;
+
 
       i {
         color: #ffffff;
@@ -136,10 +159,12 @@
     }
   }
 
+
   .actions {
     display: flex;
     align-items: center;
     gap: 8px;
+
 
     .search {
       display: flex;
@@ -156,6 +181,7 @@
         background: transparent;
       }
 
+
       .icon-btn.search {
         border: none;
         background-color: transparent;
@@ -164,6 +190,7 @@
       }
     }
   }
+
 
   .icon-btn {
     background: #fff;
@@ -177,9 +204,11 @@
     background-repeat: no-repeat;
     background-position: center;
 
+
     &.search {
       background-image: url("./images/blog/blog_search.svg");
     }
+
 
     &.write {
       background-image: url("./images/blog/blog_write.png");
@@ -189,6 +218,7 @@
   }
 }
 
+
 // 卡片 3 欄
 .blog-grid {
   display: grid;
@@ -197,6 +227,7 @@
   row-gap: 44px;
 }
 
+
 // 分頁導航
 .blog-pagination {
   display: flex;
@@ -204,6 +235,7 @@
   justify-content: center;
   gap: 10px;
   margin: 26px 0 6px;
+
 
   .page-btn {
     border: none !important;
@@ -215,6 +247,7 @@
     text-align: center;
     cursor: pointer;
   }
+
 
   .track {
     position: relative;
@@ -228,6 +261,7 @@
     gap: 6px;
     padding: 0 8px;
 
+
     .page-num {
       border: none;
       background: transparent;
@@ -239,21 +273,25 @@
       text-align: center;
       cursor: pointer;
 
+
       &.is-active {
         background: #111;
         color: #fff;
       }
+
 
       &:hover:not(.is-active) {
         background: rgba(219, 40, 40, 0.1);
       }
     }
 
+
     .dots {
       padding: 0 4px;
     }
   }
 }
+
 
 // 響應式設計 (RWD)
 @media (max-width: 1100px) {
@@ -264,6 +302,7 @@
     width: 260px;
   }
 }
+
 
 @media (max-width: 760px) {
   .blog-body {
@@ -276,3 +315,4 @@
     width: 180px;
   }
 }
+

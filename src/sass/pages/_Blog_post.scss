@@ -1,23 +1,40 @@
 .back-chip {
-  display: inline-block;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 16px;
-
-  img {
-    width: 60px; /* 依照設計調整 */
-    height: auto;
-    cursor: pointer;
-    transition: transform .2s ease;
+  position: relative;
+  cursor: pointer;  // 加入這行
+ 
+  // 確保 Link 本身也可點擊
+  &:focus {
+    outline: none;
   }
 
-  &:hover img { transform: scale(1.05); }
+
+  img {
+    width: 60px;
+    height: auto;
+    pointer-events: auto;  // 加入這行
+    transition: transform .2s ease;
+    display: block;
+  }
+
+
+  &:hover img {
+    transform: scale(1.05);
+  }
 }
+
 
 /* ------------------------------------
  * 外層容器
  * ------------------------------------ */
 .post-page-container {
+  background-image: url("./images/blog/blog_bg.jpg");
   padding: 0 16px;
 }
+
 
 /* ------------------------------------
  * 外層卡片容器
@@ -32,9 +49,14 @@
 
 }
 
+
 /* ------------------------------------
  * 內容主欄
  * ------------------------------------ */
+
+
+
+
 
 
 
@@ -43,34 +65,43 @@
   padding: 10px;
   margin: 0px 80px;
 
+
     .post-content {
     padding-bottom: 0; // ← 減少下方內距
     margin-bottom: 0;
-
-    .post-tags {
-      margin-bottom: 10px; // ← 縮短跟分隔線的距離
-    }
   }
+
 
   /* 標籤 */
   .post-tags {
+    margin-top: 20px;
+    margin-bottom: 10px; // 與下方分隔線的距離
+
+
+    display: flex;
+    flex-wrap: wrap;  // 換行時保持整齊
+    gap: 12px;        // ✅ 控制每個 tag 之間的間距
+
+
     .tag {
       display: inline-block;
-      padding: 8px 16px;
-      background-color: #ED972E !important;   // 橘底
-      color: #fff !important;                 // 白字
+      padding: 5px 16px;
+      background-color: #ED972E !important; // 橘底
+      color: #fff !important;               // 白字
       font-size: 0.95rem;
       font-weight: 600;
-      border-radius: 30px;                    // 膠囊感
+      border-radius: 30px;                  // 膠囊感
       text-decoration: none;
       transition: background-color 0.2s ease;
     }
   }
 
+
   @media (max-width: 768px) {
     padding: 16px;
   }
 }
+
 
 /* 標籤與留言區間的裝飾分隔 */
 .comment-sep {
@@ -79,6 +110,7 @@
   display: flex;
   justify-content: center;
 }
+
 
 /* ------------------------------------
  * 首圖：自適應 + 最大寬度 + 固定比例
@@ -92,6 +124,7 @@
     border-radius: 0 60px 0 60px;
     overflow: hidden;
 
+
     img {
       width: 100%;
       height: 100%;
@@ -101,10 +134,14 @@
   }
 }
 
+
 /* ------------------------------------
  * 標題 + 中繼資訊（作者 / 日期 / 功能列）
  * ------------------------------------ */
 .post-header {
+  .post-stats{
+    margin-bottom: 15px;
+  }
   .post-title {
     font-size: clamp(28px, 4.2vw, 44px);
     font-weight: 800;
@@ -113,9 +150,12 @@
     letter-spacing: .02em;
     margin: 0 0 12px;
 
+
+   
       .post-meta .post-stats .stat-item.like.active {
     color: #ED972E;
     img {
+
 
       filter: brightness(0) saturate(100%) invert(59%) sepia(73%)
               saturate(857%) hue-rotate(346deg) brightness(101%) contrast(95%);
@@ -123,19 +163,22 @@
   }
   }
 
+
   .post-meta {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 20px;
     flex-wrap: wrap;       /* 讓功能列自動落到下一行 */
     color: #39413A;
     font-size: 16px;
+
 
     .author-info {
       display: flex;
       align-items: center;
       gap: 10px;
       color: #39413A;
+
 
       .avatar {
         width: 36px;
@@ -145,10 +188,12 @@
       }
     }
 
+
     .post-date {
       letter-spacing: .15em;
       color: #39413A;
     }
+
 
     /* 功能列 */
     .post-stats {
@@ -159,6 +204,7 @@
       margin-top: -5px;
       color: inherit;
 
+
         .stat-item.collect {
           img {
             width: 28px;   // 調整這裡就能放大
@@ -166,6 +212,7 @@
             display: block;
           }
         }
+
 
       .stat-item {
         display: inline-flex;
@@ -178,11 +225,13 @@
         font-weight: 600;
         color: #39413A;
 
+
         img {
           width: 22px;
           height: 22px;
           display: block;
         }
+
 
         span {
           font-weight: 600;
@@ -190,8 +239,10 @@
           line-height: 1;   // 確保數字不會被撐高
         }
 
+
         &:hover {
           color: #ff8a2a;
+
 
           img {
             filter: brightness(0) saturate(100%) invert(53%) sepia(97%)
@@ -200,6 +251,7 @@
           }
         }
       }
+
 
       .share-btn,
       .bookmark-btn {
@@ -212,14 +264,17 @@
         cursor: pointer;
         padding: 0;
 
+
         i { font-size: 22px; }
         span { font-weight: 600; }
+
 
         &:hover { color: #ff8a2a; }
       }
     }
   }
 }
+
 
 /* ------------------------------------
  * 留言卡片（外框 + 內容）
@@ -236,6 +291,7 @@
   border-radius: 8px;
 }
 
+
 /* 右側的愛心（垂直置中固定在右邊） */
 .comment-actions {
   position: absolute;
@@ -244,6 +300,7 @@
   transform: translateY(-50%);
   display: flex;
   align-items: center;
+
 
   .c-like {
     display: inline-flex;
@@ -257,6 +314,7 @@
     line-height: 1;
     color: #39413A;
 
+
     /* 愛心大小 */
     img {
       width: 28px;
@@ -264,11 +322,13 @@
       display: block;
     }
 
+
     span {
       font-weight: 600;
       line-height: 1;
       color: inherit;
     }
+
 
     &.active img {
       filter: brightness(0) saturate(100%) invert(59%) sepia(73%)
@@ -276,9 +336,11 @@
               contrast(95%);
     }
 
+
     &.active span { color: #ED972E; }
   }
 }
+
 
 /* 作者右側的時間 */
 .comment-date {
@@ -287,20 +349,23 @@
   margin-left: 12px;  // 左側間距
 }
 
+
 /* ------------------------------------
  * 留言輸入區：圓角膠囊 + 右側送出
  * ------------------------------------ */
 .comment-input-area {
   margin-bottom: 30px;
 
+
   .input-wrapper {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0px 4px;
+    padding: 4px 6px 4px 20px;
     border-radius: 999px;
     background-color: #BEC7B4; /* 指定底色 */
   }
+
 
   /* 輸入框 (input / textarea) */
   .comment-input,
@@ -322,9 +387,11 @@
     caret-color: #fff;                 /* 游標顏色 */
   }
 
+
   .comment-input::placeholder {
     color: rgba(255, 255, 255, .85);
   }
+
 
   .submit-btn {
     /* 關閉各瀏覽器預設外觀 */
@@ -332,10 +399,12 @@
     -moz-appearance: none;
     appearance: none;
 
+
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
     outline: none !important;
+
 
     img {
       width: 40px;
@@ -343,10 +412,14 @@
       display: block;
     }
 
+
     &:hover img {
       transform: scale(1.06);
       transition: transform .2s ease;
     }
   }
 }
+.comment-avatar { width: 40px !important; height: 40px !important; }
+
+
 

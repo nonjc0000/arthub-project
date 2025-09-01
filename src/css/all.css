@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.home-blog-item, .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .home-blog-item, .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,10 @@
   align-items: center;
 }
 
-.order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_outline, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_link, .type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .top .like_button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
+.stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
+.stall_map_main .stall_search_box .stall_search_filter select,
+.stall_map_main .stall_search_box .stall_search_filter button, .stall_map_main .stall_card .stall_card_body button,
+.stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_outline, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_link, .type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .top .like_button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
   border: none;
   outline: none;
   background: none;
@@ -27,7 +30,7 @@
   flex-direction: column;
 }
 
-.find_type_main .find_type_content_box .find_type_result {
+.stall_map_main .stall_search_box .stall_search_result, .find_type_main .find_type_content_box .find_type_result {
   display: flex;
   flex-wrap: wrap;
 }
@@ -998,6 +1001,12 @@ a {
   align-items: center;
   margin: 0 0 14px;
 }
+.blog-toolbar .tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
 .blog-toolbar .tab {
   padding: 6px 12px;
   margin-right: 8px;
@@ -1474,14 +1483,22 @@ a {
 }
 
 .back-chip {
-  display: inline-block;
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
   margin-bottom: 16px;
+  position: relative;
+  cursor: pointer;
+}
+.back-chip:focus {
+  outline: none;
 }
 .back-chip img {
-  width: 60px; /* 依照設計調整 */
+  width: 60px;
   height: auto;
-  cursor: pointer;
+  pointer-events: auto;
   transition: transform 0.2s ease;
+  display: block;
 }
 .back-chip:hover img {
   transform: scale(1.05);
@@ -1491,6 +1508,7 @@ a {
  * 外層容器
  * ------------------------------------ */
 .post-page-container {
+  background-image: url("./images/blog/blog_bg.jpg");
   padding: 0 16px;
 }
 
@@ -1517,12 +1535,16 @@ a {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-.post-content-panel .post-content .post-tags {
+.post-content-panel .post-tags {
+  margin-top: 20px;
   margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .post-content-panel .post-tags .tag {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 5px 16px;
   background-color: #ED972E !important;
   color: #fff !important;
   font-size: 0.95rem;
@@ -1566,6 +1588,9 @@ a {
 /* ------------------------------------
  * 標題 + 中繼資訊（作者 / 日期 / 功能列）
  * ------------------------------------ */
+.post-header .post-stats {
+  margin-bottom: 15px;
+}
 .post-header .post-title {
   font-size: clamp(28px, 4.2vw, 44px);
   font-weight: 800;
@@ -1583,7 +1608,7 @@ a {
 .post-header .post-meta {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px;
   flex-wrap: wrap; /* 讓功能列自動落到下一行 */
   color: #39413A;
   font-size: 16px;
@@ -1741,7 +1766,7 @@ a {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0px 4px;
+  padding: 4px 6px 4px 20px;
   border-radius: 999px;
   background-color: #BEC7B4; /* 指定底色 */
 }
@@ -1784,6 +1809,11 @@ a {
 .comment-input-area .submit-btn:hover img {
   transform: scale(1.06);
   transition: transform 0.2s ease;
+}
+
+.comment-avatar {
+  width: 40px !important;
+  height: 40px !important;
 }
 
 .notifications_main {
@@ -2192,6 +2222,228 @@ a {
   width: 15%;
   min-width: 200px;
   z-index: 1;
+}
+
+.stall_map_main {
+  height: 100%;
+  /* 攤位卡片 */
+  /* 圖片裝飾 */
+}
+.stall_map_main .stall_map_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.stall_map_main .stall_map {
+  border: 5px solid #DEBFA0;
+  width: 60%;
+  height: 400px;
+  background-color: #fff;
+}
+.stall_map_main .type_btn_box {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.stall_map_main .stall_search_box {
+  border-radius: 30px;
+  padding: 30px 60px;
+  width: 60%;
+  height: 875px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.stall_map_main .stall_search_box .stall_search_filter {
+  display: flex;
+  background-color: #fff;
+  height: 40px;
+  gap: 15px;
+}
+.stall_map_main .stall_search_box .stall_search_filter .search_box {
+  border-radius: 30px;
+  border: 1px solid #000;
+  height: 30px;
+}
+.stall_map_main .stall_search_box .stall_search_filter .btn_box {
+  display: flex;
+  gap: 15px;
+}
+.stall_map_main .stall_search_box .stall_search_filter .btn_box button {
+  display: flex;
+  background-color: #ED972E;
+  border-radius: 999px;
+  width: 80px;
+  height: 30px;
+  color: #fff;
+  font-size: 0.875rem;
+}
+.stall_map_main .stall_search_box .stall_search_filter .btn_box button img {
+  width: 15px;
+  height: auto;
+}
+.stall_map_main .stall_search_box .stall_search_filter .select {
+  background-color: #CBD4C1;
+  border-radius: 999px;
+  width: 90px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.stall_map_main .stall_search_box .stall_search_filter .select select {
+  padding-top: 1px;
+  color: #39413A;
+  font-size: 1rem;
+  font-weight: 700;
+}
+.stall_map_main .stall_search_box .stall_search_result {
+  padding-top: 30px;
+  align-items: center;
+  gap: 25px;
+  overflow: auto;
+  height: 800px;
+}
+.stall_map_main .stall_card {
+  width: 230px;
+  height: 300px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid #39413A;
+}
+.stall_map_main .stall_card p {
+  font-size: 0.75rem;
+}
+.stall_map_main .stall_card .stall_card_wrap {
+  display: flex;
+  height: 145px;
+  flex-direction: column;
+  justify-content: space-between;
+  outline: 1px solid #39413A;
+  background-color: #ccc;
+}
+.stall_map_main .stall_card .stall_card_wrap .top {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+}
+.stall_map_main .stall_card .stall_card_wrap .top .like,
+.stall_map_main .stall_card .stall_card_wrap .top .num {
+  background-color: #ED972E;
+  width: 45px;
+  height: 17px;
+  border-radius: 999px;
+  color: #fff;
+}
+.stall_map_main .stall_card .stall_card_wrap .top .like {
+  display: flex;
+  padding: 0 5px;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+.stall_map_main .stall_card .stall_card_wrap .top .like p {
+  padding-top: 1px;
+}
+.stall_map_main .stall_card .stall_card_wrap .top .like img {
+  padding-top: 1px;
+  width: 12px;
+}
+.stall_map_main .stall_card .stall_card_wrap .top .num p {
+  padding-top: 2px;
+}
+.stall_map_main .stall_card .stall_card_wrap .bottom {
+  display: flex;
+  margin: 10px;
+  gap: 5px;
+}
+.stall_map_main .stall_card .stall_card_wrap .bottom p {
+  background-color: #ED972E;
+  color: #fff;
+  width: 56px;
+  height: 18px;
+  border-radius: 999px;
+}
+.stall_map_main .stall_card .stall_card_body .title {
+  height: 33px;
+}
+.stall_map_main .stall_card .stall_card_body .title p {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box,
+.stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box {
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box {
+  background-color: #ED972E;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button {
+  color: #fff;
+  gap: 10px;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button img {
+  width: 17px;
+  height: 17px;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box {
+  background-color: #413B35;
+}
+.stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box button img {
+  width: 17px;
+  height: 17px;
+}
+.stall_map_main .stall_card .stall_card_body .review_box {
+  height: 30px;
+}
+.stall_map_main .stall_card .stall_card_body .review_box .review {
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 210px;
+  height: 17px;
+  display: flex;
+}
+.stall_map_main .stall_card .stall_card_body .review_box .review input {
+  width: 100%;
+  height: 100%;
+}
+.stall_map_main .stall_card .stall_card_body .stall_card_review p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #6c757d;
+}
+.stall_map_main .stall_map_img1,
+.stall_map_main .stall_map_img2,
+.stall_map_main .stall_map_img3,
+.stall_map_main .stall_map_img4 {
+  position: absolute;
+}
+.stall_map_main .stall_map_img1 {
+  z-index: 1;
+  right: 200px;
+  top: 200px;
+}
+.stall_map_main .stall_map_img2 {
+  z-index: 1;
+  right: 200px;
+  bottom: -55px;
+}
+.stall_map_main .stall_map_img3 {
+  z-index: 1;
+  bottom: -60px;
+  left: 90px;
+}
+.stall_map_main .stall_map_img4 {
+  z-index: -1;
+  top: 400px;
+  width: 100%;
 }
 
 @keyframes show {
