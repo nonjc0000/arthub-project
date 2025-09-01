@@ -1,11 +1,15 @@
+import { Link } from "react-router-dom";
 import "/src/sass/components/_TravelCard.scss";
 
-const TravelCard = ({ data }) => {
+const TravelCard = ({ data = [] }) => {
   return (
     <div className="travel-card-list">
       {data.map((item, index) => (
-        <Link to ={item.url} className="travel-card" key={index}>
-        <div className="travel-card" key={index}>
+        <Link
+          to={item.url || "#"}
+          className="travel-card"
+          key={item.id ?? index}
+        >
           {/* 左邊圖片 */}
           <div className="card-image">
             <img src={item.image} alt={item.title} />
@@ -21,7 +25,6 @@ const TravelCard = ({ data }) => {
               <span className="card-price">{item.price}</span>
             </div>
           </div>
-        </div>
         </Link>
       ))}
     </div>

@@ -32,8 +32,9 @@ const Find_schedule = () => {
     <>
       <div className="container">
         <div className="find_schedule_titlebox">
-          <h1>
+          <h1 className="titleBox_h1">
             <img
+            className="titleblx"
               src="./images/titlebox/find_schedule_titlebox.svg"
               alt="活動行程"
             />
