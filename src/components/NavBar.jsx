@@ -23,9 +23,9 @@ const NavBar = () => {
     return (
         <div className='topbar'>
             {/* logo */}
-            <div className="logo">
+            <Link to='/' className='logo'>
                 <img src="./images/logo.svg" alt="Logo" />
-            </div>
+            </Link>
 
             <div className='navbar'>
                 {/* 漢堡按鈕 */}
