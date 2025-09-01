@@ -4,6 +4,7 @@ const TravelCard = ({ data }) => {
   return (
     <div className="travel-card-list">
       {data.map((item, index) => (
+        <Link to ={item.url} className="travel-card" key={index}>
         <div className="travel-card" key={index}>
           {/* 左邊圖片 */}
           <div className="card-image">
@@ -21,6 +22,7 @@ const TravelCard = ({ data }) => {
             </div>
           </div>
         </div>
+        </Link>
       ))}
     </div>
   );
