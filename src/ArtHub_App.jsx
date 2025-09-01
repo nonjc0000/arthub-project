@@ -17,6 +17,7 @@ import Find_schedule_region_west from "./pages/Find_schedule_region_west";
 import Find_schedule_region_east from "./pages/Find_schedule_region_east";
 import BlogPost from "./pages/Blog_post";
 import Stall_map from "./pages/Stall_map";
+import Find_schedule_trip from './pages/Find_schedule_trip'
 
 
 const ArtHub_App = () => {
@@ -39,6 +40,7 @@ const ArtHub_App = () => {
         <Route path="/East" element={<Find_schedule_region_east />}></Route>
         <Route path="/blog_post/:id" element={<BlogPost />} />
         <Route path="/stall_map" element={<Stall_map />} ></Route>
+        <Route path='/Trip' element={<Find_schedule_trip/>}></Route>
       </Routes>
       <Footer />
     </div>
