@@ -1,0 +1,308 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.order_management_main {
+    background-color: $background;
+    padding: $spacing-xl;
+    @extend %main_font-family_setting;
+    color: $text;
+    margin-bottom: $h-10vh;
+}
+
+.hr_square_deco {
+    width: 100%;
+    height: 70px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: $spacing-xxl;
+}
+
+.order_management_content_box {
+    @extend %flex-space-between;
+    align-items: flex-start;
+    padding: $spacing-md $spacing-xl;
+    height: $h-100vh;
+}
+
+.user_sidebar_left {
+    // @extend %flex-column;
+    align-items: center;
+    padding: $spacing-sm $spacing-xl;
+    width: $w-20;
+    background-color: $secondary;
+    gap: $spacing-md;
+    border-radius: $rad-md;
+    min-width: 230px;
+
+    .sidebar_item {
+        font-size: $f-s-lg;
+        display: flex;
+        width: $w-100;
+        margin-right: auto;
+    }
+
+    .pageToggle {
+        position: relative;
+        width: 21px;
+        height: 21px;
+        margin: auto $spacing-md;
+        background-color: $white;
+
+        &.Order_management {
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: $primary;
+                top: 3px;
+                left: 3px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+.order_management_content {
+    @extend %flex-column;
+    width: 75%;
+    height: 100%;
+    padding-left: $spacing-xl;
+
+    .order_status_tabs {
+        display: flex;
+        gap: $spacing-lg;
+        margin-bottom: $spacing-xl;
+
+        .status_tab {
+            @extend %remove_form_style;
+            padding: $spacing-sm $spacing-lg;
+            font-size: $f-s-md;
+            color: $text;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &.active {
+                color: $primary;
+                border-bottom-color: $primary;
+                font-weight: bold;
+            }
+
+            &:hover:not(.active) {
+                color: $text;
+            }
+        }
+    }
+
+    .order_content_layout {
+        display: flex;
+        gap: $spacing-xxl;
+        height: calc(100% - 80px);
+
+        .order_list {
+            width: 60%;
+            height: 100%;
+            overflow-y: auto;
+            padding-right: $spacing-sm;
+
+            .order_card {
+                background-color: $white;
+                border-radius: $rad-md;
+                overflow: hidden;
+                margin-bottom: $spacing-lg;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+                .order_image {
+                    position: relative;
+                    width: 100%;
+                    height: 200px;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .order_date {
+                        position: absolute;
+                        top: $spacing-md;
+                        left: $spacing-md;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        padding: $spacing-xs $spacing-sm;
+                        border-radius: $rad-sm;
+                        @extend %text-center;
+
+                        .month {
+                            display: block;
+                            font-size: $f-s-sm;
+                            color: $text;
+                            line-height: 1;
+                        }
+
+                        .day {
+                            display: block;
+                            font-size: $f-s-lg;
+                            font-weight: bold;
+                            color: $text;
+                            line-height: 1;
+                        }
+                    }
+
+                    .order_status_badge {
+                        position: absolute;
+                        top: $spacing-md;
+                        right: $spacing-md;
+                        padding: $spacing-xs $spacing-sm;
+                        border-radius: $rad-sm;
+                        font-size: $f-s-sm;
+                        font-weight: bold;
+
+                        &.upcoming {
+                            background-color: $primary;
+                            color: $white;
+                        }
+                    }
+                }
+
+                .order_info {
+                    padding: $spacing-md;
+
+                    h3 {
+                        font-size: $f-s-lg;
+                        font-weight: bold;
+                        color: $text;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .order_location {
+                        font-size: $f-s-sm;
+                        color: $text;
+                        margin-bottom: $spacing-md;
+                    }
+
+                    .order_actions {
+                        display: flex;
+                        gap: $spacing-sm;
+
+                        .btn_outline {
+                            @extend %remove_form_style;
+                            padding: $spacing-xs $spacing-md;
+                            border: 1px solid $dark;
+                            border-radius: $rad-sm;
+                            background-color: $white;
+                            color: $text;
+                            font-size: $f-s-sm;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                background-color: $dark;
+                            }
+                        }
+
+                        .btn_link {
+                            @extend %remove_form_style;
+                            padding: $spacing-xs $spacing-md;
+                            background: none;
+                            color: $primary;
+                            font-size: $f-s-sm;
+                            text-decoration: underline;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                        }
+                    }
+                }
+            }
+        }
+
+        .recommended_section {
+            width: 35%;
+            height: 100%;
+
+            h3 {
+                font-size: $f-s-lg;
+                font-weight: bold;
+                color: $text;
+                margin-bottom: $spacing-lg;
+            }
+
+            .recommended_card {
+                background-color: $white;
+                border-radius: $rad-md;
+                overflow: hidden;
+                margin-bottom: $spacing-md;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+                img {
+                    width: 100%;
+                    height: 150px;
+                    object-fit: cover;
+                }
+
+                .recommended_info {
+                    padding: $spacing-md;
+
+                    h4 {
+                        font-size: $f-s-md;
+                        font-weight: bold;
+                        color: $text;
+                        margin-bottom: $spacing-xs;
+                    }
+
+                    .recommended_tags {
+                        display: flex;
+                        gap: $spacing-xs;
+                        margin-bottom: $spacing-xs;
+                        flex-wrap: wrap;
+
+                        .tag {
+                            background-color: $dark;
+                            color: $text;
+                            font-size: $f-s-xs;
+                            padding: 2px $spacing-xs;
+                            border-radius: $rad-sm;
+                        }
+                    }
+
+                    .recommended_rating {
+                        display: flex;
+                        align-items: center;
+                        gap: $spacing-xs;
+                        margin-bottom: $spacing-xs;
+
+                        .stars {
+                            color: $accent;
+                            font-size: $f-s-sm;
+                        }
+
+                        .rating_text {
+                            font-size: $f-s-xs;
+                            color: $text;
+                        }
+                    }
+
+                    .price {
+                        font-size: $f-s-sm;
+                        font-weight: bold;
+                        color: $text;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.order_management_deco-box {
+    position: relative;
+    width: 100%;
+
+    .order_management_deco1 {
+        position: absolute;
+        bottom: -$h-10vh;
+        left: 0;
+        width: 15%;
+        min-width: 200px;
+        z-index: 1;
+    }
+}

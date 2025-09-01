@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.my_footprint_main, .find_map_main, .footprint_card {
+.order_management_main, .notifications_main, .my_footprint_main, .find_map_main, .footprint_card {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
@@ -10,19 +10,19 @@
   align-items: center;
 }
 
-.footprint_content_box, .type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+.order_management_content_box, .notifications_content_box, .footprint_content_box, .type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .top .like_button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
+.order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_outline, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_link, .type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .top .like_button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
   border: none;
   outline: none;
   background: none;
 }
 
-.user_sidebar_left, .footprint_content, .find_type_card .find_type_card_wrap, .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
+.order_management_content, .user_sidebar_left, .notifications_content, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .footprint_content, .find_type_card .find_type_card_wrap, .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -39,7 +39,7 @@
   -webkit-box-orient: vertical;
 }
 
-.footprint_content .footprint_content_topbar .year_box {
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_date, .footprint_content .footprint_content_topbar .year_box {
   text-align: center;
   line-height: 100%;
 }
@@ -1784,6 +1784,414 @@ a {
 .comment-input-area .submit-btn:hover img {
   transform: scale(1.06);
   transition: transform 0.2s ease;
+}
+
+.notifications_main {
+  background-color: #FDF7EB;
+  padding: 30px;
+  color: #39413A;
+  margin-bottom: 10vh;
+}
+
+.hr_square_deco {
+  width: 100%;
+  height: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+}
+
+.notifications_content_box {
+  align-items: flex-start;
+  padding: 20px 30px;
+  height: 100vh;
+}
+
+.user_sidebar_left {
+  align-items: center;
+  padding: 15px 30px;
+  width: 20%;
+  background-color: #DEBFA0;
+  gap: 20px;
+  border-radius: 15px;
+  min-width: 230px;
+}
+.user_sidebar_left .sidebar_item {
+  font-size: 1.25rem;
+  display: flex;
+  width: 100%;
+  margin-right: auto;
+}
+.user_sidebar_left .pageToggle {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  margin: auto 20px;
+  background-color: #fff;
+}
+.user_sidebar_left .pageToggle.Notifications::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #CBD4C1;
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+}
+
+.notifications_content {
+  width: 75%;
+  height: 100%;
+  padding-left: 30px;
+}
+.notifications_content .notifications_content_header {
+  margin-bottom: 25px;
+}
+.notifications_content .notifications_content_header h2 {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #39413A;
+  border-bottom: 2px solid #39413A;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+.notifications_content .notifications_layout {
+  display: flex;
+  gap: 30px;
+  height: 100%;
+}
+.notifications_content .notifications_layout .notifications_image {
+  width: 45%;
+}
+.notifications_content .notifications_layout .notifications_image img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.notifications_content .notifications_layout .notifications_list {
+  width: 55%;
+  height: 80vh;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #413B35;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item:last-child {
+  border-bottom: none;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_date {
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 80px;
+  padding: 10px;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_date .year {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #39413A;
+  line-height: 1;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_date .date {
+  font-size: 1rem;
+  color: #39413A;
+  line-height: 1;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_content {
+  flex: 1;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_content h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #39413A;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_content p {
+  font-size: 1rem;
+  color: #39413A;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+.notifications_content .notifications_layout .notifications_list .notification_item .notification_content p:last-child {
+  margin-bottom: 0;
+}
+
+.notifications_deco-box {
+  position: relative;
+  width: 100%;
+}
+.notifications_deco-box .notifications_deco1 {
+  position: absolute;
+  bottom: -10vh;
+  left: 0;
+  width: 15%;
+  min-width: 200px;
+  z-index: 1;
+}
+
+.order_management_main {
+  background-color: #FDF7EB;
+  padding: 30px;
+  color: #39413A;
+  margin-bottom: 10vh;
+}
+
+.hr_square_deco {
+  width: 100%;
+  height: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 40px;
+}
+
+.order_management_content_box {
+  align-items: flex-start;
+  padding: 20px 30px;
+  height: 100vh;
+}
+
+.user_sidebar_left {
+  align-items: center;
+  padding: 15px 30px;
+  width: 20%;
+  background-color: #DEBFA0;
+  gap: 20px;
+  border-radius: 15px;
+  min-width: 230px;
+}
+.user_sidebar_left .sidebar_item {
+  font-size: 1.25rem;
+  display: flex;
+  width: 100%;
+  margin-right: auto;
+}
+.user_sidebar_left .pageToggle {
+  position: relative;
+  width: 21px;
+  height: 21px;
+  margin: auto 20px;
+  background-color: #fff;
+}
+.user_sidebar_left .pageToggle.Order_management::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #CBD4C1;
+  top: 3px;
+  left: 3px;
+  width: 15px;
+  height: 15px;
+}
+
+.order_management_content {
+  width: 75%;
+  height: 100%;
+  padding-left: 30px;
+}
+.order_management_content .order_status_tabs {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+.order_management_content .order_status_tabs .status_tab {
+  padding: 15px 25px;
+  font-size: 1rem;
+  color: #39413A;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.order_management_content .order_status_tabs .status_tab.active {
+  color: #CBD4C1;
+  border-bottom-color: #CBD4C1;
+  font-weight: bold;
+}
+.order_management_content .order_status_tabs .status_tab:hover:not(.active) {
+  color: #39413A;
+}
+.order_management_content .order_content_layout {
+  display: flex;
+  gap: 40px;
+  height: calc(100% - 80px);
+}
+.order_management_content .order_content_layout .order_list {
+  width: 60%;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+.order_management_content .order_content_layout .order_list .order_card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_date {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 15px;
+  border-radius: 7.5px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_date .month {
+  display: block;
+  font-size: 0.875rem;
+  color: #39413A;
+  line-height: 1;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_date .day {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #39413A;
+  line-height: 1;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_status_badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  border-radius: 7.5px;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_status_badge.upcoming {
+  background-color: #CBD4C1;
+  color: #fff;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info {
+  padding: 20px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #39413A;
+  margin-bottom: 10px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_location {
+  font-size: 0.875rem;
+  color: #39413A;
+  margin-bottom: 20px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions {
+  display: flex;
+  gap: 15px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_outline {
+  padding: 10px 20px;
+  border: 1px solid #413B35;
+  border-radius: 7.5px;
+  background-color: #fff;
+  color: #39413A;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_outline:hover {
+  background-color: #413B35;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_link {
+  padding: 10px 20px;
+  background: none;
+  color: #CBD4C1;
+  font-size: 0.875rem;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.order_management_content .order_content_layout .recommended_section {
+  width: 35%;
+  height: 100%;
+}
+.order_management_content .order_content_layout .recommended_section h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #39413A;
+  margin-bottom: 25px;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info {
+  padding: 20px;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info h4 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #39413A;
+  margin-bottom: 10px;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_tags {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_tags .tag {
+  background-color: #413B35;
+  color: #39413A;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 7.5px;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating .stars {
+  color: #ED972E;
+  font-size: 0.875rem;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating .rating_text {
+  font-size: 0.75rem;
+  color: #39413A;
+}
+.order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .price {
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: #39413A;
+}
+
+.order_management_deco-box {
+  position: relative;
+  width: 100%;
+}
+.order_management_deco-box .order_management_deco1 {
+  position: absolute;
+  bottom: -10vh;
+  left: 0;
+  width: 15%;
+  min-width: 200px;
+  z-index: 1;
 }
 
 @keyframes show {
