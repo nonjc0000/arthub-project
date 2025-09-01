@@ -1,0 +1,77 @@
+.stall_map_main {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+  
+    .stall_map_container{
+           display: flex;
+    justify-content: center;
+      flex-direction: column;
+    }
+ 
+
+    .stall_map {
+        border: 1px solid red;
+        width: $w-70;
+        height: 400px;
+    }
+
+    .type_btn_box{
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        button{
+            @extend %remove_form_style;
+        }
+    }
+
+    .stall_search_box{
+        border: 1px solid red;
+        width: $w-70;
+        height: $w-60;
+        background-color:$white;
+        .stall_search_filter{
+            display: flex;
+
+            input,select,button{
+                @extend %remove_form_style;
+            }
+
+            .search_box{
+                border-radius: $rad-lg;
+                border: 1px solid $black;
+                @extend %flex-center;
+            }
+            .btn_box{
+                display: flex;
+
+                button{
+                display: flex;
+                background-color: $accent;
+                border-radius: $rad-ex;
+                width:80px;
+                @extend %flex-center;
+                color: $white;
+                font-size:$f-s-sm ;
+
+
+                img{
+                    width: 15px;
+                    height: auto;
+                }
+            }
+            }
+
+            select{
+                background-color: $gray-600;
+                color: $white;
+                border-radius: $rad-ex;
+                height: 25px;
+            }
+        }
+
+        .stall_search_result{
+            border: 1px solid red;
+        }
+    }
+}

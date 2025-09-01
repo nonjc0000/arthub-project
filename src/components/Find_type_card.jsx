@@ -1,9 +1,10 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Find_type_card = () => {
     return (
         <div className='find_type_card'>
-            <a href="#">
+            <Link to='/stall_map'>
                 <div className='find_type_card_wrap'>
                     <div className='top'>
                         <div className='date'>
@@ -30,7 +31,7 @@ const Find_type_card = () => {
                     <h2>Funtasty有趣市集</h2>
                     <p>品味生活、豐富有趣、寵物友善，有趣團隊集合理念一致、充滿熱情的職人，打造一個凝聚群體共好的聚落。支持餐車文化展現年輕世代活力和多元性，竭誠為民眾帶來具質感的市集體驗。</p>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }
