@@ -38,7 +38,7 @@ const Order_management = () => {
                         <div className='order_list'>
                             <div className='order_card'>
                                 <div className='order_image'>
-                                    <img src="./images/order_management/market1.jpg" alt="華山設計選物日" />
+                                    <img src="./images/order_management/market1.png" alt="華山設計選物日" />
                                     <div className='order_date'>
                                         <span className='month'>8月</span>
                                         <span className='day'>24</span>
@@ -49,15 +49,15 @@ const Order_management = () => {
                                     <h3>華山設計選物日</h3>
                                     <p className='order_location'>臺北市華山 × 文創園區</p>
                                     <div className='order_actions'>
-                                        <button className='btn_outline'>完成會籤</button>
-                                        <button className='btn_link'>詳情</button>
+                                        <button className='btn_pass'>查看憑證</button>
+                                        <button className='btn_comment'>評論</button>
                                     </div>
                                 </div>
                             </div>
 
                             <div className='order_card'>
                                 <div className='order_image'>
-                                    <img src="./images/order_management/market2.jpg" alt="華山設計選物日" />
+                                    <img src="./images/order_management/market1.png" alt="華山設計選物日" />
                                     <div className='order_date'>
                                         <span className='month'>8月</span>
                                         <span className='day'>24</span>
@@ -68,8 +68,8 @@ const Order_management = () => {
                                     <h3>華山設計選物日</h3>
                                     <p className='order_location'>臺北市華山 × 文創園區</p>
                                     <div className='order_actions'>
-                                        <button className='btn_outline'>完成會籤</button>
-                                        <button className='btn_link'>詳情</button>
+                                        <button className='btn_pass'>查看憑證</button>
+                                        <button className='btn_comment'>評論</button>
                                     </div>
                                 </div>
                             </div>
@@ -79,9 +79,9 @@ const Order_management = () => {
                             <h3>屬於你的市集靈感</h3>
                             
                             <div className='recommended_card'>
-                                <img src="./images/order_management/recommended1.jpg" alt="大稻埕貓路微章" />
+                                <img src="./images/order_management/recommended1.png" alt="大稻埕貓路微章" />
                                 <div className='recommended_info'>
-                                    <h4>大稻埕貓路微章</h4>
+                                    <h4>大稻埕風格微旅</h4>
                                     <div className='recommended_tags'>
                                         <span className='tag'>藝文展場</span>
                                         <span className='tag'>小型市集</span>
@@ -96,9 +96,9 @@ const Order_management = () => {
                             </div>
 
                             <div className='recommended_card'>
-                                <img src="./images/order_management/recommended2.jpg" alt="大稻埕貓路微章" />
+                                <img src="./images/order_management/recommended1.png" alt="大稻埕貓路微章" />
                                 <div className='recommended_info'>
-                                    <h4>大稻埕貓路微章</h4>
+                                    <h4>大稻埕風格微旅</h4>
                                     <div className='recommended_tags'>
                                         <span className='tag'>藝文展場</span>
                                         <span className='tag'>小型市集</span>
@@ -119,7 +119,7 @@ const Order_management = () => {
 
             <div className='order_management_deco-box'>
                 <figure className='order_management_deco1'>
-                    <img src="./images/decorations/deco-reading_elephant.svg" alt="閱讀大象裝飾" />
+                    <img src="./images/decorations/deco-reading_teddy_bear.svg" alt="閱讀泰迪熊裝飾" />
                 </figure>
             </div>
 
