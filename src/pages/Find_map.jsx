@@ -1,8 +1,25 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Find_map_card from '../components/Find_map_card'
-import Button from '../components/Button'
+import markets from '../data/market.json'
 
 const Find_map = () => {
+  // 市集資料
+  // 用 state 存資料
+  const [arrMarkets] = useState(markets);
+
+  // 搜尋變數，預設為空字串
+  const [search, setSearch] = useState('');
+
+  // 建立過濾後的函式
+  const filteredMarkets = useMemo(() => {
+    return [...arrMarkets]
+      // 搜尋
+      .filter((market) => {
+        //保留關鍵字內容
+        return market.name.match(search);
+      })
+  }, [search]);
+
   return (
     <>
       <main className='find_map_main'>
@@ -13,7 +30,7 @@ const Find_map = () => {
         <section className='find_map_content_box'>
 
           <div className='map_search-box'>
-            <form name="map_search_filter" id="map_search_filter" method="post" accept-charset="UTF-8">
+            <form name="map_search_filter" id="map_search_filter" method="post" acceptharset="UTF-8">
               {/* 選擇縣市 */}
               <div className='select_border'>
                 <select name="city" id="city">
@@ -34,17 +51,26 @@ const Find_map = () => {
 
               {/* 關鍵字搜尋 */}
               <div className='input_border'>
-                <input type="search" name="search" id="search" size="15" placeholder='關鍵字搜尋'/>
-                <button type="submit" value="搜尋"><img src="./images/find_map/magnifier.svg" alt="搜尋" /></button>
+                <input
+                  type="search"
+                  name="search"
+                  id="search"
+                  size="15"
+                  placeholder='關鍵字搜尋'
+                  // 綁定搜尋變數
+                  value={search}
+                  // 當搜尋內容有異動時，更新搜尋變數
+                  onChange={(e) => { setSearch(e.target.value) }} />
+                <button type="button" value="搜尋"><img src="./images/find_map/magnifier.svg" alt="搜尋" /></button>
               </div>
             </form>
 
             <div className='map_search_result'>
-              <Find_map_card />
-              <Find_map_card />
-              <Find_map_card />
-              <Find_map_card />
-              <Find_map_card />
+              {
+                filteredMarkets.map((market) =>
+                  <Find_map_card {...market} key={market.id} />
+                )
+              }
             </div>
           </div>
 

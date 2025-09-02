@@ -1,17 +1,19 @@
 import React from 'react'
 
-const Find_map_card = () => {
+const Find_map_card = ({id, name, date, time, tag1, tag2, tag3}) => {
   return (
     <>
       <div className='find_map_card'>
         <img src="./images/find_map/festival_img.jpg" alt="" />
         <div className='find_map_card_desc'>
-          <h2>夏末微光祭</h2>
-          <p>2025.07.14-07.15  9:00-18:00</p>
+          {/* <h2>夏末微光祭</h2> */}
+          <h2>{name}</h2>
+          {/* <p>2025.07.14-07.15  9:00-18:00</p> */}
+          <p>{date} {time}</p>
           <div className='anchors'>
-          <a href="#"># 夏日祭典</a>
-          <a href="#"># 質感選物</a>
-          <a href="#"># 輕食餐飲</a>
+          <a href="#"># {tag1}</a>
+          <a href="#"># {tag2}</a>
+          <a href="#"># {tag3}</a>
           </div>
         </div>
         <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">
