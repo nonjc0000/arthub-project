@@ -8,7 +8,7 @@ const Notifications = () => {
                 <img className='titleBox' src="./images/titlebox/notifications_titlebox.svg" alt='訊息通知Notifications' />
             </h1>
 
-            <div className="hr_square_deco" style={{ backgroundImage: 'url("./images/notifications/hr_square_deco.svg")' }}></div>
+            <div className="hr_square_deco" style={{ backgroundImage: 'url("./images/decorations/hr_square_deco.svg")' }}></div>
 
             <section className="notifications_content_box">
 
@@ -34,7 +34,7 @@ const Notifications = () => {
 
                     <div className='notifications_layout'>
                         <div className='notifications_image'>
-                            <img src="./images/notifications/market_street.jpg" alt="市集街景" />
+                            <img src="./images/Notifications/market_street.jpg" alt="市集街景" />
                         </div>
 
                         <div className='notifications_list'>
@@ -93,7 +93,7 @@ const Notifications = () => {
 
             <div className='notifications_deco-box'>
                 <figure className='notifications_deco1'>
-                    <img src="./images/decorations/deco-reading_elephant.svg" alt="閱讀大象裝飾" />
+                    <img src="./images/decorations/deco-reading_teddy_bear.svg" alt="閱讀泰迪熊裝飾" />
                 </figure>
             </div>
 

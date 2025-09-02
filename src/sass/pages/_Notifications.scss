@@ -84,30 +84,32 @@
 
     .notifications_layout {
         display: flex;
-        gap: $spacing-xl;
+        gap: 3rem;
         height: 100%;
 
         .notifications_image {
             width: 45%;
+            height: 100%;
             
             img {
-                width: 100%;
-                height: auto;
+                height: 100%;
                 border-radius: $rad-md;
                 object-fit: cover;
             }
         }
 
         .notifications_list {
+            @extend %flex-column;
+            justify-content: center;
             width: 55%;
-            height: $h-80vh;
+            height: 100%;
             overflow-y: auto;
-            padding-right: $spacing-sm;
+            // padding-right: $spacing-sm;
 
             .notification_item {
                 display: flex;
-                gap: $spacing-md;
-                padding: $spacing-md 0;
+                // gap: $spacing-md;
+                padding: $spacing-xl 0;
                 border-bottom: 1px solid $dark;
 
                 &:last-child {
@@ -117,9 +119,10 @@
                 .notification_date {
                     @extend %flex-column;
                     align-items: center;
-                    justify-content: flex-start;
+                    justify-content: center;
+                    gap: $spacing-xs;
                     min-width: 80px;
-                    padding: $spacing-xs;
+                    padding: $spacing-xs $spacing-xl $spacing-xs $spacing-xs;
 
                     .year {
                         font-size: $f-s-lg;

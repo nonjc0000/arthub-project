@@ -8,7 +8,7 @@ const Order_management = () => {
                 <img className='titleBox' src="./images/titlebox/order_management_titlebox.svg" alt='訂單管理Order Management' />
             </h1>
 
-            <div className="hr_square_deco" style={{ backgroundImage: 'url("./images/order_management/hr_square_deco.svg")' }}></div>
+            <div className="hr_square_deco" style={{ backgroundImage: 'url("./images/decorations/hr_square_deco.svg")' }}></div>
 
             <section className="order_management_content_box">
 
