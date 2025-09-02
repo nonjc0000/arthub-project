@@ -1,38 +1,55 @@
 @use "../variables/" as *;
 @use "../functions/" as *;
 
-.north_title h1 {
+
+.region_title h1 {
   text-align: center;
   margin: $spacing-y-lg;
 }
 
-.north_introduction {
+
+.region_introduction {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
 }
 
-.north_slide {
+
+.region_carousel {
+  position: relative;
   display: flex;
   justify-content: center;
+  gap: 20px;
 
-  img {
-    width: $w-60;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: $rad-lg;
+
+  button {
+    border: none;
+    cursor: pointer;
+    background-color: $background;
   }
 }
 
-.north_txt {
- 
+
+.carousel-image {
+  display: block;
+  max-width: 30vw;
+  height: auto;
+}
+
+
+.region_txt {
+  padding-top: 50px;
   text-align: center;
 }
 
+
 .travelCard {
-  margin-top: $spacing-ex;
+  padding-top: 80px;
   gap: $spacing-lg;
   justify-items: center;
+  padding-bottom: $spacing-ex;
 }
+
+
+

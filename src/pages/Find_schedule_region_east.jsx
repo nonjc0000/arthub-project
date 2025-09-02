@@ -1,46 +1,93 @@
 import TravelCard from "../components/Find_schedule/TravelCard";
+import { useEffect, useState } from "react";
+
 
 const arrData = [
   {
-    image: "#",
-    title: "華山設計漫遊日｜風格選物 × 咖啡散步 × 文創市集",
+    image: "./images/Find_schedule/north_travel01.jpg",
+    title: "花蓮東大門夜市 × 太平洋公園｜夜色與海風的交響曲",
     description:
-      "走進華山文創園區，來一場設計與風格的慢步旅行。從早餐咖啡展覽節奏、逛展覽、市集與手作選物，感受城市裡輕又充滿創意的日常片段。",
+      "下午先到太平洋公園或南濱公園散步，傍晚走進東大門夜市，品嚐花蓮在地小吃，邊聽駐唱邊逛攤位，最後在海邊吹風結束一天。",
     rating: "4.5 非常好 (5)",
     price: "NT $890 起",
   },
   {
-    image: "#",
-    title: "台北藝文小旅行｜藝文展覽 × 城市散步",
+    image: "./images/Find_schedule/north_travel02.jpg",
+    title: "台東鐵花村 × 鐵道藝術村｜音樂市集與慢城氛圍",
     description:
-      "結合藝術展覽與城市探索，一邊欣賞設計作品，一邊漫步在城市巷弄，品味台北的藝文氣息。",
+      "白天到鐵花村文創市集，逛手作小物與原創商品，午後走訪鐵道藝術村，欣賞藝術裝置與老倉庫風情。晚上回到鐵花村草地，聽現場音樂表演，體驗台東獨特的慢活節奏。",
     rating: "4.7 超讚 (8)",
     price: "NT $1200 起",
   },
   {
-    image: "#",
-    title: "大稻埕風格微旅｜巷弄選物 × 小型市集 × 河岸夕陽",
+    image: "./images/Find_schedule/north_travel03.jpg",
+    title: "池上市集 × 伯朗大道｜田園間的旅行詩篇",
     description:
-      "走進大稻埕的老街巷弄，探索復古與創意交會的城市風景。安排選物、手作與黃昏碼頭的散步，讓一日旅行成為儀式感滿分的生活片段。",
+      "上午到池上市集採買在地農產、手作選物，午後騎腳踏車漫遊伯朗大道，沉浸在金色稻浪或綠色田園風光中。傍晚可在池上小館用餐，感受東部最純粹的土地味道。",
     rating: "4.7 超讚 (8)",
     price: "NT $1200 起",
   },
 ];
 
+
 const Find_schedule_region_east = () => {
+  // 1) 圖片資料
+  const images = [
+    { url: "./images/Find_schedule/east_slide_01.jpg", title: "photo-1" },
+    { url: "./images/Find_schedule/east_slide_02.jpg", title: "photo-2" },
+    { url: "./images/Find_schedule/east_slide_03.jpg", title: "photo-3" },
+    { url: "./images/Find_schedule/east_slide_04.jpg", title: "photo-4" },
+    { url: "./images/Find_schedule/east_slide_05.jpg", title: "photo-5" },
+  ];
+
+
+  // 2) 狀態
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+
+  // 3) 切換函式（寫在元件內）
+  const nextSlide = () => {
+    setCurrentIndex((i) => (i + 1) % images.length);
+  };
+  const prevSlide = () => {
+    setCurrentIndex((i) => (i - 1 + images.length) % images.length);
+  };
+
+
+  // 4) 自動播放（用函式型 setState，不必依賴 currentIndex）
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(id);
+  }, [images.length]);
+
+
   return (
-    <div>
-      <div className="title">
+    <div className="region_page">
+      <div className="region_title">
         <h1>東部地區</h1>
       </div>
-      <section className="north">
-        <figure>
-          {/* <img
-            src="/images/Find_schedule/beautiful-architecture-building-taipei-city.jpg"
-            alt=""
-          /> */}
-        </figure>
-        <p>
+
+
+      {/* 輪播 */}
+      <div className="region_carousel">
+        <button onClick={prevSlide} aria-label="上一張">
+          <img src="./images/Find_schedule/LeftArrow.svg" alt="LeftArrow" />
+        </button>
+        <img
+          src={images[currentIndex].url}
+          alt={images[currentIndex].title || `輪播圖片 ${currentIndex + 1}`}
+          className="carousel-image"
+        />
+        <button onClick={nextSlide} aria-label="下一張">
+          <img src="./images/Find_schedule/RightArrow.svg" alt="RightArrow" />
+        </button>
+      </div>
+
+
+      <div className="region_introduction">
+        <p className="region_txt">
           東部的市集像是自然延伸出的風景。
           <br />
           在花蓮、台東，市集常常與山海為伍，
@@ -51,12 +98,17 @@ const Find_schedule_region_east = () => {
           <br />
           適合你放慢腳步，來一趟沒有壓力的風格漫遊。
         </p>
-      </section>
+      </div>
+
+
       <div className="travelCard">
-        <TravelCard data={arrData} />;
+        <TravelCard data={arrData} />
       </div>
     </div>
   );
 };
 
+
 export default Find_schedule_region_east;
+
+

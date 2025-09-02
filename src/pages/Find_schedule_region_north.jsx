@@ -1,4 +1,6 @@
 import TravelCard from "../components/Find_schedule/TravelCard";
+import { useEffect, useState } from "react";
+
 
 const arrData = [
   {
@@ -30,17 +32,65 @@ const arrData = [
   },
 ];
 
+
 const Find_schedule_region_north = () => {
+  // 1) 圖片資料
+  const images = [
+    { url: "./images/Find_schedule/north_slide_01.jpg", title: "photo-1" },
+    { url: "./images/Find_schedule/north_slide_02.jpg", title: "photo-2" },
+    { url: "./images/Find_schedule/north_slide_03.jpg", title: "photo-3" },
+    { url: "./images/Find_schedule/north_slide_04.jpg", title: "photo-4" },
+    { url: "./images/Find_schedule/north_slide_05.jpg", title: "photo-5" },
+  ];
+
+
+  // 2) 狀態
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+
+  // 3) 切換函式（寫在元件內）
+  const nextSlide = () => {
+    setCurrentIndex((i) => (i + 1) % images.length);
+  };
+  const prevSlide = () => {
+    setCurrentIndex((i) => (i - 1 + images.length) % images.length);
+  };
+
+
+  // 4) 自動播放（用函式型 setState，不必依賴 currentIndex）
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(id);
+  }, [images.length]);
+
+
   return (
-    <div className="north_page">
-      <div className="north_title">
+    <div className="region_page">
+      <div className="region_title">
         <h1>北部地區</h1>
       </div>
-      <section className="north_introduction">
-        <figure className="north_slide">
-          <img src="./images/Find_schedule/north_01.jpg" alt="" />
-        </figure>
-        <p className="north_txt">
+
+
+      {/* 輪播 */}
+      <div className="region_carousel">
+        <button onClick={prevSlide} aria-label="上一張">
+          <img src="./images/Find_schedule/LeftArrow.svg" alt="LeftArrow" />
+        </button>
+        <img
+          src={images[currentIndex].url}
+          alt={images[currentIndex].title || `輪播圖片 ${currentIndex + 1}`}
+          className="carousel-image"
+        />
+        <button onClick={nextSlide} aria-label="下一張">
+          <img src="./images/Find_schedule/RightArrow.svg" alt="RightArrow" />
+        </button>
+      </div>
+
+
+      <div className="region_introduction">
+        <p className="region_txt">
           北部｜城市交會的靈感地帶
           <br />
           以台北為中心，北部聚集了最多元的創意市集與設計品牌。
@@ -51,12 +101,15 @@ const Find_schedule_region_north = () => {
           <br />
           適合愛探索的你，也適合從城市中找靈感的生活者。
         </p>
-      </section>
+      </div>
+
+
       <div className="travelCard">
-        <TravelCard data={arrData} />;
+        <TravelCard data={arrData} />
       </div>
     </div>
   );
 };
+
 
 export default Find_schedule_region_north;
