@@ -33,7 +33,7 @@ const arrData = [
 ];
 
 
-const Find_schedule_region_north = () => {
+const Find_schedule_region_west = () => {
   // 1) 圖片資料
   const images = [
     { url: "./images/Find_schedule/west_slide_01.jpg", title: "photo-1" },
