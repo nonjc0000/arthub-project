@@ -7,26 +7,29 @@ const Home = () => {
       {/* 首頁第一區塊 */}
       <main>
         <section className='home-bg'>
-          <div className='home-top home-wrap'>
-            <div className='home-heading'>
-              <h2>周末不知道去哪?<br />就從一場市集開始吧!</h2>
-              <img className='arrow' src="./images/home/home_arrow.svg" alt="首頁箭頭" />
-            </div>
-            <div className='stall-wrap'>
-              <div className='stall-item'>
-                <img className='stall-first' src="./images/home/home-find_type.svg" alt="找類型攤位" />
-                <img className='stall-second' src="./images/home/home-find_map.svg" alt="找地圖攤位" />
-                <img className='stall-third' src="./images/home/home-find-schedule.svg" alt="找行程攤位" />
+          <div className='home-wrap'>
+            <div className='home-top'>
+              <div className='home-heading'>
+                <h2>周末不知道去哪?<br />就從一場市集開始吧!</h2>
+                <img className='arrow' src="./images/home/home_arrow.svg" alt="首頁箭頭" />
               </div>
-              <div>
-                <div className="date-box">
-                  <p className="month">07</p>
-                  <p className="slash"></p>
-                  <p className="day">22</p>
-                  <p className="weekday">TUE.</p>
-                  <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
-                  <p className='temptemperature'>25°C</p>
-                  <p className='situation'>多雲</p>
+              <div className='stall-wrap'>
+                <div className='stall-item'>
+                  <a href="#"><img className='stall-first' src="./images/home/home-find_type.svg" alt="找類型攤位" /></a>
+                  <a href="#"><img className='stall-second' src="./images/home/home-find_map.svg" alt="找地圖攤位" /></a>
+                  <a href="#"><img className='stall-third' src="./images/home/home-find-schedule.svg" alt="找行程攤位" /></a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div className="date-box">
+                <p>7</p>
+                <div className='slash'></div>
+                <div className='date-item'>
+                  <p>22</p>
+                <p className="weekday">TUE.</p>
+                <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
+                <p className='temptemperature'>25°C<span  className='situation'>多雲</span></p>
                 </div>
               </div>
             </div>
@@ -74,8 +77,10 @@ const Home = () => {
               <img src="./images/home/左下圖片.svg" alt="左下圖片.svg" />
             </div>
             <div className='home-right-blog'>
-              <h3>部落格</h3>
-              <p>Blog</p>
+              <div className='home-right-txt'>
+                <h3>部落格</h3>
+                <p>Blog</p>
+              </div>
             </div>
           </div>
         </section>
