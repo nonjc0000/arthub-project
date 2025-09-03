@@ -1,7 +1,25 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Notifications = () => {
+
+    // 通知元件
+    const Notifications_item = () => {
+
+        return (
+            <div className='notification_item'>
+                <div className='notification_date'>
+                    <span className='year'>2025</span>
+                    <span className='date'>Jun.15</span>
+                </div>
+                <div className='notification_content'>
+                    <h3>主辦關主標題主標題</h3>
+                    <p>我是內容我是內容我是我是內容我是內容</p>
+                    <p>我是內容我是內容我是我是內容我是內容</p>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <main className='notifications_main'>
             <h1 className='titleBox_h1'>
@@ -38,53 +56,10 @@ const Notifications = () => {
                         </div>
 
                         <div className='notifications_list'>
-                            <div className='notification_item'>
-                                <div className='notification_date'>
-                                    <span className='year'>2025</span>
-                                    <span className='date'>Jun.15</span>
-                                </div>
-                                <div className='notification_content'>
-                                    <h3>主辦關主標題主標題</h3>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                </div>
-                            </div>
-
-                            <div className='notification_item'>
-                                <div className='notification_date'>
-                                    <span className='year'>2025</span>
-                                    <span className='date'>Jun.15</span>
-                                </div>
-                                <div className='notification_content'>
-                                    <h3>主辦關主標題主標題</h3>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                </div>
-                            </div>
-
-                            <div className='notification_item'>
-                                <div className='notification_date'>
-                                    <span className='year'>2025</span>
-                                    <span className='date'>Jun.15</span>
-                                </div>
-                                <div className='notification_content'>
-                                    <h3>主辦關主標題主標題</h3>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                </div>
-                            </div>
-
-                            <div className='notification_item'>
-                                <div className='notification_date'>
-                                    <span className='year'>2025</span>
-                                    <span className='date'>Jun.15</span>
-                                </div>
-                                <div className='notification_content'>
-                                    <h3>主辦關主標題主標題</h3>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                    <p>我是內容我是內容我是我是內容我是內容</p>
-                                </div>
-                            </div>
+                            <Notifications_item />
+                            <Notifications_item />
+                            <Notifications_item />
+                            <Notifications_item />
                         </div>
                     </div>
                 </div>

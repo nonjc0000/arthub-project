@@ -2,6 +2,34 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Order_management = () => {
+
+    // 訂單卡片
+    const Order_card = () => {
+        return (
+            <div className='order_card'>
+                <div className='order_image'>
+                    <img src="./images/order_management/market1.png" alt="華山設計選物日" />
+                    <div className='order_date'>
+                        <span className='month'>8月</span>
+                        <span className='day'>24</span>
+                    </div>
+                    <div className='order_status_badge upcoming'>即將到來</div>
+                </div>
+                <div className='order_info'>
+                    <h3>華山設計選物日</h3>
+                    <p className='order_location'>臺北市華山 × 文創園區</p>
+                    <div className='order_actions'>
+                        <button className='btn_pass'>
+                            <img src="./images/order_management/pass_icon.svg" alt=""/>
+                            查看憑證
+                            </button>
+                        <button className='btn_comment'>評論</button>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <main className='order_management_main'>
             <h1 className='titleBox_h1'>
@@ -36,48 +64,13 @@ const Order_management = () => {
 
                     <div className='order_content_layout'>
                         <div className='order_list'>
-                            <div className='order_card'>
-                                <div className='order_image'>
-                                    <img src="./images/order_management/market1.png" alt="華山設計選物日" />
-                                    <div className='order_date'>
-                                        <span className='month'>8月</span>
-                                        <span className='day'>24</span>
-                                    </div>
-                                    <div className='order_status_badge upcoming'>即將到來</div>
-                                </div>
-                                <div className='order_info'>
-                                    <h3>華山設計選物日</h3>
-                                    <p className='order_location'>臺北市華山 × 文創園區</p>
-                                    <div className='order_actions'>
-                                        <button className='btn_pass'>查看憑證</button>
-                                        <button className='btn_comment'>評論</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='order_card'>
-                                <div className='order_image'>
-                                    <img src="./images/order_management/market1.png" alt="華山設計選物日" />
-                                    <div className='order_date'>
-                                        <span className='month'>8月</span>
-                                        <span className='day'>24</span>
-                                    </div>
-                                    <div className='order_status_badge upcoming'>即將到來</div>
-                                </div>
-                                <div className='order_info'>
-                                    <h3>華山設計選物日</h3>
-                                    <p className='order_location'>臺北市華山 × 文創園區</p>
-                                    <div className='order_actions'>
-                                        <button className='btn_pass'>查看憑證</button>
-                                        <button className='btn_comment'>評論</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <Order_card />
+                            <Order_card />
                         </div>
 
                         <div className='recommended_section'>
                             <h3>屬於你的市集靈感</h3>
-                            
+
                             <div className='recommended_card'>
                                 <img src="./images/order_management/recommended1.png" alt="大稻埕貓路微章" />
                                 <div className='recommended_info'>
