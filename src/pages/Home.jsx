@@ -1,8 +1,22 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import Button from '../components/Button'
+import PageTop from '../components/PageTop'
+
+
 
 
 const Home = () => {
+  const topRef = useRef(null);
+
+
+  function gotoTop(){
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+  }
+
+
 
 
   return (
@@ -90,11 +104,29 @@ const Home = () => {
                 <h3>部落格</h3>
                 <p>Blog</p>
               </div>
+              {/* 卡片 */}
+              <div className='home-card'>
+                <div>
+                  <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
+                </div>
+                <div className='home-card-item'>
+                    <p>2025.6.15<span>某某某</span></p>
+                  <div>
+                    <p>城市裡的一場迷你旅行：</p>
+                    <p>我在市集中發現的生活靈感</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div className='home-button'>
             <Button />
           </div>
+          <div ref={topRef}>
+            <button onClick={gotoTop}>回頂端</button>
+          </div>
+
+
         </section>
       </main>
     </>
@@ -102,5 +134,11 @@ const Home = () => {
 }
 
 
+
+
 export default Home
+
+
+
+
 

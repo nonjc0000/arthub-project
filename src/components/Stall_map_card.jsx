@@ -72,9 +72,9 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
                         {/* 社群連結按鈕 */}
                         <div className='social_btn_box'>
-                            <button><img src="./images/Stall_map/icon_ins.svg" alt="instagram" /></button>
-                            <button><img src="./images/Stall_map/icon_fb.svg" alt="facebook" /></button>
-                            <button><img src="./images/Stall_map/icon_web.svg" alt="個人網站" /></button>
+                            <a href=''><img src="./images/Stall_map/icon_ins.svg" alt="instagram" /></a>
+                            <a href=''><img src="./images/Stall_map/icon_fb.svg" alt="facebook" /></a>
+                            <a href=''><img src="./images/Stall_map/icon_web.svg" alt="個人網站" /></a>
                         </div>
 
 
@@ -123,4 +123,6 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 export default Stall_map_card
+
+
 

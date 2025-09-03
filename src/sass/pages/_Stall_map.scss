@@ -56,6 +56,42 @@
 
         button {
             @extend %remove_form_style;
+            cursor: pointer;
+
+
+            span {
+                position: relative;
+                // margin-top: 15px;
+                padding: 3px;
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: #ccc;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 0.4s;
+                    z-index: -1;
+                }
+
+
+            }
+
+
+            .active {
+                &::before {
+                    transform: scaleX(1);
+
+
+                }
+
+
+            }
         }
     }
 
@@ -100,6 +136,8 @@
                 border: 1px solid $black;
                 @extend %flex-center;
                 height: 30px;
+
+
             }
 
 
@@ -114,6 +152,7 @@
 
                 button {
                     display: flex;
+                    cursor: pointer;
                     background-color: $accent;
                     border-radius: $rad-ex;
                     width: 80px;
@@ -311,10 +350,14 @@
 
 
 
+
+
                     button {
                         color: $white;
                         @extend %flex-center;
                         gap: $spacing-xs;
+                        width: $w-100;
+                        cursor: pointer;
 
 
 
@@ -401,30 +444,51 @@
 
     .stall_map_img2 {
         z-index: 1;
-        right: 200px;
-        bottom: -55px;
+        right: 130px;
+        bottom: -760px;
     }
 
 
     .stall_map_img3 {
         z-index: 1;
-        bottom: -60px;
-        left: 90px;
+        bottom: -760px;
+        left: 35px;
     }
 
 
     .stall_map_img4 {
         z-index: -1;
         top: 400px;
-        width: 100%;
+        left: 0px;
+        width: 90%;
     }
-    .stall_box>.stall_map_card_sm{
+
+
+
+
+    .stall_box {
+        position: relative;
         display: inline-block;
+
+
+        &:hover {
+            .tooltip_card {
+                display: block;
+            }
+        }
     }
 
 
-    .sm_card_show{
+    .tooltip_card {
         display: none;
+        position: absolute;
+        top: -220px;
+        /* 放在上方，避免擋住圖片 */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+
+
     }
 
 
@@ -432,59 +496,77 @@
         width: 180px;
         height: 210px;
         border-radius: $rad-lg;
+        background-color: $white;
         border: 1px solid $black;
         overflow: hidden;
-   
+        display: none;
+        display: inline-block;
+
+
         .sm_card_wrap {
             height: 135px;
             background-color: #ccc;
             border-bottom: 1px solid $black;
-   
+
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 padding: 10px;
-   
+
+
                 figure {
                     @extend %flex-center;
                     background-color: $accent;
                     color: $white;
                     width: 60px;
                     border-radius: $rad-ex;
-   
+
+
                     gap: 10px;
-   
+
+
                     img {
                         width: 12px;
                     }
                 }
-   
+
+
                 .num {
                     @extend %flex-center;
                     background-color: $accent;
                     color: $white;
                     width: 60px;
                     border-radius: $rad-ex;
-   
+
+
                 }
             }
         }
-   
+
+
         .body {
+
+
             .title {
                 @extend %flex-center;
                 height: 33px;
                 padding-top: 3px;
-   
+
+
                 p {
                     font-weight: $f-w-b;
                     font-size: $f-s-md;
                 }
             }
-            .tag_box{
+
+
+            .tag_box {
                 display: flex;
                 gap: 10px;
-                p{
+
+
+                p {
                     @extend %flex-center;
                     width: 50px;
                     border-radius: $rad-ex;
@@ -495,8 +577,6 @@
         }
     }
 }
-
-
 
 
 

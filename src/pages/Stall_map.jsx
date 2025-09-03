@@ -72,10 +72,6 @@ const Stall_map = () => {
     ]
 
 
-
-
-
-
     // 搜尋變數，預設為空字串
     const [search, setSearch] = useState('');
 
@@ -86,11 +82,22 @@ const Stall_map = () => {
         return [...arrStall]
             .filter((stall) => {
                 //保留關鍵字內容
-                return stall.name.match(search);
+                return (stall.name.match(search),
+                    stall.num.match(search))
             })
 
 
     }, [search]);
+
+
+
+
+    // 分類按鈕變色
+    const [active,setActive]=useState(false);
+
+
+
+
 
 
     return (
@@ -110,13 +117,53 @@ const Stall_map = () => {
 
                 {/* 攤位地圖 */}
                 <div className='stall_map'>
+
+
                     <div className='stalls_1'>
+
+
                         <div className='stall_box'>
+
+
                             <img src="./images/Stall_map/stall.svg" alt="" />
+
+
                             <div className="tooltip_card">
                                 <Stall_map_card_sm />
                             </div>
+
+
                         </div>
+
+
+                        <div className='stall_box'>
+
+
+                            <img src="./images/Stall_map/stall.svg" alt="" />
+
+
+                            <div className="tooltip_card">
+                                <Stall_map_card_sm />
+                            </div>
+
+
+                        </div>
+
+
+                        <div className='stall_box'>
+
+
+                            <img src="./images/Stall_map/stall.svg" alt="" />
+
+
+                            <div className="tooltip_card">
+                                <Stall_map_card_sm />
+                            </div>
+
+
+                        </div>
+
+
 
 
                     </div>
@@ -127,7 +174,7 @@ const Stall_map = () => {
 
                 {/* 種類按鈕 */}
                 <div className='type_btn_box'>
-                    <button><img src="./images/Stall_map/btn_handMade.svg" alt="手作按鈕" />手做</button>
+                    <button onClick={() => setActive(!active)}><img src="./images/Stall_map/btn_handMade.svg" alt="手作按鈕" /><span className={active?'active':''}>手做</span></button>
                     <button><img src="./images/Stall_map/btn_food.svg" alt="食物按鈕" />食物</button>
                     <button><img src="./images/Stall_map/btn_clothes.svg" alt="服飾按鈕" />服飾</button>
                     <button><img src="./images/Stall_map/btn_plant.svg" alt="植栽按鈕" />植栽</button>
@@ -192,7 +239,6 @@ const Stall_map = () => {
 
 
                     <div className='stall_search_result'>
-                        <Stall_map_card_sm />
                         {
                             filterStall.map((stall) =>
 

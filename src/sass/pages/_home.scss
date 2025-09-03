@@ -4,13 +4,11 @@
 
 
 
-
-
-
-
 .home-bg {
     background-color: $background;
 }
+
+
 
 
 .home-wrap {
@@ -20,9 +18,10 @@
     margin-top: 80px;
 
 
+
+
     .date-box {
-        margin-top: -150px;
-        margin-right: 80px;
+        margin-right: 150px;
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -30,6 +29,8 @@
         font-family: DM Sans;
         color: $dark;
         font-size: $f-s-xxxxl;
+
+
 
 
         .slash {
@@ -40,6 +41,8 @@
         }
 
 
+
+
         .date-item {
             display: flex;
             gap: 20px;
@@ -48,15 +51,21 @@
         }
 
 
+
+
         .weekday {
             font-weight: $f-w-m;
         }
+
+
 
 
         .weather {
             width: 65px;
             height: 65px;
         }
+
+
 
 
         .situation {
@@ -66,10 +75,14 @@
 }
 
 
+
+
 // 單純用flex並排
 .home-top {
     display: flex;
     position: relative;
+
+
 
 
     @media (max-width: 992px) {
@@ -82,6 +95,8 @@
 }
 
 
+
+
 .home-heading {
     width: $w-40;
     margin-left: 120px;
@@ -89,9 +104,13 @@
     margin-bottom: 250px;
 
 
+
+
     @media (max-width: 992px) {
         width: 100%;
     }
+
+
 
 
     h2 {
@@ -104,6 +123,8 @@
     }
 
 
+
+
     .arrow {
         width: 4%;
         margin-top: 25px;
@@ -112,17 +133,23 @@
 }
 
 
+
+
 .stall-wrap {
-    // margin-right: 100px;
+    margin-right: 100px;
     width: $w-60;
     height: auto;
     position: relative;
+
+
 
 
     @media (max-width: 992px) {
         width: 100%; // 同樣全寬
         // margin-top: 20px; // 與上方保持距離
     }
+
+
 
 
     .stall-item {
@@ -132,11 +159,15 @@
         }
 
 
+
+
         .stall-first {
             position: absolute;
             width: $w-50;
             height: auto;
         }
+
+
 
 
         .stall-second {
@@ -146,6 +177,8 @@
             left: 35%;
             top: 25%;
         }
+
+
 
 
         .stall-third {
@@ -159,18 +192,23 @@
 }
 
 
+
+
 // 第二塊
 .home-hot {
     text-align: center;
     font-family: $family-tc;
     color: $dark;
-    margin-top: 200px;
     margin-bottom: 60px;
+
+
 
 
     h3 {
         font-size: $f-s-xxxxl;
     }
+
+
 
 
     p {
@@ -180,15 +218,21 @@
 }
 
 
+
+
 .pic-wrap {
     max-width: 1500px;
     margin: 0 auto;
+
+
 
 
     .home-pic {
         display: flex;
         justify-content: space-between;
         gap: 16px;
+
+
 
 
         .home-pic-fsb {
@@ -198,10 +242,14 @@
             gap: 16px;
 
 
+
+
             .home-pic-item {
                 display: flex;
                 justify-content: space-between;
                 gap: 16px;
+
+
 
 
                 .type-img-one {
@@ -209,13 +257,19 @@
                 }
 
 
+
+
                 .type-img-tw {
                     width: 100%;
                 }
 
 
+
+
             }
         }
+
+
 
 
         .home-pic-se {
@@ -230,10 +284,18 @@
 
 
 
+
+
+
+
+
+
             .type-img {
                 margin-bottom: 16px;
             }
         }
+
+
 
 
         img {
@@ -247,6 +309,8 @@
 }
 
 
+
+
 .home-blog {
     margin-top: 112px;
     margin-right: 350px;
@@ -254,6 +318,8 @@
     text-align: center;
     color: $dark;
     transform: rotate(5deg);
+
+
 
 
     h3 {
@@ -264,18 +330,24 @@
 }
 
 
+
+
 .home-blog-item {
     @extend %flex-center;
     position: relative;
     margin-bottom: 200px;
 
 
+
+
     .home-left-img {
         width: $w-100;
         height: $h-100vh;
         position: relative;
-        margin-right: -250px;
+        margin-right: -300px;
         z-index: 1;
+
+
 
 
         img {
@@ -286,17 +358,20 @@
     }
 
 
+
+
     .home-right-blog {
         position: relative;
         z-index: 0;
         width: $w-100;
-        height: $h-100vh;
+        height: $h-80vh;
         top: 180px;
-        // margin-left: -250px;
         background-color: $primary;
         border-top-left-radius: $rad-ex;
         border-bottom-left-radius: $rad-ex;
         z-index: 0;
+
+
 
 
         .home-right-txt {
@@ -307,12 +382,18 @@
         }
 
 
+
+
         h3 {
             font-weight: $f-w-b;
             font-size: $f-s-xxxl;
 
 
+
+
         }
+
+
 
 
         p {
@@ -324,11 +405,37 @@
 }
 
 
+.home-card {
+    @extend %flex-center;
+    padding-left: 100px;
+    img {
+        width: $w-100;
+        display: block;
+        border-top-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+    .home-card-item {
+        @extend %flex-column;
+        margin-left: 28px;
+        span {
+            padding-left: 20px;
+        }
+    }
+    .card-txt {
+        display: flex;
+    }
+}
+
+
 .home-button {
     position: relative;
     z-index: 3;
     text-align: right;
-    top: -60px;
+    top: -150px;
     right: 60px;
 }
+
+
+
+
 
