@@ -1,10 +1,10 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.order_management_main, .notifications_main, .my_footprint_main, .find_map_main, .footprint_card {
+.order_management_main, .notifications_main, .my_footprint_main, .find_map_main, .footprint_card, body, button {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .home-blog-item, .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,9 +70,9 @@ time, mark, audio, video {
 
 body {
   background-color: #FDF7EB;
-  font-family: sans-serif;
   font-size: 100%;
   line-height: 1.5;
+  letter-spacing: 0.08em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2081,7 +2081,7 @@ a {
 .order_management_content .order_content_layout .order_list .order_card .order_info .order_location {
   font-size: 1rem;
   color: #adb5bd;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions {
   position: absolute;
@@ -2092,18 +2092,25 @@ a {
 }
 .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass {
   width: 50%;
-  padding: 10px 20px;
+  padding: 15px 20px;
   border-top: 1px solid #adb5bd;
   border-right: 1px solid #adb5bd;
   border-radius: 0 0 0 7.5px;
   background-color: #fff;
   color: #adb5bd;
-  font-size: 0.875rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass:hover {
   background-color: #413B35;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content {
+  gap: 10px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass img {
+  display: inline-block;
+  width: 20px;
 }
 .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment {
   width: 50%;
@@ -2112,12 +2119,19 @@ a {
   border-radius: 0 0 7.5px 0;
   background-color: #fff;
   color: #adb5bd;
-  font-size: 0.875rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment:hover {
   background-color: #413B35;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content {
+  gap: 5px;
+}
+.order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment img {
+  display: inline-block;
+  width: 27px;
 }
 .order_management_content .order_content_layout .recommended_section {
   width: 35%;

@@ -174,13 +174,12 @@
                         font-size: $f-s-lg;
                         font-weight: bold;
                         color: $text;
-                        // margin-bottom: $spacing-xs;
                     }
 
                     .order_location {
                         font-size: $f-s-md;
                         color: $gray-500;
-                        margin-bottom: $spacing-xl;
+                        margin-bottom: $spacing-xxl;
                     }
 
                     .order_actions {
@@ -194,19 +193,30 @@
                         .btn_pass {
                             @extend %remove_form_style;
                             width: 50%;
-                            padding: $spacing-xs $spacing-md;
+                            padding: $spacing-sm $spacing-md;
                             border-top: 1px solid $gray-500;
                             border-right: 1px solid $gray-500;
                             border-radius: 0 0 0 $rad-sm;
                             background-color: $white;
                             color: $gray-500;
-                            font-size: $f-s-sm;
+                            font-size: $f-s-md;
                             cursor: pointer;
                             transition: all 0.3s ease;
 
                             &:hover {
                                 background-color: $dark;
                             }
+
+                            .btn_content {
+                                @extend %flex-center;
+                                gap: $spacing-xs;
+                            }
+
+                            img {
+                                display: inline-block;
+                                width: 20px;
+                            }
+
                         }
 
                         .btn_comment {
@@ -218,12 +228,22 @@
                             border-radius: 0 0 $rad-sm 0;
                             background-color: $white;
                             color: $gray-500;
-                            font-size: $f-s-sm;
+                            font-size: $f-s-md;
                             cursor: pointer;
                             transition: all 0.3s ease;
 
                             &:hover {
                                 background-color: $dark;
+                            }
+
+                            .btn_content {
+                                @extend %flex-center;
+                                gap: $spacing-xxs;
+                            }
+
+                            img {
+                                display: inline-block;
+                                width: 27px;
                             }
                         }
                     }

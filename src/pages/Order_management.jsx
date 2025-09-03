@@ -17,13 +17,20 @@ const Order_management = () => {
                 </div>
                 <div className='order_info'>
                     <h3>華山設計選物日</h3>
-                    <p className='order_location'>臺北市華山 × 文創園區</p>
+                    <p className='order_location'>風格選物 × 咖啡散步 × 文創市集</p>
                     <div className='order_actions'>
                         <button className='btn_pass'>
+                            <div className='btn_content'>
                             <img src="./images/order_management/pass_icon.svg" alt=""/>
-                            查看憑證
+                            <span>查看憑證</span>
+                            </div>
                             </button>
-                        <button className='btn_comment'>評論</button>
+                        <button className='btn_comment'>
+                            <div className='btn_content'>
+                            <img src="./images/order_management/comment_icon.svg" alt=""/>
+                            <span>評論</span>
+                            </div>
+                        </button>
                     </div>
                 </div>
             </div>
