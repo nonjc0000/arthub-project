@@ -2036,11 +2036,10 @@ a {
 .order_management_content .order_content_layout .order_list .order_card .order_image .order_status_badge {
   position: absolute;
   top: 20px;
-  right: 20px;
-  padding: 10px 15px;
-  border-radius: 7.5px;
+  right: 0;
+  padding: 10px 15px 10px 25px;
+  border-radius: 999px 0 0 999px;
   font-size: 0.875rem;
-  font-weight: bold;
 }
 .order_management_content .order_content_layout .order_list .order_card .order_image .order_status_badge.upcoming {
   background-color: #CBD4C1;
@@ -2116,7 +2115,6 @@ a {
 }
 .order_management_content .order_content_layout .recommended_section h3 {
   font-size: 1.25rem;
-  font-weight: bold;
   color: #39413A;
   margin-bottom: 25px;
 }
@@ -2124,7 +2122,7 @@ a {
   background-color: #fff;
   border-radius: 15px;
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 .order_management_content .order_content_layout .recommended_section .recommended_card img {
   width: 100%;
@@ -2132,11 +2130,10 @@ a {
   object-fit: cover;
 }
 .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info {
-  padding: 20px;
+  padding: 15px 20px;
 }
 .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info h4 {
   font-size: 1rem;
-  font-weight: bold;
   color: #39413A;
   margin-bottom: 10px;
 }
@@ -2169,7 +2166,6 @@ a {
 }
 .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .price {
   font-size: 0.875rem;
-  font-weight: bold;
   color: #39413A;
 }
 

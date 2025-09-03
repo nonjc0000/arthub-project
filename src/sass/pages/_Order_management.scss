@@ -153,11 +153,11 @@
                     .order_status_badge {
                         position: absolute;
                         top: $spacing-md;
-                        right: $spacing-md;
-                        padding: $spacing-xs $spacing-sm;
-                        border-radius: $rad-sm;
+                        right: 0;
+                        padding: $spacing-xs $spacing-sm $spacing-xs $spacing-lg;
+                        border-radius: $rad-ex 0 0 $rad-ex;
                         font-size: $f-s-sm;
-                        font-weight: bold;
+                        // font-weight: bold;
 
                         &.upcoming {
                             background-color: $primary;
@@ -257,7 +257,7 @@
 
             h3 {
                 font-size: $f-s-lg;
-                font-weight: bold;
+                // font-weight: 500;
                 color: $text;
                 margin-bottom: $spacing-lg;
             }
@@ -266,7 +266,7 @@
                 background-color: $white;
                 border-radius: $rad-md;
                 overflow: hidden;
-                margin-bottom: $spacing-md;
+                margin-bottom: $spacing-lg;
                 // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
                 img {
@@ -276,11 +276,11 @@
                 }
 
                 .recommended_info {
-                    padding: $spacing-md;
+                    padding: $spacing-sm $spacing-md;
 
                     h4 {
                         font-size: $f-s-md;
-                        font-weight: bold;
+                        // font-weight: bold;
                         color: $text;
                         margin-bottom: $spacing-xs;
                     }
@@ -319,7 +319,7 @@
 
                     .price {
                         font-size: $f-s-sm;
-                        font-weight: bold;
+                        // font-weight: bold;
                         color: $text;
                     }
                 }
