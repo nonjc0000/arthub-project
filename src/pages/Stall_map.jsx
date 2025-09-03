@@ -1,11 +1,103 @@
-import '../css/all.css'
+// import '../css/all.css'
 import Stall_map_card from '../components/Stall_map_card'
+import Stall_map_card_sm from '../components/Stall_map_card_sm'
+import { useMemo, useState } from 'react'
+import $ from 'jquery'
+import { useEffect } from 'react'
+
+
+
+
 
 
 const Stall_map = () => {
+    // 攤位資料
+    const arrStall = [
+        {
+            id: 1,
+            name: '食物',
+            num: '01',
+            tag: '美食',
+        },
+        {
+            id: 2,
+            name: '衣服',
+            num: '02',
+            tag: '服飾',
+        },
+        {
+            id: 3,
+            name: '狗狗',
+            num: '03',
+            tag: '寵物',
+        },
+        {
+            id: 4,
+            name: '花',
+            num: '04',
+            tag: '植栽',
+        },
+        {
+            id: 5,
+            name: '蘋果',
+            num: '05',
+            tag: '美食',
+        },
+        {
+            id: 6,
+            name: '貓貓',
+            num: '06',
+            tag: '寵物',
+        },
+        {
+            id: 7,
+            name: '蛋餅',
+            num: '07',
+            tag: '美食',
+        },
+        {
+            id: 8,
+            name: '蕨',
+            num: '08',
+            tag: '植栽',
+        },
+        {
+            id: 9,
+            name: '包包',
+            num: '09',
+            tag: '服飾',
+        },
+
+
+    ]
+
+
+
+
+
+
+    // 搜尋變數，預設為空字串
+    const [search, setSearch] = useState('');
+
+
+    // 建立搜尋的函式
+    const filterStall = useMemo(() => {
+        //搜尋
+        return [...arrStall]
+            .filter((stall) => {
+                //保留關鍵字內容
+                return stall.name.match(search);
+            })
+
+
+    }, [search]);
+
+
     return (
         <main className='stall_map_main'>
             <section className='stall_map_container'>
+
+
 
 
                 {/* 標題 */}
@@ -14,10 +106,23 @@ const Stall_map = () => {
                 </h1>
 
 
+
+
                 {/* 攤位地圖 */}
                 <div className='stall_map'>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam quia fugiat quis magnam aspernatur minus? Nobis maiores exercitationem, eos fugit deserunt delectus eaque possimus dolores asperiores, in, temporibus cum aliquam.</p>
+                    <div className='stalls_1'>
+                        <div className='stall_box'>
+                            <img src="./images/Stall_map/stall.svg" alt="" />
+                            <div className="tooltip_card">
+                                <Stall_map_card_sm />
+                            </div>
+                        </div>
+
+
+                    </div>
                 </div>
+
+
 
 
                 {/* 種類按鈕 */}
@@ -31,18 +136,32 @@ const Stall_map = () => {
                 </div>
 
 
+
+
                 {/* 攤位搜尋內容 */}
                 <div className='stall_search_box'>
                     <form action="" className='stall_search_filter'>
 
 
+
+
                         {/* 搜尋 */}
                         <div className='search_box'>
-                            <input type="search" id='stall_map_search' placeholder='關鍵字搜尋' />
+                            <input
+                                type="text"
+                                id='stall_map_search'
+                                placeholder='關鍵字搜尋'
+                                value={search}
+                                onChange={(e) => { setSearch(e.target.value) }}
+                            />
                             <button type="submit" value="搜尋">
                                 <img src="./images/find_map/magnifier.svg" alt="搜尋" />
                             </button>
                         </div>
+
+
+
+
 
 
 
@@ -57,6 +176,10 @@ const Stall_map = () => {
 
 
 
+
+
+
+
                         {/* 選單 */}
                         <div className='select'>
                             <select name="stall_type" id="stall_type">
@@ -66,30 +189,34 @@ const Stall_map = () => {
                     </form>
 
 
+
+
                     <div className='stall_search_result'>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
-                    <Stall_map_card/>
+                        <Stall_map_card_sm />
+                        {
+                            filterStall.map((stall) =>
+
+
+                                <Stall_map_card {...stall} key={stall.id} />
+                            )
+                        }
+
+
                     </div>
                 </div>
-                <figure className='stall_map_img1'><img  src="./images/decorations/deco-bird.svg" alt="鳥裝飾" /></figure>
+                <figure className='stall_map_img1'><img src="./images/decorations/deco-bird.svg" alt="鳥裝飾" /></figure>
                 <figure className='stall_map_img2'><img src="./images/decorations/deco-drooling-allegator.svg" alt="鱷魚裝飾" /></figure>
-                <figure className='stall_map_img3'><img  src="./images/decorations/deco-kid&dog.svg" alt="小孩跟狗裝飾" /></figure>
+                <figure className='stall_map_img3'><img src="./images/decorations/deco-kid&dog.svg" alt="小孩跟狗裝飾" /></figure>
                 <figure className='stall_map_img4'><img src="./images/decorations/deco-road.svg" alt="道路裝飾" /></figure>
             </section>
         </main>
     )
 }
 export default Stall_map
+
+
+
+
+
+
 

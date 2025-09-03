@@ -2,9 +2,12 @@
 @use '../functions/' as *;
 
 
+
+
 .stall_map_main {
     height: 100%;
-   
+
+
     .stall_map_container {
         display: flex;
         align-items: center;
@@ -15,12 +18,32 @@
 
 
 
+
+
+
+
     .stall_map {
         border: 5px solid $secondary;
         width: $w-60;
         height: 400px;
         background-color: $white;
+
+
+        .stalls_1 {
+            width: 70px;
+            border: 1px solid red;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+
+
+            img {
+                width: 30px;
+            }
+        }
     }
+
+
 
 
     .type_btn_box {
@@ -29,10 +52,14 @@
         justify-content: center;
 
 
+
+
         button {
             @extend %remove_form_style;
         }
     }
+
+
 
 
     .stall_search_box {
@@ -44,8 +71,12 @@
         overflow: hidden;
 
 
+
+
         .stall_search_filter {
             display: flex;
+
+
 
 
             background-color: $white;
@@ -53,11 +84,15 @@
             gap: 15px;
 
 
+
+
             input,
             select,
             button {
                 @extend %remove_form_style;
             }
+
+
 
 
             .search_box {
@@ -68,9 +103,13 @@
             }
 
 
+
+
             .btn_box {
                 display: flex;
                 gap: 15px;
+
+
 
 
                 button {
@@ -86,12 +125,18 @@
 
 
 
+
+
+
+
                     img {
                         width: 15px;
                         height: auto;
                     }
                 }
             }
+
+
 
 
             .select {
@@ -104,6 +149,8 @@
                 align-items: center;
 
 
+
+
                 select {
                     padding-top: 1px;
                     color: $text;
@@ -114,17 +161,24 @@
         }
 
 
+
+
         .stall_search_result {
+            width: 100%;
             padding-top: $spacing-xl;
             @extend %flex-wrap;
-            align-items: center;
+            justify-content: flex-start;
             gap: $spacing-lg;
             overflow: auto;
             height: 800px;
 
 
+
+
         }
     }
+
+
     /* 攤位卡片 */
     .stall_card {
         width: 230px;
@@ -132,11 +186,13 @@
         border-radius: $rad-lg;
         overflow: hidden;
         border: 1px solid $text;
-   
+
+
         p {
             font-size: $f-s-xs;
         }
-   
+
+
         .stall_card_wrap {
             display: flex;
             height: 145px;
@@ -144,12 +200,14 @@
             justify-content: space-between;
             outline: 1px solid $text;
             background-color: #ccc;
-   
+
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 margin: $spacing-xs;
-   
+
+
                 .like,
                 .num {
                     background-color: $accent;
@@ -158,38 +216,45 @@
                     border-radius: $rad-ex;
                     color: $white;
                 }
-   
+
+
                 .like {
                     display: flex;
                     padding: 0 5px;
                     gap: 5px;
                     justify-content: center;
                     align-items: center;
-   
+
+
                     p {
                         padding-top: 1px;
                     }
-   
+
+
                     img {
                         padding-top: 1px;
                         width: 12px;
                     }
                 }
-   
+
+
                 .num {
                     @extend %flex-center;
-   
+
+
                     p {
                         padding-top: 2px;
                     }
                 }
             }
-   
+
+
             .bottom {
                 display: flex;
                 margin: $spacing-xs;
                 gap: $spacing-xxs ;
-   
+
+
                 p {
                     background-color: $accent;
                     color: $white;
@@ -200,59 +265,73 @@
                 }
             }
         }
-   
+
+
         .stall_card_body {
             .title {
                 @extend %flex-center;
                 height: 33px;
-   
+
+
                 p {
                     font-weight: $f-w-b;
                     font-size: $f-s-md;
                 }
-   
-   
+
+
+
+
             }
-   
+
+
             button,
             input {
                 @extend %remove_form_style;
             }
-   
+
+
             .btn_box {
                 display: flex;
                 gap: $spacing-xxs;
                 justify-content: center;
-   
+
+
                 .like_btn_box,
                 .social_btn_box {
                     width: 100px;
                     height: 25px;
                     border-radius: 5px;
                 }
-   
+
+
                 .like_btn_box {
                     background-color: $accent;
                     @extend %flex-center;
-   
-   
+
+
+
+
                     button {
                         color: $white;
                         @extend %flex-center;
                         gap: $spacing-xs;
-   
-   
+
+
+
+
                         img {
                             width: 17px;
                             height: 17px;
                         }
                     }
                 }
-   
+
+
                 .social_btn_box {
                     background-color: $dark;
                     @extend %flex-center;
-   
+
+
                     button {
                         img {
                             width: 17px;
@@ -261,25 +340,29 @@
                     }
                 }
             }
-   
+
+
             .review_box {
                 @extend %flex-center;
                 height: 30px;
-   
+
+
                 .review {
                     border-radius: 3px;
                     border: 1px solid black;
                     width: 210px;
                     height: 17px;
                     display: flex;
-   
+
+
                     input {
                         width: 100%;
                         height: 100%;
                     }
                 }
             }
-   
+
+
             .stall_card_review {
                 p {
                     font-size: $f-s-lg ;
@@ -287,13 +370,17 @@
                     color: $gray-600;
                     @extend %flex-center;
                 }
-   
-   
+
+
+
+
             }
-   
+
+
         }
     }
-   
+
+
     /* 圖片裝飾 */
     .stall_map_img1,
     .stall_map_img2,
@@ -301,27 +388,111 @@
     .stall_map_img4 {
         position: absolute;
     }
-    .stall_map_img1{
+
+
+    .stall_map_img1 {
         z-index: 1;
         right: 200px;
         top: 200px;
-       
+
+
     }
-    .stall_map_img2{
+
+
+    .stall_map_img2 {
         z-index: 1;
         right: 200px;
         bottom: -55px;
     }
-    .stall_map_img3{
+
+
+    .stall_map_img3 {
         z-index: 1;
         bottom: -60px;
         left: 90px;
     }
-   
-    .stall_map_img4{
+
+
+    .stall_map_img4 {
         z-index: -1;
         top: 400px;
         width: 100%;
+    }
+    .stall_box>.stall_map_card_sm{
+        display: inline-block;
+    }
+
+
+    .sm_card_show{
+        display: none;
+    }
+
+
+    .stall_map_card_sm {
+        width: 180px;
+        height: 210px;
+        border-radius: $rad-lg;
+        border: 1px solid $black;
+        overflow: hidden;
+   
+        .sm_card_wrap {
+            height: 135px;
+            background-color: #ccc;
+            border-bottom: 1px solid $black;
+   
+            .top {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+   
+                figure {
+                    @extend %flex-center;
+                    background-color: $accent;
+                    color: $white;
+                    width: 60px;
+                    border-radius: $rad-ex;
+   
+                    gap: 10px;
+   
+                    img {
+                        width: 12px;
+                    }
+                }
+   
+                .num {
+                    @extend %flex-center;
+                    background-color: $accent;
+                    color: $white;
+                    width: 60px;
+                    border-radius: $rad-ex;
+   
+                }
+            }
+        }
+   
+        .body {
+            .title {
+                @extend %flex-center;
+                height: 33px;
+                padding-top: 3px;
+   
+                p {
+                    font-weight: $f-w-b;
+                    font-size: $f-s-md;
+                }
+            }
+            .tag_box{
+                display: flex;
+                gap: 10px;
+                p{
+                    @extend %flex-center;
+                    width: 50px;
+                    border-radius: $rad-ex;
+                    background-color: $accent;
+                    color: $white;
+                }
+            }
+        }
     }
 }
 

@@ -1,13 +1,24 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
-const Stall_map_card = () => {
+
+
+// 攤位元件
+const Stall_map_card = ({ id, name, num, tag }) => {
+
+
+
+
     return (
+
+
+
+
         <article className='stall_card'>
-
-
             <div className='stall_card_wrap'>
+
+
 
 
                 <div className='top'>
@@ -15,31 +26,39 @@ const Stall_map_card = () => {
                     <figure className='like'><img src="./images/Stall_map/icon_like.svg" alt="" /><p>12</p></figure>
                     {/* 標號 */}
                     <div className='num'>
-
-
-                        <p >01</p>
+                        <p >{num}</p>
                     </div>
                 </div>
 
 
+
+
                 <div className='bottom'>
                     {/* tag標籤 */}
-                    <p>#類別</p>
-                    <p>#類別</p>
-                    <p>#類別</p>
+                    <p>{tag}</p>
+
+
                 </div>
+
+
 
 
             </div>
 
 
+
+
             <div className='stall_card_body'>
                 <div className='title'>
-                    <p >攤位名稱</p>
+                    <p >{name}</p>
+
+
 
 
                 </div>
                 <div className='stall_card_btn'>
+
+
 
 
                     <div className='btn_box'>
@@ -49,12 +68,16 @@ const Stall_map_card = () => {
                         </div>
 
 
+
+
                         {/* 社群連結按鈕 */}
                         <div className='social_btn_box'>
                             <button><img src="./images/Stall_map/icon_ins.svg" alt="instagram" /></button>
                             <button><img src="./images/Stall_map/icon_fb.svg" alt="facebook" /></button>
                             <button><img src="./images/Stall_map/icon_web.svg" alt="個人網站" /></button>
                         </div>
+
+
 
 
                     </div>
@@ -71,7 +94,11 @@ const Stall_map_card = () => {
                         </form>
 
 
+
+
                     </div>
+
+
 
 
                     <div className='stall_card_review'>
@@ -81,9 +108,19 @@ const Stall_map_card = () => {
             </div>
 
 
+
+
         </article>
     )
+           
+       
+
+
+
+
+   
 }
 
 
 export default Stall_map_card
+
