@@ -4,15 +4,22 @@
 
 
 
+
+
+
+
 .home-bg {
     background-color: $background;
 }
+
 
 .home-wrap {
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    margin-top: 42px;
+    margin-top: 80px;
+
+
     .date-box {
         margin-top: -150px;
         margin-right: 80px;
@@ -23,12 +30,15 @@
         font-family: DM Sans;
         color: $dark;
         font-size: $f-s-xxxxl;
+
+
         .slash {
             width: 2px;
             height: 5rem;
             background-color: $dark;
             transform: rotate(40deg) translatex(10px);
         }
+
 
         .date-item {
             display: flex;
@@ -37,14 +47,17 @@
             margin-top: 30px;
         }
 
+
         .weekday {
             font-weight: $f-w-m;
         }
+
 
         .weather {
             width: 65px;
             height: 65px;
         }
+
 
         .situation {
             font-size: $f-s-xs;
@@ -52,17 +65,34 @@
     }
 }
 
+
 // 單純用flex並排
 .home-top {
     display: flex;
     position: relative;
+
+
+    @media (max-width: 992px) {
+        // 手機 / 平板時
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
+
 
 .home-heading {
     width: $w-40;
     margin-left: 120px;
     margin-top: 200px;
     margin-bottom: 250px;
+
+
+    @media (max-width: 992px) {
+        width: 100%;
+    }
+
 
     h2 {
         font-size: $f-s-xxxxxl;
@@ -73,6 +103,7 @@
         color: $dark;
     }
 
+
     .arrow {
         width: 4%;
         margin-top: 25px;
@@ -80,47 +111,67 @@
     }
 }
 
+
 .stall-wrap {
     // margin-right: 100px;
     width: $w-60;
+    height: auto;
     position: relative;
-    flex: 1;
+
+
+    @media (max-width: 992px) {
+        width: 100%; // 同樣全寬
+        // margin-top: 20px; // 與上方保持距離
+    }
+
 
     .stall-item {
         display: flex;
+        a {
+            display: block;
+        }
+
 
         .stall-first {
             position: absolute;
             width: $w-50;
+            height: auto;
         }
+
 
         .stall-second {
             width: $w-60;
+            height: auto;
             position: absolute;
             left: 35%;
-            top: 22%;
+            top: 25%;
         }
 
+
         .stall-third {
-            width: 40%;
+            width: $w-40;
+            height: auto;
             position: absolute;
-            top: 42%;
-            left: 5%;
+            top: 48%;
+            left: 3%;
         }
     }
 }
+
 
 // 第二塊
 .home-hot {
     text-align: center;
     font-family: $family-tc;
     color: $dark;
-    margin-top: 60px;
+    margin-top: 200px;
     margin-bottom: 60px;
+
 
     h3 {
         font-size: $f-s-xxxxl;
     }
+
 
     p {
         font-family: $family-en;
@@ -128,14 +179,17 @@
     }
 }
 
+
 .pic-wrap {
     max-width: 1500px;
     margin: 0 auto;
+
 
     .home-pic {
         display: flex;
         justify-content: space-between;
         gap: 16px;
+
 
         .home-pic-fsb {
             max-width: 750px;
@@ -143,21 +197,26 @@
             flex-direction: column;
             gap: 16px;
 
+
             .home-pic-item {
                 display: flex;
                 justify-content: space-between;
                 gap: 16px;
 
+
                 .type-img-one {
                     width: 100%;
                 }
+
 
                 .type-img-tw {
                     width: 100%;
                 }
 
+
             }
         }
+
 
         .home-pic-se {
             max-width: 750px;
@@ -168,13 +227,17 @@
 
 
 
+
+
+
             .type-img {
                 margin-bottom: 16px;
             }
         }
 
+
         img {
-            // max-width: 100%; 
+            // max-width: 100%;
             height: auto;
             border-radius: 20px;
             object-fit: cover;
@@ -182,6 +245,7 @@
         }
     }
 }
+
 
 .home-blog {
     margin-top: 112px;
@@ -191,6 +255,7 @@
     color: $dark;
     transform: rotate(5deg);
 
+
     h3 {
         font-family: $family-display;
         font-size: $f-s-xxxxl;
@@ -198,16 +263,21 @@
     }
 }
 
+
 .home-blog-item {
     @extend %flex-center;
     position: relative;
     margin-bottom: 200px;
 
+
     .home-left-img {
         width: $w-100;
         height: $h-100vh;
         position: relative;
+        margin-right: -250px;
         z-index: 1;
+
+
         img {
             display: block;
             border-top-right-radius: $rad-ex;
@@ -215,23 +285,50 @@
         }
     }
 
+
     .home-right-blog {
         position: relative;
         z-index: 0;
         width: $w-100;
-        height: $h-90vh;
-        top:180px;
-        margin-left: -220px;
+        height: $h-100vh;
+        top: 180px;
+        // margin-left: -250px;
         background-color: $primary;
         border-top-left-radius: $rad-ex;
         border-bottom-left-radius: $rad-ex;
         z-index: 0;
+
+
         .home-right-txt {
             text-align: right;
-            color: $text;
+            color: #697655;
+            margin-top: 45px;
+            margin-right: 115px;
         }
+
+
         h3 {
             font-weight: $f-w-b;
+            font-size: $f-s-xxxl;
+
+
+        }
+
+
+        p {
+            font-weight: $f-w-m;
+            font-size: $f-s-lg;
+            color: #697655;
         }
     }
 }
+
+
+.home-button {
+    position: relative;
+    z-index: 3;
+    text-align: right;
+    top: -60px;
+    right: 60px;
+}
+

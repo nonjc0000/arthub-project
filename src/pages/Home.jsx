@@ -1,7 +1,10 @@
 import React from 'react'
-// import "../sass/all.scss";
+import Button from '../components/Button'
+
 
 const Home = () => {
+
+
   return (
     <>
       {/* 首頁第一區塊 */}
@@ -15,9 +18,15 @@ const Home = () => {
               </div>
               <div className='stall-wrap'>
                 <div className='stall-item'>
-                  <a href="#"><img className='stall-first' src="./images/home/home-find_type.svg" alt="找類型攤位" /></a>
-                  <a href="#"><img className='stall-second' src="./images/home/home-find_map.svg" alt="找地圖攤位" /></a>
-                  <a href="#"><img className='stall-third' src="./images/home/home-find-schedule.svg" alt="找行程攤位" /></a>
+                  <div className='stall-first'>
+                    <a href="#"><img src="./images/home/home-find_type.svg" alt="找類型攤位" /></a>
+                  </div>
+                  <div className='stall-second'>
+                    <a href="#"><img src="./images/home/home-find_map.svg" alt="找地圖攤位" /></a>
+                  </div>
+                  <div className='stall-third'>
+                    <a href="#"><img src="./images/home/home-find-schedule.svg" alt="找行程攤位" /></a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -27,9 +36,9 @@ const Home = () => {
                 <div className='slash'></div>
                 <div className='date-item'>
                   <p>22</p>
-                <p className="weekday">TUE.</p>
-                <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
-                <p className='temptemperature'>25°C<span  className='situation'>多雲</span></p>
+                  <p className="weekday">TUE.</p>
+                  <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
+                  <p className='temptemperature'>25°C<span className='situation'>多雲</span></p>
                 </div>
               </div>
             </div>
@@ -83,10 +92,15 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <div className='home-button'>
+            <Button />
+          </div>
         </section>
       </main>
     </>
   )
 }
 
+
 export default Home
+

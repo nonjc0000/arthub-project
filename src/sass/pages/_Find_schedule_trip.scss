@@ -1,0 +1,331 @@
+
+
+@use "../variables/" as *;
+@use "../functions/" as *;
+
+
+
+
+/* 外層：標題一行、下面左右兩欄（圖／文） */
+.findTrip-container {
+  display: flex;
+  flex-wrap: wrap; /* 讓標題可以獨佔一行 */
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+
+
+/* 標題區：跨整行 */
+.find_schedule_trip_titlebox {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+
+
+
+
+  .titleBox_h1 {
+    margin: 0;
+  }
+
+
+
+
+  .titlebox {
+    display: block;
+    width: clamp(180px, 28vw, 320px);
+    height: auto;
+  }
+}
+
+
+
+
+/* 左欄：圖片（交錯三張） */
+.trip-container {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  min-width: 320px; /* 避免過小時擠壞 */
+}
+
+
+
+
+.staggered-container {
+  width: 100%;
+}
+
+
+
+
+.staggered-images {
+  display: flex;
+  align-items: flex-end; /* 垂直底對齊 */
+  justify-content: center; /* 水平置中 */
+  gap: clamp(14px, 2.2vw, 28px);
+
+
+
+
+  .image-item {
+    width: clamp(120px, 16vw, 240px);
+    aspect-ratio: 3 / 5; /* 直式比例 */
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    background: #ddd;
+
+
+
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+}
+
+
+
+
+/* 交錯高度（你的 image-1 ~ image-3） */
+.image-1 {
+  transform: translateY(-25px);
+}
+.image-2 {
+  transform: translateY(40px);
+}
+.image-3 {
+  transform: translateY(-10px);
+}
+
+
+
+
+/* 右欄：文字內容 */
+.content-section {
+  flex: 1 1 50%;
+  min-width: 320px;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 垂直置中 */
+  align-items: flex-start; /* 內部左對齊 */
+  text-align: left;
+
+
+
+
+  .main-title {
+    font-size: clamp(24px, 3.2vw, 40px);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    margin: 0 0 10px;
+    color: $text; /* 依你的變數 */
+  }
+
+
+
+
+  .subtitle {
+    color: $text-500;
+    font-size: clamp(12px, 1.4vw, 14px);
+    margin: 0 0 12px;
+  }
+
+
+
+
+  .description {
+    color: $text-700;
+    line-height: 1.9;
+    max-width: 56ch;
+    margin: 6px 0 18px;
+  }
+
+
+
+
+  .rating-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 6px 0 16px;
+    font-size: clamp(13px, 1.6vw, 15px);
+    color: $text-700;
+
+
+
+
+    .star-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+
+
+
+
+      .star {
+        font-size: 18px;
+        line-height: 1;
+      }
+      .rating-text {
+        letter-spacing: 0.02em;
+      }
+    }
+
+
+
+
+    .participants {
+      position: relative;
+
+
+
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: currentColor;
+        opacity: 0.55;
+        margin-right: 12px;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+
+
+
+  .booking-section {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 6px;
+
+
+
+
+    .price {
+      font-weight: 700;
+      font-size: clamp(16px, 2vw, 18px);
+      color: $text;
+
+
+
+
+      &::before {
+        content: "NT ";
+        font-weight: 500;
+        color: $text;
+        margin-right: 2px;
+      }
+    }
+
+
+
+
+    .btn.primary {
+      appearance: none;
+      border: 0;
+      border-radius: 999px;
+      padding: 10px 20px;
+      background: $accent; /* 依你的品牌色 */
+      color: $text;
+      font-weight: 700;
+      font-size: 14px;
+      box-shadow: 0 6px 16px rgba($accent, 0.35);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.08s ease, box-shadow 0.2s ease, filter 0.2s ease;
+
+
+
+
+      &:hover {
+        filter: brightness(1.02);
+      }
+      &:active {
+        transform: translateY(1px);
+        box-shadow: 0 3px 10px rgba($accent, 0.28);
+      }
+    }
+  }
+}
+
+
+
+
+/* ── RWD ───────────────────────────────────────────────── */
+
+
+
+
+/* 中型以下（例如 960px）：改上下堆疊，圖在上、文在下 */
+@media (max-width: 960px) {
+  .findTrip-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+
+
+  .content-section {
+    align-items: center; /* 內容置中 */
+    text-align: center;
+
+
+
+
+    .description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .booking-section {
+      justify-content: center;
+    }
+  }
+
+
+
+
+  /* 手機上交錯高度容易擠，取消 */
+  .image-1,
+  .image-2,
+  .image-3 {
+    transform: translateY(0);
+  }
+
+
+
+
+  .staggered-images .image-item {
+    width: clamp(98px, 28vw, 160px);
+  }
+}
+
+
+
+
+/* 你也可以搭配既有的 $mediaSm（若是 640px） */
+@media ($mediaSm) {
+  .findTrip-container {
+    gap: 24px;
+  }
+}
+
+
+
