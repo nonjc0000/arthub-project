@@ -10,7 +10,7 @@ function BlogCard({ id, img, title, excerpt, tags = [], type }) {
                     className: "badge-hot",
                     style: {
                         backgroundColor: "#ED972E",
-                        backgroundImage: 'url("/images/blog/hot.svg")', // 建議用絕對路徑
+                        backgroundImage: 'url("./images/blog/hot.svg")', // 建議用絕對路徑
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "left 10px center",
                         paddingLeft: "30px",
@@ -23,7 +23,7 @@ function BlogCard({ id, img, title, excerpt, tags = [], type }) {
                     className: "badge-new",
                     style: {
                         backgroundColor: "#ED972E",
-                        backgroundImage: 'url("/images/blog/new.svg")', // 建議用絕對路徑
+                        backgroundImage: 'url("./images/blog/new.svg")', // 建議用絕對路徑
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "left 10px center",
                         paddingLeft: "30px",
