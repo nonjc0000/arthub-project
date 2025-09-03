@@ -333,14 +333,14 @@ function Blog() {
                   className={`tab ${activeTab === "熱門" ? "is-active" : ""}`}
                   onClick={() => handleTabChange("熱門")}
                 >
-                  <img src="/images/blog/hot.svg" alt="熱門圖示" />
+                  <img src="./images/blog/hot.svg" alt="熱門圖示" />
                   熱門
                 </button>
                 <button
                   className={`tab ${activeTab === "最新" ? "is-active" : ""}`}
                   onClick={() => handleTabChange("最新")}
                 >
-                  <img src="/images/blog/new.svg" alt="最新圖示" />
+                  <img src="./images/blog/new.svg" alt="最新圖示" />
                   最新
                 </button>
               </div>
@@ -398,3 +398,27 @@ function Blog() {
 }
 
 export default Blog;
+
+// #                       _oo0oo_
+// #                      o8888888o
+// #                      88" . "88
+// #                      (| -_- |)
+// #                      0\  =  /0
+// #                    ___/`---'\___
+// #                  .' \\|     |# '.
+// #                 / \\|||  :  |||# \
+// #                / _||||| -:- |||||- \
+// #               |   | \\\  -  #/ |   |
+// #               | \_|  ''\---/''  |_/ |
+// #               \  .-\__  '-'  ___/-. /
+// #             ___'. .'  /--.--\  `. .'___
+// #          ."" '<  `.___\_<|>_/___.' >' "".
+// #         | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+// #         \  \ `_.   \_ __\ /__ _/   .-` /  /
+// #     =====`-.____`.___ \_____/___.-`___.-'=====
+// #                       `=---='
+// #
+// #
+// #     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// #
+// #               佛祖保佑         

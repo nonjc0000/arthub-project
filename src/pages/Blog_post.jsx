@@ -120,7 +120,7 @@ function BlogPost() {
         <main className="post-content-panel">
           {/* 返回列表膠囊 */}
           <Link to="/blog" className="back-chip">
-            <img src="/images/blog/post_back.svg" alt="返回文章列表" />
+            <img src="./images/blog/post_back.svg" alt="返回文章列表" />
           </Link>
 
 
@@ -155,8 +155,8 @@ function BlogPost() {
                     <img
                       src={
                         postLiked
-                          ? "/images/blog/comment_like1.svg" // 橘色實心
-                          : "/images/blog/comment_like2.svg" // 空心
+                          ? "./images/blog/comment_like1.svg" // 橘色實心
+                          : "./images/blog/comment_like2.svg" // 空心
                       }
                       alt="Like"
                     />
@@ -175,8 +175,8 @@ function BlogPost() {
                     <img
                       src={
                         postCollected
-                          ? "/images/blog/collection1.svg" // 已收藏
-                          : "/images/blog/collection.svg"  // 未收藏
+                          ? "./images/blog/collection1.svg" // 已收藏
+                          : "./images/blog/collection.svg"  // 未收藏
                       }
                       alt="Collection"
                     />
@@ -186,14 +186,14 @@ function BlogPost() {
 
                   {/* Comment */}
                   <button className="stat-item" type="button">
-                    <img src="/images/blog/comment.svg" alt="Comment" />
+                    <img src="./images/blog/comment.svg" alt="Comment" />
                     <span>{post.comments.length}</span>
                   </button>
 
 
                   {/* Share */}
                   <button className="stat-item" type="button">
-                    <img src="/images/blog/share.svg" alt="Share" />
+                    <img src="./images/blog/share.svg" alt="Share" />
                     <span>分享</span>
                   </button>
                 </div>
@@ -237,7 +237,7 @@ function BlogPost() {
           <section className="comments-section">
             {/* 分隔線裝飾 */}
             <div className="comment-sep">
-              <img src="/images/blog/post_deco.svg" alt="分隔線" />
+              <img src="./images/blog/post_deco.svg" alt="分隔線" />
             </div>
 
 
@@ -253,7 +253,7 @@ function BlogPost() {
                   type="button"
                   aria-label="送出留言"
                 >
-                  <img src="/images/blog/summit.svg" alt="送出" />
+                  <img src="./images/blog/summit.svg" alt="送出" />
                 </button>
               </div>
             </div>
@@ -288,8 +288,8 @@ function BlogPost() {
                           <img
                             src={
                               likedComments[i]
-                                ? "/images/blog/comment_like1.svg" // 橘色實心
-                                : "/images/blog/comment_like2.svg" // 空心
+                                ? "./images/blog/comment_like1.svg" // 橘色實心
+                                : "./images/blog/comment_like2.svg" // 空心
                             }
                             alt="like"
                           />

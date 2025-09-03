@@ -5,18 +5,42 @@
     "excerpt": "這週末突然興起了「市集一日行」的念頭，早上打開市集平台查了一下，發現台北同一天居然有三場不同風格的市集！於是直接衝一波，從松菸到公館再到…",
     "img": "./images/blog/post-1.jpeg",
     "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "市集愛好者", "avatar": "./images/blog/avatar-1.jpg" },
+    "author": {
+      "name": "市集愛好者",
+      "avatar": "./images/blog/avatar-1.jpg"
+    },
     "dateISO": "2024-07-18",
     "dateText": "JUL 18, 2024",
     "views": 165,
     "likes": 7,
-    "tags": ["布作服飾", "生活風格", "插畫紙品"],
-    "category": ["所有文章", "布作服飾", "生活風格", "插畫紙品"],
+    "tags": [
+      "布作服飾",
+      "生活風格",
+      "插畫紙品"
+    ],
+    "category": [
+      "所有文章",
+      "布作服飾",
+      "生活風格",
+      "插畫紙品"
+    ],
     "type": "熱門",
     "html": "<p>這週末，一個突如其來的念頭讓我決定來一場說走就走的「市集一日行」。當我打開手機搜尋市集資訊時，驚喜地發現台北同一天竟然有三場不同風格的市集同時舉行！這簡直是上天送給市集控的禮物。從充滿文藝氣息的松菸，到充滿青春活力的公館，我像個尋寶獵人般穿梭在城市巷弄，把這趟驚奇的市集之旅寫成文章，希望你們也會喜歡！</p><p>每個城市都有屬於自己的文創市集，對於台中生活來說，審美是與生俱來的，也是從市集裡慢慢培養出來的。</p><h3>台中市集人文設計36小時無眠市集</h3><p>這場夜裡點火熱鬧的無眠市集，不僅有滿滿的創意美食，還有風格獨具的文創商品，是每個文青的必去清單。</p><h3>其他必去市集推薦</h3><ul><li>范特喜文創聚落</li><li>勤美綠園道假日市集</li><li>新光三越草悟道廣場</li></ul><p>總之，來台中玩，別錯過這些充滿在地文創與熱情的市集！</p>",
     "comments": [
-      { "name": "訪客1", "text": "這篇文章寫得太棒了！", "likes": 2, "time": "2小時前", "avatar": "./images/blog/avatar-1.jpg" },
-      { "name": "訪客2", "text": "台中真的很適合逛市集！", "likes": 5, "time": "1天前", "avatar": "./images/blog/avatar-1.jpg" }
+      {
+        "name": "訪客1",
+        "text": "這篇文章寫得太棒了！",
+        "likes": 2,
+        "time": "2小時前",
+        "avatar": "./images/blog/avatar-1.jpg"
+      },
+      {
+        "name": "訪客2",
+        "text": "台中真的很適合逛市集！",
+        "likes": 5,
+        "time": "1天前",
+        "avatar": "./images/blog/avatar-1.jpg"
+      }
     ]
   },
   {
@@ -25,274 +49,469 @@
     "excerpt": "在華山市集遇到了一位超有趣的咖啡師，他說手沖咖啡最重要的不是器具，而是對咖啡的理解。今天就來分享他教我的幾個關鍵技巧…",
     "img": "./images/blog/post-1.jpeg",
     "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "咖啡狂熱者", "avatar": "./images/blog/avatar-1.jpeg" },
+    "author": {
+      "name": "咖啡狂熱者",
+      "avatar": "./images/blog/avatar-1.jpeg"
+    },
     "dateISO": "2024-07-18",
     "dateText": "JUL 18, 2024",
     "views": 120,
     "likes": 12,
-    "tags": ["美食飲品", "生活風格"],
-    "category": ["所有文章", "美食飲品", "生活風格"],
+    "tags": [
+      "美食飲品",
+      "生活風格"
+    ],
+    "category": [
+      "所有文章",
+      "美食飲品",
+      "生活風格"
+    ],
     "type": "最新",
-    "html": "<p>在華山市集遇到了一位超有趣的咖啡師，他說手沖咖啡最重要的不是器具，而是對咖啡的理解。今天就來分享他教我的幾個關鍵技巧…</p>",
-    "comments": []
+    "html": "<h1>手沖咖啡的完美比例：市集咖啡師親自傳授</h1>
+        <p>
+            在華山市集，總能找到意想不到的驚喜。這天，我在一個小小的咖啡攤位前停下了腳步。攤位後是一位充滿熱情、留著小鬍子的咖啡師，他不像其他店家專注於介紹咖啡豆的產地風味，反倒聊起了手沖咖啡的「心法」。他說：「手沖咖啡最重要的不是那些昂貴的器具，而是你對咖啡的理解，以及你如何與它對話。」這番話徹底顛覆了我對手沖咖啡的認知。
+        </p>
+        <p>
+            他告訴我，手沖就像一場與咖啡的對話，而這場對話的關鍵，就在於掌握幾個簡單卻至關重要的技巧。
+        </p>
+
+        <h2>第一，水溫是咖啡的靈魂語言。</h2>
+        <p>
+            「很多人以為水溫越高越好，其實不然。」他一邊輕輕搖晃著手沖壺，一邊解釋道。水溫直接影響咖啡中不同風味物質的萃取。如果你想讓咖啡喝起來更柔和、帶有果酸甜感，可以嘗試 88 ± 2°C 的溫水。如果想讓風味更濃郁、醇厚，則可以將水溫提升到 92 ± 2°C。他強調，這沒有絕對的對錯，只有適合當下那款咖啡豆的「最佳溫度」。
+        </p>
+
+        <h2>第二，粉水比是平衡的藝術。</h2>
+        <p>
+            「粉水比就像一道食譜，它決定了這杯咖啡的濃淡。」他從一個小罐子裡舀出咖啡豆，放進磨豆機裡。他建議，新手可以從最基礎的1: 15開始，也就是1克咖啡粉搭配15毫升水。例如，使用20克的咖啡粉，就需要注入300毫升的水。但這同樣不是鐵律，你可以根據自己的喜好，慢慢調整粉水比，找到最適合自己的「黃金比例」。
+        </p>
+
+        <h2>第三，注水手法是你的個人風格。</h2>
+        <p>
+            這位咖啡師認為，注水手法是手沖最有趣的部分。它就像是你在指揮一場交響樂。如果你想讓咖啡風味層次分明，可以嘗試「分段式注水」。先用少量的水進行悶蒸，讓咖啡粉均勻吸水膨脹，釋放出芳香物質；接著分兩到三次，以畫圈或定點的方式緩慢注水，控制流速。他笑著說：「別擔心不完美，每一次的注水，都會創造出獨特的風味。」
+        </p>
+
+        <h2>第四，理解咖啡豆的個性。</h2>
+        <p>
+            最後，也是最重要的一點，就是理解你手中的咖啡豆。每一款咖啡豆，從產地、處理方式到烘焙程度，都擁有獨特的個性。「它像一個有故事的朋友，你得先了解它，才能沖出一杯最能展現它魅力的咖啡。」他建議，在手沖前，可以先聞聞咖啡粉的香氣，觀察它的顏色和質地，甚至可以輕輕地撥開它，感受它的顆粒感，這些細節都會幫助你更好地掌握手沖的訣竅。
+        </p>
+
+        <p>
+            離開華山市集時，我手中多了一包充滿故事的咖啡豆，心中也充滿了對手沖咖啡的全新熱情。原來，手沖咖啡的奧秘，並非來自於高價的器材，而是來自於那份對咖啡的理解與愛。
+        </p>","comments": [{"name": "訪客1","text": "這篇文章寫得太棒了！","likes": 2,"time": "2小時前","avatar": "./images/blog/avatar-1.jpg"
   },
   {
-    "id": 3,
-    "title": "療癒系手作小物 讓生活多一點溫度",
-    "excerpt": "最近在信義區的手作市集發現了好多可愛的小物，從羊毛氈娃娃到手工皂，每一樣都讓人愛不釋手。決定來分享幾個超療癒的手作體驗…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "手作達人", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 80,
+    "name": "訪客2",
+    "text": "台中真的很適合逛市集！",
     "likes": 5,
-    "tags": ["文創設計", "居家療癒"],
-    "category": ["所有文章", "文創設計", "居家療癒"],
-    "html": "<p>最近在信義區的手作市集發現了好多可愛的小物，從羊毛氈娃娃到手工皂，每一樣都讓人愛不釋手。決定來分享幾個超療癒的手作體驗…</p>",
-    "comments": []
-  },
-  {
-    "id": 4,
-    "title": "夜市美食大探索 隱藏版小吃報你知",
-    "excerpt": "台北夜市這麼多，但真正的隱藏版美食你知道幾個？這次要帶大家發掘那些在地人才知道的巷弄美食，每一攤都是驚喜…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "美食獵人", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 250,
-    "likes": 20,
-    "tags": ["美食飲品"],
-    "category": ["所有文章", "美食飲品"],
-    "type": "熱門",
-    "html": "<p>台北夜市這麼多，但真正的隱藏版美食你知道幾個？這次要帶大家發掘那些在地人才知道的巷弄美食，每一攤都是驚喜…</p>",
-    "comments": []
-  },
-  {
-    "id": 5,
-    "title": "職人精神：木工阿伯的手作哲學",
-    "excerpt": "在松菸市集認識了一位做木工的阿伯，他說每一塊木頭都有自己的性格，要用心去感受。聽他分享手作的故事，真的很感動…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "職人介紹", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 190,
-    "likes": 15,
-    "tags": ["生活風格", "文創設計"],
-    "category": ["所有文章", "生活風格", "文創設計"],
-    "html": "<p>在松菸市集認識了一位做木工的阿伯，他說每一塊木頭都有自己的性格，要用心去感受。聽他分享手作的故事，真的很感動…</p>",
-    "comments": []
-  },
-  {
-    "id": 6,
-    "title": "週末市集穿搭指南 怎麼穿最好看又實用",
-    "excerpt": "逛市集要穿什麼？既要好看又要實用，還要適合拍照。整理了一些市集穿搭的小心機，讓你成為市集最亮眼的那個人…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "時尚達人", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 140,
-    "likes": 9,
-    "tags": ["生活風格", "布作服飾"],
-    "category": ["所有文章", "布作服飾", "生活風格"],
-    "html": "<p>逛市集要穿什麼？既要好看又要實用，還要適合拍照。整理了一些市集穿搭的小心機，讓你成為市集最亮眼的那個人…</p>",
-    "comments": []
-  },
-  {
-    "id": 7,
-    "title": "台中市集一日遊 南部市集也很精彩",
-    "excerpt": "這次南下台中，發現中部的市集有著不一樣的風情。從草悟道到勤美，每個市集都有自己的特色，美食也超級多…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "旅遊玩家", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 180,
-    "likes": 10,
-    "tags": ["二手選物", "美食飲品"],
-    "category": ["所有文章", "二手選物", "美食飲品"],
-    "html": "<p>這次南下台中，發現中部的市集有著不一樣的風情。從草悟道到勤美，每個市集都有自己的特色，美食也超級多…</p>",
-    "comments": []
-  },
-  {
-    "id": 8,
-    "title": "手作皮件入門 從零開始學皮革工藝",
-    "excerpt": "一直很想學皮件製作，這次在市集找到了專業的皮革工藝師傅。從選料到縫製，每個步驟都有學問，來分享我的學習心得…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "手作初學者", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 95,
-    "likes": 8,
-    "tags": ["文創設計", "布作服飾"],
-    "category": ["所有文章", "文創設計", "布作服飾"],
-    "html": "<p>一直很想學皮件製作，這次在市集找到了專業的皮革工藝師傅。從選料到縫製，每個步驟都有學問，來分享我的學習心得…</p>",
-    "comments": []
-  },
-  {
-    "id": 9,
-    "title": "植栽療癒時光 小盆栽大學問",
-    "excerpt": "最近迷上了多肉植物，在市集遇到了專業的園藝師，才知道養植物有這麼多眉角。分享一些新手養植栽的小技巧…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "園藝小白", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 110,
-    "likes": 6,
-    "tags": ["生活風格", "居家療癒"],
-    "category": ["所有文章", "居家療癒", "生活風格"],
-    "type": "熱門",
-    "html": "<p>最近迷上了多肉植物，在市集遇到了專業的園藝師，才知道養植物有這麼多眉角。分享一些新手養植栽的小技巧…</p>",
-    "comments": []
-  },
-  {
-    "id": 10,
-    "title": "創意市集攤位設計 如何吸引客人目光",
-    "excerpt": "觀察了這麼多市集攤位，發現成功的攤位都有一些共通點。從擺設到動線，每個細節都影響著生意，來分享一些心得…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "設計師", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 210,
-    "likes": 18,
-    "tags": ["飾品配件", "居家療癒"],
-    "category": ["所有文章", "飾品配件", "居家療癒"],
-    "html": "<p>觀察了這麼多市集攤位，發現成功的攤位都有一些共通點。從擺設到動線，每個細節都影響著生意，來分享一些心得…</p>",
-    "comments": []
-  },
-  {
-    "id": 11,
-    "title": "在地小農的故事 有機蔬果背後的堅持",
-    "excerpt": "這次在農夫市集認識了幾位小農，聽他們分享種植有機蔬果的甘苦談。每一顆番茄、每一把青菜背後都有溫暖的故事…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "田園觀察家", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 130,
-    "likes": 11,
-    "tags": ["職人介紹", "美食飲品"],
-    "category": ["所有文章", "職人介紹", "美食飲品"],
-    "html": "<p>這次在農夫市集認識了幾位小農，聽他們分享種植有機蔬果的甘苦談。每一顆番茄、每一把青菜背後都有溫暖的故事…</p>",
-    "comments": []
-  },
-  {
-    "id": 12,
-    "title": "手工甜點的魔法 糖霜餅乾製作秘訣",
-    "excerpt": "在甜點市集學到了糖霜餅乾的製作技巧，原來看似簡單的餅乾有這麼多學問。從麵團到裝飾，每個步驟都是藝術…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "甜點控", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 105,
-    "likes": 9,
-    "tags": ["美食飲品"],
-    "category": ["所有文章", "美食飲品"],
-    "html": "<p>在甜點市集學到了糖霜餅乾的製作技巧，原來看似簡單的餅乾有這麼多學問。從麵團到裝飾，每個步驟都是藝術…</p>",
-    "comments": []
-  },
-  {
-    "id": 13,
-    "title": "市集攝影技巧 如何拍出IG美照",
-    "excerpt": "市集是拍照的好地方，但怎麼拍才能拍出讓人按讚的美照？分享一些在市集拍攝的小技巧，讓你的照片更上一層樓…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "攝影師", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 175,
-    "likes": 14,
-    "tags": ["生活風格"],
-    "category": ["所有文章", "生活風格"],
-    "type": "最新",
-    "html": "<p>市集是拍照的好地方，但怎麼拍才能拍出讓人按讚的美照？分享一些在市集拍攝的小技巧，讓你的照片更上一層樓…</p>",
-    "comments": []
-  },
-  {
-    "id": 14,
-    "title": "陶瓷工藝的溫度 手捏陶器體驗心得",
-    "excerpt": "第一次體驗手捏陶器，才發現陶瓷工藝的深度。從揉土到上釉，每個步驟都需要耐心和技巧。分享這次難忘的手作體驗…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "陶藝愛好者", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 85,
-    "likes": 6,
-    "tags": ["文創設計"],
-    "category": ["所有文章", "文創設計"],
-    "html": "<p>第一次體驗手捏陶器，才發現陶瓷工藝的深度。從揉土到上釉，每個步驟都需要耐心和技巧。分享這次難忘的手作體驗…</p>",
-    "comments": []
-  },
-  {
-    "id": 15,
-    "title": "市集美食地圖 必吃清單大公開",
-    "excerpt": "走遍各大市集，終於整理出這份美食地圖！從經典小吃到創意料理，這些攤位絕對不能錯過。收藏起來下次逛市集用…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "在地吃貨", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 220,
-    "likes": 19,
-    "tags": ["美食飲品"],
-    "category": ["所有文章", "美食飲品"],
-    "html": "<p>走遍各大市集，終於整理出這份美食地圖！從經典小吃到創意料理，這些攤位絕對不能錯過。收藏起來下次逛市集用…</p>",
-    "comments": []
-  },
-  {
-    "id": 16,
-    "title": "布料拼接藝術 舊衣改造新生命",
-    "excerpt": "在環保市集學到了布料拼接的技巧，把舊衣服改造成全新的設計。不只環保，還能發揮創意，真的很有成就感…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "環保達人", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 115,
-    "likes": 10,
-    "tags": ["文創設計", "布作服飾"],
-    "category": ["所有文章", "布作服飾", "文創設計"],
-    "html": "<p>在環保市集學到了布料拼接的技巧，把舊衣服改造成全新的設計。不只環保，還能發揮創意，真的很有成就感…</p>",
-    "comments": []
-  },
-  {
-    "id": 17,
-    "title": "香草植物園 在家打造小香草花園",
-    "excerpt": "市集的香草攤老闆教了我很多種植香草的技巧，原來在家也能種出茂盛的香草園。分享一些新手種香草的實用心得…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "園藝小白", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 98,
-    "likes": 7,
-    "tags": ["生活風格", "居家療癒"],
-    "category": ["所有文章", "居家療癒", "生活風格"],
-    "html": "<p>市集的香草攤老闆教了我很多種植香草的技巧，原來在家也能種出茂盛的香草園。分享一些新手種香草的實用心得…</p>",
-    "comments": []
-  },
-  {
-    "id": 18,
-    "title": "手工果醬製作 天然美味自己來",
-    "excerpt": "跟市集的果醬達人學了手工果醬的製作方法，用當季水果做出來的果醬真的特別香甜。來分享這個簡單又美味的製作過程…",
-    "img": "./images/blog/post-1.jpeg",
-    "cover": "./images/blog/post-1.jpeg",
-    "author": { "name": "烘焙師", "avatar": "./images/blog/avatar-1.jpeg" },
-    "dateISO": "2024-07-18",
-    "dateText": "JUL 18, 2024",
-    "views": 102,
-    "likes": 8,
-    "tags": ["美食飲品"],
-    "category": ["所有文章", "美食飲品"],
-    "html": "<p>跟市集的果醬達人學了手工果醬的製作方法，用當季水果做出來的果醬真的特別香甜。來分享這個簡單又美味的製作過程…</p>",
-    "comments": []
+    "time": "1天前",
+    "avatar": "./images/blog/avatar-1.jpg"
   }
+]
+},
+{
+"id": 3,
+"title": "療癒系手作小物 讓生活多一點溫度",
+"excerpt": "最近在信義區的手作市集發現了好多可愛的小物，從羊毛氈娃娃到手工皂，每一樣都讓人愛不釋手。決定來分享幾個超療癒的手作體驗…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "手作達人",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 80,
+"likes": 5,
+"tags": [
+  "文創設計",
+  "居家療癒"
+],
+"category": [
+  "所有文章",
+  "文創設計",
+  "居家療癒"
+],
+"html": "<p>最近在信義區的手作市集發現了好多可愛的小物，從羊毛氈娃娃到手工皂，每一樣都讓人愛不釋手。決定來分享幾個超療癒的手作體驗…</p>",
+"comments": []
+},
+{
+"id": 4,
+"title": "夜市美食大探索 隱藏版小吃報你知",
+"excerpt": "台北夜市這麼多，但真正的隱藏版美食你知道幾個？這次要帶大家發掘那些在地人才知道的巷弄美食，每一攤都是驚喜…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "美食獵人",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 250,
+"likes": 20,
+"tags": [
+  "美食飲品"
+],
+"category": [
+  "所有文章",
+  "美食飲品"
+],
+"type": "熱門",
+"html": "<p>台北夜市這麼多，但真正的隱藏版美食你知道幾個？這次要帶大家發掘那些在地人才知道的巷弄美食，每一攤都是驚喜…</p>",
+"comments": []
+},
+{
+"id": 5,
+"title": "職人精神：木工阿伯的手作哲學",
+"excerpt": "在松菸市集認識了一位做木工的阿伯，他說每一塊木頭都有自己的性格，要用心去感受。聽他分享手作的故事，真的很感動…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "職人介紹",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 190,
+"likes": 15,
+"tags": [
+  "生活風格",
+  "文創設計"
+],
+"category": [
+  "所有文章",
+  "生活風格",
+  "文創設計"
+],
+"html": "<p>在松菸市集認識了一位做木工的阿伯，他說每一塊木頭都有自己的性格，要用心去感受。聽他分享手作的故事，真的很感動…</p>",
+"comments": []
+},
+{
+"id": 6,
+"title": "週末市集穿搭指南 怎麼穿最好看又實用",
+"excerpt": "逛市集要穿什麼？既要好看又要實用，還要適合拍照。整理了一些市集穿搭的小心機，讓你成為市集最亮眼的那個人…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "時尚達人",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 140,
+"likes": 9,
+"tags": [
+  "生活風格",
+  "布作服飾"
+],
+"category": [
+  "所有文章",
+  "布作服飾",
+  "生活風格"
+],
+"html": "<p>逛市集要穿什麼？既要好看又要實用，還要適合拍照。整理了一些市集穿搭的小心機，讓你成為市集最亮眼的那個人…</p>",
+"comments": []
+},
+{
+"id": 7,
+"title": "台中市集一日遊 南部市集也很精彩",
+"excerpt": "這次南下台中，發現中部的市集有著不一樣的風情。從草悟道到勤美，每個市集都有自己的特色，美食也超級多…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "旅遊玩家",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 180,
+"likes": 10,
+"tags": [
+  "二手選物",
+  "美食飲品"
+],
+"category": [
+  "所有文章",
+  "二手選物",
+  "美食飲品"
+],
+"html": "<p>這次南下台中，發現中部的市集有著不一樣的風情。從草悟道到勤美，每個市集都有自己的特色，美食也超級多…</p>",
+"comments": []
+},
+{
+"id": 8,
+"title": "手作皮件入門 從零開始學皮革工藝",
+"excerpt": "一直很想學皮件製作，這次在市集找到了專業的皮革工藝師傅。從選料到縫製，每個步驟都有學問，來分享我的學習心得…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "手作初學者",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 95,
+"likes": 8,
+"tags": [
+  "文創設計",
+  "布作服飾"
+],
+"category": [
+  "所有文章",
+  "文創設計",
+  "布作服飾"
+],
+"html": "<p>一直很想學皮件製作，這次在市集找到了專業的皮革工藝師傅。從選料到縫製，每個步驟都有學問，來分享我的學習心得…</p>",
+"comments": []
+},
+{
+"id": 9,
+"title": "植栽療癒時光 小盆栽大學問",
+"excerpt": "最近迷上了多肉植物，在市集遇到了專業的園藝師，才知道養植物有這麼多眉角。分享一些新手養植栽的小技巧…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "園藝小白",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 110,
+"likes": 6,
+"tags": [
+  "生活風格",
+  "居家療癒"
+],
+"category": [
+  "所有文章",
+  "居家療癒",
+  "生活風格"
+],
+"type": "熱門",
+"html": "<p>最近迷上了多肉植物，在市集遇到了專業的園藝師，才知道養植物有這麼多眉角。分享一些新手養植栽的小技巧…</p>",
+"comments": []
+},
+{
+"id": 10,
+"title": "創意市集攤位設計 如何吸引客人目光",
+"excerpt": "觀察了這麼多市集攤位，發現成功的攤位都有一些共通點。從擺設到動線，每個細節都影響著生意，來分享一些心得…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "設計師",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 210,
+"likes": 18,
+"tags": [
+  "飾品配件",
+  "居家療癒"
+],
+"category": [
+  "所有文章",
+  "飾品配件",
+  "居家療癒"
+],
+"html": "<p>觀察了這麼多市集攤位，發現成功的攤位都有一些共通點。從擺設到動線，每個細節都影響著生意，來分享一些心得…</p>",
+"comments": []
+},
+{
+"id": 11,
+"title": "在地小農的故事 有機蔬果背後的堅持",
+"excerpt": "這次在農夫市集認識了幾位小農，聽他們分享種植有機蔬果的甘苦談。每一顆番茄、每一把青菜背後都有溫暖的故事…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "田園觀察家",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 130,
+"likes": 11,
+"tags": [
+  "職人介紹",
+  "美食飲品"
+],
+"category": [
+  "所有文章",
+  "職人介紹",
+  "美食飲品"
+],
+"html": "<p>這次在農夫市集認識了幾位小農，聽他們分享種植有機蔬果的甘苦談。每一顆番茄、每一把青菜背後都有溫暖的故事…</p>",
+"comments": []
+},
+{
+"id": 12,
+"title": "手工甜點的魔法 糖霜餅乾製作秘訣",
+"excerpt": "在甜點市集學到了糖霜餅乾的製作技巧，原來看似簡單的餅乾有這麼多學問。從麵團到裝飾，每個步驟都是藝術…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "甜點控",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 105,
+"likes": 9,
+"tags": [
+  "美食飲品"
+],
+"category": [
+  "所有文章",
+  "美食飲品"
+],
+"html": "<p>在甜點市集學到了糖霜餅乾的製作技巧，原來看似簡單的餅乾有這麼多學問。從麵團到裝飾，每個步驟都是藝術…</p>",
+"comments": []
+},
+{
+"id": 13,
+"title": "市集攝影技巧 如何拍出IG美照",
+"excerpt": "市集是拍照的好地方，但怎麼拍才能拍出讓人按讚的美照？分享一些在市集拍攝的小技巧，讓你的照片更上一層樓…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "攝影師",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 175,
+"likes": 14,
+"tags": [
+  "生活風格"
+],
+"category": [
+  "所有文章",
+  "生活風格"
+],
+"type": "最新",
+"html": "<p>市集是拍照的好地方，但怎麼拍才能拍出讓人按讚的美照？分享一些在市集拍攝的小技巧，讓你的照片更上一層樓…</p>",
+"comments": []
+},
+{
+"id": 14,
+"title": "陶瓷工藝的溫度 手捏陶器體驗心得",
+"excerpt": "第一次體驗手捏陶器，才發現陶瓷工藝的深度。從揉土到上釉，每個步驟都需要耐心和技巧。分享這次難忘的手作體驗…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 85,
+"likes": 6,
+"tags": [
+  "文創設計"
+],
+"category": [
+  "所有文章",
+  "文創設計"
+],
+"html": "<p>第一次體驗手捏陶器，才發現陶瓷工藝的深度。從揉土到上釉，每個步驟都需要耐心和技巧。分享這次難忘的手作體驗…</p>",
+"comments": []
+},
+{
+"id": 15,
+"title": "市集美食地圖 必吃清單大公開",
+"excerpt": "走遍各大市集，終於整理出這份美食地圖！從經典小吃到創意料理，這些攤位絕對不能錯過。收藏起來下次逛市集用…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "在地吃貨",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 220,
+"likes": 19,
+"tags": [
+  "美食飲品"
+],
+"category": [
+  "所有文章",
+  "美食飲品"
+],
+"html": "<p>走遍各大市集，終於整理出這份美食地圖！從經典小吃到創意料理，這些攤位絕對不能錯過。收藏起來下次逛市集用…</p>",
+"comments": []
+},
+{
+"id": 16,
+"title": "布料拼接藝術 舊衣改造新生命",
+"excerpt": "在環保市集學到了布料拼接的技巧，把舊衣服改造成全新的設計。不只環保，還能發揮創意，真的很有成就感…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "環保達人",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 115,
+"likes": 10,
+"tags": [
+  "文創設計",
+  "布作服飾"
+],
+"category": [
+  "所有文章",
+  "布作服飾",
+  "文創設計"
+],
+"html": "<p>在環保市集學到了布料拼接的技巧，把舊衣服改造成全新的設計。不只環保，還能發揮創意，真的很有成就感…</p>",
+"comments": []
+},
+{
+"id": 17,
+"title": "香草植物園 在家打造小香草花園",
+"excerpt": "市集的香草攤老闆教了我很多種植香草的技巧，原來在家也能種出茂盛的香草園。分享一些新手種香草的實用心得…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "園藝小白",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 98,
+"likes": 7,
+"tags": [
+  "生活風格",
+  "居家療癒"
+],
+"category": [
+  "所有文章",
+  "居家療癒",
+  "生活風格"
+],
+"html": "<p>市集的香草攤老闆教了我很多種植香草的技巧，原來在家也能種出茂盛的香草園。分享一些新手種香草的實用心得…</p>",
+"comments": []
+},
+{
+"id": 18,
+"title": "手工果醬製作 天然美味自己來",
+"excerpt": "跟市集的果醬達人學了手工果醬的製作方法，用當季水果做出來的果醬真的特別香甜。來分享這個簡單又美味的製作過程…",
+"img": "./images/blog/post-1.jpeg",
+"cover": "./images/blog/post-1.jpeg",
+"author": {
+  "name": "烘焙師",
+  "avatar": "./images/blog/avatar-1.jpeg"
+},
+"dateISO": "2024-07-18",
+"dateText": "JUL 18, 2024",
+"views": 102,
+"likes": 8,
+"tags": [
+  "美食飲品"
+],
+"category": [
+  "所有文章",
+  "美食飲品"
+],
+"html": "<p>跟市集的果醬達人學了手工果醬的製作方法，用當季水果做出來的果醬真的特別香甜。來分享這個簡單又美味的製作過程…</p>",
+"comments": []
+}
 ]

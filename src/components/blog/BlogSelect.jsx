@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
   const categories = [
-    { name: "所有文章", icon: "/images/blog/blogselect/1.svg" },
-    { name: "布作服飾", icon: "/images/blog/blogselect/2.svg" },
-    { name: "文創設計", icon: "/images/blog/blogselect/3.svg" },
-    { name: "生活風格", icon: "/images/blog/blogselect/4.svg" },
-    { name: "插畫紙品", icon: "/images/blog/blogselect/5.svg" },
-    { name: "美食飲品", icon: "/images/blog/blogselect/6.svg" },
-    { name: "居家療癒", icon: "/images/blog/blogselect/7.svg" },
-    { name: "二手選物", icon: "/images/blog/blogselect/8.svg" },
-    { name: "飾品配件", icon: "/images/blog/blogselect/9.svg" },
+    { name: "所有文章", icon: "./images/blog/blogselect/1.svg" },
+    { name: "布作服飾", icon: "./images/blog/blogselect/2.svg" },
+    { name: "文創設計", icon: "./images/blog/blogselect/3.svg" },
+    { name: "生活風格", icon: "./images/blog/blogselect/4.svg" },
+    { name: "插畫紙品", icon: "./images/blog/blogselect/5.svg" },
+    { name: "美食飲品", icon: "./images/blog/blogselect/6.svg" },
+    { name: "居家療癒", icon: "./images/blog/blogselect/7.svg" },
+    { name: "二手選物", icon: "./images/blog/blogselect/8.svg" },
+    { name: "飾品配件", icon: "./images/blog/blogselect/9.svg" },
   ];
 
   return (
@@ -22,7 +22,7 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
           <li key={category.name}>
             {/* 在文章列表頁使用 onClick，在文章頁則使用 Link */}
             {isInPostPage ? (
-              <Link 
+              <Link
                 to={`/blog?category=${encodeURIComponent(category.name)}`}
                 className={selectedCategory === category.name ? 'active' : ''}
               >
@@ -61,4 +61,3 @@ export default BlogSelect;
 // "居家療癒",
 // "二手選物",
 // "飾品配件",
-"./images/blog/blog_women"
