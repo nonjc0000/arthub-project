@@ -114,7 +114,7 @@ function BlogPost() {
 
 
   return (
-    <div className="post-page-container">
+    <div className="post-page-container" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
       <div className="post-wrapper">
         {/* 單欄版面（移除左側篩選欄） */}
         <main className="post-content-panel">

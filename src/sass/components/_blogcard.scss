@@ -61,7 +61,7 @@
 
     &-hot {
       background-color: #ED972E;
-      background-image: url("./images/blog/hot.svg");
+      background-image: url("/images/blog/hot.svg");
       background-repeat: no-repeat;
       background-position: left 10px center; // 將圖標左移並垂直居中
       padding-left: 30px; // 為圖標留出更多空間
@@ -70,7 +70,7 @@
 
     &-new {
       background-color: #ED972E;
-      background-image: url("./images/blog/new.svg");
+      background-image: url("/images/blog/new.svg");
       background-repeat: no-repeat;
       background-position: left 10px center; // 將圖標左移並垂直居中
       padding-left: 30px; // 為圖標留出更多空間
@@ -121,7 +121,7 @@
         display: inline-block;
         background-color: #ED972E;
         color: #ffffff;
-        padding: 5px 10px;
+        padding: 5px 5px;
         border-radius: 15px;
         font-size: 0.8rem;
         margin-right: 8px;

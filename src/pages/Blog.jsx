@@ -17,7 +17,7 @@ function Blog() {
       excerpt: "這週末突然興起了「市集一日行」的念頭，早上打開市集平台查了一下，發現台北同一天居然有三場不同風格的市集！於是直接衝一波，從松菸到公館再到…",
       img: "./images/blog/post-1.jpeg",
       tags: ["布作服飾", "生活風格", "插畫紙品"],
-      category: ["所有文章", "布作服飾", "生活風格", "插畫紙品"],
+      category: ["所有文章", "布作服飾", "插畫紙品"],
 
     },
     {
@@ -288,7 +288,7 @@ function Blog() {
   };
 
   return (
-    <div className="blog-page">
+    <div className="blog-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
       {/* 1) 標題 */}
       <header className="blog-hero">
         <h1 className='titleBox_h1'>
