@@ -59,23 +59,23 @@
     justify-content: center; // 確保文字在水平和垂直上都能置中
     gap: 4px; // 圖標和文字之間的間距
 
-    &-hot {
-      background-color: #ED972E;
-      background-image: url("/images/blog/hot.svg");
-      background-repeat: no-repeat;
-      background-position: left 10px center; // 將圖標左移並垂直居中
-      padding-left: 30px; // 為圖標留出更多空間
-      background-size: 14px; // 調整圖標大小
-    }
+    // &-hot {
+    //   background-color: #ED972E;
+    //   background-image: url("/images/blog/hot.svg");
+    //   background-repeat: no-repeat;
+    //   background-position: left 10px center; // 將圖標左移並垂直居中
+    //   padding-left: 30px; // 為圖標留出更多空間
+    //   background-size: 14px; // 調整圖標大小
+    // }
 
-    &-new {
-      background-color: #ED972E;
-      background-image: url("/images/blog/new.svg");
-      background-repeat: no-repeat;
-      background-position: left 10px center; // 將圖標左移並垂直居中
-      padding-left: 30px; // 為圖標留出更多空間
-      background-size: 16px; // 調整圖標大小
-    }
+    // &-new {
+    //   background-color: #ED972E;
+    //   background-image: url("/images/blog/new.svg");
+    //   background-repeat: no-repeat;
+    //   background-position: left 10px center; // 將圖標左移並垂直居中
+    //   padding-left: 30px; // 為圖標留出更多空間
+    //   background-size: 16px; // 調整圖標大小
+    // }
   }
 
   .text-box {

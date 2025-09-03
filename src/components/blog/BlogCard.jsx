@@ -3,11 +3,33 @@ import { Link } from "react-router-dom";
 
 function BlogCard({ id, img, title, excerpt, tags = [], type }) {
     const getBadgeConfig = (type) => {
-        switch(type) {
+        switch (type) {
             case "熱門":
-                return { text: "熱門", className: "badge-hot" };
+                return {
+                    text: "熱門",
+                    className: "badge-hot",
+                    style: {
+                        backgroundColor: "#ED972E",
+                        backgroundImage: 'url("/images/blog/hot.svg")', // 建議用絕對路徑
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "left 10px center",
+                        paddingLeft: "30px",
+                        backgroundSize: "14px"
+                    }
+                };
             case "最新":
-                return { text: "最新", className: "badge-new" };
+                return {
+                    text: "最新",
+                    className: "badge-new",
+                    style: {
+                        backgroundColor: "#ED972E",
+                        backgroundImage: 'url("/images/blog/new.svg")', // 建議用絕對路徑
+                        backgroundRepeat: "no-repeat",
+                        backgroundPosition: "left 10px center",
+                        paddingLeft: "30px",
+                        backgroundSize: "16px"
+                    }
+                };
             default:
                 return null;
         }
@@ -16,13 +38,15 @@ function BlogCard({ id, img, title, excerpt, tags = [], type }) {
     const badgeConfig = getBadgeConfig(type);
 
     return (
-        // 加上 <Link> 元件，並使用 id 屬性來建立動態連結
         <Link to={`/blog_post/${id}`} className="blog-card-link">
             <div className="blog-card">
                 <div className="img-box">
                     <img src={img} alt={title} />
                     {badgeConfig && (
-                        <div className={`badge ${badgeConfig.className}`}>
+                        <div
+                            className={`badge ${badgeConfig.className}`}
+                            style={badgeConfig.style}  // ← 重點在這裡！
+                        >
                             {badgeConfig.text}
                         </div>
                     )}

@@ -39,7 +39,6 @@
 
   // 裝飾圖片區
   .blog-deco {
-    background-image: url("./images/blog/blog_deco.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -205,12 +204,12 @@
 
 
     &.search {
-      background-image: url("./images/blog/blog_search.svg");
+      // background-image: url("./images/blog/blog_search.svg");
     }
 
 
     &.write {
-      background-image: url("./images/blog/blog_write.png");
+      // background-image: url("./images/blog/blog_write.png");
       background-color: transparent;
       border: none;
     }

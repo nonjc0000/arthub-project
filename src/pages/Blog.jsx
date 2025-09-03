@@ -308,7 +308,7 @@ function Blog() {
       </section>
 
       {/* 3) 彩色裝飾條 */}
-      <div className="blog-deco" aria-hidden="true" />
+      <div className="blog-deco" style={{ backgroundImage: 'url("./images/blog/blog_deco.svg")' }} />
 
       {/* 4) 黑框主內容區 */}
       <section className="blog-shell">
@@ -358,10 +358,10 @@ function Blog() {
                       }
                     }}
                   />
-                  <button className="icon-btn search" aria-label="search">
+                  <button className="icon-btn search" aria-label="search" style={{ backgroundImage: 'url("./images/blog/blog_search.svg")' }}>
                   </button>
                 </div>
-                <button className="icon-btn write" aria-label="撰寫文章">
+                <button className="icon-btn write" aria-label="撰寫文章" style={{ backgroundImage: 'url("./images/blog/blog_write.png")' }}>
                 </button>
               </div>
             </div>
