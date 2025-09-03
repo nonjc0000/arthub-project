@@ -4,7 +4,9 @@ const Find_map_card = ({id, name, date, time, tag1, tag2, tag3}) => {
   return (
     <>
       <div className='find_map_card'>
+        <figure>
         <img src="./images/find_map/festival_img.jpg" alt="" />
+        </figure>
         <div className='find_map_card_desc'>
           {/* <h2>夏末微光祭</h2> */}
           <h2>{name}</h2>

@@ -4,6 +4,7 @@
 .find_map_card {
     // border: solid 2px red;
     height: $h-20vh;
+    min-width: 600px;
     // width: 80%;
     display: flex;
     gap: $spacing-lg;
@@ -12,11 +13,13 @@
     border-radius: $rad-basic;
     margin-bottom: $spacing-lg;
 
-    img {
+    figure {
         width: 25%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
         border-radius: $rad-sm;
+        overflow: hidden;
     }
 
     .find_map_card_desc {

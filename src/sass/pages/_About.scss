@@ -1,0 +1,224 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.about_us_main {
+    background-color: $background;
+    @extend %main_font-family_setting;
+    color: $text;
+    padding: $spacing-xl;
+    margin-bottom: $h-10vh;
+
+    .hero_section {
+        width: 100%;
+        height: 50vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $spacing-xl;
+        margin-bottom: $spacing-xxl;
+
+        .hero_image {
+            width: 70%;
+            max-width: 900px;
+            height: 100%;
+            border-radius: $rad-lg;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+
+    .about_content_section {
+        padding: $spacing-xl;
+        margin-bottom: $spacing-xxl;
+
+        .about_content_container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+
+            .section_title {
+                font-size: $f-s-xxxl;
+                font-weight: bold;
+                margin-bottom: $spacing-xl;
+                color: $text;
+            }
+
+            .about_description {
+                max-width: 800px;
+                margin: 0 auto;
+
+                p {
+                    font-size: $f-s-lg;
+                    line-height: 1.8;
+                    color: $text;
+                    text-align: justify;
+                    letter-spacing: 0.5px;
+                }
+            }
+        }
+    }
+
+    .company_info_section {
+        padding: $spacing-xl;
+        margin-bottom: $spacing-xxl;
+
+        .company_info_container {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            .section_title {
+                font-size: $f-s-xxxl;
+                font-weight: bold;
+                margin-bottom: $spacing-xl;
+                text-align: center;
+                color: $text;
+            }
+
+            .info_content {
+                background-color: $secondary;
+                border-radius: $rad-lg;
+                padding: $spacing-xxl;
+                display: flex;
+                gap: $spacing-xxl;
+                align-items: flex-start;
+                height: $h-80vh;
+                // min-width: 1000px;
+
+                .info_details {
+                    // margin: auto 0;
+                    // flex: 1;
+                    height: 100%;
+                    padding: $spacing-xxl 0;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    // gap: $spacing-lg;
+
+                    .info_item {
+                        display: flex;
+                        align-items: flex-start;
+                        gap: $spacing-md;
+                        padding: $spacing-sm 0;
+
+                        .info_label {
+                            font-weight: bold;
+                            color: $text;
+                            min-width: 100px;
+                            text-align: left;
+                            font-size: $f-s-md;
+                        }
+
+                        .info_value {
+                            color: $text;
+                            font-size: $f-s-md;
+                            line-height: 1.5;
+                            flex: 1;
+                        }
+                    }
+                }
+
+                .map_container {
+                    flex: 1;
+                    height: 100%;
+                    border-radius: $rad-md;
+                    overflow: hidden;
+                    // box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+
+
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    .about_deco_box {
+        // position: relative;
+        width: 100%;
+        height: 0;
+
+        .about_deco1 {
+            // position: fixed;
+            bottom: 100px;
+            left: 50px;
+            width: 120px;
+            min-width: 120px;
+            z-index: 10;
+            pointer-events: none;
+            transform: rotate(-10deg);
+
+            img {
+                width: 100%;
+                height: auto;
+                filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.1));
+            }
+        }
+    }
+
+    // 響應式設計
+    @media (max-width: 768px) {
+        .hero_section {
+            height: 30vh;
+            padding: $spacing-lg;
+
+            .hero_image {
+                width: 90%;
+            }
+        }
+
+        .about_content_section,
+        .company_info_section {
+            padding: $spacing-lg;
+        }
+
+        .company_info_container .info_content {
+            flex-direction: column;
+            gap: $spacing-xl;
+
+            .map_container {
+                min-height: 300px;
+
+                .map_placeholder {
+                    min-height: 300px;
+                }
+            }
+        }
+
+        .about_deco_box .about_deco1 {
+            width: 80px;
+            bottom: 50px;
+            left: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .about_content_container .section_title,
+        .company_info_container .section_title {
+            font-size: $f-s-xxl;
+        }
+
+        .about_description p {
+            font-size: $f-s-md;
+        }
+
+        .info_item {
+            flex-direction: column;
+            gap: $spacing-xs;
+
+            .info_label {
+                min-width: auto;
+                font-weight: bold;
+            }
+        }
+    }
+}
