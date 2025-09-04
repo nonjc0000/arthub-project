@@ -4,13 +4,13 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.event_info_main, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.event_info_main, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.order_management_content_box, .notifications_content_box, .footprint_content_box, .type_search-box .search, .find_type_card .find_type_card_wrap .top, .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+.order_management_content_box, .notifications_content_box, .footprint_content_box, .find_type_main .type_search-box .search, .find_type_main .find_type_card .find_type_card_wrap .top, .find_type_main .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,13 +19,13 @@
 .stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
 .stall_map_main .stall_search_box .stall_search_filter select,
 .stall_map_main .stall_search_box .stall_search_filter button, .stall_map_main .stall_card .stall_card_body button,
-.stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment, .type_search-box .select select, .type_search-box .search input, .type_search-box .search button, .find_type_card .find_type_card_wrap .top .like_button, .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
+.stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment, .find_type_main .type_search-box .select select, .find_type_main .type_search-box .search input, .find_type_main .type_search-box .search button, .find_type_main .find_type_card .find_type_card_wrap .top .like_button, .find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
   border: none;
   outline: none;
   background: none;
 }
 
-.user_sidebar_left, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_card .find_type_card_wrap, .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
+.user_sidebar_left, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -35,7 +35,7 @@
   flex-wrap: wrap;
 }
 
-.find_type_card .find_type_card_desc p {
+.find_type_main .find_type_card .find_type_card_desc p {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -1219,16 +1219,16 @@ a {
 }
 .find_type_main .find_type_content_box .result_box {
   display: flex;
-  width: 70%;
+  width: 68%;
   height: 910px;
-  padding: 50px 50px 40px 50px;
+  padding: 50px 0px 40px 0px;
   background-color: #fff;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
 }
 .find_type_main .find_type_content_box .find_type_result {
-  width: 89%;
+  width: 83%;
   height: 100%;
   background-color: #fff;
   align-items: center;
@@ -1250,8 +1250,7 @@ a {
   left: 365px;
   transform: rotate(2deg);
 }
-
-.type_search-box {
+.find_type_main .type_search-box {
   background-color: #fff;
   display: flex;
   width: 25%;
@@ -1263,7 +1262,7 @@ a {
   padding: 45px 20px;
   gap: 60px;
 }
-.type_search-box .select {
+.find_type_main .type_search-box .select {
   display: flex;
   width: 80%;
   height: 50px;
@@ -1271,18 +1270,18 @@ a {
   border-bottom: 1px solid #000;
   background-size: 22px;
 }
-.type_search-box .select select {
+.find_type_main .type_search-box .select select {
   width: 100%;
 }
-.type_search-box .button_box {
+.find_type_main .type_search-box .button_box {
   width: 80%;
 }
-.type_search-box p {
+.find_type_main .type_search-box p {
   padding-left: 5px;
   text-align: left;
   font-size: 0.875rem;
 }
-.type_search-box .find_type_btn_box {
+.find_type_main .type_search-box .find_type_btn_box {
   display: grid;
   grid-template-columns: 45% 45%;
   padding-top: 10px;
@@ -1290,7 +1289,7 @@ a {
   width: 100%;
   gap: 25px;
 }
-.type_search-box .find_type_btn_box button {
+.find_type_main .type_search-box .find_type_btn_box button {
   max-width: 170px;
   height: 45px;
   border: none;
@@ -1298,7 +1297,7 @@ a {
   background-color: #ED972E;
   border-radius: 999px;
 }
-.type_search-box .search {
+.find_type_main .type_search-box .search {
   border: #000 solid 1px;
   border-radius: 999px;
   border-radius: 999px;
@@ -1306,15 +1305,14 @@ a {
   width: 80%;
   height: 40px;
 }
-.type_search-box .search input {
+.find_type_main .type_search-box .search input {
   width: 100%;
 }
-.type_search-box .search button img {
+.find_type_main .type_search-box .search button img {
   width: 25px;
   height: 25px;
 }
-
-.find_type_card {
+.find_type_main .find_type_card {
   width: 230px;
   height: 300px;
   background-color: #fff;
@@ -1322,47 +1320,50 @@ a {
   overflow: hidden;
   border: solid 1px #000;
 }
-.find_type_card .find_type_card_wrap {
+.find_type_main .find_type_card .find_type_card_wrap {
   height: 200px;
   background-color: #ccc;
   padding: 10px;
 }
-.find_type_card .find_type_card_wrap .top .like_button img {
+.find_type_main .find_type_card .find_type_card_wrap .top .like_button img {
   width: 25px;
   height: auto;
 }
-.find_type_card .find_type_card_wrap .date {
+.find_type_main .find_type_card .find_type_card_wrap .date {
   gap: 5px;
 }
-.find_type_card .find_type_card_wrap .date figure {
-  width: 100px;
+.find_type_main .find_type_card .find_type_card_wrap .date figure {
+  width: 115px;
   font-size: 0.75rem;
   color: #fff;
   background-color: #ED972E;
   padding: 3px 5px;
   border-radius: 999px;
 }
-.find_type_card .find_type_card_wrap .date figure img {
+.find_type_main .find_type_card .find_type_card_wrap .date figure p {
+  font-size: 12px;
+}
+.find_type_main .find_type_card .find_type_card_wrap .date figure img {
   width: 13px;
   height: 13px;
 }
-.find_type_card .find_type_card_wrap .find_type_tag_box {
+.find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box {
   margin-top: auto;
   display: flex;
   gap: 5px;
 }
-.find_type_card .find_type_card_wrap .find_type_tag_box button {
+.find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box button {
   background-color: #ED972E;
   color: #fff;
   border-radius: 999px;
 }
-.find_type_card .find_type_card_desc h2 {
+.find_type_main .find_type_card .find_type_card_desc h2 {
   font-size: 1rem;
   font-weight: 700;
   color: #39413A;
   padding: 5px 20px;
 }
-.find_type_card .find_type_card_desc p {
+.find_type_main .find_type_card .find_type_card_desc p {
   font-size: 0.75rem;
   font-weight: 400;
   color: #39413A;
@@ -2071,44 +2072,16 @@ a {
   width: 100%;
   height: 100vh;
   margin: 0 auto;
-  margin-top: 80px;
-}
-.home-wrap .date-box {
-  margin-right: 150px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 15px;
-  font-family: DM Sans;
-  color: #413B35;
-  font-size: 2.25rem;
-}
-.home-wrap .date-box .slash {
-  width: 2px;
-  height: 5rem;
-  background-color: #413B35;
-  transform: rotate(40deg) translatex(10px);
-}
-.home-wrap .date-box .date-item {
-  display: flex;
-  gap: 20px;
-  align-items: flex-end;
-  margin-top: 30px;
-}
-.home-wrap .date-box .weekday {
-  font-weight: 500;
-}
-.home-wrap .date-box .weather {
-  width: 65px;
-  height: 65px;
-}
-.home-wrap .date-box .situation {
-  font-size: 0.75rem;
+  margin-top: 50px;
 }
 
 .home-top {
   display: flex;
-  position: relative;
+}
+@media (max-width: 1440px) {
+  .home-top {
+    padding: 0 20px;
+  }
 }
 @media (max-width: 992px) {
   .home-top {
@@ -2125,6 +2098,12 @@ a {
   margin-top: 200px;
   margin-bottom: 250px;
 }
+@media (max-width: 1440px) {
+  .home-heading {
+    margin-left: 60px;
+    margin-top: 150px;
+  }
+}
 @media (max-width: 992px) {
   .home-heading {
     width: 100%;
@@ -2138,17 +2117,32 @@ a {
   font-weight: 500;
   color: #413B35;
 }
+@media (max-width: 1440px) {
+  .home-heading h2 {
+    font-size: 2.25rem;
+    padding-left: 20px;
+  }
+}
 .home-heading .arrow {
   width: 4%;
   margin-top: 25px;
   margin-left: 60px;
+}
+@media (max-width: 1440px) {
+  .home-heading .arrow {
+    margin-left: 30px;
+  }
 }
 
 .stall-wrap {
   margin-right: 100px;
   width: 60%;
   height: auto;
-  position: relative;
+}
+@media (max-width: 1440px) {
+  .stall-wrap {
+    margin-right: 40px;
+  }
 }
 @media (max-width: 992px) {
   .stall-wrap {
@@ -2162,50 +2156,109 @@ a {
   display: block;
 }
 .stall-wrap .stall-item .stall-first {
-  position: absolute;
   width: 50%;
   height: auto;
 }
 .stall-wrap .stall-item .stall-second {
   width: 60%;
   height: auto;
-  position: absolute;
-  left: 35%;
+  margin-top: 20%;
+  margin-left: -15%;
+  left: 33%;
   top: 25%;
 }
 .stall-wrap .stall-item .stall-third {
   width: 40%;
   height: auto;
-  position: absolute;
-  top: 48%;
-  left: 3%;
+  margin-top: 40%;
+  margin-left: -90%;
 }
 
-.home-hot {
+.date-box {
+  margin-right: 150px;
+  margin-top: -50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  font-family: DM Sans;
+  color: #413B35;
+  font-size: 2.25rem;
+}
+.date-box .slash {
+  width: 2px;
+  height: 5rem;
+  background-color: #413B35;
+  transform: rotate(40deg) translatex(10px);
+}
+@media (max-width: 1440px) {
+  .date-box .slash {
+    height: 4rem;
+  }
+}
+.date-box .date-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  margin-top: 30px;
+}
+@media (max-width: 1440px) {
+  .date-box .date-item {
+    gap: 15px;
+  }
+}
+.date-box .weekday {
+  font-weight: 500;
+}
+.date-box .weather {
+  width: 65px;
+  height: 65px;
+}
+@media (max-width: 1440px) {
+  .date-box .weather {
+    width: 55px;
+    height: 55px;
+  }
+}
+.date-box .situation {
+  font-size: 0.75rem;
+}
+
+.home-hot-wrap {
+  width: 100%;
+  margin-top: 80px;
+}
+.home-hot-wrap .home-hot {
   text-align: center;
   font-family: "Noto Sans TC", san-serif;
   color: #413B35;
   margin-bottom: 60px;
 }
-.home-hot h3 {
+.home-hot-wrap .home-hot h3 {
   font-size: 2.25rem;
 }
-.home-hot p {
+@media (max-width: 1440px) {
+  .home-hot-wrap .home-hot h3 {
+    font-size: 2rem;
+  }
+}
+.home-hot-wrap .home-hot p {
   font-family: "DM Sans", san-serif;
   font-size: 1.5rem;
 }
 
 .pic-wrap {
-  max-width: 1500px;
+  max-width: 80%;
   margin: 0 auto;
 }
 .pic-wrap .home-pic {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
   gap: 16px;
 }
 .pic-wrap .home-pic .home-pic-fsb {
-  max-width: 750px;
+  max-width: 50%;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -2215,23 +2268,37 @@ a {
   justify-content: space-between;
   gap: 16px;
 }
-.pic-wrap .home-pic .home-pic-fsb .home-pic-item .type-img-one {
-  width: 100%;
+.pic-wrap .home-pic > div:last-child {
+  flex: 1;
 }
-.pic-wrap .home-pic .home-pic-fsb .home-pic-item .type-img-tw {
+.pic-wrap .home-pic > div:last-child a {
+  display: block;
+  height: 100%;
+}
+.pic-wrap .home-pic > div:last-child a img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .pic-wrap .home-pic .home-pic-se {
-  max-width: 750px;
+  max-width: 50%;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  width: 50%;
+}
+.pic-wrap .home-pic .home-pic-se .type-img-fo {
+  display: flex;
+  flex: 1;
 }
 .pic-wrap .home-pic .home-pic-se .type-img {
-  margin-bottom: 16px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 .pic-wrap .home-pic img {
+  max-width: 100%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -2256,11 +2323,16 @@ a {
   position: relative;
   margin-bottom: 200px;
 }
+@media (max-width: 1440px) {
+  .home-blog-item {
+    margin-bottom: 150px;
+  }
+}
 .home-blog-item .home-left-img {
   width: 100%;
   height: 100vh;
   position: relative;
-  margin-right: -300px;
+  margin-right: -250px;
   z-index: 1;
 }
 .home-blog-item .home-left-img img {
@@ -2272,18 +2344,34 @@ a {
   position: relative;
   z-index: 0;
   width: 100%;
+  top: 12rem;
   height: 80vh;
-  top: 180px;
   background-color: #CBD4C1;
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
   z-index: 0;
 }
+.home-blog-item .home-right-blog::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 20px;
+  right: 0;
+  bottom: 0;
+  border: 1px solid black;
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
 .home-blog-item .home-right-blog .home-right-txt {
   text-align: right;
   color: #697655;
-  margin-top: 45px;
+  margin-top: 30px;
   margin-right: 115px;
+}
+@media (max-width: 1440px) {
+  .home-blog-item .home-right-blog .home-right-txt {
+    margin-top: 10px;
+  }
 }
 .home-blog-item .home-right-blog h3 {
   font-weight: 700;
@@ -2297,6 +2385,7 @@ a {
 
 .home-card {
   padding-left: 100px;
+  margin-bottom: 20px;
 }
 .home-card img {
   width: 100%;
@@ -2307,8 +2396,15 @@ a {
 .home-card .home-card-item {
   margin-left: 28px;
 }
+.home-card .home-card-item p {
+  color: #6c757d;
+}
 .home-card .home-card-item span {
   padding-left: 20px;
+  color: #6c757d;
+}
+.home-card .home-card-item .home-card-p {
+  color: #39413A;
 }
 .home-card .card-txt {
   display: flex;
@@ -2317,9 +2413,10 @@ a {
 .home-button {
   position: relative;
   z-index: 3;
-  text-align: right;
-  top: -150px;
-  right: 60px;
+  display: flex;
+  margin-right: 50px;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .back-chip {

@@ -4,9 +4,17 @@
 
 
 
+
+
+
+
 .home-bg {
     background-color: $background;
 }
+
+
+
+
 
 
 
@@ -15,64 +23,14 @@
     width: 100%;
     height: 100vh;
     margin: 0 auto;
-    margin-top: 80px;
-
-
-
-
-    .date-box {
-        margin-right: 150px;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        gap: 15px;
-        font-family: DM Sans;
-        color: $dark;
-        font-size: $f-s-xxxxl;
-
-
-
-
-        .slash {
-            width: 2px;
-            height: 5rem;
-            background-color: $dark;
-            transform: rotate(40deg) translatex(10px);
-        }
-
-
-
-
-        .date-item {
-            display: flex;
-            gap: 20px;
-            align-items: flex-end;
-            margin-top: 30px;
-        }
-
-
-
-
-        .weekday {
-            font-weight: $f-w-m;
-        }
-
-
-
-
-        .weather {
-            width: 65px;
-            height: 65px;
-        }
-
-
-
-
-        .situation {
-            font-size: $f-s-xs;
-        }
-    }
+    margin-top: 50px;
 }
+
+
+
+
+
+
 
 
 
@@ -80,7 +38,15 @@
 // 單純用flex並排
 .home-top {
     display: flex;
-    position: relative;
+
+
+    @media (max-width: 1440px) {
+        padding: 0 20px; // 添加左右內距
+    }
+
+
+
+
 
 
 
@@ -97,11 +63,27 @@
 
 
 
+
+
+
+
 .home-heading {
     width: $w-40;
     margin-left: 120px;
     margin-top: 200px;
     margin-bottom: 250px;
+
+
+
+
+    @media (max-width: 1440px) {
+        margin-left: 60px; // 從 120px 減半
+        margin-top: 150px; // 稍微減少上邊距
+    }
+
+
+
+
 
 
 
@@ -113,6 +95,10 @@
 
 
 
+
+
+
+
     h2 {
         font-size: $f-s-xxxxxl;
         font-family: $family-tc;
@@ -120,7 +106,19 @@
         padding-left: 40px;
         font-weight: $f-w-m;
         color: $dark;
+
+
+
+
+        @media (max-width: 1440px) {
+            font-size: $f-s-xxxxl; // 稍微縮小字體
+            padding-left: 20px; // 減少左內距
+        }
     }
+
+
+
+
 
 
 
@@ -129,8 +127,17 @@
         width: 4%;
         margin-top: 25px;
         margin-left: 60px;
+
+
+        @media (max-width: 1440px) {
+            margin-left: 30px;
+        }
     }
 }
+
+
+
+
 
 
 
@@ -139,21 +146,35 @@
     margin-right: 100px;
     width: $w-60;
     height: auto;
-    position: relative;
+    // position: relative;
+
+
+    @media (max-width: 1440px) {
+        margin-right: 40px; // 從 100px 大幅減少
+    }
+
+
+
+
 
 
 
 
     @media (max-width: 992px) {
-        width: 100%; // 同樣全寬
-        // margin-top: 20px; // 與上方保持距離
+        width: $w-100; // 同樣全寬
     }
+
+
+
+
 
 
 
 
     .stall-item {
         display: flex;
+
+
         a {
             display: block;
         }
@@ -161,8 +182,12 @@
 
 
 
+
+
+
+
         .stall-first {
-            position: absolute;
+            // position: absolute;
             width: $w-50;
             height: auto;
         }
@@ -170,13 +195,23 @@
 
 
 
+
+
+
+
         .stall-second {
             width: $w-60;
             height: auto;
-            position: absolute;
-            left: 35%;
+            // position: absolute;
+            margin-top: 20%;
+            margin-left: -15%;
+            left: 33%;
             top: 25%;
         }
+
+
+
+
 
 
 
@@ -184,10 +219,103 @@
         .stall-third {
             width: $w-40;
             height: auto;
-            position: absolute;
-            top: 48%;
-            left: 3%;
+            // position: absolute;
+            margin-top: 40%;
+            margin-left: -90%;
+            // top: 48%;
+            // left: 3%;
         }
+    }
+}
+
+
+.date-box {
+    margin-right: 150px;
+    margin-top: -50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    font-family: DM Sans;
+    color: $dark;
+    font-size: $f-s-xxxxl;
+
+
+
+
+
+
+
+
+    .slash {
+        width: 2px;
+        height: 5rem;
+        background-color: $dark;
+        transform: rotate(40deg) translatex(10px);
+
+
+        @media (max-width: 1440px) {
+            height: 4rem; // 稍微縮短
+        }
+    }
+
+
+
+
+
+
+
+
+    .date-item {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+        margin-top: 30px;
+
+
+        @media (max-width: 1440px) {
+            gap: 15px; // 縮小間距
+        }
+    }
+
+
+
+
+
+
+
+
+    .weekday {
+        font-weight: $f-w-m;
+    }
+
+
+
+
+
+
+
+
+    .weather {
+        width: 65px;
+        height: 65px;
+
+
+        @media (max-width: 1440px) {
+            width: 55px; // 稍微縮小
+            height: 55px;
+        }
+    }
+
+
+
+
+
+
+
+
+    .situation {
+        font-size: $f-s-xs;
     }
 }
 
@@ -195,34 +323,61 @@
 
 
 // 第二塊
-.home-hot {
-    text-align: center;
-    font-family: $family-tc;
-    color: $dark;
-    margin-bottom: 60px;
+.home-hot-wrap {
+    width: 100%;
+    margin-top: 80px;
+
+
+    .home-hot {
+        text-align: center;
+        font-family: $family-tc;
+        color: $dark;
+        margin-bottom: 60px;
 
 
 
 
-    h3 {
-        font-size: $f-s-xxxxl;
-    }
 
 
 
 
-    p {
-        font-family: $family-en;
-        font-size: $f-s-xl;
+
+
+        h3 {
+            font-size: $f-s-xxxxl;
+
+
+            @media (max-width: 1440px) {
+                font-size: $f-s-xxxl; // 稍微縮小
+            }
+        }
+
+
+
+
+
+
+
+
+        p {
+            font-family: $family-en;
+            font-size: $f-s-xl;
+        }
     }
 }
 
 
 
 
+
+
+
+
 .pic-wrap {
-    max-width: 1500px;
+    max-width: 80%;
     margin: 0 auto;
+
+
 
 
 
@@ -230,16 +385,23 @@
     .home-pic {
         display: flex;
         justify-content: space-between;
+        align-items: stretch; // 讓左右兩側高度相等
         gap: 16px;
 
 
 
 
+
+
+
+
         .home-pic-fsb {
-            max-width: 750px;
+            max-width: 50%;
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+
 
 
 
@@ -252,54 +414,72 @@
 
 
 
-                .type-img-one {
-                    width: 100%;
-                }
-
-
-
-
-                .type-img-tw {
-                    width: 100%;
-                }
 
 
 
 
             }
         }
+
+
+        >div:last-child {
+            flex: 1; // 讓下方大圖佔剩餘空間
+
+
+            a {
+                display: block;
+                height: 100%;
+
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+
+
+
+
+
 
 
 
 
         .home-pic-se {
-            max-width: 750px;
+            max-width: 50%;
+            flex: 1;
             display: flex;
             justify-content: space-between;
             gap: 16px;
-            width: 50%;
 
 
-
-
-
-
-
-
-
-
+            .type-img-fo {
+                // width: 50%;
+                display: flex;
+                flex: 1;
+            }
 
 
             .type-img {
-                margin-bottom: 16px;
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
             }
         }
 
 
 
 
+
+
+
+
         img {
-            // max-width: 100%;
+            max-width: 100%;
             height: auto;
             border-radius: 20px;
             object-fit: cover;
@@ -311,6 +491,9 @@
 
 
 
+
+
+// 第三塊
 .home-blog {
     margin-top: 112px;
     margin-right: 350px;
@@ -318,6 +501,10 @@
     text-align: center;
     color: $dark;
     transform: rotate(5deg);
+
+
+
+
 
 
 
@@ -332,10 +519,23 @@
 
 
 
+
+
+
+
 .home-blog-item {
     @extend %flex-center;
     position: relative;
     margin-bottom: 200px;
+
+
+    @media (max-width: 1440px) {
+        margin-bottom: 150px; // 稍微減少下邊距
+    }
+
+
+
+
 
 
 
@@ -344,8 +544,12 @@
         width: $w-100;
         height: $h-100vh;
         position: relative;
-        margin-right: -300px;
+        margin-right: -250px;
         z-index: 1;
+
+
+
+
 
 
 
@@ -360,16 +564,42 @@
 
 
 
+
+
+
+
     .home-right-blog {
         position: relative;
         z-index: 0;
         width: $w-100;
+        top: 12rem;
         height: $h-80vh;
-        top: 180px;
         background-color: $primary;
         border-top-left-radius: $rad-ex;
         border-bottom-left-radius: $rad-ex;
         z-index: 0;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            right: 0;
+            bottom: 0;
+            border: 1px solid black;
+            border-top-left-radius: $rad-ex;
+            border-bottom-left-radius: $rad-ex;
+        }
+
+
+        // @media (max-width:1440px) {
+        //     height: 72vh;
+        // }
+
+
+
+
 
 
 
@@ -377,9 +607,18 @@
         .home-right-txt {
             text-align: right;
             color: #697655;
-            margin-top: 45px;
+            margin-top: 30px;
             margin-right: 115px;
+
+
+            @media (max-width:1440px) {
+                margin-top: 10px;
+            }
         }
+
+
+
+
 
 
 
@@ -394,8 +633,6 @@
         }
 
 
-
-
         p {
             font-weight: $f-w-m;
             font-size: $f-s-lg;
@@ -405,37 +642,54 @@
 }
 
 
+
+
 .home-card {
     @extend %flex-center;
     padding-left: 100px;
+    margin-bottom: 20px;
+
+
     img {
         width: $w-100;
         display: block;
         border-top-right-radius: 30px;
         border-bottom-left-radius: 30px;
     }
+
+
     .home-card-item {
         @extend %flex-column;
         margin-left: 28px;
+
+
+        p {
+            color: $gray-600;
+        }
         span {
             padding-left: 20px;
+            color: $gray-600;
+        }
+        .home-card-p {
+            color: $text;
         }
     }
+
+
     .card-txt {
         display: flex;
     }
 }
 
 
+
+
 .home-button {
     position: relative;
     z-index: 3;
-    text-align: right;
-    top: -150px;
-    right: 60px;
+    display: flex;
+    margin-right: 50px;
+    justify-content: flex-end;
+    align-items: flex-end;
 }
-
-
-
-
 

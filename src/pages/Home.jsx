@@ -5,16 +5,26 @@ import PageTop from '../components/PageTop'
 
 
 
+
+
+
+
 const Home = () => {
   const topRef = useRef(null);
 
 
-  function gotoTop(){
+
+
+  function gotoTop() {
     window.scrollTo({
-      top:0,
-      behavior:'smooth'
+      top: 0,
+      behavior: 'smooth'
     })
   }
+
+
+
+
 
 
 
@@ -44,23 +54,26 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div>
-              <div className="date-box">
-                <p>7</p>
-                <div className='slash'></div>
-                <div className='date-item'>
-                  <p>22</p>
-                  <p className="weekday">TUE.</p>
-                  <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
-                  <p className='temptemperature'>25°C<span className='situation'>多雲</span></p>
-                </div>
+          </div>
+        </section>
+        {/* 日期 */}
+        <section>
+          <div>
+            <div className="date-box">
+              <p>7</p>
+              <div className='slash'></div>
+              <div className='date-item'>
+                <p>22</p>
+                <p className="weekday">TUE.</p>
+                <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
+                <p className='temptemperature'>25°C<span className='situation'>多雲</span></p>
               </div>
             </div>
           </div>
         </section>
         {/* 首頁第二區塊 */}
         <section>
-          <div>
+          <div className='home-hot-wrap'>
             <div className='home-hot'>
               <h3>熱門主題</h3>
               <p>Popular subject</p>
@@ -70,20 +83,20 @@ const Home = () => {
               <div className='home-pic'>
                 <div className='home-pic-fsb'>
                   <div className='home-pic-item'>
-                    <a href="#"><img className='type-img-one' src="./images/home/home-pic-01.svg" alt="種類圖01" /></a>
-                    <a href="#"><img className='type-img-tw' src="./images/home/home-pic-02.svg" alt="種類圖02" /></a>
+                    <a href="#"><img className='type-img-one' src="./images/home/home-pic-01.png" alt="種類圖01" /></a>
+                    <a href="#"><img src="./images/home/home-pic-02.png" alt="種類圖02" /></a>
                   </div>
                   <div className='type-img-th'>
-                    <a href="#"><img src="./images/home/home-pic-03.svg" alt="種類圖03" /></a>
+                    <a href="#"><img src="./images/home/home-pic-03.png" alt="種類圖03" /></a>
                   </div>
                 </div>
                 <div className='home-pic-se'>
                   <div className='type-img-fo'>
-                    <a href="#"><img src="./images/home/home-pic-04.svg" alt="種類圖04" /></a>
+                    <a href="#"><img src="./images/home/home-pic-04.png" alt="種類圖04" /></a>
                   </div>
-                  <div>
-                    <a href="#"><img className='type-img' src="./images/home/home-pic-05.svg" alt="種類圖05" /></a>
-                    <a href="#"><img src="./images/home/home-pic-06.svg" alt="種類圖06" /></a>
+                  <div className='type-img'>
+                    <a href="#"><img src="./images/home/home-pic-05.png" alt="種類圖05" /></a>
+                    <a href="#"><img src="./images/home/home-pic-06.png" alt="種類圖06" /></a>
                   </div>
                 </div>
               </div>
@@ -97,7 +110,7 @@ const Home = () => {
           </div>
           <div className='home-blog-item'>
             <div className='home-left-img'>
-              <img src="./images/home/左下圖片.svg" alt="左下圖片.svg" />
+              <img src="./images/home/左下圖片.png" alt="左下圖片.svg" />
             </div>
             <div className='home-right-blog'>
               <div className='home-right-txt'>
@@ -110,21 +123,47 @@ const Home = () => {
                   <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
                 </div>
                 <div className='home-card-item'>
-                    <p>2025.6.15<span>某某某</span></p>
+                  <p>2025.6.15<span>某某某</span></p>
+                  <div className='home-card-p'>
+                    <p>城市裡的一場迷你旅行：</p>
+                    <p>我在市集中發現的生活靈感</p>
+                  </div>
+                </div>
+              </div>
+              <div className='home-card'>
+                <div>
+                  <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
+                </div>
+                <div className='home-card-item'>
+                  <p>2025.6.15<span>某某某</span></p>
                   <div>
                     <p>城市裡的一場迷你旅行：</p>
                     <p>我在市集中發現的生活靈感</p>
                   </div>
                 </div>
               </div>
+              <div className='home-card'>
+                <div>
+                  <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
+                </div>
+                <div className='home-card-item'>
+                  <p>2025.6.15<span>某某某</span></p>
+                  <div>
+                    <p>城市裡的一場迷你旅行：</p>
+                    <p>我在市集中發現的生活靈感</p>
+                  </div>
+                </div>
+              </div>
+              <div className='home-button'>
+                <Button />
+              </div>
             </div>
-          </div>
-          <div className='home-button'>
-            <Button />
           </div>
           <div ref={topRef}>
             <button onClick={gotoTop}>回頂端</button>
           </div>
+
+
 
 
         </section>
@@ -136,7 +175,19 @@ const Home = () => {
 
 
 
+
+
+
+
 export default Home
+
+
+
+
+
+
+
+
 
 
 

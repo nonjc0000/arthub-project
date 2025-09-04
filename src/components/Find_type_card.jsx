@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+
 const Find_type_card = () => {
     return (
         <div className='find_type_card'>
-            <Link to='/stall_map'>
+            <Link to='/Event_info'>
                 <div className='find_type_card_wrap'>
                     <div className='top'>
                         <div className='date'>
@@ -36,4 +37,6 @@ const Find_type_card = () => {
     )
 }
 
+
 export default Find_type_card
+

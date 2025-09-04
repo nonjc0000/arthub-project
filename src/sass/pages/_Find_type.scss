@@ -2,8 +2,11 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
+
 .find_type_main {
     background-color: $background;
+
+
 
 
     .find_type_content_box {
@@ -11,20 +14,23 @@
         margin-left: 80px;
         gap: $spacing-xxl;
 
+
         .result_box {
             display: flex;
-            width: $w-70;
+            width: 68%;
             height: 910px;
-            padding: 50px 50px 40px 50px;
+            padding: 50px 0px 40px 0px;
             background-color: $white;
             border-radius: $rad-lg ;
             justify-content: center;
             align-items: center;
         }
 
+
         .find_type_result {
-            width: 89%;
+            width: 83%;
             height: $w-100;
+
 
             background-color: $white;
             // justify-content: center;
@@ -34,196 +40,233 @@
             overflow: auto;
         }
 
+
     }
 
+
     .find_type_img1,
-    .find_type_img2{
+    .find_type_img2 {
         position: absolute;
         width: 200px;
     }
 
-    .find_type_img1{
+
+    .find_type_img1 {
         bottom: -640px;
-        left:110px;
+        left: 110px;
         z-index: 2;
     }
 
-    .find_type_img2{
+
+    .find_type_img2 {
         bottom: -675px;
         left: 365px;
         transform: rotate(2deg);
- 
+
+
     }
 
-}
 
-
-.type_search-box {
-    background-color: $white;
-    display: flex;
-    width: 25%;
-    height: 80%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: $rad-lg ;
-    padding: 45px $spacing-md;
-    gap: 60px;
-
-    .select {
-        // flex: 0 0 auto;
+    .type_search-box {
+        background-color: $white;
         display: flex;
-        width: $w-80;
-        height: 50px;
-        border: none;
-        border-bottom: 1px solid $black;
-
-        background-size: 22px;
-
-        select {
-            @extend %remove_form_style;
-            width: $w-100;
-        }
-
-    }
-
-    .button_box {
-        width: $w-80;
-    }
-
-    p {
-        padding-left: $spacing-xxs;
-        text-align: left;
-        font-size: $f-s-sm;
-    }
-
-    .find_type_btn_box {
-        display: grid;
-        grid-template-columns: 45% 45%;
-        padding-top: $spacing-xs;
+        width: 25%;
+        height: 80%;
+        flex-direction: column;
         justify-content: center;
-        width: $w-100;
-        gap: 25px;
+        align-items: center;
+        border-radius: $rad-lg ;
+        padding: 45px $spacing-md;
+        gap: 60px;
 
 
-        button {
-            max-width: 170px;
-            height: 45px;
+        .select {
+            // flex: 0 0 auto;
+            display: flex;
+            width: $w-80;
+            height: 50px;
             border: none;
-            color: $white;
-            background-color: $accent;
-            border-radius: $rad-ex;
-        }
-    }
+            border-bottom: 1px solid $black;
 
-    .search {
-        @extend %flex-space-between;
-        border: $black solid 1px;
-        border-radius: $rad-ex;
-        border-radius: $rad-ex;
-        padding: $spacing-xxs $spacing-lg;
-        width: $w-80;
-        height: 40px;
 
-        input {
-            @extend %remove_form_style;
-            width: $w-100;
-        }
+            background-size: 22px;
 
-        button {
-            @extend %remove_form_style;
 
-            img {
-                width: 25px;
-                height: 25px;
-                // object-fit: cover;
-            }
-        }
-    }
-}
-
-.find_type_card {
-    width: 230px;
-    height: 300px;
-    background-color: $white;
-    border-radius: $rad-lg;
-    overflow: hidden;
-    border: solid 1px $black;
-
-    .find_type_card_wrap {
-        height: 200px;
-        background-color: #ccc;
-        padding: 10px;
-        @extend %flex-column;
-
-        .top {
-            @extend %flex-space-between;
-
-            .like_button {
+            select {
                 @extend %remove_form_style;
-                img {
-                    width: 25px;
-                    height: auto;
-                }
+                width: $w-100;
             }
+
+
         }
 
-        .date {
-            @extend %flex-column;
-            gap: $spacing-xxs;
-            ;
 
-            figure {
-                width: 100px;
-                font-size: $f-s-xs;
+        .button_box {
+            width: $w-80;
+        }
+
+
+        p {
+            padding-left: $spacing-xxs;
+            text-align: left;
+            font-size: $f-s-sm;
+        }
+
+
+        .find_type_btn_box {
+            display: grid;
+            grid-template-columns: 45% 45%;
+            padding-top: $spacing-xs;
+            justify-content: center;
+            width: $w-100;
+            gap: 25px;
+
+
+
+
+            button {
+                max-width: 170px;
+                height: 45px;
+                border: none;
                 color: $white;
                 background-color: $accent;
-                padding: 3px 5px;
                 border-radius: $rad-ex;
-                @extend %flex-space-between;
-
-                img {
-                    width: 13px;
-                    height: 13px;
-                }
             }
-
         }
 
-        .find_type_tag_box {
-            margin-top: auto;
-            display: flex;
-            gap: $spacing-xxs;
-            ;
+
+        .search {
+            @extend %flex-space-between;
+            border: $black solid 1px;
+            border-radius: $rad-ex;
+            border-radius: $rad-ex;
+            padding: $spacing-xxs $spacing-lg;
+            width: $w-80;
+            height: 40px;
+
+
+            input {
+                @extend %remove_form_style;
+                width: $w-100;
+            }
+
 
             button {
                 @extend %remove_form_style;
-                background-color: $accent;
-                color: $white;
-                border-radius: $rad-ex;
 
+
+                img {
+                    width: 25px;
+                    height: 25px;
+                    // object-fit: cover;
+                }
             }
         }
     }
 
-    .find_type_card_desc {
-        h2 {
-            font-size: $f-s-basic;
-            font-weight: $f-w-b;
-            color: $text ;
-            padding: $spacing-xxs $spacing-md ;
+
+    .find_type_card {
+        width: 230px;
+        height: 300px;
+        background-color: $white;
+        border-radius: $rad-lg;
+        overflow: hidden;
+        border: solid 1px $black;
+
+
+        .find_type_card_wrap {
+            height: 200px;
+            background-color: #ccc;
+            padding: 10px;
+            @extend %flex-column;
+
+
+            .top {
+                @extend %flex-space-between;
+
+
+                .like_button {
+                    @extend %remove_form_style;
+
+
+                    img {
+                        width: 25px;
+                        height: auto;
+                    }
+                }
+            }
+
+
+            .date {
+                @extend %flex-column;
+                gap: $spacing-xxs;
+                ;
+
+
+                figure {
+                    width: 115px;
+                    font-size: $f-s-xs;
+                    color: $white;
+                    background-color: $accent;
+                    padding: 3px 5px;
+                    border-radius: $rad-ex;
+                    @extend %flex-space-between;
+                    p{
+                        font-size: 12px;
+                    }
+
+
+                    img {
+                        width: 13px;
+                        height: 13px;
+                    }
+                }
+
+
+            }
+
+
+            .find_type_tag_box {
+                margin-top: auto;
+                display: flex;
+                gap: $spacing-xxs;
+                ;
+
+
+                button {
+                    @extend %remove_form_style;
+                    background-color: $accent;
+                    color: $white;
+                    border-radius: $rad-ex;
+
+
+                }
+            }
         }
 
-        p {
-            font-size: $f-s-xs;
-            font-weight: $f-w-r;
-            color: $text ;
-            @extend %flex-center;
-            padding: 0 $spacing-md ;
-            padding-bottom: $spacing-sm;
-            @extend %multiple-lines;
-            -webkit-line-clamp: 3;
+
+        .find_type_card_desc {
+            h2 {
+                font-size: $f-s-basic;
+                font-weight: $f-w-b;
+                color: $text ;
+                padding: $spacing-xxs $spacing-md ;
+            }
+
+
+            p {
+                font-size: $f-s-xs;
+                font-weight: $f-w-r;
+                color: $text ;
+                @extend %flex-center;
+                padding: 0 $spacing-md ;
+                padding-bottom: $spacing-sm;
+                @extend %multiple-lines;
+                -webkit-line-clamp: 3;
+            }
         }
+
+
     }
-
 }
+
