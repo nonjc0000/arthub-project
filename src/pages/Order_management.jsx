@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import User_sidebar_left from '../components/User_sidebar_left';
 
 const Order_management = () => {
 
@@ -69,20 +69,7 @@ const Order_management = () => {
 
             <section className="order_management_content_box">
 
-                <aside className="user_sidebar_left">
-                    <Link to={'/My_footprint'} className='sidebar_item'>
-                        <div className='pageToggle My_footprint'></div>
-                        <p>我的足跡</p>
-                    </Link>
-                    <Link to={'/Notifications'} className='sidebar_item'>
-                        <div className='pageToggle Notifications'></div>
-                        <p>訊息通知</p>
-                    </Link>
-                    <Link to={'/Order_management'} className='sidebar_item'>
-                        <div className='pageToggle Order_management'></div>
-                        <p>訂單管理</p>
-                    </Link>
-                </aside>
+                <User_sidebar_left />
 
                 <div className="order_management_content">
                     <div className='order_status_tabs'>

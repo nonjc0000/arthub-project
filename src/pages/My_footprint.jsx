@@ -1,8 +1,11 @@
-import React from 'react'
-import My_footprint_card from '../components/My_footprint_card'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import My_footprint_card from '../components/My_footprint_card';
+import User_sidebar_left from '../components/User_sidebar_left';
 
 const My_footprint = () => {
+
+    const [isActive, setIsActive] = useState(true);
+
     return (
         <main className='my_footprint_main'>
             <h1 className='titleBox_h1'>
@@ -13,22 +16,7 @@ const My_footprint = () => {
 
             <section className="footprint_content_box">
 
-                <aside className="user_sidebar_left">
-
-                    <Link to={'/My_footprint'} className='sidebar_item'>
-                        <div className='pageToggle My_footprint'></div>
-                        <p>我的足跡</p>
-                    </Link>
-                    <Link to={'/Notifications'} className='sidebar_item'>
-                        <div className='pageToggle Notifications'></div>
-                        <p>訊息通知</p>
-                    </Link>
-                    <Link to={'/Order_management'} className='sidebar_item'>
-                        <div className='pageToggle Order_management'></div>
-                        <p>訂單管理</p>
-                    </Link>
-
-                </aside>
+                <User_sidebar_left isActive={isActive} />
 
                 <div className="footprint_content">
                     <div className='footprint_content_topbar'>

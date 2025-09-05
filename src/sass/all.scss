@@ -77,7 +77,7 @@ $icons: find_type, find_map, find_schedule, blog, about, user;
         margin: auto $spacing-md;
         background-color: $white;
 
-        &.Notifications {
+        &.active {
             &::before {
                 content: "";
                 display: block;

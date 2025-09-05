@@ -3996,7 +3996,7 @@ a {
   margin: auto 20px;
   background-color: #fff;
 }
-.user_sidebar_left .pageToggle.Notifications::before {
+.user_sidebar_left .pageToggle.active::before {
   content: "";
   display: block;
   position: absolute;
