@@ -4,8 +4,6 @@ import User_sidebar_left from '../components/User_sidebar_left';
 
 const My_footprint = () => {
 
-    const [isActive, setIsActive] = useState(true);
-
     return (
         <main className='my_footprint_main'>
             <h1 className='titleBox_h1'>
@@ -16,7 +14,7 @@ const My_footprint = () => {
 
             <section className="footprint_content_box">
 
-                <User_sidebar_left isActive={isActive} />
+                <User_sidebar_left/>
 
                 <div className="footprint_content">
                     <div className='footprint_content_topbar'>

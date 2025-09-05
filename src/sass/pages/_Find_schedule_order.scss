@@ -1,0 +1,399 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.find_schedule_order_main {
+    background-color: $background;
+    @extend %main_font-family_setting;
+    color: $text;
+    padding: $spacing-xl;
+    margin-bottom: $h-10vh;
+
+    // 麵包屑導航
+    .breadcrumb_nav {
+        margin-bottom: $spacing-xl;
+        font-size: $f-s-md;
+        color: $text;
+
+        .current {
+            font-weight: bold;
+        }
+    }
+
+    // 共用區塊樣式
+    %section_base {
+        background-color: $white;
+        border-radius: $rad-lg;
+        margin-bottom: $spacing-xl;
+        overflow: hidden;
+    }
+
+    %section_header {
+        background-color: $primary;
+        color: $white;
+        padding: $spacing-md $spacing-lg;
+        font-size: $f-s-lg;
+        font-weight: bold;
+    }
+
+    %section_content {
+        background-color: $secondary;
+        padding: $spacing-lg;
+    }
+
+    // 付款內容區塊
+    .order_content_section {
+        @extend %section_base;
+
+        .order_header {
+            @extend %section_header;
+        }
+
+        .order_details_box {
+            @extend %section_content;
+
+            .event_info {
+                @extend %flex-space-between;
+                align-items: center;
+                margin-bottom: $spacing-lg;
+                padding: $spacing-md;
+                background-color: $white;
+                border-radius: $rad-md;
+
+                .event_image {
+                    width: 80px;
+                    height: 60px;
+                    border-radius: $rad-sm;
+                    object-fit: cover;
+                }
+
+                .event_details {
+                    flex: 1;
+                    margin-left: $spacing-md;
+
+                    h3 {
+                        font-size: $f-s-lg;
+                        margin-bottom: $spacing-xs;
+                        color: $text;
+                    }
+
+                    .event_meta {
+                        display: flex;
+                        gap: $spacing-md;
+                        font-size: $f-s-sm;
+                        color: $text;
+
+                        span {
+                            @extend %flex-center;
+                            gap: $spacing-xxs;
+                        }
+                    }
+                }
+            }
+
+            .price_breakdown {
+                .price_item {
+                    @extend %flex-space-between;
+                    padding: $spacing-sm 0;
+                    border-bottom: 1px solid rgba($text, 0.1);
+
+                    &:last-child {
+                        border-bottom: none;
+                        font-weight: bold;
+                        font-size: $f-s-lg;
+                    }
+
+                    .label {
+                        color: $text;
+                    }
+
+                    .price {
+                        font-weight: bold;
+                        color: $text;
+                    }
+                }
+            }
+        }
+    }
+
+    // 客戶資訊區塊
+    .customer_info_section {
+        @extend %section_base;
+
+        .section_header {
+            @extend %section_header;
+        }
+
+        .form_container {
+            @extend %section_content;
+
+            .customer_form {
+                .form_row {
+                    display: flex;
+                    gap: $spacing-lg;
+                    margin-bottom: $spacing-lg;
+
+                    .form_group {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: $spacing-xs;
+
+                        &.full_width {
+                            flex: 100%;
+                        }
+
+                        label {
+                            font-weight: bold;
+                            color: $text;
+                            font-size: $f-s-md;
+                        }
+
+                        input {
+                            padding: $spacing-sm $spacing-md;
+                            border: 2px solid $white;
+                            border-radius: $rad-sm;
+                            font-size: $f-s-md;
+                            background-color: $white;
+                            color: $text;
+
+                            &:focus {
+                                outline: none;
+                                border-color: $primary;
+                            }
+
+                            &::placeholder {
+                                color: rgba($text, 0.5);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 付款方式區塊
+    .payment_method_section {
+        @extend %section_base;
+
+        .section_header {
+            @extend %section_header;
+        }
+
+        .payment_options {
+            @extend %section_content;
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-md;
+
+            .payment_option {
+                @extend %flex-center;
+                justify-content: flex-start;
+                gap: $spacing-md;
+                padding: $spacing-md $spacing-lg;
+                background-color: $white;
+                border-radius: $rad-md;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+
+                &:hover {
+                    background-color: rgba($primary, 0.1);
+                }
+
+                &.selected {
+                    border-color: $primary;
+                    background-color: rgba($primary, 0.15);
+                }
+
+                input[type="radio"] {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                }
+
+                label {
+                    font-size: $f-s-md;
+                    color: $text;
+                    cursor: pointer;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    // 電子發票區塊
+    .receipt_section {
+        @extend %section_base;
+
+        .section_header {
+            @extend %section_header;
+        }
+
+        .receipt_form {
+            @extend %section_content;
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-lg;
+
+            .form_group {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-xs;
+
+                label {
+                    font-weight: bold;
+                    color: $text;
+                    font-size: $f-s-md;
+                }
+
+                input {
+                    padding: $spacing-sm $spacing-md;
+                    border: 2px solid $white;
+                    border-radius: $rad-sm;
+                    font-size: $f-s-md;
+                    background-color: $white;
+                    color: $text;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $primary;
+                    }
+
+                    &::placeholder {
+                        color: rgba($text, 0.5);
+                    }
+                }
+            }
+        }
+    }
+
+    // 付款確認區塊
+    .payment_confirm_section {
+        @extend %section_base;
+
+        .payment_summary {
+            @extend %section_content;
+            @extend %flex-space-between;
+            align-items: center;
+
+            .total_amount {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-xs;
+
+                .label {
+                    font-size: $f-s-md;
+                    color: $text;
+                }
+
+                .amount {
+                    font-size: $f-s-xl;
+                    font-weight: bold;
+                    color: $text;
+                }
+            }
+
+            .confirm_payment_btn {
+                background-color: $primary;
+                color: $white;
+                border: none;
+                padding: $spacing-md $spacing-xxl;
+                border-radius: $rad-md;
+                font-size: $f-s-lg;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: darken($primary, 10%);
+                    transform: translateY(-2px);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+
+    // 裝飾元素
+    .order_deco_box {
+        position: relative;
+        width: 100%;
+        height: 0;
+
+        .order_deco1 {
+            position: fixed;
+            top: 50%;
+            right: 50px;
+            width: 100px;
+            z-index: 10;
+            pointer-events: none;
+            transform: translateY(-50%) rotate(15deg);
+
+            img {
+                width: 100%;
+                height: auto;
+                filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.1));
+            }
+        }
+
+        .order_deco2 {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            width: 150px;
+            z-index: 10;
+            pointer-events: none;
+            transform: rotate(-5deg);
+
+            img {
+                width: 100%;
+                height: auto;
+                filter: drop-shadow(2px 2px 8px rgba(0, 0, 0, 0.1));
+            }
+        }
+    }
+
+    // 響應式設計
+    @media (max-width: 768px) {
+        padding: $spacing-lg;
+
+        .customer_form .form_row {
+            flex-direction: column;
+            gap: $spacing-md;
+        }
+
+        .payment_summary {
+            flex-direction: column;
+            gap: $spacing-lg;
+            text-align: center;
+
+            .confirm_payment_btn {
+                width: 100%;
+            }
+        }
+
+        .order_deco1,
+        .order_deco2 {
+            display: none;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: $spacing-md;
+
+        %section_header {
+            padding: $spacing-sm $spacing-md;
+            font-size: $f-s-md;
+        }
+
+        %section_content {
+            padding: $spacing-md;
+        }
+
+        .breadcrumb_nav {
+            font-size: $f-s-sm;
+        }
+    }
+}
