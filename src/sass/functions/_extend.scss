@@ -1,3 +1,5 @@
+@use '../variables/' as *;
+
 %main_font-family_setting {
     font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
@@ -20,12 +22,12 @@
     background: none;
 }
 
-%flex-column{
+%flex-column {
     display: flex;
     flex-direction: column;
 }
 
-%flex-wrap{
+%flex-wrap {
     display: flex;
     flex-wrap: wrap;
 }
@@ -38,7 +40,29 @@
     -webkit-box-orient: vertical;
 }
 
-%text-center{
+%text-center {
     text-align: center;
     line-height: 100%;
+}
+
+// 表單共用區塊樣式
+%section_base {
+    background-color: $white;
+    border-radius: $rad-lg;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+%section_title {
+    background-color: $primary;
+    color: $white;
+    padding: $spacing-md $spacing-lg;
+    margin: 0;
+    font-size: $f-s-lg;
+    font-weight: bold;
+}
+
+%content_box {
+    background-color: $secondary;
+    padding: $spacing-lg;
 }
