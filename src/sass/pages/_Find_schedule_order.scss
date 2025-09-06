@@ -1,0 +1,40 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.Find_schedule_order_wrap {
+    margin: 15vh 0;
+    padding: 0 $spacing-xl;
+
+    .breadcrumb {
+        margin-left: $spacing-xxl;
+        margin-bottom: $spacing-xxxxl;
+    }
+
+    #order_form {
+        padding: 0 100px;
+    }
+}
+
+.payment_content {
+    background-color: $primary-200;
+    height: $h-30vh;
+
+    .event_box {
+        display: flex;
+
+        figure {
+            width: $w-30;
+            height: 100%;
+            max-height: 100px;
+        }
+
+    }
+}
+
+.section_title {
+    display: block;
+    padding: $spacing-lg $spacing-lg $spacing-sm ;
+    background-color: $secondary-600;
+    color: $white;
+    font-size: $f-s-xl;
+}

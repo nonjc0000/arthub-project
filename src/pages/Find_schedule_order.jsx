@@ -17,6 +17,7 @@ const Find_schedule_order = () => {
         <div className='payment_content'>
           <h2 className='section_title'>付款內容</h2>
           <div className='content_box'>
+            <div className='event_box'>
             <figure>
               <img src="./images/Find_schedule_order/event1.jpg" alt="華山設計漫遊日" />
             </figure>
@@ -28,6 +29,7 @@ const Find_schedule_order = () => {
                 <span>👥 1</span>
                 <span>TWD 890</span>
               </div>
+            </div>
             </div>
             <div className='expected_amount'>
               <span>應付金額</span>
@@ -42,7 +44,7 @@ const Find_schedule_order = () => {
         </div>
 
         <div className='customer_info'>
-          <h2>訂購人資訊</h2>
+          <h2 className='section_title'>訂購人資訊</h2>
           <div className='content_box'>
             <div className='form_input'>
               <label htmlFor="first_name">名字</label>
@@ -72,28 +74,41 @@ const Find_schedule_order = () => {
         </div>
 
         <div className='payment_method'>
+          <h2 className='section_title'>付款方式</h2>
           <fieldset>
             <div className='form_input'>
-              <label htmlFor=""></label>
-              <input type="radio" name="" id="" />
+              <input type="radio" name="payment_method" id="ATM" value={'ATM'} />
+              <label htmlFor="ATM">轉帳ATM</label>
             </div>
 
             <div className='form_input'>
-              <label htmlFor=""></label>
-              <input type="radio" name="" id="" />
+              <input type="radio" name="payment_method" id="credit_card" value={'credit_card'} />
+              <label htmlFor="credit_card">信用卡／金融卡</label>
             </div>
 
             <div className='form_input'>
-              <label htmlFor=""></label>
-              <input type="radio" name="" id="" />
+              <input type="radio" name="payment_method" id="line_pay" value={'line_pay'} />
+              <label htmlFor="line_pay">LINE PAY</label>
             </div>
           </fieldset>
         </div>
 
         <div className='receipt'>
+          <h2 className='section_title'>電子發票、收據</h2>
+          <div className='content_box'>
+            <div className='form_input'>
+              <label htmlFor="receipt_type">代收轉付電子收據類型</label>
+              <input type="text" id='receipt_type' />
+            </div>
+          </div>
         </div>
 
         <div className='sum_checkout'>
+          <div className='text'>
+            <p>1件商品合計</p>
+            <p>TWD 890</p>
+          </div>
+          <button className='checkout_btn'>確認付款</button>
         </div>
 
       </form>
