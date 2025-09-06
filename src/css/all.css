@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.event_info_main, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.event_info_main, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,8 @@
   align-items: center;
 }
 
-.stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
+.review_container .review_input_box .input input,
+.review_container .review_input_box .input button, .stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
 .stall_map_main .stall_search_box .stall_search_filter select,
 .stall_map_main .stall_search_box .stall_search_filter button, .stall_map_main .stall_card .stall_card_body button,
 .stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment, .find_type_main .type_search-box .select select, .find_type_main .type_search-box .search input, .find_type_main .type_search-box .search button, .find_type_main .find_type_card .find_type_card_wrap .top .like_button, .find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
@@ -25,7 +26,7 @@
   background: none;
 }
 
-.user_sidebar_left, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
+.user_sidebar_left, .detail_info_container .info_desc, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -3447,8 +3448,17 @@ a {
   /* 市集基本資訊 */
 }
 .event_info_main .info_box {
+  flex-direction: column;
   background-color: #fff;
-  width: 80%;
+  width: 75%;
+  padding: 30px 0 0 0;
+}
+.event_info_main .event_info_container {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  border: 1px solid red;
+  gap: 50px;
 }
 .event_info_main .event_info_container .pic_box {
   display: flex;
@@ -3466,11 +3476,140 @@ a {
   background-position: center center;
 }
 .event_info_main .event_info_container .pic_box .thumbnail {
-  display: flex;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 15px;
 }
-.event_info_main .event_info_container .pic_box .thumbnail img {
-  width: 25%;
+.event_info_main .event_info_container .event_name {
+  color: #39413A;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+.event_info_main .event_info_container .info {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  padding-top: 40px;
+}
+.event_info_main .event_info_container .info .time,
+.event_info_main .event_info_container .info .place {
+  display: flex;
+  justify-content: left;
+  gap: 10px;
+  border: 1px solid red;
+  align-items: center;
+}
+.event_info_main .event_info_container .info .place {
+  margin: 15px 0 35px 0;
+}
+.event_info_main .event_info_container .info .place img {
+  width: 24px;
+}
+.event_info_main .event_info_container .info .type_box .title {
+  color: #39413A;
+  margin-bottom: 15px;
+}
+.event_info_main .event_info_container .info .type_box .tag_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5%;
+  grid-row-gap: 13px;
+}
+.event_info_main .event_info_container .info .type_box .tag_box p {
+  background-color: #ED972E;
+  color: #fff;
+  font-size: 0.875rem;
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+}
+.event_info_main .event_info_container .stall_btn_box {
+  border: 1px solid red;
+  flex-direction: column;
+  width: 15%;
+  gap: 40px;
+}
+.event_info_main .event_info_container .stall_btn_box figure {
+  background-color: #DEBFA0;
+  width: 115px;
+  height: 130px;
+  border-radius: 20px;
+  flex-direction: column;
+}
+.event_info_main .event_info_container .stall_btn_box figure img {
+  width: 30px;
+  margin-bottom: 13px;
+}
+
+/* 市集詳細內容 */
+.detail_info_container {
+  flex-direction: column;
+  /* 照片區 */
+}
+.detail_info_container .deco_line {
+  width: 75%;
+}
+.detail_info_container .detail_pic {
+  width: 70%;
+}
+.detail_info_container h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #39413A;
+}
+.detail_info_container .info_desc {
+  gap: 25px;
+  width: 65%;
+  margin: 30px 0;
+}
+.detail_info_container .info_desc .title {
+  font-size: 1.25rem;
+  color: #39413A;
+  font-weight: 700;
+}
+.detail_info_container .info_desc .content {
+  color: #39413A;
+}
+.detail_info_container .info_desc ul {
+  list-style: disc;
+}
+.detail_info_container .info_desc ul li {
+  margin-left: 30px;
+}
+
+/* 市集評論區 */
+.review_container {
+  flex-direction: column;
+  border-top: 2px dashed #adb5bd;
+  width: 70%;
+}
+.review_container .review_input_box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 90%;
+  height: 75px;
+  padding-top: 40px;
+  border: 1px solid red;
+}
+.review_container .review_input_box img {
+  width: 40px;
+  height: 40px;
+}
+.review_container .review_input_box .input {
+  background-color: #CBD4C1;
+  border-radius: 999px;
+  border: 1px solid red;
+  width: 90%;
+  display: flex;
+}
+.review_container .review_input_box .input input img,
+.review_container .review_input_box .input button img {
+  width: 25px;
+}
+.review_container .review_input_box .input input {
+  width: 100%;
 }
 
 /* 外層：標題一行、下面左右兩欄（圖／文） */
