@@ -21,6 +21,7 @@ import Find_schedule_trip from './pages/Find_schedule_trip';
 import Event_info from "./pages/Event_info";
 import Stall_register from "./pages/Stall_register";
 import Find_schedule_order from "./pages/Find_schedule_order";
+import Order_success from "./pages/Order_success";
 
 
 const ArtHub_App = () => {
@@ -47,6 +48,7 @@ const ArtHub_App = () => {
         <Route path="/Event_info" element={<Event_info />} ></Route>
         <Route path="/Stall_register" element={<Stall_register />} ></Route>
         <Route path='/Order' element={<Find_schedule_order />}></Route>
+        <Route path='/Order_success' element={<Order_success />}></Route>
       </Routes>
       <Footer />
     </div>

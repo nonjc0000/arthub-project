@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Find_schedule_order = () => {
 
@@ -110,7 +111,9 @@ const Find_schedule_order = () => {
             <p>1件商品合計</p>
             <p>TWD 890</p>
           </div>
-          <button className='checkout_btn' type='btn'>確認付款</button>
+          <Link to={'/Order_success'} className='checkout_btn'>
+          確認付款
+          </Link>
         </div>
 
       </form>

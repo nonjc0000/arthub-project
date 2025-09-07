@@ -1,0 +1,81 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.order_success_main {
+    background-color: $background;
+    @extend %main_font-family_setting;
+    min-height: $h-100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .success_container {
+        background-color: $secondary;
+        border-radius: $rad-lg;
+        padding: $spacing-xxl;
+        width: $w-80;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 350px;
+
+        .success_content {
+            position: relative;
+            margin: 0 auto;
+            text-align: center;
+
+            .success_title {
+                color: $white;
+                font-size: $f-s-xl;
+                font-weight: normal;
+                margin-bottom: $spacing-xxl;
+                
+            }
+
+            .success_icon {
+                margin: 0 auto $spacing-xl;
+                width: 90px;
+            }
+
+            .success_message {
+                color: $white;
+                font-size: $f-s-xl;
+                font-weight: $f-w-m;
+                margin-bottom: $spacing-xxl;
+            }
+
+            .back_home_btn {
+                display: inline-block;
+                background-color: $white;
+                color: $secondary;
+                padding: $spacing-md $spacing-xxl;
+                border-radius: $rad-lg;
+                text-decoration: none;
+                font-size: $f-s-lg;
+                font-weight: bold;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background-color: $gray-100;
+                    transform: translateY(-2px);
+                }
+
+                &:active {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .character_hands {
+            position: absolute;
+            right: 10px;
+            bottom: -30px;
+            width: 30%;
+        }
+
+
+
+    }
+}
