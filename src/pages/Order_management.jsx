@@ -82,6 +82,8 @@ const Order_management = () => {
                         <div className='order_list'>
                             <Order_card />
                             <Order_card />
+                            <Order_card />
+                            <Order_card />
                         </div>
 
                         <div className='recommended_section'>

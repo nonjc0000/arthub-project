@@ -45,24 +45,20 @@
     line-height: 100%;
 }
 
-// 表單共用區塊樣式
-%section_base {
-    background-color: $white;
-    border-radius: $rad-lg;
+%section-basic {
+    background-color: $primary-200;
+    border-radius: $rad-basic;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: $spacing-lg;
+    margin-bottom: 80px;
 }
 
-%section_title {
-    background-color: $primary;
-    color: $white;
-    padding: $spacing-md $spacing-lg;
-    margin: 0;
-    font-size: $f-s-lg;
-    font-weight: bold;
-}
-
-%content_box {
-    background-color: $secondary;
-    padding: $spacing-lg;
+%input-text-basic {
+    display: block;
+    padding: 0 $spacing-sm;
+    height: 2rem;
+    width: 100%;
+    border: none;
+    border-radius: $rad-md;
+    margin-top: $spacing-xxs;
 }

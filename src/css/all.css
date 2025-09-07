@@ -10,7 +10,8 @@
   align-items: center;
 }
 
-.order_management_content_box, .notifications_content_box, .footprint_content_box, .find_type_main .type_search-box .search, .find_type_main .find_type_card .find_type_card_wrap .top, .find_type_main .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
+.expected_amount,
+.checkout_amount, .order_management_content_box, .notifications_content_box, .footprint_content_box, .find_type_main .type_search-box .search, .find_type_main .find_type_card .find_type_card_wrap .top, .find_type_main .find_type_card .find_type_card_wrap .date figure, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,39 +49,132 @@
   line-height: 100%;
 }
 
+.payment_content, .customer_info, .payment_method, .receipt, .sum_checkout {
+  background-color: #E5EEDA;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 25px;
+  margin-bottom: 80px;
+}
+
+.customer_info .form_input input, .receipt .form_input input {
+  display: block;
+  padding: 0 15px;
+  height: 2rem;
+  width: 100%;
+  border: none;
+  border-radius: 15px;
+  margin-top: 5px;
+}
+
 * {
   box-sizing: border-box;
 }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
 }
 
 body {
   background-color: #FDF7EB;
+  color: #39413A;
   font-size: 100%;
   line-height: 1.5;
   letter-spacing: 0.08em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -3044,6 +3138,7 @@ a {
 .order_management_content .order_content_layout .recommended_section {
   width: 35%;
   height: 100%;
+  margin-bottom: 25px;
 }
 .order_management_content .order_content_layout .recommended_section h3 {
   font-size: 1.25rem;
@@ -3055,6 +3150,7 @@ a {
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 25px;
+  min-width: 200px;
 }
 .order_management_content .order_content_layout .recommended_section .recommended_card img {
   width: 100%;
@@ -4013,24 +4109,122 @@ a {
   padding: 0 100px;
 }
 
-.payment_content {
-  background-color: #E5EEDA;
-  height: 30vh;
-}
-.payment_content .event_box {
-  display: flex;
-}
-.payment_content .event_box figure {
-  width: 30%;
-  height: 100%;
-  max-height: 100px;
-}
-
-.section_title {
+.order_section_title {
   display: block;
   padding: 25px 25px 15px;
   background-color: #D1B294;
   color: #fff;
+  font-size: 1.5rem;
+}
+
+.payment_content .event_box {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  padding: 30px 40px;
+}
+.payment_content .event_box figure {
+  width: 20%;
+  min-width: 90px;
+  max-height: 100px;
+  overflow: hidden;
+  border-radius: 7.5px;
+  margin-right: 30px;
+}
+.payment_content .event_box .event_info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+.payment_content .event_box .event_info .event_meta img {
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+.payment_content .event_box .event_info .event_meta span {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.item_price {
+  text-align: right;
+  margin: 0 30px 0 25%;
+  border-bottom: solid 2px #413B35;
+}
+.item_price p {
+  padding: 10px 40px;
+}
+
+.expected_amount,
+.checkout_amount {
+  margin: 0 30px 0 25%;
+  padding: 15px 40px 15px 0;
+  border-bottom: solid 2px #413B35;
+}
+
+.checkout_amount {
+  border-bottom: none;
+}
+
+.customer_info .content_box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-items: center;
+  padding-top: 15px;
+}
+.customer_info .form_input {
+  width: 100%;
+  padding: 15px 100px;
+}
+.payment_method fieldset {
+  border: none;
+  padding: 15px 40px 0;
+}
+.payment_method fieldset .form_input {
+  padding: 15px;
+  border-bottom: 2px solid #39413A;
+}
+.payment_method fieldset .form_input:last-child {
+  border-bottom: none;
+  padding-bottom: 5px;
+}
+.payment_method fieldset .form_input input {
+  position: relative;
+  margin-top: auto;
+  margin-right: 10px;
+  vertical-align: sub;
+  appearance: none;
+  /* 移除瀏覽器預設樣式 */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+.payment_method fieldset .form_input input:checked::before {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
+  width: 15px;
+  height: 15px;
+  background-color: #ED972E;
+}
+
+.receipt .form_input {
+  width: 50%;
+  padding: 20px 100px 10px;
+}
+.sum_checkout {
+  padding-top: 25px;
+}
+.sum_checkout > * {
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+.sum_checkout .text > * {
+  margin-bottom: 5px;
+}
+.sum_checkout .text:last-child {
   font-size: 1.5rem;
 }
 

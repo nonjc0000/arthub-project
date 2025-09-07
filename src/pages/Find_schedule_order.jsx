@@ -15,21 +15,23 @@ const Find_schedule_order = () => {
       <form id='order_form' name='order_form' method="post">
 
         <div className='payment_content'>
-          <h2 className='section_title'>付款內容</h2>
+          <h2 className='order_section_title'>付款內容</h2>
           <div className='content_box'>
             <div className='event_box'>
-            <figure>
-              <img src="./images/Find_schedule_order/event1.jpg" alt="華山設計漫遊日" />
-            </figure>
-            <div className='event_info'>
-              <h3>華山設計漫遊日</h3>
-              <div className='event_meta'>
-                <span>📅 2025/07/24</span>
-                <span>⏰ 14:20</span>
-                <span>👥 1</span>
-                <span>TWD 890</span>
+              <figure>
+                <img src="./images/Find_schedule_order/event1.jpg" alt="華山設計漫遊日" />
+              </figure>
+              <div className='event_info'>
+                <h3>華山設計漫遊日</h3>
+                <div className='event_meta'>
+                  <span><img src="./images/Find_schedule_order/icon-date.svg" alt="" style={{width:'23px'}}/> 2025/07/24</span>
+                  <span><img src="./images/Find_schedule_order/icon-time.svg" alt="" style={{width:'23px'}}/> 14:20</span>
+                  <span><img src="./images/Find_schedule_order/icon-people.svg" alt="" style={{width:'23px'}}/> 1</span>
+                </div>
               </div>
             </div>
+            <div className='item_price'>
+              <p>TWD 890</p>
             </div>
             <div className='expected_amount'>
               <span>應付金額</span>
@@ -44,7 +46,7 @@ const Find_schedule_order = () => {
         </div>
 
         <div className='customer_info'>
-          <h2 className='section_title'>訂購人資訊</h2>
+          <h2 className='order_section_title'>訂購人資訊</h2>
           <div className='content_box'>
             <div className='form_input'>
               <label htmlFor="first_name">名字</label>
@@ -63,7 +65,7 @@ const Find_schedule_order = () => {
 
             <div className='form_input'>
               <label htmlFor="tel">聯絡電話</label>
-              <input type="tel" id='tel' />
+              <input type="tel" id='tel'/>
             </div>
 
             <div className='form_input'>
@@ -74,7 +76,7 @@ const Find_schedule_order = () => {
         </div>
 
         <div className='payment_method'>
-          <h2 className='section_title'>付款方式</h2>
+          <h2 className='order_section_title'>付款方式</h2>
           <fieldset>
             <div className='form_input'>
               <input type="radio" name="payment_method" id="ATM" value={'ATM'} />
@@ -94,7 +96,7 @@ const Find_schedule_order = () => {
         </div>
 
         <div className='receipt'>
-          <h2 className='section_title'>電子發票、收據</h2>
+          <h2 className='order_section_title'>電子發票、收據</h2>
           <div className='content_box'>
             <div className='form_input'>
               <label htmlFor="receipt_type">代收轉付電子收據類型</label>
