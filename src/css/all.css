@@ -4119,6 +4119,7 @@ a {
 
 input {
   color: #39413A;
+  outline: #BEC7B4 solid 1px;
 }
 
 .payment_content .event_box {

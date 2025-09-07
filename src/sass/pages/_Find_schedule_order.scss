@@ -25,6 +25,7 @@
 
 input {
     color: $text;
+    outline: $primary-600 solid 1px;
 }
 
 .payment_content {
