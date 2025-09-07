@@ -110,13 +110,13 @@ const Find_schedule_order = () => {
             <p>1件商品合計</p>
             <p>TWD 890</p>
           </div>
-          <button className='checkout_btn'>確認付款</button>
+          <button className='checkout_btn' type='btn'>確認付款</button>
         </div>
 
       </form>
 
       {/* 裝飾元素 */}
-      <div className='decoration_box'>
+      <div className='order_decoration_box'>
         <figure className='deco1'>
           <img src="./images/decorations/deco-money.svg" alt="金錢裝飾" />
         </figure>

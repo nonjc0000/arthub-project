@@ -23,6 +23,10 @@
     font-size: $f-s-xl;
 }
 
+input {
+    color: $text;
+}
+
 .payment_content {
 
     @extend %section-basic;
@@ -174,21 +178,51 @@
 
 .sum_checkout {
     @extend %section-basic;
-    padding-top: $spacing-lg;
+    padding: $spacing-lg 0 $spacing-sm;
+    @extend %flex-space-between;
 
     >* {
-        margin-left: $spacing-xxl;
-        margin-bottom: $spacing-xs;
+        margin: 0 $spacing-xxl $spacing-xs $spacing-xxl;
     }
 
     .text {
-        >* {
-            margin-bottom: $spacing-xxs;
-        }
 
-        &:last-child{
-            font-size: $f-s-xl;
+        p {
+            &:last-child {
+                margin-top: $spacing-xxs;
+                font-size: $f-s-lg;
+            }
         }
     }
 
+    button {
+        @extend %remove_form_style;
+        cursor: pointer;
+        background-color: $white;
+        padding: $spacing-xs $spacing-xxl;
+        border-radius: $rad-md;
+        font-size: $f-s-md;
+        letter-spacing: .08em;
+        color: $text;
+        transition: .2s all;
+
+        &:hover{
+            background-color: $primary;
+            color: $white;
+        }
+    }
+}
+
+.order_decoration_box {
+    @extend %flex-space-between;
+
+    .deco1 {
+        width: $w-20;
+        min-width: 270px;
+    }
+
+    .deco2 {
+        width: $w-20;
+        min-width: 270px;
+    }
 }
