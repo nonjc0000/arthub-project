@@ -1,0 +1,527 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.register_main {
+    background-color: $background;
+    @extend %main_font-family_setting;
+    min-height: $h-100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-lg;
+
+    .register_container {
+        background: $white;
+        border-radius: $rad-lg;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 1000px;
+        display: flex;
+        min-height: 600px;
+    }
+
+    // 左側品牌區
+    .register_left {
+        flex: 1;
+        background: linear-gradient(135deg, $accent 0%, $accent-700 100%);
+        padding: $spacing-xxl $spacing-xl;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: $white;
+
+        // 背景裝飾效果
+        &::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .welcome_section {
+            text-align: center;
+            z-index: 2;
+
+            .welcome_icon {
+                width: 120px;
+                height: 120px;
+                background: $white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto $spacing-xl;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                font-size: 50px;
+
+                img {
+                    width: 60px;
+                    height: auto;
+                    filter: none;
+                }
+            }
+
+            .welcome_title {
+                font-size: $f-s-xxl;
+                font-weight: $f-w-b;
+                margin-bottom: $spacing-md;
+                letter-spacing: 1px;
+            }
+
+            .welcome_subtitle {
+                font-size: $f-s-md;
+                opacity: 0.9;
+                line-height: 1.6;
+                max-width: 280px;
+                margin-bottom: $spacing-xl;
+            }
+
+            .benefit_list {
+                text-align: left;
+
+                .benefit_item {
+                    display: flex;
+                    align-items: center;
+                    gap: $spacing-xs;
+                    margin-bottom: $spacing-md;
+                    font-size: $f-s-sm;
+
+                    .benefit_icon {
+                        width: 20px;
+                        height: 20px;
+                        background: rgba(255, 255, 255, 0.2);
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: $f-s-xs;
+                        flex-shrink: 0;
+                    }
+                }
+            }
+        }
+
+        .decoration_register {
+            position: absolute;
+            bottom: $spacing-lg;
+            right: $spacing-lg;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                height: auto;
+                filter: brightness(0) invert(1) opacity(0.8);
+            }
+        }
+    }
+
+    // 右側表單區
+    .register_right {
+        flex: 1.2;
+        padding: $spacing-xl $spacing-xl;
+        background-color: $primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow-y: auto;
+
+        .register_form_container {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form_header {
+            text-align: center;
+            margin-bottom: $spacing-xl;
+
+            .form_title {
+                background: $accent;
+                color: $white;
+                padding: $spacing-md $spacing-xl;
+                border-radius: $rad-md;
+                font-size: $f-s-lg;
+                font-weight: $f-w-b;
+                margin-bottom: $spacing-xs;
+                display: inline-block;
+            }
+
+            .form_subtitle {
+                color: $text;
+                font-size: $f-s-sm;
+                margin-top: $spacing-xs;
+            }
+        }
+
+        .register_form {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-lg;
+
+            .form_row {
+                display: flex;
+                gap: $spacing-md;
+
+                .form_group {
+                    flex: 1;
+                }
+            }
+
+            .form_group {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-xs;
+
+                .form_label {
+                    color: $text;
+                    font-weight: $f-w-b;
+                    font-size: $f-s-sm;
+
+                    .required {
+                        color: #e74c3c;
+                    }
+                }
+
+                .form_input {
+                    padding: $spacing-sm $spacing-md;
+                    border: 2px solid $white;
+                    border-radius: $rad-sm;
+                    font-size: $f-s-md;
+                    background: $white;
+                    color: $text;
+                    transition: border-color 0.3s ease;
+                    @extend %remove_form_style;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $accent;
+                    }
+
+                    &::placeholder {
+                        color: rgba($text, 0.5);
+                    }
+
+                    &.error {
+                        border-color: #e74c3c;
+                    }
+                }
+
+                .error_message {
+                    color: #e74c3c;
+                    font-size: $f-s-xs;
+                    margin-top: $spacing-xxs;
+                }
+
+                // 密碼強度指示器
+                .password_strength {
+                    margin-top: $spacing-xxs;
+
+                    .strength_bar {
+                        width: 100%;
+                        height: 4px;
+                        background: $gray-300;
+                        border-radius: 2px;
+                        overflow: hidden;
+                        margin-bottom: $spacing-xxs;
+
+                        .strength_fill {
+                            height: 100%;
+                            transition: width 0.3s ease, background-color 0.3s ease;
+                            border-radius: 2px;
+
+                            &.level_1 {
+                                width: 33%;
+                                background: #e74c3c;
+                            }
+
+                            &.level_2 {
+                                width: 66%;
+                                background: #f39c12;
+                            }
+
+                            &.level_3 {
+                                width: 100%;
+                                background: #27ae60;
+                            }
+                        }
+                    }
+
+                    .strength_text {
+                        font-size: $f-s-xs;
+                        color: $gray-600;
+                    }
+                }
+            }
+
+            // 條款同意區域
+            .terms_section {
+                margin: $spacing-lg 0;
+
+                .checkbox_group {
+                    display: flex;
+                    align-items: flex-start;
+                    gap: $spacing-xs;
+                    margin-bottom: $spacing-md;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .custom_checkbox {
+                        position: relative;
+                        display: flex;
+                        align-items: flex-start;
+                        cursor: pointer;
+                        gap: $spacing-xs;
+
+                        input[type="checkbox"] {
+                            position: absolute;
+                            opacity: 0;
+                            cursor: pointer;
+                            height: 0;
+                            width: 0;
+
+                            &:checked ~ .checkmark {
+                                background-color: $accent;
+                                
+                                &::after {
+                                    display: block;
+                                }
+                            }
+                        }
+
+                        .checkmark {
+                            height: 18px;
+                            width: 18px;
+                            background-color: $white;
+                            border: 2px solid $accent;
+                            border-radius: 3px;
+                            position: relative;
+                            cursor: pointer;
+                            flex-shrink: 0;
+                            margin-top: 2px;
+
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                display: none;
+                                left: 4px;
+                                top: 1px;
+                                width: 4px;
+                                height: 8px;
+                                border: solid $white;
+                                border-width: 0 2px 2px 0;
+                                transform: rotate(45deg);
+                            }
+                        }
+
+                        .checkbox_label {
+                            color: $text;
+                            font-size: $f-s-sm;
+                            line-height: 1.4;
+                            cursor: pointer;
+
+                            .link_text {
+                                color: $accent;
+                                text-decoration: underline;
+
+                                &:hover {
+                                    color: $accent-700;
+                                }
+                            }
+
+                            .required {
+                                color: #e74c3c;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .register_button {
+                background: $accent;
+                color: $white;
+                border: none;
+                padding: $spacing-md;
+                border-radius: $rad-sm;
+                font-size: $f-s-md;
+                font-weight: $f-w-b;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: $spacing-xs;
+                @extend %remove_form_style;
+
+                &:hover:not(:disabled) {
+                    background: $accent-700;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba($accent, 0.3);
+                }
+
+                &:disabled {
+                    opacity: 0.6;
+                    cursor: not-allowed;
+                    transform: none;
+                }
+
+                &.submitting {
+                    background: $accent-600;
+                }
+            }
+        }
+
+        .divider {
+            text-align: center;
+            margin: $spacing-lg 0;
+            position: relative;
+            color: $text;
+            font-size: $f-s-sm;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: rgba($text, 0.2);
+                z-index: 1;
+            }
+
+            span {
+                background: $primary;
+                padding: 0 $spacing-md;
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        .login_link {
+            text-align: center;
+            margin-top: $spacing-lg;
+            color: $text;
+            font-size: $f-s-sm;
+
+            a {
+                color: $accent;
+                text-decoration: none;
+                font-weight: $f-w-b;
+                margin-left: $spacing-xs;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    // 響應式設計
+    @media ($mediaMd) {
+        padding: $spacing-md;
+
+        .register_container {
+            flex-direction: column;
+            max-width: none;
+            margin: 0;
+            min-height: auto;
+        }
+
+        .register_left {
+            padding: $spacing-xl $spacing-lg;
+            min-height: 350px;
+
+            .welcome_section {
+                .welcome_icon {
+                    width: 80px;
+                    height: 80px;
+                    font-size: 35px;
+                    margin-bottom: $spacing-lg;
+
+                    img {
+                        width: 40px;
+                    }
+                }
+
+                .welcome_title {
+                    font-size: $f-s-xl;
+                }
+
+                .welcome_subtitle {
+                    font-size: $f-s-sm;
+                }
+
+                .benefit_list {
+                    margin-top: $spacing-lg;
+                }
+            }
+
+            .decoration_register {
+                display: none;
+            }
+        }
+
+        .register_right {
+            padding: $spacing-xl $spacing-lg;
+
+            .register_form_container {
+                max-width: none;
+            }
+
+            .register_form .form_row {
+                flex-direction: column;
+                gap: $spacing-lg;
+            }
+        }
+    }
+
+    @media ($mediaSm) {
+        padding: $spacing-sm;
+
+        .register_left {
+            padding: $spacing-lg $spacing-md;
+
+            .welcome_section {
+                .welcome_icon {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 25px;
+
+                    img {
+                        width: 30px;
+                    }
+                }
+
+                .welcome_title {
+                    font-size: $f-s-lg;
+                }
+            }
+        }
+
+        .register_right {
+            padding: $spacing-lg $spacing-md;
+
+            .form_header .form_title {
+                font-size: $f-s-md;
+                padding: $spacing-sm $spacing-lg;
+            }
+        }
+    }
+}

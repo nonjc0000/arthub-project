@@ -1,0 +1,414 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.member_login_main {
+    background-color: $background;
+    @extend %main_font-family_setting;
+    min-height: $h-100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-xl;
+
+    .login_container {
+        background: $white;
+        border-radius: $rad-lg;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        min-height: 500px;
+    }
+
+    // 左側品牌區
+    .login_left {
+        flex: 1;
+        background: linear-gradient(135deg, $accent 0%, $accent-700 100%);
+        padding: $spacing-xxl $spacing-xl;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        color: $white;
+
+        // 背景裝飾效果
+        &::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .brand_section {
+            text-align: center;
+            z-index: 2;
+
+            .logo {
+                width: 120px;
+                height: 120px;
+                background: $white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0 auto $spacing-xl;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+                img {
+                    width: 60px;
+                    height: auto;
+                    filter: none;
+                }
+            }
+
+            .welcome_title {
+                font-size: $f-s-xxl;
+                font-weight: $f-w-b;
+                margin-bottom: $spacing-md;
+                letter-spacing: 1px;
+            }
+
+            .welcome_subtitle {
+                font-size: $f-s-md;
+                opacity: 0.9;
+                line-height: 1.6;
+                max-width: 250px;
+            }
+        }
+
+        .decoration_crocodile {
+            position: absolute;
+            bottom: $spacing-lg;
+            right: $spacing-lg;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+
+            img {
+                width: 100%;
+                height: auto;
+                filter: brightness(0) invert(1) opacity(0.8);
+            }
+        }
+    }
+
+    // 右側表單區
+    .login_right {
+        flex: 1;
+        padding: $spacing-xxl $spacing-xl;
+        background-color: $primary;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .login_form_container {
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .form_header {
+            text-align: center;
+            margin-bottom: $spacing-xl;
+
+            .form_title {
+                background: $accent;
+                color: $white;
+                padding: $spacing-md $spacing-xl;
+                border-radius: $rad-md;
+                font-size: $f-s-lg;
+                font-weight: $f-w-b;
+                margin-bottom: $spacing-xs;
+                display: inline-block;
+            }
+
+            .form_subtitle {
+                color: $text;
+                font-size: $f-s-sm;
+                margin-top: $spacing-xs;
+            }
+        }
+
+        .login_form {
+            display: flex;
+            flex-direction: column;
+            gap: $spacing-lg;
+
+            .form_group {
+                display: flex;
+                flex-direction: column;
+                gap: $spacing-xs;
+
+                .form_label {
+                    color: $text;
+                    font-weight: $f-w-b;
+                    font-size: $f-s-sm;
+                }
+
+                .form_input {
+                    padding: $spacing-md;
+                    border: 2px solid $white;
+                    border-radius: $rad-sm;
+                    font-size: $f-s-md;
+                    background: $white;
+                    color: $text;
+                    transition: border-color 0.3s ease;
+                    @extend %remove_form_style;
+
+                    &:focus {
+                        outline: none;
+                        border-color: $accent;
+                    }
+
+                    &::placeholder {
+                        color: rgba($text, 0.5);
+                    }
+
+                    &.error {
+                        border-color: #e74c3c;
+                    }
+                }
+
+                .error_message {
+                    color: #e74c3c;
+                    font-size: $f-s-xs;
+                    margin-top: $spacing-xxs;
+                }
+            }
+
+            .form_options {
+                @extend %flex-space-between;
+                align-items: center;
+                font-size: $f-s-sm;
+                margin: $spacing-xs 0;
+
+                .remember_me {
+                    @extend %flex-center;
+                    gap: $spacing-xs;
+                    color: $text;
+                    cursor: pointer;
+                    position: relative;
+
+                    input[type="checkbox"] {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                        height: 0;
+                        width: 0;
+
+                        &:checked ~ .checkmark {
+                            background-color: $accent;
+                            
+                            &::after {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .checkmark {
+                        height: 18px;
+                        width: 18px;
+                        background-color: $white;
+                        border: 2px solid $accent;
+                        border-radius: 3px;
+                        position: relative;
+                        cursor: pointer;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            display: none;
+                            left: 4px;
+                            top: 1px;
+                            width: 4px;
+                            height: 8px;
+                            border: solid $white;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+
+                .forgot_password {
+                    color: $accent;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        text-decoration: underline;
+                        color: $accent-700;
+                    }
+                }
+            }
+
+            .login_button {
+                background: $accent;
+                color: $white;
+                border: none;
+                padding: $spacing-md;
+                border-radius: $rad-sm;
+                font-size: $f-s-md;
+                font-weight: $f-w-b;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                margin-top: $spacing-xs;
+                @extend %remove_form_style;
+
+                &:hover:not(:disabled) {
+                    background: $accent-700;
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 12px rgba($accent, 0.3);
+                }
+
+                &:disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+
+                &.submitting {
+                    background: $accent-600;
+                }
+            }
+        }
+
+        .divider {
+            text-align: center;
+            margin: $spacing-xl 0 $spacing-lg;
+            position: relative;
+            color: $text;
+            font-size: $f-s-sm;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: rgba($text, 0.2);
+                z-index: 1;
+            }
+
+            span {
+                background: $primary;
+                padding: 0 $spacing-md;
+                position: relative;
+                z-index: 2;
+            }
+        }
+
+        .signup_link {
+            text-align: center;
+            margin-top: $spacing-lg;
+            color: $text;
+            font-size: $f-s-sm;
+
+            a {
+                color: $accent;
+                text-decoration: none;
+                font-weight: $f-w-b;
+                margin-left: $spacing-xs;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    // 響應式設計
+    @media ($mediaMd) {
+        padding: $spacing-lg;
+
+        .login_container {
+            flex-direction: column;
+            max-width: none;
+            margin: 0;
+        }
+
+        .login_left {
+            padding: $spacing-xl $spacing-lg;
+            min-height: 300px;
+
+            .brand_section {
+                .logo {
+                    width: 80px;
+                    height: 80px;
+                    margin-bottom: $spacing-lg;
+
+                    img {
+                        width: 40px;
+                    }
+                }
+
+                .welcome_title {
+                    font-size: $f-s-xl;
+                }
+
+                .welcome_subtitle {
+                    font-size: $f-s-sm;
+                }
+            }
+
+            .decoration_crocodile {
+                display: none;
+            }
+        }
+
+        .login_right {
+            padding: $spacing-xl $spacing-lg;
+
+            .login_form_container {
+                max-width: none;
+            }
+        }
+    }
+
+    @media ($mediaSm) {
+        padding: $spacing-md;
+
+        .login_left {
+            padding: $spacing-lg $spacing-md;
+
+            .brand_section {
+                .logo {
+                    width: 60px;
+                    height: 60px;
+
+                    img {
+                        width: 30px;
+                    }
+                }
+
+                .welcome_title {
+                    font-size: $f-s-lg;
+                }
+            }
+        }
+
+        .login_right {
+            padding: $spacing-lg $spacing-md;
+
+            .form_header .form_title {
+                font-size: $f-s-md;
+                padding: $spacing-sm $spacing-lg;
+            }
+        }
+    }
+}
