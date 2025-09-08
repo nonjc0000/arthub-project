@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.member_login_main .login_right .login_form .form_options .remember_me, .event_info_main, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.member_login_main .login_right .login_form .form_options .remember_me, .stall_register_main, .stall_register_main .stall_register, .stall_register_main .register, .stall_register_main .register .register_box, .stall_register_main .register .register_box .register_form .contact .checkbox .type_box, .event_info_main, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,8 +17,13 @@
   align-items: center;
 }
 
-.register_main .register_right .register_form .form_group .form_input, .register_main .register_right .register_form .register_button, .forgot_password_main .forgot_right .forgot_form .form_group .form_input, .forgot_password_main .forgot_right .forgot_form .send_button, .forgot_password_main .forgot_right .resend_section .resend_button, .member_login_main .login_right .login_form .form_group .form_input, .member_login_main .login_right .login_form .login_button, .sum_checkout .checkout_btn, .review_container .review_input_box .input input,
-.review_container .review_input_box .input button, .stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
+.register_main .register_right .register_form .form_group .form_input, .register_main .register_right .register_form .register_button, .forgot_password_main .forgot_right .forgot_form .form_group .form_input, .forgot_password_main .forgot_right .forgot_form .send_button, .forgot_password_main .forgot_right .resend_section .resend_button, .member_login_main .login_right .login_form .form_group .form_input, .member_login_main .login_right .login_form .login_button, .sum_checkout .checkout_btn, .stall_register_main .stall_num .btn_box1 button,
+.stall_register_main .stall_num .btn_box2 button,
+.stall_register_main .stall_num .btn_box3 button,
+.stall_register_main .stall_num .btn_box4 button,
+.stall_register_main .stall_num .btn_box5 button,
+.stall_register_main .stall_num .btn_box6 button, .stall_register_main .register .register_box button, .stall_register_main .register .register_box .register_form .contact input, .stall_register_main .register .register_box .register_form .file .file_box input, .review_container .review_input_box .input input,
+.review_container .review_input_box .input button, .review_container .review_btn_box .btn_box button, .review_container .review_card .card_box .like_box button, .stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
 .stall_map_main .stall_search_box .stall_search_filter select,
 .stall_map_main .stall_search_box .stall_search_filter button, .stall_map_main .stall_card .stall_card_body button,
 .stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment, .find_type_main .type_search-box .select select, .find_type_main .type_search-box .search input, .find_type_main .type_search-box .search button, .find_type_main .find_type_card .find_type_card_wrap .top .like_button, .find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
@@ -27,7 +32,7 @@
   background: none;
 }
 
-.user_sidebar_left, .list_time, .detail_info_container .info_desc, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
+.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -253,6 +258,35 @@ a {
   padding: 10px 30px;
 }
 
+.pageTop_box {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+  transition: all 0.3s ease;
+}
+.pageTop_box .pageTop_link {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: relative;
+}
+.pageTop_box .pageTop_link .pageTop_text {
+  animation: rotate 20s linear infinite;
+}
+.pageTop_box .pageTop_link .pageTop_finger {
+  position: absolute;
+  bottom: 25%;
+  left: 35%;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /* ------------------------------------ *\
   #Blog Card Styles with RWD
 \* ------------------------------------ */
@@ -2248,22 +2282,27 @@ a {
 
 .home-bg {
   background-color: #FDF7EB;
+  overflow: hidden;
 }
 
 .home-wrap {
   width: 100%;
   height: 100vh;
-  margin: 0 auto;
-  margin-top: 50px;
+  margin: 5% 0 auto auto;
+}
+@media (max-width: 992px) {
+  .home-wrap {
+    height: auto;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .home-top {
   display: flex;
-}
-@media (max-width: 1440px) {
-  .home-top {
-    padding: 0 20px;
-  }
+  justify-content: center;
 }
 @media (max-width: 992px) {
   .home-top {
@@ -2271,6 +2310,8 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -2279,12 +2320,6 @@ a {
   margin-left: 120px;
   margin-top: 200px;
   margin-bottom: 250px;
-}
-@media (max-width: 1440px) {
-  .home-heading {
-    margin-left: 60px;
-    margin-top: 150px;
-  }
 }
 @media (max-width: 992px) {
   .home-heading {
@@ -2299,12 +2334,6 @@ a {
   font-weight: 500;
   color: #413B35;
 }
-@media (max-width: 1440px) {
-  .home-heading h2 {
-    font-size: 2.25rem;
-    padding-left: 20px;
-  }
-}
 .home-heading .arrow {
   width: 4%;
   margin-top: 25px;
@@ -2317,13 +2346,14 @@ a {
 }
 
 .stall-wrap {
-  margin-right: 100px;
+  margin: 0 auto;
+  margin-right: 5%;
   width: 60%;
   height: auto;
 }
-@media (max-width: 1440px) {
+@media (max-width: 992px) {
   .stall-wrap {
-    margin-right: 40px;
+    margin-right: 0;
   }
 }
 @media (max-width: 992px) {
@@ -2332,7 +2362,14 @@ a {
   }
 }
 .stall-wrap .stall-item {
+  width: 100%;
   display: flex;
+}
+@media (max-width: 992px) {
+  .stall-wrap .stall-item {
+    margin-left: 10%;
+    width: 80%;
+  }
 }
 .stall-wrap .stall-item a {
   display: block;
@@ -2346,8 +2383,6 @@ a {
   height: auto;
   margin-top: 20%;
   margin-left: -15%;
-  left: 33%;
-  top: 25%;
 }
 .stall-wrap .stall-item .stall-third {
   width: 40%;
@@ -2357,8 +2392,8 @@ a {
 }
 
 .date-box {
-  margin-right: 150px;
-  margin-top: -50px;
+  margin-right: 8%;
+  margin-top: -5%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -2406,9 +2441,49 @@ a {
   font-size: 0.75rem;
 }
 
+.home-dec {
+  position: relative;
+  height: 30vh;
+}
+.home-dec .home-dec-im {
+  max-width: 30%;
+  position: absolute;
+  top: -90%;
+  left: -10%;
+}
+
 .home-hot-wrap {
   width: 100%;
   margin-top: 80px;
+  position: relative;
+}
+.home-hot-wrap .home-drink {
+  max-width: 10%;
+  position: absolute;
+  z-index: 3;
+  top: 20%;
+  left: 6%;
+}
+.home-hot-wrap .home-ring {
+  max-width: 10%;
+  position: absolute;
+  z-index: 3;
+  top: 18%;
+  right: 7%;
+}
+.home-hot-wrap .home-hat {
+  max-width: 10%;
+  position: absolute;
+  z-index: 3;
+  left: 5%;
+  bottom: 0;
+}
+.home-hot-wrap .home-book {
+  max-width: 8%;
+  position: absolute;
+  z-index: 3;
+  right: 4%;
+  bottom: 10%;
 }
 .home-hot-wrap .home-hot {
   text-align: center;
@@ -2442,8 +2517,8 @@ a {
 .pic-wrap .home-pic .home-pic-fsb {
   max-width: 50%;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  gap: 16px;
 }
 .pic-wrap .home-pic .home-pic-fsb .home-pic-item {
   display: flex;
@@ -3935,13 +4010,11 @@ a {
   display: flex;
   justify-content: center;
   width: 70%;
-  border: 1px solid red;
   gap: 50px;
 }
 .event_info_main .event_info_container .pic_box {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   border-radius: 0 60px 0 60px;
   overflow: hidden;
   width: 50%;
@@ -3964,7 +4037,6 @@ a {
   margin-bottom: 40px;
 }
 .event_info_main .event_info_container .info {
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   width: 20%;
@@ -3975,7 +4047,6 @@ a {
   display: flex;
   justify-content: left;
   gap: 10px;
-  border: 1px solid red;
   align-items: center;
 }
 .event_info_main .event_info_container .info .place {
@@ -4003,7 +4074,6 @@ a {
   border-radius: 10px;
 }
 .event_info_main .event_info_container .stall_btn_box {
-  border: 1px solid red;
   flex-direction: column;
   width: 15%;
   gap: 40px;
@@ -4062,23 +4132,26 @@ a {
   border-top: 2px dashed #adb5bd;
   width: 70%;
 }
+.review_container .profile_pic {
+  width: 40px;
+  height: 40px;
+}
 .review_container .review_input_box {
   display: flex;
   align-items: center;
   gap: 16px;
   width: 90%;
   height: 75px;
-  padding-top: 40px;
-  border: 1px solid red;
+  padding-top: 30px;
 }
-.review_container .review_input_box img {
+.review_container .review_input_box button {
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
 .review_container .review_input_box .input {
   background-color: #CBD4C1;
   border-radius: 999px;
-  border: 1px solid red;
   width: 90%;
   display: flex;
 }
@@ -4088,6 +4161,276 @@ a {
 }
 .review_container .review_input_box .input input {
   width: 100%;
+}
+.review_container .review_btn_box {
+  display: flex;
+  width: 90%;
+  height: 60px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 15px;
+}
+.review_container .review_btn_box p {
+  font-size: 1.25rem;
+}
+.review_container .review_btn_box .btn_box {
+  display: flex;
+  gap: 10px;
+}
+.review_container .review_btn_box .btn_box button {
+  height: 24px;
+  background-color: #CBD4C1;
+  border-radius: 999px;
+  padding: 0 10px;
+  color: #fff;
+  cursor: pointer;
+}
+.review_container .event_review_box {
+  width: 90%;
+  gap: 25px;
+  margin-bottom: 60px;
+}
+.review_container .review_card {
+  display: flex;
+  width: 100%;
+}
+.review_container .review_card .card_box {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.review_container .review_card .card_box .like_box button {
+  cursor: pointer;
+}
+.review_container .review_card .card_box .like_box button img {
+  color: #CBD4C1;
+}
+.review_container .review_card .review_box {
+  margin-left: 15px;
+}
+.review_container .review_card .review_box .regular_info {
+  display: flex;
+  gap: 10px;
+}
+.review_container .review_card .review_box .regular_info .date {
+  color: #adb5bd;
+  font-size: 14px;
+}
+
+.stall_register_main .stall_register {
+  flex-direction: column;
+  width: 50%;
+}
+.stall_register_main .stall_num {
+  background-color: #fff;
+  width: 970px;
+  height: 480px;
+  border: 2px solid black;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.stall_register_main .stall_num .event_name {
+  color: #6c757d;
+  font-size: 1.5rem;
+}
+.stall_register_main .stall_num .all_btn_box {
+  display: flex;
+  gap: 50px;
+}
+.stall_register_main .stall_num .btn_box1,
+.stall_register_main .stall_num .btn_box2,
+.stall_register_main .stall_num .btn_box3,
+.stall_register_main .stall_num .btn_box4,
+.stall_register_main .stall_num .btn_box5,
+.stall_register_main .stall_num .btn_box6 {
+  border: 1px dashed #39413A;
+  border-radius: 20px;
+}
+.stall_register_main .stall_num .btn_box1 button,
+.stall_register_main .stall_num .btn_box2 button,
+.stall_register_main .stall_num .btn_box3 button,
+.stall_register_main .stall_num .btn_box4 button,
+.stall_register_main .stall_num .btn_box5 button,
+.stall_register_main .stall_num .btn_box6 button {
+  width: 40px;
+  cursor: pointer;
+}
+.stall_register_main .stall_num .btn_box1 button img,
+.stall_register_main .stall_num .btn_box2 button img,
+.stall_register_main .stall_num .btn_box3 button img,
+.stall_register_main .stall_num .btn_box4 button img,
+.stall_register_main .stall_num .btn_box5 button img,
+.stall_register_main .stall_num .btn_box6 button img {
+  width: 40px;
+}
+.stall_register_main .stall_num .btn_box1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  width: 30%;
+  height: 100%;
+  padding: 20px;
+}
+.stall_register_main .stall_num .btn_box2 {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  gap: 50px;
+}
+.stall_register_main .stall_num .btn_box3,
+.stall_register_main .stall_num .btn_box4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 20px;
+  gap: 50px;
+  width: 60%;
+  height: 100%;
+}
+.stall_register_main .stall_num .row {
+  display: flex;
+  gap: 10px;
+}
+.stall_register_main .stall_num .column {
+  gap: 30px;
+}
+.stall_register_main .stall_num .type {
+  justify-content: flex-start;
+  display: flex;
+  gap: 50px;
+}
+.stall_register_main .stall_num .type p {
+  position: relative;
+}
+.stall_register_main .stall_num .type p::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  top: 1px;
+  left: -25px;
+}
+.stall_register_main .stall_num .type .handmade::before {
+  background-color: #E5BE23;
+}
+.stall_register_main .stall_num .type .food::before {
+  background-color: #D06658;
+}
+.stall_register_main .stall_num .type .clothes::before {
+  background-color: #8ACEC6;
+}
+.stall_register_main .stall_num .type .pet::before {
+  background-color: #ED9B4A;
+}
+.stall_register_main .stall_num .type .plant::before {
+  background-color: #53B99F;
+}
+.stall_register_main .register {
+  flex-direction: column;
+  width: 100%;
+}
+.stall_register_main .register .title {
+  color: #39413A;
+  font-size: 1.25rem;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.stall_register_main .register .register_box {
+  flex-direction: column;
+  background-color: #CBD4C1;
+  width: 100%;
+  height: 56vh;
+  border-radius: 20px;
+}
+.stall_register_main .register .register_box .register_stall_num {
+  color: #39413A;
+  margin-bottom: 10px;
+}
+.stall_register_main .register .register_box button {
+  background-color: #ED972E;
+  font-size: 1.25rem;
+  color: #fff;
+  width: 90px;
+  height: 45px;
+  border-radius: 5px;
+  margin-top: 40px;
+  cursor: pointer;
+}
+.stall_register_main .register .register_box .register_form {
+  display: grid;
+  width: 80%;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+}
+.stall_register_main .register .register_box .register_form label {
+  color: #39413A;
+}
+.stall_register_main .register .register_box .register_form .contact .social {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+}
+.stall_register_main .register .register_box .register_form .contact .social figure {
+  display: flex;
+  justify-content: center;
+  width: 28px;
+  margin-top: 3px;
+  margin-right: 5px;
+  height: 30px;
+}
+.stall_register_main .register .register_box .register_form .contact .social figure img {
+  height: 80%;
+}
+.stall_register_main .register .register_box .register_form .contact .checkbox_title {
+  color: #39413A;
+  margin-bottom: 10px;
+}
+.stall_register_main .register .register_box .register_form .contact .checkbox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.stall_register_main .register .register_box .register_form .contact .checkbox .type_box {
+  background-color: #fff;
+  border-radius: 5px;
+  gap: 5px;
+}
+.stall_register_main .register .register_box .register_form .contact .checkbox .type_box input {
+  width: 20px;
+}
+.stall_register_main .register .register_box .register_form .contact .checkbox .type_box label {
+  margin-top: 2px;
+}
+.stall_register_main .register .register_box .register_form .contact input {
+  height: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.stall_register_main .register .register_box .register_form .contact .input {
+  margin-bottom: 25px;
+  gap: 10px;
+}
+.stall_register_main .register .register_box .register_form .file {
+  gap: 10px;
+}
+.stall_register_main .register .register_box .register_form .file .file_box {
+  gap: 5px;
+}
+.stall_register_main .register .register_box .register_form .file .file_box input::file-selector-button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /* 外層：標題一行、下面左右兩欄（圖／文） */

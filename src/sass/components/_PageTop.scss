@@ -1,0 +1,37 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+
+
+
+.pageTop_box{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+    transition: all 0.3s ease;
+    .pageTop_link {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        position: relative;
+        .pageTop_text {
+            animation: rotate 20s linear infinite;
+        }
+        .pageTop_finger {
+            position: absolute;
+            bottom: 25%;
+            left: 35%;
+        }
+    }
+}
+
+
+@keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+

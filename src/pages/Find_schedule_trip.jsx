@@ -9,9 +9,9 @@ const Find_schedule_trip = () => {
 
 
   const tripImages = [
-    "/images/Find_schedule/trip01.png",
-    "/images/Find_schedule/trip02.png",
-    "/images/Find_schedule/trip03.png",
+    "./images/Find_schedule/trip01.png",
+    "./images/Find_schedule/trip02.png",
+    "./images/Find_schedule/trip03.png",
   ];
 
 
