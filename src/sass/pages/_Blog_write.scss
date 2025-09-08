@@ -1,0 +1,396 @@
+@use "../variables/" as *;
+
+
+/* 發布文章頁面 */
+.write-page {
+  background: transparent;
+  padding: 0 16px;
+}
+
+
+
+
+.write-card {
+  max-width: 1200px;
+  margin: 32px auto 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 12px 32px rgba(0,0,0,0.04);
+  padding: 20px 20px 28px;
+  position: relative;
+  margin-top: 100px;  
+
+
+  .book {
+    width: 150px;
+    height: auto;
+    position: absolute;
+    top: 30vh;
+    left: -15vh;
+  }
+
+
+    @media (max-width: 1400px) {
+    padding: 16px;
+
+
+    .book {
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 992px) {
+    padding: 16px;
+
+
+    .book {
+      display: none;
+    }
+  }
+
+
+  @media (max-width: 768px) {
+    .book {
+      width: 80px;    // 再縮小一點
+      top: 10vh;      
+      left: -5vh;
+      opacity: 0.6;   // 可以淡化裝飾，避免太搶眼
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .book {
+      display: none;  // 手機最小尺寸乾脆隱藏掉裝飾
+    }
+  }
+}
+
+
+/* 返回 */
+.back-chip {
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 16px;
+  position: relative;
+  cursor: pointer;  // 加入這行
+ 
+  // 確保 Link 本身也可點擊
+  &:focus {
+    outline: none;
+  }
+}
+
+
+/* 兩欄 */
+.write-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+
+
+  @media (max-width: 920px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* 側欄 */
+.write-aside {
+  border: 1px solid #e6e2d8;
+  border-radius: 14px;
+  padding: 16px 12px;
+  align-self: start;
+
+
+  .writer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+
+
+    .writer-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .writer-name {
+      color: #39413A;
+      font-weight: 600;
+    }
+  }
+
+
+  .aside-title {
+    font-size: 13px;
+    color: #8a8a8a;
+    margin: 10px 0 6px;
+  }
+
+
+  .cat-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+
+    li + li { margin-top: 8px; }
+
+
+    .cat-item {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #e6e2d8;
+      background: #fff;
+      color: #39413A;
+      border-radius: 12px;
+      padding: 10px 12px;
+      cursor: pointer;
+      transition: all .2s ease;
+
+
+      img {
+        width: 20px;
+        height: 20px;
+        display: block;
+      }
+
+
+      &:hover {
+        border-color: #ED972E;
+        box-shadow: 0 0 0 2px rgba(237,151,46,0.12) inset;
+      }
+
+
+      &.is-active {
+        background: #fff7ed;
+        border-color: #ED972E;
+      }
+    }
+  }
+}
+
+
+/* 右側表單 */
+.write-main {
+  .write-form {
+    .form-row {
+      margin-bottom: 16px;
+
+
+      .form-label {
+        display: block;
+        color: #39413A;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+
+      .title-input {
+        width: 100%;
+        height: 36px;
+        padding: 0 12px;
+        border: 1px solid #cfc8b7;
+        border-radius: 6px;
+        outline: none;
+        background: #fff;
+        color: #39413A;
+        transition: box-shadow .15s ease, border-color .15s ease;
+
+
+        &:focus {
+          border-color: #ED972E;
+          box-shadow: 0 0 0 3px rgba(237,151,46,0.18);
+        }
+      }
+
+
+      .content-box {
+        border: 1px solid #cfc8b7;
+        border-radius: 8px;
+        background: #FBF5E9;
+        padding: 0;
+
+
+        .content-area {
+          width: 100%;
+          height: 520px; /* 依設計大面積輸入 */
+          border: 0;
+          outline: none;
+          background: transparent;
+          padding: 12px;
+          color: #39413A;
+          resize: none;
+          font-size: 15px;
+          line-height: 1.6;
+        }
+      }
+    }
+
+
+    /* 下方 upload */
+    .blog_upload-bar {
+        .preview-box {
+        margin-top: 12px;
+
+
+        img {
+            max-width: 200px;
+            max-height: 200px;
+            object-fit: cover;  
+            border-radius: 8px;
+            display: block;
+        }
+        }
+      margin: 12px 0 20px;
+
+
+      .upload-btn {
+        -webkit-appearance: none;
+        appearance: none;
+        background: transparent;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+
+
+        img {
+          width: 30px;
+          height: 30px;
+          display: block;
+          transition: transform .2s ease;
+        }
+        &:hover img { transform: scale(1.05); }
+      }
+    }
+
+
+    /* 送出按鈕 */
+    .blog_form-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+
+
+      .btn {
+        min-width: 68px;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+
+      .btn-ghost {
+        background: #e9e6df;
+        color: #39413A;
+        border-color: #e9e6df;
+
+
+        &:hover { filter: brightness(0.98); }
+      }
+
+
+      .btn-primary {
+        background: #ED972E;
+        color: #fff;
+
+
+        &:hover { filter: brightness(1.02); }
+      }
+    }
+  }
+}
+
+
+/* RWD 響應式設計 */
+
+
+@media ($mediaMd) {
+  // 針對平板
+  .write-card {
+    margin: 24px auto;
+  }
+}
+
+
+@media ($mediaSm) {
+  // 針對手機
+  .write-page {
+    padding: 0;
+    padding-top: 100px;
+  }
+
+
+  .write-card {
+    margin: 0;
+    padding: 16px 12px;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+
+  .write-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+
+  .write-aside {
+    padding: 12px;
+
+
+    .writer {
+      margin-bottom: 6px;
+    }
+  }
+
+
+  .write-main {
+    .write-form {
+      .form-row {
+        margin-bottom: 12px;
+
+
+        .form-label {
+          font-size: 14px;
+        }
+
+
+        .title-input {
+          height: 34px;
+        }
+
+
+        .content-box {
+          .content-area {
+            height: 300px; /* 縮小文章內容區域以適應手機螢幕 */
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+
+    .blog_upload-bar {
+      margin: 8px 0 16px;
+
+
+      .upload-btn {
+        img {
+          width: 26px;
+          height: 26px;
+        }
+      }
+    }
+  }
+}
+

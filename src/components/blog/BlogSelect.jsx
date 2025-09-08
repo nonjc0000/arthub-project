@@ -2,8 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+
 const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
   const [isMobile, setIsMobile] = useState(false);
+
 
   const categories = [
     { name: "所有文章", icon: "./images/blog/blogselect/1.svg" },
@@ -17,16 +19,19 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
     { name: "飾品配件", icon: "./images/blog/blogselect/9.svg" },
   ];
 
+
   // 檢測螢幕尺寸
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 640);
     };
 
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
 
   // 圖示載入錯誤處理
   const handleImageError = (e, categoryName) => {
@@ -35,10 +40,12 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
     e.target.style.display = 'none';
   };
 
+
   // 圖示載入成功
   const handleImageLoad = (e, categoryName) => {
     console.log(`圖示載入成功: ${categoryName}`, e.target.src);
   };
+
 
   return (
     <div className="blog-select">
@@ -76,16 +83,15 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
                   onCategoryChange(category.name);
                 }}
               >
-                {/* 圖示診斷版本 */}
                 <img
                   src={category.icon}
                   alt={category.name}
                   className="category-icon"
                   onError={(e) => handleImageError(e, category.name)}
-                  onLoad={(e) => handleImageLoad(e, category.name)}
-                  // 偵錯用：檢查圖示路徑
-                  onLoad={() => console.log(`Icon loaded: ${category.icon}`)}
-                  // 手機版強制樣式
+                  onLoad={(e) => {
+                    handleImageLoad(e, category.name);
+                    console.log(`Icon loaded: ${category.icon}`);
+                  }}
                   style={isMobile ? {
                     display: 'block',
                     width: '16px',
@@ -102,6 +108,7 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
         ))}
       </ul>
 
+
       {/* 偵錯用：顯示當前狀態 */}
       {isMobile && process.env.NODE_ENV === 'development' && (
         <div style={{ fontSize: '10px', color: '#999', padding: '4px' }}>
@@ -112,7 +119,9 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
   );
 };
 
+
 export default BlogSelect;
+
 
 // 替代解決方案：使用 CSS 背景圖
 export const BlogSelectWithBgIcons = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
@@ -127,6 +136,7 @@ export const BlogSelectWithBgIcons = ({ selectedCategory, onCategoryChange, isIn
     { name: "二手選物", icon: "8" },
     { name: "飾品配件", icon: "9" },
   ];
+
 
   return (
     <div className="blog-select">
@@ -163,3 +173,4 @@ export const BlogSelectWithBgIcons = ({ selectedCategory, onCategoryChange, isIn
     </div>
   );
 };
+

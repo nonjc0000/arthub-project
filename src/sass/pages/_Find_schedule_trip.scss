@@ -1,85 +1,63 @@
-
-
 @use "../variables/" as *;
 @use "../functions/" as *;
 
 
-
-
 /* 外層：標題一行、下面左右兩欄（圖／文） */
-.findTrip-container {
+.trip_row {
   display: flex;
-  flex-wrap: wrap; /* 讓標題可以獨佔一行 */
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 24px;
+  row-gap: 32px;
 }
 
 
-
-
 /* 標題區：跨整行 */
-.find_schedule_trip_titlebox {
+.find_schedule_trip_titleBox {
   flex: 0 0 100%;
   display: flex;
   justify-content: center;
 
 
-
-
-  .titleBox_h1 {
-    margin: 0;
-  }
-
-
-
-
-  .titlebox {
+  .trip_titleBox {
     display: block;
-    width: clamp(180px, 28vw, 320px);
+    width: $w-100;
     height: auto;
   }
 }
 
 
-
-
 /* 左欄：圖片（交錯三張） */
 .trip-container {
-  flex: 1 1 50%;
-  display: flex;
-  justify-content: center;
-  min-width: 320px; /* 避免過小時擠壞 */
+  flex: 0 1 48%;
+  /* 保守抓 48% + 中間空隙 ≈ 100% */
+  min-width: 0;
 }
-
-
 
 
 .staggered-container {
   width: 100%;
+  margin-inline: auto;
 }
-
-
 
 
 .staggered-images {
   display: flex;
-  align-items: flex-end; /* 垂直底對齊 */
-  justify-content: center; /* 水平置中 */
-  gap: clamp(14px, 2.2vw, 28px);
-
-
+  align-items: flex-end;
+  /* 垂直底對齊 */
+  justify-content: space-between;
+  gap: clamp(14px, 1.5vw, 28px);
 
 
   .image-item {
-    width: clamp(120px, 16vw, 240px);
-    aspect-ratio: 3 / 5; /* 直式比例 */
-    border-radius: 24px;
+    width: clamp(120px, 20vw, 280px);
+    // aspect-ratio: 3 / 5; /* 直式比例 */
+
+
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    background: #ddd;
-
-
 
 
     img {
@@ -92,45 +70,51 @@
 }
 
 
-
-
 /* 交錯高度（你的 image-1 ~ image-3） */
 .image-1 {
   transform: translateY(-25px);
 }
+
+
 .image-2 {
   transform: translateY(40px);
 }
+
+
 .image-3 {
   transform: translateY(-10px);
 }
 
 
+.trip_row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 32px;
+}
 
 
 /* 右欄：文字內容 */
 .content-section {
-  flex: 1 1 50%;
-  min-width: 320px;
-  max-width: 560px;
-  display: flex;
+  flex: 0 1 48%;
+  /* 保守抓 48% + 中間空隙 ≈ 100% */
+  min-width: 0;
   flex-direction: column;
-  justify-content: center; /* 垂直置中 */
-  align-items: flex-start; /* 內部左對齊 */
+  justify-content: center;
+  /* 垂直置中 */
+  align-items: flex-start;
+  /* 內部左對齊 */
   text-align: left;
-
-
 
 
   .main-title {
     font-size: clamp(24px, 3.2vw, 40px);
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: 0.02em;
     margin: 0 0 10px;
-    color: $text; /* 依你的變數 */
+    color: $text;
   }
-
-
 
 
   .subtitle {
@@ -140,16 +124,12 @@
   }
 
 
-
-
   .description {
     color: $text-700;
     line-height: 1.9;
-    max-width: 56ch;
+    max-width: 56vw;
     margin: 6px 0 18px;
   }
-
-
 
 
   .rating-section {
@@ -161,32 +141,26 @@
     color: $text-700;
 
 
-
-
     .star-rating {
       display: inline-flex;
       align-items: center;
       gap: 6px;
 
 
-
-
       .star {
         font-size: 18px;
         line-height: 1;
       }
+
+
       .rating-text {
         letter-spacing: 0.02em;
       }
     }
 
 
-
-
     .participants {
       position: relative;
-
-
 
 
       &::before {
@@ -204,8 +178,6 @@
   }
 
 
-
-
   .booking-section {
     display: flex;
     align-items: center;
@@ -213,14 +185,10 @@
     margin-top: 6px;
 
 
-
-
     .price {
-      font-weight: 700;
+      font-weight: 500;
       font-size: clamp(16px, 2vw, 18px);
       color: $text;
-
-
 
 
       &::before {
@@ -232,14 +200,13 @@
     }
 
 
-
-
     .btn.primary {
       appearance: none;
       border: 0;
       border-radius: 999px;
       padding: 10px 20px;
-      background: $accent; /* 依你的品牌色 */
+      background: $accent;
+      /* 依你的品牌色 */
       color: $text;
       font-weight: 700;
       font-size: 14px;
@@ -252,11 +219,11 @@
       transition: transform 0.08s ease, box-shadow 0.2s ease, filter 0.2s ease;
 
 
-
-
       &:hover {
         filter: brightness(1.02);
       }
+
+
       &:active {
         transform: translateY(1px);
         box-shadow: 0 3px 10px rgba($accent, 0.28);
@@ -264,45 +231,258 @@
     }
   }
 }
+// 中間詳細行程
+.trip_schedule_container_title {
+  h2 {
+    font-family: $family-display;
+    font-size: 3rem;
+  }
+}
+.trip_schedule_intro {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  position: relative;
 
 
+  .route_01 {
+    position: absolute;
+    right: 300px;
+    bottom: -60px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img {
+      width: 10vw;
+    }
+    span {
+      color: $accent;
+    }
+  }
+}
+.list_time_intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  img {
+    width: 8vw;
+    height: auto;
+  }
+  p {
+    margin-left: 65px;
+  }
+}
+.trip_schedule_container {
+  display: flex;
+  flex-direction: column;
+}
+.station_01,
+.station_02,
+.station_03,
+.station_04,
+.station_05 {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 150px 0;
+}
+.list_time {
+  @extend %flex-column;
+  gap: 10px;
+
+
+  img {
+    width: 40px;
+    height: auto;
+  }
+}
+
+
+.list_description {
+  color: $text;
+  h3 {
+    font-family: $family-display;
+    font-size: $f-s-xxl;
+    border-bottom: 1px dashed $text;
+  }
+
+
+  p {
+    padding-top: 20px;
+  }
+}
+.list_images {
+  img {
+    width: 20vw;
+    height: auto;
+    border-radius: $rad-lg;
+  }
+}
+.station_01 {
+  position: relative;
+
+
+  padding: 100px 80px;
+  .route_02 {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img {
+      width: 15vw;
+    }
+    span {
+      color: $accent;
+    }
+  }
+}
+.station_02 {
+  padding: 30px 0 30px 20px;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+  border: 1px dashed $text;
+  border-radius: $rad-lg;
+  position: relative;
+
+
+  .list_images img {
+    border-radius: $rad-basic;
+  }
+  .list_description_extra {
+    background-color: #a3ad94;
+    padding: 30px;
+    width: 30vw;
+    bottom: -100px;
+    position: absolute;
+    right: -60px;
+    border-radius: $rad-lg;
+
+
+    h3,
+    p {
+      color: #fff;
+      gap: 10px;
+    }
+    p {
+      padding-top: 20px;
+    }
+  }
+
+
+  .route_03 {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    bottom: -150px;
+    left: 360px;
+    gap: 15px;
+    img {
+      width: 4.2vw;
+    }
+    span {
+      color: $accent;
+    }
+  }
+}
+.station_03 {
+  position: relative;
+
+
+  .route_04 {
+    position: absolute;
+    bottom: 40px;
+    right: 360px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img {
+      width: 5vw;
+    }
+    span {
+      color: $accent;
+    }
+  }
+}
+.station_04 {
+  width: 50vw;
+  background-color: $secondary-600;
+  padding: $spacing-xl;
+  border-radius: $rad-lg;
+  margin: 0 0 0 80px;
+  justify-content: space-between;
+  position: relative;
+  .list_images {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 20px;
+    img {
+      width: 12vw;
+      border-radius: $rad-basic;
+    }
+  }
+  .route_05 {
+    position: absolute;
+    bottom: -180px;
+    left: 150px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    img {
+      width: 12vw;
+    }
+    span {
+      color: $accent;
+    }
+  }
+}
+
+
+.station_05 {
+  margin: 0 0 0 600px;
+}
+
+
+// 相關行程
+.trip_card_container_title {
+  width: $w-100;
+  text-align: left; /* 讓文字靠左 */
+}
+.trip_card_container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 12px 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  /* iOS 慣性滑動 */
+}
 
 
 /* ── RWD ───────────────────────────────────────────────── */
-
-
-
-
-/* 中型以下（例如 960px）：改上下堆疊，圖在上、文在下 */
-@media (max-width: 960px) {
-  .findTrip-container {
+@media ($mediaSm) {
+  .trip_row {
     flex-direction: column;
-    text-align: center;
+    row-gap: 30px;
   }
 
 
-
-
+  .trip-container,
   .content-section {
-    align-items: center; /* 內容置中 */
-    text-align: center;
-
-
-
-
-    .description {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .booking-section {
-      justify-content: center;
-    }
+    flex: 1 1 100%;
+    min-width: 0;
   }
 
 
+  /* 圖片群組縮一下，避免太寬 */
+  .staggered-images .image-item {
+    width: clamp(100px, 28vw, 160px);
+  }
 
 
-  /* 手機上交錯高度容易擠，取消 */
+  /* 取消交錯高度 */
   .image-1,
   .image-2,
   .image-3 {
@@ -310,20 +490,8 @@
   }
 
 
-
-
-  .staggered-images .image-item {
-    width: clamp(98px, 28vw, 160px);
-  }
-}
-
-
-
-
-/* 你也可以搭配既有的 $mediaSm（若是 640px） */
-@media ($mediaSm) {
-  .findTrip-container {
-    gap: 24px;
+  .trip_titleBox {
+    transform: scale(0.7);
   }
 }
 
