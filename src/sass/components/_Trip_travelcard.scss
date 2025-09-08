@@ -1,0 +1,71 @@
+@use "../variables/" as *;
+@use "../functions/" as *;
+
+
+.tc-card {
+  display: block;
+  background: $white;
+  color: $text;
+  text-decoration: none;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+
+  flex: 0 0 320px;
+  min-width: 320px;
+  scroll-snap-align: start;
+
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
+  }
+}
+
+
+.tc-img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  /* 想更瘦就調小 */
+  object-fit: cover;
+  /* 圖片不變形，超出裁掉 */
+}
+
+
+.tc-body {
+  padding: 12px 14px 16px;
+}
+
+
+.tc-title {
+  margin: 4px 0 2px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+
+.tc-sub {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+.tc-meta {
+  margin-bottom: 6px;
+  font-size: 13px;
+  color: #777;
+}
+
+
+.tc-price {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+
+

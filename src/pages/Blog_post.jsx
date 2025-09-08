@@ -14,7 +14,7 @@ function BlogPost() {
   );
 
 
-  // ====== 文章「愛心」狀態（本機一人一讚，可收回） ======
+  // ====== 文章「愛心」狀態（本機一人一讚，可收回；仍用 localStorage） ======
   const [postLikeCount, setPostLikeCount] = useState(
     post ? Number(post.likes) || 0 : 0
   );
@@ -23,8 +23,6 @@ function BlogPost() {
     const saved = localStorage.getItem(`post:${post.id}:liked`);
     return saved === "1";
   });
-
-
   const togglePostLike = () => {
     if (!post) return;
     setPostLikeCount((c) => Math.max(0, c + (postLiked ? -1 : 1)));
@@ -32,45 +30,70 @@ function BlogPost() {
     setPostLiked(next);
     localStorage.setItem(`post:${post.id}:liked`, next ? "1" : "0");
   };
-  // =======================================================
 
 
-  // ====== 收藏（切換圖示，不記數） ======
+  // ====== 收藏（切換圖示，不記數；仍用 localStorage） ======
   const [postCollected, setPostCollected] = useState(() => {
     if (!post) return false;
     const saved = localStorage.getItem(`post:${post.id}:collected`);
     return saved === "1";
   });
-
-
   const togglePostCollected = () => {
     if (!post) return;
     const next = !postCollected;
     setPostCollected(next);
     localStorage.setItem(`post:${post.id}:collected`, next ? "1" : "0");
   };
-  // =======================================================
 
 
-  // ====== 留言「愛心」狀態（本機一人一讚，可收回） ======
+  // ====== 留言（不持久化，重整就清空） ======
+  // 以原始 posts.json 的留言為初始值；之後只放在 state 中
+  const [comments, setComments] = useState(() => (post?.comments ?? []));
+  // 針對每則留言的讚數與是否被按讚，也只放在 state
   const [commentLikes, setCommentLikes] = useState(
-    post ? post.comments.map((c) => Number(c.likes) || 0) : []
+    (post?.comments ?? []).map((c) => Number(c.likes) || 0)
+  );
+  const [likedComments, setLikedComments] = useState(
+    (post?.comments ?? []).map(() => false)
   );
 
 
-  const [likedComments, setLikedComments] = useState(() => {
-    if (!post) return [];
-    const key = `post:${post.id}:likedComments`;
-    try {
-      const saved = localStorage.getItem(key);
-      const arr = saved ? JSON.parse(saved) : [];
-      return post.comments.map((_, i) => !!arr[i]);
-    } catch {
-      return post.comments.map(() => false);
-    }
-  });
+  // 新增留言輸入框
+  const [newComment, setNewComment] = useState("");
 
 
+  // 送出留言
+  const handleAddComment = () => {
+    const text = newComment.trim();
+    if (!text || !post) return;
+
+
+    const now = new Date();
+    const stamp = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${String(
+      now.getDate()
+    ).padStart(2, "0")} ${String(now.getHours()).padStart(2, "0")}:${String(
+      now.getMinutes()
+    ).padStart(2, "0")}`;
+
+
+    const item = {
+      name: "訪客",
+      avatar: "/images/blog/avatar.svg", // ✅ public 路徑，確保可讀
+      time: stamp,
+      text,
+      likes: 0,
+    };
+
+
+    // 新留言加到最上面
+    setComments((prev) => [item, ...prev]);
+    setCommentLikes((prev) => [0, ...prev]);
+    setLikedComments((prev) => [false, ...prev]);
+    setNewComment("");
+  };
+
+
+  // 單則留言按讚
   const toggleCommentLike = (idx) => {
     setCommentLikes((prev) => {
       const next = [...prev];
@@ -80,14 +103,9 @@ function BlogPost() {
     setLikedComments((prev) => {
       const next = [...prev];
       next[idx] = !prev[idx];
-      localStorage.setItem(
-        `post:${post.id}:likedComments`,
-        JSON.stringify(next)
-      );
       return next;
     });
   };
-  // =======================================================
 
 
   if (!post) {
@@ -114,7 +132,10 @@ function BlogPost() {
 
 
   return (
-    <div className="post-page-container" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
+    <div
+      className="post-page-container"
+      style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}
+    >
       <div className="post-wrapper">
         {/* 單欄版面（移除左側篩選欄） */}
         <main className="post-content-panel">
@@ -144,7 +165,7 @@ function BlogPost() {
 
 
                 <div className="post-stats">
-                  {/* ✅ 文章 Like：可切換、會計數、同留言區路徑 */}
+                  {/* Like */}
                   <button
                     type="button"
                     className={`stat-item like ${postLiked ? "active" : ""}`}
@@ -155,8 +176,8 @@ function BlogPost() {
                     <img
                       src={
                         postLiked
-                          ? "./images/blog/comment_like1.svg" // 橘色實心
-                          : "./images/blog/comment_like2.svg" // 空心
+                          ? "./images/blog/comment_like1.svg"
+                          : "./images/blog/comment_like2.svg"
                       }
                       alt="Like"
                     />
@@ -164,7 +185,7 @@ function BlogPost() {
                   </button>
 
 
-                  {/* ✅ 收藏：切換圖示，不記數 */}
+                  {/* 收藏 */}
                   <button
                     type="button"
                     className={`stat-item collect ${postCollected ? "active" : ""}`}
@@ -175,8 +196,8 @@ function BlogPost() {
                     <img
                       src={
                         postCollected
-                          ? "./images/blog/collection1.svg" // 已收藏
-                          : "./images/blog/collection.svg"  // 未收藏
+                          ? "./images/blog/collection1.svg"
+                          : "./images/blog/collection.svg"
                       }
                       alt="Collection"
                     />
@@ -184,10 +205,10 @@ function BlogPost() {
                   </button>
 
 
-                  {/* Comment */}
+                  {/* Comment：顯示目前 state 的留言數 */}
                   <button className="stat-item" type="button">
                     <img src="./images/blog/comment.svg" alt="Comment" />
-                    <span>{post.comments.length}</span>
+                    <span>{comments.length}</span>
                   </button>
 
 
@@ -247,11 +268,15 @@ function BlogPost() {
                   type="text"
                   className="comment-input"
                   placeholder="留言分享你的想法"
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && handleAddComment()}
                 />
                 <button
                   className="submit-btn"
                   type="button"
                   aria-label="送出留言"
+                  onClick={handleAddComment}
                 >
                   <img src="./images/blog/summit.svg" alt="送出" />
                 </button>
@@ -260,7 +285,7 @@ function BlogPost() {
 
 
             <div className="comment-list">
-              {post.comments.map((c, i) => (
+              {comments.map((c, i) => (
                 <div key={i} className="comment">
                   <img
                     src={c.avatar}
@@ -269,14 +294,12 @@ function BlogPost() {
                   />
                   <div className="comment-content">
                     <div className="comment-header">
-                      {/* 左側：作者 + 時間 */}
                       <div className="author-time">
                         <span className="comment-author">{c.name}</span>
                         <span className="comment-date">{c.time}</span>
                       </div>
 
 
-                      {/* 右側：愛心 */}
                       <div className="comment-actions">
                         <button
                           type="button"
@@ -288,8 +311,8 @@ function BlogPost() {
                           <img
                             src={
                               likedComments[i]
-                                ? "./images/blog/comment_like1.svg" // 橘色實心
-                                : "./images/blog/comment_like2.svg" // 空心
+                                ? "./images/blog/comment_like1.svg"
+                                : "./images/blog/comment_like2.svg"
                             }
                             alt="like"
                           />
@@ -313,9 +336,6 @@ function BlogPost() {
 
 
 export default BlogPost;
-
-
-
 
 
 

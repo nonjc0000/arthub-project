@@ -1,13 +1,16 @@
 import React, { useState, useMemo } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import BlogSelect from "../components/blog/BlogSelect";
 import BlogCard from "../components/blog/BlogCard";
 import "../sass/all.scss";
+
 
 function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
   const [activeTab, setActiveTab] = useState("熱門");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("所有文章");
+
 
   // 18 篇文章資料，包含不同分類
   const allPosts = [
@@ -18,6 +21,7 @@ function Blog() {
       img: "./images/blog/post-1.jpeg",
       tags: ["布作服飾", "生活風格", "插畫紙品"],
       category: ["所有文章", "布作服飾", "插畫紙品"],
+
 
     },
     {
@@ -162,10 +166,13 @@ function Blog() {
     }
   ];
 
+
   const postsPerPage = 9;
+
 
   const filteredPosts = useMemo(() => {
     let filtered = allPosts;
+
 
     // 分類篩選
     if (selectedCategory !== "所有文章") {
@@ -177,6 +184,7 @@ function Blog() {
       });
     }
 
+
     // 搜尋篩選
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase().trim();
@@ -186,6 +194,7 @@ function Blog() {
         post.tags.some(tag => tag.toLowerCase().includes(query))
       );
     }
+
 
     // 熱門/最新篩選 - 修改這部分
     if (activeTab === "熱門") {
@@ -202,11 +211,14 @@ function Blog() {
       });
     }
 
+
     return filtered;
   }, [selectedCategory, searchQuery, activeTab]);
 
+
   // 計算總頁數
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
 
   // 取得當前頁面的文章
   const getCurrentPosts = () => {
@@ -215,25 +227,30 @@ function Blog() {
     return filteredPosts.slice(startIndex, endIndex);
   };
 
+
   // 當篩選條件改變時，回到第一頁
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
   };
 
+
   const handleSearchChange = (query) => {
     setSearchQuery(query);
     setCurrentPage(1);
   };
+
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
     setCurrentPage(1);
   };
 
+
   // 分頁組件
   const BlogPagination = () => {
     if (totalPages <= 1) return null; // 如果只有一頁或沒有文章，不顯示分頁
+
 
     const generatePageNumbers = () => {
       const pages = [];
@@ -243,6 +260,7 @@ function Blog() {
       return pages;
     };
 
+
     const handlePageChange = (page) => {
       if (page >= 1 && page <= totalPages && page !== currentPage) {
         setCurrentPage(page);
@@ -250,7 +268,9 @@ function Blog() {
       }
     };
 
+
     const pages = generatePageNumbers();
+
 
     return (
       <nav className="blog-pagination" aria-label="pagination">
@@ -262,6 +282,7 @@ function Blog() {
         >
           ‹
         </button>
+
 
         <div className="track">
           {pages.map((page) => (
@@ -275,6 +296,7 @@ function Blog() {
           ))}
         </div>
 
+
         <button
           className="page-btn next"
           aria-label="下一頁"
@@ -287,6 +309,7 @@ function Blog() {
     );
   };
 
+
   return (
     <div className="blog-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
       {/* 1) 標題 */}
@@ -295,6 +318,7 @@ function Blog() {
           <img className='titleBox' src="./images/blog/blog_sign.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
         </h1>
       </header>
+
 
       {/* 2) 描述段落 */}
       <section className="blog-desc">
@@ -307,8 +331,10 @@ function Blog() {
         </p>
       </section>
 
+
       {/* 3) 彩色裝飾條 */}
       <div className="blog-deco" style={{ backgroundImage: 'url("./images/blog/blog_deco.svg")' }} />
+
 
       {/* 4) 黑框主內容區 */}
       <section className="blog-shell">
@@ -323,6 +349,7 @@ function Blog() {
               <img src="./images/blog/women-two.svg" alt="blog illustration" />
             </div>
           </aside>
+
 
           {/* 右側：主要內容 */}
           <main className="blog-panel">
@@ -345,6 +372,7 @@ function Blog() {
                 </button>
               </div>
 
+
               <div className="actions">
                 <div className="search">
                   <input
@@ -354,17 +382,25 @@ function Blog() {
                     onChange={(e) => handleSearchChange(e.target.value)}
                     onKeyPress={(e) => {
                       if (e.key === 'Enter') {
-                        // 搜尋邏輯已經在 onChange 中處理了
                       }
                     }}
                   />
                   <button className="icon-btn search" aria-label="search" style={{ backgroundImage: 'url("./images/blog/blog_search.svg")' }}>
                   </button>
                 </div>
-                <button className="icon-btn write" aria-label="撰寫文章" style={{ backgroundImage: 'url("./images/blog/blog_write.png")' }}>
-                </button>
+                <Link
+                  to="/blog/write"
+                  className="icon-btn write"
+                  aria-label="撰寫文章"
+                  style={{
+                    backgroundImage: 'url("./images/blog/blog_write.png")',
+                    backgroundSize: '25px 25px'
+                  }}
+                >
+                </Link>
               </div>
             </div>
+
 
             {/* 搜尋結果提示 */}
             {(searchQuery || selectedCategory !== "所有文章") && (
@@ -374,6 +410,7 @@ function Blog() {
                 {selectedCategory !== "所有文章" && ` (分類: ${selectedCategory})`}
               </div>
             )}
+
 
             {/* 卡片網格 */}
             <div className="blog-grid">
@@ -388,6 +425,7 @@ function Blog() {
               )}
             </div>
 
+
             {/* 分頁導航 */}
             <BlogPagination />
           </main>
@@ -397,7 +435,9 @@ function Blog() {
   );
 }
 
+
 export default Blog;
+
 
 // #                       _oo0oo_
 // #                      o8888888o
@@ -421,4 +461,5 @@ export default Blog;
 // #
 // #     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // #
-// #               佛祖保佑         
+// #                      佛祖保佑        
+

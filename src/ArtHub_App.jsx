@@ -22,6 +22,10 @@ import Event_info from "./pages/Event_info";
 import Stall_register from "./pages/Stall_register";
 import Find_schedule_order from "./pages/Find_schedule_order";
 import Order_success from "./pages/Order_success";
+import Member_login from './pages/Member_login';
+import Forgot_password from './pages/Forgot_password';
+import Register from './pages/Register';
+import BlogWrite from "./pages/Blog_write";
 
 
 const ArtHub_App = () => {
@@ -49,6 +53,10 @@ const ArtHub_App = () => {
         <Route path="/Stall_register" element={<Stall_register />} ></Route>
         <Route path='/Order' element={<Find_schedule_order />}></Route>
         <Route path='/Order_success' element={<Order_success />}></Route>
+        <Route path='/Member_login' element={<Member_login />}></Route>
+        <Route path='/Forgot_password' element={<Forgot_password />}></Route>
+        <Route path='/Register' element={<Register />}></Route>
+        <Route path="/Blog/write" element={<BlogWrite />} />
       </Routes>
       <Footer />
     </div>

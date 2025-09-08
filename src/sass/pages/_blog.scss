@@ -1,5 +1,6 @@
 @use "../variables/" as *;
 
+
 // 頁面外層容器
 .blog-page {
   padding-top: 80px;
@@ -13,14 +14,17 @@
   min-height: 100vh;
   width: 100%;
 
+
   // RWD: 平板和手機調整上方間距
   @media ($mediaMd) {
     padding-top: 60px;
+    margin-top: 60px;
   }
-  
+ 
   @media ($mediaSm) {
     padding-top: 40px;
   }
+
 
   // 1) 標題區
   .blog-hero {
@@ -30,27 +34,29 @@
     align-items: center;
     justify-content: center;
 
+
     // RWD: 標題區高度調整
     @media ($mediaMd) {
       height: 120px;
     }
-    
+   
     @media ($mediaSm) {
       height: 100px;
     }
+
 
     .titleBox_h1 {
       .titleBox {
         max-width: 100%;
         height: auto;
         display: block; // 確保圖片是塊級元素
-        
+       
         // 手機版置中並調整大小
         @media ($mediaMd) {
           width: 400px;
           margin: 0 auto; // 確保置中
         }
-        
+       
         @media ($mediaSm) {
           padding-top: 30px;
           width: 280px;
@@ -60,6 +66,7 @@
     }
   }
 
+
   // 2) 描述段落
   .blog-desc {
     margin-top: 65px;
@@ -67,16 +74,18 @@
     justify-content: center;
     padding: 0 20px;
 
+
     // RWD: 描述區間距調整
     @media ($mediaMd) {
       margin-top: 40px;
       padding: 0 16px;
     }
-    
+   
     @media ($mediaSm) {
       margin-top: 30px;
       padding: 0 12px;
     }
+
 
     .desc {
       max-width: 900px;
@@ -85,12 +94,13 @@
       font-size: 16px;
       color: #333;
 
+
       // RWD: 文字大小調整
       @media ($mediaMd) {
         font-size: 15px;
         line-height: 1.8;
       }
-      
+     
       @media ($mediaSm) {
         font-size: 14px;
         line-height: 1.7;
@@ -102,6 +112,7 @@
     }
   }
 
+
   // 裝飾圖片區
   .blog-deco {
     background-repeat: no-repeat;
@@ -112,19 +123,21 @@
     overflow: hidden;
     margin: 40px 100px;
 
+
     // RWD: 裝飾區調整
     @media ($mediaMd) {
       width: 80%;
       margin: 30px auto;
       height: 60px;
     }
-    
+   
     @media ($mediaSm) {
       width: 90%;
       margin: 20px auto;
       height: 50px;
     }
   }
+
 
   // 4) 主內容區外框
   .blog-shell {
@@ -135,18 +148,20 @@
     width: 100%;
     box-sizing: border-box;
 
+
     // RWD: 主內容區調整
     @media ($mediaMd) {
       margin: 0 auto 40px;
       padding: 12px 16px 20px;
     }
-    
+   
     @media ($mediaSm) {
       margin: 0 auto 30px;
       padding: 10px 12px 18px;
     }
   }
 }
+
 
 // 部落格插圖
 .blog-illustration {
@@ -156,12 +171,14 @@
     height: auto;
     object-fit: contain;
 
+
     // RWD: 手機版隱藏插圖
     @media ($mediaSm) {
       display: none;
     }
   }
 }
+
 
 // 兩欄布局：左側選單 + 右側內容
 .blog-body {
@@ -170,12 +187,13 @@
   gap: 26px;
   width: 100%;
 
+
   // RWD: 布局調整
   @media ($mediaMd) {
     grid-template-columns: 150px 1fr;
     gap: 20px;
   }
-  
+ 
   @media ($mediaSm) {
     display: flex;
     flex-direction: column;
@@ -183,9 +201,11 @@
   }
 }
 
+
 // 左側選單欄
 .blog-select-col {
   width: 100%;
+
 
   // RWD: 手機版選單樣式調整
   @media ($mediaSm) {
@@ -193,16 +213,19 @@
   }
 }
 
+
 // 右側主體容器
 .blog-panel {
   min-width: 0;
   width: 100%;
+
 
   // RWD: 手機版主面板調整
   @media ($mediaSm) {
     order: 2; // 手機版主內容在下方
   }
 }
+
 
 // 工具列（熱門/最新 + 搜尋/撰寫）
 .blog-toolbar {
@@ -212,23 +235,26 @@
   margin: 0 0 14px;
   width: 100%;
 
+
   // RWD: 工具列布局調整
   @media ($mediaMd) {
     flex-wrap: wrap;
     gap: 12px;
   }
-  
+ 
   @media ($mediaSm) {
     flex-direction: column;
     align-items: stretch;
     gap: 16px;
   }
 
+
   .tabs {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 8px;
+
 
     // RWD: 標籤按鈕調整
     @media ($mediaSm) {
@@ -237,81 +263,127 @@
     }
   }
 
-  .tab {
-    padding: 6px 12px;
-    margin-right: 8px;
-    border-radius: 10px;
+
+
+
+.tab {
+  padding: 8px 12px;
+  margin-right: 8px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  color: #000000;
+ 
+  // 確保有足夠的最小高度容納圖片
+  min-height: 36px;
+  line-height: 1;
+ 
+  // RWD: 標籤按鈕大小調整
+  @media ($mediaSm) {
+    padding: 8px 16px;
+    font-size: 15px;
+    margin-right: 4px;
+    flex: 1;
+    justify-content: center;
+    background-color: #fff;
+    min-height: 34px;
+  }
+ 
+  i {
     font-size: 16px;
-    cursor: pointer;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.2s ease;
-    background-color: transparent;
-    color: #000000;
-
-    // RWD: 標籤按鈕大小調整
+    transition: color 0.2s ease;
+    display: flex; // 確保圖標正確對齊
+   
     @media ($mediaSm) {
-      padding: 8px 16px;
       font-size: 15px;
-      margin-right: 4px;
-      flex: 1;
-      justify-content: center;
-      background-color: #fff;
-    }
-
-    i {
-      font-size: 16px;
-      transition: color 0.2s ease;
-
-      @media ($mediaSm) {
-        font-size: 15px;
-      }
-    }
-
-    img {
-      width: 20px;
-      height: 20px;
-      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
-      transition: filter 0.2s ease;
-
-      @media ($mediaSm) {
-        width: 18px;
-        height: 18px;
-      }
-    }
-
-    &:hover {
-      background-color: #ED972E;
-      color: #ffffff;
-
-      i {
-        color: #ffffff;
-      }
-      img {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
-      }
-    }
-
-    &.is-active {
-      background-color: #ED972E;
-      color: #fff;
-
-      i {
-        color: #ffffff;
-      }
-      img {
-        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
-      }
     }
   }
+ 
+  img {
+    width: 20px;
+    height: 20px;
+    display: block; // 重要：防止 inline 元素的額外空間
+    flex-shrink: 0; // 防止圖片被壓縮
+    object-fit: contain; // 確保圖片完整顯示
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+    transition: filter 0.2s ease;
+   
+    @media ($mediaSm) {
+      width: 18px;
+      height: 18px;
+    }
+  }
+ 
+  &:hover {
+    background-color: #ED972E;
+    color: #ffffff;
+   
+    i {
+      color: #ffffff;
+    }
+    img {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+    }
+  }
+ 
+  &.is-active {
+    background-color: #ED972E;
+    color: #fff;
+   
+    i {
+      color: #ffffff;
+    }
+    img {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+    }
+  }
+ 
+  // 如果您的 JSX 使用的是 "active" class，加上這個
+  &.active {
+    background-color: #ED972E;
+    color: #fff;
+   
+    i {
+      color: #ffffff;
+    }
+    img {
+      filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
+    }
+  }
+}
+
+
+
+
+// 確保父容器不會裁切內容
+.blog-toolbar {
+  overflow: visible; // 改為 visible 而非 hidden
+ 
+  .tabs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: visible; // 確保不會裁切
+   
+    @media ($mediaSm) {
+      gap: 4px;
+    }
+  }
+}
+
 
   .actions {
     display: flex;
     align-items: center;
     gap: 8px;
+
 
     // RWD: 操作按鈕區調整
     @media ($mediaSm) {
@@ -319,18 +391,20 @@
       width: 100%;
     }
 
+
     .search {
       display: flex;
       align-items: center;
       border: 1px solid #000;
       border-radius: 30px;
       padding: 0 6px;
-      
+     
       // RWD: 搜尋框調整
       @media ($mediaSm) {
         justify-content: flex-end;
         max-width: 300px;
       }
+
 
       input {  
         border: none;
@@ -341,11 +415,13 @@
         background: transparent;
         min-width: 0; // 防止輸入框過寬
 
+
         // RWD: 輸入框調整
         @media ($mediaSm) {
           font-size: 16px; // iOS 防止縮放
           padding: 10px 12px;
         }
+
 
         &::placeholder {
           @media ($mediaSm) {
@@ -353,6 +429,7 @@
           }
         }
       }
+
 
       .icon-btn.search {
         border: none;
@@ -367,6 +444,7 @@
     }
   }
 
+
   .icon-btn {
     background: #fff;
     min-width: 34px;
@@ -379,6 +457,7 @@
     background-repeat: no-repeat;
     background-position: center;
 
+
     // RWD: 圖示按鈕調整
     @media ($mediaSm) {
       min-width: 40px;
@@ -386,12 +465,14 @@
       background-size: 24px 24px;
     }
 
+
     &.write {
       background-color: transparent;
       border: none;
     }
   }
 }
+
 
 // 篩選資訊提示
 .filter-info {
@@ -402,6 +483,7 @@
   font-size: 14px;
   color: #666;
 
+
   // RWD: 篩選資訊調整
   @media ($mediaSm) {
     margin-bottom: 12px;
@@ -410,6 +492,7 @@
   }
 }
 
+
 // 卡片網格
 .blog-grid {
   display: grid;
@@ -417,19 +500,21 @@
   column-gap: 34px;
   row-gap: 44px;
 
+
   // RWD: 卡片網格調整
   @media ($mediaMd) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 24px;
     row-gap: 32px;
   }
-  
+ 
   @media ($mediaSm) {
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 24px;
   }
 }
+
 
 // 無結果提示
 .no-results {
@@ -438,14 +523,16 @@
   padding: 40px 20px;
   color: #666;
 
+
   p {
     font-size: 16px;
-    
+   
     @media ($mediaSm) {
       font-size: 15px;
     }
   }
 }
+
 
 // 分頁導航
 .blog-pagination {
@@ -455,11 +542,13 @@
   gap: 10px;
   margin: 26px 0 6px;
 
+
   // RWD: 分頁調整
   @media ($mediaSm) {
     margin: 20px 0 6px;
     gap: 8px;
   }
+
 
   .page-btn {
     border: none !important;
@@ -472,6 +561,7 @@
     cursor: pointer;
     font-size: 16px;
 
+
     // RWD: 分頁按鈕調整
     @media ($mediaSm) {
       min-width: 40px;
@@ -480,11 +570,13 @@
       font-size: 18px;
     }
 
+
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
   }
+
 
   .track {
     position: relative;
@@ -498,12 +590,14 @@
     gap: 6px;
     padding: 0 8px;
 
+
     // RWD: 分頁軌道調整
     @media ($mediaSm) {
       height: 32px;
       gap: 4px;
       padding: 0 6px;
     }
+
 
     .page-num {
       border: none;
@@ -516,6 +610,7 @@
       text-align: center;
       cursor: pointer;
 
+
       // RWD: 頁碼按鈕調整
       @media ($mediaSm) {
         min-width: 32px;
@@ -524,25 +619,29 @@
         font-size: 14px;
       }
 
+
       &.is-active {
         background: #111;
         color: #fff;
       }
+
 
       &:hover:not(.is-active) {
         background: rgba(219, 40, 40, 0.1);
       }
     }
 
+
     .dots {
       padding: 0 4px;
-      
+     
       @media ($mediaSm) {
         padding: 0 2px;
       }
     }
   }
 }
+
 
 // 額外的 RWD 通用樣式
 @media ($mediaSm) {
@@ -551,13 +650,13 @@
     overflow-x: hidden;
     width: 100%;
   }
-  
+ 
   // 確保所有容器不會超出螢幕
   * {
     max-width: 100%;
     box-sizing: border-box;
   }
-  
+ 
   // 改善觸摸體驗
   button, .tab, .page-num, .page-btn {
     touch-action: manipulation;
@@ -569,3 +668,4 @@
     user-select: none;
   }
 }
+
