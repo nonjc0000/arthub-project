@@ -1,6 +1,14 @@
-import React, { useRef } from 'react'
 import Button from '../components/Button'
 import PageTop from '../components/PageTop'
+import { Link } from 'react-router-dom';
+
+
+
+
+
+
+
+
 
 
 
@@ -10,23 +18,7 @@ import PageTop from '../components/PageTop'
 
 
 const Home = () => {
-  const topRef = useRef(null);
-
-
-
-
-  function gotoTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    })
-  }
-
-
-
-
-
-
+ 
 
 
   return (
@@ -69,11 +61,18 @@ const Home = () => {
                 <p className='temptemperature'>25°C<span className='situation'>多雲</span></p>
               </div>
             </div>
+            <div className='home-dec'>
+              <img className='home-dec-im' src="./images/home/home-decoration-1.svg" alt="" />
+            </div>
           </div>
         </section>
         {/* 首頁第二區塊 */}
         <section>
           <div className='home-hot-wrap'>
+            <div className='home-drink'><img src="./images/home/drink.svg" alt="drink" /></div>
+            <div className='home-ring'><img src="./images/home/ring.svg" alt="ring" /></div>
+            <div className='home-hat'><img src="./images/home/hat.svg" alt="hat" /></div>
+            <div className='home-book'><img src="./images/home/book.svg" alt="book" /></div>
             <div className='home-hot'>
               <h3>熱門主題</h3>
               <p>Popular subject</p>
@@ -83,10 +82,10 @@ const Home = () => {
               <div className='home-pic'>
                 <div className='home-pic-fsb'>
                   <div className='home-pic-item'>
-                    <a href="#"><img className='type-img-one' src="./images/home/home-pic-01.png" alt="種類圖01" /></a>
+                    <a href="#"><img src="./images/home/home-pic-01.png" alt="種類圖01" /></a>
                     <a href="#"><img src="./images/home/home-pic-02.png" alt="種類圖02" /></a>
                   </div>
-                  <div className='type-img-th'>
+                  <div>
                     <a href="#"><img src="./images/home/home-pic-03.png" alt="種類圖03" /></a>
                   </div>
                 </div>
@@ -159,9 +158,14 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div ref={topRef}>
+          <PageTop/>
+          {/* <div ref={topRef}>
             <button onClick={gotoTop}>回頂端</button>
-          </div>
+          </div> */}
+
+
+
+
 
 
 
@@ -179,7 +183,31 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
 export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

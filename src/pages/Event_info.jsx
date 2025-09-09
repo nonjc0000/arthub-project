@@ -1,5 +1,36 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Review_card from '../components/Review_card'
+
+
+const arrReview = [
+  {
+    id: 1,
+    img: "./images/Event_info/dog_pic.png",
+    name: "布萊恩",
+    date: "2025/06/05",
+    review:"太棒了!",
+    like_num:"23",
+  },
+  {
+    id: 2,
+    img: "./images/Event_info/dog_pic.png",
+    name: "叫我第一名",
+    date: "2025/06/05",
+    review:"老闆很親切",
+    like_num:"43",
+  },
+  {
+    id: 3,
+    img: "./images/Event_info/dog_pic.png",
+    name: "好餓阿",
+    date: "2025/06/05",
+    review:"😋",
+    like_num:"12",
+  },
+
+
+];
 
 
 
@@ -7,6 +38,10 @@ import { Link } from 'react-router-dom'
 const Event_info = () => {
   return (
     <main className='event_info_main'>
+
+
+
+
 
 
 
@@ -20,18 +55,30 @@ const Event_info = () => {
 
 
 
+
+
+
+
         {/* 市集基本資訊 */}
         <section className='event_info_container'>
+
+
 
 
           {/* 照片區 */}
           <div className='pic_box'>
 
 
+
+
             {/* 大圖 */}
             <div className='main_pic'>
               <img src="./images/Find_schedule/east_slide_01.jpg" alt="市集照片" />
             </div>
+
+
+
+
 
 
 
@@ -47,7 +94,15 @@ const Event_info = () => {
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -58,8 +113,16 @@ const Event_info = () => {
 
 
 
+
+
+
+
             {/* 名稱 */}
             <h3 className='event_name'>台北-閃亮生活</h3>
+
+
+
+
 
 
 
@@ -77,12 +140,24 @@ const Event_info = () => {
 
 
 
+
+
+
+
+
+
+
+
             {/* 位置 */}
             <div className='place'>
               <p>活動位置</p>
               <p>西門紅樓</p>
               <img src="./images/Event_info/icon_pin.svg" alt="地點裝飾" />
             </div>
+
+
+
+
 
 
 
@@ -105,7 +180,15 @@ const Event_info = () => {
 
 
 
+
+
+
+
           </div>
+
+
+
+
 
 
 
@@ -117,7 +200,13 @@ const Event_info = () => {
           </div>
 
 
+
+
         </section>
+
+
+
+
 
 
 
@@ -126,23 +215,37 @@ const Event_info = () => {
         <section className='detail_info_container'>
 
 
+
+
           {/* 裝飾線 */}
           <figure className='deco_line'><img src="./images/Event_info/deco_line.svg" alt="點點裝飾圖案" /></figure>
+
+
 
 
           <h4>活動資訊</h4>
 
 
+
+
           <figure className='detail_pic'><img src="./images/Event_info/pic_1.png" alt="市集照片" /></figure>
+
+
 
 
           {/* 文字說明區 */}
 
 
+
+
           <article className='info_desc'>
 
 
+
+
             <p className='title'>市集活動邀你一起感受生活的溫度</p>
+
+
 
 
             <p className='content'>
@@ -150,6 +253,8 @@ const Event_info = () => {
               <br />
               我們邀請你走出日常，走進這個充滿創意、手感與人情味的空間──來自全台各地的手作職人、文創品牌、美食攤位、生活選物，以及街頭藝人和現場音樂演出，共同打造屬於每個人的慢生活片刻。
             </p>
+
+
 
 
             <ul className='content'>
@@ -160,6 +265,8 @@ const Event_info = () => {
               <li>假日午後限定，溫柔系 live 音樂演出</li>
               <li>親子友善、毛孩可入場，一起共享療癒時光</li>
             </ul>
+
+
 
 
             <p className='content'>
@@ -173,10 +280,18 @@ const Event_info = () => {
             </p>
 
 
+
+
           </article>
 
 
+
+
         </section>
+
+
+
+
 
 
 
@@ -185,9 +300,11 @@ const Event_info = () => {
         <section className='review_container'>
 
 
+
+
           {/* 留言輸入框 */}
           <div className='review_input_box'>
-            <img src="./images/Event_info/dog_pic.png" alt="頭貼" />
+            <img className='profile_pic' src="./images/Event_info/dog_pic.png" alt="頭貼" />
             <div className='input'>
               <input type="text" />
               <button><img src="./images/Event_info/btn_enter.svg" alt="送出按鈕" /></button>
@@ -195,17 +312,39 @@ const Event_info = () => {
           </div>
 
 
+
+
           {/* 留言控制按鈕 */}
           <div className='review_btn_box'>
             <p>留言區</p>
-            <button>熱門</button>
-            <button>由舊至新</button>
-            <button>由新至舊</button>
+            <div className='btn_box'>
+              <button>熱門</button>
+              <button>由舊至新</button>
+              <button>由新至舊</button>
+            </div>
+
+
           </div>
+
+
 
 
           {/* 評論結果 */}
           <div className='event_review_box'>
+            {arrReview.map((reviews) => {
+              return (
+                <Review_card
+                  key={reviews.id}
+                  img={reviews.img}
+                  name={reviews.name}
+                  date={reviews.date}
+                  review={reviews.review}
+                  like_num={reviews.like_num}
+
+
+                />
+              );
+            })}
 
 
           </div>
@@ -218,7 +357,21 @@ const Event_info = () => {
 
 
 
+
+
+
+
 export default Event_info
+
+
+
+
+
+
+
+
+
+
 
 
 

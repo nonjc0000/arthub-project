@@ -4,11 +4,13 @@
 
 
 
+
+
+
+
 .event_info_main {
     @extend %flex-center;
     flex-direction: column;
-
-
 
 
     .info_box {
@@ -17,7 +19,13 @@
         background-color: $white;
         width: 75%;
         padding: 30px 0 0 0;
+
+
     }
+
+
+
+
 
 
 
@@ -27,8 +35,13 @@
         display: flex;
         justify-content: center;
         width: $w-70;
-        border: 1px solid red;
+
+
         gap: 50px;
+
+
+
+
 
 
 
@@ -36,11 +49,14 @@
         .pic_box {
             display: flex;
             flex-direction: column;
-            border: 1px solid red;
+
+
             border-radius: 0 60px 0 60px;
             overflow: hidden;
             width: $w-50;
             gap: $spacing-xs;
+
+
 
 
             .main_pic {
@@ -54,6 +70,8 @@
             }
 
 
+
+
             .thumbnail {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -64,8 +82,16 @@
 
 
 
+
+
+
+
+
+
             }
         }
+
+
 
 
         .event_name {
@@ -75,12 +101,17 @@
         }
 
 
+
+
         .info {
-            border: 1px solid red;
+
+
             display: flex;
             flex-direction: column;
             width: $w-20;
             padding-top: $spacing-xxl;
+
+
 
 
             .time,
@@ -88,13 +119,18 @@
                 display: flex;
                 justify-content: left;
                 gap: $spacing-xs;
-                border: 1px solid red;
+
+
                 align-items: center;
             }
 
 
+
+
             .place {
                 margin: $spacing-sm 0 35px 0;
+
+
 
 
                 img {
@@ -103,7 +139,11 @@
             }
 
 
+
+
             .type_box {
+
+
 
 
                 .title {
@@ -112,11 +152,15 @@
                 }
 
 
+
+
                 .tag_box {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     grid-column-gap: 5%;
                     grid-row-gap: 13px;
+
+
 
 
                     p {
@@ -132,17 +176,20 @@
             }
 
 
+
+
         }
 
 
+
+
         .stall_btn_box {
-
-
-            border: 1px solid red;
             @extend %flex-center;
             flex-direction: column;
             width: 15%;
             gap: $spacing-xxl ;
+
+
 
 
             figure {
@@ -152,6 +199,8 @@
                 border-radius: 20px;
                 @extend %flex-center;
                 flex-direction: column;
+
+
 
 
                 img {
@@ -165,7 +214,13 @@
 
 
 
+
+
+
+
 }
+
+
 
 
 /* 市集詳細內容 */
@@ -176,10 +231,16 @@
 
 
 
+
+
+
+
     /* 照片區 */
     .deco_line {
         width: 75%;
     }
+
+
 
 
     .detail_pic {
@@ -187,11 +248,15 @@
     }
 
 
+
+
     h4 {
         font-size: $f-s-xl;
         font-weight: $f-w-b;
         color: $text
     }
+
+
 
 
     // 文字說明區
@@ -202,6 +267,8 @@
         margin: $spacing-xl 0;
 
 
+
+
         .title {
             font-size: $f-s-lg;
             color: $text;
@@ -209,13 +276,19 @@
         }
 
 
+
+
         .content {
             color: $text;
         }
 
 
+
+
         ul {
             list-style: disc;
+
+
 
 
             li {
@@ -224,8 +297,12 @@
         }
 
 
+
+
     }
 }
+
+
 
 
 /* 市集評論區 */
@@ -234,8 +311,16 @@
     flex-direction: column;
 
 
+
+
     border-top: 2px dashed $gray-500;
     width: $w-70;
+
+
+    .profile_pic {
+        width: 40px;
+        height: 40px;
+    }
 
 
     .review_input_box {
@@ -244,31 +329,38 @@
         gap: 16px;
         width: $w-90;
         height: 75px;
-        padding-top: $spacing-xxl ;
-        border: 1px solid red;
+        padding-top: $spacing-xl ;
 
 
-        img {
+        button {
             width: 40px;
             height: 40px;
+            cursor: pointer;
         }
+
+
 
 
         .input {
             background-color: $primary;
             border-radius: $rad-ex;
-            border: 1px solid red;
             width: $w-90;
             display: flex;
+
+
 
 
             input,
             button {
                 @extend %remove_form_style;
-                img{
+
+
+                img {
                     width: 25px;
                 }
             }
+
+
 
 
             input {
@@ -276,9 +368,86 @@
             }
         }
     }
+
+
+    .review_btn_box {
+        display: flex;
+        width: $w-90;
+        height: 60px;
+        justify-content: flex-start;
+        align-items: center;
+        gap: $spacing-xxl;
+        margin-bottom: $spacing-sm;
+
+
+        p {
+            font-size: $f-s-lg;
+        }
+
+
+        .btn_box {
+            display: flex;
+            gap: $spacing-xs ;
+
+
+            button {
+                @extend %remove_form_style;
+                height: 24px;
+                background-color: $primary;
+                border-radius: $rad-ex;
+                padding: 0 $spacing-xs;
+                color: $white;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .event_review_box {
+        width: $w-90;
+        @extend %flex-column;
+        gap: $spacing-lg;
+        margin-bottom: $spacing-xxxxl;
+    }
+
+
+    .review_card {
+        display: flex;
+        width: $w-100;
+        .card_box{
+            display: flex;
+            justify-content: space-between;
+            width: $w-90;
+            .like_box{
+                @extend %flex-center;
+                button{
+                    @extend %remove_form_style;
+                    cursor: pointer;
+                    img{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+
+        .review_box {
+            margin-left: $spacing-sm;
+
+
+            .regular_info {
+                display: flex;
+                gap: $spacing-xs;
+                .date{
+                    color: $gray-500;
+                    font-size: 14px;
+                }
+            }
+
+
+        }
+
+
+    }
 }
-
-
-
-
 
