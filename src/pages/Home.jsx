@@ -17,8 +17,27 @@ import { Link } from 'react-router-dom';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Home = () => {
- 
+
+
+
+
 
 
   return (
@@ -35,13 +54,13 @@ const Home = () => {
               <div className='stall-wrap'>
                 <div className='stall-item'>
                   <div className='stall-first'>
-                    <a href="#"><img src="./images/home/home-find_type.svg" alt="找類型攤位" /></a>
+                    <Link to="/Find_type"><img src="./images/home/home-find_type.svg" alt="找類型攤位" /></Link>
                   </div>
                   <div className='stall-second'>
-                    <a href="#"><img src="./images/home/home-find_map.svg" alt="找地圖攤位" /></a>
+                    <Link to="/Find_map"><img src="./images/home/home-find_map.svg" alt="找地圖攤位" /></Link>
                   </div>
                   <div className='stall-third'>
-                    <a href="#"><img src="./images/home/home-find-schedule.svg" alt="找行程攤位" /></a>
+                    <Link to="/Find_schedule"><img src="./images/home/home-find-schedule.svg" alt="找行程攤位" /></Link>
                   </div>
                 </div>
               </div>
@@ -129,39 +148,20 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              <div className='home-card'>
-                <div>
-                  <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
-                </div>
-                <div className='home-card-item'>
-                  <p>2025.6.15<span>某某某</span></p>
-                  <div>
-                    <p>城市裡的一場迷你旅行：</p>
-                    <p>我在市集中發現的生活靈感</p>
-                  </div>
-                </div>
-              </div>
-              <div className='home-card'>
-                <div>
-                  <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
-                </div>
-                <div className='home-card-item'>
-                  <p>2025.6.15<span>某某某</span></p>
-                  <div>
-                    <p>城市裡的一場迷你旅行：</p>
-                    <p>我在市集中發現的生活靈感</p>
-                  </div>
-                </div>
-              </div>
               <div className='home-button'>
                 <Button />
               </div>
             </div>
           </div>
-          <PageTop/>
-          {/* <div ref={topRef}>
-            <button onClick={gotoTop}>回頂端</button>
-          </div> */}
+          <PageTop />
+
+
+
+
+
+
+
+
 
 
 
@@ -191,33 +191,20 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default Home
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

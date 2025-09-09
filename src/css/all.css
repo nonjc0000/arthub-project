@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.member_login_main .login_right .login_form .form_options .remember_me, .stall_register_main, .stall_register_main .stall_register, .stall_register_main .register, .stall_register_main .register .register_box, .stall_register_main .register .register_box .register_form .contact .checkbox .type_box, .event_info_main, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.member_login_main .login_right .login_form .form_options .remember_me, .stall_register_main, .stall_register_main .stall_register, .stall_register_main .register, .stall_register_main .register .register_box, .stall_register_main .register .register_box .register_form .contact .checkbox .type_box, .event_info_main, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .stall_map_main .stall_map, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,7 +32,7 @@
   background: none;
 }
 
-.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
+.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -2378,17 +2378,35 @@ a {
   width: 50%;
   height: auto;
 }
+.stall-wrap .stall-item .stall-first:hover {
+  transform: scale(1.1);
+}
+.stall-wrap .stall-item .stall-first:active {
+  transform: scale(1.1);
+}
 .stall-wrap .stall-item .stall-second {
   width: 60%;
   height: auto;
   margin-top: 20%;
   margin-left: -15%;
 }
+.stall-wrap .stall-item .stall-second:hover {
+  transform: scale(1.1);
+}
+.stall-wrap .stall-item .stall-second:active {
+  transform: scale(1.1);
+}
 .stall-wrap .stall-item .stall-third {
   width: 40%;
   height: auto;
-  margin-top: 40%;
-  margin-left: -90%;
+  margin-top: 35%;
+  margin-left: -96%;
+}
+.stall-wrap .stall-item .stall-third:hover {
+  transform: scale(1.1);
+}
+.stall-wrap .stall-item .stall-third:active {
+  transform: scale(1.1);
 }
 
 .date-box {
@@ -2616,6 +2634,7 @@ a {
   right: 0;
   bottom: 0;
   border: 1px solid black;
+  border-right: none;
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
 }
@@ -2660,7 +2679,7 @@ a {
   padding-left: 20px;
   color: #6c757d;
 }
-.home-card .home-card-item .home-card-p {
+.home-card .home-card-item .home-card-p p {
   color: #39413A;
 }
 .home-card .card-txt {
@@ -2668,10 +2687,11 @@ a {
 }
 
 .home-button {
-  position: relative;
+  position: absolute;
   z-index: 3;
   display: flex;
-  margin-right: 50px;
+  right: 10%;
+  top: 95%;
   justify-content: flex-end;
   align-items: flex-end;
 }
@@ -3669,6 +3689,7 @@ a {
 .stall_map_main {
   height: 100%;
   /* 攤位卡片 */
+  /* 攤位陣列 */
   /* 圖片裝飾 */
 }
 .stall_map_main .stall_map_container {
@@ -3683,27 +3704,23 @@ a {
   height: 400px;
   background-color: #fff;
 }
-.stall_map_main .stall_map .stalls_1 {
-  width: 70px;
-  border: 1px solid red;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-}
-.stall_map_main .stall_map .stalls_1 img {
-  width: 30px;
-}
 .stall_map_main .type_btn_box {
   display: flex;
   gap: 30px;
   justify-content: center;
+  /* 不同按鈕的顏色設定 */
 }
 .stall_map_main .type_btn_box button {
   cursor: pointer;
 }
+.stall_map_main .type_btn_box button img {
+  margin-bottom: 5px;
+}
 .stall_map_main .type_btn_box button span {
   position: relative;
-  padding: 3px;
+  margin-top: 5px;
+  padding: 0 6px;
+  /* 修正：將 .active 移到 span 的巢狀內 */
 }
 .stall_map_main .type_btn_box button span::before {
   content: "";
@@ -3712,14 +3729,37 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s;
   z-index: -1;
 }
-.stall_map_main .type_btn_box button .active::before {
+.stall_map_main .type_btn_box button span.active::before {
   transform: scaleX(1);
+}
+.stall_map_main .type_btn_box .btn1 span::before,
+.stall_map_main .type_btn_box .btn1 span.active::before {
+  background-color: #E5BE23;
+}
+.stall_map_main .type_btn_box .btn2 span::before,
+.stall_map_main .type_btn_box .btn2 span.active::before {
+  background-color: #D06658;
+}
+.stall_map_main .type_btn_box .btn3 span::before,
+.stall_map_main .type_btn_box .btn3 span.active::before {
+  background-color: #8ACEC6;
+}
+.stall_map_main .type_btn_box .btn4 span::before,
+.stall_map_main .type_btn_box .btn4 span.active::before {
+  background-color: #53B99F;
+}
+.stall_map_main .type_btn_box .btn5 span::before,
+.stall_map_main .type_btn_box .btn5 span.active::before {
+  background-color: #ED9B4A;
+}
+.stall_map_main .type_btn_box .btn6 span::before,
+.stall_map_main .type_btn_box .btn6 span.active::before {
+  background-color: #EAABAB;
 }
 .stall_map_main .stall_search_box {
   border-radius: 30px;
@@ -3843,10 +3883,17 @@ a {
 }
 .stall_map_main .stall_card .stall_card_body .title {
   height: 33px;
+  padding: 0 10px;
 }
 .stall_map_main .stall_card .stall_card_body .title p {
   font-weight: 700;
   font-size: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.stall_map_main .stall_card .stall_card_body .title p:hover {
+  display: initial;
 }
 .stall_map_main .stall_card .stall_card_body .btn_box {
   display: flex;
@@ -3869,11 +3916,11 @@ a {
   cursor: pointer;
 }
 .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button img {
-  width: 17px;
-  height: 17px;
+  width: 20px;
 }
 .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box {
   background-color: #413B35;
+  gap: 5px;
 }
 .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box button img {
   width: 17px;
@@ -3898,6 +3945,44 @@ a {
   font-weight: 700;
   color: #6c757d;
 }
+.stall_map_main .stalls_1 {
+  display: flex;
+  gap: 25px;
+}
+.stall_map_main .stalls_1 .stall_wrap1 {
+  padding: 20px;
+  border: 2px dashed #6c757d;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 150px;
+  place-items: center;
+  border-radius: 10px;
+}
+.stall_map_main .stalls_1 .stalls_2 {
+  gap: 25px;
+}
+.stall_map_main .stalls_1 .stalls_2 .stall_wrap2 {
+  padding: 20px;
+  border: 2px dashed #6c757d;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  border-radius: 10px;
+}
+.stall_map_main .stalls_1 .stalls_2 .stalls_3 {
+  display: flex;
+  gap: 20px;
+}
+.stall_map_main .stalls_1 .stalls_2 .stall_wrap3,
+.stall_map_main .stalls_1 .stalls_2 .stall_wrap4 {
+  padding: 20px;
+  border: 2px dashed #6c757d;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  border-radius: 10px;
+}
 .stall_map_main .stall_map_img1,
 .stall_map_main .stall_map_img2,
 .stall_map_main .stall_map_img3,
@@ -3920,7 +4005,7 @@ a {
   left: 35px;
 }
 .stall_map_main .stall_map_img4 {
-  z-index: -1;
+  z-index: -2;
   top: 400px;
   left: 0px;
   width: 90%;
@@ -3928,6 +4013,13 @@ a {
 .stall_map_main .stall_box {
   position: relative;
   display: inline-block;
+}
+.stall_map_main .stall_box .stall_icon {
+  width: 40px;
+}
+.stall_map_main .stall_box .stall_icon img {
+  width: 100%;
+  object-fit: cover;
 }
 .stall_map_main .stall_box:hover .tooltip_card {
   display: block;
@@ -3942,8 +4034,8 @@ a {
   z-index: 1;
 }
 .stall_map_main .stall_map_card_sm {
-  width: 180px;
-  height: 210px;
+  width: 190px;
+  height: 220px;
   border-radius: 30px;
   background-color: #fff;
   border: 1px solid #000;
@@ -3982,18 +4074,28 @@ a {
   padding-top: 3px;
 }
 .stall_map_main .stall_map_card_sm .body .title p {
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-weight: 700;
   font-size: 1rem;
+}
+.stall_map_main .stall_map_card_sm .body .title p:hover {
+  display: initial;
 }
 .stall_map_main .stall_map_card_sm .body .tag_box {
   display: flex;
   gap: 10px;
+  padding: 0 5px;
+  margin-top: 5px;
 }
 .stall_map_main .stall_map_card_sm .body .tag_box p {
-  width: 50px;
+  width: 55px;
   border-radius: 999px;
   background-color: #ED972E;
   color: #fff;
+  padding: 0 1px;
 }
 
 .event_info_main {

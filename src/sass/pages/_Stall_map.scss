@@ -4,8 +4,14 @@
 
 
 
+
+
+
+
 .stall_map_main {
     height: 100%;
+
+
 
 
     .stall_map_container {
@@ -22,78 +28,103 @@
 
 
 
+
+
+
+
+
+
+
+
     .stall_map {
         border: 5px solid $secondary;
         width: $w-60;
         height: 400px;
         background-color: $white;
-
-
-        .stalls_1 {
-            width: 70px;
-            border: 1px solid red;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5px;
-
-
-            img {
-                width: 30px;
-            }
-        }
+        @extend %flex-center;
     }
+
+
+
+
 
 
 
 
     .type_btn_box {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
 
 
+    button {
+        @extend %remove_form_style;
+        cursor: pointer;
+        img{
+            margin-bottom: 5px;
+        }
 
 
-        button {
-            @extend %remove_form_style;
-            cursor: pointer;
+        span {
+            position: relative;
+            margin-top: 5px;
+            padding:0 6px;
 
 
-            span {
-                position: relative;
-                // margin-top: 15px;
-                padding: 3px;
-
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background-color: #ccc;
-                    transform: scaleX(0);
-                    transform-origin: left;
-                    transition: transform 0.4s;
-                    z-index: -1;
-                }
-
-
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.4s;
+                z-index: -1;
             }
 
 
-            .active {
+            /* 修正：將 .active 移到 span 的巢狀內 */
+            &.active {
                 &::before {
-                    transform: scaleX(1);
-
-
+                    transform: scaleX(1); //背景填滿
                 }
-
-
             }
         }
     }
+
+
+    /* 不同按鈕的顏色設定 */
+    .btn1 span::before,
+    .btn1 span.active::before {
+        background-color: #E5BE23;
+    }
+    .btn2 span::before,
+    .btn2 span.active::before {
+        background-color: #D06658;
+    }
+    .btn3 span::before,
+    .btn3 span.active::before {
+        background-color: #8ACEC6;
+    }
+    .btn4 span::before,
+    .btn4 span.active::before {
+        background-color: #53B99F;
+    }
+    .btn5 span::before,
+    .btn5 span.active::before {
+        background-color: #ED9B4A;
+    }
+    .btn6 span::before,
+    .btn6 span.active::before {
+        background-color: #EAABAB;
+    }
+}
+
+
+
+
 
 
 
@@ -109,8 +140,16 @@
 
 
 
+
+
+
+
         .stall_search_filter {
             display: flex;
+
+
+
+
 
 
 
@@ -118,6 +157,10 @@
             background-color: $white;
             height: 40px;
             gap: 15px;
+
+
+
+
 
 
 
@@ -131,6 +174,10 @@
 
 
 
+
+
+
+
             .search_box {
                 border-radius: $rad-lg;
                 border: 1px solid $black;
@@ -138,7 +185,13 @@
                 height: 30px;
 
 
+
+
             }
+
+
+
+
 
 
 
@@ -146,6 +199,10 @@
             .btn_box {
                 display: flex;
                 gap: 15px;
+
+
+
+
 
 
 
@@ -168,12 +225,24 @@
 
 
 
+
+
+
+
+
+
+
+
                     img {
                         width: 15px;
                         height: auto;
                     }
                 }
             }
+
+
+
+
 
 
 
@@ -190,6 +259,10 @@
 
 
 
+
+
+
+
                 select {
                     padding-top: 1px;
                     color: $text;
@@ -198,6 +271,10 @@
                 }
             }
         }
+
+
+
+
 
 
 
@@ -214,8 +291,14 @@
 
 
 
+
+
+
+
         }
     }
+
+
 
 
     /* 攤位卡片 */
@@ -227,9 +310,13 @@
         border: 1px solid $text;
 
 
+
+
         p {
             font-size: $f-s-xs;
         }
+
+
 
 
         .stall_card_wrap {
@@ -241,10 +328,14 @@
             background-color: #ccc;
 
 
+
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 margin: $spacing-xs;
+
+
 
 
                 .like,
@@ -257,6 +348,8 @@
                 }
 
 
+
+
                 .like {
                     display: flex;
                     padding: 0 5px;
@@ -265,9 +358,13 @@
                     align-items: center;
 
 
+
+
                     p {
                         padding-top: 1px;
                     }
+
+
 
 
                     img {
@@ -277,8 +374,12 @@
                 }
 
 
+
+
                 .num {
                     @extend %flex-center;
+
+
 
 
                     p {
@@ -288,10 +389,14 @@
             }
 
 
+
+
             .bottom {
                 display: flex;
                 margin: $spacing-xs;
                 gap: $spacing-xxs ;
+
+
 
 
                 p {
@@ -306,21 +411,40 @@
         }
 
 
+
+
         .stall_card_body {
             .title {
                 @extend %flex-center;
                 height: 33px;
+                padding: 0 $spacing-xs;
+
+
 
 
                 p {
                     font-weight: $f-w-b;
                     font-size: $f-s-md;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+
+
+                    &:hover {
+                        display: initial;
+                    }
                 }
 
 
 
 
+
+
+
+
             }
+
+
 
 
             button,
@@ -329,10 +453,14 @@
             }
 
 
+
+
             .btn_box {
                 display: flex;
                 gap: $spacing-xxs;
                 justify-content: center;
+
+
 
 
                 .like_btn_box,
@@ -343,11 +471,11 @@
                 }
 
 
+
+
                 .like_btn_box {
                     background-color: $accent;
                     @extend %flex-center;
-
-
 
 
 
@@ -360,19 +488,21 @@
                         cursor: pointer;
 
 
-
-
                         img {
-                            width: 17px;
-                            height: 17px;
+                            width: 20px;
                         }
                     }
                 }
 
 
+
+
                 .social_btn_box {
                     background-color: $dark;
                     @extend %flex-center;
+                    gap: $spacing-xxs;
+
+
 
 
                     button {
@@ -385,9 +515,13 @@
             }
 
 
+
+
             .review_box {
                 @extend %flex-center;
                 height: 30px;
+
+
 
 
                 .review {
@@ -398,12 +532,16 @@
                     display: flex;
 
 
+
+
                     input {
                         width: 100%;
                         height: 100%;
                     }
                 }
             }
+
+
 
 
             .stall_card_review {
@@ -417,11 +555,71 @@
 
 
 
+
+
+
+
             }
+
+
 
 
         }
     }
+
+
+    /* 攤位陣列 */
+    .stalls_1 {
+        display: flex;
+        gap: $spacing-lg;
+
+
+        .stall_wrap1 {
+            padding: $spacing-md;
+            border: 2px dashed $gray-600;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: $spacing-md;
+            width: 150px;
+            place-items: center;
+            border-radius: 10px;
+        }
+
+
+        .stalls_2 {
+            @extend %flex-column;
+            gap: $spacing-lg;
+
+
+            .stall_wrap2 {
+                padding: $spacing-md;
+                border: 2px dashed $gray-600;
+                display: flex;
+                gap: $spacing-md;
+                justify-content: center;
+                border-radius: 10px;
+            }
+
+
+            .stalls_3 {
+                display: flex;
+                gap: $spacing-md;
+            }
+
+
+            .stall_wrap3,
+            .stall_wrap4 {
+                padding: $spacing-md;
+                border: 2px dashed $gray-600;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: $spacing-md;
+                border-radius: 10px;
+            }
+        }
+    }
+
+
 
 
     /* 圖片裝飾 */
@@ -433,13 +631,19 @@
     }
 
 
+
+
     .stall_map_img1 {
         z-index: 1;
         right: 200px;
         top: 200px;
 
 
+
+
     }
+
+
 
 
     .stall_map_img2 {
@@ -449,6 +653,8 @@
     }
 
 
+
+
     .stall_map_img3 {
         z-index: 1;
         bottom: -760px;
@@ -456,12 +662,18 @@
     }
 
 
+
+
     .stall_map_img4 {
-        z-index: -1;
+        z-index: -2;
         top: 400px;
         left: 0px;
         width: 90%;
     }
+
+
+
+
 
 
 
@@ -471,12 +683,27 @@
         display: inline-block;
 
 
+        .stall_icon {
+            width: 40px;
+
+
+            img {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+
+
+
         &:hover {
             .tooltip_card {
                 display: block;
             }
         }
     }
+
+
 
 
     .tooltip_card {
@@ -489,12 +716,16 @@
         z-index: 1;
 
 
+
+
     }
 
 
+
+
     .stall_map_card_sm {
-        width: 180px;
-        height: 210px;
+        width: 190px;
+        height: 220px;
         border-radius: $rad-lg;
         background-color: $white;
         border: 1px solid $black;
@@ -503,16 +734,22 @@
         display: inline-block;
 
 
+
+
         .sm_card_wrap {
             height: 135px;
             background-color: #ccc;
             border-bottom: 1px solid $black;
 
 
+
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 padding: 10px;
+
+
 
 
                 figure {
@@ -523,13 +760,19 @@
                     border-radius: $rad-ex;
 
 
+
+
                     gap: 10px;
+
+
 
 
                     img {
                         width: 12px;
                     }
                 }
+
+
 
 
                 .num {
@@ -540,12 +783,18 @@
                     border-radius: $rad-ex;
 
 
+
+
                 }
             }
         }
 
 
+
+
         .body {
+
+
 
 
             .title {
@@ -554,24 +803,42 @@
                 padding-top: 3px;
 
 
+
+
                 p {
+                    padding: 0 $spacing-xs;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
                     font-weight: $f-w-b;
                     font-size: $f-s-md;
+
+
+                    &:hover {
+                        display: initial;
+                    }
                 }
             }
+
+
 
 
             .tag_box {
                 display: flex;
                 gap: 10px;
+                padding: 0 $spacing-xxs;
+                margin-top: $spacing-xxs;
+
+
 
 
                 p {
                     @extend %flex-center;
-                    width: 50px;
+                    width: 55px;
                     border-radius: $rad-ex;
                     background-color: $accent;
                     color: $white;
+                    padding: 0 1px;
                 }
             }
         }

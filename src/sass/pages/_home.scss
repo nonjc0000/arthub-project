@@ -4,16 +4,24 @@
 
 
 
+
+
+
+
 .home-bg {
     background-color: $background;
     overflow: hidden; // 隱藏水平滾動條
 }
 
 
+
+
 .home-wrap {
     width: $w-100;
     height: $h-100vh;
     margin: 5% 0 auto auto;
+
+
 
 
     @media (max-width: 992px) {
@@ -28,10 +36,18 @@
 
 
 
+
+
+
+
 // 單純用flex並排
 .home-top {
     display: flex;
     justify-content: center;
+
+
+
+
 
 
 
@@ -49,6 +65,10 @@
 
 
 
+
+
+
+
 .home-heading {
     width: $w-40;
     margin-left: 120px;
@@ -58,9 +78,15 @@
 
 
 
+
+
+
+
     @media (max-width: 992px) {
         width: 100%;
     }
+
+
 
 
     h2 {
@@ -72,6 +98,8 @@
         color: $dark;
 
 
+
+
         // @media (max-width: 1440px) {
         //     font-size: $f-s-xxxxl; // 稍微縮小字體
         //     padding-left: 20px; // 減少左內距
@@ -79,10 +107,16 @@
     }
 
 
+
+
     .arrow {
         width: 4%;
         margin-top: 25px;
         margin-left: 60px;
+
+
+
+
 
 
 
@@ -94,11 +128,15 @@
 }
 
 
+
+
 .stall-wrap {
     margin: 0 auto;
     margin-right: 5%;
     width: $w-60;
     height: auto;
+
+
 
 
     @media (max-width: 992px) {
@@ -108,9 +146,15 @@
 
 
 
+
+
+
+
     // @media (max-width: 1440px) {
     //     margin-right: 40px; // 從 100px 大幅減少
     // }
+
+
 
 
     @media (max-width: 992px) {
@@ -118,9 +162,13 @@
     }
 
 
+
+
     .stall-item {
         width: 100%;
         display: flex;
+
+
 
 
         @media (max-width:992px) {
@@ -131,15 +179,63 @@
 
 
 
+
+
+
+
         a {
             display: block;
         }
 
 
+
+
         .stall-first {
             width: $w-50;
             height: auto;
+            // animation: translatup 1s infinite;
+
+
+            &:hover {
+                transform: scale(1.1);
+            }
+            &:active {
+                transform: scale(1.1);
+            }
         }
+
+
+        // @keyframes translatup {
+        //     0% {
+        //         transform: translateY(0);
+        //     }
+
+
+        //     50% {
+        //         transform: translateY(-5px);
+        //     }
+
+
+        //     100% {
+        //         transform: translateY(0);
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -161,22 +257,35 @@
             height: auto;
             margin-top: 20%;
             margin-left: -15%;
-            // left: 33%;
-            // top: 25%;
+            &:hover {
+                transform: scale(1.1);
+            }
+            &:active {
+                transform: scale(1.1);
+            }
         }
+
+
 
 
         .stall-third {
             width: $w-40;
             height: auto;
-            // position: absolute;
-            margin-top: 40%;
-            margin-left: -90%;
-            // top: 48%;
-            // left: 3%;
+            margin-top: 35%;
+            margin-left: -96%;
+            &:hover {
+                transform: scale(1.1);
+            }
+            &:active {
+                transform: scale(1.1);
+            }
         }
     }
 }
+
+
+
+
 
 
 
@@ -193,11 +302,15 @@
     font-size: $f-s-xxxxl;
 
 
+
+
     // @media (max-width: 992px) {
     //     margin-top: 30px; // 正值
     //     margin-right: 20px;
     //     justify-content: center;
     // }
+
+
 
 
     .slash {
@@ -209,10 +322,16 @@
 
 
 
+
+
+
+
         @media (max-width: 1440px) {
             height: 4rem; // 稍微縮短
         }
     }
+
+
 
 
     .date-item {
@@ -224,10 +343,16 @@
 
 
 
+
+
+
+
         @media (max-width: 1440px) {
             gap: 15px; // 縮小間距
         }
     }
+
+
 
 
     .weekday {
@@ -235,9 +360,15 @@
     }
 
 
+
+
     .weather {
         width: 65px;
         height: 65px;
+
+
+
+
 
 
 
@@ -249,15 +380,21 @@
     }
 
 
+
+
     .situation {
         font-size: $f-s-xs;
     }
 }
 
 
+
+
 .home-dec {
     position: relative;
     height: 30vh;
+
+
     .home-dec-im {
         max-width: 30%;
         position: absolute;
@@ -273,6 +410,14 @@
 
 
 
+
+
+
+
+
+
+
+
 // 第二塊
 .home-hot-wrap {
     width: 100%;
@@ -280,40 +425,52 @@
     position: relative;
 
 
-.home-drink {
-    max-width: 10%;
-    position: absolute;
-    z-index: 3;
-    top: 20%;
-    left: 6%;
-}
 
 
-.home-ring {
-    max-width: 10%;
-    position: absolute;
-    z-index: 3;
-    top: 18%;
-    right: 7%;
-}
+    .home-drink {
+        max-width: 10%;
+        position: absolute;
+        z-index: 3;
+        top: 20%;
+        left: 6%;
+    }
 
 
-.home-hat {
-    max-width: 10%;
-    position: absolute;
-    z-index: 3;
-    left: 5%;
-    bottom: 0;
-}
 
 
-.home-book {
-    max-width: 8%;
-    position: absolute;
-    z-index: 3;
-    right: 4%;
-    bottom: 10%;
-}
+    .home-ring {
+        max-width: 10%;
+        position: absolute;
+        z-index: 3;
+        top: 18%;
+        right: 7%;
+    }
+
+
+
+
+    .home-hat {
+        max-width: 10%;
+        position: absolute;
+        z-index: 3;
+        left: 5%;
+        bottom: 0;
+    }
+
+
+
+
+    .home-book {
+        max-width: 8%;
+        position: absolute;
+        z-index: 3;
+        right: 4%;
+        bottom: 10%;
+    }
+
+
+
+
 
 
 
@@ -325,8 +482,14 @@
         margin-bottom: 60px;
 
 
+
+
         h3 {
             font-size: $f-s-xxxxl;
+
+
+
+
 
 
 
@@ -337,6 +500,8 @@
         }
 
 
+
+
         p {
             font-family: $family-en;
             font-size: $f-s-xl;
@@ -345,9 +510,13 @@
 }
 
 
+
+
 .pic-wrap {
     max-width: 80%;
     margin: 0 auto;
+
+
 
 
     .home-pic {
@@ -357,11 +526,15 @@
         gap: 16px;
 
 
+
+
         .home-pic-fsb {
             max-width: 50%;
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+
+
 
 
             .home-pic-item {
@@ -372,13 +545,21 @@
         }
 
 
+
+
         >div:last-child {
             flex: 1; // 讓下方大圖佔剩餘空間
+
+
 
 
             a {
                 display: block;
                 height: 100%;
+
+
+
+
 
 
 
@@ -392,12 +573,18 @@
         }
 
 
+
+
         .home-pic-se {
             max-width: 50%;
             flex: 1;
             display: flex;
             justify-content: space-between;
             gap: 16px;
+
+
+
+
 
 
 
@@ -411,6 +598,10 @@
 
 
 
+
+
+
+
             .type-img {
                 width: 50%;
                 display: flex;
@@ -418,6 +609,8 @@
                 gap: 16px;
             }
         }
+
+
 
 
         img {
@@ -431,6 +624,8 @@
 }
 
 
+
+
 // 第三塊
 .home-blog {
     margin-top: 112px;
@@ -441,12 +636,16 @@
     transform: rotate(5deg);
 
 
+
+
     h3 {
         font-family: $family-display;
         font-size: $f-s-xxxxl;
         display: inline-block;
     }
 }
+
+
 
 
 .home-blog-item {
@@ -457,9 +656,15 @@
 
 
 
+
+
+
+
     @media (max-width: 1440px) {
         margin-bottom: 150px; // 稍微減少下邊距
     }
+
+
 
 
     .home-left-img {
@@ -470,12 +675,16 @@
         z-index: 1;
 
 
+
+
         img {
             display: block;
             border-top-right-radius: $rad-ex;
             border-bottom-right-radius: $rad-ex;
         }
     }
+
+
 
 
     .home-right-blog {
@@ -492,6 +701,10 @@
 
 
 
+
+
+
+
         &::before {
             content: "";
             position: absolute;
@@ -500,9 +713,12 @@
             right: 0;
             bottom: 0;
             border: 1px solid black;
+            border-right: none;
             border-top-left-radius: $rad-ex;
             border-bottom-left-radius: $rad-ex;
         }
+
+
 
 
         .home-right-txt {
@@ -514,10 +730,16 @@
 
 
 
+
+
+
+
             @media (max-width:1440px) {
                 margin-top: 10px;
             }
         }
+
+
 
 
         h3 {
@@ -531,7 +753,19 @@
 
 
 
+
+
+
+
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -551,10 +785,22 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-card {
     @extend %flex-center;
     padding-left: 100px;
     margin-bottom: 20px;
+
+
+
+
 
 
 
@@ -569,9 +815,17 @@
 
 
 
+
+
+
+
     .home-card-item {
         @extend %flex-column;
         margin-left: 28px;
+
+
+
+
 
 
 
@@ -581,16 +835,26 @@
         }
 
 
+
+
         span {
             padding-left: 20px;
             color: $gray-600;
         }
 
 
+
+
         .home-card-p {
-            color: $text;
+            p {
+                color: $text;
+            }
         }
     }
+
+
+
+
 
 
 
@@ -607,11 +871,20 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-button {
-    position: relative;
+    position: absolute;
     z-index: 3;
     display: flex;
-    margin-right: 50px;
+    right: 10%;
+    top: 95%;
     justify-content: flex-end;
     align-items: flex-end;
 }

@@ -4,6 +4,13 @@ import Stall_map_card_sm from '../components/Stall_map_card_sm'
 import { useMemo, useState } from 'react'
 import $ from 'jquery'
 import { useEffect } from 'react'
+import stall from '../data/stall.json'
+
+
+
+
+
+
 
 
 
@@ -11,71 +18,13 @@ import { useEffect } from 'react'
 
 
 const Stall_map = () => {
-    // 攤位資料
-    const arrStall = [
-        {
-            id: 1,
-            name: '食物',
-            num: '01',
-            tag: '美食',
-        },
-        {
-            id: 2,
-            name: '衣服',
-            num: '02',
-            tag: '服飾',
-        },
-        {
-            id: 3,
-            name: '狗狗',
-            num: '03',
-            tag: '寵物',
-        },
-        {
-            id: 4,
-            name: '花',
-            num: '04',
-            tag: '植栽',
-        },
-        {
-            id: 5,
-            name: '蘋果',
-            num: '05',
-            tag: '美食',
-        },
-        {
-            id: 6,
-            name: '貓貓',
-            num: '06',
-            tag: '寵物',
-        },
-        {
-            id: 7,
-            name: '蛋餅',
-            num: '07',
-            tag: '美食',
-        },
-        {
-            id: 8,
-            name: '蕨',
-            num: '08',
-            tag: '植栽',
-        },
-        {
-            id: 9,
-            name: '包包',
-            num: '09',
-            tag: '服飾',
-        },
+    // 攤位資料， 用 state 存資料
+    const [arrStall] = useState(stall);
 
 
-    ]
-
-
+    // 搜尋區
     // 搜尋變數，預設為空字串
     const [search, setSearch] = useState('');
-
-
     // 建立搜尋的函式
     const filterStall = useMemo(() => {
         //搜尋
@@ -85,15 +34,48 @@ const Stall_map = () => {
                 return (stall.name.match(search),
                     stall.num.match(search))
             })
-
-
     }, [search]);
 
 
 
 
-    // 分類按鈕變色
-    const [active,setActive]=useState(false);
+    // 按鈕區
+    // 記錄已經選中的按鈕
+    const [activeButtons, setActiveButtons] = useState([]);
+
+
+    // 按鈕資料
+    const buttonData = [
+        { id: 1, type: 'handmade', text: '手做', img: './images/Stall_map/btn_handMade.svg' },
+        { id: 2, type: 'food', text: '食物', img: './images/Stall_map/btn_food.svg' },
+        { id: 3, type: 'clothes', text: '服飾', img: './images/Stall_map/btn_clothes.svg' },
+        { id: 4, type: 'plant', text: '植栽', img: './images/Stall_map/btn_plant.svg' },
+        { id: 5, type: 'pet', text: '寵物', img: './images/Stall_map/btn_pet.svg' },
+        { id: 6, type: 'like', text: '收藏', img: './images/Stall_map/btn_like.svg' }
+    ];
+
+
+    // 如果點擊的是已選中的按鈕，就取消選中；否則選中它
+    const handleButtonClick = (buttonId) => {
+        setActiveButtons(prevActiveButtons => {
+            // 如果已選中，就移除；如果未選中，就添加
+            if (prevActiveButtons.includes(buttonId)) {
+                return prevActiveButtons.filter(id => id !== buttonId);
+            } else {
+                return [...prevActiveButtons, buttonId];
+            }
+        });
+    };
+    // 檢查是否選中
+    const isButtonActive = (buttonId) => {
+        return activeButtons.includes(buttonId);
+    };
+
+
+
+
+
+
 
 
 
@@ -107,6 +89,10 @@ const Stall_map = () => {
 
 
 
+
+
+
+
                 {/* 標題 */}
                 <h1 className='titleBox_h1'>
                     <img className='titleBox' src="./images/titlebox/find_type_titlebox.svg" style={{ width: '510px' }} alt='市集分類Market Type' />
@@ -115,53 +101,97 @@ const Stall_map = () => {
 
 
 
+
+
+
+
                 {/* 攤位地圖 */}
                 <div className='stall_map'>
+
+
 
 
                     <div className='stalls_1'>
 
 
-                        <div className='stall_box'>
+                        <div className='stall_wrap1'>
+                            {
+                                arrStall.slice(0, 6).map((stall) => {
+                                    return (
+                                        <Stall_map_card_sm
+                                            {...stall}
+                                        />
 
 
-                            <img src="./images/Stall_map/stall.svg" alt="" />
-
-
-                            <div className="tooltip_card">
-                                <Stall_map_card_sm />
-                            </div>
-
-
-                        </div>
-
-
-                        <div className='stall_box'>
-
-
-                            <img src="./images/Stall_map/stall.svg" alt="" />
-
-
-                            <div className="tooltip_card">
-                                <Stall_map_card_sm />
-                            </div>
+                                    )
+                                })
+                            }
 
 
                         </div>
 
 
-                        <div className='stall_box'>
+                        <div className='stalls_2'>
 
 
-                            <img src="./images/Stall_map/stall.svg" alt="" />
+                            <div className='stall_wrap2'>
+                                {
+                                    arrStall.slice(6, 12).map((stall) => {
+                                        return (
+                                            <Stall_map_card_sm
+                                                {...stall}
+                                            />
 
 
-                            <div className="tooltip_card">
-                                <Stall_map_card_sm />
+                                        )
+                                    })
+                                }
+
+
                             </div>
 
 
+                            <div className='stalls_3'>
+                                <div className='stall_wrap3'>
+                                    {
+                                        arrStall.slice(12, 18).map((stall) => {
+                                            return (
+                                                <Stall_map_card_sm
+                                                    {...stall}
+                                                />
+
+
+                                            )
+                                        })
+                                    }
+
+
+                                </div>
+                                <div className='stall_wrap4'>
+                                    {
+                                        arrStall.slice(18, 24).map((stall) => {
+                                            return (
+                                                <Stall_map_card_sm
+                                                    {...stall}
+                                                />
+
+
+                                            )
+                                        })
+                                    }
+
+
+                                </div>
+                            </div>
                         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -172,15 +202,29 @@ const Stall_map = () => {
 
 
 
+
+
+
+
                 {/* 種類按鈕 */}
                 <div className='type_btn_box'>
-                    <button onClick={() => setActive(!active)}><img src="./images/Stall_map/btn_handMade.svg" alt="手作按鈕" /><span className={active?'active':''}>手做</span></button>
-                    <button><img src="./images/Stall_map/btn_food.svg" alt="食物按鈕" />食物</button>
-                    <button><img src="./images/Stall_map/btn_clothes.svg" alt="服飾按鈕" />服飾</button>
-                    <button><img src="./images/Stall_map/btn_plant.svg" alt="植栽按鈕" />植栽</button>
-                    <button><img src="./images/Stall_map/btn_pet.svg" alt="寵物按鈕" />寵物</button>
-                    <button><img src="./images/Stall_map/btn_like.svg" alt="收藏按鈕" />收藏</button>
+                    {buttonData.map((button) => (
+                        <button
+                            key={button.id}
+                            className={`btn${button.id}`}
+                            onClick={() => handleButtonClick(button.id)}
+                        >
+                            <img src={button.img} alt={`${button.text}按鈕`} />
+                            <span className={isButtonActive(button.id) ? 'active' : ''}>
+                                {button.text}
+                            </span>
+                        </button>
+                    ))}
                 </div>
+
+
+
+
 
 
 
@@ -188,6 +232,10 @@ const Stall_map = () => {
                 {/* 攤位搜尋內容 */}
                 <div className='stall_search_box'>
                     <form action="" className='stall_search_filter'>
+
+
+
+
 
 
 
@@ -213,12 +261,28 @@ const Stall_map = () => {
 
 
 
+
+
+
+
+
+
+
+
                         {/* 按鈕 */}
                         <div className='btn_box'>
                             <button><img src="./images/Stall_map/icon_findFood.svg" alt="找食物" />找食物</button>
                             <button><img src="./images/Stall_map/icon_findItems.svg" alt="找物品" />找物品</button>
                             <button><img src="./images/Stall_map/icon_findPopular.svg" alt="找熱門" />找熱門</button>
                         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -238,14 +302,22 @@ const Stall_map = () => {
 
 
 
+
+
+
+
                     <div className='stall_search_result'>
                         {
                             filterStall.map((stall) =>
 
 
+
+
                                 <Stall_map_card {...stall} key={stall.id} />
                             )
                         }
+
+
 
 
                     </div>
@@ -259,6 +331,18 @@ const Stall_map = () => {
     )
 }
 export default Stall_map
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

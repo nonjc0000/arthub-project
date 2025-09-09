@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom'
 
 
 
+
+
+
+
 // 攤位元件
 const Stall_map_card = ({ id, name, num, tag }) => {
+
+
+
+
 
 
 
@@ -15,8 +23,16 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 
+
+
+
+
         <article className='stall_card'>
             <div className='stall_card_wrap'>
+
+
+
+
 
 
 
@@ -33,12 +49,20 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 
+
+
+
+
                 <div className='bottom'>
                     {/* tag標籤 */}
-                    <p>{tag}</p>
-
-
+                    {tag.map((singleTag, index) => (
+                        <p key={index}>{singleTag}</p>
+                    ))}
                 </div>
+
+
+
+
 
 
 
@@ -48,15 +72,19 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 
+
+
+
+
             <div className='stall_card_body'>
                 <div className='title'>
-                    <p >{name}</p>
-
-
-
-
+                    <p title={name}>{name}</p>
                 </div>
                 <div className='stall_card_btn'>
+
+
+
+
 
 
 
@@ -66,6 +94,10 @@ const Stall_map_card = ({ id, name, num, tag }) => {
                         <div className='like_btn_box'>
                             <button><img src="./images/Stall_map/icon_like.svg" alt="" />推薦</button>
                         </div>
+
+
+
+
 
 
 
@@ -80,7 +112,15 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 
+
+
+
+
                     </div>
+
+
+
+
 
 
 
@@ -96,7 +136,15 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 
+
+
+
+
                     </div>
+
+
+
+
 
 
 
@@ -110,19 +158,40 @@ const Stall_map_card = ({ id, name, num, tag }) => {
 
 
 
+
+
+
+
         </article>
     )
-           
-       
 
 
 
 
-   
+
+
+
+
+
+
+
+
+
+
 }
 
 
+
+
 export default Stall_map_card
+
+
+
+
+
+
+
+
 
 
 
