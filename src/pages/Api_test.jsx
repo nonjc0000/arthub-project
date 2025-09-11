@@ -11,9 +11,33 @@ import {
 // JavaScript JSX 版本 - 移除所有類型註解
 // POI (point of interest) array
 const locations = [
-  { key: '臺北市立美術館', location: { lat: 25.073710223497176, lng: 121.52920746197447 } },
-  { key: '臺北松山機場', location: { lat: 25.068734615867825, lng: 121.54912018214841 } },
-  { key: '大佳河濱公園', location: { lat: 25.075468275103084, lng: 121.543288188925 } },
+  { 
+    key: '臺北市立美術館', 
+    location: { lat: 25.073710223497176, lng: 121.52920746197447 },
+    eventName: '夏末微光祭',
+    date: '2025.07.14-07.15',
+    time: '9:00-18:00',
+    venue: 'city link松山壹號店',
+    tag: '夏日祭典'
+  },
+  { 
+    key: '臺北松山機場', 
+    location: { lat: 25.068734615867825, lng: 121.54912018214841 },
+    eventName: '機場藝術節',
+    date: '2025.08.01-08.02',
+    time: '10:00-19:00',
+    venue: '松山機場藝文區',
+    tag: '藝術展演'
+  },
+  { 
+    key: '大佳河濱公園', 
+    location: { lat: 25.075468275103084, lng: 121.543288188925 },
+    eventName: '河畔音樂市集',
+    date: '2025.07.20-07.21',
+    time: '15:00-21:00',
+    venue: '大佳河濱公園草地',
+    tag: '音樂祭'
+  },
 ];
 
 // 自定義 SVG 標記組件
@@ -93,21 +117,30 @@ const ReactAdvancedMarkers = (props) => {
         </AdvancedMarker>
       ))}
       
-      {/* 景點 InfoWindow */}
+      {/* 景點 InfoWindow - 修改為卡片樣式 */}
       {selectedPoi && (
         <InfoWindow
           position={selectedPoi.location}
           onCloseClick={() => setSelectedPoi(null)}
         >
-          <div className="info_window poi_info">
-            <div className="info_content">
-              <h3 className="info_title">{selectedPoi.key}</h3>
-              <p className="info_coordinates">
-                緯度: {selectedPoi.location.lat.toFixed(6)}<br />
-                經度: {selectedPoi.location.lng.toFixed(6)}
-              </p>
-              <div className="info_note">
-                點擊此標記可放大查看詳細位置
+          <div className="event_card_infowindow">
+            {/* 圖片區域 */}
+            <div className="event_image_placeholder">
+              {/* 這裡可以放實際的活動圖片 */}
+            </div>
+            
+            {/* 標籤 */}
+            <div className="event_tag">
+              # {selectedPoi.tag}
+            </div>
+            
+            {/* 活動資訊 */}
+            <div className="event_info">
+              <h3 className="event_title">{selectedPoi.eventName}</h3>
+              <div className="event_details">
+                <p className="event_date">{selectedPoi.date}</p>
+                <p className="event_time">{selectedPoi.time}</p>
+                <p className="event_venue">{selectedPoi.venue}</p>
               </div>
             </div>
           </div>
@@ -131,7 +164,7 @@ const Api_test = () => {
     }
 
     // 顯示載入狀態
-    setLocationError('正在取得位置...');
+    // setLocationError('正在取得位置...');
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -183,7 +216,6 @@ const Api_test = () => {
 
   return (
     <div className="api_test_main">
-      <h2>Api_test</h2>
       
       {/* 錯誤訊息顯示 */}
       {locationError && (

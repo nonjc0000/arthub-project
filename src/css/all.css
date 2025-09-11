@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+TC:wght@100..900&display=swap");
-.api_test_main, .register_main, .forgot_password_main, .member_login_main, .order_success_main, .about_us_main, .order_management_main, .notifications_main, .my_footprint_main, .find_map_main, .footprint_card, body, button {
+.api_test_main, .event_card_infowindow, .register_main, .forgot_password_main, .member_login_main, .order_success_main, .about_us_main, .order_management_main, .notifications_main, .my_footprint_main, .find_map_main, .footprint_card, body, button {
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
@@ -32,7 +32,7 @@
   background: none;
 }
 
-.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
+.user_sidebar_left, .event_card_infowindow .event_info .event_details, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -6835,7 +6835,7 @@ input {
   color: #c62828;
 }
 .api_test_main .map_container {
-  height: 80vh;
+  height: 100vh;
   width: 100%;
   border-radius: 7.5px;
   overflow: hidden;
@@ -6889,45 +6889,141 @@ input {
   stroke-width: 0.932033;
 }
 
-.info_window {
-  min-width: 200px;
-  font-family: "Noto Sans TC", san-serif;
-}
-.info_window.poi_info .info_content {
-  padding: 15px;
-}
-.info_window.poi_info .info_content .info_title {
-  margin: 0 0 10px 0;
-  font-size: 1rem;
-  color: #ED972E;
-  font-weight: 700;
-}
-.info_window.poi_info .info_content .info_coordinates {
-  margin: 0 0 10px 0;
+.event_card_infowindow {
+  width: 200px;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
   font-size: 0.875rem;
   color: #39413A;
+}
+@media (max-width:640px) {
+  .event_card_infowindow {
+    width: 180px;
+    font-size: 0.75rem;
+  }
+}
+.event_card_infowindow .event_image_placeholder {
+  width: 100%;
+  height: 120px;
+  background-color: #DEBFA0;
+  background-image: url("/images/Api_test/pexels-minan1398-1313814.jpg");
+  background-size: cover;
+  position: relative;
+  border-radius: 15px 15px 0 0;
+}
+@media (max-width:640px) {
+  .event_card_infowindow .event_image_placeholder {
+    height: 100px;
+  }
+}
+.event_card_infowindow .event_tag {
+  position: absolute;
+  top: 15px;
+  right: 0;
+  background-color: #ED972E;
+  color: #fff;
+  padding: 4px 15px;
+  border-radius: 999px 0 0 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+@media (max-width:640px) {
+  .event_card_infowindow .event_tag {
+    font-size: 10px;
+    padding: 3px 10px;
+  }
+}
+.event_card_infowindow .event_info {
+  padding: 15px;
+  border-top: 1px solid rgba(65, 59, 53, 0.1);
+}
+@media (max-width:640px) {
+  .event_card_infowindow .event_info {
+    padding: 10px;
+  }
+}
+.event_card_infowindow .event_info .event_title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #39413A;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+@media (max-width:640px) {
+  .event_card_infowindow .event_info .event_title {
+    font-size: 0.875rem;
+    margin-bottom: 4px;
+  }
+}
+.event_card_infowindow .event_info .event_details {
+  gap: 2px;
+}
+.event_card_infowindow .event_info .event_details p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(57, 65, 58, 0.8);
   line-height: 1.4;
 }
-.info_window.poi_info .info_content .info_note {
-  font-size: 0.75rem;
-  color: #6c757d;
-  border-top: 1px solid #eee;
-  padding-top: 10px;
-  margin-top: 10px;
+@media (max-width:640px) {
+  .event_card_infowindow .event_info .event_details p {
+    font-size: 10px;
+  }
+}
+.event_card_infowindow .event_info .event_details .event_date {
+  font-weight: 500;
+  color: #39413A;
+}
+.event_card_infowindow .event_info .event_details .event_time {
+  color: rgba(57, 65, 58, 0.7);
+}
+.event_card_infowindow .event_info .event_details .event_venue {
+  color: rgba(57, 65, 58, 0.6);
+  font-style: italic;
+}
+
+.info_window {
+  font-family: "Noto Sans TC", san-serif;
 }
 .info_window.current_location_info .info_content {
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 .info_window.current_location_info .info_content .info_title {
   margin: 0 0 10px 0;
   font-size: 1rem;
   font-weight: 700;
-  color: #4285F4;
+  color: #ED972E;
 }
 .info_window.current_location_info .info_content .info_coordinates {
   margin: 0;
   font-size: 0.875rem;
   color: #39413A;
+}
+
+.gm-style-iw-ch {
+  display: none;
+}
+
+.gm-style-iw-chr {
+  position: relative;
+  margin-bottom: 40px;
+}
+.gm-style-iw-chr .gm-ui-hover-effect {
+  position: absolute !important;
+  right: 0;
+  top: 0;
+}
+
+.gm-style .gm-style-iw-c {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #000;
+  border-radius: 30px;
+  padding: 17px;
+}
+
+.gm-style .gm-style-iw-tc::after {
+  display: none;
 }
 
 .location_control_button {
@@ -6936,7 +7032,7 @@ input {
   border-radius: 2px !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
   cursor: pointer !important;
-  font-family: Roboto, Arial, sans-serif !important;
+  font-family: "DM Sans", "Noto Sans TC", san-serif !important;
   font-size: 0.875rem !important;
   line-height: 30px !important;
   margin: 10px !important;
@@ -6995,17 +7091,14 @@ input {
   .info_window {
     min-width: 180px;
   }
-  .info_window.poi_info .info_content, .info_window.current_location_info .info_content {
+  .info_window.current_location_info .info_content {
     padding: 10px;
   }
-  .info_window.poi_info .info_content .info_title, .info_window.current_location_info .info_content .info_title {
+  .info_window.current_location_info .info_content .info_title {
     font-size: 0.875rem;
   }
-  .info_window.poi_info .info_content .info_coordinates, .info_window.current_location_info .info_content .info_coordinates {
+  .info_window.current_location_info .info_content .info_coordinates {
     font-size: 0.75rem;
-  }
-  .info_window.poi_info .info_content .info_note, .info_window.current_location_info .info_content .info_note {
-    font-size: 10px;
   }
   .location_control_button {
     font-size: 0.75rem !important;
