@@ -19,53 +19,20 @@ const locations = [
 // 自定義 SVG 標記組件
 const CustomSvgMarker = () => {
   return (
-    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="13.674" cy="13.7591" r="9.78635" fill="#C76666" stroke="#C76666" strokeWidth="0.932033" />
-      <circle cx="13.674" cy="13.759" r="12.5825" stroke="#C76666" strokeWidth="0.932033" fill="none" />
-    </svg>
+    <div className="custom_marker poi_marker">
+      <svg className="poi_marker_svg" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle className='inner' cx="13.674" cy="13.7591" r="9.78635" />
+        <circle className='outer' cx="13.674" cy="13.759" r="12.5825" strokeWidth="0.932033" fill="none" />
+      </svg>
+    </div>
   );
 };
 
 // 目前位置標記組件
 const CurrentLocationMarker = () => {
   return (
-    <div style={{
-      width: '20px',
-      height: '20px',
-      backgroundColor: '#4285F4',
-      border: '3px solid #fff',
-      borderRadius: '50%',
-      boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
-      position: 'relative'
-    }}>
-      {/* 外圈脈衝效果 */}
-      <div style={{
-        position: 'absolute',
-        top: '-10px',
-        left: '-10px',
-        width: '40px',
-        height: '40px',
-        border: '2px solid #4285F4',
-        borderRadius: '50%',
-        opacity: 0.3,
-        animation: 'pulse 2s infinite'
-      }} />
-      <style jsx>{`
-        @keyframes pulse {
-          0% {
-            transform: scale(0.8);
-            opacity: 0.3;
-          }
-          50% {
-            transform: scale(1.2);
-            opacity: 0.1;
-          }
-          100% {
-            transform: scale(0.8);
-            opacity: 0.3;
-          }
-        }
-      `}</style>
+    <div className="custom_marker current_location">
+      <div className="location_marker_container"></div>
     </div>
   );
 };
@@ -80,28 +47,7 @@ const LocationControl = ({ onLocationClick }) => {
     // 創建自定義控制按鈕
     const locationButton = document.createElement('button');
     locationButton.textContent = '📍 目前位置';
-    locationButton.style.cssText = `
-      background: white;
-      border: 2px solid #dadce0;
-      border-radius: 2px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      cursor: pointer;
-      font-family: Roboto,Arial,sans-serif;
-      font-size: 14px;
-      line-height: 30px;
-      margin: 8px;
-      padding: 0 12px;
-      text-align: center;
-      user-select: none;
-    `;
-
-    // 添加懸停效果
-    locationButton.addEventListener('mouseenter', () => {
-      locationButton.style.backgroundColor = '#f1f3f4';
-    });
-    locationButton.addEventListener('mouseleave', () => {
-      locationButton.style.backgroundColor = 'white';
-    });
+    locationButton.className = 'location_control_button';
 
     locationButton.addEventListener('click', onLocationClick);
 
@@ -153,22 +99,16 @@ const ReactAdvancedMarkers = (props) => {
           position={selectedPoi.location}
           onCloseClick={() => setSelectedPoi(null)}
         >
-          <div style={{ padding: '8px', minWidth: '200px' }}>
-            <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#C76666' }}>
-              {selectedPoi.key}
-            </h3>
-            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>
-              緯度: {selectedPoi.location.lat.toFixed(6)}<br />
-              經度: {selectedPoi.location.lng.toFixed(6)}
-            </p>
-            <div style={{ 
-              fontSize: '12px', 
-              color: '#888',
-              borderTop: '1px solid #eee',
-              paddingTop: '8px',
-              marginTop: '8px'
-            }}>
-              點擊此標記可放大查看詳細位置
+          <div className="info_window poi_info">
+            <div className="info_content">
+              <h3 className="info_title">{selectedPoi.key}</h3>
+              <p className="info_coordinates">
+                緯度: {selectedPoi.location.lat.toFixed(6)}<br />
+                經度: {selectedPoi.location.lng.toFixed(6)}
+              </p>
+              <div className="info_note">
+                點擊此標記可放大查看詳細位置
+              </div>
             </div>
           </div>
         </InfoWindow>
@@ -242,23 +182,17 @@ const Api_test = () => {
   }, []);
 
   return (
-    <div>
+    <div className="api_test_main">
       <h2>Api_test</h2>
       
       {/* 錯誤訊息顯示 */}
       {locationError && (
-        <div style={{ 
-          padding: '10px', 
-          backgroundColor: locationError.includes('正在取得') ? '#e3f2fd' : '#ffebee',
-          color: locationError.includes('正在取得') ? '#1976d2' : '#c62828',
-          marginBottom: '10px',
-          borderRadius: '4px'
-        }}>
+        <div className={`error_message ${locationError.includes('正在取得') ? 'loading' : 'error'}`}>
           {locationError}
         </div>
       )}
 
-      <div style={{ height: '80vh', width: '100%' }}>
+      <div className="map_container">
         <APIProvider
           apiKey={'AIzaSyB4_IDwgsNFfIzHU9vlKDlvv6yrNB93SsQ'}
           onLoad={() => console.log('Maps API has loaded.')}
@@ -293,12 +227,14 @@ const Api_test = () => {
                 position={currentLocation}
                 onCloseClick={() => setShowLocationInfo(false)}
               >
-                <div style={{ padding: '8px' }}>
-                  <h3 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>目前位置</h3>
-                  <p style={{ margin: '0', fontSize: '14px', color: '#666' }}>
-                    緯度: {currentLocation.lat.toFixed(6)}<br />
-                    經度: {currentLocation.lng.toFixed(6)}
-                  </p>
+                <div className="info_window current_location_info">
+                  <div className="info_content">
+                    <h3 className="info_title">目前位置</h3>
+                    <p className="info_coordinates">
+                      緯度: {currentLocation.lat.toFixed(6)}<br />
+                      經度: {currentLocation.lng.toFixed(6)}
+                    </p>
+                  </div>
                 </div>
               </InfoWindow>
             )}

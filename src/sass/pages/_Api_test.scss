@@ -1,0 +1,267 @@
+@use '../variables/' as *;
+@use '../functions/' as *;
+
+.api_test_main {
+    background-color: $background;
+    @extend %main_font-family_setting;
+    color: $text;
+    padding: $spacing-xl;
+    min-height: $h-100vh;
+
+    h2 {
+        font-size: $f-s-xl;
+        margin-bottom: $spacing-lg;
+        text-align: center;
+    }
+
+    .error_message {
+        padding: $spacing-sm;
+        margin-bottom: $spacing-sm;
+        border-radius: $rad-sm;
+        font-size: $f-s-sm;
+
+        &.loading {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        &.error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    }
+
+    .map_container {
+        height: 80vh;
+        width: 100%;
+        border-radius: $rad-sm;
+        overflow: hidden;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+        // 響應式設計
+        @media ($mediaMd) {
+            height: 70vh;
+        }
+
+        @media ($mediaSm) {
+            height: 60vh;
+        }
+    }
+}
+
+// Google Maps 相關樣式
+.custom_marker {
+    &.current_location {
+        .location_marker_container {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            background-color: $accent;
+            border: 3px solid $white;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+            // 外圈脈衝效果
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -15.5px;
+                left: -15.3px;
+                width: 40px;
+                height: 40px;
+                border: 2px solid $accent;
+                border-radius: 50%;
+                opacity: 0.3;
+                animation: pulse 2s infinite;
+            }
+        }
+    }
+
+    &.poi_marker {
+        .poi_marker_svg {
+            width: 27px;
+            height: 27px;
+            transition: transform 0.2s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            .inner {
+                fill: $accent;
+                
+            }
+
+            .outer{
+                stroke: $accent;
+                stroke-width: 0.932033;
+            }
+        }
+    }
+}
+
+// InfoWindow 樣式
+.info_window {
+    min-width: 200px;
+    font-family: $family-tc;
+
+    &.poi_info {
+        .info_content {
+            padding: $spacing-sm;
+
+            .info_title {
+                margin: 0 0 $spacing-xs 0;
+                font-size: $f-s-md;
+                color: $accent;
+                font-weight: $f-w-b;
+            }
+
+            .info_coordinates {
+                margin: 0 0 $spacing-xs 0;
+                font-size: $f-s-sm;
+                color: $text;
+                line-height: 1.4;
+            }
+
+            .info_note {
+                font-size: $f-s-xs;
+                color: $gray-600;
+                border-top: 1px solid #eee;
+                padding-top: $spacing-xs;
+                margin-top: $spacing-xs;
+            }
+        }
+    }
+
+    &.current_location_info {
+        .info_content {
+            padding: $spacing-sm;
+
+            .info_title {
+                margin: 0 0 $spacing-xs 0;
+                font-size: $f-s-md;
+                font-weight: $f-w-b;
+                color: #4285F4;
+            }
+
+            .info_coordinates {
+                margin: 0;
+                font-size: $f-s-sm;
+                color: $text;
+            }
+        }
+    }
+}
+
+// 地圖控制按鈕樣式（透過 Google Maps API 注入）
+.location_control_button {
+    background: $white !important;
+    border: 2px solid #dadce0 !important;
+    border-radius: 2px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    cursor: pointer !important;
+    font-family: Roboto, Arial, sans-serif !important;
+    font-size: $f-s-sm !important;
+    line-height: 30px !important;
+    margin: $spacing-xs !important;
+    padding: 0 $spacing-sm !important;
+    text-align: center !important;
+    user-select: none !important;
+    transition: background-color 0.2s ease !important;
+
+    &:hover {
+        background-color: #f1f3f4 !important;
+    }
+
+    &:active {
+        background-color: #e8eaed !important;
+    }
+}
+
+// 動畫效果
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.1;
+    }
+}
+
+// 響應式調整
+@media ($mediaMd) {
+    .api_test_main {
+        padding: $spacing-lg;
+
+        h2 {
+            font-size: $f-s-lg;
+        }
+    }
+
+    .custom_marker {
+        &.current_location {
+            .location_marker_container {
+                width: 18px;
+                height: 18px;
+
+                &::after {
+                    top: -8px;
+                    left: -8px;
+                    width: 34px;
+                    height: 34px;
+                }
+            }
+        }
+
+        &.poi_marker {
+            .poi_marker_svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+@media ($mediaSm) {
+    .api_test_main {
+        padding: $spacing-md;
+
+        h2 {
+            font-size: $f-s-md;
+            margin-bottom: $spacing-md;
+        }
+    }
+
+    .info_window {
+        min-width: 180px;
+
+        &.poi_info,
+        &.current_location_info {
+            .info_content {
+                padding: $spacing-xs;
+
+                .info_title {
+                    font-size: $f-s-sm;
+                }
+
+                .info_coordinates {
+                    font-size: $f-s-xs;
+                }
+
+                .info_note {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .location_control_button {
+        font-size: $f-s-xs !important;
+        padding: 0 $spacing-xs !important;
+    }
+}
