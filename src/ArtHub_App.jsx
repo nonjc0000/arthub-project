@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-// import "./sass/all.scss";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Find_type from "./pages/Find_type";
