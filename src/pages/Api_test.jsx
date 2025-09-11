@@ -32,20 +32,20 @@ const CurrentLocationMarker = () => {
     <div style={{
       width: '20px',
       height: '20px',
-      backgroundColor: '#ED972E',
+      backgroundColor: '#4285F4',
       border: '3px solid #fff',
       borderRadius: '50%',
-      // boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+      boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
       position: 'relative'
     }}>
       {/* 外圈脈衝效果 */}
       <div style={{
         position: 'absolute',
-        bottom: '-13px',
-        left: '-13px',
+        top: '-10px',
+        left: '-10px',
         width: '40px',
         height: '40px',
-        border: '2px solid #ED972E',
+        border: '2px solid #4285F4',
         borderRadius: '50%',
         opacity: 0.3,
         animation: 'pulse 2s infinite'
@@ -123,12 +123,15 @@ const LocationControl = ({ onLocationClick }) => {
 // React Google Maps 的 AdvancedMarker 組件
 const ReactAdvancedMarkers = (props) => {
   const map = useMap();
+  const [selectedPoi, setSelectedPoi] = useState(null);
 
   const handleClick = useCallback((poi) => {
     if (!map) return;
     console.log(`Clicked on: ${poi.key}`);
     map.panTo(poi.location);
     map.setZoom(16);
+    // 設定選中的景點以顯示 InfoWindow
+    setSelectedPoi(poi);
   }, [map]);
 
   return (
@@ -143,6 +146,33 @@ const ReactAdvancedMarkers = (props) => {
           <CustomSvgMarker />
         </AdvancedMarker>
       ))}
+      
+      {/* 景點 InfoWindow */}
+      {selectedPoi && (
+        <InfoWindow
+          position={selectedPoi.location}
+          onCloseClick={() => setSelectedPoi(null)}
+        >
+          <div style={{ padding: '8px', minWidth: '200px' }}>
+            <h3 style={{ margin: '0 0 8px 0', fontSize: '16px', color: '#C76666' }}>
+              {selectedPoi.key}
+            </h3>
+            <p style={{ margin: '0 0 8px 0', fontSize: '14px', color: '#666' }}>
+              緯度: {selectedPoi.location.lat.toFixed(6)}<br />
+              經度: {selectedPoi.location.lng.toFixed(6)}
+            </p>
+            <div style={{ 
+              fontSize: '12px', 
+              color: '#888',
+              borderTop: '1px solid #eee',
+              paddingTop: '8px',
+              marginTop: '8px'
+            }}>
+              點擊此標記可放大查看詳細位置
+            </div>
+          </div>
+        </InfoWindow>
+      )}
     </>
   );
 };
@@ -151,6 +181,7 @@ const Api_test = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationError, setLocationError] = useState(null);
   const [showLocationInfo, setShowLocationInfo] = useState(false);
+  const mapRef = useRef(null);
 
   // 取得目前位置的函數
   const getCurrentLocation = useCallback(() => {
@@ -172,6 +203,12 @@ const Api_test = () => {
         setCurrentLocation(pos);
         setLocationError(null);
         setShowLocationInfo(true);
+        
+        // 使用 panTo 移動地圖，而不是設定 center
+        if (mapRef.current) {
+          mapRef.current.panTo(pos);
+          mapRef.current.setZoom(16);
+        }
         
         console.log('目前位置:', pos);
       },
@@ -199,6 +236,11 @@ const Api_test = () => {
     );
   }, []);
 
+  // 儲存 map 實例的回調函數
+  const handleMapLoad = useCallback((map) => {
+    mapRef.current = map;
+  }, []);
+
   return (
     <div>
       <h2>Api_test</h2>
@@ -223,13 +265,13 @@ const Api_test = () => {
         >
           <Map
             defaultZoom={14}
-            defaultCenter={currentLocation || { lat: 25.07985171038588, lng: 121.54439949417615 }}
-            center={currentLocation}
+            defaultCenter={{ lat: 25.07985171038588, lng: 121.54439949417615 }}
             mapId='7e6d708d8bcc7551d6c210d1'
             style={{ height: '100%', width: '100%' }}
             onCameraChanged={(ev) =>
               console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
             }
+            ref={handleMapLoad}
           >
             {/* 景點標記 */}
             <ReactAdvancedMarkers pois={locations} />
