@@ -1,12 +1,12 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import {
   APIProvider,
   Map,
   AdvancedMarker,
   useMap,
-  Pin
+  Pin,
+  InfoWindow
 } from '@vis.gl/react-google-maps';
-import { MarkerClusterer } from '@googlemaps/markerclusterer';
 
 // JavaScript JSX 版本 - 移除所有類型註解
 // POI (point of interest) array
@@ -26,152 +26,117 @@ const CustomSvgMarker = () => {
   );
 };
 
-// 使用原生 AdvancedMarkerElement 的組件
-const NativeAdvancedMarkers = (props) => {
+// 目前位置標記組件
+const CurrentLocationMarker = () => {
+  return (
+    <div style={{
+      width: '20px',
+      height: '20px',
+      backgroundColor: '#ED972E',
+      border: '3px solid #fff',
+      borderRadius: '50%',
+      // boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+      position: 'relative'
+    }}>
+      {/* 外圈脈衝效果 */}
+      <div style={{
+        position: 'absolute',
+        bottom: '-13px',
+        left: '-13px',
+        width: '40px',
+        height: '40px',
+        border: '2px solid #ED972E',
+        borderRadius: '50%',
+        opacity: 0.3,
+        animation: 'pulse 2s infinite'
+      }} />
+      <style jsx>{`
+        @keyframes pulse {
+          0% {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+          50% {
+            transform: scale(1.2);
+            opacity: 0.1;
+          }
+          100% {
+            transform: scale(0.8);
+            opacity: 0.3;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+// 位置控制按鈕組件
+const LocationControl = ({ onLocationClick }) => {
   const map = useMap();
-  const [nativeMarkers, setNativeMarkers] = useState([]);
 
   useEffect(() => {
-    if (!map || !window.google) return;
+    if (!map) return;
 
-    // 動態載入 marker library
-    const loadMarkers = async () => {
-      try {
-        const { AdvancedMarkerElement } = await window.google.maps.importLibrary("marker");
+    // 創建自定義控制按鈕
+    const locationButton = document.createElement('button');
+    locationButton.textContent = '📍 目前位置';
+    locationButton.style.cssText = `
+      background: white;
+      border: 2px solid #dadce0;
+      border-radius: 2px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      cursor: pointer;
+      font-family: Roboto,Arial,sans-serif;
+      font-size: 14px;
+      line-height: 30px;
+      margin: 8px;
+      padding: 0 12px;
+      text-align: center;
+      user-select: none;
+    `;
 
-        // 清除現有標記
-        nativeMarkers.forEach(marker => {
-          if (marker.map) {
-            marker.map = null;
-          }
-        });
+    // 添加懸停效果
+    locationButton.addEventListener('mouseenter', () => {
+      locationButton.style.backgroundColor = '#f1f3f4';
+    });
+    locationButton.addEventListener('mouseleave', () => {
+      locationButton.style.backgroundColor = 'white';
+    });
 
-        // 創建自定義 SVG 元素
-        const parser = new DOMParser();
-        const pinSvgString = `<svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="13.674" cy="13.7591" r="9.78635" fill="#C76666" stroke="#C76666" stroke-width="0.932033"/>
-          <circle cx="13.674" cy="13.759" r="12.5825" stroke="#C76666" stroke-width="0.932033" fill="none"/>
-        </svg>`;
+    locationButton.addEventListener('click', onLocationClick);
 
-        // 創建新標記
-        const newMarkers = props.pois.map((poi) => {
-          const pinSvg = parser.parseFromString(pinSvgString, 'image/svg+xml').documentElement;
-
-          const marker = new AdvancedMarkerElement({
-            map: map,
-            position: poi.location,
-            content: pinSvg,
-            title: poi.key
-          });
-
-          // 添加點擊事件
-          marker.addListener('click', () => {
-            console.log(`Clicked on: ${poi.key}`);
-            map.panTo(poi.location);
-            map.setZoom(16);
-          });
-
-          return marker;
-        });
-
-        setNativeMarkers(newMarkers);
-
-      } catch (error) {
-        console.error('Error loading markers:', error);
-      }
-    };
-
-    loadMarkers();
+    // 將按鈕添加到地圖控制區域
+    map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
 
     // 清理函數
     return () => {
-      nativeMarkers.forEach(marker => {
-        if (marker.map) {
-          marker.map = null;
-        }
-      });
+      const index = map.controls[google.maps.ControlPosition.TOP_CENTER].indexOf(locationButton);
+      if (index > -1) {
+        map.controls[google.maps.ControlPosition.TOP_CENTER].removeAt(index);
+      }
     };
-  }, [map, props.pois]);
+  }, [map, onLocationClick]);
 
-  // 這個組件不渲染任何 JSX，因為標記是直接添加到地圖上的
   return null;
 };
 
-// 使用 React Google Maps 的 AdvancedMarker 組件（推薦）
+// React Google Maps 的 AdvancedMarker 組件
 const ReactAdvancedMarkers = (props) => {
   const map = useMap();
 
-  const handleClick = (poi) => {
+  const handleClick = useCallback((poi) => {
     if (!map) return;
     console.log(`Clicked on: ${poi.key}`);
     map.panTo(poi.location);
     map.setZoom(16);
-  };
-
-  return (
-    <>
-      {props.pois.map((poi) => (
-        <AdvancedMarker
-          key={poi.key}
-          position={poi.location}
-          clickable={true}
-          onClick={() => handleClick(poi)}
-        >
-          {/* 使用自定義 SVG */}
-          <CustomSvgMarker />
-        </AdvancedMarker>
-      ))}
-    </>
-  );
-};
-
-// 標記叢集組件（使用 React 版本）
-const PoiMarkersWithCluster = (props) => {
-  const map = useMap();
-  const [markers, setMarkers] = useState({});
-  const clusterer = useRef(null);
-
-  useEffect(() => {
-    if (!map) return;
-    if (!clusterer.current) {
-      clusterer.current = new MarkerClusterer({ map });
-    }
   }, [map]);
 
-  useEffect(() => {
-    clusterer.current?.clearMarkers();
-    clusterer.current?.addMarkers(Object.values(markers));
-  }, [markers]);
-
-  const setMarkerRef = (marker, key) => {
-    if (marker && markers[key]) return;
-    if (!marker && !markers[key]) return;
-
-    setMarkers(prev => {
-      if (marker) {
-        return { ...prev, [key]: marker };
-      } else {
-        const newMarkers = { ...prev };
-        delete newMarkers[key];
-        return newMarkers;
-      }
-    });
-  };
-
-  const handleClick = (poi) => {
-    if (!map) return;
-    console.log(`Clicked on: ${poi.key}`);
-    map.panTo(poi.location);
-    map.setZoom(16);
-  };
-
   return (
     <>
       {props.pois.map((poi) => (
         <AdvancedMarker
           key={poi.key}
           position={poi.location}
-          ref={marker => setMarkerRef(marker, poi.key)}
           clickable={true}
           onClick={() => handleClick(poi)}
         >
@@ -182,68 +147,74 @@ const PoiMarkersWithCluster = (props) => {
   );
 };
 
-// 顯示目前位置
-// Note: This example requires that you consent to location sharing when
-// prompted by your browser. If you see the error "The Geolocation service
-// failed.", it means you probably did not give permission for the browser to
-// locate you.
-let map, infoWindow;
-
-function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 6,
-  });
-  infoWindow = new google.maps.InfoWindow();
-
-  const locationButton = document.createElement("button");
-
-  locationButton.textContent = "Pan to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
-  locationButton.addEventListener("click", () => {
-    // Try HTML5 geolocation.
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        },
-      );
-    } else {
-      // Browser doesn't support Geolocation
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-  });
-}
-
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-  infoWindow.setPosition(pos);
-  infoWindow.setContent(
-    browserHasGeolocation
-      ? "Error: The Geolocation service failed."
-      : "Error: Your browser doesn't support geolocation.",
-  );
-  infoWindow.open(map);
-}
-
-window.initMap = initMap;
-
 const Api_test = () => {
+  const [currentLocation, setCurrentLocation] = useState(null);
+  const [locationError, setLocationError] = useState(null);
+  const [showLocationInfo, setShowLocationInfo] = useState(false);
+
+  // 取得目前位置的函數
+  const getCurrentLocation = useCallback(() => {
+    if (!navigator.geolocation) {
+      setLocationError('您的瀏覽器不支援地理位置服務');
+      return;
+    }
+
+    // 顯示載入狀態
+    setLocationError('正在取得位置...');
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        
+        setCurrentLocation(pos);
+        setLocationError(null);
+        setShowLocationInfo(true);
+        
+        console.log('目前位置:', pos);
+      },
+      (error) => {
+        let errorMessage = '無法取得位置資訊';
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            errorMessage = '位置存取被拒絕，請允許位置權限';
+            break;
+          case error.POSITION_UNAVAILABLE:
+            errorMessage = '位置資訊無法取得';
+            break;
+          case error.TIMEOUT:
+            errorMessage = '位置請求逾時';
+            break;
+        }
+        setLocationError(errorMessage);
+        setCurrentLocation(null);
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 60000
+      }
+    );
+  }, []);
 
   return (
     <div>
       <h2>Api_test</h2>
+      
+      {/* 錯誤訊息顯示 */}
+      {locationError && (
+        <div style={{ 
+          padding: '10px', 
+          backgroundColor: locationError.includes('正在取得') ? '#e3f2fd' : '#ffebee',
+          color: locationError.includes('正在取得') ? '#1976d2' : '#c62828',
+          marginBottom: '10px',
+          borderRadius: '4px'
+        }}>
+          {locationError}
+        </div>
+      )}
 
       <div style={{ height: '80vh', width: '100%' }}>
         <APIProvider
@@ -252,14 +223,46 @@ const Api_test = () => {
         >
           <Map
             defaultZoom={14}
-            defaultCenter={{ lat: 25.07985171038588, lng: 121.54439949417615 }}
+            defaultCenter={currentLocation || { lat: 25.07985171038588, lng: 121.54439949417615 }}
+            center={currentLocation}
             mapId='7e6d708d8bcc7551d6c210d1'
             style={{ height: '100%', width: '100%' }}
             onCameraChanged={(ev) =>
               console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
             }
           >
+            {/* 景點標記 */}
             <ReactAdvancedMarkers pois={locations} />
+            
+            {/* 目前位置標記 */}
+            {currentLocation && (
+              <AdvancedMarker
+                position={currentLocation}
+                clickable={true}
+                onClick={() => setShowLocationInfo(true)}
+              >
+                <CurrentLocationMarker />
+              </AdvancedMarker>
+            )}
+
+            {/* 目前位置資訊窗 */}
+            {currentLocation && showLocationInfo && (
+              <InfoWindow
+                position={currentLocation}
+                onCloseClick={() => setShowLocationInfo(false)}
+              >
+                <div style={{ padding: '8px' }}>
+                  <h3 style={{ margin: '0 0 8px 0', fontSize: '16px' }}>目前位置</h3>
+                  <p style={{ margin: '0', fontSize: '14px', color: '#666' }}>
+                    緯度: {currentLocation.lat.toFixed(6)}<br />
+                    經度: {currentLocation.lng.toFixed(6)}
+                  </p>
+                </div>
+              </InfoWindow>
+            )}
+
+            {/* 位置控制按鈕 */}
+            <LocationControl onLocationClick={getCurrentLocation} />
           </Map>
         </APIProvider>
       </div>
