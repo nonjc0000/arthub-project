@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Find_map_card from '../components/Find_map_card'
 import markets from '../data/market.json'
+import Map_api from '../components/Map_api'
 
 const Find_map = () => {
   // 市集資料
@@ -75,7 +76,7 @@ const Find_map = () => {
           </div>
 
           <div className='map_api'>
-
+            <Map_api />
           </div>
 
         </section>

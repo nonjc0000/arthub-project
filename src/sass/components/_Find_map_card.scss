@@ -3,6 +3,7 @@
 
 .find_map_card {
     // border: solid 2px red;
+    position: relative;
     height: $h-20vh;
     min-width: 600px;
     // width: 80%;
@@ -56,6 +57,9 @@
     }
 
     svg {
+        position: absolute;
+        top: $spacing-sm;
+        right: $spacing-sm;
         min-width: $spacing-xl;
         margin-left: auto;
         cursor: pointer;

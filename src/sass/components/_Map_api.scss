@@ -2,11 +2,13 @@
 @use '../functions/' as *;
 
 .api_test_main {
-    background-color: $background;
+    height: 100%;
+    width: 100%;
+    // background-color: $background;
     @extend %main_font-family_setting;
     color: $text;
-    padding: $spacing-xl;
-    min-height: $h-100vh;
+    // padding: $spacing-xl;
+    // min-height: $h-100vh;
 
     h2 {
         font-size: $f-s-xl;
@@ -32,11 +34,11 @@
     }
 
     .map_container {
-        height: 100vh;
+        height: 100%;
         width: 100%;
         border-radius: $rad-sm;
         overflow: hidden;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        // box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 
         // 響應式設計
         @media ($mediaMd) {
@@ -272,10 +274,11 @@
     position: relative;
     margin-bottom: $spacing-xxl;
 
-    .gm-ui-hover-effect { // 關閉用的叉叉
+    .gm-ui-hover-effect {
+        // 關閉用的叉叉
         position: absolute !important;
         right: 0;
-        top:0;
+        top: 0;
     }
 }
 
@@ -287,7 +290,7 @@
     padding: 17px;
 }
 
-.gm-style .gm-style-iw-tc::after{
+.gm-style .gm-style-iw-tc::after {
     display: none;
 }
 

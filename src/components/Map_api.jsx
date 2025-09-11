@@ -150,7 +150,7 @@ const ReactAdvancedMarkers = (props) => {
   );
 };
 
-const Api_test = () => {
+const Map_api = () => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationError, setLocationError] = useState(null);
   const [showLocationInfo, setShowLocationInfo] = useState(false);
@@ -238,6 +238,7 @@ const Api_test = () => {
               console.log('camera changed:', ev.detail.center, 'zoom:', ev.detail.zoom)
             }
             ref={handleMapLoad}
+            streetViewControl={false}
           >
             {/* 景點標記 */}
             <ReactAdvancedMarkers pois={locations} />
@@ -280,4 +281,4 @@ const Api_test = () => {
   )
 }
 
-export default Api_test
+export default Map_api
