@@ -8,6 +8,14 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-bg {
     background-color: $background;
     overflow: hidden; // 隱藏水平滾動條
@@ -16,10 +24,18 @@
 
 
 
+
+
+
+
 .home-wrap {
     width: $w-100;
     height: $h-100vh;
     margin: 5% 0 auto auto;
+
+
+
+
 
 
 
@@ -40,10 +56,26 @@
 
 
 
+
+
+
+
+
+
+
+
 // 單純用flex並排
 .home-top {
     display: flex;
     justify-content: center;
+
+
+
+
+
+
+
+
 
 
 
@@ -69,11 +101,27 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-heading {
     width: $w-40;
     margin-left: 120px;
     margin-top: 200px;
     margin-bottom: 250px;
+
+
+
+
+
+
+
+
 
 
 
@@ -89,6 +137,10 @@
 
 
 
+
+
+
+
     h2 {
         font-size: $f-s-xxxxxl;
         font-family: $family-tc;
@@ -96,6 +148,10 @@
         padding-left: 40px;
         font-weight: $f-w-m;
         color: $dark;
+
+
+
+
 
 
 
@@ -109,10 +165,22 @@
 
 
 
+
+
+
+
     .arrow {
         width: 4%;
         margin-top: 25px;
         margin-left: 60px;
+
+
+
+
+
+
+
+
 
 
 
@@ -130,11 +198,19 @@
 
 
 
+
+
+
+
 .stall-wrap {
     margin: 0 auto;
     margin-right: 5%;
     width: $w-60;
     height: auto;
+
+
+
+
 
 
 
@@ -150,9 +226,21 @@
 
 
 
+
+
+
+
+
+
+
+
     // @media (max-width: 1440px) {
     //     margin-right: 40px; // 從 100px 大幅減少
     // }
+
+
+
+
 
 
 
@@ -164,9 +252,17 @@
 
 
 
+
+
+
+
     .stall-item {
         width: 100%;
         display: flex;
+
+
+
+
 
 
 
@@ -183,9 +279,21 @@
 
 
 
+
+
+
+
+
+
+
+
         a {
             display: block;
         }
+
+
+
+
 
 
 
@@ -194,6 +302,8 @@
             width: $w-50;
             height: auto;
             // animation: translatup 1s infinite;
+
+
 
 
             &:hover {
@@ -205,10 +315,14 @@
         }
 
 
+
+
         // @keyframes translatup {
         //     0% {
         //         transform: translateY(0);
         //     }
+
+
 
 
         //     50% {
@@ -216,10 +330,44 @@
         //     }
 
 
+
+
         //     100% {
         //         transform: translateY(0);
         //     }
         // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -268,6 +416,10 @@
 
 
 
+
+
+
+
         .stall-third {
             width: $w-40;
             height: auto;
@@ -290,6 +442,14 @@
 
 
 
+
+
+
+
+
+
+
+
 .date-box {
     margin-right: 8%;
     margin-top: -5%;
@@ -304,11 +464,19 @@
 
 
 
+
+
+
+
     // @media (max-width: 992px) {
     //     margin-top: 30px; // 正值
     //     margin-right: 20px;
     //     justify-content: center;
     // }
+
+
+
+
 
 
 
@@ -326,10 +494,22 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width: 1440px) {
             height: 4rem; // 稍微縮短
         }
     }
+
+
+
+
 
 
 
@@ -347,10 +527,22 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width: 1440px) {
             gap: 15px; // 縮小間距
         }
     }
+
+
+
+
 
 
 
@@ -362,9 +554,21 @@
 
 
 
+
+
+
+
     .weather {
         width: 65px;
         height: 65px;
+
+
+
+
+
+
+
+
 
 
 
@@ -382,6 +586,10 @@
 
 
 
+
+
+
+
     .situation {
         font-size: $f-s-xs;
     }
@@ -390,9 +598,15 @@
 
 
 
+
+
+
+
 .home-dec {
     position: relative;
     height: 30vh;
+
+
 
 
     .home-dec-im {
@@ -418,11 +632,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 第二塊
 .home-hot-wrap {
     width: 100%;
     margin-top: 80px;
     position: relative;
+
+
+
+
 
 
 
@@ -438,6 +672,10 @@
 
 
 
+
+
+
+
     .home-ring {
         max-width: 10%;
         position: absolute;
@@ -449,6 +687,10 @@
 
 
 
+
+
+
+
     .home-hat {
         max-width: 10%;
         position: absolute;
@@ -456,6 +698,10 @@
         left: 5%;
         bottom: 0;
     }
+
+
+
+
 
 
 
@@ -475,6 +721,14 @@
 
 
 
+
+
+
+
+
+
+
+
     .home-hot {
         text-align: center;
         font-family: $family-tc;
@@ -484,8 +738,20 @@
 
 
 
+
+
+
+
         h3 {
             font-size: $f-s-xxxxl;
+
+
+
+
+
+
+
+
 
 
 
@@ -502,6 +768,10 @@
 
 
 
+
+
+
+
         p {
             font-family: $family-en;
             font-size: $f-s-xl;
@@ -512,14 +782,21 @@
 
 
 
+
+
+
+
 .pic-wrap {
-    max-width: 80%;
+    max-width: 75%;
     margin: 0 auto;
 
 
 
 
+
+
     .home-pic {
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: stretch; // 讓左右兩側高度相等
@@ -528,11 +805,19 @@
 
 
 
+
+
+
+
         .home-pic-fsb {
-            max-width: 50%;
+            width: 50%; // 這裡原本我設max-width導致間距拉大
             display: flex;
             justify-content: space-between;
             flex-direction: column;
+
+
+
+
 
 
 
@@ -547,8 +832,16 @@
 
 
 
+
+
+
+
         >div:last-child {
             flex: 1; // 讓下方大圖佔剩餘空間
+
+
+
+
 
 
 
@@ -556,6 +849,14 @@
             a {
                 display: block;
                 height: 100%;
+
+
+
+
+
+
+
+
 
 
 
@@ -575,12 +876,24 @@
 
 
 
+
+
+
+
         .home-pic-se {
             max-width: 50%;
             flex: 1;
             display: flex;
             justify-content: space-between;
             gap: 16px;
+
+
+
+
+
+
+
+
 
 
 
@@ -602,6 +915,14 @@
 
 
 
+
+
+
+
+
+
+
+
             .type-img {
                 width: 50%;
                 display: flex;
@@ -609,6 +930,10 @@
                 gap: 16px;
             }
         }
+
+
+
+
 
 
 
@@ -626,6 +951,10 @@
 
 
 
+
+
+
+
 // 第三塊
 .home-blog {
     margin-top: 112px;
@@ -634,6 +963,10 @@
     text-align: center;
     color: $dark;
     transform: rotate(5deg);
+
+
+
+
 
 
 
@@ -648,10 +981,21 @@
 
 
 
+
+
+
+
 .home-blog-item {
     @extend %flex-center;
     position: relative;
-    margin-bottom: 200px;
+
+
+
+
+
+
+
+
 
 
 
@@ -667,12 +1011,19 @@
 
 
 
+
+
+
+
     .home-left-img {
         width: $w-100;
-        height: $h-100vh;
         position: relative;
         margin-right: -250px;
-        z-index: 1;
+        z-index: 3;
+
+
+
+
 
 
 
@@ -687,16 +1038,29 @@
 
 
 
+
+
+
+
     .home-right-blog {
         position: relative;
+        height: 70vh;
+        max-height: 620px;
         z-index: 0;
+        margin-top: 450px;
         width: $w-100;
-        top: 12rem;
-        height: $h-80vh;
         background-color: $primary;
         border-top-left-radius: $rad-ex;
         border-bottom-left-radius: $rad-ex;
-        z-index: 0;
+        z-index: 2;
+
+
+
+
+
+
+
+
 
 
 
@@ -716,7 +1080,13 @@
             border-right: none;
             border-top-left-radius: $rad-ex;
             border-bottom-left-radius: $rad-ex;
+            z-index: 1;
+            pointer-events: none;
         }
+
+
+
+
 
 
 
@@ -734,10 +1104,22 @@
 
 
 
+
+
+
+
+
+
+
+
             @media (max-width:1440px) {
                 margin-top: 10px;
             }
         }
+
+
+
+
 
 
 
@@ -761,7 +1143,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -779,30 +1185,10 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .home-card {
     @extend %flex-center;
     padding-left: 100px;
     margin-bottom: 20px;
-
-
-
-
-
-
 
 
     img {
@@ -813,70 +1199,7 @@
     }
 
 
-
-
-
-
-
-
-    .home-card-item {
-        @extend %flex-column;
-        margin-left: 28px;
-
-
-
-
-
-
-
-
-        p {
-            color: $gray-600;
-        }
-
-
-
-
-        span {
-            padding-left: 20px;
-            color: $gray-600;
-        }
-
-
-
-
-        .home-card-p {
-            p {
-                color: $text;
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-    .card-txt {
-        display: flex;
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .home-button {
@@ -888,4 +1211,31 @@
     justify-content: flex-end;
     align-items: flex-end;
 }
+
+
+.home-road {
+    position: relative;
+    display: flex;
+    width: 100%;
+    .crocodile {
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        left: 10%;
+    }
+    .road-pic {
+        position: absolute;
+        left: 100px;
+        top: -360px;
+    }
+    .home-sign {
+        position: absolute;
+        top: 28%;
+        left: 35%;
+    }
+}
+
+
+
+
 

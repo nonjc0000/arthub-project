@@ -32,7 +32,7 @@
   background: none;
 }
 
-.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .home-card .home-card-item, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .event_card_infowindow .event_info .event_details, .topbar .hamburger {
+.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .home-card .home-card-item, .event_card_infowindow .event_info .event_details, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -1275,6 +1275,7 @@ a {
   border-radius: 30px;
   overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: 350px;
   flex: 0 0 320px;
   min-width: 320px;
   scroll-snap-align: start;
@@ -1615,6 +1616,28 @@ a {
     padding: 0 10px !important;
   }
 }
+.home-card {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.home-card .home-card-item {
+  margin-left: 28px;
+}
+.home-card .home-card-item p {
+  color: #6c757d;
+}
+.home-card .home-card-item span {
+  padding-left: 20px;
+  color: #6c757d;
+}
+.home-card .home-card-item .home-card-p p {
+  color: #39413A;
+}
+.home-card .card-txt {
+  display: flex;
+}
+
 .find_map_main {
   background-color: #FDF7EB;
   height: 100vh;
@@ -1906,7 +1929,11 @@ a {
 }
 @media (max-width:640px) {
   .txt {
+    display: block; /* 改用 block */
+    text-align: center;
     font-size: 0.75rem;
+    width: 80vw;
+    margin: 0 auto;
   }
 }
 
@@ -2821,17 +2848,18 @@ a {
 }
 
 .pic-wrap {
-  max-width: 80%;
+  max-width: 75%;
   margin: 0 auto;
 }
 .pic-wrap .home-pic {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   gap: 16px;
 }
 .pic-wrap .home-pic .home-pic-fsb {
-  max-width: 50%;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -2894,7 +2922,6 @@ a {
 
 .home-blog-item {
   position: relative;
-  margin-bottom: 200px;
 }
 @media (max-width: 1440px) {
   .home-blog-item {
@@ -2903,10 +2930,9 @@ a {
 }
 .home-blog-item .home-left-img {
   width: 100%;
-  height: 100vh;
   position: relative;
   margin-right: -250px;
-  z-index: 1;
+  z-index: 3;
 }
 .home-blog-item .home-left-img img {
   display: block;
@@ -2915,14 +2941,15 @@ a {
 }
 .home-blog-item .home-right-blog {
   position: relative;
+  height: 70vh;
+  max-height: 620px;
   z-index: 0;
+  margin-top: 450px;
   width: 100%;
-  top: 12rem;
-  height: 80vh;
   background-color: #CBD4C1;
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
-  z-index: 0;
+  z-index: 2;
 }
 .home-blog-item .home-right-blog::before {
   content: "";
@@ -2935,6 +2962,8 @@ a {
   border-right: none;
   border-top-left-radius: 999px;
   border-bottom-left-radius: 999px;
+  z-index: 1;
+  pointer-events: none;
 }
 .home-blog-item .home-right-blog .home-right-txt {
   text-align: right;
@@ -2967,22 +2996,6 @@ a {
   border-top-right-radius: 30px;
   border-bottom-left-radius: 30px;
 }
-.home-card .home-card-item {
-  margin-left: 28px;
-}
-.home-card .home-card-item p {
-  color: #6c757d;
-}
-.home-card .home-card-item span {
-  padding-left: 20px;
-  color: #6c757d;
-}
-.home-card .home-card-item .home-card-p p {
-  color: #39413A;
-}
-.home-card .card-txt {
-  display: flex;
-}
 
 .home-button {
   position: absolute;
@@ -2992,6 +3005,28 @@ a {
   top: 95%;
   justify-content: flex-end;
   align-items: flex-end;
+}
+
+.home-road {
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+.home-road .crocodile {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 10%;
+}
+.home-road .road-pic {
+  position: absolute;
+  left: 100px;
+  top: -360px;
+}
+.home-road .home-sign {
+  position: absolute;
+  top: 28%;
+  left: 35%;
 }
 
 .back-chip {
@@ -4833,16 +4868,42 @@ a {
   cursor: pointer;
 }
 
-/* 外層：標題一行、下面左右兩欄（圖／文） */
+/* ───────────────── 基本佈局與安全網 ───────────────── */
+.findTrip-container,
+.trip_row,
+.trip_schedule_container {
+  overflow-x: clip;
+  /* 防止水平捲軸 */
+  position: relative;
+}
+
+/* 圖片保護：避免撐爆容器 */
+.trip_schedule_container img,
+.staggered-images img,
+.deco_line img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ───────────────── 首屏：左圖右文 ───────────────── */
+.trip_row_bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
 .trip_row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  /* 兩欄各 48% 時剛好撐滿 */
   max-width: 1280px;
   margin-inline: auto;
   padding-inline: 24px;
   row-gap: 32px;
+  column-gap: 32px;
+  padding: 100px 0;
 }
 
 /* 標題區：跨整行 */
@@ -4887,7 +4948,7 @@ a {
   display: block;
 }
 
-/* 交錯高度（你的 image-1 ~ image-3） */
+/* 交錯高度 */
 .image-1 {
   transform: translateY(-25px);
 }
@@ -4900,19 +4961,12 @@ a {
   transform: translateY(-10px);
 }
 
-.trip_row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 32px;
-}
-
 /* 右欄：文字內容 */
 .content-section {
   flex: 0 1 48%;
-  /* 保守抓 48% + 中間空隙 ≈ 100% */
   min-width: 0;
+  display: flex;
+  /* 補上，才能用下面的 flex 設定 */
   flex-direction: column;
   justify-content: center;
   /* 垂直置中 */
@@ -4995,7 +5049,6 @@ a {
   border-radius: 999px;
   padding: 10px 20px;
   background: #ED972E;
-  /* 依你的品牌色 */
   color: #39413A;
   font-weight: 700;
   font-size: 14px;
@@ -5015,49 +5068,78 @@ a {
   box-shadow: 0 3px 10px rgba(237, 151, 46, 0.28);
 }
 
+/* ───────────────── 中段：行程表 ───────────────── */
+.trip_schedule_container_title {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
 .trip_schedule_container_title h2 {
   font-family: "ChenYuluoyan-2.0-Thin", cursive;
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+
+.trip_schedule_container_title_bg {
+  background-image: url("/images/Find_schedule/trip_title_bg.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-size: 400px auto;
+}
+@media (max-width:640px) {
+  .trip_schedule_container_title_bg {
+    background-size: 250px auto;
+  }
 }
 
 .trip_schedule_intro {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 40px;
   position: relative;
+  left: -250px;
 }
-.trip_schedule_intro .route_01 {
-  position: absolute;
-  right: 300px;
-  bottom: -60px;
-  display: flex;
-  align-items: center;
-  gap: 15px;
+@media (max-width:640px) {
+  .trip_schedule_intro {
+    left: 0;
+  }
 }
-.trip_schedule_intro .route_01 img {
-  width: 10vw;
-}
-.trip_schedule_intro .route_01 span {
-  color: #ED972E;
-}
-
-.list_time_intro {
+.trip_schedule_intro .list_time_intro {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
-.list_time_intro img {
+.trip_schedule_intro .list_time_intro img {
   width: 8vw;
   height: auto;
 }
-.list_time_intro p {
+.trip_schedule_intro .list_time_intro p {
   margin-left: 65px;
+}
+.trip_schedule_intro .list_description_intro {
+  flex: 1;
+}
+.trip_schedule_intro .route_01 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: absolute;
+  right: -480px;
+  bottom: -80px;
+}
+.trip_schedule_intro .route_01 img {
+  max-width: 65%;
+}
+.trip_schedule_intro .route_01 span {
+  color: #ED972E;
 }
 
 .trip_schedule_container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .station_01,
@@ -5097,9 +5179,11 @@ a {
   border-radius: 30px;
 }
 
+/* 站點與裝飾線條 */
 .station_01 {
   position: relative;
   padding: 100px 80px;
+  margin-left: 20px;
 }
 .station_01 .route_02 {
   position: absolute;
@@ -5116,22 +5200,27 @@ a {
 }
 
 .station_02 {
+  position: relative;
   padding: 30px 0 30px 20px;
   background-color: rgba(255, 255, 255, 0.6);
   border: 1px dashed #39413A;
   border-radius: 30px;
-  position: relative;
+  width: 60vw;
+  /* 小介紹卡：避免超出 */
 }
 .station_02 .list_images img {
   border-radius: 15px;
 }
 .station_02 .list_description_extra {
-  background-color: #a3ad94;
-  padding: 30px;
-  width: 30vw;
-  bottom: -100px;
   position: absolute;
   right: -60px;
+  left: auto;
+  bottom: -150px;
+  width: min(30vw, 420px);
+  max-width: 92%;
+  box-sizing: border-box;
+  background-color: #a3ad94;
+  padding: 30px;
   border-radius: 30px;
 }
 .station_02 .list_description_extra h3,
@@ -5144,10 +5233,11 @@ a {
 }
 .station_02 .route_03 {
   position: absolute;
+  bottom: -150px;
+  left: clamp(0px, 12vw, 360px);
+  /* 視窗小時縮回 0 */
   display: flex;
   align-items: center;
-  bottom: -150px;
-  left: 360px;
   gap: 15px;
 }
 .station_02 .route_03 img {
@@ -5159,14 +5249,16 @@ a {
 
 .station_03 {
   position: relative;
+  margin-top: 30px;
 }
 .station_03 .route_04 {
   position: absolute;
   bottom: 40px;
-  right: 360px;
+  right: clamp(0px, 20vw, 360px);
   display: flex;
   align-items: center;
   gap: 15px;
+  margin-top: 30px;
 }
 .station_03 .route_04 img {
   width: 5vw;
@@ -5197,7 +5289,7 @@ a {
 .station_04 .route_05 {
   position: absolute;
   bottom: -180px;
-  left: 150px;
+  left: clamp(0px, 25vw, 150px);
   display: flex;
   align-items: center;
   gap: 15px;
@@ -5209,18 +5301,25 @@ a {
   color: #ED972E;
 }
 
+/* 第五站原本有過大的左外距 → 改為相對單位 */
 .station_05 {
-  margin: 0 0 0 600px;
+  margin-top: 50px;
 }
 
+/* ───────────────── 下方：相關行程卡片 ───────────────── */
 .trip_card_container_title {
   width: 100%;
-  text-align: left; /* 讓文字靠左 */
+  text-align: left;
+  position: relative;
+  left: 60px;
+  top: 30px;
 }
 
 .trip_card_container {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 30px;
   overflow-x: auto;
   overflow-y: hidden;
   padding: 8px 12px 12px;
@@ -5229,11 +5328,12 @@ a {
   /* iOS 慣性滑動 */
 }
 
-/* ── RWD ───────────────────────────────────────────────── */
+/* ───────────────── RWD ───────────────── */
 @media (max-width:640px) {
   .trip_row {
     flex-direction: column;
     row-gap: 30px;
+    overflow-x: clip;
   }
   .trip-container,
   .content-section {
@@ -5252,6 +5352,156 @@ a {
   }
   .trip_titleBox {
     transform: scale(0.7);
+  }
+}
+@media (max-width:640px) and (max-width:640px) {
+  .trip_schedule_container_title h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 20px;
+  }
+  .trip_schedule_intro {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    align-items: flex-start;
+  }
+  .trip_schedule_intro .list_time_intro {
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+  }
+  .trip_schedule_intro .list_time_intro img {
+    width: 60px;
+    min-width: 60px;
+  }
+  .trip_schedule_intro .list_time_intro p {
+    margin-left: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  .trip_schedule_intro .list_description_intro {
+    padding-right: 0;
+    width: 100%;
+  }
+  .trip_schedule_intro .list_description_intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .trip_schedule_intro .route_01 {
+    position: static;
+    align-self: center;
+    margin-top: 10px;
+  }
+  .trip_schedule_intro .route_01 img {
+    width: 120px;
+  }
+  .trip_schedule_intro .route_01 p {
+    font-size: 0.9rem;
+  }
+  .station_01,
+  .station_02,
+  .station_03,
+  .station_04,
+  .station_05 {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  .list_time {
+    align-items: center;
+  }
+  .list_time img {
+    width: 50px;
+  }
+  .list_description h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .list_description p {
+    padding-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .list_images img {
+    width: 80vw;
+    max-width: 300px;
+  }
+  .station_01 {
+    padding: 40px 20px;
+    margin-left: 0;
+  }
+  .station_01 .route_02 {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .station_01 .route_02 img {
+    width: 150px;
+  }
+  .station_02 {
+    width: 95vw;
+    margin: 20px auto;
+    padding: 30px 20px;
+  }
+  .station_02 .list_description_extra {
+    position: static;
+    width: 100%;
+    margin-top: 20px;
+    right: auto;
+    bottom: auto;
+  }
+  .station_02 .route_03 {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+    left: auto;
+    bottom: auto;
+  }
+  .station_02 .route_03 img {
+    width: 60px;
+  }
+  .station_03 {
+    margin-top: 40px;
+  }
+  .station_03 .route_04 {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+    right: auto;
+    bottom: auto;
+  }
+  .station_03 .route_04 img {
+    width: 80px;
+  }
+  .station_04 {
+    width: 95vw;
+    margin: 20px auto;
+    padding: 30px 20px;
+  }
+  .station_04 .list_images {
+    display: flex;
+    gap: 15px;
+  }
+  .station_04 .list_images img {
+    width: 150px;
+    max-width: 70vw;
+  }
+  .station_04 .route_05 {
+    position: static;
+    justify-content: center;
+    margin-top: 20px;
+    left: auto;
+    bottom: auto;
+  }
+  .station_04 .route_05 img {
+    width: 150px;
+  }
+  .station_05 {
+    margin-top: 40px;
+    margin-inline-start: 0;
   }
 }
 .about_us_main {

@@ -1,5 +1,6 @@
-import Button from '../components/Button'
-import PageTop from '../components/PageTop'
+import Button from '../components/Button';
+import PageTop from '../components/PageTop';
+import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
 
 
@@ -13,29 +14,7 @@ import { Link } from 'react-router-dom';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const Home = () => {
-
-
 
 
 
@@ -126,50 +105,41 @@ const Home = () => {
           <div className='home-blog'>
             <h3>這不是一張單純的活動地圖，<br />而是你與生活靈感之間的導航線。</h3>
           </div>
-          <div className='home-blog-item'>
-            <div className='home-left-img'>
-              <img src="./images/home/左下圖片.png" alt="左下圖片.svg" />
+          <div>
+            <div className='home-blog-item'>
+              <div className='home-left-img'>
+                <figure>
+                  <img src="./images/home/左下圖片.png" alt="左下圖片.svg" />
+                </figure>
+              </div>
+              <div className='home-right-blog'>
+                <div className='home-right-txt'>
+                  <h3>部落格</h3>
+                  <p>Blog</p>
+                </div>
+                <HomeCard />
+                <div className='home-button'>
+                  <Button />
+                </div>
+              </div>
             </div>
-            <div className='home-right-blog'>
-              <div className='home-right-txt'>
-                <h3>部落格</h3>
-                <p>Blog</p>
+            {/* 底下的路 */}
+            <div className='home-road'>
+             
+              <div className='road-pic'>
+                <figure>
+                  <img src="./images/home/Home-road.svg" alt="Home-road" />
+                </figure>
+                <div className='crocodile'>
+                <img src="./images/home/普通2魚.svg" alt="普通2魚" />
               </div>
-              {/* 卡片 */}
-              <div className='home-card'>
-                <div>
-                  <a href="#"><img src="./images/home/home-card.png" alt="home-card" /></a>
-                </div>
-                <div className='home-card-item'>
-                  <p>2025.6.15<span>某某某</span></p>
-                  <div className='home-card-p'>
-                    <p>城市裡的一場迷你旅行：</p>
-                    <p>我在市集中發現的生活靈感</p>
-                  </div>
-                </div>
+              <div className='home-sign'>
+                <img src="./images/home/路牌插圖.svg" alt="路牌插圖" />
               </div>
-              <div className='home-button'>
-                <Button />
               </div>
             </div>
           </div>
           <PageTop />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         </section>
       </main>
     </>
@@ -207,4 +177,39 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default Home
+
+
+

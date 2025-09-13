@@ -7,14 +7,19 @@
   background: $white;
   color: $text;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: $rad-lg;
   overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: 350px;
+
+
 
 
   flex: 0 0 320px;
   min-width: 320px;
   scroll-snap-align: start;
+
+
 
 
   &:hover,
@@ -23,6 +28,8 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
   }
 }
+
+
 
 
 .tc-img {
@@ -35,9 +42,13 @@
 }
 
 
+
+
 .tc-body {
   padding: 12px 14px 16px;
 }
+
+
 
 
 .tc-title {
@@ -48,11 +59,15 @@
 }
 
 
+
+
 .tc-sub {
   margin: 0 0 8px;
   font-size: 14px;
   color: #666;
 }
+
+
 
 
 .tc-meta {
@@ -62,10 +77,14 @@
 }
 
 
+
+
 .tc-price {
   font-weight: 700;
   font-size: 15px;
 }
+
+
 
 
 

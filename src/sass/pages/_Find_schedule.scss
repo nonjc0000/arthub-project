@@ -1,18 +1,22 @@
 @use "../variables/" as *;
 @use "../functions/" as *;
 
+
 .container {
   background-color: $background;
 }
+
 
 .find_schedule_titlebox {
   display: flex;
   justify-content: center;
 
+
   @media ($mediaSm) {
     transform: scale(0.7);
   }
 }
+
 
 .deco_line {
   display: flex;
@@ -20,12 +24,14 @@
   padding-top: $spacing-xl;
   margin: $spacing-x-xl;
 
+
   img {
     width: $w-100;
     max-width: 1600px;
     height: auto;
   }
 }
+
 
 .region {
   display: grid;
@@ -36,12 +42,14 @@
   padding-block: 60px;
   gap: 70px;
 
+
   @media ($mediaSm) {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
   }
 }
+
 
 .txt {
   display: flex;
@@ -50,17 +58,28 @@
   padding-top: 50px;
   padding-bottom: $spacing-ex;
 
+
+ 
   @media($mediaSm) {
+    display: block; /* 改用 block */
+    text-align: center;
     font-size: $f-s-xs;
-  }
+    width: 80vw;
+    margin: 0 auto;
 }
+}
+
 
 .intro_photo {
   width: $w-70;
   display: block;
   margin: 0 auto;
 
+
   @media ($mediaSm) {
     width: $w-80;
   }
 }
+
+
+
