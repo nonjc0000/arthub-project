@@ -1,7 +1,5 @@
 import User_sidebar_left from '../components/User_sidebar_left';
 
-const Notifications = () => {
-
     // 通知元件
     const Notifications_item = () => {
 
@@ -19,6 +17,8 @@ const Notifications = () => {
             </div>
         )
     }
+
+const Notifications = () => {
 
     return (
         <main className='notifications_main'>
