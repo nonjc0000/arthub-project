@@ -29,7 +29,7 @@ const Find_map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(''); // 選中的行政區
 
   // 根據選中的縣市取得對應的行政區
-  const districts = selectedCity ? cities[selectedCity] : [];
+  const districts = selectedCity ? cityDistrictData[selectedCity] : [];
 
   // 當縣市改變時的處理函式 (核心邏輯)
   const handleCityChange = (e) => {
@@ -67,7 +67,7 @@ const Find_map = () => {
         //保留關鍵字內容
         return market.name.match(search);
       })
-  }, [search]);
+  }, [search, selectedCity, selectedDistrict, arrMarkets]);
 
   return (
     <>
@@ -90,7 +90,7 @@ const Find_map = () => {
 
                   <option value="">選擇縣市</option>
                   {
-                    cities.map((city, index) => <option value={`${city}`} key={index}>
+                    cities.map((city, index) => <option value={city} key={index}>
                       {city}
                     </option>)
                   }
@@ -108,7 +108,7 @@ const Find_map = () => {
                   disabled={!selectedCity}> {/* 沒選縣市時禁用 */}
                   <option value="">選擇地區</option>
                   {
-                    districts.map((district, index) => <option value={`${district}`} key={index}>
+                    districts.map((district, index) => <option value={district} key={index}>
                       {district}
                     </option>)
                   }
