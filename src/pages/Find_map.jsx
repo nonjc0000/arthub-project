@@ -19,8 +19,8 @@ const Find_map = () => {
   // 用 state 存資料
   const [arrMarkets] = useState(markets);
 
-  // 取得縣市資料
-  const [Cities] = useState(cityDistrictData);
+  // 取得縣市資料 (從 JSON 檔案的 key 值)
+  const cities = Object.keys(cityDistrictData);
 
   // 縣市state
   const [selectedCity, setSelectedCity] = useState(''); // 選中的縣市
@@ -29,7 +29,7 @@ const Find_map = () => {
   const [selectedDistrict, setSelectedDistrict] = useState(''); // 選中的行政區
 
   // 根據選中的縣市取得對應的行政區
-  const districts = selectedCity ? Cities[selectedCity] : [];
+  const districts = selectedCity ? cities[selectedCity] : [];
 
   // 當縣市改變時的處理函式 (核心邏輯)
   const handleCityChange = (e) => {
@@ -50,7 +50,19 @@ const Find_map = () => {
   // 建立過濾後的函式
   const filteredMarkets = useMemo(() => {
     return [...arrMarkets]
-      // 搜尋
+      // 依據縣市過濾
+      .filter((market) => {
+        const cityMatch = selectedCity === '' || market.city === selectedCity;
+        return cityMatch;
+      })
+
+      // 依據行政區過濾  
+      .filter((market) => {
+        const districtMatch = selectedDistrict === '' || market.district === selectedDistrict;
+        return districtMatch;
+      })
+
+      // 搜尋關鍵字過濾
       .filter((market) => {
         //保留關鍵字內容
         return market.name.match(search);
@@ -67,25 +79,41 @@ const Find_map = () => {
         <section className='find_map_content_box'>
 
           <div className='map_search-box'>
-            <form name="map_search_filter" id="map_search_filter" method="post" acceptharset="UTF-8">
+            <div name="map_search_filter" id="map_search_filter" method="post" acceptharset="UTF-8">
               {/* 選擇縣市 */}
               <div className='select_border'>
-                <select name="city" id="city">
+                <select
+                  name="city"
+                  id="city"
+                  value={selectedCity} // 綁定 state
+                  onChange={handleCityChange}> {/* 處理變更 */}
+
                   <option value="">選擇縣市</option>
                   {
-                    Cities.map(city => <option value={`${city}`}>{city}</option>)
+                    cities.map((city, index) => <option value={`${city}`} key={index}>
+                      {city}
+                    </option>)
                   }
-                  <option value="臺北市">臺北市</option>
-                  <option value="新北市">新北市</option>
+
                 </select>
               </div>
 
               {/* 選擇地區 */}
               <div className='select_border'>
-                <select name="district" id="district">
+                <select
+                  name="district"
+                  id="district"
+                  value={selectedDistrict}
+                  onChange={handleDistrictChange}
+                  disabled={!selectedCity}> {/* 沒選縣市時禁用 */}
                   <option value="">選擇地區</option>
-                  <option value="大安區">大安區</option>
-                  <option value="南港區">南港區</option>
+                  {
+                    districts.map((district, index) => <option value={`${district}`} key={index}>
+                      {district}
+                    </option>)
+                  }
+                  {/* <option value="大安區">大安區</option>
+                  <option value="南港區">南港區</option> */}
                 </select>
               </div>
 
@@ -103,7 +131,7 @@ const Find_map = () => {
                   onChange={(e) => { setSearch(e.target.value) }} />
                 <button type="button" value="搜尋"><img src="./images/find_map/magnifier.svg" alt="搜尋" /></button>
               </div>
-            </form>
+            </div>
 
             <div className='map_search_result'>
               {
