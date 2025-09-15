@@ -2,20 +2,47 @@ import React, { useEffect, useMemo, useState } from 'react'
 import Find_map_card from '../components/Find_map_card'
 import markets from '../data/market.json'
 import Map_api from '../components/Map_api'
+import cityDistrictData from '../data/taiwan_admin_divisions.json'
 
 const Find_map = () => {
   // 縣市名稱陣列
-  const taiwanCityNames = [
-    '台北市', '新北市', '桃園市', '台中市', '台南市', '高雄市',
-    '新竹縣', '新竹市', '苗栗縣', '彰化縣', '南投縣', '雲林縣',
-    '嘉義縣', '嘉義市', '屏東縣', '宜蘭縣', '花蓮縣', '台東縣',
-    '澎湖縣', '金門縣', '連江縣'
-  ];
+  // const Cities = [
+  //   '台北市', '新北市', '桃園市', '台中市', '台南市', '高雄市',
+  //   '新竹縣', '新竹市', '苗栗縣', '彰化縣', '南投縣', '雲林縣',
+  //   '嘉義縣', '嘉義市', '屏東縣', '宜蘭縣', '花蓮縣', '台東縣',
+  //   '澎湖縣', '金門縣', '連江縣'
+  // ];
 
+  // State 管理
 
   // 市集資料
   // 用 state 存資料
   const [arrMarkets] = useState(markets);
+
+  // 取得縣市資料
+  const [Cities] = useState(cityDistrictData);
+
+  // 縣市state
+  const [selectedCity, setSelectedCity] = useState(''); // 選中的縣市
+
+  // 行政區state
+  const [selectedDistrict, setSelectedDistrict] = useState(''); // 選中的行政區
+
+  // 根據選中的縣市取得對應的行政區
+  const districts = selectedCity ? Cities[selectedCity] : [];
+
+  // 當縣市改變時的處理函式 (核心邏輯)
+  const handleCityChange = (e) => {
+    const newCity = e.target.value;
+    setSelectedCity(newCity);
+    // 🔑 重要：當縣市改變時，要清空已選的行政區
+    setSelectedDistrict('');
+  };
+
+  // 當行政區改變時的處理函式
+  const handleDistrictChange = (e) => {
+    setSelectedDistrict(e.target.value);
+  };
 
   // 搜尋變數，預設為空字串
   const [search, setSearch] = useState('');
@@ -46,7 +73,7 @@ const Find_map = () => {
                 <select name="city" id="city">
                   <option value="">選擇縣市</option>
                   {
-                    taiwanCityNames.map(cityName => <option value={`${cityName}`}>{cityName}</option>)
+                    Cities.map(city => <option value={`${city}`}>{city}</option>)
                   }
                   <option value="臺北市">臺北市</option>
                   <option value="新北市">新北市</option>
