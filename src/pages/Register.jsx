@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Register = () => {
     // 註冊表單狀態
@@ -137,6 +138,7 @@ const Register = () => {
 
     return (
         <main className='register_main'>
+            <ScrollToTop/>
             <div className='register_container'>
                 {/* 左側品牌區 */}
                 <div className='register_left'>

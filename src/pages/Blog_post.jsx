@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import posts from "../data/posts.json";
+import ScrollToTop from '../components/ScrollToTop'
 
 
 function BlogPost() {
@@ -136,6 +137,7 @@ function BlogPost() {
       className="post-page-container"
       style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}
     >
+      <ScrollToTop/>
       <div className="post-wrapper">
         {/* 單欄版面（移除左側篩選欄） */}
         <main className="post-content-panel">

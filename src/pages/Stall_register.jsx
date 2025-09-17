@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollToTop from '../components/ScrollToTop'
 
 
 
@@ -6,6 +7,7 @@ import React from 'react'
 const Stall_register = () => {
   return (
     <main className='stall_register_main'>
+      <ScrollToTop />
       <section className='stall_register'>
 
 

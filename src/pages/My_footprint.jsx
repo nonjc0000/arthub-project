@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import My_footprint_card from '../components/My_footprint_card';
 import User_sidebar_left from '../components/User_sidebar_left';
+import ScrollToTop from '../components/ScrollToTop'
 
 const My_footprint = () => {
 
     return (
         <main className='my_footprint_main'>
+            <ScrollToTop/>
             <h1 className='titleBox_h1'>
                 <img className='titleBox' src="./images/titlebox/my_footprint_titlebox.svg" alt='我的足跡My Footprints' />
             </h1>

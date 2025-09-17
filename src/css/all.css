@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.member_login_main .login_right .login_form .form_options .remember_me, .stall_register_main, .stall_register_main .stall_register, .stall_register_main .register, .stall_register_main .register .register_box, .stall_register_main .register .register_box .register_form .contact .checkbox .type_box, .event_info_main .box_center, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.member_login_main .login_right .login_form .form_options .remember_me, .receipt .select_border, .stall_register_main, .stall_register_main .stall_register, .stall_register_main .register, .stall_register_main .register .register_box, .stall_register_main .register .register_box .register_form .contact .checkbox .type_box, .event_info_main .box_center, .event_info_main .info_box, .event_info_main .event_info_container .info .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure, .stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .home-blog-item, .home-card, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.register_main .register_right .register_form .form_group .form_input, .register_main .register_right .register_form .register_button, .forgot_password_main .forgot_right .forgot_form .form_group .form_input, .forgot_password_main .forgot_right .forgot_form .send_button, .forgot_password_main .forgot_right .resend_section .resend_button, .member_login_main .login_right .login_form .form_group .form_input, .member_login_main .login_right .login_form .login_button, .sum_checkout .checkout_btn, .stall_register_main .stall_num .btn_box1 button,
+.register_main .register_right .register_form .form_group .form_input, .register_main .register_right .register_form .register_button, .forgot_password_main .forgot_right .forgot_form .form_group .form_input, .forgot_password_main .forgot_right .forgot_form .send_button, .forgot_password_main .forgot_right .resend_section .resend_button, .member_login_main .login_right .login_form .form_group .form_input, .member_login_main .login_right .login_form .login_button, .receipt .select_border select, .sum_checkout .checkout_btn, .stall_register_main .stall_num .btn_box1 button,
 .stall_register_main .stall_num .btn_box2 button,
 .stall_register_main .stall_num .btn_box3 button,
 .stall_register_main .stall_num .btn_box4 button,
@@ -62,7 +62,7 @@
   margin-bottom: 80px;
 }
 
-.customer_info .form_input input, .receipt .form_input input {
+.customer_info .form_input input {
   display: block;
   padding: 0 15px;
   height: 2rem;
@@ -6077,8 +6077,16 @@ input {
 }
 
 .receipt .form_input {
-  width: 50%;
   padding: 20px 100px 10px;
+}
+.receipt .select_border {
+  border: #BEC7B4 solid 1px;
+  border-radius: 999px;
+  background-color: #fff;
+  padding: 5px 25px;
+  width: 30%;
+  height: 100%;
+  margin-top: 10px;
 }
 .sum_checkout {
   padding: 25px 0 15px;

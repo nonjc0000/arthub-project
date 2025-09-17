@@ -5,6 +5,7 @@ import { useMemo, useState } from 'react'
 import $ from 'jquery'
 import { useEffect } from 'react'
 import stall from '../data/stall.json'
+import ScrollToTop from '../components/ScrollToTop'
 
 
 
@@ -100,6 +101,7 @@ const Stall_map = () => {
 
     return (
         <main className='stall_map_main'>
+            <ScrollToTop/>
             <section className='stall_map_container'>
 
 

@@ -1,10 +1,12 @@
 import User_sidebar_left from '../components/User_sidebar_left';
+import ScrollToTop from '../components/ScrollToTop'
 
     // 通知元件
     const Notifications_item = () => {
 
         return (
             <div className='notification_item'>
+                <ScrollToTop/>
                 <div className='notification_date'>
                     <span className='year'>2025</span>
                     <span className='date'>Jun.15</span>

@@ -1,5 +1,6 @@
 import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
+import ScrollToTop from '../components/ScrollToTop'
 
 
 const arrData = [
@@ -68,6 +69,7 @@ const Find_schedule_region_north = () => {
 
   return (
     <div className="region_page">
+      <ScrollToTop/>
       <div className="region_title">
         <h1>北部地區</h1>
       </div>

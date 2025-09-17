@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Forgot_password = () => {
     // 表單狀態
@@ -110,6 +111,7 @@ const Forgot_password = () => {
 
     return (
         <main className='forgot_password_main'>
+            <ScrollToTop/>
             <div className='forgot_password_container'>
                 {/* 左側品牌區 */}
                 <div className='forgot_left'>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Review_card from '../components/Review_card'
 import PageTop from '../components/PageTop';
+import ScrollToTop from '../components/ScrollToTop'
 
 
 
@@ -72,7 +73,7 @@ const Event_info = () => {
 
   return (
     <main className='event_info_main'>
-
+      <ScrollToTop />
 
       {/* 標題 */}
       <h1 className='titleBox_h1'>

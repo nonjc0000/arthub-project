@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Find_schedule_order = () => {
 
   return (
     <div className='Find_schedule_order_wrap'>
+      <ScrollToTop/>
       <div className='breadcrumb'>
         <span>華山設計漫遊日</span>
         <span> &gt; </span>
@@ -101,7 +103,14 @@ const Find_schedule_order = () => {
           <div className='content_box'>
             <div className='form_input'>
               <label htmlFor="receipt_type">代收轉付電子收據類型</label>
-              <input type="text" id='receipt_type' />
+              <div className='select_border'>
+              <select name="receipt" id="receipt">
+                <option value="">請選擇發票種類</option>
+                <option value="三聯式統一發票">三聯式統一發票</option>
+                <option value="二聯式統一發票">二聯式統一發票</option>
+                <option value="電子發票">電子發票</option>
+              </select>
+              </div>
             </div>
           </div>
         </div>

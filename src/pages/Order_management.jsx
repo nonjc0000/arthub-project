@@ -1,10 +1,12 @@
 import React from 'react'
 import User_sidebar_left from '../components/User_sidebar_left';
+import ScrollToTop from '../components/ScrollToTop'
 
 // 訂單卡片
 const Order_card = () => {
     return (
         <div className='order_card'>
+            <ScrollToTop/>
             <div className='order_image'>
                 <img src="./images/order_management/market1.png" alt="華山設計選物日" />
                 <div className='order_date'>

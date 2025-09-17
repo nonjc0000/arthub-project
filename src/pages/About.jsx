@@ -1,8 +1,10 @@
 import React from 'react'
+import ScrollToTop from '../components/ScrollToTop'
 
 const About = () => {
     return (
         <main className='about_us_main'>
+            <ScrollToTop/>
             {/* Hero Section */}
             <section className='hero_section'>
                 <div className='hero_image'>

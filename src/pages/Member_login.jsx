@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Member_login = () => {
     // 登入表單狀態
@@ -80,6 +81,7 @@ const Member_login = () => {
 
     return (
         <main className='member_login_main'>
+            <ScrollToTop/>
             <div className='login_container'>
                 {/* 左側品牌區 */}
                 <div className='login_left'>

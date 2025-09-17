@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import schedule from "../data/schedule.json";
 import Trip_travelCard from "../components/Find_schedule/Trip_travelCard";
+import ScrollToTop from '../components/ScrollToTop'
 
 
 
@@ -23,6 +24,7 @@ const Find_schedule_trip = () => {
 
   return (
     <div className="findTrip-container">
+      <ScrollToTop/>
       <div className="find_schedule_trip_titleBox">
         <h1 className="titleBox_h1">
           <img

@@ -4,6 +4,7 @@ import '../css/all.css'
 import markets from '../data/market.json'
 import cityDistrictData from '../data/taiwan_admin_divisions.json'
 import PageTop from '../components/PageTop';
+import ScrollToTop from '../components/ScrollToTop'
 
 
 const Find_type = () => {
@@ -149,6 +150,7 @@ const Find_type = () => {
 
     return (
         <section className='find_type_main'>
+            <ScrollToTop/>
             <h1 className='titleBox_h1'>
                 <img className='titleBox' src="./images/titlebox/find_type_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集分類Market Type' />
             </h1>

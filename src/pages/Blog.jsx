@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import BlogSelect from "../components/blog/BlogSelect";
 import BlogCard from "../components/blog/BlogCard";
 import "../sass/all.scss";
+import ScrollToTop from '../components/ScrollToTop'
 
 
 function Blog() {
@@ -312,6 +313,7 @@ function Blog() {
 
   return (
     <div className="blog-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
+      <ScrollToTop/>
       {/* 1) 標題 */}
       <header className="blog-hero">
         <h1 className='titleBox_h1'>

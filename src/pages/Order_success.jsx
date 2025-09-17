@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Order_success = () => {
     return (
         <main className='order_success_main'>
+            <ScrollToTop/>
             <div className='success_container'>
                 <div className='success_content'>
                     <h1 className='success_title'>交易結果</h1>

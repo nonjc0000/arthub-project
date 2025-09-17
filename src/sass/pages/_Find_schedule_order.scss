@@ -173,11 +173,22 @@ input {
     @extend %section-basic;
 
     .form_input {
-        width: $w-50;
         padding: $spacing-md $spacing-ex $spacing-xs;
+    }
 
-        input {
-            @extend %input-text-basic;
+    .select_border {
+        @extend %flex-center;
+        border: $primary-600 solid 1px;
+        border-radius: $rad-ex;
+        background-color: $white;
+        padding: $spacing-xxs $spacing-lg;
+        width: $w-30;
+        height: 100%;
+        margin-top: $spacing-xs;
+
+
+        select {
+            @extend %remove_form_style;
         }
     }
 }

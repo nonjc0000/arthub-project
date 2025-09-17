@@ -2,6 +2,7 @@ import Button from '../components/Button';
 import PageTop from '../components/PageTop';
 import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
+import ScrollToTop from '../components/ScrollToTop'
 
 
 
@@ -23,6 +24,7 @@ const Home = () => {
     <>
       {/* 首頁第一區塊 */}
       <main>
+        <ScrollToTop/>
         <section className='home-bg'>
           <div className='home-wrap'>
             <div className='home-top'>

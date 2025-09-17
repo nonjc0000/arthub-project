@@ -3,6 +3,7 @@ import Find_map_card from '../components/Find_map_card'
 import markets from '../data/market.json'
 import Map_api from '../components/Map_api'
 import cityDistrictData from '../data/taiwan_admin_divisions.json'
+import ScrollToTop from '../components/ScrollToTop'
 
 const Find_map = () => {
 
@@ -64,6 +65,7 @@ const Find_map = () => {
 
   return (
     <>
+      <ScrollToTop />
       <main className='find_map_main'>
         <h1 className='titleBox_h1'>
           <img className='titleBox' src="./images/titlebox/find_map_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />

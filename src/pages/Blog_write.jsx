@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../sass/all.scss";
+import ScrollToTop from '../components/ScrollToTop'
 
 
 function BlogWrite() {
@@ -58,6 +59,7 @@ function BlogWrite() {
 
   return (
     <div className="write-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
+      <ScrollToTop/>
       <div className="write-card">
         <img src="./images/blog/book.svg" alt="裝飾圖片" className="book"/>
         {/* 頂部返回 */}
