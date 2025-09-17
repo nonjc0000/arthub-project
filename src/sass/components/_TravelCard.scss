@@ -2,88 +2,66 @@
 @use "../functions/" as *;
 
 
-
-
 .travel-card-list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 60px;
 }
 
 
 .travel-card {
   display: flex;
-  align-items: flex-start;      /* ★ 避免被拉高成同高 */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
+  gap: 16px;
+  padding: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   background: #fff;
-  max-width: 900px;
+  text-decoration: none;
+  color: #111;
+  max-width: 1000px;
+  height: 220px;
 }
 
 
-/* ★ 固定圖片欄寬度 + 比例（擇一：aspect-ratio 或固定高度） */
-.travel-card .card-image {
-  flex: 0 0 320px;             /* 固定左欄寬度（依設計調 280~360px） */
-  aspect-ratio: 16 / 9;        /* ★ 固定比例 */
-  /* 或者用固定高度：
-  height: 180px;
-  */
-  overflow: hidden;            /* 超出裁掉，讓邊緣整齊 */
-  border-radius: 8px;          /* 看需求 */
-  background: #f1f5f9;         /* 圖未載入時的底色 */
+.card-image {
+  width: 300px; /* 固定圖片寬度 */
+  height: 190px; /* 固定圖片高度（你要的比例，可自己調） */
+  border-radius: 10px;
+  overflow: hidden; /* 超出的部分裁掉，保持圓角 */
+  flex-shrink: 0; /* 在 flex 排版下避免被壓縮 */
 }
 
 
-.travel-card .card-image img {
+.card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;           /* ★ 讓圖片填滿、不變形 */
-  object-position: center;
+  object-fit: cover; /* 填滿框框，保持比例，多餘部分裁掉 */
   display: block;
 }
 
 
-.travel-card .card-content {
-  flex: 1;                     /* 文字區自適應 */
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.card-content {
+  flex: 1 1 auto;
+  min-width: 0; /* 避免長字撐爆 */
+  padding: 8px 10px;
 }
 
 
 .card-title {
-  color: $text;
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin-bottom: 8px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 
 .card-description {
-  font-size: 0.9rem;
-  color: $text;
-  line-height: 1.4;
-  margin-bottom: 16px;
-
-
-  /* ★ 可選：限制行數，讓卡片高度更一致 */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;       /* 2~4 行自行調整 */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  margin-bottom: 45px;
 }
 
 
-/* 手機：上下排，圖片維持同比例 */
-@media (max-width: 768px) {
-  .travel-card { flex-direction: column; }
-  .travel-card .card-image {
-    flex: 0 0 auto;
-    width: 100%;
-    aspect-ratio: 16 / 9;      /* 手機也保持比例 */
-    /* height: auto;  // 若用固定高度方案，這裡拿掉高度 */
-  }
+.card-rating {
+  margin-right: 20px;
 }
+
+
 

@@ -1,6 +1,6 @@
 import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
-import ScrollToTop from '../components/ScrollToTop'
+import ScrollToTop from "../components/ScrollToTop";
 
 
 const arrData = [
@@ -28,7 +28,7 @@ const arrData = [
     description:
       "走進大稻埕的老街巷弄，探索復古與創意交會的城市風景。安排選物、手作與黃昏碼頭的散步，讓一日旅行成為儀式感滿分的生活片段。",
     rating: "4.7 超讚 (8)",
-    price: "NT $1200 起",
+    price: "NT $1390 起",
     url: "/Trip",
   },
 ];
@@ -69,7 +69,7 @@ const Find_schedule_region_north = () => {
 
   return (
     <div className="region_page">
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="region_title">
         <h1>北部地區</h1>
       </div>
@@ -77,7 +77,7 @@ const Find_schedule_region_north = () => {
 
       {/* 輪播 */}
       <div className="region_carousel">
-        <button onClick={prevSlide} aria-label="上一張">
+        <button className="img-btn" onClick={prevSlide} aria-label="上一張">
           <img src="./images/Find_schedule/LeftArrow.svg" alt="LeftArrow" />
         </button>
         <img
@@ -85,13 +85,18 @@ const Find_schedule_region_north = () => {
           alt={images[currentIndex].title || `輪播圖片 ${currentIndex + 1}`}
           className="carousel-image"
         />
-        <button onClick={nextSlide} aria-label="下一張">
+        <button className="img-btn" onClick={nextSlide} aria-label="下一張">
           <img src="./images/Find_schedule/RightArrow.svg" alt="RightArrow" />
         </button>
       </div>
 
 
       <div className="region_introduction">
+        <img
+          src="/images/Find_schedule/greenBg.png"
+          alt=""
+          className="bg-wave"
+        />
         <p className="region_txt">
           北部｜城市交會的靈感地帶
           <br />
@@ -103,11 +108,26 @@ const Find_schedule_region_north = () => {
           <br />
           適合愛探索的你，也適合從城市中找靈感的生活者。
         </p>
+        <img
+          className="womwen-three"
+          src="./images/Find_schedule/women-three.svg"
+          alt=""
+        />
+        <img
+          className="camera"
+          src="./images/Find_schedule/camera.svg"
+          alt=""
+        />
       </div>
 
 
       <div className="travelCard">
         <TravelCard data={arrData} />
+        <img
+          className="surp-cord"
+          src="./images/Find_schedule/surp-cord.svg"
+          alt=""
+        />
       </div>
     </div>
   );
@@ -115,3 +135,6 @@ const Find_schedule_region_north = () => {
 
 
 export default Find_schedule_region_north;
+
+
+

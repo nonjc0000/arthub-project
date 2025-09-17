@@ -2,15 +2,11 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import schedule from "../data/schedule.json";
 import Trip_travelCard from "../components/Find_schedule/Trip_travelCard";
-import ScrollToTop from '../components/ScrollToTop'
-
-
+import ScrollToTop from "../components/ScrollToTop";
 
 
 const Find_schedule_trip = () => {
   const [arrSchedule] = useState(schedule);
-
-
 
 
   const tripImages = [
@@ -20,11 +16,9 @@ const Find_schedule_trip = () => {
   ];
 
 
-
-
   return (
     <div className="findTrip-container">
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="find_schedule_trip_titleBox">
         <h1 className="titleBox_h1">
           <img
@@ -34,48 +28,56 @@ const Find_schedule_trip = () => {
           />
         </h1>
       </div>
-      <div className="trip_row">
-        <div className="trip-container">
-          <div className="staggered-container">
-            <div className="staggered-images">
-              {tripImages.map((src, index) => (
-                <div key={index} className={`image-item image-${index + 1}`}>
-                  <img src={src} alt={`華山設計漫遊日 景圖 ${index + 1}`} />
-                </div>
-              ))}
+      <div className="trip-deco-container">
+        <img
+          src="./images/Find_schedule/flying-bird.svg"
+          alt=""
+          className="flying-bird"
+        />
+        <img
+          src="./images/Find_schedule/girl-with-bggage.svg"
+          alt=""
+          className="girl-with-bggage"
+        />
+      </div>
+      <div className="trip_row_wrapper">
+        <div className="trip_row">
+          <div className="trip-container">
+            <div className="staggered-container">
+              <div className="staggered-images">
+                {tripImages.map((src, index) => (
+                  <div key={index} className={`image-item image-${index + 1}`}>
+                    <img src={src} alt={`華山設計漫遊日 景圖 ${index + 1}`} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
 
+          <div className="content-section">
+            <h1 className="main-title">華山設計漫遊日</h1>
+            <p className="subtitle">風格建物 × 咖啡散步 × 文創市集</p>
+            <p className="description">
+              走進華山文創園區，來一場設計與風格的慢步旅行。從早午餐咖啡展開節奏，逛展覽、市集尋找手作選物，感受城市裡充滿創意的日常片段。
+            </p>
 
 
-        <div className="content-section">
-          <h1 className="main-title">華山設計漫遊日</h1>
-          <p className="subtitle">風格建物 × 咖啡散步 × 文創市集</p>
-          <p className="description">
-            走進華山文創園區，來一場設計與風格的慢步旅行。從早午餐咖啡展開節奏，逛展覽、市集尋找手作選物，感受城市裡充滿創意的日常片段。
-          </p>
-
-
-
-
-          <div className="rating-section">
-            <div className="star-rating">
-              <span className="star">⭐</span>
-              <span className="rating-text">4.8(105)</span>
+            <div className="rating-section">
+              <div className="star-rating">
+                <span className="star">⭐</span>
+                <span className="rating-text">4.8(105)</span>
+              </div>
+              <span className="participants">200人參加過</span>
             </div>
-            <span className="participants">200人參加過</span>
-          </div>
 
 
-
-
-          <div className="booking-section">
-            <span className="price">$800起</span>
-            <Link to="/Order" className="btn primary">
-              立即訂購
-            </Link>
+            <div className="booking-section">
+              <span className="price">$800起</span>
+              <Link to="/Order" className="btn primary">
+                立即訂購
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -118,6 +120,9 @@ const Find_schedule_trip = () => {
             <p>
               步行<span>3</span>分鐘
             </p>
+          </div>
+          <div className="deco-cake">
+            <img src="./images/Find_schedule/strawberrycake.svg" alt="" />
           </div>
         </div>
         <div className="station_02">
@@ -201,6 +206,9 @@ const Find_schedule_trip = () => {
             <h3>遼寧街夜市</h3>
             <p>用在地夜市結束這趟旅程，從食物中補充能量與情感記憶。</p>
           </div>
+          <div className="deco-tree">
+            <img src="./images/Find_schedule/tree.svg" alt="" />
+          </div>
         </div>
         <div className="deco_line">
           <img src="./images/Find_schedule/deco_line.svg" alt="" />
@@ -211,15 +219,13 @@ const Find_schedule_trip = () => {
         <h3>相關行程</h3>
       </div>
       <div className="trip_card_container">
-        {arrSchedule.map((schedule) => (
+        {arrSchedule.slice(0, 4).map((schedule) => (
           <Trip_travelCard {...schedule} key={schedule.id} />
         ))}
       </div>
     </div>
   );
 };
-
-
 
 
 export default Find_schedule_trip;

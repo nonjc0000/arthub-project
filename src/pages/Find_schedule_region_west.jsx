@@ -1,6 +1,6 @@
 import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
-import ScrollToTop from '../components/ScrollToTop'
+import ScrollToTop from "../components/ScrollToTop";
 
 
 const arrData = [
@@ -69,7 +69,7 @@ const Find_schedule_region_west = () => {
 
   return (
     <div className="region_page">
-      <ScrollToTop/>
+      <ScrollToTop />
       <div className="region_title">
         <h1>中部地區</h1>
       </div>
@@ -77,7 +77,7 @@ const Find_schedule_region_west = () => {
 
       {/* 輪播 */}
       <div className="region_carousel">
-        <button onClick={prevSlide} aria-label="上一張">
+        <button className="img-btn" onClick={prevSlide} aria-label="上一張">
           <img src="./images/Find_schedule/LeftArrow.svg" alt="LeftArrow" />
         </button>
         <img
@@ -85,13 +85,18 @@ const Find_schedule_region_west = () => {
           alt={images[currentIndex].title || `輪播圖片 ${currentIndex + 1}`}
           className="carousel-image"
         />
-        <button onClick={nextSlide} aria-label="下一張">
+        <button className="img-btn" onClick={nextSlide} aria-label="下一張">
           <img src="./images/Find_schedule/RightArrow.svg" alt="RightArrow" />
         </button>
       </div>
 
 
       <div className="region_introduction">
+        <img
+          src="/images/Find_schedule/greenBg.png"
+          alt=""
+          className="bg-wave"
+        />
         <p className="region_txt">
           中部總是剛剛好——不疾不徐、舒適寬闊。
           <br />
@@ -101,11 +106,26 @@ const Find_schedule_region_west = () => {
           <br />
           來這裡，是放鬆，也是慢慢發現。
         </p>
+        <img
+          className="womwen-three"
+          src="./images/Find_schedule/women-three.svg"
+          alt=""
+        />
+        <img
+          className="camera"
+          src="./images/Find_schedule/camera.svg"
+          alt=""
+        />
       </div>
 
 
       <div className="travelCard">
         <TravelCard data={arrData} />
+        <img
+          className="surp-cord"
+          src="./images/Find_schedule/surp-cord.svg"
+          alt=""
+        />
       </div>
     </div>
   );
@@ -113,3 +133,6 @@ const Find_schedule_region_west = () => {
 
 
 export default Find_schedule_region_west;
+
+
+
