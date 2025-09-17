@@ -4,15 +4,28 @@ import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop'
 import Clarity from '@microsoft/clarity';
+import { useEffect } from 'react';
 
 
 const Home = () => {
 
-  // 熱點分析
-  const projectId = "tc4d2awk9v";
-  Clarity.init(projectId);
-  Clarity.identify('');
+  useEffect(() => {
+    // Clarity 初始化
+    const projectId = "tc4d2awk9v";
+    Clarity.init(projectId);
 
+    // 用戶識別
+    let userId = localStorage.getItem('clarity_user_id');
+    if (!userId) {
+      userId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      localStorage.setItem('clarity_user_id', userId);
+    }
+    
+    Clarity.identify(userId);
+    Clarity.event('home_page_visit');
+    
+    console.log('Clarity 已初始化，用戶 ID:', userId);
+  }, []);
 
   return (
     <>
@@ -80,7 +93,7 @@ const Home = () => {
                     <div>
                       <a className='home-type-one' href="#">
                         <img src="./images/home/home-pic-01.png" alt="種類圖01" />
-                        <div class="text">
+                        <div className="text">
                           <p>美食<br /><span>Food</span></p>
                         </div>
                       </a>
@@ -88,7 +101,7 @@ const Home = () => {
                     <div className='home-type-two'>
                       <a href="#">
                         <img src="./images/home/home-pic-02.png" alt="種類圖02" />
-                        <div class="text-two">
+                        <div className="text-two">
                           <p>植物<br /><span>Plant</span></p>
                         </div>
                       </a>
@@ -97,7 +110,7 @@ const Home = () => {
                   <div className='home-type-three'>
                     <a href="#">
                       <img src="./images/home/home-pic-03.png" alt="種類圖03" />
-                      <div class="text-three">
+                      <div className="text-three">
                         <p>生活小品<br /><span>Daily trifles</span></p>
                       </div>
                     </a>
@@ -108,7 +121,7 @@ const Home = () => {
                     <div className='home-type-four'>
                       <a href="#">
                         <img src="./images/home/home-pic-04.png" alt="種類圖04" />
-                        <div class="text-four">
+                        <div className="text-four">
                           <p>服飾<br /><span>Apparel</span></p>
                         </div>
                       </a>
@@ -118,7 +131,7 @@ const Home = () => {
                     <div className='home-type-five'>
                       <a href="#">
                         <img src="./images/home/home-pic-05.png" alt="種類圖05" />
-                        <div class="text-five">
+                        <div className="text-five">
                           <p>手做飾品<br /><span>Accessory</span></p>
                         </div>
                       </a>
@@ -126,7 +139,7 @@ const Home = () => {
                     <div className='home-type-six'>
                       <a href="#">
                         <img src="./images/home/home-pic-06.png" alt="種類圖06" />
-                        <div class="text-six">
+                        <div className="text-six">
                           <p>手繪商品<br /><span>Hand drawn items</span></p>
                         </div>
                       </a>
