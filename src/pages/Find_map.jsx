@@ -44,10 +44,19 @@ const Find_map = () => {
   // 處理地圖標記點擊事件
   const handleMarkerClick = (poi) => {
     console.log('地圖標記被點擊:', poi);
-    // 可以在這裡添加額外的邏輯，例如：
-    // - 在左側列表中高亮對應的市集卡片
-    // - 滾動到對應的卡片位置
-    // - 顯示詳細資訊等
+  };
+
+  // 生成提示訊息
+  const getNoResultsMessage = () => {
+    const filters = [];
+    if (selectedCity) filters.push(selectedCity);
+    if (selectedDistrict) filters.push(selectedDistrict);
+    if (search) filters.push(`"${search}"`);
+    
+    if (filters.length > 0) {
+      return `在 ${filters.join(' ')} 沒有找到相關的市集活動`;
+    }
+    return '目前沒有市集活動資料';
   };
 
   return (
@@ -114,9 +123,27 @@ const Find_map = () => {
             </div>
 
             <div className='map_search_result'>
-              {filteredMarkets.map((market) => (
-                <Find_map_card {...market} key={market.id} />
-              ))}
+              {filteredMarkets.length > 0 ? (
+                filteredMarkets.map((market) => (
+                  <Find_map_card {...market} key={market.id} />
+                ))
+              ) : (
+                <div className='no_results_message'>
+                  <div className='no_results_icon'>
+                    <img src="./images/decorations/deco-normal_allegator.svg" alt="沒有結果" />
+                  </div>
+                  <h3>找不到市集活動</h3>
+                  <p>{getNoResultsMessage()}</p>
+                  <div className='suggestions'>
+                    <p>建議您可以：</p>
+                    <ul>
+                      <li>調整搜尋條件</li>
+                      <li>嘗試其他縣市或地區</li>
+                      <li>檢查關鍵字是否正確</li>
+                    </ul>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

@@ -81,6 +81,117 @@
                 // display: flex;
                 // flex-direction: column;
                 // gap: $spacing-xl;
+
+                .no_results_message {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    text-align: center;
+                    padding: $spacing-xxl;
+                    color: $text;
+
+                    .no_results_icon {
+                        width: 120px;
+                        height: 120px;
+                        margin-bottom: $spacing-lg;
+                        opacity: 0.6;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                            filter: grayscale(50%);
+                        }
+                    }
+
+                    h3 {
+                        font-size: $f-s-xl;
+                        font-weight: $f-w-b;
+                        color: $text;
+                        margin-bottom: $spacing-md;
+                    }
+
+                    >p {
+                        font-size: $f-s-md;
+                        color: $gray-600;
+                        margin-bottom: $spacing-lg;
+                        line-height: 1.5;
+                    }
+
+                    .suggestions {
+                        background-color: $primary;
+                        border-radius: $rad-md;
+                        padding: $spacing-lg;
+                        margin-top: $spacing-md;
+                        width: 100%;
+                        max-width: 350px;
+
+                        >p {
+                            font-size: $f-s-sm;
+                            font-weight: $f-w-b;
+                            color: $text;
+                            margin-bottom: $spacing-sm;
+                        }
+
+                        ul {
+                            list-style: none;
+                            padding: 0;
+
+                            li {
+                                font-size: $f-s-sm;
+                                color: $text;
+                                padding: $spacing-xxs 0;
+                                position: relative;
+                                padding-left: $spacing-md;
+
+                                &::before {
+                                    content: "•";
+                                    color: $accent;
+                                    font-weight: bold;
+                                    position: absolute;
+                                    left: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    // 響應式設計
+                    @media ($mediaMd) {
+                        padding: $spacing-lg;
+
+                        .no_results_icon {
+                            width: 100px;
+                            height: 100px;
+                        }
+
+                        h3 {
+                            font-size: $f-s-lg;
+                        }
+
+                        >p {
+                            font-size: $f-s-sm;
+                        }
+                    }
+
+                    @media ($mediaSm) {
+                        padding: $spacing-md;
+
+                        .no_results_icon {
+                            width: 80px;
+                            height: 80px;
+                        }
+
+                        h3 {
+                            font-size: $f-s-md;
+                        }
+
+                        .suggestions {
+                            padding: $spacing-md;
+                        }
+                    }
+                }
             }
 
 
