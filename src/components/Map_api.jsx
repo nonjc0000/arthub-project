@@ -4,41 +4,29 @@ import {
   Map,
   AdvancedMarker,
   useMap,
-  Pin,
   InfoWindow
 } from '@vis.gl/react-google-maps';
+import marketsData from '../data/market.json'; // 引入市集資料
 
-// JavaScript JSX 版本 - 移除所有類型註解
-// POI (point of interest) array
-const locations = [
-  { 
-    key: '臺北市立美術館', 
-    location: { lat: 25.073710223497176, lng: 121.52920746197447 },
-    eventName: '夏末微光祭',
-    date: '2025.07.14-07.15',
-    time: '9:00-18:00',
-    venue: 'city link松山壹號店',
-    tag: '夏日祭典'
-  },
-  { 
-    key: '臺北松山機場', 
-    location: { lat: 25.068734615867825, lng: 121.54912018214841 },
-    eventName: '機場藝術節',
-    date: '2025.08.01-08.02',
-    time: '10:00-19:00',
-    venue: '松山機場藝文區',
-    tag: '藝術展演'
-  },
-  { 
-    key: '大佳河濱公園', 
-    location: { lat: 25.075468275103084, lng: 121.543288188925 },
-    eventName: '河畔音樂市集',
-    date: '2025.07.20-07.21',
-    time: '15:00-21:00',
-    venue: '大佳河濱公園草地',
-    tag: '音樂祭'
-  },
-];
+// 將 market.json 轉換為 locations 格式
+const createLocationsFromMarkets = (markets) => {
+  return markets.map(market => ({
+    key: market.name, // API 需要的 key 屬性
+    location: { lat: market.lat, lng: market.lng }, // API 需要的 location 屬性
+    // 保留原有的事件資訊，但使用 market.json 的資料
+    eventName: market.name,
+    date: market.date,
+    time: market.time,
+    venue: market.venue || market.district, // 使用 venue 或 district
+    tag: market.tag[0] || '市集活動', // 取第一個標籤
+    // 額外的市集資訊
+    marketId: market.id,
+    city: market.city,
+    district: market.district,
+    description: market.desc,
+    allTags: market.tag.slice(0, 1),
+  }));
+};
 
 // 自定義 SVG 標記組件
 const CustomSvgMarker = () => {
@@ -68,17 +56,13 @@ const LocationControl = ({ onLocationClick }) => {
   useEffect(() => {
     if (!map) return;
 
-    // 創建自定義控制按鈕
     const locationButton = document.createElement('button');
     locationButton.textContent = '📍 目前位置';
     locationButton.className = 'location_control_button';
 
     locationButton.addEventListener('click', onLocationClick);
-
-    // 將按鈕添加到地圖控制區域
     map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
 
-    // 清理函數
     return () => {
       const index = map.controls[google.maps.ControlPosition.TOP_CENTER].indexOf(locationButton);
       if (index > -1) {
@@ -91,7 +75,7 @@ const LocationControl = ({ onLocationClick }) => {
 };
 
 // React Google Maps 的 AdvancedMarker 組件
-const ReactAdvancedMarkers = (props) => {
+const ReactAdvancedMarkers = ({ pois, onMarkerClick }) => {
   const map = useMap();
   const [selectedPoi, setSelectedPoi] = useState(null);
 
@@ -100,13 +84,17 @@ const ReactAdvancedMarkers = (props) => {
     console.log(`Clicked on: ${poi.key}`);
     map.panTo(poi.location);
     map.setZoom(16);
-    // 設定選中的景點以顯示 InfoWindow
     setSelectedPoi(poi);
-  }, [map]);
+
+    // 如果有傳入 onMarkerClick 回調，也執行它
+    if (onMarkerClick) {
+      onMarkerClick(poi);
+    }
+  }, [map, onMarkerClick]);
 
   return (
     <>
-      {props.pois.map((poi) => (
+      {pois.map((poi) => (
         <AdvancedMarker
           key={poi.key}
           position={poi.location}
@@ -116,8 +104,8 @@ const ReactAdvancedMarkers = (props) => {
           <CustomSvgMarker />
         </AdvancedMarker>
       ))}
-      
-      {/* 景點 InfoWindow - 修改為卡片樣式 */}
+
+      {/* 市集 InfoWindow */}
       {selectedPoi && (
         <InfoWindow
           position={selectedPoi.location}
@@ -126,14 +114,14 @@ const ReactAdvancedMarkers = (props) => {
           <div className="event_card_infowindow">
             {/* 圖片區域 */}
             <div className="event_image_placeholder">
-              {/* 這裡可以放實際的活動圖片 */}
+              {/* 可以根據 marketId 或其他屬性載入對應圖片 */}
             </div>
-            
-            {/* 標籤 */}
+
+            {/* 標籤顯示所有 tags */}
             <div className="event_tag">
-              # {selectedPoi.tag}
+              # {selectedPoi.allTags ? selectedPoi.allTags.join(' #') : selectedPoi.tag}
             </div>
-            
+
             {/* 活動資訊 */}
             <div className="event_info">
               <h3 className="event_title">{selectedPoi.eventName}</h3>
@@ -141,6 +129,10 @@ const ReactAdvancedMarkers = (props) => {
                 <p className="event_date">{selectedPoi.date}</p>
                 <p className="event_time">{selectedPoi.time}</p>
                 <p className="event_venue">{selectedPoi.venue}</p>
+                {selectedPoi.description && (
+                  <p className="event_description">{selectedPoi.description}</p>
+                )}
+                <p className="event_location">{selectedPoi.city} {selectedPoi.district}</p>
               </div>
             </div>
           </div>
@@ -150,11 +142,15 @@ const ReactAdvancedMarkers = (props) => {
   );
 };
 
-const Map_api = () => {
+const Map_api = ({ selectedMarkets = null, onMarkerClick = null }) => {
   const [currentLocation, setCurrentLocation] = useState(null);
   const [locationError, setLocationError] = useState(null);
   const [showLocationInfo, setShowLocationInfo] = useState(false);
   const mapRef = useRef(null);
+
+  // 根據傳入的 selectedMarkets 或使用全部市集資料
+  const markets = selectedMarkets || marketsData;
+  const locations = createLocationsFromMarkets(markets);
 
   // 取得目前位置的函數
   const getCurrentLocation = useCallback(() => {
@@ -163,26 +159,22 @@ const Map_api = () => {
       return;
     }
 
-    // 顯示載入狀態
-    // setLocationError('正在取得位置...');
-
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude,
         };
-        
+
         setCurrentLocation(pos);
         setLocationError(null);
         setShowLocationInfo(true);
-        
-        // 使用 panTo 移動地圖，而不是設定 center
+
         if (mapRef.current) {
           mapRef.current.panTo(pos);
           mapRef.current.setZoom(16);
         }
-        
+
         console.log('目前位置:', pos);
       },
       (error) => {
@@ -216,7 +208,6 @@ const Map_api = () => {
 
   return (
     <div className="api_test_main">
-      
       {/* 錯誤訊息顯示 */}
       {locationError && (
         <div className={`error_message ${locationError.includes('正在取得') ? 'loading' : 'error'}`}>
@@ -240,9 +231,12 @@ const Map_api = () => {
             ref={handleMapLoad}
             streetViewControl={false}
           >
-            {/* 景點標記 */}
-            <ReactAdvancedMarkers pois={locations} />
-            
+            {/* 市集標記 */}
+            <ReactAdvancedMarkers
+              pois={locations}
+              onMarkerClick={onMarkerClick}
+            />
+
             {/* 目前位置標記 */}
             {currentLocation && (
               <AdvancedMarker
@@ -281,4 +275,4 @@ const Map_api = () => {
   )
 }
 
-export default Map_api
+export default Map_api;
