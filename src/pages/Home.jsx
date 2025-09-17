@@ -5,26 +5,14 @@ import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop'
 
 
-
-
-
-
-
-
-
-
-
-
 const Home = () => {
-
-
 
 
   return (
     <>
+      <ScrollToTop />
       {/* 首頁第一區塊 */}
       <main>
-        <ScrollToTop/>
         <section className='home-bg'>
           <div className='home-wrap'>
             <div className='home-top'>
@@ -73,6 +61,7 @@ const Home = () => {
             <div className='home-ring'><img src="./images/home/ring.svg" alt="ring" /></div>
             <div className='home-hat'><img src="./images/home/hat.svg" alt="hat" /></div>
             <div className='home-book'><img src="./images/home/book.svg" alt="book" /></div>
+            <div className='home-dec-im-tw'><img src="./images/home/home-decoration-2.svg" alt="home-decoration-2.svg" /></div>
             <div className='home-hot'>
               <h3>熱門主題</h3>
               <p>Popular subject</p>
@@ -82,20 +71,60 @@ const Home = () => {
               <div className='home-pic'>
                 <div className='home-pic-fsb'>
                   <div className='home-pic-item'>
-                    <a href="#"><img src="./images/home/home-pic-01.png" alt="種類圖01" /></a>
-                    <a href="#"><img src="./images/home/home-pic-02.png" alt="種類圖02" /></a>
+                    <div>
+                      <a className='home-type-one' href="#">
+                        <img src="./images/home/home-pic-01.png" alt="種類圖01" />
+                        <div class="text">
+                          <p>美食<br /><span>Food</span></p>
+                        </div>
+                      </a>
+                    </div>
+                    <div className='home-type-two'>
+                      <a href="#">
+                        <img src="./images/home/home-pic-02.png" alt="種類圖02" />
+                        <div class="text-two">
+                          <p>植物<br /><span>Plant</span></p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <a href="#"><img src="./images/home/home-pic-03.png" alt="種類圖03" /></a>
+                  <div className='home-type-three'>
+                    <a href="#">
+                      <img src="./images/home/home-pic-03.png" alt="種類圖03" />
+                      <div class="text-three">
+                        <p>生活小品<br /><span>Daily trifles</span></p>
+                      </div>
+                    </a>
                   </div>
                 </div>
                 <div className='home-pic-se'>
                   <div className='type-img-fo'>
-                    <a href="#"><img src="./images/home/home-pic-04.png" alt="種類圖04" /></a>
+                    <div className='home-type-four'>
+                      <a href="#">
+                        <img src="./images/home/home-pic-04.png" alt="種類圖04" />
+                        <div class="text-four">
+                          <p>服飾<br /><span>Apparel</span></p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                   <div className='type-img'>
-                    <a href="#"><img src="./images/home/home-pic-05.png" alt="種類圖05" /></a>
-                    <a href="#"><img src="./images/home/home-pic-06.png" alt="種類圖06" /></a>
+                    <div className='home-type-five'>
+                      <a href="#">
+                        <img src="./images/home/home-pic-05.png" alt="種類圖05" />
+                        <div class="text-five">
+                          <p>手做飾品<br /><span>Accessory</span></p>
+                        </div>
+                      </a>
+                    </div>
+                    <div className='home-type-six'>
+                      <a href="#">
+                        <img src="./images/home/home-pic-06.png" alt="種類圖06" />
+                        <div class="text-six">
+                          <p>手繪商品<br /><span>Hand drawn items</span></p>
+                        </div>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -111,15 +140,26 @@ const Home = () => {
             <div className='home-blog-item'>
               <div className='home-left-img'>
                 <figure>
+                  <div className='bear'>
+                    <img src="./images/home/bear.svg" alt="bear" />
+                  </div>
+                  <div className='crocodile'>
+                    <img src="./images/home/普通2魚.svg" alt="普通2魚" />
+                  </div>
                   <img src="./images/home/左下圖片.png" alt="左下圖片.svg" />
                 </figure>
               </div>
               <div className='home-right-blog'>
+                <div className="pic-dog">
+                  <img src="./images/home/person_or_dog.svg" alt="person_or_dog" />
+                </div>
                 <div className='home-right-txt'>
                   <h3>部落格</h3>
                   <p>Blog</p>
                 </div>
-                <HomeCard />
+                <div className='homecard-ob'>
+                  <HomeCard />
+                </div>
                 <div className='home-button'>
                   <Button />
                 </div>
@@ -127,17 +167,8 @@ const Home = () => {
             </div>
             {/* 底下的路 */}
             <div className='home-road'>
-             
-              <div className='road-pic'>
-                <figure>
-                  <img src="./images/home/Home-road.svg" alt="Home-road" />
-                </figure>
-                <div className='crocodile'>
-                <img src="./images/home/普通2魚.svg" alt="普通2魚" />
-              </div>
               <div className='home-sign'>
                 <img src="./images/home/路牌插圖.svg" alt="路牌插圖" />
-              </div>
               </div>
             </div>
           </div>
@@ -151,67 +182,13 @@ const Home = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 export default Home
+
+
+
+
+
+
 
 
 

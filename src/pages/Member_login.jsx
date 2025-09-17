@@ -81,22 +81,19 @@ const Member_login = () => {
 
     return (
         <main className='member_login_main'>
-            <ScrollToTop/>
+            <ScrollToTop />
             <div className='login_container'>
                 {/* 左側品牌區 */}
                 <div className='login_left'>
                     <div className='brand_section'>
-                        <div className='logo'>
-                            <img src="./images/logo/jiyi_logo.svg" alt="集藝logo" />
-                        </div>
+                        <figure className='logo'>
+                            <img src="./images/logo_white.svg" alt="集藝logo" />
+                        </figure>
                         <h1 className='welcome_title'>歡迎回來</h1>
                         <p className='welcome_subtitle'>
                             探索美食與生活的無限可能<br />
                             與我們一起創造美好回憶
                         </p>
-                    </div>
-                    <div className='decoration_crocodile'>
-                        <img src="./images/decorations/deco-crocodile_wave.svg" alt="揮手鱷魚" />
                     </div>
                 </div>
 
@@ -107,6 +104,10 @@ const Member_login = () => {
                             <div className='form_title'>會員登入</div>
                             <p className='form_subtitle'>請輸入您的帳號密碼</p>
                         </div>
+
+                        <figure className='decoration_crocodile'>
+                            <img src="./images/decorations/deco-raisehand_allegator.svg" alt="揮手鱷魚" />
+                        </figure>
 
                         <form className='login_form' onSubmit={handleSubmit}>
                             <div className='form_group'>
@@ -153,16 +154,14 @@ const Member_login = () => {
                                 </Link>
                             </div>
 
-                            
-                                <button
-                                    type="submit"
-                                    className={`login_button ${isSubmitting ? 'submitting' : ''}`}
-                                    disabled={isSubmitting}
-                                >
-                                    <Link to={'/My_footprint'}>
-                                    {isSubmitting ? '登入中...' : '登入'}
-                                    </Link>
-                                </button>
+
+                            <button
+                                type="submit"
+                                className={`login_button ${isSubmitting ? 'submitting' : ''}`}
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? '登入中...' : '登入'}
+                            </button>
                         </form>
 
                         <div className='divider'>

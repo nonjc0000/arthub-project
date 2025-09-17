@@ -6,38 +6,16 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 .home-bg {
     background-color: $background;
     overflow: hidden; // 隱藏水平滾動條
 }
 
 
-
-
-
-
-
-
 .home-wrap {
     width: $w-100;
     height: $h-100vh;
     margin: 5% 0 auto auto;
-
-
-
-
-
-
 
 
     @media (max-width: 992px) {
@@ -50,38 +28,10 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 單純用flex並排
 .home-top {
     display: flex;
     justify-content: center;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     @media (max-width: 992px) {
@@ -95,20 +45,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .home-heading {
     width: $w-40;
     margin-left: 120px;
@@ -116,29 +52,10 @@
     margin-bottom: 250px;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @media (max-width: 992px) {
         width: 100%;
+        margin: 50px 0 auto;
     }
-
-
-
-
-
-
 
 
     h2 {
@@ -150,23 +67,12 @@
         color: $dark;
 
 
-
-
-
-
-
-
-        // @media (max-width: 1440px) {
-        //     font-size: $f-s-xxxxl; // 稍微縮小字體
-        //     padding-left: 20px; // 減少左內距
-        // }
+        @media (max-width:920px) {
+            padding-left: 0;
+            text-align: center;
+            font-size: $f-s-xxl;
+        }
     }
-
-
-
-
-
-
 
 
     .arrow {
@@ -175,31 +81,11 @@
         margin-left: 60px;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        @media (max-width: 1440px) {
-            margin-left: 30px;
+        @media (max-width: 992px) {
+            display: none;
         }
     }
 }
-
-
-
-
-
-
 
 
 .stall-wrap {
@@ -209,51 +95,10 @@
     height: auto;
 
 
-
-
-
-
-
-
     @media (max-width: 992px) {
-        margin-right: 0;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // @media (max-width: 1440px) {
-    //     margin-right: 40px; // 從 100px 大幅減少
-    // }
-
-
-
-
-
-
-
-
-    @media (max-width: 992px) {
+        margin: 24px 0 auto;
         width: $w-100; // 同樣全寬
     }
-
-
-
-
-
-
 
 
     .stall-item {
@@ -261,30 +106,10 @@
         display: flex;
 
 
-
-
-
-
-
-
         @media (max-width:992px) {
             margin-left: 10%;
-            width: 80%;
+            width: 90%;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         a {
@@ -292,162 +117,78 @@
         }
 
 
-
-
-
-
-
-
         .stall-first {
+            position: relative;
             width: $w-50;
             height: auto;
-            // animation: translatup 1s infinite;
+            animation: translatup 3.8s infinite;
+
+
+
+
 
 
 
 
             &:hover {
+                animation: paused;
                 transform: scale(1.1);
             }
+
+
             &:active {
+                animation: paused;
                 transform: scale(1.1);
             }
         }
 
 
-
-
-        // @keyframes translatup {
-        //     0% {
-        //         transform: translateY(0);
-        //     }
-
-
-
-
-        //     50% {
-        //         transform: translateY(-5px);
-        //     }
-
-
-
-
-        //     100% {
-        //         transform: translateY(0);
-        //     }
-        // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .stall-second {
+            position: relative;
             width: $w-60;
             height: auto;
             margin-top: 20%;
             margin-left: -15%;
+            animation: translatup 4s infinite;
+
+
             &:hover {
+                animation: paused;
                 transform: scale(1.1);
             }
+
+
             &:active {
+                animation: paused;
                 transform: scale(1.1);
             }
         }
 
 
-
-
-
-
-
-
         .stall-third {
+            position: relative;
             width: $w-40;
             height: auto;
             margin-top: 35%;
             margin-left: -96%;
+            animation: translatup 4.2s infinite;
+
+
+
+
             &:hover {
+                animation: paused;
                 transform: scale(1.1);
             }
+
+
             &:active {
+                animation: paused;
                 transform: scale(1.1);
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 .date-box {
@@ -462,21 +203,10 @@
     font-size: $f-s-xxxxl;
 
 
-
-
-
-
-
-
-    // @media (max-width: 992px) {
-    //     margin-top: 30px; // 正值
-    //     margin-right: 20px;
-    //     justify-content: center;
-    // }
-
-
-
-
+    @media (max-width: 992px) {
+        margin: 0 auto;
+        justify-content: center;
+    }
 
 
 
@@ -488,30 +218,10 @@
         transform: rotate(40deg) translatex(10px);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         @media (max-width: 1440px) {
             height: 4rem; // 稍微縮短
         }
     }
-
-
-
-
-
-
 
 
     .date-item {
@@ -521,30 +231,10 @@
         margin-top: 30px;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         @media (max-width: 1440px) {
             gap: 15px; // 縮小間距
         }
     }
-
-
-
-
-
-
 
 
     .weekday {
@@ -552,29 +242,9 @@
     }
 
 
-
-
-
-
-
-
     .weather {
         width: 65px;
         height: 65px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         @media (max-width: 1440px) {
@@ -584,22 +254,10 @@
     }
 
 
-
-
-
-
-
-
     .situation {
         font-size: $f-s-xs;
     }
 }
-
-
-
-
-
-
 
 
 .home-dec {
@@ -607,6 +265,9 @@
     height: 30vh;
 
 
+    @media (max-width:992px) {
+        height: 10vh;
+    }
 
 
     .home-dec-im {
@@ -618,36 +279,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // 第二塊
 .home-hot-wrap {
     width: 100%;
@@ -655,10 +286,9 @@
     position: relative;
 
 
-
-
-
-
+    @media (max-width:992px) {
+        margin-top: 0;
+    }
 
 
     .home-drink {
@@ -670,12 +300,6 @@
     }
 
 
-
-
-
-
-
-
     .home-ring {
         max-width: 10%;
         position: absolute;
@@ -683,12 +307,6 @@
         top: 18%;
         right: 7%;
     }
-
-
-
-
-
-
 
 
     .home-hat {
@@ -700,12 +318,6 @@
     }
 
 
-
-
-
-
-
-
     .home-book {
         max-width: 8%;
         position: absolute;
@@ -715,18 +327,15 @@
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    .home-dec-im-tw {
+        width: 20%;
+        position: absolute;
+        bottom: -35%;
+        right: 0;
+        @media (max-width:992px) {
+           bottom: -10%;
+        }
+    }
 
 
     .home-hot {
@@ -736,40 +345,14 @@
         margin-bottom: 60px;
 
 
-
-
-
-
-
-
         h3 {
             font-size: $f-s-xxxxl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             @media (max-width: 1440px) {
                 font-size: $f-s-xxxl; // 稍微縮小
             }
         }
-
-
-
-
-
-
 
 
         p {
@@ -780,19 +363,16 @@
 }
 
 
-
-
-
-
-
-
 .pic-wrap {
     max-width: 75%;
     margin: 0 auto;
 
 
-
-
+    p {
+        font-family: "Noto Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+    }
 
 
     .home-pic {
@@ -803,6 +383,16 @@
         gap: 16px;
 
 
+        @media (max-width:992px) {
+            flex-direction: column;
+        }
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
 
 
@@ -814,22 +404,130 @@
             display: flex;
             justify-content: space-between;
             flex-direction: column;
-
-
-
-
-
-
+            position: relative;
 
 
             .home-pic-item {
                 display: flex;
                 justify-content: space-between;
                 gap: 16px;
+
+
+                img {
+                    width: 100%;
+                }
+
+
+                .home-type-one,
+                .home-type-two {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+
+
+
+                    // 這裡會第二張圖會有溢出問題
+                    .text,
+                    .text-two {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(225, 155, 70, 0.5);
+                        backdrop-filter: blur(2px);
+                        position: absolute;
+                        top: 0;
+                        border-radius: 20px;
+                        opacity: 0;
+                        width: 100%;
+                        height: 100%;
+                        transition: opacity 0.3s;
+                        font-size: 2rem;
+                        line-height: 1;
+
+
+
+
+                        span {
+                            font-family: "DM Sans", sans-serif;
+                            font-size: 1.5rem;
+                            color: transparent;
+                            -webkit-text-stroke: 0.5px $white;
+                        }
+
+
+                        &:active {
+                            opacity: 1;
+                        }
+
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+
+            .home-type-three {
+                position: relative;
+                display: flex;
+                justify-content: center;
+
+
+                .text-three {
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(225, 155, 70, 0.5);
+                    backdrop-filter: blur(2px);
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    border-radius: 20px;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    font-size: 2rem;
+                    line-height: 1;
+
+
+                    span {
+                        font-family: "DM Sans", sans-serif;
+                        font-size: 1.5rem;
+                        color: transparent;
+                        -webkit-text-stroke: 0.5px $white;
+                    }
+
+
+                    &:active {
+                        opacity: 1;
+                    }
+
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
             }
         }
 
 
+
+
+        @media (max-width:992px) {
+            .home-pic-fsb {
+                width: 100%;
+            }
+
+
+            .home-type-one,
+            .home-type-two {
+                margin-bottom: 16px;
+            }
+        }
 
 
 
@@ -840,29 +538,9 @@
             flex: 1; // 讓下方大圖佔剩餘空間
 
 
-
-
-
-
-
-
             a {
                 display: block;
                 height: 100%;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                 img {
@@ -874,12 +552,6 @@
         }
 
 
-
-
-
-
-
-
         .home-pic-se {
             max-width: 50%;
             flex: 1;
@@ -888,39 +560,57 @@
             gap: 16px;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             .type-img-fo {
-                // width: 50%;
+                width: 50%;
                 display: flex;
                 flex: 1;
+
+
+                .home-type-four {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+
+                    .text-four {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(225, 155, 70, 0.5);
+                        backdrop-filter: blur(2px);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        border-radius: 20px;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        font-size: 2rem;
+                        line-height: 1;
+
+
+                        span {
+                            // font-family: "DM Sans", sans-serif;
+                            font-size: 1.5rem;
+                            color: transparent;
+                            -webkit-text-stroke: 0.5px $white;
+                        }
+
+
+
+
+                        &:active {
+                            opacity: 1;
+                        }
+
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             .type-img {
@@ -928,14 +618,96 @@
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
+
+
+                .home-type-five {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+
+                    .text-five {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(225, 155, 70, 0.5);
+                        backdrop-filter: blur(2px);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        border-radius: 20px;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        font-size: 2rem;
+                        line-height: 1;
+
+
+                        span {
+                            // font-family: "DM Sans", sans-serif;
+                            font-size: 1.5rem;
+                            color: transparent;
+                            -webkit-text-stroke: 0.5px $white;
+                        }
+
+
+                        &:active {
+                            opacity: 1;
+                        }
+
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+
+                .home-type-six {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+
+
+                    .text-six {
+                        text-align: center;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background: rgba(225, 155, 70, 0.5);
+                        backdrop-filter: blur(2px);
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        border-radius: 20px;
+                        opacity: 0;
+                        transition: opacity 0.3s;
+                        font-size: 2rem;
+                        line-height: 1;
+
+
+                        span {
+                            // font-family: "DM Sans", sans-serif;
+                            font-size: 1.5rem;
+                            color: transparent;
+                            -webkit-text-stroke: 0.5px $white;
+                        }
+
+
+                        &:active {
+                            opacity: 1;
+                        }
+
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
             }
         }
-
-
-
-
-
-
 
 
         img {
@@ -945,14 +717,16 @@
             object-fit: cover;
             display: block;
         }
+
+
+        @media (max-width:992px) {
+            .home-pic-se {
+                max-width: 100%;
+                min-width: 0;
+            }
+        }
     }
 }
-
-
-
-
-
-
 
 
 // 第三塊
@@ -965,43 +739,33 @@
     transform: rotate(5deg);
 
 
-
-
-
-
+    @media (max-width:992px) {
+        margin: 24px auto;
+    }
 
 
     h3 {
         font-family: $family-display;
         font-size: $f-s-xxxxl;
         display: inline-block;
+
+
+        @media (max-width:992px) {
+            font-size: $f-s-xl;
+        }
     }
 }
 
 
-
-
-
-
-
-
 .home-blog-item {
-    @extend %flex-center;
+    display: flex;
+    justify-content: center;
     position: relative;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+    @media (max-width:992px) {
+        flex-direction: column;
+    }
 
 
     @media (max-width: 1440px) {
@@ -1009,23 +773,16 @@
     }
 
 
-
-
-
-
-
-
     .home-left-img {
         width: $w-100;
         position: relative;
         margin-right: -250px;
         z-index: 3;
+    }
 
 
-
-
-
-
+    figure {
+        position: relative;
 
 
         img {
@@ -1033,21 +790,37 @@
             border-top-right-radius: $rad-ex;
             border-bottom-right-radius: $rad-ex;
         }
+
+
+        .bear {
+            width: 15%;
+            position: absolute;
+            top: -5%;
+            left: 10%;
+        }
+
+
+        .crocodile {
+            width: 15%;
+            position: absolute;
+            z-index: 5;
+            bottom: 0;
+            left: 20%;
+
+
+            @media (max-width:992px) {
+                bottom: -5%;
+            }
+        }
     }
-
-
-
-
-
-
 
 
     .home-right-blog {
         position: relative;
-        height: 70vh;
-        max-height: 620px;
+        // height: 70vh;
+        // max-height: 100vh;
         z-index: 0;
-        margin-top: 450px;
+        margin-top: 300px;
         width: $w-100;
         background-color: $primary;
         border-top-left-radius: $rad-ex;
@@ -1055,18 +828,9 @@
         z-index: 2;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+        @media (max-width:992px) {
+            margin-top: 100px;
+        }
 
 
         &::before {
@@ -1076,7 +840,7 @@
             left: 20px;
             right: 0;
             bottom: 0;
-            border: 1px solid black;
+            border: 2px solid $dark;
             border-right: none;
             border-top-left-radius: $rad-ex;
             border-bottom-left-radius: $rad-ex;
@@ -1085,10 +849,22 @@
         }
 
 
+        .pic-dog {
+            width: $w-50;
+            position: absolute;
+            top: -450px;
+            left: 300px;
 
 
+            @media (max-width:992px) {
+                display: none;
+            }
+        }
 
 
+        .homecard-ob {
+            margin-bottom: 80px;
+        }
 
 
         .home-right-txt {
@@ -1098,108 +874,33 @@
             margin-right: 115px;
 
 
+            h3 {
+                font-weight: $f-w-b;
+                font-size: $f-s-xxxl;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-            @media (max-width:1440px) {
-                margin-top: 10px;
             }
-        }
 
 
+            p {
+                font-weight: $f-w-m;
+                font-size: $f-s-lg;
+                color: #697655;
+            }
 
 
-
-
-
-
-        h3 {
-            font-weight: $f-w-b;
-            font-size: $f-s-xxxl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        p {
-            font-weight: $f-w-m;
-            font-size: $f-s-lg;
-            color: #697655;
+            // @media (max-width:1440px) {
+            //     margin-top: 10px;
+            // }
         }
     }
 }
 
 
-.home-card {
-    @extend %flex-center;
-    padding-left: 100px;
-    margin-bottom: 20px;
 
 
-    img {
-        width: $w-100;
-        display: block;
-        border-top-right-radius: 30px;
-        border-bottom-left-radius: 30px;
-    }
 
 
-}
 
 
 .home-button {
@@ -1213,29 +914,38 @@
 }
 
 
+
+
 .home-road {
     position: relative;
-    display: flex;
     width: 100%;
-    .crocodile {
-        position: absolute;
-        z-index: 4;
-        top: 0;
-        left: 10%;
+    display: flex;
+    justify-content: center;
+
+
+    // figure {
+    //     width: 90%;
+    //     position: absolute;
+    //     top: -350px;
+    //     height: 100vh;
+    // }
+
+
+    @media (max-width: 1440px) {
+        figure {
+            width: 100%;
+        }
     }
-    .road-pic {
-        position: absolute;
-        left: 100px;
-        top: -360px;
-    }
+
+
+
+
+
+
     .home-sign {
         position: absolute;
-        top: 28%;
-        left: 35%;
+        bottom: -280px;
+        left: 5%;
     }
 }
-
-
-
-
 
