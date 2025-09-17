@@ -32,7 +32,7 @@
   background: none;
 }
 
-.user_sidebar_left, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .home-card .home-card-item, .event_card_infowindow .event_info .event_details, .topbar .hamburger {
+.user_sidebar_left, .register_main .register_left .welcome_section .benefit_list, .list_time, .stall_register_main .stall_num .column, .stall_register_main .register .register_box .register_form .contact, .stall_register_main .register .register_box .register_form .contact .input, .stall_register_main .register .register_box .register_form .file, .stall_register_main .register .register_box .register_form .file .file_box, .detail_info_container .info_desc, .review_container .event_review_box, .stall_map_main .stalls_1 .stalls_2, .order_management_content, .notifications_content, .notifications_content .notifications_layout .notifications_list, .notifications_content .notifications_layout .notifications_list .notification_item .notification_date, .footprint_content, .find_type_main .find_type_card .find_type_card_wrap, .find_type_main .find_type_card .find_type_card_wrap .date, .home-card .home-card-item, .event_card_infowindow .event_info .event_details, .topbar .hamburger {
   display: flex;
   flex-direction: column;
 }
@@ -6744,9 +6744,6 @@ input {
     height: 80px;
     margin-bottom: 25px;
   }
-  .member_login_main .login_left .brand_section .logo img {
-    width: 40px;
-  }
   .member_login_main .login_left .brand_section .welcome_title {
     font-size: 1.5rem;
   }
@@ -6800,7 +6797,6 @@ input {
 .forgot_password_main .forgot_password_container {
   background: #fff;
   border-radius: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
   max-width: 800px;
@@ -6809,7 +6805,7 @@ input {
 }
 .forgot_password_main .forgot_left {
   flex: 1;
-  background: linear-gradient(135deg, #ED972E 0%, #D48214 100%);
+  background-color: #ED972E;
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
@@ -6818,45 +6814,17 @@ input {
   position: relative;
   color: #fff;
 }
-.forgot_password_main .forgot_left::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.forgot_password_main .forgot_left::after {
-  content: "";
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-}
 .forgot_password_main .forgot_left .illustration_section {
   text-align: center;
   z-index: 2;
 }
 .forgot_password_main .forgot_left .illustration_section .forgot_icon {
-  width: 100px;
-  height: 100px;
-  background: #fff;
-  border-radius: 50%;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 30px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-.forgot_password_main .forgot_left .illustration_section .forgot_icon img {
-  width: 50px;
-  height: auto;
-  filter: none;
 }
 .forgot_password_main .forgot_left .illustration_section .forgot_title {
   font-size: 1.5rem;
@@ -6870,23 +6838,10 @@ input {
   line-height: 1.6;
   max-width: 200px;
 }
-.forgot_password_main .forgot_left .decoration_element {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  width: 70px;
-  height: 70px;
-  z-index: 2;
-}
-.forgot_password_main .forgot_left .decoration_element img {
-  width: 100%;
-  height: auto;
-  filter: brightness(0) invert(1) opacity(0.8);
-}
 .forgot_password_main .forgot_right {
   flex: 1;
   padding: 40px 30px;
-  background-color: #CBD4C1;
+  background-color: #D8E1CD;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -6906,7 +6861,7 @@ input {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #dee2e6;
+  background: #ced4da;
   color: #6c757d;
   display: flex;
   align-items: center;
@@ -6920,13 +6875,13 @@ input {
   color: #fff;
 }
 .forgot_password_main .forgot_right .step_indicator .step.completed {
-  background: #28a745;
+  background: #BEC7B4;
   color: #fff;
 }
 .forgot_password_main .forgot_right .step_indicator .step_line {
   width: 40px;
   height: 2px;
-  background: #dee2e6;
+  background: #ced4da;
   transition: background-color 0.3s ease;
 }
 .forgot_password_main .forgot_right .step_indicator .step_line.active {
@@ -7018,7 +6973,6 @@ input {
 .forgot_password_main .forgot_right .forgot_form .send_button:hover:not(:disabled) {
   background: #D48214;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(237, 151, 46, 0.3);
 }
 .forgot_password_main .forgot_right .forgot_form .send_button:disabled {
   opacity: 0.7;
@@ -7097,9 +7051,6 @@ input {
     height: 70px;
     margin-bottom: 25px;
   }
-  .forgot_password_main .forgot_left .illustration_section .forgot_icon img {
-    width: 35px;
-  }
   .forgot_password_main .forgot_left .illustration_section .forgot_title {
     font-size: 1.25rem;
   }
@@ -7172,7 +7123,6 @@ input {
 .register_main .register_container {
   background: #fff;
   border-radius: 30px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   width: 100%;
   max-width: 1000px;
@@ -7181,7 +7131,7 @@ input {
 }
 .register_main .register_left {
   flex: 1;
-  background: linear-gradient(135deg, #ED972E 0%, #D48214 100%);
+  background-color: #ED972E;
   padding: 40px 30px;
   display: flex;
   flex-direction: column;
@@ -7190,26 +7140,6 @@ input {
   position: relative;
   color: #fff;
 }
-.register_main .register_left::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 120px;
-  height: 120px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.register_main .register_left::after {
-  content: "";
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  border-radius: 50%;
-}
 .register_main .register_left .welcome_section {
   text-align: center;
   z-index: 2;
@@ -7217,19 +7147,10 @@ input {
 .register_main .register_left .welcome_section .welcome_icon {
   width: 120px;
   height: 120px;
-  background: #fff;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 30px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  font-size: 50px;
-}
-.register_main .register_left .welcome_section .welcome_icon img {
-  width: 60px;
-  height: auto;
-  filter: none;
 }
 .register_main .register_left .welcome_section .welcome_title {
   font-size: 1.75rem;
@@ -7245,7 +7166,7 @@ input {
   margin-bottom: 30px;
 }
 .register_main .register_left .welcome_section .benefit_list {
-  text-align: left;
+  padding-left: 11%;
 }
 .register_main .register_left .welcome_section .benefit_list .benefit_item {
   display: flex;
@@ -7265,30 +7186,17 @@ input {
   font-size: 0.75rem;
   flex-shrink: 0;
 }
-.register_main .register_left .decoration_register {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  width: 80px;
-  height: 80px;
-  z-index: 2;
-}
-.register_main .register_left .decoration_register img {
-  width: 100%;
-  height: auto;
-  filter: brightness(0) invert(1) opacity(0.8);
-}
 .register_main .register_right {
   flex: 1.2;
-  padding: 30px 30px;
-  background-color: #CBD4C1;
+  padding: 40px;
+  background-color: #D8E1CD;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow-y: auto;
 }
 .register_main .register_right .register_form_container {
-  max-width: 400px;
   width: 100%;
 }
 .register_main .register_right .form_header {
@@ -7406,7 +7314,7 @@ input {
 .register_main .register_right .register_form .terms_section .checkbox_group .custom_checkbox {
   position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   cursor: pointer;
   gap: 10px;
 }
@@ -7432,7 +7340,6 @@ input {
   position: relative;
   cursor: pointer;
   flex-shrink: 0;
-  margin-top: 2px;
 }
 .register_main .register_right .register_form .terms_section .checkbox_group .custom_checkbox .checkmark::after {
   content: "";
@@ -7451,6 +7358,7 @@ input {
   font-size: 0.875rem;
   line-height: 1.4;
   cursor: pointer;
+  padding-top: 2px;
 }
 .register_main .register_right .register_form .terms_section .checkbox_group .custom_checkbox .checkbox_label .link_text {
   color: #ED972E;
@@ -7461,6 +7369,9 @@ input {
 }
 .register_main .register_right .register_form .terms_section .checkbox_group .custom_checkbox .checkbox_label .required {
   color: #e74c3c;
+}
+.register_main .register_right .register_form .terms_section .checkbox_group .custom_checkbox .checkbox_label a {
+  display: inline-block;
 }
 .register_main .register_right .register_form .register_button {
   background: #ED972E;

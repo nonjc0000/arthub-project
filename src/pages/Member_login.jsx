@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ScrollToTop from '../components/ScrollToTop'
 
 const Member_login = () => {
+
+    const navigate = useNavigate();
+
     // 登入表單狀態
     const [loginForm, setLoginForm] = useState({
         email: '',
@@ -70,6 +73,7 @@ const Member_login = () => {
 
             // 登入成功後的處理
             alert('登入成功！');
+            navigate("/My_footprint");
 
         } catch (error) {
             console.error('登入失敗:', error);

@@ -13,7 +13,6 @@
     .register_container {
         background: $white;
         border-radius: $rad-lg;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         overflow: hidden;
         width: 100%;
         max-width: 1000px;
@@ -24,7 +23,7 @@
     // 左側品牌區
     .register_left {
         flex: 1;
-        background: linear-gradient(135deg, $accent 0%, $accent-700 100%);
+        background-color: $accent;
         padding: $spacing-xxl $spacing-xl;
         display: flex;
         flex-direction: column;
@@ -33,29 +32,6 @@
         position: relative;
         color: $white;
 
-        // 背景裝飾效果
-        &::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 120px;
-            height: 120px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            left: -30px;
-            width: 80px;
-            height: 80px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
         .welcome_section {
             text-align: center;
             z-index: 2;
@@ -63,20 +39,10 @@
             .welcome_icon {
                 width: 120px;
                 height: 120px;
-                background: $white;
-                border-radius: 50%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin: 0 auto $spacing-xl;
-                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-                font-size: 50px;
-
-                img {
-                    width: 60px;
-                    height: auto;
-                    filter: none;
-                }
             }
 
             .welcome_title {
@@ -95,7 +61,8 @@
             }
 
             .benefit_list {
-                text-align: left;
+                @extend %flex-column;
+                padding-left: 11%;
 
                 .benefit_item {
                     display: flex;
@@ -118,35 +85,20 @@
                 }
             }
         }
-
-        .decoration_register {
-            position: absolute;
-            bottom: $spacing-lg;
-            right: $spacing-lg;
-            width: 80px;
-            height: 80px;
-            z-index: 2;
-
-            img {
-                width: 100%;
-                height: auto;
-                filter: brightness(0) invert(1) opacity(0.8);
-            }
-        }
     }
 
     // 右側表單區
     .register_right {
         flex: 1.2;
-        padding: $spacing-xl $spacing-xl;
-        background-color: $primary;
+        padding: $spacing-xxl;
+        background-color: $primary-300;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         overflow-y: auto;
 
         .register_form_container {
-            max-width: 400px;
             width: 100%;
         }
 
@@ -289,7 +241,7 @@
                     .custom_checkbox {
                         position: relative;
                         display: flex;
-                        align-items: flex-start;
+                        align-items: center;
                         cursor: pointer;
                         gap: $spacing-xs;
 
@@ -318,7 +270,6 @@
                             position: relative;
                             cursor: pointer;
                             flex-shrink: 0;
-                            margin-top: 2px;
 
                             &::after {
                                 content: "";
@@ -339,6 +290,7 @@
                             font-size: $f-s-sm;
                             line-height: 1.4;
                             cursor: pointer;
+                            padding-top: 2px;
 
                             .link_text {
                                 color: $accent;
@@ -351,6 +303,10 @@
 
                             .required {
                                 color: #e74c3c;
+                            }
+
+                            a{
+                                display: inline-block;
                             }
                         }
                     }

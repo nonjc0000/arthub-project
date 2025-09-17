@@ -143,9 +143,9 @@ const Register = () => {
                 {/* 左側品牌區 */}
                 <div className='register_left'>
                     <div className='welcome_section'>
-                        <div className='welcome_icon'>
-                            <img src="./images/icons/star-icon.svg" alt="星星圖示" />
-                        </div>
+                        <figure className='welcome_icon'>
+                            <img src="./images/logo_white.svg" alt="集藝logo" />
+                        </figure>
                         <h1 className='welcome_title'>加入集藝</h1>
                         <p className='welcome_subtitle'>
                             開始您的美食與生活探索之旅<br />
@@ -170,9 +170,6 @@ const Register = () => {
                                 <span>會員專屬內容與資訊</span>
                             </div>
                         </div>
-                    </div>
-                    <div className='decoration_register'>
-                        <img src="./images/decorations/deco-crocodile_welcome.svg" alt="歡迎鱷魚" />
                     </div>
                 </div>
 
@@ -316,7 +313,7 @@ const Register = () => {
                                         />
                                         <span className='checkmark'></span>
                                         <span className='checkbox_label'>
-                                            我已閱讀並同意 <Link to="/terms" className='link_text'>服務條款</Link> 和 <Link to="/privacy" className='link_text'>隱私政策</Link> <span className='required'>*</span>
+                                            我已閱讀並同意 <Link to="#" className='link_text'>服務條款</Link> 和 <Link to="#" className='link_text'>隱私政策</Link> <span className='required'>*</span>
                                         </span>
                                     </label>
                                     {errors.agreeTerms && <div className='error_message'>{errors.agreeTerms}</div>}

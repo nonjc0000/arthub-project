@@ -116,17 +116,14 @@ const Forgot_password = () => {
                 {/* 左側品牌區 */}
                 <div className='forgot_left'>
                     <div className='illustration_section'>
-                        <div className='forgot_icon'>
-                            <img src="./images/icons/key-icon.svg" alt="密鑰圖示" />
-                        </div>
+                        <figure className='forgot_icon'>
+                            <img src="./images/logo_white.svg" alt="集藝logo" />
+                        </figure>
                         <h1 className='forgot_title'>忘記密碼？</h1>
                         <p className='forgot_subtitle'>
                             別擔心！我們會幫助您<br />
                             重設密碼
                         </p>
-                    </div>
-                    <div className='decoration_element'>
-                        <img src="./images/decorations/deco-crocodile_thinking.svg" alt="思考鱷魚" />
                     </div>
                 </div>
 

@@ -46,7 +46,7 @@ const Footer = () => {
                     </Link>
                 </li>
                 <li className='user'>
-                    <Link to="/My_footprint">
+                    <Link to="/Member_login">
                     <p className='sitemap_item_content'>
                     <img src="./images/icons/user.svg" style={{ width: '24px' }} />
                     會員登入
