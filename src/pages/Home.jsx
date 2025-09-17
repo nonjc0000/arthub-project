@@ -11,7 +11,7 @@ const Home = () => {
   // 熱點分析
   const projectId = "tc4d2awk9v";
   Clarity.init(projectId);
-  Clarity.identify('Home');
+  Clarity.identify('');
 
 
   return (
