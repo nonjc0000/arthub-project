@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import ScrollToTop from '../components/ScrollToTop'
 
 const Register = () => {
+
+    const navigate = useNavigate();
+    
     // 註冊表單狀態
     const [formData, setFormData] = useState({
         name: '',
@@ -127,6 +130,7 @@ const Register = () => {
             
             // 註冊成功後的處理
             alert('註冊成功！歡迎加入集藝！');
+            navigate("/Member_login");
             
         } catch (error) {
             console.error('註冊失敗:', error);

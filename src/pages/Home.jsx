@@ -3,9 +3,15 @@ import PageTop from '../components/PageTop';
 import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop'
+import Clarity from '@microsoft/clarity';
 
 
 const Home = () => {
+
+  // 熱點分析
+  const projectId = "tc4d2awk9v";
+  Clarity.init(projectId);
+  Clarity.identify('Home');
 
 
   return (

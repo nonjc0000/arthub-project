@@ -13,6 +13,7 @@
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.16.10",
     "@googlemaps/markerclusterer": "^2.6.2",
+    "@microsoft/clarity": "^1.0.0",
     "@vis.gl/react-google-maps": "^1.5.5",
     "axios": "^1.11.0",
     "jquery": "^3.7.1",
