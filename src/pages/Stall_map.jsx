@@ -11,15 +11,11 @@ import stall from '../data/stall.json'
 
 
 
-
-
-
-
-
-
 const Stall_map = () => {
     // 攤位資料， 用 state 存資料
     const [arrStall] = useState(stall);
+
+
 
 
     // 搜尋區
@@ -39,9 +35,15 @@ const Stall_map = () => {
 
 
 
+
+
+
+
     // 按鈕區
     // 記錄已經選中的按鈕
     const [activeButtons, setActiveButtons] = useState([]);
+
+
 
 
     // 按鈕資料
@@ -53,6 +55,8 @@ const Stall_map = () => {
         { id: 5, type: 'pet', text: '寵物', img: './images/Stall_map/btn_pet.svg' },
         { id: 6, type: 'like', text: '收藏', img: './images/Stall_map/btn_like.svg' }
     ];
+
+
 
 
     // 如果點擊的是已選中的按鈕，就取消選中；否則選中它
@@ -82,9 +86,29 @@ const Stall_map = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <main className='stall_map_main'>
             <section className='stall_map_container'>
+
+
+
+
+
+
+
+
 
 
 
@@ -105,13 +129,27 @@ const Stall_map = () => {
 
 
 
+
+
+
+
+
+
+
+
                 {/* 攤位地圖 */}
                 <div className='stall_map'>
 
 
 
 
+
+
+
+
                     <div className='stalls_1'>
+
+
 
 
                         <div className='stall_wrap1'>
@@ -123,15 +161,23 @@ const Stall_map = () => {
                                         />
 
 
+
+
                                     )
                                 })
                             }
 
 
+
+
                         </div>
 
 
+
+
                         <div className='stalls_2'>
+
+
 
 
                             <div className='stall_wrap2'>
@@ -143,12 +189,18 @@ const Stall_map = () => {
                                             />
 
 
+
+
                                         )
                                     })
                                 }
 
 
+
+
                             </div>
+
+
 
 
                             <div className='stalls_3'>
@@ -161,9 +213,13 @@ const Stall_map = () => {
                                                 />
 
 
+
+
                                             )
                                         })
                                     }
+
+
 
 
                                 </div>
@@ -176,14 +232,30 @@ const Stall_map = () => {
                                                 />
 
 
+
+
                                             )
                                         })
                                     }
 
 
+
+
                                 </div>
                             </div>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -198,6 +270,14 @@ const Stall_map = () => {
 
                     </div>
                 </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -229,9 +309,25 @@ const Stall_map = () => {
 
 
 
+
+
+
+
+
+
+
+
                 {/* 攤位搜尋內容 */}
                 <div className='stall_search_box'>
                     <form action="" className='stall_search_filter'>
+
+
+
+
+
+
+
+
 
 
 
@@ -253,6 +349,22 @@ const Stall_map = () => {
                                 <img src="./images/find_map/magnifier.svg" alt="搜尋" />
                             </button>
                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -291,6 +403,22 @@ const Stall_map = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         {/* 選單 */}
                         <div className='select'>
                             <select name="stall_type" id="stall_type">
@@ -306,6 +434,14 @@ const Stall_map = () => {
 
 
 
+
+
+
+
+
+
+
+
                     <div className='stall_search_result'>
                         {
                             filterStall.map((stall) =>
@@ -313,9 +449,17 @@ const Stall_map = () => {
 
 
 
+
+
+
+
                                 <Stall_map_card {...stall} key={stall.id} />
                             )
                         }
+
+
+
+
 
 
 
@@ -331,6 +475,28 @@ const Stall_map = () => {
     )
 }
 export default Stall_map
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

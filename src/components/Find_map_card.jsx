@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Find_map_card = ({id, name, date, time, tag1, tag2, tag3}) => {
+const Find_map_card = ({ id, name, date, time, tag }) => {
   return (
     <>
       <div className='find_map_card'>
         <figure>
-        <img src="./images/find_map/festival_img.jpg" alt="" />
+          <img src="./images/find_map/festival_img.jpg" alt="" />
         </figure>
         <div className='find_map_card_desc'>
           {/* <h2>夏末微光祭</h2> */}
@@ -13,9 +13,9 @@ const Find_map_card = ({id, name, date, time, tag1, tag2, tag3}) => {
           {/* <p>2025.07.14-07.15  9:00-18:00</p> */}
           <p>{date} {time}</p>
           <div className='anchors'>
-          <a href="#"># {tag1}</a>
-          <a href="#"># {tag2}</a>
-          <a href="#"># {tag3}</a>
+            {
+              tag.slice(0, 3).map(t => <a href="#"># {t}</a>)
+            }
           </div>
         </div>
         <svg width="29" height="25" viewBox="0 0 29 25" fill="none" xmlns="http://www.w3.org/2000/svg">

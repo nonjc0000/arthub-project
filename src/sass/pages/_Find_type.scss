@@ -3,8 +3,14 @@
 @use '../functions/' as *;
 
 
+
+
 .find_type_main {
     background-color: $background;
+
+
+
+
 
 
 
@@ -15,33 +21,59 @@
         gap: $spacing-xxl;
 
 
+
+
         .result_box {
             display: flex;
             width: 68%;
             height: 910px;
-            padding: 50px 0px 40px 0px;
+            padding: 30px 0px 40px 0px;
             background-color: $white;
             border-radius: $rad-lg ;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
+
 
 
         .find_type_result {
+            outline: 1px red solid;
             width: 83%;
             height: $w-100;
-
-
+            padding: 10px 0 0 0;
             background-color: $white;
-            // justify-content: center;
-            align-items: center;
+         
+            // align-items: center;
             @extend %flex-wrap;
             gap: $spacing-xl;
             overflow: auto;
+            @media (max-width:1870px) {
+                width: 90%;
+            }
+            @media (max-width:1730px) {
+                width: 95%;
+            }
+            @media (max-width:1643px) {
+                width: 83%;
+            }
+            @media(max-width:1410px){
+                width: 90%;
+            }
+            @media(max-width:1305px){
+                width: 90%;
+                gap:$spacing-xxs ;
+            }
+           
         }
 
 
+
+
     }
+
+
 
 
     .find_type_img1,
@@ -51,11 +83,15 @@
     }
 
 
+
+
     .find_type_img1 {
         bottom: -640px;
         left: 110px;
         z-index: 2;
     }
+
+
 
 
     .find_type_img2 {
@@ -64,7 +100,11 @@
         transform: rotate(2deg);
 
 
+
+
     }
+
+
 
 
     .type_search-box {
@@ -78,6 +118,9 @@
         border-radius: $rad-lg ;
         padding: 45px $spacing-md;
         gap: 60px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
 
 
         .select {
@@ -89,7 +132,12 @@
             border-bottom: 1px solid $black;
 
 
+
+
             background-size: 22px;
+           
+
+
 
 
             select {
@@ -98,7 +146,11 @@
             }
 
 
+
+
         }
+
+
 
 
         .button_box {
@@ -106,11 +158,15 @@
         }
 
 
+
+
         p {
             padding-left: $spacing-xxs;
             text-align: left;
             font-size: $f-s-sm;
         }
+
+
 
 
         .find_type_btn_box {
@@ -124,15 +180,55 @@
 
 
 
+
+
+
+
             button {
                 max-width: 170px;
                 height: 45px;
                 border: none;
-                color: $white;
-                background-color: $accent;
+                color: $accent;
+                background-color: $white;
+                border: 1px solid;
                 border-radius: $rad-ex;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                transition: all 0.1s ease;
+
+
+                &:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+                }
+
+
+                &.active {
+                    background-color: $accent; // 主色調背景
+                    color: $white; // 白色文字
+                    border: 1px solid $accent; // 主色調邊框
+                    font-weight: bold; // 加粗文字
+
+
+
+
+                    box-shadow: 0 2px 8px rgba($accent, 0.3);
+
+
+                    // 活躍狀態的懸停效果
+                    &:hover {
+                        // transform: translateY(-1px);
+                    }
+                }
+
+
+                // 按下時的效果
+                &:active {
+                    transform: translateY(0);
+                }
             }
         }
+
+
 
 
         .search {
@@ -143,6 +239,9 @@
             padding: $spacing-xxs $spacing-lg;
             width: $w-80;
             height: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
 
 
             input {
@@ -151,8 +250,12 @@
             }
 
 
+
+
             button {
                 @extend %remove_form_style;
+
+
 
 
                 img {
@@ -165,6 +268,8 @@
     }
 
 
+
+
     .find_type_card {
         width: 230px;
         height: 300px;
@@ -172,6 +277,22 @@
         border-radius: $rad-lg;
         overflow: hidden;
         border: solid 1px $black;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        @media(max-width:1305px){
+                transform: scale(0.9);
+            }
+        @media(max-width:1190px){
+                transform: scale(0.8);
+            }
+
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+
 
 
         .find_type_card_wrap {
@@ -181,12 +302,18 @@
             @extend %flex-column;
 
 
+
+
             .top {
                 @extend %flex-space-between;
 
 
+
+
                 .like_button {
                     @extend %remove_form_style;
+
+
 
 
                     img {
@@ -197,40 +324,95 @@
             }
 
 
+
+
             .date {
                 @extend %flex-column;
                 gap: $spacing-xxs;
                 ;
 
 
+
+
                 figure {
-                    width: 115px;
+                    // width: 115px;
                     font-size: $f-s-xs;
                     color: $white;
                     background-color: $accent;
-                    padding: 3px 5px;
+                    padding: 3px 7px;
                     border-radius: $rad-ex;
                     @extend %flex-space-between;
-                    p{
+                    gap: $spacing-xs;
+
+
+                    p {
                         font-size: 12px;
                     }
 
 
+
+
                     img {
-                        width: 13px;
-                        height: 13px;
+                        // outline: 1px solid red;
+                        width: 16px;
+                        height: 16px;
+
+
+                    }
+
+
+                    .icon_time {
+                        width: 16px;
+                        height: 19px;
+                        padding: 1px 0 0 0;
                     }
                 }
 
 
+
+
             }
+
+
 
 
             .find_type_tag_box {
                 margin-top: auto;
                 display: flex;
                 gap: $spacing-xxs;
-                ;
+                overflow: hidden; // 隱藏超出部分
+                white-space: nowrap; // 防止換行
+                position: relative; // 為動畫定位做準備
+                width: 100%; // 確保容器寬度
+
+
+                // 跑馬燈動畫
+                .tag_wrapper {
+                    display: flex;
+                    gap: $spacing-xs;
+                    animation: marquee-smooth 15s linear infinite; // 8秒完成一次循環
+
+
+                    // 暫停動畫當滑鼠懸停時 (可選)
+                    &:hover {
+                        animation-play-state: paused;
+                    }
+                }
+
+
+                //平滑的循環效果
+                @keyframes marquee-smooth {
+                    0% {
+                        transform: translateX(100%);
+                    }
+
+
+                    100% {
+                        transform: translateX(-100%);
+                    }
+                }
+
+
 
 
                 button {
@@ -238,6 +420,12 @@
                     background-color: $accent;
                     color: $white;
                     border-radius: $rad-ex;
+                    flex-shrink: 0; // 防止按鈕縮小
+                    white-space: nowrap; // 防止按鈕內文字換行
+                    padding: 0px 5px; // 給按鈕一些內邊距
+                    min-width: fit-content; // 確保按鈕寬度適應內容
+
+
 
 
                 }
@@ -245,26 +433,33 @@
         }
 
 
+
+
         .find_type_card_desc {
             h2 {
                 font-size: $f-s-basic;
                 font-weight: $f-w-b;
                 color: $text ;
-                padding: $spacing-xxs $spacing-md ;
+                padding: $spacing-xxs $spacing-xs 0 $spacing-xs;
             }
 
 
+
+
             p {
+                // outline: 1px red solid;
                 font-size: $f-s-xs;
                 font-weight: $f-w-r;
                 color: $text ;
                 @extend %flex-center;
-                padding: 0 $spacing-md ;
+                padding: 0 $spacing-xs ;
                 padding-bottom: $spacing-sm;
                 @extend %multiple-lines;
                 -webkit-line-clamp: 3;
             }
         }
+
+
 
 
     }

@@ -2,10 +2,14 @@
 @use "../functions/" as *;
 
 
+
+
 .region_title h1 {
   text-align: center;
   margin: $spacing-y-lg;
 }
+
+
 
 
 .region_introduction {
@@ -16,11 +20,15 @@
 }
 
 
+
+
 .region_carousel {
   position: relative;
   display: flex;
   justify-content: center;
   gap: 20px;
+
+
 
 
   button {
@@ -31,17 +39,31 @@
 }
 
 
+
+
 .carousel-image {
   display: block;
   max-width: 30vw;
   height: auto;
+  border-radius: $rad-md;
 }
 
 
+.region_introduction{
+     position: relative;
+  /* 寬度 100%，高度依比例撐開 */
+  background: url("/images/Find_schedule/greenBg.png") no-repeat top center / 100% auto;
+  /* 用比例把容器撐到跟圖一樣高（假設圖是 1440x600 → 600/1440≈41.7%）*/
+  padding-bottom: 5%;
+  background-position: 50% -20px;
+  min-height: 0;    
+}
 .region_txt {
   padding-top: 50px;
   text-align: center;
 }
+
+
 
 
 .travelCard {
@@ -50,6 +72,12 @@
   justify-items: center;
   padding-bottom: $spacing-ex;
 }
+
+
+
+
+
+
 
 
 

@@ -3,8 +3,12 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 
+
+
 const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
   const [isMobile, setIsMobile] = useState(false);
+
+
 
 
   const categories = [
@@ -20,6 +24,8 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
   ];
 
 
+
+
   // 檢測螢幕尺寸
   useEffect(() => {
     const checkMobile = () => {
@@ -27,10 +33,14 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
     };
 
 
+
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
+
+
 
 
   // 圖示載入錯誤處理
@@ -41,10 +51,14 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
   };
 
 
+
+
   // 圖示載入成功
   const handleImageLoad = (e, categoryName) => {
     console.log(`圖示載入成功: ${categoryName}`, e.target.src);
   };
+
+
 
 
   return (
@@ -109,18 +123,24 @@ const BlogSelect = ({ selectedCategory, onCategoryChange, isInPostPage }) => {
       </ul>
 
 
+
+
       {/* 偵錯用：顯示當前狀態 */}
-      {isMobile && process.env.NODE_ENV === 'development' && (
+      {/* {isMobile && process.env.NODE_ENV === 'development' && (
         <div style={{ fontSize: '10px', color: '#999', padding: '4px' }}>
           DEBUG: Mobile mode, Icons should be 16px
         </div>
-      )}
+      )} */}
     </div>
   );
 };
 
 
+
+
 export default BlogSelect;
+
+
 
 
 // 替代解決方案：使用 CSS 背景圖
@@ -136,6 +156,8 @@ export const BlogSelectWithBgIcons = ({ selectedCategory, onCategoryChange, isIn
     { name: "二手選物", icon: "8" },
     { name: "飾品配件", icon: "9" },
   ];
+
+
 
 
   return (
@@ -173,4 +195,8 @@ export const BlogSelectWithBgIcons = ({ selectedCategory, onCategoryChange, isIn
     </div>
   );
 };
+
+
+
+
 

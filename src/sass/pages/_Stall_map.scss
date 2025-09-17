@@ -8,8 +8,20 @@
 
 
 
+
+
+
+
+
+
+
+
 .stall_map_main {
     height: 100%;
+
+
+
+
 
 
 
@@ -36,13 +48,60 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .stall_map {
-        border: 5px solid $secondary;
+        // border: 5px solid $secondary;
         width: $w-60;
         height: 400px;
-        background-color: $white;
-        @extend %flex-center;
+        // background-color: $white;
+        // @extend %flex-center;
+        background-image: url("./images/Event_info/vite.svg");
+        object-fit: contain;
+        background-position: top center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-bottom: $spacing-md;
+        // clip-path: polygon(0% 7%,
+        //         20% 6%,
+        //         29% 5%,
+        //         40% 3%,
+        //         50% 0%,
+        //         60% 3%,
+        //         71% 5%,
+        //         80% 6%,
+        //         100% 7%,
+        //         100% 100%,
+        //         0% 100%);
+
+
+        @media ($mediaMd) {
+            width: $w-80;
+        }
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -52,75 +111,105 @@
 
 
     .type_btn_box {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
+        display: flex;
+        gap: 30px;
+        justify-content: center;
 
 
-    button {
-        @extend %remove_form_style;
-        cursor: pointer;
-        img{
-            margin-bottom: 5px;
-        }
 
 
-        span {
-            position: relative;
-            margin-top: 5px;
-            padding:0 6px;
+        button {
+            @extend %remove_form_style;
+            cursor: pointer;
 
 
-            &::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                transform: scaleX(0);
-                transform-origin: left;
-                transition: transform 0.4s;
-                z-index: -1;
+            img {
+                margin-bottom: 5px;
             }
 
 
-            /* 修正：將 .active 移到 span 的巢狀內 */
-            &.active {
+
+
+            span {
+                position: relative;
+                margin-top: 5px;
+                padding: 0 6px;
+
+
+
+
                 &::before {
-                    transform: scaleX(1); //背景填滿
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    transform: scaleX(0);
+                    transform-origin: left;
+                    transition: transform 0.4s;
+                    z-index: -1;
+                }
+
+
+
+
+                /* 修正：將 .active 移到 span 的巢狀內 */
+                &.active {
+                    &::before {
+                        transform: scaleX(1); //背景填滿
+                    }
                 }
             }
         }
+
+
+
+
+        /* 不同按鈕的顏色設定 */
+        .btn1 span::before,
+        .btn1 span.active::before {
+            background-color: #E5BE23;
+        }
+
+
+        .btn2 span::before,
+        .btn2 span.active::before {
+            background-color: #D06658;
+        }
+
+
+        .btn3 span::before,
+        .btn3 span.active::before {
+            background-color: #8ACEC6;
+        }
+
+
+        .btn4 span::before,
+        .btn4 span.active::before {
+            background-color: #53B99F;
+        }
+
+
+        .btn5 span::before,
+        .btn5 span.active::before {
+            background-color: #ED9B4A;
+        }
+
+
+        .btn6 span::before,
+        .btn6 span.active::before {
+            background-color: #EAABAB;
+        }
     }
 
 
-    /* 不同按鈕的顏色設定 */
-    .btn1 span::before,
-    .btn1 span.active::before {
-        background-color: #E5BE23;
-    }
-    .btn2 span::before,
-    .btn2 span.active::before {
-        background-color: #D06658;
-    }
-    .btn3 span::before,
-    .btn3 span.active::before {
-        background-color: #8ACEC6;
-    }
-    .btn4 span::before,
-    .btn4 span.active::before {
-        background-color: #53B99F;
-    }
-    .btn5 span::before,
-    .btn5 span.active::before {
-        background-color: #ED9B4A;
-    }
-    .btn6 span::before,
-    .btn6 span.active::before {
-        background-color: #EAABAB;
-    }
-}
+
+
+
+
+
+
 
 
 
@@ -136,6 +225,19 @@
         height: 875px;
         background-color: $white;
         overflow: hidden;
+
+
+        @media ($mediaMd) {
+            width: $w-80;
+        }
+
+
+
+
+
+
+
+
 
 
 
@@ -154,9 +256,25 @@
 
 
 
+
+
+
+
+
+
+
+
             background-color: $white;
             height: 40px;
             gap: 15px;
+
+
+
+
+
+
+
+
 
 
 
@@ -178,11 +296,23 @@
 
 
 
+
+
+
+
+
+
+
+
             .search_box {
                 border-radius: $rad-lg;
                 border: 1px solid $black;
                 @extend %flex-center;
                 height: 30px;
+
+
+
+
 
 
 
@@ -196,9 +326,25 @@
 
 
 
+
+
+
+
+
+
+
+
             .btn_box {
                 display: flex;
                 gap: 15px;
+
+
+
+
+
+
+
+
 
 
 
@@ -233,12 +379,36 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     img {
                         width: 15px;
                         height: auto;
                     }
                 }
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -263,6 +433,14 @@
 
 
 
+
+
+
+
+
+
+
+
                 select {
                     padding-top: 1px;
                     color: $text;
@@ -271,6 +449,14 @@
                 }
             }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -295,8 +481,20 @@
 
 
 
+
+
+
+
+
+
+
+
         }
     }
+
+
+
+
 
 
 
@@ -308,6 +506,17 @@
         border-radius: $rad-lg;
         overflow: hidden;
         border: 1px solid $text;
+        transition: all 0.3s ease;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+
+        &:hover {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+
+
+
 
 
 
@@ -315,6 +524,10 @@
         p {
             font-size: $f-s-xs;
         }
+
+
+
+
 
 
 
@@ -330,10 +543,18 @@
 
 
 
+
+
+
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 margin: $spacing-xs;
+
+
+
+
 
 
 
@@ -350,6 +571,10 @@
 
 
 
+
+
+
+
                 .like {
                     display: flex;
                     padding: 0 5px;
@@ -360,9 +585,17 @@
 
 
 
+
+
+
+
                     p {
                         padding-top: 1px;
                     }
+
+
+
+
 
 
 
@@ -376,8 +609,16 @@
 
 
 
+
+
+
+
                 .num {
                     @extend %flex-center;
+
+
+
+
 
 
 
@@ -391,10 +632,18 @@
 
 
 
+
+
+
+
             .bottom {
                 display: flex;
                 margin: $spacing-xs;
                 gap: $spacing-xxs ;
+
+
+
+
 
 
 
@@ -413,11 +662,19 @@
 
 
 
+
+
+
+
         .stall_card_body {
             .title {
                 @extend %flex-center;
                 height: 33px;
                 padding: 0 $spacing-xs;
+
+
+
+
 
 
 
@@ -428,6 +685,8 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     white-space: nowrap;
+
+
 
 
                     &:hover {
@@ -442,7 +701,19 @@
 
 
 
+
+
+
+
+
+
+
+
             }
+
+
+
+
 
 
 
@@ -455,10 +726,18 @@
 
 
 
+
+
+
+
             .btn_box {
                 display: flex;
                 gap: $spacing-xxs;
                 justify-content: center;
+
+
+
+
 
 
 
@@ -473,9 +752,17 @@
 
 
 
+
+
+
+
                 .like_btn_box {
                     background-color: $accent;
                     @extend %flex-center;
+
+
+
+
 
 
 
@@ -488,6 +775,8 @@
                         cursor: pointer;
 
 
+
+
                         img {
                             width: 20px;
                         }
@@ -497,10 +786,18 @@
 
 
 
+
+
+
+
                 .social_btn_box {
                     background-color: $dark;
                     @extend %flex-center;
                     gap: $spacing-xxs;
+
+
+
+
 
 
 
@@ -517,9 +814,17 @@
 
 
 
+
+
+
+
             .review_box {
                 @extend %flex-center;
                 height: 30px;
+
+
+
+
 
 
 
@@ -534,12 +839,20 @@
 
 
 
+
+
+
+
                     input {
                         width: 100%;
                         height: 100%;
                     }
                 }
             }
+
+
+
+
 
 
 
@@ -559,7 +872,19 @@
 
 
 
+
+
+
+
+
+
+
+
             }
+
+
+
+
 
 
 
@@ -568,10 +893,14 @@
     }
 
 
+
+
     /* 攤位陣列 */
     .stalls_1 {
         display: flex;
         gap: $spacing-lg;
+
+
 
 
         .stall_wrap1 {
@@ -586,9 +915,13 @@
         }
 
 
+
+
         .stalls_2 {
             @extend %flex-column;
             gap: $spacing-lg;
+
+
 
 
             .stall_wrap2 {
@@ -601,10 +934,14 @@
             }
 
 
+
+
             .stalls_3 {
                 display: flex;
                 gap: $spacing-md;
             }
+
+
 
 
             .stall_wrap3,
@@ -622,6 +959,10 @@
 
 
 
+
+
+
+
     /* 圖片裝飾 */
     .stall_map_img1,
     .stall_map_img2,
@@ -629,6 +970,10 @@
     .stall_map_img4 {
         position: absolute;
     }
+
+
+
+
 
 
 
@@ -641,7 +986,15 @@
 
 
 
+
+
+
+
     }
+
+
+
+
 
 
 
@@ -655,11 +1008,19 @@
 
 
 
+
+
+
+
     .stall_map_img3 {
         z-index: 1;
         bottom: -760px;
         left: 35px;
     }
+
+
+
+
 
 
 
@@ -678,13 +1039,25 @@
 
 
 
+
+
+
+
+
+
+
+
     .stall_box {
         position: relative;
         display: inline-block;
 
 
+
+
         .stall_icon {
             width: 40px;
+
+
 
 
             img {
@@ -692,6 +1065,10 @@
                 object-fit: cover;
             }
         }
+
+
+
+
 
 
 
@@ -706,6 +1083,10 @@
 
 
 
+
+
+
+
     .tooltip_card {
         display: none;
         position: absolute;
@@ -713,12 +1094,20 @@
         /* 放在上方，避免擋住圖片 */
         left: 50%;
         transform: translateX(-50%);
-        z-index: 1;
+        z-index: 99;
+
+
+
+
 
 
 
 
     }
+
+
+
+
 
 
 
@@ -736,6 +1125,10 @@
 
 
 
+
+
+
+
         .sm_card_wrap {
             height: 135px;
             background-color: #ccc;
@@ -744,10 +1137,18 @@
 
 
 
+
+
+
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 padding: 10px;
+
+
+
+
 
 
 
@@ -762,7 +1163,15 @@
 
 
 
+
+
+
+
                     gap: 10px;
+
+
+
+
 
 
 
@@ -771,6 +1180,10 @@
                         width: 12px;
                     }
                 }
+
+
+
+
 
 
 
@@ -785,9 +1198,17 @@
 
 
 
+
+
+
+
                 }
             }
         }
+
+
+
+
 
 
 
@@ -797,10 +1218,18 @@
 
 
 
+
+
+
+
             .title {
                 @extend %flex-center;
                 height: 33px;
                 padding-top: 3px;
+
+
+
+
 
 
 
@@ -814,6 +1243,8 @@
                     font-size: $f-s-md;
 
 
+
+
                     &:hover {
                         display: initial;
                     }
@@ -823,11 +1254,19 @@
 
 
 
+
+
+
+
             .tag_box {
                 display: flex;
                 gap: 10px;
                 padding: 0 $spacing-xxs;
                 margin-top: $spacing-xxs;
+
+
+
+
 
 
 

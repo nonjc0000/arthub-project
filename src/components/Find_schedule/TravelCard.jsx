@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
-import "/src/sass/components/_TravelCard.scss";
+
+
+
 
 const TravelCard = ({ data = [] }) => {
   return (
@@ -15,10 +17,12 @@ const TravelCard = ({ data = [] }) => {
             <img src={item.image} alt={item.title} />
           </div>
 
+
           {/* 右邊文字 */}
           <div className="card-content">
             <h3 className="card-title">{item.title}</h3>
             <p className="card-description">{item.description}</p>
+
 
             <div className="card-footer">
               <span className="card-rating">{item.rating}</span>
@@ -31,4 +35,8 @@ const TravelCard = ({ data = [] }) => {
   );
 };
 
+
 export default TravelCard;
+
+
+

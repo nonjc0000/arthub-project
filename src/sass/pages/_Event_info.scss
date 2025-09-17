@@ -8,9 +8,34 @@
 
 
 
+
+
+
+
+
+
+
+
 .event_info_main {
-    @extend %flex-center;
-    flex-direction: column;
+    .box_center {
+
+
+        @extend %flex-center;
+        flex-direction: column;
+        clip-path: polygon(0% 7%,
+                20% 6%,
+                29% 5%,
+                40% 3%,
+                50% 0%,
+                60% 3%,
+                71% 5%,
+                80% 6%,
+                100% 7%,
+                100% 100%,
+                0% 100%);
+    }
+
+
 
 
     .info_box {
@@ -18,12 +43,12 @@
         flex-direction: column;
         background-color: $white;
         width: 75%;
-        padding: 30px 0 0 0;
+        padding: 200px 0 0 0;
+
+
 
 
     }
-
-
 
 
 
@@ -40,34 +65,40 @@
         gap: 50px;
 
 
-
-
-
-
-
-
         .pic_box {
             display: flex;
             flex-direction: column;
+            // outline: 1px red solid;
+            padding: 10px;
 
 
-            border-radius: 0 60px 0 60px;
             overflow: hidden;
-            width: $w-50;
+            width: 630px;
             gap: $spacing-xs;
+
+
+
+
 
 
 
 
             .main_pic {
                 // border: 1px solid red;
+                overflow: hidden;
                 width: $w-100;
                 // height: 30vh;
                 max-width: 600px;
                 background-size: cover;
                 // 等比例縮小到符合容器的尺寸(自動縮放)，多的不會顯示=>圖片範圍靠左上
                 background-position: center center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                border-radius: 0 60px 0 0px;
             }
+
+
+
+
 
 
 
@@ -76,6 +107,32 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr 1fr;
                 grid-column-gap: $spacing-sm;
+                border-radius: 0 0 0 60px;
+                overflow: hidden;
+                padding-bottom: 5px;
+           
+               
+                img {
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+
+
+                    &:hover {
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+                    }
+                }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,6 +147,10 @@
 
             }
         }
+
+
+
+
 
 
 
@@ -103,13 +164,23 @@
 
 
 
+
+
+
+
         .info {
+
+
 
 
             display: flex;
             flex-direction: column;
             width: $w-20;
             padding-top: $spacing-xxl;
+
+
+
+
 
 
 
@@ -121,14 +192,24 @@
                 gap: $spacing-xs;
 
 
+
+
                 align-items: center;
             }
 
 
 
 
+
+
+
+
             .place {
                 margin: $spacing-sm 0 35px 0;
+
+
+
+
 
 
 
@@ -141,7 +222,15 @@
 
 
 
+
+
+
+
             .type_box {
+
+
+
+
 
 
 
@@ -154,11 +243,19 @@
 
 
 
+
+
+
+
                 .tag_box {
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     grid-column-gap: 5%;
                     grid-row-gap: 13px;
+
+
+
+
 
 
 
@@ -178,7 +275,15 @@
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
@@ -192,6 +297,10 @@
 
 
 
+
+
+
+
             figure {
                 background-color: $secondary ;
                 width: 115px;
@@ -199,6 +308,10 @@
                 border-radius: 20px;
                 @extend %flex-center;
                 flex-direction: column;
+
+
+
+
 
 
 
@@ -218,7 +331,19 @@
 
 
 
+
+
+
+
+
+
+
+
 }
+
+
+
+
 
 
 
@@ -235,10 +360,22 @@
 
 
 
+
+
+
+
+
+
+
+
     /* 照片區 */
     .deco_line {
         width: 75%;
     }
+
+
+
+
 
 
 
@@ -250,11 +387,19 @@
 
 
 
+
+
+
+
     h4 {
         font-size: $f-s-xl;
         font-weight: $f-w-b;
         color: $text
     }
+
+
+
+
 
 
 
@@ -269,11 +414,19 @@
 
 
 
+
+
+
+
         .title {
             font-size: $f-s-lg;
             color: $text;
             font-weight: $f-w-b ;
         }
+
+
+
+
 
 
 
@@ -285,8 +438,16 @@
 
 
 
+
+
+
+
         ul {
             list-style: disc;
+
+
+
+
 
 
 
@@ -299,8 +460,16 @@
 
 
 
+
+
+
+
     }
 }
+
+
+
+
 
 
 
@@ -313,14 +482,22 @@
 
 
 
+
+
+
+
     border-top: 2px dashed $gray-500;
     width: $w-70;
+
+
 
 
     .profile_pic {
         width: 40px;
         height: 40px;
     }
+
+
 
 
     .review_input_box {
@@ -332,11 +509,17 @@
         padding-top: $spacing-xl ;
 
 
+
+
         button {
             width: 40px;
             height: 40px;
             cursor: pointer;
         }
+
+
+
+
 
 
 
@@ -350,15 +533,25 @@
 
 
 
+
+
+
+
             input,
             button {
                 @extend %remove_form_style;
+
+
 
 
                 img {
                     width: 25px;
                 }
             }
+
+
+
+
 
 
 
@@ -370,14 +563,27 @@
     }
 
 
+
+
     .review_btn_box {
         display: flex;
-        width: $w-90;
-        height: 60px;
+        width: $w-90;  
         justify-content: flex-start;
         align-items: center;
         gap: $spacing-xxl;
         margin-bottom: $spacing-sm;
+
+
+        @media (max-width:625px) {
+            padding-top: 5px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            margin-bottom: 10px;
+            height: 70px;
+        }
+
+
 
 
         p {
@@ -385,9 +591,15 @@
         }
 
 
+
+
         .btn_box {
             display: flex;
             gap: $spacing-xs ;
+            height: 60px;
+            align-items: center;
+
+
 
 
             button {
@@ -396,11 +608,18 @@
                 background-color: $primary;
                 border-radius: $rad-ex;
                 padding: 0 $spacing-xs;
-                color: $white;
+                color: $text;
                 cursor: pointer;
+                transition: all 0.3s ease;
+               
+                &:hover{
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                }
             }
         }
     }
+
+
 
 
     .event_review_box {
@@ -411,19 +630,29 @@
     }
 
 
+
+
     .review_card {
         display: flex;
         width: $w-100;
-        .card_box{
+
+
+        .card_box {
             display: flex;
             justify-content: space-between;
             width: $w-90;
-            .like_box{
+
+
+            .like_box {
                 @extend %flex-center;
-                button{
+
+
+                button {
                     @extend %remove_form_style;
                     cursor: pointer;
-                    img{
+
+
+                    img {
                         color: $primary;
                     }
                 }
@@ -431,21 +660,31 @@
         }
 
 
+
+
         .review_box {
             margin-left: $spacing-sm;
+
+
 
 
             .regular_info {
                 display: flex;
                 gap: $spacing-xs;
-                .date{
+
+
+                .date {
                     color: $gray-500;
                     font-size: 14px;
                 }
             }
 
 
+
+
         }
+
+
 
 
     }

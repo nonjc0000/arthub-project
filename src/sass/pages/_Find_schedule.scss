@@ -2,9 +2,13 @@
 @use "../functions/" as *;
 
 
+
+
 .container {
   background-color: $background;
 }
+
+
 
 
 .find_schedule_titlebox {
@@ -12,10 +16,14 @@
   justify-content: center;
 
 
+
+
   @media ($mediaSm) {
     transform: scale(0.7);
   }
 }
+
+
 
 
 .deco_line {
@@ -25,12 +33,16 @@
   margin: $spacing-x-xl;
 
 
+
+
   img {
     width: $w-100;
     max-width: 1600px;
     height: auto;
   }
 }
+
+
 
 
 .region {
@@ -43,6 +55,8 @@
   gap: 70px;
 
 
+
+
   @media ($mediaSm) {
     display: grid;
     grid-template-columns: 1fr;
@@ -51,35 +65,157 @@
 }
 
 
+.txt-background {
+  position: relative;
+  background: url("/images/Find_schedule/greenBg.png") no-repeat center bottom / cover;
+  padding-bottom: 10%;
+  min-height: 600px;
+  position: relative;
+
+
+  .deco-girl {
+    position: absolute;
+    left: 10px;
+    top: -150px;
+    width: $w-10;
+
+
+    @media ($mediaSm) {
+      display: none;
+    }
+  }
+
+
+  .deco-cord {
+    position: absolute;
+    right: 60px;
+    top: -120px;
+    width: 6%;
+
+
+    @media ($mediaSm) {
+      width: 15%;
+      position: absolute;
+      right: 60px;
+      top: 20px;
+    }
+  }
+}
+
+
+
+
 .txt {
-  display: flex;
+  position: relative;
+  /* 疊在背景之上 */
+  z-index: 1;
+  max-width: 860px;
+  margin: 0 auto 0;
   text-align: center;
-  justify-content: center;
-  padding-top: 50px;
-  padding-bottom: $spacing-ex;
+  padding-top: 160px;
+  line-height: 1.7;
+  font-weight: $f-w-m;
 
 
- 
+
+
+
+
   @media($mediaSm) {
-    display: block; /* 改用 block */
+    display: block;
+    /* 改用 block */
     text-align: center;
     font-size: $f-s-xs;
     width: 80vw;
     margin: 0 auto;
-}
+  }
 }
 
 
 .intro_photo {
-  width: $w-70;
+  width: $w-60;
   display: block;
   margin: 0 auto;
+  transform: translateY(-160px);
+  z-index: $z-ex;
+  position: relative;
+
+
+  .deco-getFun {
+    position: absolute;
+    left: -80px;
+    top: -150px;
+    width: 15%;
+
+
+
+
+  }
+
+
+  .road {
+    position: relative;
+  height: 140px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+          mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  }
+
+
+  .car-01 {
+    position: absolute;
+    right: 60px;
+    bottom: -120px;
+    width: 18%;
+    top: 50%;
+    transform: translate(-20vw, -50%); // 從畫面左外側開始
+    opacity: 0;
+    will-change: transform, opacity;
+    animation: car-run 8s linear infinite; // 時間/速度可調
+    z-index: $z-ex;
+  }
+
+
+  @keyframes car-run {
+    0% {
+      transform: translate(-20vw, -50%);
+      opacity: 0;
+    }
+
+
+    10% {
+      opacity: 1;
+    }
+
+
+    // 左邊淡入
+    90% {
+      opacity: 1;
+      transform: translate(50vw, -50%);
+    }
+
+
+    // 接近右側仍可見
+    100% {
+      transform: translate(120vw, -50%);
+      opacity: 0;
+    }
+
+
+    // 右邊淡出
+  }
+
+
+  .car-go {
+    position: absolute;
+    right: -80px;
+    bottom: 150px;
+    width: 15%;
+  }
 
 
   @media ($mediaSm) {
     width: $w-80;
   }
 }
-
-
 
