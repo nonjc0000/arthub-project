@@ -2,30 +2,9 @@ import Button from '../components/Button';
 import PageTop from '../components/PageTop';
 import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
-import ScrollToTop from '../components/ScrollToTop'
-import Clarity from '@microsoft/clarity';
-import { useEffect } from 'react';
-
+import ScrollToTop from '../components/ScrollToTop';
 
 const Home = () => {
-
-  useEffect(() => {
-    // Clarity 初始化
-    const projectId = "tc4d2awk9v";
-    Clarity.init(projectId);
-
-    // 用戶識別
-    let userId = localStorage.getItem('clarity_user_id');
-    if (!userId) {
-      userId = `user_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-      localStorage.setItem('clarity_user_id', userId);
-    }
-    
-    Clarity.identify(userId);
-    Clarity.event('home_page_visit');
-    
-    console.log('Clarity 已初始化，用戶 ID:', userId);
-  }, []);
 
   return (
     <>
