@@ -1777,7 +1777,7 @@ a {
 }
 @media (max-width: 420px) {
   .find_map_main .titleBox {
-    margin-right: 120px;
+    margin-right: 130px;
     max-width: 60%;
   }
 }
