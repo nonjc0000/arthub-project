@@ -17,15 +17,21 @@
 
     .find_type_content_box {
         display: flex;
-        margin-left: 80px;
+        justify-content: center;
+        // align-items: center;
         gap: $spacing-xxl;
+
+
+        @media (max-width:1140px) {
+            flex-direction: column;
+        }
 
 
 
 
         .result_box {
             display: flex;
-            width: 68%;
+            width: 69%;
             height: 910px;
             padding: 30px 0px 40px 0px;
             background-color: $white;
@@ -33,39 +39,60 @@
             justify-content: center;
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+            @media (max-width:1190px) {
+                width: $w-90;
+            }
         }
 
 
 
 
         .find_type_result {
-            outline: 1px red solid;
-            width: 83%;
+   
+            width: 85%;
             height: $w-100;
             padding: 10px 0 0 0;
             background-color: $white;
-         
             // align-items: center;
-            @extend %flex-wrap;
-            gap: $spacing-xl;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+            gap: 20px;
             overflow: auto;
+
+
+
+
             @media (max-width:1870px) {
                 width: 90%;
             }
+
+
             @media (max-width:1730px) {
                 width: 95%;
             }
+
+
             @media (max-width:1643px) {
                 width: 83%;
             }
-            @media(max-width:1410px){
+
+
+            @media(max-width:1410px) {
                 width: 90%;
             }
-            @media(max-width:1305px){
+
+
+            @media(max-width:1305px) {
                 width: 90%;
-                gap:$spacing-xxs ;
+                gap: $spacing-xxs ;
             }
-           
+             @media (max-width:1140px) {
+                grid-template-columns: repeat(auto-fit,minmax(156px,1fr));
+            }
+
+
         }
 
 
@@ -121,6 +148,11 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 
+        @media (max-width:1000px) {
+            width: $w-90;
+        }
+
+
 
 
         .select {
@@ -135,7 +167,8 @@
 
 
             background-size: 22px;
-           
+
+
 
 
 
@@ -197,8 +230,8 @@
 
 
                 &:hover {
-                    transform: translateY(-1px);
-                    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+                    background-color: $accent;
+                    color: $white;
                 }
 
 
@@ -244,6 +277,8 @@
 
 
 
+
+
             input {
                 @extend %remove_form_style;
                 width: $w-100;
@@ -279,16 +314,29 @@
         border: solid 1px $black;
         transition: all 0.3s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        @media(max-width:1305px){
-                transform: scale(0.9);
-            }
-        @media(max-width:1190px){
-                transform: scale(0.8);
-            }
+
+
+        @media(max-width:1240px) {
+            transform: scale(0.9);
+        }
+
+
+        @media(max-width:1190px) {
+            transform: scale(0.5);
+        }
+
+
+        @media(max-width:$mediaSm) {
+            transform: scale(0.5);
+        }
+
+
+       
 
 
         &:hover {
-            transform: translateY(-8px);
+
+
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
@@ -297,7 +345,8 @@
 
         .find_type_card_wrap {
             height: 200px;
-            background-color: #ccc;
+            background-image: url(./images/find_map/festival_img.jpg);
+            background-size: cover;
             padding: 10px;
             @extend %flex-column;
 
@@ -464,4 +513,6 @@
 
     }
 }
+
+
 

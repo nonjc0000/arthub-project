@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
 
 
-const Find_type_card = ({id, name, date, time, tag,desc,district}) => {
+
+
+const Find_type_card = ({ id, name, date, time, tag, desc, district }) => {
+    // 處理愛心按鈕點擊
+      const [isLiked, setIsLiked] = useState(false);
+    const handleLike = () => {
+        let newLikeCount;
+
+
+        if (isLiked) {
+            setIsLiked(false);
+        } else {
+            setIsLiked(true);
+        }
+
+
+        setLikes(newLikeCount);
+
+
+       
+    };
     return (
         <div className='find_type_card'>
             <Link to='/Event_info'>
@@ -20,16 +40,24 @@ const Find_type_card = ({id, name, date, time, tag,desc,district}) => {
                                 <p>{time}</p>
                             </figure>
                         </div>
-                        <button className='like_button'>
-                            <img src="./images/Find_type/likeBtn_fill.svg" alt="" />
-                        </button>
+                        {/* <button
+                            className={`like_button ${isLiked ? 'liked' : ''}`}
+                            onClick={handleLike}
+                            type="button"
+                            aria-label={isLiked ? '取消按讚' : '按讚'}
+                        >
+                            <img
+                                src={isLiked ? "./images/Event_info/btn_like_active.svg" : "./images/Event_info/btn_like.svg"}
+                                alt="愛心按鈕"
+                            />
+                        </button> */}
                     </div>
                     <div className='find_type_tag_box'>
                         <div className='tag_wrapper'>
-                        <button>#{district}</button>
-                        {tag.map((singleTag, index) => (
-                        <button key={index}>#{singleTag}</button>
-                    ))}
+                            <button>#{district}</button>
+                            {tag.map((singleTag, index) => (
+                                <button key={index}>#{singleTag}</button>
+                            ))}
                         </div>
                     </div>
                 </div>

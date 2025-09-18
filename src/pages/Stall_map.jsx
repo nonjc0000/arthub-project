@@ -5,7 +5,6 @@ import { useMemo, useState } from 'react'
 import $ from 'jquery'
 import { useEffect } from 'react'
 import stall from '../data/stall.json'
-import ScrollToTop from '../components/ScrollToTop'
 
 
 
@@ -101,7 +100,6 @@ const Stall_map = () => {
 
     return (
         <main className='stall_map_main'>
-            <ScrollToTop/>
             <section className='stall_map_container'>
 
 
@@ -121,7 +119,7 @@ const Stall_map = () => {
 
                 {/* 標題 */}
                 <h1 className='titleBox_h1'>
-                    <img className='titleBox' src="./images/titlebox/find_type_titlebox.svg" style={{ width: '510px' }} alt='市集分類Market Type' />
+                    <img className='titleBox' src="./images/titlebox/event_titlebox.svg" style={{ width: '510px' }} alt='市集分類Market Type' />
                 </h1>
 
 
@@ -289,7 +287,7 @@ const Stall_map = () => {
 
 
                 {/* 種類按鈕 */}
-                <div className='type_btn_box'>
+                {/* <div className='type_btn_box'>
                     {buttonData.map((button) => (
                         <button
                             key={button.id}
@@ -302,7 +300,7 @@ const Stall_map = () => {
                             </span>
                         </button>
                     ))}
-                </div>
+                </div> */}
 
 
 

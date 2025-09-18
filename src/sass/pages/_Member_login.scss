@@ -306,12 +306,13 @@
         .login_container {
             flex-direction: column;
             max-width: none;
-            margin: 0;
+            margin-top: 10vh;
         }
 
         .login_left {
             padding: $spacing-xl $spacing-lg;
             min-height: 300px;
+            border-radius: $rad-lg $rad-lg 0 0;
 
             .brand_section {
                 .logo {
@@ -336,6 +337,7 @@
 
         .login_right {
             padding: $spacing-xl $spacing-lg;
+            border-radius: 0 0 $rad-lg $rad-lg;
 
             .login_form_container {
                 max-width: none;
@@ -350,14 +352,6 @@
             padding: $spacing-lg $spacing-md;
 
             .brand_section {
-                .logo {
-                    width: 60px;
-                    height: 60px;
-
-                    img {
-                        width: 30px;
-                    }
-                }
 
                 .welcome_title {
                     font-size: $f-s-lg;

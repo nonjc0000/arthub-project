@@ -4,7 +4,6 @@ import '../css/all.css'
 import markets from '../data/market.json'
 import cityDistrictData from '../data/taiwan_admin_divisions.json'
 import PageTop from '../components/PageTop';
-import ScrollToTop from '../components/ScrollToTop'
 
 
 const Find_type = () => {
@@ -150,7 +149,6 @@ const Find_type = () => {
 
     return (
         <section className='find_type_main'>
-            <ScrollToTop/>
             <h1 className='titleBox_h1'>
                 <img className='titleBox' src="./images/titlebox/find_type_titlebox.svg" /* style={{ width: '510px' }} */ alt='市集分類Market Type' />
             </h1>
@@ -241,6 +239,14 @@ const Find_type = () => {
                     <div className='select'>
                         <select name="" id="">
                             <option value="#">活動類型</option>
+                            <option value="#">布作服飾</option>
+                            <option value="#">文創設計</option>
+                            <option value="#">生活風格</option>
+                            <option value="#">插畫紙品</option>
+                            <option value="#">美食飲品</option>
+                            <option value="#">居家療育</option>
+                            <option value="#">二手選品</option>
+                            <option value="#">飾品配件</option>
                         </select>
                     </div>
                 </form>

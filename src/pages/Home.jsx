@@ -43,7 +43,7 @@ const Home = () => {
               <div className='date-item'>
                 <p>22</p>
                 <p className="weekday">TUE.</p>
-                <p className='weather'><img src="./images/home/陰天.svg" alt="陰天" /></p>
+                <p className='weather'><img src="./images/home/cloudy-day.png" alt="陰天" /></p>
                 <p className='temptemperature'>25°C<span className='situation'>多雲</span></p>
               </div>
             </div>
@@ -142,9 +142,9 @@ const Home = () => {
                     <img src="./images/home/bear.svg" alt="bear" />
                   </div>
                   <div className='crocodile'>
-                    <img src="./images/home/普通2魚.svg" alt="普通2魚" />
+                    <img src="./images/home/crocodile-pic.svg" alt="普通2魚" />
                   </div>
-                  <img src="./images/home/左下圖片.png" alt="左下圖片.svg" />
+                  <img src="./images/home/Left-bottom-pic.png" alt="左下圖片.svg" />
                 </figure>
               </div>
               <div className='home-right-blog'>
@@ -166,7 +166,7 @@ const Home = () => {
             {/* 底下的路 */}
             <div className='home-road'>
               <div className='home-sign'>
-                <img src="./images/home/路牌插圖.svg" alt="路牌插圖" />
+                <img src="./images/home/Road-drawn.svg" alt="路牌插圖" />
               </div>
             </div>
           </div>

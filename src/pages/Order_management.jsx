@@ -90,7 +90,6 @@ const Order_management = () => {
 
                         <div className='recommended_section'>
                             <h3>屬於你的市集靈感</h3>
-
                             <Recommended_card />
                             <Recommended_card />
                         </div>

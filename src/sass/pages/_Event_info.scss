@@ -17,9 +17,9 @@
 
 
 .event_info_main {
+
+
     .box_center {
-
-
         @extend %flex-center;
         flex-direction: column;
         clip-path: polygon(0% 7%,
@@ -43,7 +43,10 @@
         flex-direction: column;
         background-color: $white;
         width: 75%;
-        padding: 200px 0 0 0;
+
+
+        padding: 200px 0 0px 0; // 增加底部padding
+       
 
 
 
@@ -59,92 +62,139 @@
     .event_info_container {
         display: flex;
         justify-content: center;
-        width: $w-70;
+        width: $w-100;
 
 
-        gap: 50px;
+        gap: 70px;
+
+
+        @media (max-width:1210px) {
+            flex-direction: column;
+            align-items: center;
+        }
 
 
         .pic_box {
+            margin-top: 35px;
             display: flex;
             flex-direction: column;
-            // outline: 1px red solid;
+            // justify-content: center;
             padding: 10px;
-
-
             overflow: hidden;
-            width: 630px;
+            width: 600px;
             gap: $spacing-xs;
 
 
-
-
-
-
-
-
+            // 大圖固定尺寸設定
             .main_pic {
-                // border: 1px solid red;
                 overflow: hidden;
-                width: $w-100;
-                // height: 30vh;
+                width: 600px; // 固定寬度
+                height: 400px; // 固定高度
                 max-width: 600px;
-                background-size: cover;
-                // 等比例縮小到符合容器的尺寸(自動縮放)，多的不會顯示=>圖片範圍靠左上
-                background-position: center center;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                border-radius: 0 60px 0 0px;
-            }
+                position: relative;
 
 
-
-
-
-
-
-
-            .thumbnail {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-column-gap: $spacing-sm;
-                border-radius: 0 0 0 60px;
-                overflow: hidden;
-                padding-bottom: 5px;
-           
-               
                 img {
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    transition: all 0.3s ease;
-
-
-                    &:hover {
-                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-                    }
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; // 填滿容器，保持比例，裁切多餘部分
+                    object-position: center; // 圖片置中
+                    display: block;
+                    transition: transform 0.3s ease;
                 }
 
 
+                &:hover img {
+                    transform: scale(1.02);
+                }
+            }
 
 
+            .thumbnail_container {
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+            }
 
 
+            .thumbnail {
+                display: flex;
+                gap: 10px;
+                padding: 10px 0;
+                overflow-x: auto;
+                scroll-behavior: smooth;
+                scrollbar-width: thin;
+                scrollbar-color: #ccc transparent;
+                cursor: grab;
 
 
+                /* 支持觸控設備的滑動 */
+                -webkit-overflow-scrolling: touch;
 
 
+                /* 隱藏滾動條但保持功能 */
+                -ms-overflow-style: none;
+                scrollbar-width: none;
 
 
+                &::-webkit-scrollbar {
+                    display: none;
+                }
 
 
+                &:active {
+                    cursor: grabbing;
+                }
 
 
+                // 縮圖按鈕固定尺寸設定
+                .thumb {
+                    @extend %remove_form_style;
+                    flex: 0 0 auto;
+                    width: 80px; // 固定寬度
+                    height: 60px; // 固定高度
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    position: relative;
 
 
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover; // 填滿容器，保持比例，裁切多餘部分
+                        object-position: center; // 圖片置中
+                        display: block;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        transition: all 0.3s ease;
+                        user-select: none;
+                        -webkit-user-drag: none;
+                    }
 
 
+                    &:hover {
+                        border-color: #4285f4;
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
 
 
+                        img {
+                            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+                            transform: scale(1.1);
+                        }
+                    }
 
 
+                    &.active {
+                        border-color: #4285f4;
+                        border-width: 3px;
+                        transform: scale(1.05);
+                        box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+                    }
+                }
             }
         }
 
@@ -169,18 +219,34 @@
 
 
         .info {
-
-
+            // outline: 1px solid red;
 
 
             display: flex;
             flex-direction: column;
-            width: $w-20;
+
+
+            width: 19%;
             padding-top: $spacing-xxl;
 
 
+            @media (max-width:1210px) {
+                flex-direction: row;
+                justify-content: center;
 
 
+            }
+
+
+
+
+            .column {
+                @media (max-width:1210px) {
+                    flex-direction: column;
+
+
+                }
+            }
 
 
 
@@ -226,51 +292,6 @@
 
 
 
-            .type_box {
-
-
-
-
-
-
-
-
-                .title {
-                    color: $text;
-                    margin-bottom: $spacing-sm;
-                }
-
-
-
-
-
-
-
-
-                .tag_box {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    grid-column-gap: 5%;
-                    grid-row-gap: 13px;
-
-
-
-
-
-
-
-
-                    p {
-                        @extend %flex-center;
-                        background-color: $accent;
-                        color: $white;
-                        font-size: $f-s-sm ;
-                        width: 90px;
-                        height: 30px;
-                        border-radius: 10px;
-                    }
-                }
-            }
 
 
 
@@ -282,6 +303,46 @@
         }
 
 
+        .type_box {
+            // outline: 1px solid red;
+
+
+            .title {
+                color: $text;
+                margin-bottom: $spacing-sm;
+            }
+
+
+
+
+
+
+
+
+            .tag_box {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 5%;
+                grid-row-gap: 13px;
+
+
+
+
+
+
+
+
+                p {
+                    @extend %flex-center;
+                    background-color: $accent;
+                    color: $white;
+                    font-size: $f-s-sm ;
+                    width: 90px;
+                    height: 30px;
+                    border-radius: 10px;
+                }
+            }
+        }
 
 
 
@@ -289,25 +350,28 @@
 
 
         .stall_btn_box {
-            @extend %flex-center;
+            // outline: 1px solid red;
+            display: flex;
             flex-direction: column;
-            width: 15%;
-            gap: $spacing-xxl ;
-
-
-
-
-
-
+            gap: $spacing-md ;
+            margin-bottom: 20px;
 
 
             figure {
+                // outline: 1px solid red;
                 background-color: $secondary ;
-                width: 115px;
-                height: 130px;
+                width: 170px;
+                height: 80px;
                 border-radius: 20px;
                 @extend %flex-center;
-                flex-direction: column;
+                gap: $spacing-xs;
+
+
+                .column {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
 
 
 
@@ -317,6 +381,7 @@
 
 
                 img {
+                    margin-top: 10px;
                     width: 30px;
                     margin-bottom: 13px;
                 }
@@ -352,8 +417,7 @@
 .detail_info_container {
     @extend %flex-center;
     flex-direction: column;
-
-
+    gap: 10px;
 
 
 
@@ -542,6 +606,15 @@
                 @extend %remove_form_style;
 
 
+                &::placeholder {
+                    // outline: 1px solid red;
+                    margin-top: 5px;
+                    padding-left: 10px;
+                    color: $white;
+                    font-size: 16px;
+                }
+
+
 
 
                 img {
@@ -567,7 +640,7 @@
 
     .review_btn_box {
         display: flex;
-        width: $w-90;  
+        width: $w-90;
         justify-content: flex-start;
         align-items: center;
         gap: $spacing-xxl;
@@ -610,12 +683,22 @@
                 padding: 0 $spacing-xs;
                 color: $text;
                 cursor: pointer;
-                transition: all 0.3s ease;
-               
-                &:hover{
+                transition: all 0.1s ease;
+
+
+                &:hover {
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 }
             }
+
+
+            button.active {
+                background: $accent;
+                color: white;
+                border-color: $accent;
+            }
+
+
         }
     }
 
@@ -653,6 +736,11 @@
 
 
                     img {
+
+
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
                         color: $primary;
                     }
                 }

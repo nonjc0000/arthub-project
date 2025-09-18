@@ -31,6 +31,11 @@
         align-items: center;
         flex-direction: column;
         gap: $spacing-md;
+
+
+        h1 {
+            @extend %flex-center;
+        }
     }
 
 
@@ -65,33 +70,26 @@
 
 
     .stall_map {
-        // border: 5px solid $secondary;
-        width: $w-60;
-        height: 400px;
-        // background-color: $white;
-        // @extend %flex-center;
+        width: $w-80;
+        min-height: 80%; // 改為最小高度，允許內容撐開
         background-image: url("./images/Event_info/vite.svg");
-        object-fit: contain;
-        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: contain; // 確保圖片完整顯示不被裁切
+        background-position: center top; // 圖片置中且靠上
         display: flex;
         justify-content: center;
-        align-items: flex-end;
-        padding-bottom: $spacing-md;
-        // clip-path: polygon(0% 7%,
-        //         20% 6%,
-        //         29% 5%,
-        //         40% 3%,
-        //         50% 0%,
-        //         60% 3%,
-        //         71% 5%,
-        //         80% 6%,
-        //         100% 7%,
-        //         100% 100%,
-        //         0% 100%);
+        padding-top: 110px;
+        padding-bottom: $spacing-xl;
+        position: relative;
+
+
+        // 確保背景圖片隨容器縮放
+        background-attachment: scroll;
 
 
         @media ($mediaMd) {
             width: $w-80;
+            padding-top: 120px; // 平板時減少上方留白
         }
     }
 
@@ -505,7 +503,7 @@
         height: 300px;
         border-radius: $rad-lg;
         overflow: hidden;
-        border: 1px solid $text;
+        border: 0.5px solid $text;
         transition: all 0.3s ease;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -538,7 +536,8 @@
             flex-direction: column;
             justify-content: space-between;
             outline: 1px solid $text;
-            background-color: #ccc;
+            background-image: url(./images/find_map/festival_img.jpg);
+            background-size: cover;
 
 
 
@@ -910,6 +909,7 @@
             grid-template-columns: 1fr 1fr;
             gap: $spacing-md;
             width: 150px;
+            height: 200px;
             place-items: center;
             border-radius: 10px;
         }
@@ -1050,95 +1050,110 @@
     .stall_box {
         position: relative;
         display: inline-block;
-
-
+        transition: all 0.3s ease;
 
 
         .stall_icon {
             width: 40px;
-
-
+            cursor: pointer; // 顯示可點擊游標
+            transition: transform 0.2s ease;
 
 
             img {
                 width: 100%;
                 object-fit: cover;
+                transition: transform 0.2s ease;
+            }
+
+
+            // 圖標懸停效果
+            &:hover {
+                transform: scale(1.1);
             }
         }
 
 
-
-
-
-
-
-
+        // 只有當懸停在 stall_box 上時才顯示 tooltip
         &:hover {
             .tooltip_card {
-                display: block;
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+                pointer-events: auto; // 允許與 tooltip 內容互動
+            }
+
+
+            // 同時讓卡片內容也顯示動畫
+            .stall_map_card_sm {
+
+
+                .sm_card_wrap,
+                .body {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+
+                .tag_box p {
+                    opacity: 1;
+                    // transform: translateY(0);
+                }
             }
         }
     }
 
 
-
-
-
-
-
-
+    // Tooltip 卡片
     .tooltip_card {
-        display: none;
         position: absolute;
-        top: -220px;
-        /* 放在上方，避免擋住圖片 */
+        top: -230px; // 位置在圖標上方
         left: 50%;
-        transform: translateX(-50%);
         z-index: 99;
 
 
+        // 初始狀態：完全隱藏
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-50%) translateY(15px) scale(0.95);
+        pointer-events: none; // 初始狀態不能互動
 
 
+        // 平滑動畫效果
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        transition-delay: 0.1s; // 稍微延遲避免意外觸發
 
 
-
-
+        // 加入陰影
+        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
     }
 
 
-
-
-
-
-
-
+    // Tooltip 內的小卡片
     .stall_map_card_sm {
         width: 190px;
-        height: 220px;
+        height: 250px;
         border-radius: $rad-lg;
         background-color: $white;
         border: 1px solid $black;
         overflow: hidden;
-        display: none;
-        display: inline-block;
+        display: block;
 
 
-
-
-
-
+        // 卡片內容初始狀態
+        .sm_card_wrap,
+        .body {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            transition-delay: 0.2s; // 卡片顯示後再顯示內容
+        }
 
 
         .sm_card_wrap {
             height: 135px;
-            background-color: #ccc;
+            background-image: url(./images/find_map/festival_img.jpg);
+            background-size: cover;
             border-bottom: 1px solid $black;
-
-
-
-
-
-
 
 
             .top {
@@ -1147,137 +1162,85 @@
                 padding: 10px;
 
 
-
-
-
-
-
-
-                figure {
-                    @extend %flex-center;
-                    background-color: $accent;
-                    color: $white;
-                    width: 60px;
-                    border-radius: $rad-ex;
-
-
-
-
-
-
-
-
-                    gap: 10px;
-
-
-
-
-
-
-
-
-                    img {
-                        width: 12px;
-                    }
-                }
-
-
-
-
-
-
-
-
+                figure,
                 .num {
                     @extend %flex-center;
                     background-color: $accent;
                     color: $white;
                     width: 60px;
                     border-radius: $rad-ex;
+                }
 
 
+                figure {
+                    gap: 10px;
 
 
-
-
-
-
+                    img {
+                        width: 12px;
+                    }
                 }
             }
         }
 
 
-
-
-
-
-
-
         .body {
-
-
-
-
-
-
-
-
             .title {
                 @extend %flex-center;
-                height: 33px;
-                padding-top: 3px;
-
-
-
-
-
-
+                height: 40px;
+                padding-top: 10px;
 
 
                 p {
                     padding: 0 $spacing-xs;
                     overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
+                    // align-items: flex-start;
+                    // text-overflow: ellipsis;
+                    // white-space: nowrap;
                     font-weight: $f-w-b;
                     font-size: $f-s-md;
-
-
-
-
-                    &:hover {
-                        display: initial;
-                    }
                 }
             }
 
 
-
-
-
-
-
-
             .tag_box {
                 display: flex;
-                gap: 10px;
-                padding: 0 $spacing-xxs;
-                margin-top: $spacing-xxs;
-
-
-
-
+                flex-wrap: wrap;
+                gap: 5px;
+                padding: 5px $spacing-xs;
 
 
 
 
                 p {
                     @extend %flex-center;
-                    width: 55px;
+                    white-space: nowrap;
                     border-radius: $rad-ex;
                     background-color: $accent;
                     color: $white;
-                    padding: 0 1px;
+                    padding: 1px 3px 0;
+
+
+                    // 標籤初始狀態
+                    opacity: 0;
+                    transform: translateY(5px);
+                    transition: all 0.3s ease;
+
+
+                    // 依序顯示
+                    &:nth-child(1) {
+                        transition-delay: 0.3s;
+                    }
+
+
+                    &:nth-child(2) {
+                        transition-delay: 0.35s;
+                    }
+
+
+                    &:nth-child(3) {
+                        transition-delay: 0.4s;
+                    }
                 }
             }
         }
