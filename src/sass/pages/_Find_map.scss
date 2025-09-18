@@ -11,6 +11,49 @@
     color: $text;
     margin-bottom: $h-20vh;
 
+    @media ($mediaLg) {
+        height: auto; // 改為自動高度
+        min-height: 100vh; // 保持最小高度
+        padding: $spacing-md; // 可能需要調整 padding
+    }
+
+    .titleBox {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 510px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+
+
+        // 新增響應式設定
+        @media ($mediaLg) {
+            max-width: 80%;
+        }
+
+
+        @media (max-width:420px) {
+            max-width: 60%;
+            // margin-right: 130px;
+        }
+
+
+        // 如果標題是圖片，確保它能縮放
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; // 保持比例
+        }
+
+        // 如果標題是文字，加入響應式字體大小
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 3rem); // 響應式字體大小
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+
     .find_map_content_box {
         display: flex;
         justify-content: space-between;
@@ -21,8 +64,22 @@
         // height: 90%;
         // width: 80%;
 
+
+        // 斷點
+        @media ($mediaLg) {
+            flex-direction: column;
+            gap: $spacing-lg;
+            min-height: auto; // 確保不會被壓縮
+        }
+
+
         .map_search-box {
             width: 48%;
+
+
+            @media ($mediaLg) {
+                width: 100%; // RWD 時改為 100% 寬度
+            }
 
             #map_search_filter {
                 display: flex;
@@ -30,8 +87,36 @@
                 align-items: center;
                 margin-bottom: $spacing-lg;
 
+
+                // RWD 時啟用橫向滾動
+                @media ($mediaLg) {
+                    overflow-x: auto;
+                    overflow-y: hidden;
+                    flex-wrap: nowrap; // 確保不換行
+                    gap: $spacing-md; // 增加間距
+                    padding-bottom: $spacing-xs; // 為滾動條留空間
+
+
+                    // 隱藏滾動條但保持滾動功能
+                    scrollbar-width: none; // Firefox
+                    -ms-overflow-style: none; // IE/Edge
+
+
+                    &::-webkit-scrollbar {
+                        display: none; // Chrome, Safari, Opera
+                    }
+                }
+
+
                 >* {
                     display: block;
+
+
+                    // RWD 時防止元素縮小
+                    @media ($mediaLg) {
+                        flex-shrink: 0;
+                    }
+
                 }
 
                 .select_border {
@@ -42,9 +127,23 @@
                     width: $w-30;
                     height: 100%;
 
+
+                    // RWD 時調整寬度
+                    @media ($mediaLg) {
+                        min-width: 120px; // 設定最小寬度
+                        width: auto;
+                    }
+
+
                     select {
                         // border: solid 1px black;
                         @extend %remove_form_style;
+                    }
+
+                    // RWD 時確保文字不會被截斷
+                    @media ($mediaLg) {
+                        white-space: nowrap;
+                        min-width: 100px;
                     }
                 }
 
@@ -58,6 +157,7 @@
                     width: 35%;
                     height: 100%;
 
+
                     input {
                         @extend %remove_form_style;
                         width: $w-100;
@@ -66,14 +166,14 @@
                     button {
                         @extend %remove_form_style;
 
+
                         img {
                             object-fit: cover;
                         }
                     }
                 }
-
-
             }
+
 
             .map_search_result {
                 height: $h-60vh;
@@ -124,7 +224,6 @@
                         background-color: $primary;
                         border-radius: $rad-md;
                         padding: $spacing-lg;
-                        margin-top: $spacing-md;
                         width: 100%;
                         max-width: 350px;
 
@@ -203,6 +302,16 @@
             // background-color: gray;
             border-radius: $rad-sm;
             overflow: hidden;
+            display: block; // 確保顯示
+            visibility: visible; // 確保可見
+
+
+            @media ($mediaLg) {
+                width: 100%;
+                height: 300px;
+                min-height: 250px;
+            }
+
         }
     }
 
