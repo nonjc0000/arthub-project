@@ -154,7 +154,7 @@ function BlogWrite() {
                 title="上傳圖片"
                 onClick={() => document.getElementById("uploadInput").click()}
             >
-                <img src="/images/blog/add_image.svg" alt="上傳圖片" />
+                <img src="./images/blog/add_image.svg" alt="上傳圖片" />
             </button>
                             {previewImage && (
                 <div className="preview-box">
