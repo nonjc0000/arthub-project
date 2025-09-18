@@ -105,7 +105,7 @@ const Stall_register = () => {
 
 
         <div className='stall_num'>
-          <p className='event_name'>夏末微光季</p>
+          <p className='event_name'>夏日微光季</p>
           <div className='all_btn_box'>
             <div className='btn_box1'>
               <div className='stall_btn' onClick={() => handleStallClick('01')}><p>01</p></div>
