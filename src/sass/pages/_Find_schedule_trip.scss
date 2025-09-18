@@ -1,7 +1,6 @@
 @use "../variables/" as *;
 @use "../functions/" as *;
 
-
 /* ───────────────── 基本佈局與安全網 ───────────────── */
 .findTrip-container,
 .trip_row,
@@ -11,7 +10,6 @@
   position: relative;
 }
 
-
 /* 圖片保護：避免撐爆容器 */
 .trip_schedule_container img,
 .staggered-images img,
@@ -20,7 +18,6 @@
   height: auto;
   display: block;
 }
-
 
 /* ───────────────── 首屏：左圖右文 ───────────────── */
 .trip_row_wrapper {
@@ -38,7 +35,7 @@
   left: 0;
   width: 200px;
   height: auto;
-  z-index: 999;
+  z-index: 1;
   pointer-events: none;
 }
 .girl-with-bggage {
@@ -47,7 +44,7 @@
   right: 70px;
   width: 160px;
   height: auto;
-  z-index: 999;
+  z-index: 1;
   pointer-events: none;
 }
 .trip_row {
@@ -64,13 +61,11 @@
   padding: 100px 0;
 }
 
-
 /* 標題區：跨整行 */
 .find_schedule_trip_titleBox {
   flex: 0 0 100%;
   display: flex;
   justify-content: center;
-
 
   .trip_titleBox {
     display: block;
@@ -79,7 +74,6 @@
   }
 }
 
-
 /* 左欄：圖片（交錯三張） */
 .trip-container {
   flex: 0 1 48%;
@@ -87,12 +81,10 @@
   min-width: 0;
 }
 
-
 .staggered-container {
   width: 100%;
   margin-inline: auto;
 }
-
 
 .staggered-images {
   display: flex;
@@ -101,11 +93,9 @@
   justify-content: space-between;
   gap: clamp(14px, 1.5vw, 28px);
 
-
   .image-item {
     width: clamp(120px, 20vw, 280px);
     overflow: hidden;
-
 
     img {
       width: 100%;
@@ -116,22 +106,18 @@
   }
 }
 
-
 /* 交錯高度 */
 .image-1 {
   transform: translateY(-25px);
 }
 
-
 .image-2 {
   transform: translateY(40px);
 }
 
-
 .image-3 {
   transform: translateY(-10px);
 }
-
 
 /* 右欄：文字內容 */
 .content-section {
@@ -146,7 +132,6 @@
   /* 內部左對齊 */
   text-align: left;
 
-
   .main-title {
     font-size: clamp(24px, 3.2vw, 40px);
     font-weight: 500;
@@ -155,13 +140,11 @@
     color: $text;
   }
 
-
   .subtitle {
     color: $text-500;
     font-size: clamp(12px, 1.4vw, 14px);
     margin: 0 0 12px;
   }
-
 
   .description {
     color: $text-700;
@@ -169,7 +152,6 @@
     max-width: 56vw;
     margin: 6px 0 18px;
   }
-
 
   .rating-section {
     display: flex;
@@ -179,28 +161,23 @@
     font-size: clamp(13px, 1.6vw, 15px);
     color: $text-700;
 
-
     .star-rating {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-
 
       .star {
         font-size: 18px;
         line-height: 1;
       }
 
-
       .rating-text {
         letter-spacing: 0.02em;
       }
     }
 
-
     .participants {
       position: relative;
-
 
       &::before {
         content: "";
@@ -216,19 +193,16 @@
     }
   }
 
-
   .booking-section {
     display: flex;
     align-items: center;
     gap: 18px;
     margin-top: 6px;
 
-
     .price {
       font-weight: 500;
       font-size: clamp(16px, 2vw, 18px);
       color: $text;
-
 
       &::before {
         content: "NT ";
@@ -237,7 +211,6 @@
         margin-right: 2px;
       }
     }
-
 
     .btn.primary {
       appearance: none;
@@ -256,11 +229,9 @@
       justify-content: center;
       transition: transform 0.08s ease, box-shadow 0.2s ease, filter 0.2s ease;
 
-
       &:hover {
         filter: brightness(1.02);
       }
-
 
       &:active {
         transform: translateY(1px);
@@ -269,7 +240,6 @@
     }
   }
 }
-
 
 /* ───────────────── 中段：行程表 ───────────────── */
 .trip_schedule_container_title {
@@ -288,7 +258,6 @@
   background-size: cover;
   background-size: 400px auto;
 
-
   @media ($mediaSm) {
     background-size: 250px auto;
   }
@@ -301,18 +270,15 @@
   position: relative;
   left: -250px;
 
-
   @media ($mediaSm) {
     left: 0;
   }
-
 
   .list_time_intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
-
 
     img {
       width: 8vw;
@@ -323,11 +289,9 @@
     }
   }
 
-
   .list_description_intro {
     flex: 1;
   }
-
 
   .route_01 {
     display: flex;
@@ -336,7 +300,6 @@
     position: absolute;
     right: -480px;
     bottom: -80px;
-
 
     img {
       max-width: 65%;
@@ -347,13 +310,11 @@
   }
 }
 
-
 .trip_schedule_container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 
 .station_01,
 .station_02,
@@ -366,11 +327,9 @@
   padding: 150px 0;
 }
 
-
 .list_time {
   @extend %flex-column;
   gap: 10px;
-
 
   img {
     width: 40px;
@@ -378,10 +337,8 @@
   }
 }
 
-
 .list_description {
   color: $text;
-
 
   h3 {
     font-family: $family-display;
@@ -389,12 +346,10 @@
     border-bottom: 1px dashed $text;
   }
 
-
   p {
     padding-top: 20px;
   }
 }
-
 
 .list_images {
   img {
@@ -404,13 +359,11 @@
   }
 }
 
-
 /* 站點與裝飾線條 */
 .station_01 {
   position: relative;
   padding: 100px 80px;
   margin-left: 20px;
-
 
   .route_02 {
     position: absolute;
@@ -419,11 +372,9 @@
     align-items: center;
     gap: 15px;
 
-
     img {
       width: 15vw;
     }
-
 
     span {
       color: $accent;
@@ -438,7 +389,6 @@
   }
 }
 
-
 .station_02 {
   position: relative;
   padding: 30px 0 30px 20px;
@@ -447,11 +397,9 @@
   border-radius: $rad-lg;
   width: 60vw;
 
-
   .list_images img {
     border-radius: $rad-basic;
   }
-
 
   /* 小介紹卡：避免超出 */
   .list_description_extra {
@@ -466,19 +414,16 @@
     padding: 30px;
     border-radius: $rad-lg;
 
-
     h3,
     p {
       color: #fff;
       gap: 10px;
     }
 
-
     p {
       padding-top: 20px;
     }
   }
-
 
   .route_03 {
     position: absolute;
@@ -489,11 +434,9 @@
     align-items: center;
     gap: 15px;
 
-
     img {
       width: 4.2vw;
     }
-
 
     span {
       color: $accent;
@@ -501,11 +444,9 @@
   }
 }
 
-
 .station_03 {
   position: relative;
   margin-top: 30px;
-
 
   .route_04 {
     position: absolute;
@@ -516,18 +457,15 @@
     gap: 15px;
     margin-top: 30px;
 
-
     img {
       width: 5vw;
     }
-
 
     span {
       color: $accent;
     }
   }
 }
-
 
 .station_04 {
   width: 50vw;
@@ -538,20 +476,17 @@
   justify-content: space-between;
   position: relative;
 
-
   .list_images {
     display: flex;
     justify-content: center;
     align-items: flex-end;
     gap: 20px;
 
-
     img {
       width: 12vw;
       border-radius: $rad-basic;
     }
   }
-
 
   .route_05 {
     position: absolute;
@@ -561,18 +496,15 @@
     align-items: center;
     gap: 15px;
 
-
     img {
       width: 12vw;
     }
-
 
     span {
       color: $accent;
     }
   }
 }
-
 
 /* 第五站原本有過大的左外距 → 改為相對單位 */
 .station_05 {
@@ -587,7 +519,6 @@
   bottom: 30px;
 }
 
-
 /* ───────────────── 下方：相關行程卡片 ───────────────── */
 .trip_card_container_title {
   width: $w-100;
@@ -596,7 +527,6 @@
   left: 60px;
   top: 30px;
 }
-
 
 .trip_card_container {
   display: flex;
@@ -611,7 +541,6 @@
   /* iOS 慣性滑動 */
 }
 
-
 /* ───────────────── RWD ───────────────── */
 @media ($mediaSm) {
   .trip_row {
@@ -620,19 +549,16 @@
     overflow-x: clip;
   }
 
-
   .trip-container,
   .content-section {
     flex: 1 1 100%;
     min-width: 0;
   }
 
-
   /* 圖片群組縮一下，避免太寬 */
   .staggered-images .image-item {
     width: clamp(100px, 28vw, 160px);
   }
-
 
   /* 取消交錯高度 */
   .image-1,
@@ -641,11 +567,9 @@
     transform: translateY(0);
   }
 
-
   .trip_titleBox {
     transform: scale(0.7);
   }
-
 
   //   /* 小螢幕將裝飾解除絕對定位，最安全 */
   //   .station_02 .list_description_extra {
@@ -654,7 +578,6 @@
   //     max-width: 100%;
   //     margin-top: 16px;
   //   }
-
 
   //   .route_01,
   //   .route_03,
@@ -667,12 +590,10 @@
   //     margin-top: 12px;
   //   }
 
-
   //   .station_05 {
   //     margin-inline-start: 0;
   //   }
   // }
-
 
   // 手机版 (320px - 768px)
   @media ($mediaSm) {
@@ -684,20 +605,17 @@
       }
     }
 
-
     .trip_schedule_intro {
       flex-direction: column;
       gap: 20px;
       padding: 20px;
       align-items: flex-start;
 
-
       .list_time_intro {
         flex-direction: row;
         align-items: center;
         gap: 15px;
         width: 100%;
-
 
         img {
           width: 60px;
@@ -710,11 +628,9 @@
         }
       }
 
-
       .list_description_intro {
         padding-right: 0;
         width: 100%;
-
 
         p {
           font-size: 1rem;
@@ -722,12 +638,10 @@
         }
       }
 
-
       .route_01 {
         position: static;
         align-self: center;
         margin-top: 10px;
-
 
         img {
           width: 120px;
@@ -737,7 +651,6 @@
         }
       }
     }
-
 
     .station_01,
     .station_02,
@@ -750,16 +663,13 @@
       text-align: center;
     }
 
-
     .list_time {
       align-items: center;
-
 
       img {
         width: 50px;
       }
     }
-
 
     .list_description {
       h3 {
@@ -773,7 +683,6 @@
       }
     }
 
-
     .list_images {
       img {
         width: 80vw;
@@ -781,18 +690,15 @@
       }
     }
 
-
     // 站点特殊样式调整
     .station_01 {
       padding: 40px 20px;
       margin-left: 0;
 
-
       .route_02 {
         position: static;
         justify-content: center;
         margin-top: 20px;
-
 
         img {
           width: 150px;
@@ -800,12 +706,10 @@
       }
     }
 
-
     .station_02 {
       width: 95vw;
       margin: 20px auto;
       padding: 30px 20px;
-
 
       .list_description_extra {
         position: static;
@@ -815,7 +719,6 @@
         bottom: auto;
       }
 
-
       .route_03 {
         position: static;
         justify-content: center;
@@ -823,17 +726,14 @@
         left: auto;
         bottom: auto;
 
-
         img {
           width: 60px;
         }
       }
     }
 
-
     .station_03 {
       margin-top: 40px;
-
 
       .route_04 {
         position: static;
@@ -842,31 +742,26 @@
         right: auto;
         bottom: auto;
 
-
         img {
           width: 80px;
         }
       }
     }
 
-
     .station_04 {
       width: 95vw;
       margin: 20px auto;
       padding: 30px 20px;
 
-
       .list_images {
         display: flex;
         gap: 15px;
-
 
         img {
           width: 150px;
           max-width: 70vw;
         }
       }
-
 
       .route_05 {
         position: static;
@@ -875,13 +770,11 @@
         left: auto;
         bottom: auto;
 
-
         img {
           width: 150px;
         }
       }
     }
-
 
     .station_05 {
       margin-top: 40px;
@@ -889,6 +782,3 @@
     }
   }
 }
-
-
-
