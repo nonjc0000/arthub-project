@@ -2216,7 +2216,7 @@ a {
 }
 .find_type_main .find_type_card .find_type_card_wrap {
   height: 200px;
-  background-image: url(./images/find_map/festival_img.jpg);
+  background-image: url(/images/find_map/festival_img.jpg);
   background-size: cover;
   padding: 10px;
 }
@@ -4908,7 +4908,7 @@ s .region_introduction::before,
 .stall_map_main .stall_map {
   width: 80%;
   min-height: 80%;
-  background-image: url("./images/Event_info/vite.svg");
+  background-image: url("/images/Event_info/vite.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center top;
@@ -5068,7 +5068,7 @@ s .region_introduction::before,
   flex-direction: column;
   justify-content: space-between;
   outline: 1px solid #39413A;
-  background-image: url(./images/find_map/festival_img.jpg);
+  background-image: url(/images/find_map/festival_img.jpg);
   background-size: cover;
 }
 .stall_map_main .stall_card .stall_card_wrap .top {
@@ -5306,7 +5306,7 @@ s .region_introduction::before,
 }
 .stall_map_main .stall_map_card_sm .sm_card_wrap {
   height: 135px;
-  background-image: url(./images/find_map/festival_img.jpg);
+  background-image: url(/images/find_map/festival_img.jpg);
   background-size: cover;
   border-bottom: 1px solid #000;
 }

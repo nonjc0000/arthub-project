@@ -72,7 +72,7 @@
     .stall_map {
         width: $w-80;
         min-height: 80%; // 改為最小高度，允許內容撐開
-        background-image: url("./images/Event_info/vite.svg");
+        background-image: url("/images/Event_info/vite.svg");
         background-repeat: no-repeat;
         background-size: contain; // 確保圖片完整顯示不被裁切
         background-position: center top; // 圖片置中且靠上
@@ -536,7 +536,7 @@
             flex-direction: column;
             justify-content: space-between;
             outline: 1px solid $text;
-            background-image: url(./images/find_map/festival_img.jpg);
+            background-image: url(/images/find_map/festival_img.jpg);
             background-size: cover;
 
 
@@ -1151,7 +1151,7 @@
 
         .sm_card_wrap {
             height: 135px;
-            background-image: url(./images/find_map/festival_img.jpg);
+            background-image: url(/images/find_map/festival_img.jpg);
             background-size: cover;
             border-bottom: 1px solid $black;
 

@@ -345,7 +345,7 @@
 
         .find_type_card_wrap {
             height: 200px;
-            background-image: url(./images/find_map/festival_img.jpg);
+            background-image: url(/images/find_map/festival_img.jpg);
             background-size: cover;
             padding: 10px;
             @extend %flex-column;
