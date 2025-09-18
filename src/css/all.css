@@ -262,6 +262,7 @@ a {
 .pageTop_box {
   display: flex;
   justify-content: flex-end;
+  margin-top: 5%;
   margin-right: 5%;
   transition: all 0.3s ease;
 }
@@ -5978,7 +5979,7 @@ s .region_introduction::before,
   left: 0;
   width: 200px;
   height: auto;
-  z-index: 999;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -5988,7 +5989,7 @@ s .region_introduction::before,
   right: 70px;
   width: 160px;
   height: auto;
-  z-index: 999;
+  z-index: 1;
   pointer-events: none;
 }
 
