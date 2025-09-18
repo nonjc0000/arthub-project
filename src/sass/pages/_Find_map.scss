@@ -157,6 +157,14 @@
                     width: 35%;
                     height: 100%;
 
+                    @media ($mediaLg) {
+                        width: 50%;
+                    }
+
+
+                    @media (max-width:420px) {
+                        width: 100%;
+                    }
 
                     input {
                         @extend %remove_form_style;
