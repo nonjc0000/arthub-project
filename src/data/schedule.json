@@ -1,6 +1,6 @@
 [
   {
-    "image": "/images/Find_schedule/north_travel01.jpg",
+    "image": "./images/Find_schedule/north_travel01.jpg",
     "title": "北部｜華山設計漫遊日",
     "subtitle": "展覽 × 咖啡 × 市集的輕旅行",
     "rating": 4.8,
@@ -11,7 +11,7 @@
     "id": 1
   },
   {
-    "image": "/images/Find_schedule/north_travel02.jpg",
+    "image": "./images/Find_schedule/north_travel02.jpg",
     "title": "北部｜松菸文創散策",
     "subtitle": "文創展覽＋風格選物半日遊",
     "rating": 4.7,
@@ -22,7 +22,7 @@
     "id": 2
   },
   {
-    "image": "/images/Find_schedule/north_travel03.jpg",
+    "image": "./images/Find_schedule/north_travel03.jpg",
     "title": "北部｜四四南村夜市集",
     "subtitle": "市集夜景與信義漫步",
     "rating": 4.6,
@@ -33,7 +33,7 @@
     "id": 3
   },
   {
-    "image": "/images/Find_schedule/west_slide_01.jpg",
+    "image": "./images/Find_schedule/west_slide_01.jpg",
     "title": "中部｜草悟道風格市集日",
     "subtitle": "散步草悟道，逛手作與選物",
     "rating": 4.7,
@@ -44,7 +44,7 @@
     "id": 4
   },
   {
-    "image": "/images/Find_schedule/west_slide_02.jpg",
+    "image": "./images/Find_schedule/west_slide_02.jpg",
     "title": "中部｜審計新村選物巡禮",
     "subtitle": "復古町弄 × 文創攤位",
     "rating": 4.8,
@@ -55,7 +55,7 @@
     "id": 5
   },
   {
-    "image": "/images/Find_schedule/west_slide_03.jpg",
+    "image": "./images/Find_schedule/west_slide_03.jpg",
     "title": "中部｜勤美週末藝文散步",
     "subtitle": "公園、展覽與小型市集",
     "rating": 4.5,
@@ -66,7 +66,7 @@
     "id": 6
   },
   {
-    "image": "/images/Find_schedule/south_slide_01.jpg",
+    "image": "./images/Find_schedule/south_slide_01.jpg",
     "title": "南部｜駁二設計小旅行",
     "subtitle": "港都倉庫群 × 創意市集",
     "rating": 4.7,
@@ -77,7 +77,7 @@
     "id": 7
   },
   {
-    "image": "/images/Find_schedule/south_slide_02.jpg",
+    "image": "./images/Find_schedule/south_slide_02.jpg",
     "title": "南部｜奇美博物館＋周邊市集",
     "subtitle": "白色古典風與週末攤位",
     "rating": 4.6,
@@ -88,7 +88,7 @@
     "id": 8
   },
   {
-    "image": "/images/Find_schedule/south_slide_05.jpg",
+    "image": "./images/Find_schedule/south_slide_05.jpg",
     "title": "南部｜鹽埕老城風格散策",
     "subtitle": "咖啡館、二手選物、獨立品牌",
     "rating": 4.5,
@@ -99,7 +99,7 @@
     "id": 9
   },
   {
-    "image": "/images/Find_schedule/east_slide_01.jpg",
+    "image": "./images/Find_schedule/east_slide_01.jpg",
     "title": "東部｜花蓮太平洋市集",
     "subtitle": "海風吹來的手作溫度",
     "rating": 4.8,
@@ -110,7 +110,7 @@
     "id": 10
   },
   {
-    "image": "/images/Find_schedule/east_slide_02.jpg",
+    "image": "./images/Find_schedule/east_slide_02.jpg",
     "title": "東部｜台東鐵花村音樂市集",
     "subtitle": "市集與現場音樂的慢活夜",
     "rating": 4.7,
@@ -121,7 +121,7 @@
     "id": 11
   },
   {
-    "image": "/images/Find_schedule/east_slide_03.jpg",
+    "image": "./images/Find_schedule/east_slide_03.jpg",
     "title": "東部｜鹿野小鎮漫遊",
     "subtitle": "小農市集 × 茶園光影",
     "rating": 4.6,
@@ -132,6 +132,3 @@
     "id": 12
   }
 ]
-
-
-

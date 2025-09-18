@@ -2,7 +2,6 @@ import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
 import ScrollToTop from "../components/ScrollToTop";
 
-
 const arrData = [
   {
     image: "./images/Find_schedule/north_travel01.jpg",
@@ -33,7 +32,6 @@ const arrData = [
   },
 ];
 
-
 const Find_schedule_region_west = () => {
   // 1) 圖片資料
   const images = [
@@ -44,10 +42,8 @@ const Find_schedule_region_west = () => {
     { url: "./images/Find_schedule/west_slide_05.jpg", title: "photo-5" },
   ];
 
-
   // 2) 狀態
   const [currentIndex, setCurrentIndex] = useState(0);
-
 
   // 3) 切換函式（寫在元件內）
   const nextSlide = () => {
@@ -57,7 +53,6 @@ const Find_schedule_region_west = () => {
     setCurrentIndex((i) => (i - 1 + images.length) % images.length);
   };
 
-
   // 4) 自動播放（用函式型 setState，不必依賴 currentIndex）
   useEffect(() => {
     const id = setInterval(() => {
@@ -66,14 +61,12 @@ const Find_schedule_region_west = () => {
     return () => clearInterval(id);
   }, [images.length]);
 
-
   return (
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
         <h1>中部地區</h1>
       </div>
-
 
       {/* 輪播 */}
       <div className="region_carousel">
@@ -90,10 +83,9 @@ const Find_schedule_region_west = () => {
         </button>
       </div>
 
-
       <div className="region_introduction">
         <img
-          src="/images/Find_schedule/greenBg.png"
+          src="./images/Find_schedule/greenBg.png"
           alt=""
           className="bg-wave"
         />
@@ -118,7 +110,6 @@ const Find_schedule_region_west = () => {
         />
       </div>
 
-
       <div className="travelCard">
         <TravelCard data={arrData} />
         <img
@@ -131,8 +122,4 @@ const Find_schedule_region_west = () => {
   );
 };
 
-
 export default Find_schedule_region_west;
-
-
-
