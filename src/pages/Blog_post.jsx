@@ -79,7 +79,7 @@ function BlogPost() {
 
     const item = {
       name: "訪客",
-      avatar: "/images/blog/avatar.svg", // ✅ public 路徑，確保可讀
+      avatar: "./images/blog/avatar.svg", 
       time: stamp,
       text,
       likes: 0,
