@@ -6,11 +6,15 @@ import "../sass/all.scss";
 import ScrollToTop from '../components/ScrollToTop'
 
 
+
+
 function Blog() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeTab, setActiveTab] = useState("熱門");
+  const [activeTab, setActiveTab] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("所有文章");
+
+
 
 
   // 18 篇文章資料，包含不同分類
@@ -22,6 +26,8 @@ function Blog() {
       img: "./images/blog/postimg/post_1.jpg",
       tags: ["布作服飾", "生活風格", "插畫紙品"],
       category: ["所有文章", "布作服飾", "插畫紙品"],
+
+
 
 
     },
@@ -106,7 +112,8 @@ function Blog() {
       excerpt: "這次在農夫市集認識了幾位小農，聽他們分享種植有機蔬果的甘苦談。每一顆番茄、每一把青菜背後都有溫暖的故事…",
       img: "./images/blog/postimg/post_11.jpg",
       tags: ["職人介紹", "美食飲品"],
-      category: ["所有文章", "布作服飾", "生活風格"]
+      category: ["所有文章", "布作服飾", "生活風格"],
+      type: "熱門"
     },
     {
       id: 12,
@@ -163,15 +170,20 @@ function Blog() {
       excerpt: "跟市集的果醬達人學了手工果醬的製作方法，用當季水果做出來的果醬真的特別香甜。來分享這個簡單又美味的製作過程…",
       img: "./images/blog/postimg/post_18.jpg",
       tags: ["美食飲品"],
-      category: ["所有文章", "美食飲品"]
+      category: ["所有文章", "美食飲品"],
+      type: "最新"
     }
   ];
+
+
 
 
   const postsPerPage = 9;
 
 
-  const filteredPosts = useMemo(() => {
+
+
+    const filteredPosts = useMemo(() => {
     let filtered = allPosts;
 
 
@@ -197,18 +209,31 @@ function Blog() {
     }
 
 
-    // 熱門/最新篩選 - 修改這部分
+    // 排序邏輯
     if (activeTab === "熱門") {
+      // 點選熱門：熱門文章排最前，其他按 id 排序
       filtered = filtered.sort((a, b) => {
         if (a.type === "熱門" && b.type !== "熱門") return -1;
         if (b.type === "熱門" && a.type !== "熱門") return 1;
         return a.id - b.id;
       });
     } else if (activeTab === "最新") {
+      // 點選最新：最新文章排最前，其他按 id 倒序
       filtered = filtered.sort((a, b) => {
         if (a.type === "最新" && b.type !== "最新") return -1;
         if (b.type === "最新" && a.type !== "最新") return 1;
         return b.id - a.id;
+      });
+    } else {
+      // 初始狀態：熱門最前，最新其次，其他按 id 排序
+      filtered = filtered.sort((a, b) => {
+        if (a.type === "熱門" && b.type !== "熱門") return -1;
+        if (b.type === "熱門" && a.type !== "熱門") return 1;
+       
+        if (a.type === "最新" && b.type !== "最新") return -1;
+        if (b.type === "最新" && a.type !== "最新") return 1;
+       
+        return a.id - b.id;
       });
     }
 
@@ -217,8 +242,12 @@ function Blog() {
   }, [selectedCategory, searchQuery, activeTab]);
 
 
+
+
   // 計算總頁數
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+
 
 
   // 取得當前頁面的文章
@@ -229,11 +258,15 @@ function Blog() {
   };
 
 
+
+
   // 當篩選條件改變時，回到第一頁
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     setCurrentPage(1);
   };
+
+
 
 
   const handleSearchChange = (query) => {
@@ -242,15 +275,26 @@ function Blog() {
   };
 
 
+
+
   const handleTabChange = (tab) => {
-    setActiveTab(tab);
+    // 如果點擊的是已選中的頁籤，則取消選擇（回到初始狀態）
+    if (activeTab === tab) {
+      setActiveTab("");
+    } else {
+      setActiveTab(tab);
+    }
     setCurrentPage(1);
   };
+
+
 
 
   // 分頁組件
   const BlogPagination = () => {
     if (totalPages <= 1) return null; // 如果只有一頁或沒有文章，不顯示分頁
+
+
 
 
     const generatePageNumbers = () => {
@@ -262,6 +306,8 @@ function Blog() {
     };
 
 
+
+
     const handlePageChange = (page) => {
       if (page >= 1 && page <= totalPages && page !== currentPage) {
         setCurrentPage(page);
@@ -270,7 +316,11 @@ function Blog() {
     };
 
 
+
+
     const pages = generatePageNumbers();
+
+
 
 
     return (
@@ -283,6 +333,8 @@ function Blog() {
         >
           ‹
         </button>
+
+
 
 
         <div className="track">
@@ -298,6 +350,8 @@ function Blog() {
         </div>
 
 
+
+
         <button
           className="page-btn next"
           aria-label="下一頁"
@@ -311,6 +365,8 @@ function Blog() {
   };
 
 
+
+
   return (
     <div className="blog-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
       <ScrollToTop/>
@@ -320,6 +376,8 @@ function Blog() {
           <img className='titleBox' src="./images/blog/blog_sign.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
         </h1>
       </header>
+
+
 
 
       {/* 2) 描述段落 */}
@@ -334,8 +392,12 @@ function Blog() {
       </section>
 
 
+
+
       {/* 3) 彩色裝飾條 */}
       <div className="blog-deco" style={{ backgroundImage: 'url("./images/blog/blog_deco.svg")' }} />
+
+
 
 
       {/* 4) 黑框主內容區 */}
@@ -351,6 +413,8 @@ function Blog() {
               <img src="./images/blog/women-two.svg" alt="blog illustration" />
             </div>
           </aside>
+
+
 
 
           {/* 右側：主要內容 */}
@@ -373,6 +437,8 @@ function Blog() {
                   最新
                 </button>
               </div>
+
+
 
 
               <div className="actions">
@@ -404,6 +470,8 @@ function Blog() {
             </div>
 
 
+
+
             {/* 搜尋結果提示 */}
             {(searchQuery || selectedCategory !== "所有文章") && (
               <div className="filter-info">
@@ -412,6 +480,8 @@ function Blog() {
                 {selectedCategory !== "所有文章" && ` (分類: ${selectedCategory})`}
               </div>
             )}
+
+
 
 
             {/* 卡片網格 */}
@@ -428,6 +498,8 @@ function Blog() {
             </div>
 
 
+
+
             {/* 分頁導航 */}
             <BlogPagination />
           </main>
@@ -438,7 +510,11 @@ function Blog() {
 }
 
 
+
+
 export default Blog;
+
+
 
 
 // #                       _oo0oo_
@@ -464,4 +540,8 @@ export default Blog;
 // #     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // #
 // #                      佛祖保佑        
+
+
+
+
 

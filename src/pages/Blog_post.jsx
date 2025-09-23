@@ -4,8 +4,12 @@ import posts from "../data/posts.json";
 import ScrollToTop from '../components/ScrollToTop'
 
 
+
+
 function BlogPost() {
   const { id } = useParams();
+
+
 
 
   // 取得當前文章
@@ -15,6 +19,37 @@ function BlogPost() {
   );
 
 
+
+
+    // 在 BlogPost 組件中添加分享功能
+  const handleShare = async () => {
+    const shareData = {
+      title: post.title,
+      text: `來看看這篇文章：${post.title}`,
+      url: window.location.href
+    };
+
+
+    try {
+      // 檢查瀏覽器是否支援 Web Share API
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // 如果不支援，則複製連結到剪貼簿
+        await navigator.clipboard.writeText(window.location.href);
+        alert('連結已複製到剪貼簿！');
+      }
+    } catch (error) {
+      // 如果分享被取消或失敗，嘗試複製連結
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        alert('連結已複製到剪貼簿！');
+      } catch (clipboardError) {
+        // 如果複製也失敗，顯示連結讓用戶手動複製
+        prompt('請手動複製此連結：', window.location.href);
+      }
+    }
+  };
   // ====== 文章「愛心」狀態（本機一人一讚，可收回；仍用 localStorage） ======
   const [postLikeCount, setPostLikeCount] = useState(
     post ? Number(post.likes) || 0 : 0
@@ -33,6 +68,8 @@ function BlogPost() {
   };
 
 
+
+
   // ====== 收藏（切換圖示，不記數；仍用 localStorage） ======
   const [postCollected, setPostCollected] = useState(() => {
     if (!post) return false;
@@ -47,6 +84,8 @@ function BlogPost() {
   };
 
 
+
+
   // ====== 留言（不持久化，重整就清空） ======
   // 以原始 posts.json 的留言為初始值；之後只放在 state 中
   const [comments, setComments] = useState(() => (post?.comments ?? []));
@@ -59,14 +98,20 @@ function BlogPost() {
   );
 
 
+
+
   // 新增留言輸入框
   const [newComment, setNewComment] = useState("");
+
+
 
 
   // 送出留言
   const handleAddComment = () => {
     const text = newComment.trim();
     if (!text || !post) return;
+
+
 
 
     const now = new Date();
@@ -77,13 +122,17 @@ function BlogPost() {
     ).padStart(2, "0")}`;
 
 
+
+
     const item = {
       name: "訪客",
-      avatar: "./images/blog/avatar.svg", 
+      avatar: "./images/blog/avatar.svg",
       time: stamp,
       text,
       likes: 0,
     };
+
+
 
 
     // 新留言加到最上面
@@ -92,6 +141,8 @@ function BlogPost() {
     setLikedComments((prev) => [false, ...prev]);
     setNewComment("");
   };
+
+
 
 
   // 單則留言按讚
@@ -107,6 +158,8 @@ function BlogPost() {
       return next;
     });
   };
+
+
 
 
   if (!post) {
@@ -132,6 +185,8 @@ function BlogPost() {
   }
 
 
+
+
   return (
     <div
       className="post-page-container"
@@ -147,9 +202,13 @@ function BlogPost() {
           </Link>
 
 
+
+
           <article className="post-content">
             <div className="post-header">
               <h1 className="post-title">{post.title}</h1>
+
+
 
 
               <div className="post-meta">
@@ -163,7 +222,11 @@ function BlogPost() {
                 </div>
 
 
+
+
                 <span className="post-date">{post.dateText}</span>
+
+
 
 
                 <div className="post-stats">
@@ -187,6 +250,8 @@ function BlogPost() {
                   </button>
 
 
+
+
                   {/* 收藏 */}
                   <button
                     type="button"
@@ -207,15 +272,32 @@ function BlogPost() {
                   </button>
 
 
+
+
                   {/* Comment：顯示目前 state 的留言數 */}
-                  <button className="stat-item" type="button">
+                  <button
+                    className="stat-item"
+                    type="button"
+                    onClick={() => {
+                      const commentsSection = document.querySelector('.comments-section');
+                      if (commentsSection) {
+                        commentsSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
                     <img src="./images/blog/comment.svg" alt="Comment" />
                     <span>{comments.length}</span>
                   </button>
 
 
                   {/* Share */}
-                  <button className="stat-item" type="button">
+                  <button
+                    className="stat-item"
+                    type="button"
+                    onClick={handleShare}
+                    aria-label="分享文章"
+                    title="分享文章"
+                  >
                     <img src="./images/blog/share.svg" alt="Share" />
                     <span>分享</span>
                   </button>
@@ -224,10 +306,14 @@ function BlogPost() {
             </div>
 
 
+
+
             {/* 圓角大圖 */}
             <div className="post-image-box hero-round">
               <img src={post.cover} alt={post.title} />
             </div>
+
+
 
 
             {/* 文章內文 */}
@@ -237,8 +323,12 @@ function BlogPost() {
             />
 
 
+
+
             {/* 虛線分隔 */}
             <div className="dashed-sep" />
+
+
 
 
             {/* 標籤 */}
@@ -256,12 +346,16 @@ function BlogPost() {
           </article>
 
 
+
+
           {/* 留言區 */}
           <section className="comments-section">
             {/* 分隔線裝飾 */}
             <div className="comment-sep">
               <img src="./images/blog/post_deco.svg" alt="分隔線" />
             </div>
+
+
 
 
             <div className="comment-input-area">
@@ -286,6 +380,8 @@ function BlogPost() {
             </div>
 
 
+
+
             <div className="comment-list">
               {comments.map((c, i) => (
                 <div key={i} className="comment">
@@ -300,6 +396,8 @@ function BlogPost() {
                         <span className="comment-author">{c.name}</span>
                         <span className="comment-date">{c.time}</span>
                       </div>
+
+
 
 
                       <div className="comment-actions">
@@ -324,6 +422,8 @@ function BlogPost() {
                     </div>
 
 
+
+
                     <p className="comment-text">{c.text}</p>
                   </div>
                 </div>
@@ -337,7 +437,15 @@ function BlogPost() {
 }
 
 
+
+
 export default BlogPost;
+
+
+
+
+
+
 
 
 
