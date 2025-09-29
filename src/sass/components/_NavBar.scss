@@ -77,8 +77,24 @@
 
           &.show {
               display: block;
-                @include ani-basic($name: show, $duration: 0.5s);
+              @include ani-basic($name: show, $duration: 0.5s);
           }
+      }
+
+  }
+
+  .user_menu_button {
+      border: none;
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+      font-size: $f-s-md;
+      $line-height-basic: 150%;
+      letter-spacing: .08em;
+
+      .sitemap_item_content {
+          display: flex;
+          align-items: flex-start;
       }
 
   }

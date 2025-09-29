@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from '../contexts/AuthContext'  // 引入 useAuth
 import ScrollToTop from '../components/ScrollToTop'
 
 const Member_login = () => {
-
     const navigate = useNavigate();
+    const { login } = useAuth();  // 使用 login 函數
 
     // 登入表單狀態
     const [loginForm, setLoginForm] = useState({
@@ -65,13 +66,21 @@ const Member_login = () => {
         setIsSubmitting(true);
 
         try {
-            // 這裡可以加入實際的登入邏輯
-            console.log('登入資料:', loginForm);
-
             // 模擬 API 呼叫
             await new Promise(resolve => setTimeout(resolve, 1000));
 
-            // 登入成功後的處理
+            // 模擬從後端獲取的用戶資料
+            const userData = {
+                name: '張小明',  // 這應該從 API 返回
+                email: loginForm.email,
+                avatar: './images/blog/avatar.svg',
+                joinDate: new Date().toISOString()
+            };
+
+            // 使用 context 的 login 函數保存用戶狀態
+            login(userData);
+
+            // 登入成功
             alert('登入成功！');
             navigate("/My_footprint");
 
@@ -157,7 +166,6 @@ const Member_login = () => {
                                     忘記密碼？
                                 </Link>
                             </div>
-
 
                             <button
                                 type="submit"

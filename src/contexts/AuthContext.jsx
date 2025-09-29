@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 // 創建 Context
-const AuthContext = createContext(null);
+const AuthContext = createContext();
 
 // 自定義 Hook 方便使用
 export const useAuth = () => {
@@ -12,19 +12,19 @@ export const useAuth = () => {
   return context;
 };
 
-// Provider 組件
+// AuthProvider 組件
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  // 從 localStorage 讀取已登入的用戶資訊（頁面重新整理時恢復狀態）
+  // 從 localStorage 恢復登入狀態
   useEffect(() => {
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
       try {
-        setUser(JSON.parse(savedUser));
+        setUser(JSON.parse(storedUser));
       } catch (error) {
-        console.error('讀取用戶資訊失敗:', error);
+        console.error('無法解析用戶資料:', error);
         localStorage.removeItem('user');
       }
     }
@@ -33,15 +33,8 @@ export const AuthProvider = ({ children }) => {
 
   // 登入函數
   const login = (userData) => {
-    const userInfo = {
-      name: userData.name || userData.email.split('@')[0],
-      email: userData.email,
-      avatar: userData.avatar || './images/blog/avatar.svg',
-      loginTime: new Date().toISOString()
-    };
-    
-    setUser(userInfo);
-    localStorage.setItem('user', JSON.stringify(userInfo));
+    setUser(userData);
+    localStorage.setItem('user', JSON.stringify(userData));
   };
 
   // 登出函數
@@ -50,25 +43,20 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('user');
   };
 
-  // 更新用戶資訊
-  const updateUser = (newUserData) => {
-    const updatedUser = { ...user, ...newUserData };
+  // 更新用戶資料
+  const updateUser = (newData) => {
+    const updatedUser = { ...user, ...newData };
     setUser(updatedUser);
     localStorage.setItem('user', JSON.stringify(updatedUser));
   };
 
-  // 檢查是否已登入
-  const isAuthenticated = () => {
-    return user !== null;
-  };
-
   const value = {
-    user,           // 當前用戶資訊
+    user,           // 當前用戶資料
     isLoading,      // 載入狀態
+    isLoggedIn: !!user,  // 是否已登入
     login,          // 登入函數
     logout,         // 登出函數
-    updateUser,     // 更新用戶資訊
-    isAuthenticated // 檢查是否已登入
+    updateUser      // 更新用戶資料函數
   };
 
   return (
