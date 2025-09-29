@@ -189,38 +189,38 @@ const Find_type = () => {
     }, [search, selectedCity, selectedDistrict, selectedActivityType, arrMarkets, activeFilter]);
 
 
-    useEffect(() => {
-        // 下拉選單切換功能
-        const handler = function () {
-            $(this).toggleClass('is-active');
-            $('.type_search-box').toggleClass('expanded');
-        };
+    // useEffect(() => {
+    //     // 下拉選單切換功能
+    //     const handler = function () {
+    //         $(this).toggleClass('is-active');
+    //         $('.type_search-box').toggleClass('expanded');
+    //     };
 
 
-        const $btn = $('.search_hamburger');
-        // 先解除同一個 handler，避免重複綁定
-        $btn.off('click', handler).on('click', handler);
+    //     const $btn = $('.search_hamburger');
+    //     // 先解除同一個 handler，避免重複綁定
+    //     $btn.off('click', handler).on('click', handler);
 
 
-        // 點擊其他地方時收合選單
-        const documentClickHandler = function(e) {
-            if (!$(e.target).closest('.type_search-box').length) {
-                $('.search_hamburger').removeClass('is-active');
-                $('.type_search-box').removeClass('expanded');
-            }
-        };
+    //     // 點擊其他地方時收合選單
+    //     const documentClickHandler = function(e) {
+    //         if (!$(e.target).closest('.type_search-box').length) {
+    //             $('.search_hamburger').removeClass('is-active');
+    //             $('.type_search-box').removeClass('expanded');
+    //         }
+    //     };
 
 
-        // 綁定文檔點擊事件
-        $(document).off('click', documentClickHandler).on('click', documentClickHandler);
+    //     // 綁定文檔點擊事件
+    //     $(document).off('click', documentClickHandler).on('click', documentClickHandler);
 
 
-        // 清理（StrictMode 下第二次 mount/unmount 也不會殘留）
-        return () => {
-            $btn.off('click', handler);
-            $(document).off('click', documentClickHandler);
-        };
-    }, []);
+    //     // 清理（StrictMode 下第二次 mount/unmount 也不會殘留）
+    //     return () => {
+    //         $btn.off('click', handler);
+    //         $(document).off('click', documentClickHandler);
+    //     };
+    // }, []);
 
 
     return (

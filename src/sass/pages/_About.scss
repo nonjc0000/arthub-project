@@ -14,8 +14,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: $spacing-xl;
-        margin-bottom: $spacing-xxl;
+        padding: $spacing-xl $spacing-xl $spacing-md;
+        // margin-bottom: $spacing-xxl;
 
         .hero_image {
             width: 70%;
@@ -44,7 +44,7 @@
             text-align: center;
 
             .section_title {
-                font-size: $f-s-xxl;
+                font-size: $f-s-lg;
                 font-weight: bold;
                 margin-bottom: $spacing-xl;
                 color: $text;
@@ -55,7 +55,7 @@
                 margin: 0 auto;
 
                 p {
-                    font-size: $f-s-lg;
+                    font-size: $f-s-md;
                     line-height: 1.8;
                     color: $text;
                     text-align: justify;
@@ -74,7 +74,7 @@
             margin: 0 auto;
 
             .section_title {
-                font-size: $f-s-xxl;
+                font-size: $f-s-lg;
                 font-weight: bold;
                 margin-bottom: $spacing-xl;
                 text-align: center;

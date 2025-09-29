@@ -6932,8 +6932,7 @@ s .region_introduction::before,
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
-  margin-bottom: 40px;
+  padding: 30px 30px 20px;
 }
 .about_us_main .hero_section .hero_image {
   width: 70%;
@@ -6959,7 +6958,7 @@ s .region_introduction::before,
   text-align: center;
 }
 .about_us_main .about_content_section .about_content_container .section_title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 30px;
   color: #39413A;
@@ -6969,7 +6968,7 @@ s .region_introduction::before,
   margin: 0 auto;
 }
 .about_us_main .about_content_section .about_content_container .about_description p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: #39413A;
   text-align: justify;
@@ -6984,7 +6983,7 @@ s .region_introduction::before,
   margin: 0 auto;
 }
 .about_us_main .company_info_section .company_info_container .section_title {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 30px;
   text-align: center;

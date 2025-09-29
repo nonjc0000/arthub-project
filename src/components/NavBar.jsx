@@ -7,8 +7,9 @@ const NavBar = () => {
     const [showUserMenu, setShowUserMenu] = useState(false);
     const navRef = useRef(null);
     const userMenuRef = useRef(null);
+    const hamburgerRef = useRef(null); // 漢堡按鈕的 ref
     const navigate = useNavigate();
-    
+
     // 使用 AuthContext
     const { user, isLoggedIn, logout } = useAuth();
 
@@ -36,10 +37,14 @@ const NavBar = () => {
         }
     };
 
-    // 點擊外部關閉選單
+    // 點擊外部關閉
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (navRef.current && !navRef.current.contains(event.target)) {
+            // 排除漢堡按鈕的點擊
+            if (navRef.current &&
+                !navRef.current.contains(event.target) &&
+                hamburgerRef.current &&
+                !hamburgerRef.current.contains(event.target)) {
                 setIsOpen(false);
             }
             if (userMenuRef.current && !userMenuRef.current.contains(event.target)) {
@@ -66,6 +71,7 @@ const NavBar = () => {
             <div className='navbar'>
                 {/* 漢堡按鈕 */}
                 <button
+                    ref={hamburgerRef}
                     className={`hamburger ${isOpen ? 'is-active' : ''}`}
                     onClick={toggleMenu}
                 >
@@ -120,8 +126,8 @@ const NavBar = () => {
                             {isLoggedIn ? (
                                 // 已登入：顯示用戶名稱和下拉選單
                                 <div className='user_menu_container' ref={userMenuRef}>
-                                    <button 
-                                        className='user_menu_button' 
+                                    <button
+                                        className='user_menu_button'
                                         onClick={toggleUserMenu}
                                     >
                                         <p className='sitemap_item_content'>
@@ -129,7 +135,7 @@ const NavBar = () => {
                                             {user?.name || '會員'}
                                         </p>
                                     </button>
-                                    
+
                                     {showUserMenu && (
                                         <div className='user_dropdown'>
                                             <Link to="/My_footprint" onClick={() => { closeMenu(); setShowUserMenu(false); }}>
