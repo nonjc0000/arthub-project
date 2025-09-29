@@ -2,7 +2,7 @@
 import Stall_map_card from '../components/Stall_map_card'
 import Stall_map_card_sm from '../components/Stall_map_card_sm'
 import { useMemo, useState } from 'react'
-import $ from 'jquery'
+// import $ from 'jquery'
 import { useEffect } from 'react'
 import stall from '../data/stall.json'
 

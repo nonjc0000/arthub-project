@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import $ from 'jquery'
+// import $ from 'jquery'
 import Find_type_card from '../components/Find_type_card'
 import '../css/all.css'
 import markets from '../data/market.json'

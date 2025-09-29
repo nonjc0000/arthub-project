@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { AuthProvider } from './contexts/AuthContext';
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Find_type from "./pages/Find_type";
@@ -30,6 +31,7 @@ import BlogWrite from "./pages/Blog_write";
 const ArtHub_App = () => {
   return (
     <div className="wrap">
+       <AuthProvider>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -58,6 +60,7 @@ const ArtHub_App = () => {
         <Route path="/Blog/write" element={<BlogWrite />} />
       </Routes>
       <Footer />
+      </AuthProvider>
     </div>
   );
 };
