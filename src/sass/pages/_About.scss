@@ -91,15 +91,24 @@
                 height: $h-80vh;
                 // min-width: 1000px;
 
+                @media ($mediaMd) {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 0;
+                    height: auto;
+                }
+
                 .info_details {
-                    // margin: auto 0;
-                    // flex: 1;
                     height: 100%;
                     padding: $spacing-xxl 0;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    // gap: $spacing-lg;
+
+                    @media ($mediaMd) {
+                        padding: 0;
+                    }
 
                     .info_item {
                         display: flex;
@@ -126,16 +135,18 @@
 
                 .map_container {
                     flex: 1;
+                    width: 100%;
                     height: 100%;
                     border-radius: $rad-md;
                     overflow: hidden;
-                    // box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-
-
 
                     iframe {
                         width: 100%;
                         height: 100%;
+                    }
+
+                    @media ($mediaMd) {
+                        min-height: 20vh;
                     }
                 }
             }
@@ -166,7 +177,7 @@
     }
 
     // 響應式設計
-    @media (max-width: 768px) {
+    @media ($mediaMd) {
         .hero_section {
             height: 30vh;
             padding: $spacing-lg;
@@ -181,18 +192,6 @@
             padding: $spacing-lg;
         }
 
-        .company_info_container .info_content {
-            flex-direction: column;
-            gap: $spacing-xl;
-
-            .map_container {
-                min-height: 300px;
-
-                .map_placeholder {
-                    min-height: 300px;
-                }
-            }
-        }
 
         .about_deco_box .about_deco1 {
             width: 80px;
@@ -201,7 +200,8 @@
         }
     }
 
-    @media (max-width: 480px) {
+    @media ($mediaSm) {
+
         .about_content_container .section_title,
         .company_info_container .section_title {
             font-size: $f-s-xxl;
