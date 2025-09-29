@@ -2,13 +2,18 @@
 @use "../functions/" as *;
 
 
-
-
-.container {
+.fs-container {
   background-color: $background;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+
+
+  // 確保在所有尺寸下都不會水平溢出
+  @media (max-width: 1400px) {
+    padding-inline: 0.5rem;
+  }
 }
-
-
 
 
 .find_schedule_titlebox {
@@ -16,6 +21,9 @@
   justify-content: center;
 
 
+  @media ($mediaMd) {
+    transform: scale(0.8);
+  }
 
 
   @media ($mediaSm) {
@@ -24,25 +32,26 @@
 }
 
 
-
-
 .deco_line {
   display: flex;
   justify-content: center;
-  padding-top: $spacing-xl;
-  margin: $spacing-x-xl;
-
-
-
-
+  padding-top: 30px;
   img {
-    width: $w-100;
+    width: $w-90;
     max-width: 1600px;
     height: auto;
+
+
+    @media ($mediaMd) {
+      max-width: 1200px;
+    }
+
+
+    @media ($mediaSm) {
+      max-width: 800px;
+    }
   }
 }
-
-
 
 
 .region {
@@ -53,31 +62,112 @@
   margin-inline: auto;
   padding-block: 60px;
   gap: 70px;
+  padding-inline: clamp(1rem, 5vw, 3rem);
 
 
+  // 中等桌面 (1200px - 1399px)
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    max-width: 1100px;
+    gap: 60px;
+  }
 
 
-  @media ($mediaSm) {
+  // 小桌面 (1024px - 1199px)
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    max-width: 950px;
+    gap: 50px;
+    padding-block: 50px;
+  }
+
+
+  // 大平板 (900px - 1023px)
+  @media (min-width: 900px) and (max-width: 1023px) {
+    max-width: 800px;
+    gap: 40px;
+    padding-block: 45px;
+  }
+
+
+  // 中等平板 (768px - 899px) - 原來的 $mediaMd
+  @media (min-width: 768px) and (max-width: 899px) {
+    max-width: 700px;
+    gap: 35px;
+    padding-block: 40px;
+  }
+
+
+  // 小平板 (640px - 767px)
+  @media (min-width: 640px) and (max-width: 767px) {
+    max-width: 600px;
+    gap: 30px;
+    padding-block: 35px;
+  }
+
+
+  // 大手機橫屏 (481px - 639px)
+  @media (min-width: 481px) and (max-width: 639px) {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    max-width: 450px;
+    gap: 25px;
+    padding-block: 30px;
+  }
+
+
+  // 手機版 (480px 以下) - 原來的 $mediaSm
+  @media (max-width: 480px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 100%;
+    padding-block: 25px;
+    gap: 20px;
+    padding-inline: 1rem;
   }
 }
 
 
 .txt-background {
   position: relative;
-  background: url("/images/Find_schedule/greenBg.png") no-repeat center bottom / cover;
+  background: url("/images/Find_schedule/greenBg.png") no-repeat center bottom /
+    cover;
   padding-bottom: 10%;
   min-height: 600px;
-  position: relative;
+  // 修復：移除 overflow: hidden，為上方裝飾品預留空間
+  overflow: visible;
+  // 為上方溢出的裝飾品預留空間
+  padding-top: 150px;
+
+
+  @media ($mediaMd) {
+    min-height: 500px;
+    padding-bottom: 8%;
+    padding-top: 120px;
+  }
+
+
+  @media ($mediaSm) {
+    min-height: 400px;
+    padding-bottom: 15%;
+    padding-top: 80px; // 手機版不顯示女孩裝飾，所以空間較小
+  }
 
 
   .deco-girl {
     position: absolute;
     left: 10px;
-    top: -150px;
+    // 調整：相對於新的 padding-top 定位
+    top: 0;
+    transform: translateY(0); // 移除負位移
     width: $w-10;
+    z-index: 1;
+
+
+    @media ($mediaMd) {
+      width: 12%;
+      transform: translateY(0);
+    }
 
 
     @media ($mediaSm) {
@@ -89,45 +179,59 @@
   .deco-cord {
     position: absolute;
     right: 60px;
-    top: -120px;
+    // 調整：相對於新的 padding-top 定位
+    top: 30px; // 稍微往下一點
+    transform: translateY(0); // 移除負位移
     width: 6%;
+    z-index: 1;
+
+
+    @media ($mediaMd) {
+      width: 6%;
+      right: 40px;
+      top: 40px;
+      transform: translateY(0);
+    }
 
 
     @media ($mediaSm) {
-      width: 15%;
-      position: absolute;
-      right: 60px;
-      top: 20px;
+      width: 12%;
+      right: 20px;
+      top: 5px;
+      transform: none;
     }
   }
 }
 
 
-
-
-.txt {
+.fs-txt {
   position: relative;
-  /* 疊在背景之上 */
-  z-index: 1;
+  z-index: 2;
   max-width: 860px;
   margin: 0 auto 0;
   text-align: center;
-  padding-top: 160px;
+  padding-top: 40px;
   line-height: 1.7;
   font-weight: $f-w-m;
 
 
+  @media ($mediaMd) {
+    max-width: 680px;
+    padding-top: 30px;
+    font-size: $f-s-sm;
+    line-height: 1.6;
+  }
 
 
-
-
-  @media($mediaSm) {
+  @media ($mediaSm) {
     display: block;
-    /* 改用 block */
     text-align: center;
     font-size: $f-s-xs;
-    width: 80vw;
+    width: 85vw;
+    max-width: none;
     margin: 0 auto;
+    padding-top: 20px;
+    line-height: 1.8;
   }
 }
 
@@ -137,28 +241,94 @@
   display: block;
   margin: 0 auto;
   transform: translateY(-160px);
-  z-index: $z-ex;
+  z-index: 1;
   position: relative;
+  overflow: visible;
+
+
+  @media ($mediaMd) {
+    width: $w-70;
+    transform: translateY(-120px);
+  }
+
+
+  @media ($mediaSm) {
+    width: $w-90;
+    transform: translateY(-80px);
+  }
 
 
   .deco-getFun {
     position: absolute;
     left: -80px;
-    top: -150px;
+    top: 0;
+    transform: translateY(-150px);
     width: 15%;
 
 
+    // 中大螢幕 (1024px - 1250px) - 修復噴出問題
+    @media (min-width: 1024px) and (max-width: 1250px) {
+      left: -50px; // 減少左偏移
+      transform: translateY(-120px);
+      width: 12%; // 稍微縮小
+    }
 
 
+    // 中等螢幕 (900px - 1023px)
+    @media (min-width: 900px) and (max-width: 1023px) {
+      left: -40px;
+      transform: translateY(-110px);
+      width: 14%;
+    }
+
+
+    // 小螢幕平板 (823px - 899px)
+    @media (min-width: 823px) and (max-width: 899px) {
+      left: -30px;
+      transform: translateY(-100px);
+      width: 16%;
+    }
+
+
+    // 關鍵修復：822px 附近的尺寸
+    @media (min-width: 769px) and (max-width: 822px) {
+      left: -25px; // 大幅減少左偏移
+      transform: translateY(-90px);
+      width: 17%;
+    }
+
+
+    // 原來的 $mediaMd 設定 (應該是 768px 以下)
+    @media ($mediaMd) {
+      left: -60px;
+      transform: translateY(-100px);
+      width: 18%;
+    }
+
+
+    // 手機版
+    @media ($mediaSm) {
+      left: -12px;
+      transform: translateY(-50px);
+      width: 15%;
+    }
   }
-
-
   .road {
     position: relative;
-  height: 140px;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-          mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    height: 140px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, black 85%, transparent 100%);
+
+
+    @media ($mediaMd) {
+      height: 120px;
+    }
+
+
+    @media ($mediaSm) {
+      height: 100px;
+    }
   }
 
 
@@ -168,11 +338,24 @@
     bottom: -120px;
     width: 18%;
     top: 50%;
-    transform: translate(-20vw, -50%); // 從畫面左外側開始
+    transform: translate(-20vw, -50%);
     opacity: 0;
     will-change: transform, opacity;
-    animation: car-run 8s linear infinite; // 時間/速度可調
-    z-index: $z-ex;
+    animation: car-run 6s linear infinite;
+    z-index: 1;
+
+
+    @media ($mediaMd) {
+      width: 20%;
+      bottom: -100px;
+    }
+
+
+    @media ($mediaSm) {
+      width: 25%;
+      bottom: -80px;
+      animation: car-run-mobile 6s linear infinite;
+    }
   }
 
 
@@ -188,21 +371,41 @@
     }
 
 
-    // 左邊淡入
     90% {
       opacity: 1;
       transform: translate(50vw, -50%);
     }
 
 
-    // 接近右側仍可見
     100% {
       transform: translate(120vw, -50%);
       opacity: 0;
     }
+  }
 
 
-    // 右邊淡出
+  @keyframes car-run-mobile {
+    0% {
+      transform: translate(-30vw, -50%);
+      opacity: 0;
+    }
+
+
+    15% {
+      opacity: 1;
+    }
+
+
+    85% {
+      opacity: 1;
+      transform: translate(60vw, -50%);
+    }
+
+
+    100% {
+      transform: translate(130vw, -50%);
+      opacity: 0;
+    }
   }
 
 
@@ -211,11 +414,22 @@
     right: -80px;
     bottom: 150px;
     width: 15%;
-  }
 
 
-  @media ($mediaSm) {
-    width: $w-80;
+    @media ($mediaMd) {
+      right: -60px;
+      bottom: 150px;
+      width: 18%;
+    }
+
+
+    @media ($mediaSm) {
+      right: -20px;
+      bottom: 120px;
+      width: 15%;
+    }
   }
 }
+
+
 

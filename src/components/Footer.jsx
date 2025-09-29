@@ -61,7 +61,7 @@ const Footer = () => {
                             <Link to="/My_footprint">
                                 <p className='sitemap_item_content'>
                                     <img src="./images/icons/user.svg" style={{ width: '24px' }} />
-                                    {user?.name || '會員'}
+                                    {user?.name || '會員'} 
                                 </p>
                             </Link>
                         </div>

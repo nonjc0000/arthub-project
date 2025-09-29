@@ -67,9 +67,9 @@
           display: none;
           @include ani-basic($name: hide, $duration: 0.5s);
 
-          a {
-              margin-bottom: 0.2rem;
-          }
+          //   a {
+          //       margin-bottom: 0.2rem;
+          //   }
 
           p {
               color: $accent;
@@ -96,5 +96,22 @@
           display: flex;
           align-items: flex-start;
       }
+  }
 
+  .user_dropdown {
+
+      a {
+          padding-left: $spacing-md;
+          margin-bottom: $spacing-xs;
+          color: $accent-200;
+      }
+
+      button {
+        margin-left: $spacing-md;
+        @extend %remove_form_style;
+        background-color: $accent;
+        color: $white;
+        padding: $spacing-xxs $spacing-md;
+        border-radius: $rad-basic;
+      }
   }

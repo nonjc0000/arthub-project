@@ -26,6 +26,8 @@ import Member_login from './pages/Member_login';
 import Forgot_password from './pages/Forgot_password';
 import Register from './pages/Register';
 import BlogWrite from "./pages/Blog_write";
+import TripBookingPage from "./pages/TripBooking";
+
 
 
 const ArtHub_App = () => {
@@ -58,6 +60,7 @@ const ArtHub_App = () => {
         <Route path='/Forgot_password' element={<Forgot_password />}></Route>
         <Route path='/Register' element={<Register />}></Route>
         <Route path="/Blog/write" element={<BlogWrite />} />
+        <Route path="/TripBookingPage" element={<TripBookingPage />}></Route>
       </Routes>
       <Footer />
       </AuthProvider>

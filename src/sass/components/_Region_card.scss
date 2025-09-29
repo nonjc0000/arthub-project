@@ -5,14 +5,64 @@
 /* 卡片：定位基準 */
 .region_card {
   position: relative;
-  overflow: visible; // 若要只裁圖片，改用 .media 包一層（見下方備註）
+  overflow: visible;
   z-index: 0;
+  width: 100%;
 
 
-  @media ($mediaSm) {
-    width: clamp(220px, 85vw, 340px);
-    /* ↓自己調上限 */
+  // 大桌面
+  @media (min-width: 1400px) {
+    max-width: 500px;
+  }
+
+
+  // 中等桌面
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    max-width: 480px;
+  }
+
+
+  // 小桌面
+  @media (min-width: 1024px) and (max-width: 1199px) {
+    max-width: 450px;
+  }
+
+
+  // 大平板
+  @media (min-width: 900px) and (max-width: 1023px) {
+    max-width: 380px;
+  }
+
+
+  // 中等平板
+  @media (min-width: 768px) and (max-width: 899px) {
+    max-width: 330px;
+  }
+
+
+  // 小平板
+  @media (min-width: 640px) and (max-width: 767px) {
+    max-width: 280px;
+  }
+
+
+  // 大手機橫屏
+  @media (min-width: 481px) and (max-width: 639px) {
+    width: clamp(250px, 80vw, 350px);
     margin-inline: auto;
+  }
+
+
+  // 手機版
+  @media (max-width: 480px) {
+    width: clamp(220px, 85vw, 340px);
+    margin-inline: auto;
+  }
+
+
+  // 超小螢幕
+  @media (max-width: 320px) {
+    width: clamp(200px, 90vw, 300px);
   }
 }
 
@@ -23,23 +73,29 @@
   height: auto;
 
 
-  /* 手機也維持 100% 寬，避免按鈕基準與圖片不同步 */
-  @media ($mediaSm) {
-    // 若你用變數，請確認用法：@media #{$mediaSm}
+  // 平板適配
+  @media ($mediaMd) {
     width: 100%;
     height: auto;
-    object-fit: cover; // 若有固定高/比例才生效
+    object-fit: cover;
+  }
+
+
+  // 手機適配
+  @media ($mediaSm) {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
 }
 
 
-/* 覆蓋層：鋪滿整張卡片，讓 z-index 在圖片之上即可 */
+/* 覆蓋層：鋪滿整張卡片 */
 .regionButton {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* 不要關掉 pointer-events，避免 Link 點不到 */
 }
 
 
@@ -50,7 +106,7 @@
   left: 0;
   translate: 40% -20%;
   transform-origin: top left;
-  scale: .8;
+  scale: 0.8;
   z-index: 2;
   color: $black;
   background-color: $white;
@@ -62,33 +118,106 @@
   letter-spacing: 3px;
   text-decoration: none;
   pointer-events: auto;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease, color 0.2s ease;
 
 
- transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, color .2s ease;
+  // 平板適配
+  @media ($mediaMd) {
+    translate: 20% -18%;
+    scale: 0.7;
+    padding: 20px 12px;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+  }
 
 
-  @media($mediaSm) {
+  // 手機適配 - 修復按鈕太小的問題
+  @media ($mediaSm) {
+    translate: 10% -10%; // 調整位置，讓按鈕更容易點擊
+    scale: 0.8; // 增大縮放比例，從 0.6 改為 0.8
+    padding: 20px 12px; // 增加 padding
+    letter-spacing: 2px;
+    font-size: 0.85em; // 稍微增大字體
+    border-width: 2px; // 保持較粗的邊框
+    min-width: 44px; // 確保符合觸控友好的最小尺寸
+    min-height: 44px;
+  }
 
 
-    translate: -15% -15%;
-    transform-origin: top left;
-    scale: .6;
-
-
+  // 超小螢幕適配
+  @media (max-width: 320px) {
+    translate: 5% -8%; // 調整位置
+    scale: 0.7; // 增大縮放比例，從 0.5 改為 0.7
+    padding: 18px 10px; // 增加 padding
+    letter-spacing: 1.5px;
+    font-size: 0.8em;
+    border-width: 2px;
+    min-width: 40px; // 確保最小觸控區域
+    min-height: 40px;
   }
 
 
   &:hover {
-   background-color: $accent;
+    background-color: $accent;
     color: $white;
     border-color: $accent;
-    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     animation: btn-pulse 1.1s ease-in-out infinite;
+
+
+    // 平板調整陰影
+    @media ($mediaMd) {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+    }
+
+
+    // 手機調整陰影
+    @media ($mediaSm) {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); // 增強陰影效果
+    }
   }
 
 
+  // 觸控裝置優化
+  @media (hover: none) and (pointer: coarse) {
+    // 增加觸控區域
+    padding: 28px 18px;
 
 
+    // 移除 hover，改用 active
+    &:hover {
+      background-color: $white;
+      color: $black;
+      border-color: $accent;
+      box-shadow: none;
+      animation: none;
+    }
+
+
+    &:active {
+      background-color: $accent;
+      color: $white;
+      transform: scale(0.95);
+      transition: all 0.1s ease;
+    }
+
+
+    // 手機版觸控優化
+    @media ($mediaSm) {
+      padding: 24px 16px; // 增加觸控區域
+      min-width: 48px; // 更大的最小觸控區域
+      min-height: 48px;
+    }
+
+
+    // 超小螢幕觸控優化
+    @media (max-width: 320px) {
+      padding: 22px 14px;
+      min-width: 44px;
+      min-height: 44px;
+    }
+  }
 }
 
 
@@ -97,25 +226,75 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  translate: 24% 24%; // 往外飄（X 正、Y 正）
+  translate: 12% 24%;
   transform-origin: bottom right;
-  scale: .7;
+  scale: 0.7;
   display: inline-block;
   z-index: 2;
   pointer-events: auto;
 
 
+  // 平板適配
+  @media ($mediaMd) {
+    translate: 10% 20%;
+    scale: 0.55;
+  }
+
+
+  // 手機適配 - 修復被裁切問題
   @media ($mediaSm) {
-    translate: 8% 14%;
-    scale: .5;
+    translate: 5% 10%;
+    scale: 0.5;
+    right: 5px; // 添加右邊距
+    bottom: 5px; // 添加下邊距
   }
 }
 
 
 /* 呼吸動畫 */
 @keyframes btn-pulse {
-  0%, 100% { scale: 1; }
-  50%      { scale: 1.05; }
+  0%,
+  100% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.05;
+  }
+}
+
+
+// 平板和手機的動畫調整
+@media ($mediaMd) {
+  @keyframes btn-pulse {
+    0%,
+    100% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.03;
+    }
+  }
+}
+
+
+@media ($mediaSm) {
+  @keyframes btn-pulse {
+    0%,
+    100% {
+      scale: 1;
+    }
+    50% {
+      scale: 1.03; // 稍微增加動畫幅度
+    }
+  }
+}
+
+
+// 觸控裝置禁用動畫（省電）
+@media (hover: none) and (pointer: coarse) {
+  .btn_top:hover {
+    animation: none;
+  }
 }
 
 

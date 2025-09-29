@@ -2,35 +2,37 @@ import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
 import ScrollToTop from "../components/ScrollToTop";
 
+
 const arrData = [
   {
     image: "./images/Find_schedule/north_travel01.jpg",
     title: "審計新村 × 草悟道文創散步｜設計靈感與綠意漫步",
     description:
       "從審計新村市集出發，逛逛文創小店、選物品牌，再延伸至草悟道，午後到國美館欣賞展覽，晚上回到柳川或美村路小店小酌，文青氣息滿滿的一日。",
-    rating: "4.5 非常好 (5)",
+    rating: "4.5⭐ 非常好 (5)",
     price: "NT $890 起",
-    url: "/Trip",
+    url: "/TripBookingPage",
   },
   {
     image: "./images/Find_schedule/north_travel02.jpg",
     title: "台中文學館市集 × 綠光聚落｜老宅裡的創意風景",
     description:
       "在台中文學館舉辦的市集，感受人文氛圍，之後步行到綠光計劃聚落，在老宅裡的咖啡館和設計展間穿梭，最後可延伸到忠信市場夜間展演，體驗台中文創的多層次。",
-    rating: "4.7 超讚 (8)",
+    rating: "4.7⭐ 超讚 (8)",
     price: "NT $1200 起",
-    url: "/Trip",
+    url: "/TripBookingPage",
   },
   {
     image: "./images/Find_schedule/north_travel03.jpg",
     title: "勤美誠品 × 草悟系市集｜城市核心的藝文生活",
     description:
       "白天在勤美誠品與草悟廣場逛草悟系市集，午後到勤美術館欣賞當代展覽，傍晚沿草悟道散步，晚上可轉往公益路享用特色餐廳，從白天到黑夜都能充滿藝術與風格。",
-    rating: "4.7 超讚 (8)",
+    rating: "4.7⭐ 超讚 (8)",
     price: "NT $1200 起",
-    url: "/Trip",
+    url: "/TripBookingPage",
   },
 ];
+
 
 const Find_schedule_region_west = () => {
   // 1) 圖片資料
@@ -42,8 +44,10 @@ const Find_schedule_region_west = () => {
     { url: "./images/Find_schedule/west_slide_05.jpg", title: "photo-5" },
   ];
 
+
   // 2) 狀態
   const [currentIndex, setCurrentIndex] = useState(0);
+
 
   // 3) 切換函式（寫在元件內）
   const nextSlide = () => {
@@ -53,6 +57,7 @@ const Find_schedule_region_west = () => {
     setCurrentIndex((i) => (i - 1 + images.length) % images.length);
   };
 
+
   // 4) 自動播放（用函式型 setState，不必依賴 currentIndex）
   useEffect(() => {
     const id = setInterval(() => {
@@ -61,12 +66,14 @@ const Find_schedule_region_west = () => {
     return () => clearInterval(id);
   }, [images.length]);
 
+
   return (
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
         <h1>中部地區</h1>
       </div>
+
 
       {/* 輪播 */}
       <div className="region_carousel">
@@ -83,12 +90,8 @@ const Find_schedule_region_west = () => {
         </button>
       </div>
 
+
       <div className="region_introduction">
-        <img
-          src="./images/Find_schedule/greenBg.png"
-          alt=""
-          className="bg-wave"
-        />
         <p className="region_txt">
           中部總是剛剛好——不疾不徐、舒適寬闊。
           <br />
@@ -110,6 +113,7 @@ const Find_schedule_region_west = () => {
         />
       </div>
 
+
       <div className="travelCard">
         <TravelCard data={arrData} />
         <img
@@ -122,4 +126,8 @@ const Find_schedule_region_west = () => {
   );
 };
 
+
 export default Find_schedule_region_west;
+
+
+

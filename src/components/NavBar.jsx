@@ -132,7 +132,8 @@ const NavBar = () => {
                                     >
                                         <p className='sitemap_item_content'>
                                             <img src="./images/icons/user-accent.svg" style={{ width: '24px' }} alt="" />
-                                            {user?.name || '會員'}
+                                            {user?.name || '會員'}&nbsp;▾
+                                            {/* <span>33</span> */}
                                         </p>
                                     </button>
 

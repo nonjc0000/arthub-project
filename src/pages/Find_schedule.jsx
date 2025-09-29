@@ -1,8 +1,6 @@
 import Region_card from "../components/Find_schedule/Region_card";
 
 
-
-
 const arrCards = [
   {
     id: 1,
@@ -31,14 +29,10 @@ const arrCards = [
 ];
 
 
-
-
 const Find_schedule = () => {
   return (
     <>
-      <div className="container">
-
-
+      <div className="fs-container">
         <div className="find_schedule_titlebox">
           <h1 className="titleBox_h1">
             <img
@@ -51,8 +45,6 @@ const Find_schedule = () => {
         <div className="deco_line">
           <img src="./images/Find_schedule/deco_line.svg" alt="" />
         </div>
-
-
 
 
         <div className="region">
@@ -69,8 +61,6 @@ const Find_schedule = () => {
         </div>
 
 
-
-
         <div className="intro_down">
           <div className="txt-background">
             <div className="deco-girl">
@@ -79,7 +69,7 @@ const Find_schedule = () => {
             <div className="deco-cord">
               <img src="./images/Find_schedule/normal-cord.svg" alt="" />
             </div>
-            <div className="txt">
+            <div className="fs-txt">
               不只逛市集，還有周邊的景點也可以一起安排，但怎麼安排才最好玩？
               <br />
               我們規劃多種「市集＋週邊景點」的一日遊旅程。
@@ -94,18 +84,19 @@ const Find_schedule = () => {
               <img src="./images/Find_schedule/getFun.svg" alt="" />
             </div>
             <img src="./images/Find_schedule/intro.png" alt="" />
-           
-              <div className="road">
-                <img className="car-01"src="./images/Find_schedule/car01.svg" alt="" />
-              </div>
-              <div className="car-go">
-                <img src="./images/Find_schedule/car-go.svg" alt="" />
+
+
+            <div className="road">
+              <img
+                className="car-01"
+                src="./images/Find_schedule/car01.svg"
+                alt=""
+              />
+            </div>
+            <div className="car-go">
+              <img src="./images/Find_schedule/car-go.svg" alt="" />
             </div>
           </div>
-
-
-
-
         </div>
       </div>
     </>
@@ -113,7 +104,7 @@ const Find_schedule = () => {
 };
 
 
-
-
 export default Find_schedule;
+
+
 

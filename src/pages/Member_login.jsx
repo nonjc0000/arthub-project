@@ -71,7 +71,7 @@ const Member_login = () => {
 
             // 模擬從後端獲取的用戶資料
             const userData = {
-                name: '張小明',  // 這應該從 API 返回
+                name: '張小明',  
                 email: loginForm.email,
                 avatar: './images/blog/avatar.svg',
                 joinDate: new Date().toISOString()

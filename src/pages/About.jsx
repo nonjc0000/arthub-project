@@ -70,7 +70,6 @@ const About = () => {
                         
                         <div className='map_container'>
                       
-                                {/* 這裡可以放入 Google Map 或其他地圖 API */}
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.9612646922315!2d121.56350097512129!3d25.035388577815418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abfb2687e289%3A0xf2850916c4164b57!2z54Cn5Y6a54KZ54eS54af5oiQ54mb5o6SIOWPsOWMly7kv6HnvqlBVFTlupc!5e0!3m2!1sen!2stw!4v1756886141582!5m2!1sen!2stw" style={{border:'0'}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"/>
                             
                         </div>

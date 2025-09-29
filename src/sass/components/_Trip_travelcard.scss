@@ -3,88 +3,105 @@
 
 
 .tc-card {
-  display: block;
-  background: $white;
-  color: $text;
-  text-decoration: none;
-  border-radius: $rad-lg;
+  display: flex;
+  flex-direction: column;
+  height: $w-100;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  width: 350px;
-
-
-
-
-  flex: 0 0 320px;
-  min-width: 320px;
-  scroll-snap-align: start;
-
-
-
-
-  &:hover,
-  &:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
-  }
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-
-
+.tc-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
 
 
 .tc-img {
   display: block;
   width: 100%;
-  height: 220px;
-  /* 想更瘦就調小 */
+  /* 1) 主要做法：用等比 */
+  aspect-ratio: 16 / 9;
   object-fit: cover;
-  /* 圖片不變形，超出裁掉 */
+  height: auto;
+  transition: transform 0.4s ease;
 }
 
 
+/* 2) 舊瀏覽器 fallback：不支援 aspect-ratio 時改用固定高度 */
+@supports not (aspect-ratio: 1) {
+  .tc-img {
+    height: 200px; /* 手機 */
+  }
+  @media (min-width: 600px) {
+    .tc-img {
+      height: 220px;
+    }
+  }
+  @media (min-width: 900px) {
+    .tc-img {
+      height: 240px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .tc-img {
+      height: 260px;
+    }
+  }
+}
 
 
+/* hover 小放大 */
+.tc-card:hover .tc-img {
+  transform: scale(1.05);
+}
+
+
+/* 內容區維持一致高度，不讓文字把卡片拉長 */
 .tc-body {
-  padding: 12px 14px 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
 }
-
-
-
-
 .tc-title {
-  margin: 4px 0 2px;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1.2;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-
-
-
-
 .tc-sub {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: 14px;
-  color: #666;
+  color: #6b7280;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-
-
-
-
 .tc-meta {
-  margin-bottom: 6px;
   font-size: 13px;
-  color: #777;
+  color: #374151;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
-
-
-
 .tc-price {
-  font-weight: 700;
+  margin-top: auto;
   font-size: 15px;
+  font-weight: 600;
+  color: $accent;
 }
-
-
 
 
 

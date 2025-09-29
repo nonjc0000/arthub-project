@@ -2,35 +2,37 @@ import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
 import ScrollToTop from "../components/ScrollToTop";
 
+
 const arrData = [
   {
     image: "./images/Find_schedule/north_travel01.jpg",
     title: "華山設計漫遊日｜風格選物 × 咖啡散步 × 文創市集",
     description:
       "走進華山文創園區，來一場設計與風格的慢步旅行。從早餐咖啡展覽節奏、逛展覽、市集與手作選物，感受城市裡輕又充滿創意的日常片段。",
-    rating: "4.5 非常好 (5)",
+    rating: "4.5⭐ 非常好 (5)",
     price: "NT $890 起",
-    url: "/Trip",
+    url: "/TripBookingPage",
   },
   {
     image: "./images/Find_schedule/north_travel02.jpg",
     title: "板橋老新交融日｜歷史走讀 × 藝文市集 × 家庭悠遊",
     description:
       "串起板橋的老街與新藝文空間，體驗在地文化、親子共遊與手作創意市集。結合慢散步與動手玩，適合一家大小或在地生活觀察愛好者。",
-    rating: "4.7 超讚 (8)",
+    rating: "4.7⭐ 超讚 (8)",
     price: "NT $1200 起",
-    url: "/Trip",
+    url: "/TripBookingPage",
   },
   {
     image: "./images/Find_schedule/north_travel03.jpg",
     title: "大稻埕風格微旅｜巷弄選物 × 小型市集 × 河岸夕陽",
     description:
       "走進大稻埕的老街巷弄，探索復古與創意交會的城市風景。安排選物、手作與黃昏碼頭的散步，讓一日旅行成為儀式感滿分的生活片段。",
-    rating: "4.7 超讚 (8)",
+    rating: "4.7⭐ 超讚 (8)",
     price: "NT $1390 起",
-    url: "/Trip",
+    url: "/TripBookingPage",
   },
 ];
+
 
 const Find_schedule_region_north = () => {
   // 1) 圖片資料
@@ -42,8 +44,10 @@ const Find_schedule_region_north = () => {
     { url: "./images/Find_schedule/north_slide_05.jpg", title: "photo-5" },
   ];
 
+
   // 2) 狀態
   const [currentIndex, setCurrentIndex] = useState(0);
+
 
   // 3) 切換函式（寫在元件內）
   const nextSlide = () => {
@@ -53,6 +57,7 @@ const Find_schedule_region_north = () => {
     setCurrentIndex((i) => (i - 1 + images.length) % images.length);
   };
 
+
   // 4) 自動播放（用函式型 setState，不必依賴 currentIndex）
   useEffect(() => {
     const id = setInterval(() => {
@@ -61,12 +66,14 @@ const Find_schedule_region_north = () => {
     return () => clearInterval(id);
   }, [images.length]);
 
+
   return (
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
         <h1>北部地區</h1>
       </div>
+
 
       {/* 輪播 */}
       <div className="region_carousel">
@@ -83,12 +90,8 @@ const Find_schedule_region_north = () => {
         </button>
       </div>
 
+
       <div className="region_introduction">
-        <img
-          src="./images/Find_schedule/greenBg.png"
-          alt=""
-          className="bg-wave"
-        />
         <p className="region_txt">
           北部｜城市交會的靈感地帶
           <br />
@@ -112,6 +115,7 @@ const Find_schedule_region_north = () => {
         />
       </div>
 
+
       <div className="travelCard">
         <TravelCard data={arrData} />
         <img
@@ -124,4 +128,8 @@ const Find_schedule_region_north = () => {
   );
 };
 
+
 export default Find_schedule_region_north;
+
+
+

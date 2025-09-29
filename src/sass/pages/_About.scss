@@ -97,6 +97,7 @@
                     align-items: center;
                     gap: 0;
                     height: auto;
+                    // min-height: 100vh;
                 }
 
                 .info_details {
@@ -138,7 +139,8 @@
                     width: 100%;
                     height: 100%;
                     border-radius: $rad-md;
-                    overflow: hidden;
+                    // overflow: hidden;
+                    // margin-top: $spacing-sm;
 
                     iframe {
                         width: 100%;
@@ -146,7 +148,20 @@
                     }
 
                     @media ($mediaMd) {
-                        min-height: 20vh;
+                        min-height: 250px;
+                        margin-top: $spacing-sm;
+
+                        iframe {
+                            height: 250px;
+                        }
+                    }
+
+                    @media ($mediaSm) {
+                        min-height: 200px;
+
+                         iframe {
+                            height: 200px;
+                        }
                     }
                 }
             }
