@@ -32,19 +32,24 @@
 
     .footprint_content_topbar {
         width: $w-100;
-        display: flex;
-        gap: 10px;
-        align-items: center;
+        @extend %flex-center;
         margin-bottom: $spacing-lg;
 
-        .year_box {
-            width: 95px;
-            height: 35px;
-            padding: 2.5px $spacing-xxs 0;
-            background-color: $primary;
-            @include bordered;
-            font-size: $f-s-xxl;
-            @extend %text-center;
+        .footprint_content_topbar_wrapper {
+            width: $w-100;
+            @extend %flex-center;
+            gap: 10px;
+
+            .year_box {
+                width: 95px;
+                height: 35px;
+                padding: 2.5px $spacing-xxs 0;
+                background-color: $primary;
+                @include bordered;
+                font-size: $f-s-xxl;
+                @extend %text-center;
+            }
+
         }
     }
 

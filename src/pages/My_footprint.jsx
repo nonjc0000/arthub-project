@@ -23,6 +23,8 @@ const My_footprint = () => {
                 <div className="footprint_content">
                     <div className='footprint_content_topbar'>
 
+                        <div className='footprint_content_topbar_wrapper'>
+
                         <p className='year_box'>2025</p>
                         <svg width="807" height="19" viewBox="0 0 807 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="807" height="19" fill="#DFE5D3" />
@@ -31,6 +33,8 @@ const My_footprint = () => {
                         <svg width="22" height="19" viewBox="0 0 22 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11 19L-2.46316e-07 -1.59526e-08L22 1.90735e-06L11 19Z" fill="#BEC7B4" />
                         </svg>
+
+                        </div>
 
                     </div>
 

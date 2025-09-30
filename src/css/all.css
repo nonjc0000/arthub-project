@@ -5,7 +5,7 @@
 }
 
 .member_login_main .login_right .login_form .form_options .remember_me, .Find_schedule_order_wrap .receipt .select_border, .stall_register_main, .stall_register_main h1, .stall_register_main .stall_register, .stall_register_main .stall_num .all_btn_box .stall_btn, .stall_register_main .register, .stall_register_main .register .register_box, .stall_register_main .register .register_box .register_form .contact .checkbox .type_box, .event_info_main .box_center, .event_info_main .info_box, .event_info_main .event_info_container .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .stall_map_main .stall_map_container h1, .stall_map_main .stall_search_box .stall_search_filter .search_box, .stall_map_main .stall_search_box .stall_search_filter .btn_box button, .stall_map_main .stall_card .stall_card_wrap .top .num, .stall_map_main .stall_card .stall_card_wrap .bottom p, .stall_map_main .stall_card .stall_card_body .title, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box, .stall_map_main .stall_card .stall_card_body .btn_box .like_btn_box button, .stall_map_main .stall_card .stall_card_body .btn_box .social_btn_box, .stall_map_main .stall_card .stall_card_body .review_box, .stall_map_main .stall_card .stall_card_body .stall_card_review p, .stall_map_main .stall_map_card_sm .sm_card_wrap .top figure,
-.stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.stall_map_main .stall_map_card_sm .sm_card_wrap .top .num, .stall_map_main .stall_map_card_sm .body .title, .stall_map_main .stall_map_card_sm .body .tag_box p, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .footprint_content .footprint_content_topbar, .footprint_content .footprint_content_topbar .footprint_content_topbar_wrapper, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +50,7 @@
   -webkit-box-orient: vertical;
 }
 
-.order_management_content .order_content_layout .order_list .order_card .order_image .order_date, .footprint_content .footprint_content_topbar .year_box {
+.order_management_content .order_content_layout .order_list .order_card .order_image .order_date, .footprint_content .footprint_content_topbar .footprint_content_topbar_wrapper .year_box {
   text-align: center;
   line-height: 100%;
 }
@@ -3819,12 +3819,13 @@ a {
 }
 .footprint_content .footprint_content_topbar {
   width: 100%;
-  display: flex;
-  gap: 10px;
-  align-items: center;
   margin-bottom: 25px;
 }
-.footprint_content .footprint_content_topbar .year_box {
+.footprint_content .footprint_content_topbar .footprint_content_topbar_wrapper {
+  width: 100%;
+  gap: 10px;
+}
+.footprint_content .footprint_content_topbar .footprint_content_topbar_wrapper .year_box {
   width: 95px;
   height: 35px;
   padding: 2.5px 5px 0;
