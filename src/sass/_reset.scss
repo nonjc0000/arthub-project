@@ -92,6 +92,7 @@ video {
 
 body {
     background-color: $background;
+    background-image: url('/images/blog/blog_bg.jpg');
     @extend %main_font-family_setting;
     color: $text;
     font-size: 100%;

@@ -2,7 +2,7 @@
 @use '../functions/' as *;
 
 .notifications_main {
-    background-color: $background;
+    // background-color: $background;
     padding: $spacing-xl;
     @extend %main_font-family_setting;
     color: $text;

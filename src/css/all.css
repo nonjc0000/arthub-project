@@ -27,7 +27,7 @@
 .review_container .review_input_box .input button, .review_container .review_btn_box .btn_box button, .review_container .review_card .card_box .like_box button, .stall_map_main .type_btn_box button, .stall_map_main .stall_search_box .stall_search_filter input,
 .stall_map_main .stall_search_box .stall_search_filter select,
 .stall_map_main .stall_search_box .stall_search_filter button, .stall_map_main .stall_card .stall_card_body button,
-.stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment, .find_type_main .type_search-box .search-wrap .search_hamburger, .find_type_main .type_search-box .select select, .find_type_main .type_search-box .search input, .find_type_main .type_search-box .search button, .find_type_main .find_type_card .find_type_card_wrap .top .like_button, .find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button, .user_dropdown button {
+.stall_map_main .stall_card .stall_card_body input, .order_management_content .order_status_tabs .status_tab, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment, .find_type_main .type_search-box .search-wrap .search_hamburger, .find_type_main .type_search-box .select select, .find_type_main .type_search-box .search input, .find_type_main .type_search-box .search button, .find_type_main .find_type_card .find_type_card_wrap .top .like_button, .find_type_main .find_type_card .find_type_card_wrap .find_type_tag_box button, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border select, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input, .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button, .user_dropdown button, .find_map_card .find_map_card_desc button {
   border: none;
   outline: none;
   background: none;
@@ -164,6 +164,7 @@ video {
 
 body {
   background-color: #FDF7EB;
+  background-image: url("/images/blog/blog_bg.jpg");
   color: #39413A;
   font-size: 100%;
   line-height: 1.5;
@@ -1010,7 +1011,7 @@ a {
 .find_map_card .find_map_card_desc p {
   font-size: 0.875rem;
 }
-.find_map_card .find_map_card_desc a {
+.find_map_card .find_map_card_desc button {
   display: block;
   font-size: 0.875rem;
   background-color: #ED972E;
@@ -1019,9 +1020,10 @@ a {
   padding-top: 6.5px;
   padding-bottom: 5px;
   border-radius: 999px;
+  cursor: pointer;
 }
 @media (max-width:640px) {
-  .find_map_card .find_map_card_desc a:nth-child(n+3) {
+  .find_map_card .find_map_card_desc button:nth-child(n+3) {
     display: none;
   }
 }
@@ -1870,6 +1872,7 @@ a {
 }
 
 .event_card_infowindow {
+  cursor: pointer;
   width: 200px;
   background-color: #fff;
   overflow: hidden;
@@ -1887,10 +1890,13 @@ a {
   width: 100%;
   height: 120px;
   background-color: #DEBFA0;
-  background-image: url("/images/Map_api/pexels-minan1398-1313814.jpg");
   background-size: cover;
   position: relative;
   border-radius: 15px 15px 0 0;
+  overflow: hidden;
+}
+.event_card_infowindow .event_image_placeholder img {
+  object-position: center;
 }
 @media (max-width:640px) {
   .event_card_infowindow .event_image_placeholder {
@@ -2197,7 +2203,6 @@ a {
   }
 }
 .find_map_main {
-  background-color: #FDF7EB;
   height: 100vh;
   padding: 30px;
   color: #39413A;
@@ -3792,7 +3797,6 @@ a {
   }
 }
 .my_footprint_main {
-  background-color: #FDF7EB;
   padding: 30px;
   color: #39413A;
   margin-bottom: 10vh;
@@ -5685,7 +5689,6 @@ a {
 }
 
 .notifications_main {
-  background-color: #FDF7EB;
   padding: 30px;
   color: #39413A;
   margin-bottom: 10vh;
@@ -7774,7 +7777,6 @@ a {
   }
 }
 .about_us_main {
-  background-color: #FDF7EB;
   color: #39413A;
   padding: 30px;
   margin-bottom: 10vh;
@@ -8286,7 +8288,6 @@ a {
 }
 
 .member_login_main {
-  background-color: #FDF7EB;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8583,7 +8584,6 @@ a {
 }
 
 .forgot_password_main {
-  background-color: #FDF7EB;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8902,7 +8902,6 @@ a {
 }
 
 .register_main {
-  background-color: #FDF7EB;
   min-height: 100vh;
   display: flex;
   align-items: center;

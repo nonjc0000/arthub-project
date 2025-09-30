@@ -2,7 +2,7 @@
 @use '../functions/' as *;
 
 .about_us_main {
-    background-color: $background;
+    // background-color: $background;
     @extend %main_font-family_setting;
     color: $text;
     padding: $spacing-xl;

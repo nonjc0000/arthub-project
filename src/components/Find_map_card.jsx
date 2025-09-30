@@ -14,7 +14,7 @@ const Find_map_card = ({ id, name, date, time, tag, imgUrl }) => {
             <p>{date} {time}</p>
             <div className='anchors'>
               {
-                tag.slice(0, 3).map((t, index) => <a key={index}># {t}</a>)
+                tag.slice(0, 3).map((t, index) => <button key={index}># {t}</button>)
               }
             </div>
           </div>

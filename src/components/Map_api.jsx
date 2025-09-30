@@ -7,6 +7,7 @@ import {
   InfoWindow
 } from '@vis.gl/react-google-maps';
 import marketsData from '../data/market.json'; // 引入市集資料
+import { Link } from 'react-router-dom';
 
 // 將 market.json 轉換為 locations 格式
 const createLocationsFromMarkets = (markets) => {
@@ -19,6 +20,7 @@ const createLocationsFromMarkets = (markets) => {
     time: market.time,
     venue: market.venue || market.district, // 使用 venue 或 district
     tag: market.tag[0] || '市集活動', // 取第一個標籤
+    imgUrl: market.imgUrl,
     // 額外的市集資訊
     marketId: market.id,
     city: market.city,
@@ -106,7 +108,9 @@ const ReactAdvancedMarkers = ({ pois, onMarkerClick }) => {
       ))}
 
       {/* 市集 InfoWindow */}
+  
       {selectedPoi && (
+        <Link to='/Event_info'>
         <InfoWindow
           position={selectedPoi.location}
           onCloseClick={() => setSelectedPoi(null)}
@@ -114,6 +118,7 @@ const ReactAdvancedMarkers = ({ pois, onMarkerClick }) => {
           <div className="event_card_infowindow">
             {/* 圖片區域 */}
             <div className="event_image_placeholder">
+              <img src={selectedPoi.imgUrl} alt="" />
               {/* <img src={marketsData.imgUrl} alt="" /> */}
             </div>
 
@@ -137,6 +142,7 @@ const ReactAdvancedMarkers = ({ pois, onMarkerClick }) => {
             </div>
           </div>
         </InfoWindow>
+        </Link>
       )}
     </>
   );

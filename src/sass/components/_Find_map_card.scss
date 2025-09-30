@@ -61,7 +61,8 @@
         }
 
 
-        a {
+        button {
+            @extend %remove_form_style;
             display: block;
             font-size: $f-s-sm;
             background-color: $accent;
@@ -70,6 +71,7 @@
             padding-top: calc($spacing-xxs + 1.5px);
             padding-bottom: $spacing-xxs;
             border-radius: $rad-ex;
+            cursor: pointer;
 
 
             @media ($mediaSm) {
