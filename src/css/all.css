@@ -2200,8 +2200,8 @@ a {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease;
+  transform: translate(-80%, -80%);
+  transition: transform 0.3s ease;
 }
 .custom-cursor img {
   width: 100px;
@@ -2210,14 +2210,6 @@ a {
 }
 .custom-cursor.pointer {
   cursor: pointer;
-}
-
-body {
-  cursor: none !important;
-}
-
-* {
-  cursor: none !important;
 }
 
 .find_map_main {
