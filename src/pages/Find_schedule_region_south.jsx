@@ -1,6 +1,9 @@
 import TravelCard from "../components/Find_schedule/TravelCard";
 import { useEffect, useState } from "react";
 import ScrollToTop from "../components/ScrollToTop";
+import PageTop from "../components/PageTop"
+
+
 
 
 const arrData = [
@@ -34,6 +37,8 @@ const arrData = [
 ];
 
 
+
+
 const Find_schedule_region_south = () => {
   // 1) 圖片資料
   const images = [
@@ -45,8 +50,12 @@ const Find_schedule_region_south = () => {
   ];
 
 
+
+
   // 2) 狀態
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
 
 
   // 3) 切換函式（寫在元件內）
@@ -58,6 +67,8 @@ const Find_schedule_region_south = () => {
   };
 
 
+
+
   // 4) 自動播放（用函式型 setState，不必依賴 currentIndex）
   useEffect(() => {
     const id = setInterval(() => {
@@ -67,12 +78,16 @@ const Find_schedule_region_south = () => {
   }, [images.length]);
 
 
+
+
   return (
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
         <h1>南部地區</h1>
       </div>
+
+
 
 
       {/* 輪播 */}
@@ -89,6 +104,8 @@ const Find_schedule_region_south = () => {
           <img src="./images/Find_schedule/RightArrow.svg" alt="RightArrow" />
         </button>
       </div>
+
+
 
 
       <div className="region_introduction">
@@ -114,6 +131,8 @@ const Find_schedule_region_south = () => {
       </div>
 
 
+
+
       <div className="travelCard">
         <TravelCard data={arrData} />
         <img
@@ -122,12 +141,21 @@ const Find_schedule_region_south = () => {
           alt=""
         />
       </div>
+       <PageTop />
     </div>
   );
 };
 
 
+
+
 export default Find_schedule_region_south;
+
+
+
+
+
+
 
 
 

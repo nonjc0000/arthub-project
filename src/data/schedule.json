@@ -7,7 +7,7 @@
     "reviews": 105,
     "attendees": 200,
     "price": 800,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 1
   },
   {
@@ -18,7 +18,7 @@
     "reviews": 89,
     "attendees": 160,
     "price": 920,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 2
   },
   {
@@ -29,7 +29,7 @@
     "reviews": 73,
     "attendees": 180,
     "price": 750,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 3
   },
   {
@@ -40,7 +40,7 @@
     "reviews": 112,
     "attendees": 220,
     "price": 850,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 4
   },
   {
@@ -51,7 +51,7 @@
     "reviews": 134,
     "attendees": 240,
     "price": 900,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 5
   },
   {
@@ -62,7 +62,7 @@
     "reviews": 68,
     "attendees": 130,
     "price": 700,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 6
   },
   {
@@ -73,7 +73,7 @@
     "reviews": 158,
     "attendees": 300,
     "price": 980,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 7
   },
   {
@@ -84,7 +84,7 @@
     "reviews": 92,
     "attendees": 180,
     "price": 860,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 8
   },
   {
@@ -95,7 +95,7 @@
     "reviews": 77,
     "attendees": 150,
     "price": 690,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 9
   },
   {
@@ -106,7 +106,7 @@
     "reviews": 140,
     "attendees": 260,
     "price": 950,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 10
   },
   {
@@ -117,7 +117,7 @@
     "reviews": 121,
     "attendees": 230,
     "price": 880,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 11
   },
   {
@@ -128,7 +128,11 @@
     "reviews": 63,
     "attendees": 120,
     "price": 720,
-    "to": "/Trip",
+    "to": "/TripBookingPage",
     "id": 12
   }
 ]
+
+
+
+

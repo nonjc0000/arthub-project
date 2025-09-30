@@ -1,13 +1,15 @@
 @use '../variables/' as *;
 @use '../functions/' as *;
 
+
 .order_management_main {
-    background-color: $background;
+    // background-color: $background;
     padding: $spacing-xl;
     @extend %main_font-family_setting;
     color: $text;
     margin-bottom: $h-10vh;
 }
+
 
 .hr_square_deco {
     width: 100%;
@@ -17,6 +19,7 @@
     margin-bottom: $spacing-xxl;
 }
 
+
 .order_management_content_box {
     @extend %flex-space-between;
     align-items: flex-start;
@@ -25,16 +28,20 @@
 }
 
 
+
+
 .order_management_content {
     @extend %flex-column;
     width: 75%;
     height: 100%;
     padding-left: $spacing-xl;
 
+
     .order_status_tabs {
         display: flex;
         gap: $spacing-lg;
         margin-bottom: $spacing-xl;
+
 
         .status_tab {
             @extend %remove_form_style;
@@ -45,11 +52,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
 
+
             &.active {
                 color: $accent;
                 border-bottom-color: $accent;
                 font-weight: bold;
             }
+
 
             &:hover:not(.active) {
                 color: $text;
@@ -57,16 +66,19 @@
         }
     }
 
+
     .order_content_layout {
         display: flex;
         gap: $spacing-xxl;
         height: calc(100% - 80px);
+
 
         .order_list {
             width: 60%;
             height: 100%;
             overflow-y: auto;
             padding-right: $spacing-sm;
+
 
             .order_card {
                 background-color: $white;
@@ -75,17 +87,19 @@
                 margin-bottom: $spacing-lg;
                 // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
+
                 .order_image {
                     position: relative;
                     width: 100%;
                     height: 200px;
 
+
                     img {
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        object-position: top;
                     }
+
 
                     .order_date {
                         position: absolute;
@@ -96,6 +110,7 @@
                         border-radius: $rad-sm;
                         @extend %text-center;
 
+
                         .month {
                             display: block;
                             font-size: $f-s-sm;
@@ -103,6 +118,7 @@
                             line-height: 1;
                             margin-bottom: 3px;
                         }
+
 
                         .day {
                             display: block;
@@ -113,6 +129,7 @@
                         }
                     }
 
+
                     .order_status_badge {
                         position: absolute;
                         top: $spacing-md;
@@ -122,6 +139,7 @@
                         font-size: $f-s-sm;
                         // font-weight: bold;
 
+
                         &.upcoming {
                             background-color: $primary;
                             color: $white;
@@ -129,9 +147,11 @@
                     }
                 }
 
+
                 .order_info {
                     position: relative;
                     padding: $spacing-sm $spacing-md $spacing-lg;
+
 
                     h3 {
                         font-size: $f-s-lg;
@@ -139,11 +159,13 @@
                         color: $text;
                     }
 
+
                     .order_location {
                         font-size: $f-s-md;
                         color: $gray-500;
                         margin-bottom: $spacing-xxl;
                     }
+
 
                     .order_actions {
                         position: absolute;
@@ -152,6 +174,7 @@
                         left: 0;
                         display: flex;
                         // gap: $spacing-sm;
+
 
                         .btn_pass {
                             @extend %remove_form_style;
@@ -166,21 +189,26 @@
                             cursor: pointer;
                             transition: all 0.3s ease;
 
+
                             &:hover {
                                 background-color: $dark;
                             }
+
 
                             .btn_content {
                                 @extend %flex-center;
                                 gap: $spacing-xs;
                             }
 
+
                             img {
                                 display: inline-block;
                                 width: 20px;
                             }
 
+
                         }
+
 
                         .btn_comment {
                             @extend %remove_form_style;
@@ -195,14 +223,17 @@
                             cursor: pointer;
                             transition: all 0.3s ease;
 
+
                             &:hover {
                                 background-color: $dark;
                             }
+
 
                             .btn_content {
                                 @extend %flex-center;
                                 gap: $spacing-xxs;
                             }
+
 
                             img {
                                 display: inline-block;
@@ -214,87 +245,106 @@
             }
         }
 
-        .recommended_section {
-            width: 35%;
-            height: 100%;
-            margin-bottom: $spacing-lg;
 
-            h3 {
-                font-size: $f-s-lg;
-                // font-weight: 500;
+.recommended_section {
+    width: 35%;
+    height: 100%;
+    margin-bottom: $spacing-lg;
+
+
+    h3 {
+        font-size: $f-s-lg;
+        color: $text;
+        margin-bottom: $spacing-lg;
+    }
+
+
+    .recommended_card {
+        background-color: $white;
+        border-radius: $rad-md;
+        overflow: hidden;
+        margin-bottom: $spacing-lg;
+        min-width: 200px;
+        display: flex;
+        flex-direction: row;
+
+
+        img {
+            width: 40%;
+            height: auto;
+            min-height: 150px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+
+        .recommended_info {
+            padding: $spacing-sm $spacing-md;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
+            h4 {
+                font-size: $f-s-md;
                 color: $text;
-                margin-bottom: $spacing-lg;
+                margin-bottom: $spacing-xs;
             }
 
-            .recommended_card {
-                background-color: $white;
-                border-radius: $rad-md;
-                overflow: hidden;
-                margin-bottom: $spacing-lg;
-                min-width: 200px;
 
-                img {
-                    width: 100%;
-                    height: 150px;
-                    object-fit: cover;
+            .recommended_tags {
+                display: flex;
+                gap: $spacing-xs;
+                margin-bottom: $spacing-xs;
+                flex-wrap: wrap;
+
+
+                .tag {
+                    background-color: $dark;
+                    color: $white;
+                    font-size: $f-s-xs;
+                    padding: 2px $spacing-xs;
+                    border-radius: $rad-sm;
+                }
+            }
+
+
+            .recommended_rating {
+                display: flex;
+                align-items: center;
+                gap: $spacing-xs;
+                margin-bottom: $spacing-xs;
+
+
+                .stars {
+                    color: $accent;
+                    font-size: $f-s-sm;
                 }
 
-                .recommended_info {
-                    padding: $spacing-sm $spacing-md;
 
-                    h4 {
-                        font-size: $f-s-md;
-                        // font-weight: bold;
-                        color: $text;
-                        margin-bottom: $spacing-xs;
-                    }
-
-                    .recommended_tags {
-                        display: flex;
-                        gap: $spacing-xs;
-                        margin-bottom: $spacing-xs;
-                        flex-wrap: wrap;
-
-                        .tag {
-                            background-color: $dark;
-                            color: $white;
-                            font-size: $f-s-xs;
-                            padding: 2px $spacing-xs;
-                            border-radius: $rad-sm;
-                        }
-                    }
-
-                    .recommended_rating {
-                        display: flex;
-                        align-items: center;
-                        gap: $spacing-xs;
-                        margin-bottom: $spacing-xs;
-
-                        .stars {
-                            color: $accent;
-                            font-size: $f-s-sm;
-                        }
-
-                        .rating_text {
-                            font-size: $f-s-xs;
-                            color: $text;
-                        }
-                    }
-
-                    .price {
-                        font-size: $f-s-sm;
-                        // font-weight: bold;
-                        color: $text;
-                    }
+                .rating_text {
+                    font-size: $f-s-xs;
+                    color: $text;
                 }
+            }
+
+
+            .price {
+                font-size: $f-s-sm;
+                color: $text;
             }
         }
     }
 }
+    }
+}
+
 
 .order_management_deco-box {
     position: relative;
     width: 100%;
+
 
     .order_management_deco1 {
         position: absolute;
@@ -305,3 +355,4 @@
         z-index: 1;
     }
 }
+

@@ -1,5 +1,8 @@
 import Region_card from "../components/Find_schedule/Region_card";
-import ScrollToTop from '../components/ScrollToTop';
+import ScrollToTop from "../components/ScrollToTop";
+import PageTop from "../components/PageTop"
+
+
 
 
 const arrCards = [
@@ -30,11 +33,13 @@ const arrCards = [
 ];
 
 
+
+
 const Find_schedule = () => {
   return (
     <>
       <div className="fs-container">
-        <ScrollToTop/>
+         <ScrollToTop />
         <div className="find_schedule_titlebox">
           <h1 className="titleBox_h1">
             <img
@@ -49,6 +54,8 @@ const Find_schedule = () => {
         </div>
 
 
+
+
         <div className="region">
           {arrCards.map((region) => {
             return (
@@ -61,6 +68,8 @@ const Find_schedule = () => {
             );
           })}
         </div>
+
+
 
 
         <div className="intro_down">
@@ -88,6 +97,8 @@ const Find_schedule = () => {
             <img src="./images/Find_schedule/intro.png" alt="" />
 
 
+
+
             <div className="road">
               <img
                 className="car-01"
@@ -101,12 +112,21 @@ const Find_schedule = () => {
           </div>
         </div>
       </div>
+      <PageTop />
     </>
   );
 };
 
 
+
+
 export default Find_schedule;
+
+
+
+
+
+
 
 
 

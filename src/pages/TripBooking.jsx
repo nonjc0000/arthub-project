@@ -1,11 +1,30 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Trip_travelCard from "../components/Find_schedule/Trip_travelCard";
 import schedule from "../data/schedule.json";
+import ScrollToTop from "../components/ScrollToTop";
+import PageTop from "../components/PageTop";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
+
+
 
 
 const STOPS = [
+
+
   {
+    time: "10:00",
+    title: "集合地點",
+    desc: "捷運善導寺站6號出口集合(捷運站內)",
+    img: "./images/Find_schedule/mrt.jpg",
+    duration: "停留 15分鐘",
+  },
+  {
+
+
     time: "10:30",
     title: "在 simple kaffa 享用早午餐",
     desc: "台北的精品人氣咖啡館，享受一份簡單早午餐與城市美味，為一天充電。",
@@ -14,14 +33,18 @@ const STOPS = [
     duration: "停留 90 分鐘",
   },
   {
+
+
     time: "12:00",
     title: "華山1914文化創意園區 設計展巡禮",
     desc: "參觀當期展覽，從插畫、建築到永續生活，汲取靈感，漫步老菸廠之間。",
     img: "./images/Find_schedule/north_travel01.jpg",
-    note: "附正當季展覽門票一張",
+    note: "附贈當季展覽門票一張",
     duration: "停留 120 分鐘",
   },
   {
+
+
     time: "14:00",
     title: "市集散策",
     desc: "逛設計手作小市集，尋寶限定款，打卡與朋友分享今日的小驚喜。",
@@ -29,13 +52,18 @@ const STOPS = [
     duration: "停留 60 分鐘",
   },
   {
+
+
     time: "16:00",
     title: "未來美術館",
     desc: "新媒體藝術展區，探索互動裝置，感受光影與聲響的沉浸體驗。",
     img: "./images/Find_schedule/museum01.jpg",
+    note: "附贈門票一張",
     duration: "停留 90 分鐘",
   },
   {
+
+
     time: "18:00",
     title: "返程與散場",
     desc: "用在地夜市(遼寧街夜市)結束這趟旅程，從食物中補充能量與情感記憶。",
@@ -43,6 +71,12 @@ const STOPS = [
     duration: "自由安排時間",
   },
 ];
+
+
+
+
+
+
 
 
 function RatingStars({ score = 4.8 }) {
@@ -84,6 +118,8 @@ function RatingStars({ score = 4.8 }) {
 }
 
 
+
+
 function Accordion({ title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
@@ -106,12 +142,14 @@ function Accordion({ title, children, defaultOpen = false }) {
 }
 
 
+
+
 export default function TripBookingPage() {
   const [arrSchedule] = useState(schedule);
   const [date, setDate] = useState("");
-  const [adult, setAdult] = useState("");
-  const [child, setChild] = useState("");
-  const priceAdult = 800;
+  const [adult, setAdult] = useState(0);
+  const [child, setChild] = useState(0);
+  const priceAdult = 890;
   const priceChild = 600;
   const total = useMemo(
     () => adult * priceAdult + child * priceChild,
@@ -139,10 +177,14 @@ export default function TripBookingPage() {
   const [formText, setFormText] = useState("");
 
 
+
+
   const [sortDesc, setSortDesc] = useState(true);
   const [starFilter, setStarFilter] = useState(0);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(2);
+
+
 
 
   const addReview = () => {
@@ -167,6 +209,8 @@ export default function TripBookingPage() {
   };
 
 
+
+
   const sorted = [...reviews].sort((a, b) =>
     sortDesc ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)
   );
@@ -176,15 +220,21 @@ export default function TripBookingPage() {
   const paged = filtered.slice(0, page * pageSize);
 
 
+
+
   const avgRating = (
     reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
   ).toFixed(1);
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <div className="page">
+    <div className="tb-page">
+      <ScrollToTop />
       {/* Hero */}
-      <section className="hero">
-        <div className="container hero__grid">
-          <div className="hero__gallery">
+      <section className="tb-hero">
+        <div className="tb-container tb-hero__grid">
+          <div className="tb-hero__gallery">
             {[
               "./images/Find_schedule/trip01.png",
               "./images/Find_schedule/trip02.png",
@@ -195,18 +245,18 @@ export default function TripBookingPage() {
               </div>
             ))}
           </div>
-          <div className="hero__text">
+          <div className="tb-hero__text">
             <div className="pill">北部一日遊</div>
-            <h1 className="hero__title">華山設計漫遊日</h1>
-            <p className="hero__desc">風格建物 × 咖啡散步 × 文創市集</p>
+            <h1 className="tb-hero__title">華山設計漫遊日</h1>
+            <p className="tb-hero__desc">風格建物 × 咖啡散步 × 文創市集</p>
             <p className="description">
               走進華山文創園區，來一場設計與風格的慢步旅行。從早午餐咖啡展開節奏，逛展覽、市集尋找手作選物，感受城市裡充滿創意的日常片段。
             </p>
-            <div className="hero__meta">
+            <div className="tb-hero__meta">
               <RatingStars score={4.8} />
               <span className="meta__people">200 人參加過</span>
             </div>
-            <div className="hero__price">
+            <div className="tb-hero__price">
               <div>
                 <div className="price__label">售價</div>
                 <div className="price__value">NT {priceAdult} / 人</div>
@@ -217,10 +267,12 @@ export default function TripBookingPage() {
       </section>
 
 
+
+
       {/* 行程亮點 */}
-      <section id="feature" className="section">
-        <div className="container">
-          <h2 className="section__title">行程亮點</h2>
+      <section id="feature" className="tb-section">
+        <div className="tb-container">
+          <h2 className="tb-section__title">行程亮點</h2>
           <div className="chips">
             {[
               "老建築再生的設計能量",
@@ -237,16 +289,18 @@ export default function TripBookingPage() {
       </section>
 
 
+
+
       {/* Accordion 區塊 */}
-      <section id="accordion" className="section">
-        <div className="container">
-          <h2 className="section__title">行程資訊</h2>
+      <section id="accordion" className="tb-section">
+        <div className="tb-container">
+          <h2 className="tb-section__title">行程資訊</h2>
           {/* 預設關閉：不傳 defaultOpen 即為關閉 */}
           <Accordion title="行程包含">
             <ul>
               <li>專業導覽服務</li>
               <li>行程間的交通</li>
-              <li>指定餐廳早午餐一份</li>
+              <li>指定餐廳早午餐一份(可加價購更換其他餐點)</li>
               <li>展覽與美術館門票</li>
               <li>行程手冊與路線地圖</li>
               <li>旅遊保險</li>
@@ -272,27 +326,32 @@ export default function TripBookingPage() {
       </section>
 
 
+
+
       {/* 主體：時間軸 + 訂購卡 */}
-      <section id="timeline" className="section">
-        <div className="container main">
+      <section id="timeline" className="tb-section">
+        <div className="tb-container main">
           {/* Timeline */}
           <div className="timeline">
             {STOPS.map((s, idx) => (
-              <article key={idx} className="stop">
+              <article  data-aos="fade-up"
+               data-aos-duration="1800"
+    key={idx} className="stop">
                 <div className="stop__grid">
                   <div className="stop__time">
+                    <strong>{s.num}</strong>
                     <strong>{s.time}</strong>
                     <div className="stop__badge">{s.duration}</div>
                   </div>
                   <div className="stop__body">
                     <h3>{s.title}</h3>
-                    <p className="hero__desc">{s.desc}</p>
+                    <p className="tb-hero__desc">{s.desc}</p>
                     {s.note && (
                       <div
                         className="acc__panel"
                         style={{
                           padding: "10px",
-                          borderRadius: "12px",
+                          borderRadius: "6px",
                           background: "#CBD4C1",
                           color: "#39413A",
                           border: "1px solid #fff",
@@ -309,6 +368,8 @@ export default function TripBookingPage() {
           </div>
 
 
+
+
           {/* Booking Card */}
           <aside id="book" className="aside">
             <div className="card-box">
@@ -321,15 +382,19 @@ export default function TripBookingPage() {
               </div>
 
 
+
+
               <div className="field">
                 <label className="label">出發日期</label>
                 <input
                   type="date"
-                  className="input"
+                  className="date-input"
                   value={date}
                   onChange={(e) => setDate(e.target.value)}
                 />
               </div>
+
+
 
 
               <div className="qty">
@@ -372,6 +437,8 @@ export default function TripBookingPage() {
               </div>
 
 
+
+
               <div className="subtotal">
                 <div className="subtotal__row">
                   <span>小計</span>
@@ -395,22 +462,26 @@ export default function TripBookingPage() {
         </div>
       </section>
       {/* 評論區 */}
-      <section id="reviews" className="section">
-        <div className="container">
-          <h2 className="section__title">
+      <section id="reviews" className="tb-section">
+        <div className="tb-container">
+          <h2 className="tb-section__title">
             旅客評論 ({reviews.length} 則，平均 {avgRating}★)
           </h2>
 
 
+
+
           {/* 工具列 */}
           <div className="review-toolbar">
-            <button className="btn" onClick={() => setSortDesc((v) => !v)}>
+            <button className="review-btn" onClick={() => setSortDesc((v) => !v)}>
               日期排序：{sortDesc ? "新→舊" : "舊→新"}
             </button>
 
 
+
+
             <select
-              className="select"
+              className="review-select"
               value={starFilter}
               onChange={(e) => {
                 setStarFilter(Number(e.target.value));
@@ -426,9 +497,11 @@ export default function TripBookingPage() {
             </select>
 
 
+
+
             <label style={{ marginLeft: "8px" }}>每頁顯示</label>
             <select
-              className="select"
+              className="page-select"
               value={pageSize}
               onChange={(e) => {
                 setPageSize(Number(e.target.value));
@@ -442,9 +515,11 @@ export default function TripBookingPage() {
           </div>
 
 
+
+
           <div className="review-form">
             <input
-              className="input"
+              className="form-input"
               placeholder="你的名稱 (選填)"
               value={formName}
               onChange={(e) => setFormName(e.target.value)}
@@ -461,15 +536,17 @@ export default function TripBookingPage() {
               ))}
             </select>
             <textarea
-              className="textarea"
+              className="review-form-textarea"
               placeholder="分享你的體驗…"
               value={formText}
               onChange={(e) => setFormText(e.target.value)}
             />
-            <button className="btn" onClick={addReview}>
+            <button className="textarea-btn" onClick={addReview}>
               送出評論
             </button>
           </div>
+
+
 
 
           <div className="review-list">
@@ -485,8 +562,10 @@ export default function TripBookingPage() {
           </div>
 
 
+
+
           {paged.length < filtered.length && (
-            <button className="btn" onClick={() => setPage((p) => p + 1)}>
+            <button className="page-more-btn" onClick={() => setPage((p) => p + 1)}>
               載入更多
             </button>
           )}
@@ -499,7 +578,7 @@ export default function TripBookingPage() {
       {/* 相關行程 */}
       <section className="tb-section">
         <div className="tb-container">
-          <h2 className="section__title">你可能也會喜歡</h2>
+          <h2 className="tb-section__title">你可能也會喜歡</h2>
           <div className="trip_card_container">
             {arrSchedule.slice(0, 4).map((schedule) => (
               <Trip_travelCard {...schedule} key={schedule.id} />
@@ -507,9 +586,8 @@ export default function TripBookingPage() {
           </div>
         </div>
       </section>
+      < PageTop />
     </div>
   );
 }
-
-
 
