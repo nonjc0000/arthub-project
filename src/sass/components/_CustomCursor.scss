@@ -1,0 +1,29 @@
+.custom-cursor {
+  position: fixed;
+  pointer-events: none; // 重要：讓游標不會阻擋點擊
+  z-index: 9999;
+  transform: translate(-50%, -50%); // 置中對齊
+  transition: transform 0.1s ease; // 平滑移動
+  
+  img {
+    width: 100px;
+    height: 100px;
+    display: block;
+  }
+
+  // 懸停在可點擊元素時的樣式
+  &.pointer {
+    // transform: translate(-50%, -50%) scale(1.2);
+    cursor: pointer;
+  }
+}
+
+// 隱藏原本的游標
+body {
+  cursor: none !important;
+}
+
+// 確保所有元素都隱藏游標
+* {
+  cursor: none !important;
+}
