@@ -2196,22 +2196,6 @@ a {
     margin: 0 55px;
   }
 }
-.custom-cursor {
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-80%, -80%);
-  transition: transform 0.3s ease;
-}
-.custom-cursor img {
-  width: 100px;
-  height: 100px;
-  display: block;
-}
-.custom-cursor.pointer {
-  cursor: pointer;
-}
-
 .find_map_main {
   background-color: #FDF7EB;
   height: 100vh;

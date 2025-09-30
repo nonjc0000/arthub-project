@@ -27,14 +27,14 @@ import Forgot_password from './pages/Forgot_password';
 import Register from './pages/Register';
 import BlogWrite from "./pages/Blog_write";
 import TripBookingPage from "./pages/TripBooking";
-import CustomCursor from "./components/CustomCursor";
+// import CustomCursor from "./components/CustomCursor";
 
 
 
 const ArtHub_App = () => {
   return (
     <div className="wrap">
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <AuthProvider>
         <NavBar />
         <Routes>
