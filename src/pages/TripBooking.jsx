@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Trip_travelCard from "../components/Find_schedule/Trip_travelCard";
 import schedule from "../data/schedule.json";
 import ScrollToTop from "../components/ScrollToTop";
@@ -145,6 +145,7 @@ function Accordion({ title, children, defaultOpen = false }) {
 
 
 export default function TripBookingPage() {
+  const location = useLocation();
   const [arrSchedule] = useState(schedule);
   const [date, setDate] = useState("");
   const [adult, setAdult] = useState(0);
@@ -155,6 +156,18 @@ export default function TripBookingPage() {
     () => adult * priceAdult + child * priceChild,
     [adult, child]
   );
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const element = document.querySelector(location.hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
+  
   // 評論
   const [reviews, setReviews] = useState([
     {
@@ -334,9 +347,9 @@ export default function TripBookingPage() {
           {/* Timeline */}
           <div className="timeline">
             {STOPS.map((s, idx) => (
-              <article  data-aos="fade-up"
-               data-aos-duration="1800"
-    key={idx} className="stop">
+              <article data-aos="fade-up"
+                data-aos-duration="1800"
+                key={idx} className="stop">
                 <div className="stop__grid">
                   <div className="stop__time">
                     <strong>{s.num}</strong>

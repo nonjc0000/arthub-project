@@ -3,17 +3,45 @@ import PageTop from '../components/PageTop';
 import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
+import { useState } from 'react';
+
+
+
+
 
 
 const Home = () => {
+
+
+  const [birdPosition, setBirdPosition] = useState({ x: 20, y: 20 });
+
+
+  const handleClick = (e) => {
+    // 獲取點擊位置相對於視窗的百分比
+    const x = (e.clientX / window.innerWidth) * 100;
+    const y = (e.clientY / window.innerHeight) * 100;
+    setBirdPosition({ x, y });
+  };
+
+
+
+
 
 
   return (
     <>
       <ScrollToTop />
       {/* 首頁第一區塊 */}
-      <main>
+      <main onClick={handleClick}>
         <section className='home-bg'>
+          <div className='home-bird' style={{
+            left: `${birdPosition.x}%`,
+            top: `${birdPosition.y}%`,
+          }}>
+              <img src="./images/cursor.gif" alt="cursor" />
+          </div>
+
+
           <div className='home-wrap'>
             <div className='home-top'>
               <div className='home-heading'>
@@ -73,7 +101,7 @@ const Home = () => {
                   <div className='home-pic-item'>
                     <div className='home-type-one'>
                       <Link to="/Find_type?type=美食飲品"
-                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
+                        onClick={() => { sessionStorage.setItem('navigatedFromHome', 'true'); }}>
                         <img src="./images/home/home-pic-01.png" alt="種類圖01" />
                         <div className="text">
                           <p>美食飲品<br /><span>Food and Beverages</span></p>
@@ -82,7 +110,7 @@ const Home = () => {
                     </div>
                     <div className='home-type-two'>
                       <Link to="/Find_type?type=居家療育"
-                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
+                        onClick={() => { sessionStorage.setItem('navigatedFromHome', 'true'); }}>
                         <img src="./images/home/home-pic-02.png" alt="種類圖02" />
                         <div className="text-two">
                           <p>居家療育<br /><span>Home therapy</span></p>
@@ -92,7 +120,7 @@ const Home = () => {
                   </div>
                   <div className='home-type-three'>
                     <Link to="/Find_type?type=生活風格"
-                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
+                      onClick={() => { sessionStorage.setItem('navigatedFromHome', 'true'); }}>
                       <img src="./images/home/home-pic-03.png" alt="種類圖03" />
                       <div className="text-three">
                         <p>生活風格<br /><span>Daily trifles</span></p>
@@ -104,7 +132,7 @@ const Home = () => {
                   <div className='type-img-fo'>
                     <div className='home-type-four'>
                       <Link to="/Find_type?type=布作服飾"
-                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
+                        onClick={() => { sessionStorage.setItem('navigatedFromHome', 'true'); }}>
                         <img src="./images/home/home-pic-04.png" alt="種類圖04" />
                         <div className="text-four">
                           <p>布作服飾<br /><span>Handmade Fashion</span></p>
@@ -115,7 +143,7 @@ const Home = () => {
                   <div className='type-img'>
                     <div className='home-type-five'>
                       <Link to="/Find_type?type=飾品配件"
-                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
+                        onClick={() => { sessionStorage.setItem('navigatedFromHome', 'true'); }}>
                         <img src="./images/home/home-pic-05.png" alt="種類圖05" />
                         <div className="text-five">
                           <p>飾品配件<br /><span>Accessory</span></p>
@@ -124,7 +152,7 @@ const Home = () => {
                     </div>
                     <div className='home-type-six'>
                       <Link to="/Find_type?type=插畫紙品"
-                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
+                        onClick={() => { sessionStorage.setItem('navigatedFromHome', 'true'); }}>
                         <img src="./images/home/home-pic-06.png" alt="種類圖06" />
                         <div className="text-six">
                           <p>插畫紙品<br /><span>Hand drawn items</span></p>
@@ -167,7 +195,9 @@ const Home = () => {
                   <HomeCard />
                 </div>
                 <div className='home-button'>
-                  <Button />
+                  <Link to="/blog">
+                    <Button />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -197,7 +227,39 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
 export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

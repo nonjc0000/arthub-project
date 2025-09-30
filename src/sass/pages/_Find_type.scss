@@ -3,56 +3,27 @@
 @use '../functions/' as *;
 
 
-
-
-
-
-
-
 .find_type_main {
-    background-color: $background;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     .find_type_content_box {
         display: flex;
         justify-content: center;
-       
         gap: $spacing-xxl;
-        // // outline: 1px solid red;
-
-
+        padding: 20px 0;
 
 
         @media (max-width:1140px) {
             flex-direction: column;
             align-items: center;
+            gap: $spacing-lg;
         }
-
-
-
-
-
-
 
 
         .result_box {
             display: flex;
             width: 69%;
-            height: 910px;
+            height: 100vh;
             padding: 30px 0px 40px 0px;
             background-color: $white;
             border-radius: $rad-lg ;
@@ -61,37 +32,46 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 
-
-
             @media (max-width:1190px) {
                 width: $w-90;
+            }
+
+
+            @media (max-width:1140px) {
+                width: 95%;
+                height: 70vh;
+                padding: 20px 0;
+            }
+
+
+            @media (max-width:768px) {
+                width: 95%;
+                height: 500px;
+                border-radius: $rad-lg;
+                margin-left: 2.5%;
+                margin-right: 2.5%;
+            }
+
+
+            @media (max-width:576px) {
+                width: 90%;
+                height: auto;
+                border-radius: $rad-md;
+                margin-left: 5%;
+                margin-right: 5%;
             }
         }
 
 
-
-
-
-
-
-
         .find_type_result {
-   
             width: 85%;
             height: $w-100;
             padding: 10px 0 0 0;
             background-color: $white;
-            // align-items: center;
             display: grid;
             grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
             gap: 20px;
             overflow: auto;
-
-
-
-
-
-
 
 
             @media (max-width:1870px) {
@@ -99,13 +79,9 @@
             }
 
 
-
-
             @media (max-width:1730px) {
                 width: 95%;
             }
-
-
 
 
             @media (max-width:1643px) {
@@ -113,42 +89,214 @@
             }
 
 
-
-
             @media(max-width:1410px) {
                 width: 90%;
             }
-
-
 
 
             @media(max-width:1305px) {
                 width: 90%;
                 gap: $spacing-xxs ;
             }
-             @media (max-width:1140px) {
-                grid-template-columns: repeat(auto-fit,minmax(156px,1fr));
+           
+            @media (max-width:1140px) {
+                grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+                width: 92%;
+                gap: 15px;
             }
 
 
+            @media (max-width:768px) {
+                grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+                gap: 12px;
+            }
 
 
+            @media (max-width:576px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+
+            // 空結果提示樣式
+            .no_results_message {
+                grid-column: 1 / -1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 60px 20px;
+                min-height: 400px;
+
+
+                @media (max-width:768px) {
+                    padding: 40px 15px;
+                    min-height: 300px;
+                }
+
+
+                @media (max-width:576px) {
+                    padding: 30px 10px;
+                    min-height: 250px;
+                }
+
+
+                .no_results_icon {
+                    margin-bottom: 20px;
+
+
+                    @media (max-width:768px) {
+                        margin-bottom: 15px;
+                    }
+
+
+                    @media (max-width:576px) {
+                        margin-bottom: 10px;
+                    }
+
+
+                    img {
+                        width: 120px;
+                        height: auto;
+                        opacity: 0.7;
+
+
+                        @media (max-width:768px) {
+                            width: 100px;
+                        }
+
+
+                        @media (max-width:576px) {
+                            width: 80px;
+                        }
+                    }
+                }
+
+
+                h3 {
+                    font-size: 24px;
+                    font-weight: $f-w-b;
+                    color: $text;
+                    margin-bottom: 10px;
+
+
+                    @media (max-width:768px) {
+                        font-size: 20px;
+                        margin-bottom: 8px;
+                    }
+
+
+                    @media (max-width:576px) {
+                        font-size: 18px;
+                        margin-bottom: 6px;
+                    }
+                }
+
+
+                > p {
+                    font-size: $f-s-basic;
+                    color: $text;
+                    margin-bottom: 30px;
+                    max-width: 500px;
+
+
+                    @media (max-width:768px) {
+                        font-size: $f-s-sm;
+                        margin-bottom: 20px;
+                    }
+
+
+                    @media (max-width:576px) {
+                        font-size: 13px;
+                        margin-bottom: 15px;
+                    }
+                }
+
+
+                .suggestions {
+                    background-color: $background;
+                    padding: 20px 30px;
+                    border-radius: $rad-md;
+                    max-width: 400px;
+                    width: 100%;
+
+
+                    @media (max-width:768px) {
+                        padding: 15px 20px;
+                        max-width: 350px;
+                    }
+
+
+                    @media (max-width:576px) {
+                        padding: 12px 15px;
+                        max-width: 100%;
+                    }
+
+
+                    > p {
+                        font-size: $f-s-sm;
+                        font-weight: $f-w-b;
+                        color: $text;
+                        margin-bottom: 10px;
+                        text-align: center;
+
+
+                        @media (max-width:768px) {
+                            font-size: 13px;
+                            margin-bottom: 8px;
+                        }
+
+
+                        @media (max-width:576px) {
+                            font-size: 12px;
+                            margin-bottom: 6px;
+                        }
+                    }
+
+
+                    ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+
+
+                        li {
+                            font-size: $f-s-sm;
+                            color:$text;
+                            padding: 5px 0;
+                            text-align: left;
+                            position: relative;
+                            padding-left: 20px;
+
+
+                            @media (max-width:768px) {
+                                font-size: 13px;
+                                padding: 4px 0;
+                                padding-left: 18px;
+                            }
+
+
+                            @media (max-width:576px) {
+                                font-size: 12px;
+                                padding: 3px 0;
+                                padding-left: 16px;
+                            }
+
+
+                            &::before {
+                                content: "•";
+                                position: absolute;
+                                left: 5px;
+                                color: $accent;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
         }
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
 
 
     .find_type_img1,
@@ -158,12 +306,6 @@
     }
 
 
-
-
-
-
-
-
     .find_type_img1 {
         bottom: -640px;
         left: 110px;
@@ -171,100 +313,113 @@
     }
 
 
-
-
-
-
-
-
     .find_type_img2 {
         bottom: -675px;
         left: 365px;
         transform: rotate(2deg);
-
-
-
-
-
-
-
-
     }
 
 
-
-
-
-
-
-
     .type_search-box {
-        // outline: 1px solid red;
         background-color: $white;
         display: flex;
         width: 25%;
-        height: 80%;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         border-radius: $rad-lg ;
         padding: 45px $spacing-md;
         gap: 60px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        position: relative;
-        overflow: hidden;
+        position: sticky;
+        top: 20px;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
         transition: all 0.3s ease;
 
 
+        @media (max-width:1440px) {
+            width: 28%;
+            padding: 40px $spacing-md;
+            gap: 50px;
+        }
+
+
+        @media (max-width:1280px) {
+            width: 30%;
+            padding: 35px $spacing-sm;
+            gap: 40px;
+        }
 
 
         @media (max-width:1140px) {
-            width: $w-90;
+            width: 95%;
+            position: static;
+            max-height: none;
             height: auto;
             padding: 20px $spacing-md;
             gap: 0;
+            margin-bottom: $spacing-lg;
+            overflow: visible;
            
-            // 預設狀態：只顯示搜尋框
             .search-options {
                 max-height: 0;
                 opacity: 0;
                 overflow: hidden;
-                transition: all 0.4s ease;
+                transition: max-height 0.5s ease, opacity 0.4s ease;
                 margin-top: 0;
             }
            
-            // 展開狀態
             &.expanded {
                 .search-options {
-                    max-height: 500px;
+                    max-height: 2000px;
                     opacity: 1;
                     margin-top: 20px;
+                    overflow: visible;
                 }
                
-                .search_hamburger {
-                    transform: rotate(180deg);
-                }
+             
             }
         }
 
 
+        @media (max-width:768px) {
+            width: 95%;
+            border-radius: $rad-lg;
+            padding: 15px;
+            margin-left: 2.5%;
+            margin-right: 2.5%;
+        }
+
+
+        @media (max-width:576px) {
+            width: 90%;
+            border-radius: $rad-md;
+            padding: 12px;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
 
 
         .search-wrap{
             display: flex;
-            // outline: 1px solid red;
             width: $w-100;
             align-items: center;
             justify-content: center;
            
             @media (max-width:1140px) {
                 justify-content: space-between;
-                padding: 0;
+                padding-left: 5%;
+               
             }
 
 
-            @media (min-width: 1141px) {
-                padding-left: 10%;
+
+
+
+
+            @media (max-width:768px) {
+                gap: 8px;
             }
            
             .search_hamburger{
@@ -274,12 +429,19 @@
                 display: none;
                 justify-content: center;
                 align-items: center;
-                // outline: 1px solid red;
                 transition: transform 0.3s ease;
                 cursor: pointer;
+                background-color: $white;
+                border-radius: 8px;
                
                 @media (max-width:1140px) {
                     display: flex;
+                }
+
+
+                @media (max-width:576px) {
+                    width: 45px;
+                    height: 45px;
                 }
                
                 &.is-active {
@@ -290,12 +452,17 @@
                     width: 24px;
                     height: 24px;
                     transition: transform 0.3s ease;
+
+
+                    @media (max-width:576px) {
+                        width: 20px;
+                        height: 20px;
+                    }
                 }
             }
         }
 
 
-        // 可展開的搜尋選項區域
         .search-options {
             display: flex;
             flex-direction: column;
@@ -303,87 +470,108 @@
             gap: 60px;
             align-items: center;
            
-            @media (min-width: 1141px) {
-                gap: 60px;
+            @media (max-width:1440px) {
+                gap: 50px;
+            }
+
+
+            @media (max-width:1280px) {
+                gap: 40px;
             }
            
             @media (max-width: 1140px) {
-                gap: 20px;
+                gap: 18px;
+            }
+
+
+            @media (max-width: 768px) {
+                gap: 14px;
+            }
+
+
+            @media (max-width: 576px) {
+                gap: 12px;
             }
         }
 
 
         .select {
-            // flex: 0 0 auto;
             display: flex;
             width: 75%;
             height: 50px;
             border: none;
             border-bottom: 1px solid $black;
-
-
-
-
-
-
-
-
             background-size: 22px;
 
 
+            @media (max-width:1280px) {
+                width: 80%;
+            }
 
 
+            @media (max-width:1140px) {
+                width: 90%;
+                height: 45px;
+            }
 
 
-
-
-
-
+            @media (max-width:768px) {
+                width: 95%;
+                height: 42px;
+            }
 
 
             select {
                 @extend %remove_form_style;
                 width: $w-100;
+                font-size: $f-s-basic;
+
+
+                @media (max-width:768px) {
+                    font-size: $f-s-sm;
+                }
             }
-
-
-
-
-
-
-
-
         }
-
-
-
-
-
-
 
 
         .button_box {
             width: $w-80;
+
+
+            @media (max-width:1280px) {
+                width: 85%;
+            }
+
+
+            @media (max-width:1140px) {
+                width: 90%;
+            }
+
+
+            @media (max-width:768px) {
+                width: 95%;
+            }
+
+
+            p {
+                padding-left: $spacing-xxs;
+                text-align: left;
+                font-size: $f-s-sm;
+
+
+                @media (max-width:768px) {
+                    font-size: $f-s-xs;
+                    padding-left: 4px;
+                    margin-bottom: 8px;
+                }
+
+
+                @media (max-width:576px) {
+                    font-size: 12px;
+                    margin-bottom: 6px;
+                }
+            }
         }
-
-
-
-
-
-
-
-
-        p {
-            padding-left: $spacing-xxs;
-            text-align: left;
-            font-size: $f-s-sm;
-        }
-
-
-
-
-
-
 
 
         .find_type_btn_box {
@@ -395,18 +583,29 @@
             gap: 25px;
 
 
+            @media (max-width:1280px) {
+                gap: 20px;
+            }
 
 
+            @media (max-width:1140px) {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 8px;
+                padding-top: 6px;
+            }
 
 
+            @media (max-width:768px) {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+                padding-top: 4px;
+            }
 
 
-
-
-
-
-
-
+            @media (max-width:576px) {
+                gap: 6px;
+                padding-top: 4px;
+            }
 
 
             button {
@@ -419,8 +618,36 @@
                 border-radius: $rad-ex;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 transition: all 0.1s ease;
+                font-size: $f-s-basic;
+                white-space: nowrap;
 
 
+                @media (max-width:1280px) {
+                    height: 42px;
+                    font-size: $f-s-sm;
+                }
+
+
+                @media (max-width:1140px) {
+                    height: 38px;
+                    font-size: 12px;
+                    max-width: 100%;
+                    padding: 0 6px;
+                }
+
+
+                @media (max-width:768px) {
+                    height: 36px;
+                    font-size: 11.5px;
+                    padding: 0 4px;
+                }
+
+
+                @media (max-width:576px) {
+                    height: 34px;
+                    font-size: 10.5px;
+                    padding: 0 3px;
+                }
 
 
                 &:hover {
@@ -429,36 +656,15 @@
                 }
 
 
-
-
                 &.active {
-                    background-color: $accent; // 主色調背景
-                    color: $white; // 白色文字
-                    border: 1px solid $accent; // 主色調邊框
-                    font-weight: bold; // 加粗文字
-
-
-
-
-
-
-
-
+                    background-color: $accent;
+                    color: $white;
+                    border: 1px solid $accent;
+                    font-weight: bold;
                     box-shadow: 0 2px 8px rgba($accent, 0.3);
-
-
-
-
-                    // 活躍狀態的懸停效果
-                    &:hover {
-                        // transform: translateY(-1px);
-                    }
                 }
 
 
-
-
-                // 按下時的效果
                 &:active {
                     transform: translateY(0);
                 }
@@ -466,75 +672,307 @@
         }
 
 
+        .date-picker-panel {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            width: 75%;
+            animation: slideDown 0.3s ease;
+            box-sizing: border-box;
 
 
+            @media (max-width: 1280px) {
+                width: 80%;
+            }
 
 
+            @media (max-width: 1140px) {
+                width: 90%;
+                padding: 12px;
+                margin-top: 10px;
+            }
+
+
+            @media (max-width: 768px) {
+                width: 95%;
+                padding: 10px;
+                margin-top: 8px;
+            }
+
+
+            @media (max-width: 576px) {
+                width: 100%;
+                padding: 8px;
+                margin-top: 6px;
+            }
+        }
+
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .date-inputs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 12px;
+
+
+            @media (max-width: 768px) {
+                gap: 8px;
+                margin-bottom: 8px;
+            }
+
+
+            @media (max-width: 576px) {
+                grid-template-columns: 1fr;
+                gap: 6px;
+                margin-bottom: 6px;
+            }
+        }
+
+
+        .date-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            min-width: 0;
+
+
+            @media (max-width: 576px) {
+                gap: 4px;
+            }
+
+
+            label {
+                font-size: $f-s-sm;
+                color: $text;
+                font-weight: 500;
+
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
+
+
+                @media (max-width: 576px) {
+                    font-size: 11px;
+                }
+            }
+
+
+            input[type="date"] {
+                padding: 8px;
+                border: 1px solid #ddd;
+                border-radius: $rad-ex;
+                font-size: $f-s-sm;
+                outline: none;
+                transition: border-color 0.2s;
+                width: 100%;
+                box-sizing: border-box;
+
+
+                @media (max-width: 768px) {
+                    padding: 7px;
+                    font-size: 12px;
+                }
+
+
+                @media (max-width: 576px) {
+                    padding: 6px;
+                    font-size: 11px;
+                }
+
+
+                &:focus {
+                    border-color: $accent;
+                }
+
+
+                &::-webkit-calendar-picker-indicator {
+                    cursor: pointer;
+                }
+            }
+        }
+
+
+        .date-picker-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+
+
+            @media (max-width: 576px) {
+                gap: 6px;
+            }
+
+
+            .btn-secondary,
+            .btn-primary {
+                box-sizing: border-box;
+                white-space: nowrap;
+            }
+
+
+            .btn-secondary {
+                padding: 8px 16px;
+                border: 1px solid #ddd;
+                background-color: $white;
+                color: $text;
+                border-radius: $rad-ex;
+                cursor: pointer;
+                font-size: $f-s-sm;
+                transition: all 0.2s;
+
+
+                @media (max-width: 768px) {
+                    padding: 7px 12px;
+                    font-size: 12px;
+                }
+
+
+                @media (max-width: 576px) {
+                    padding: 6px 10px;
+                    font-size: 11px;
+                }
+
+
+                &:hover {
+                    background-color: #f5f5f5;
+                }
+            }
+
+
+            .btn-primary {
+                padding: 8px 16px;
+                border: none;
+                background-color: $accent;
+                color: $white;
+                border-radius: $rad-ex;
+                cursor: pointer;
+                font-size: $f-s-sm;
+                font-weight: 500;
+                transition: all 0.2s;
+
+
+                @media (max-width: 768px) {
+                    padding: 7px 12px;
+                    font-size: 12px;
+                }
+
+
+                @media (max-width: 576px) {
+                    padding: 6px 10px;
+                    font-size: 11px;
+                }
+
+
+                &:hover {
+                    background-color:$accent;
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 8px rgba($accent, 0.3);
+                }
+
+
+                &:active {
+                    transform: translateY(0);
+                }
+            }
+        }
 
 
         .search {
             @extend %flex-space-between;
             border: $black solid 1px;
             border-radius: $rad-ex;
-            border-radius: $rad-ex;
             padding: $spacing-xxs $spacing-lg;
             width: $w-80;
             height: 40px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            // outline: 1px solid red;
            
-            @media (max-width:1140px) {
-                width: calc(100% - 60px);
-                flex: 1;
+            @media (max-width:1280px) {
+                width: 85%;
+                padding: $spacing-xxs $spacing-md;
             }
 
 
+            @media (max-width:1140px) {
+                width: calc(100% - 60px);
+                flex: 1;
+                height: 45px;
+            }
 
 
+            @media (max-width:768px) {
+                height: 42px;
+                padding: $spacing-xxs $spacing-sm;
+            }
 
 
-
-
-
-
+            @media (max-width:576px) {
+                height: 40px;
+                padding: 6px 12px;
+            }
 
 
             input {
                 @extend %remove_form_style;
                 width: $w-100;
+                font-size: $f-s-basic;
+
+
+                @media (max-width:768px) {
+                    font-size: $f-s-sm;
+                }
+
+
+                @media (max-width:576px) {
+                    font-size: 13px;
+                }
+
+
+                &::placeholder {
+                    @media (max-width:576px) {
+                        font-size: 12px;
+                    }
+                }
             }
-
-
-
-
-
-
 
 
             button {
                 @extend %remove_form_style;
-
-
-
-
-
-
+                margin-left: 50px;
 
 
                 img {
                     width: 25px;
                     height: 25px;
-                    // object-fit: cover;
+
+
+                    @media (max-width:768px) {
+                        width: 22px;
+                        height: 22px;
+                    }
+
+
+                    @media (max-width:576px) {
+                        width: 30px;
+                        height: 20px;
+                    }
                 }
             }
         }
     }
-
-
-
-
-
-
 
 
     .find_type_card {
@@ -548,111 +986,85 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 
-
-
-        // @media(max-width:1240px) {
-        //     transform: scale(0.9);
-        // }
-
-
-
-
-        // @media(max-width:1190px) {
-        //     transform: scale(0.5);
-        // }
-
-
-
-
-        // @media(max-width:$mediaSm) {
-        //     transform: scale(0.5);
-        // }
-
-
-
-
-       
-
-
-
-
-        &:hover {
-
-
-
-
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        @media (max-width:1140px) {
+            height: 280px;
         }
 
 
+        @media (max-width:768px) {
+            height: 260px;
+        }
 
 
+        @media (max-width:576px) {
+            height: 240px;
+        }
 
 
+        &:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
 
 
         .find_type_card_wrap {
             height: 200px;
             background-image: url(/images/find_map/festival_img.jpg);
             background-size: cover;
+            background-position: center;
             padding: 10px;
             @extend %flex-column;
 
 
+            @media (max-width:1140px) {
+                height: 180px;
+                padding: 8px;
+            }
 
 
+            @media (max-width:768px) {
+                height: 160px;
+            }
 
 
+            @media (max-width:576px) {
+                height: 150px;
+                padding: 6px;
+            }
 
 
             .top {
                 @extend %flex-space-between;
 
 
-
-
-
-
-
-
                 .like_button {
                     @extend %remove_form_style;
-
-
-
-
-
-
 
 
                     img {
                         width: 25px;
                         height: auto;
+
+
+                        @media (max-width:768px) {
+                            width: 22px;
+                        }
+
+
+                        @media (max-width:576px) {
+                            width: 20px;
+                        }
                     }
                 }
             }
 
 
-
-
-
-
-
-
             .date {
                 @extend %flex-column;
                 gap: $spacing-xxs;
-                ;
-
-
-
-
-
-
 
 
                 figure {
-                    // width: 115px;
                     font-size: $f-s-xs;
                     color: $white;
                     background-color: $accent;
@@ -662,92 +1074,98 @@
                     gap: $spacing-xs;
 
 
+                    @media (max-width:768px) {
+                        padding: 2px 6px;
+                        gap: 4px;
+                    }
+
+
+                    @media (max-width:576px) {
+                        padding: 2px 5px;
+                        gap: 3px;
+                    }
 
 
                     p {
                         font-size: 12px;
+
+
+                        @media (max-width:768px) {
+                            font-size: 11px;
+                        }
+
+
+                        @media (max-width:576px) {
+                            font-size: 10px;
+                        }
                     }
 
 
-
-
-
-
-
-
                     img {
-                        // // outline: 1px solid red;
                         width: 16px;
                         height: 16px;
 
 
+                        @media (max-width:768px) {
+                            width: 14px;
+                            height: 14px;
+                        }
 
 
+                        @media (max-width:576px) {
+                            width: 12px;
+                            height: 12px;
+                        }
                     }
-
-
 
 
                     .icon_time {
                         width: 16px;
                         height: 19px;
                         padding: 1px 0 0 0;
+
+
+                        @media (max-width:768px) {
+                            width: 14px;
+                            height: 17px;
+                        }
+
+
+                        @media (max-width:576px) {
+                            width: 12px;
+                            height: 15px;
+                        }
                     }
                 }
-
-
-
-
-
-
-
-
             }
-
-
-
-
-
-
 
 
             .find_type_tag_box {
                 margin-top: auto;
                 display: flex;
                 gap: $spacing-xxs;
-                overflow: hidden; // 隱藏超出部分
-                white-space: nowrap; // 防止換行
-                position: relative; // 為動畫定位做準備
-                width: 100%; // 確保容器寬度
+                overflow: hidden;
+                white-space: nowrap;
+                position: relative;
+                width: 100%;
 
 
-
-
-                // 跑馬燈動畫
                 .tag_wrapper {
                     display: flex;
                     gap: $spacing-xs;
-                    animation: marquee-smooth 15s linear infinite; // 8秒完成一次循環
+                    animation: marquee-smooth 15s linear infinite;
 
 
-
-
-                    // 暫停動畫當滑鼠懸停時 (可選)
                     &:hover {
                         animation-play-state: paused;
                     }
                 }
 
 
-
-
-                //平滑的循環效果
                 @keyframes marquee-smooth {
                     0% {
                         transform: translateX(100%);
                     }
-
-
 
 
                     100% {
@@ -756,38 +1174,31 @@
                 }
 
 
-
-
-
-
-
-
                 button {
                     @extend %remove_form_style;
                     background-color: $accent;
                     color: $white;
                     border-radius: $rad-ex;
-                    flex-shrink: 0; // 防止按鈕縮小
-                    white-space: nowrap; // 防止按鈕內文字換行
-                    padding: 0px 5px; // 給按鈕一些內邊距
-                    min-width: fit-content; // 確保按鈕寬度適應內容
+                    flex-shrink: 0;
+                    white-space: nowrap;
+                    padding: 0px 5px;
+                    min-width: fit-content;
+                    font-size: $f-s-xs;
 
 
+                    @media (max-width:768px) {
+                        font-size: 11px;
+                        padding: 0px 4px;
+                    }
 
 
-
-
-
-
+                    @media (max-width:576px) {
+                        font-size: 10px;
+                        padding: 0px 3px;
+                    }
                 }
             }
         }
-
-
-
-
-
-
 
 
         .find_type_card_desc {
@@ -796,17 +1207,22 @@
                 font-weight: $f-w-b;
                 color: $text ;
                 padding: $spacing-xxs $spacing-xs 0 $spacing-xs;
+
+
+                @media (max-width:768px) {
+                    font-size: $f-s-sm;
+                    padding: 6px 8px 0 8px;
+                }
+
+
+                @media (max-width:576px) {
+                    font-size: 13px;
+                    padding: 4px 6px 0 6px;
+                }
             }
 
 
-
-
-
-
-
-
             p {
-                // outline: 1px red solid;
                 font-size: $f-s-xs;
                 font-weight: $f-w-r;
                 color: $text ;
@@ -815,16 +1231,23 @@
                 padding-bottom: $spacing-sm;
                 @extend %multiple-lines;
                 -webkit-line-clamp: 3;
+
+
+                @media (max-width:768px) {
+                    font-size: 12px;
+                    padding: 0 8px;
+                    padding-bottom: 8px;
+                    -webkit-line-clamp: 2;
+                }
+
+
+                @media (max-width:576px) {
+                    font-size: 11px;
+                    padding: 0 6px;
+                    padding-bottom: 6px;
+                }
             }
         }
-
-
-
-
-
-
-
-
     }
 }
 

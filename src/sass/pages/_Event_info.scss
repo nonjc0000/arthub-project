@@ -16,7 +16,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .event_info_main {
+
+
 
 
     .box_center {
@@ -38,15 +52,34 @@
 
 
 
+
+
+
+
     .info_box {
         @extend %flex-center;
         flex-direction: column;
         background-color: $white;
-        width: 75%;
+        width: 90%;
+
 
         border-radius: 0 0 50px 50px;
         padding: 200px 0 0px 0; // 增加底部padding
+
+
+        @media (max-width:992px) {
+            width: 80%;
+        }
+
+
+        @media (max-width:786px) {
+            width: 90%;
+        }
        
+
+
+
+
 
 
 
@@ -58,20 +91,34 @@
 
 
 
+
+
+
+
+
+
     /* 市集基本資訊 */
     .event_info_container {
         display: flex;
         justify-content: center;
         width: $w-100;
-
-
         gap: 70px;
 
 
-        @media (max-width:1210px) {
+
+
+        @media (max-width:992px) {
+            width: $w-50;
             flex-direction: column;
             align-items: center;
         }
+
+
+        @media (max-width:992px) {
+            width: $w-90;
+        }
+
+
 
 
         .pic_box {
@@ -85,14 +132,25 @@
             gap: $spacing-xs;
 
 
+
+
             // 大圖固定尺寸設定
             .main_pic {
                 overflow: hidden;
-                width: 600px; // 固定寬度
+                width: 100%; // 固定寬度
                 height: 400px; // 固定高度
                 max-width: 600px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 position: relative;
+
+
+                @media (max-width:786px) {
+                    width: 100%;
+                }
+
+
+
+
 
 
                 img {
@@ -105,10 +163,14 @@
                 }
 
 
+
+
                 &:hover img {
                     transform: scale(1.02);
                 }
             }
+
+
 
 
             .thumbnail_container {
@@ -116,6 +178,8 @@
                 overflow: hidden;
                 position: relative;
             }
+
+
 
 
             .thumbnail {
@@ -129,8 +193,12 @@
                 cursor: grab;
 
 
+
+
                 /* 支持觸控設備的滑動 */
                 -webkit-overflow-scrolling: touch;
+
+
 
 
                 /* 隱藏滾動條但保持功能 */
@@ -138,14 +206,20 @@
                 scrollbar-width: none;
 
 
+
+
                 &::-webkit-scrollbar {
                     display: none;
                 }
 
 
+
+
                 &:active {
                     cursor: grabbing;
                 }
+
+
 
 
                 // 縮圖按鈕固定尺寸設定
@@ -162,6 +236,8 @@
                     position: relative;
 
 
+
+
                     img {
                         width: 100%;
                         height: 100%;
@@ -175,10 +251,14 @@
                     }
 
 
+
+
                     &:hover {
                         border-color: #4285f4;
                         transform: translateY(-2px);
                         box-shadow: 0 4px 12px rgba(66, 133, 244, 0.2);
+
+
 
 
                         img {
@@ -186,6 +266,8 @@
                             transform: scale(1.1);
                         }
                     }
+
+
 
 
                     &.active {
@@ -205,11 +287,33 @@
 
 
 
+
+
+
+
+
+
+
+
         .event_name {
+            width: 300px;
             color: $text;
             font-weight: $f-w-b;
             margin-bottom: $spacing-xxl;
+
+
+            @media (max-width:992px) {
+                text-align: center;
+            }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -222,31 +326,55 @@
             // outline: 1px solid red;
 
 
+
+
             display: flex;
             flex-direction: column;
+
+
 
 
             width: 19%;
             padding-top: $spacing-xxl;
 
 
-            @media (max-width:1210px) {
+
+
+            @media (max-width:992px) {
+                gap: 10%;
+                width: 100%;
                 flex-direction: row;
                 justify-content: center;
-
-
             }
+
+
+
+
+            @media (max-width:768px) {
+                flex-direction: column;
+                width: 100%;
+            }
+
+
+
+
 
 
 
 
             .column {
-                @media (max-width:1210px) {
+                @media (max-width:992px) {
                     flex-direction: column;
+
+
 
 
                 }
             }
+
+
+
+
 
 
 
@@ -256,12 +384,21 @@
                 display: flex;
                 justify-content: left;
                 gap: $spacing-xs;
-
-
-
-
                 align-items: center;
+
+
+                @media (max-width:1210px) {
+                    flex-direction: column;
+                }
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -272,6 +409,14 @@
 
             .place {
                 margin: $spacing-sm 0 35px 0;
+
+
+
+
+
+
+
+
 
 
 
@@ -300,11 +445,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
+
+
 
 
         .type_box {
             // outline: 1px solid red;
+
+
 
 
             .title {
@@ -319,11 +484,27 @@
 
 
 
+
+
+
+
+
+
+
+
             .tag_box {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-column-gap: 5%;
                 grid-row-gap: 13px;
+
+
+
+
+
+
+
+
 
 
 
@@ -349,12 +530,20 @@
 
 
 
+
+
+
+
+
+
         .stall_btn_box {
             // outline: 1px solid red;
             display: flex;
             flex-direction: column;
             gap: $spacing-md ;
             margin-bottom: 20px;
+
+
 
 
             figure {
@@ -368,11 +557,21 @@
                 gap: $spacing-sm;
 
 
+
+
                 .column {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                 }
+
+
+
+
+
+
+
+
 
 
 
@@ -405,7 +604,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -433,10 +656,32 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* 照片區 */
     .deco_line {
         width: 75%;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -456,11 +701,27 @@
 
 
 
+
+
+
+
+
+
+
+
     h4 {
         font-size: $f-s-xl;
         font-weight: $f-w-b;
         color: $text
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -483,11 +744,27 @@
 
 
 
+
+
+
+
+
+
+
+
         .title {
             font-size: $f-s-lg;
             color: $text;
             font-weight: $f-w-b ;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -507,8 +784,24 @@
 
 
 
+
+
+
+
+
+
+
+
         ul {
             list-style: disc;
+
+
+
+
+
+
+
+
 
 
 
@@ -529,8 +822,24 @@
 
 
 
+
+
+
+
+
+
+
+
     }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -551,8 +860,20 @@
 
 
 
+
+
+
+
+
+
+
+
     border-top: 2px dashed $gray-500;
     width: $w-70;
+
+
+
+
 
 
 
@@ -561,6 +882,10 @@
         width: 40px;
         height: 40px;
     }
+
+
+
+
 
 
 
@@ -576,11 +901,23 @@
 
 
 
+
+
+
+
         button {
             width: 40px;
             height: 40px;
             cursor: pointer;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -602,9 +939,19 @@
 
 
 
+
+
+
+
+
+
+
+
             input,
             button {
                 @extend %remove_form_style;
+
+
 
 
                 &::placeholder {
@@ -618,10 +965,22 @@
 
 
 
+
+
+
+
                 img {
                     width: 25px;
                 }
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -639,6 +998,10 @@
 
 
 
+
+
+
+
     .review_btn_box {
         display: flex;
         width: $w-90;
@@ -646,6 +1009,8 @@
         align-items: center;
         gap: $spacing-xxl;
         margin-bottom: $spacing-sm;
+
+
 
 
         @media (max-width:625px) {
@@ -660,9 +1025,17 @@
 
 
 
+
+
+
+
         p {
             font-size: $f-s-lg;
         }
+
+
+
+
 
 
 
@@ -672,6 +1045,10 @@
             gap: $spacing-xs ;
             height: 60px;
             align-items: center;
+
+
+
+
 
 
 
@@ -687,10 +1064,14 @@
                 transition: all 0.1s ease;
 
 
+
+
                 &:hover {
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 }
             }
+
+
 
 
             button.active {
@@ -700,8 +1081,14 @@
             }
 
 
+
+
         }
     }
+
+
+
+
 
 
 
@@ -716,9 +1103,15 @@
 
 
 
+
+
+
+
     .review_card {
         display: flex;
         width: $w-100;
+
+
 
 
         .card_box {
@@ -727,8 +1120,12 @@
             width: $w-90;
 
 
+
+
             .like_box {
                 @extend %flex-center;
+
+
 
 
                 button {
@@ -736,7 +1133,11 @@
                     cursor: pointer;
 
 
+
+
                     img {
+
+
 
 
                         width: 100%;
@@ -751,8 +1152,16 @@
 
 
 
+
+
+
+
         .review_box {
             margin-left: $spacing-sm;
+
+
+
+
 
 
 
@@ -760,6 +1169,8 @@
             .regular_info {
                 display: flex;
                 gap: $spacing-xs;
+
+
 
 
                 .date {
@@ -771,11 +1182,23 @@
 
 
 
+
+
+
+
         }
+
+
+
+
 
 
 
 
     }
 }
+
+
+
+
 

@@ -2,1250 +2,1393 @@
 @use '../functions/' as *;
 
 
+.stall_map_google_main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
 
+  .titleBox_h1 {
+    @extend %flex-center;
+    padding: 40px 0 20px;
 
 
+    @media (max-width: 768px) {
+      padding: 20px 0 15px;
 
 
+      img {
+        max-width: 90%;
+        height: auto;
+      }
+    }
+  }
 
 
+  .map_container {
+    display: flex;
+    flex: 1;
+    height: 100vh;
+    overflow: hidden;
+    padding: 0 30px;
 
 
-
-
-
-
-.stall_map_main {
-    height: 100%;
-
-
-
-
-
-
-
-
-    .stall_map_container {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        gap: $spacing-md;
-
-
-        h1 {
-            @extend %flex-center;
-        }
+    @media (max-width: 1024px) {
+      flex-direction: column-reverse;
+      height: auto;
+      min-height: calc(100vh - 100px);
+      padding: 0 20px;
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .stall_map {
-        width: $w-80;
-        min-height: 80%; // 改為最小高度，允許內容撐開
-        background-image: url("/images/Event_info/vite.svg");
-        background-repeat: no-repeat;
-        background-size: contain; // 確保圖片完整顯示不被裁切
-        background-position: center top; // 圖片置中且靠上
-        display: flex;
-        justify-content: center;
-        padding-top: 110px;
-        padding-bottom: $spacing-xl;
-        position: relative;
-
-
-        // 確保背景圖片隨容器縮放
-        background-attachment: scroll;
-
-
-        @media ($mediaMd) {
-            width: $w-80;
-            padding-top: 120px; // 平板時減少上方留白
-        }
+    @media (max-width: 768px) {
+      padding: 0 15px;
     }
 
 
+    // 左側面板
+    .sidebar {
+      width: 400px;
+      height: 90vh;
+      background-color: $white;
+      border-right: 1px solid $gray-300;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 30px 0 0 30px;
 
 
+      @media (max-width: 1024px) {
+        width: 100%;
+        height: 50vh;
+        border-right: none;
+        border-bottom: 1px solid $gray-300;
+        border-radius: 0 0 30px 30px;
+      }
 
 
+      @media (max-width: 768px) {
+        height: 55vh;
+      }
 
 
+      // 搜尋區
+      .search_section {
+        padding: 20px;
+        border-bottom: 1px solid $gray-300;
+        background-color: $white;
+        flex-shrink: 0;
 
 
+        @media (max-width: 768px) {
+          padding: 15px;
+        }
 
 
+        .search_box {
+          position: relative;
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
 
 
+          @media (max-width: 768px) {
+            margin-bottom: 12px;
+          }
 
 
-    .type_btn_box {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
+          input {
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            border: 2px solid $gray-300;
+            border-radius: 25px;
+            font-size: $f-s-md;
+            transition: all 0.3s ease;
 
 
+            @media (max-width: 768px) {
+              padding: 10px 35px 10px 14px;
+              font-size: $f-s-sm;
+            }
 
 
-        button {
-            @extend %remove_form_style;
+            &:focus {
+              outline: none;
+              border-color: $accent;
+              box-shadow: 0 0 0 3px rgba($accent, 0.1);
+            }
+          }
+
+
+          img {
+            position: absolute;
+            right: 15px;
+            width: 20px;
+            opacity: 0.5;
+
+
+            @media (max-width: 768px) {
+              width: 18px;
+              right: 12px;
+            }
+          }
+        }
+
+
+        // 篩選控制 - 在所有裝置上都正常顯示
+        .filter_controls {
+          display: flex;
+          gap: 10px;
+
+
+          @media (max-width: 768px) {
+            gap: 8px;
+          }
+
+
+          select {
+            flex: 1;
+            padding: 8px 12px;
+            border: 2px solid $gray-300;
+            border-radius: 15px;
+            font-size: $f-s-sm;
             cursor: pointer;
+            background-color: $accent;
+            color: $white;
+            font-weight: $f-w-b;
+            transition: all 0.3s ease;
+
+
+            @media (max-width: 768px) {
+              padding: 8px 10px;
+              font-size: 12px;
+            }
+
+
+            &:focus {
+              outline: none;
+              border-color: $accent;
+            }
+
+
+            &:hover {
+              background-color: $accent;
+            }
+          }
+        }
+      }
+
+
+      // 內容區域
+      .content_area {
+        flex: 1;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+
+
+      // 攤位詳情
+      .stall_detail {
+        position: relative;
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+
+        &::-webkit-scrollbar-track {
+          background: $gray-200;
+          border-radius: 10px;
+        }
+
+
+        &::-webkit-scrollbar-thumb {
+          background: $gray-400;
+          border-radius: 10px;
+
+
+          &:hover {
+            background: $gray-500;
+          }
+        }
+
+
+        .close_btn {
+          position: absolute;
+          top: 15px;
+          right: 15px;
+          width: 35px;
+          height: 35px;
+          border: none;
+          background-color: rgba(255, 255, 255, 0.9);
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 10;
+          transition: all 0.3s ease;
+
+
+          &:hover {
+            background-color: $white;
+            transform: scale(1.1);
+          }
+
+
+          img {
+            width: 20px;
+          }
+        }
+
+
+        .detail_header {
+          position: relative;
+          height: 200px;
+          flex-shrink: 0;
+
+
+          @media (max-width: 1024px) {
+            height: 180px;
+          }
+
+
+          @media (max-width: 768px) {
+            height: 150px;
+          }
+
+
+          .detail_image {
+            width: 100%;
+            height: 100%;
 
 
             img {
-                margin-bottom: 5px;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
             }
+          }
 
 
-
-
-            span {
-                position: relative;
-                margin-top: 5px;
-                padding: 0 6px;
-
-
-
-
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    transform: scaleX(0);
-                    transform-origin: left;
-                    transition: transform 0.4s;
-                    z-index: -1;
-                }
-
-
-
-
-                /* 修正：將 .active 移到 span 的巢狀內 */
-                &.active {
-                    &::before {
-                        transform: scaleX(1); //背景填滿
-                    }
-                }
-            }
-        }
-
-
-
-
-        /* 不同按鈕的顏色設定 */
-        .btn1 span::before,
-        .btn1 span.active::before {
-            background-color: #E5BE23;
-        }
-
-
-        .btn2 span::before,
-        .btn2 span.active::before {
-            background-color: #D06658;
-        }
-
-
-        .btn3 span::before,
-        .btn3 span.active::before {
-            background-color: #8ACEC6;
-        }
-
-
-        .btn4 span::before,
-        .btn4 span.active::before {
-            background-color: #53B99F;
-        }
-
-
-        .btn5 span::before,
-        .btn5 span.active::before {
-            background-color: #ED9B4A;
-        }
-
-
-        .btn6 span::before,
-        .btn6 span.active::before {
-            background-color: #EAABAB;
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .stall_search_box {
-        border-radius: $rad-lg;
-        padding: $spacing-xl 60px;
-        width: $w-60;
-        height: 875px;
-        background-color: $white;
-        overflow: hidden;
-
-
-        @media ($mediaMd) {
-            width: $w-80;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .stall_search_filter {
+          .detail_info {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
             display: flex;
+            justify-content: space-between;
+            align-items: center;
 
 
+            .detail_num {
+              background-color: $accent;
+              color: $white;
+              padding: 5px 15px;
+              border-radius: 20px;
+              font-weight: $f-w-b;
+              font-size: $f-s-md;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-            background-color: $white;
-            height: 40px;
-            gap: 15px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            input,
-            select,
-            button {
-                @extend %remove_form_style;
+              @media (max-width: 768px) {
+                font-size: $f-s-sm;
+                padding: 4px 12px;
+              }
             }
 
 
+            .detail_like {
+              background-color: $accent;
+              padding: 5px 12px;
+              border-radius: 20px;
+              display: flex;
+              align-items: center;
+              gap: 5px;
 
 
+              img {
+                width: 16px;
 
 
-
-
-
-
-
-
-
-
-
-
-            .search_box {
-                border-radius: $rad-lg;
-                border: 1px solid $black;
-                @extend %flex-center;
-                height: 30px;
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            .btn_box {
-                display: flex;
-                gap: 15px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                button {
-                    display: flex;
-                    cursor: pointer;
-                    background-color: $accent;
-                    border-radius: $rad-ex;
-                    width: 80px;
-                    height: 30px;
-                    @extend %flex-center;
-                    color: $white;
-                    font-size: $f-s-sm ;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    img {
-                        width: 15px;
-                        height: auto;
-                    }
+                @media (max-width: 768px) {
+                  width: 14px;
                 }
+              }
+
+
+              span {
+                font-weight: $f-w-b;
+                font-size: $f-s-sm;
+
+
+                @media (max-width: 768px) {
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+
+
+        .detail_body {
+          padding: 20px;
+          flex: 1;
+
+
+          @media (max-width: 768px) {
+            padding: 15px;
+          }
+
+
+          h2 {
+            font-size: $f-s-xl;
+            font-weight: $f-w-b;
+            color: $text;
+            margin-bottom: 15px;
+
+
+            @media (max-width: 768px) {
+              font-size: $f-s-lg;
+              margin-bottom: 12px;
+            }
+          }
+
+
+          .detail_tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+
+
+            @media (max-width: 768px) {
+              gap: 6px;
+              margin-bottom: 15px;
             }
 
 
+            .tag {
+              background-color: $accent;
+              color: $white;
+              padding: 5px 12px;
+              border-radius: 15px;
+              font-size: $f-s-sm;
 
 
+              @media (max-width: 768px) {
+                font-size: 12px;
+                padding: 4px 10px;
+              }
+            }
+          }
 
 
+          .detail_actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
 
 
+            @media (max-width: 768px) {
+              gap: 10px;
+              margin-bottom: 20px;
+            }
 
 
+            .recommend_btn {
+              flex: 1;
+              background-color: $accent;
+              color: $white;
+              border: none;
+              padding: 12px;
+              border-radius: 10px;
+              font-weight: $f-w-b;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 8px;
+              transition: all 0.3s ease;
 
 
+              @media (max-width: 768px) {
+                padding: 10px;
+                font-size: $f-s-sm;
+              }
 
 
+              &:hover {
+                background-color: $accent;
+                transform: translateY(-2px);
+              }
 
 
-            .select {
-                background-color: $primary;
-                border-radius: $rad-ex;
-                width: 90px;
-                height: 30px;
+              img {
+                width: 18px;
+
+
+                @media (max-width: 768px) {
+                  width: 16px;
+                }
+              }
+            }
+
+
+            .social_links {
+              display: flex;
+              gap: 10px;
+
+
+              @media (max-width: 768px) {
+                gap: 8px;
+              }
+
+
+              a {
+                width: 45px;
+                height: 45px;
+                background-color: $dark;
+                border-radius: 10px;
                 display: flex;
+                align-items: center;
                 justify-content: center;
+                transition: all 0.3s ease;
+
+
+                @media (max-width: 768px) {
+                  width: 40px;
+                  height: 40px;
+                }
+
+
+                &:hover {
+                  transform: translateY(-2px);
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                }
+
+
+                img {
+                  width: 20px;
+
+
+                  @media (max-width: 768px) {
+                    width: 18px;
+                  }
+                }
+              }
+            }
+          }
+
+
+          .review_section {
+            border-top: 1px solid $gray-300;
+            padding-top: 20px;
+
+
+            @media (max-width: 768px) {
+              padding-top: 15px;
+            }
+
+
+            h3 {
+              font-size: $f-s-lg;
+              font-weight: $f-w-b;
+              margin-bottom: 15px;
+
+
+              @media (max-width: 768px) {
+                font-size: $f-s-md;
+                margin-bottom: 12px;
+              }
+            }
+
+
+            .review_input {
+              margin-bottom: 15px;
+              display: flex;
+              gap: 10px;
+
+
+              @media (max-width: 768px) {
+                gap: 8px;
+                margin-bottom: 12px;
+              }
+
+
+              input {
+                flex: 1;
+                padding: 12px;
+                border: 2px solid $gray-300;
+                border-radius: 8px;
+                font-size: $f-s-sm;
+
+
+                @media (max-width: 768px) {
+                  padding: 10px;
+                  font-size: 12px;
+                }
+
+
+                &:focus {
+                  outline: none;
+                  border-color: $accent;
+                }
+              }
+
+
+              .submit_review_btn {
+                padding: 12px 20px;
+                background-color: $accent;
+                color: $white;
+                border: none;
+                border-radius: 8px;
+                font-weight: $f-w-b;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+
+
+                @media (max-width: 768px) {
+                  padding: 10px 16px;
+                  font-size: 12px;
+                }
+
+
+                &:hover {
+                  background-color: $accent;
+                  transform: translateY(-1px);
+                }
+
+
+                &:active {
+                  transform: translateY(0);
+                }
+              }
+            }
+
+
+            .reviews_list {
+              display: flex;
+              flex-direction: column;
+              gap: 12px;
+              max-height: 300px;
+              overflow-y: auto;
+              padding-right: 5px;
+
+
+              @media (max-width: 768px) {
+                max-height: 200px;
+                gap: 10px;
+              }
+
+
+              &::-webkit-scrollbar {
+                width: 6px;
+              }
+
+
+              &::-webkit-scrollbar-track {
+                background: $gray-200;
+                border-radius: 10px;
+              }
+
+
+              &::-webkit-scrollbar-thumb {
+                background: $gray-400;
+                border-radius: 10px;
+
+
+                &:hover {
+                  background: $gray-500;
+                }
+              }
+
+
+              .review_item {
+                padding: 12px;
+                background-color: $gray-100;
+                border-radius: 8px;
+                border-left: 3px solid $accent;
+
+
+                @media (max-width: 768px) {
+                  padding: 10px;
+                }
+
+
+                .review_header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 8px;
+
+
+                  @media (max-width: 768px) {
+                    margin-bottom: 6px;
+                  }
+
+
+                  .review_author {
+                    font-weight: $f-w-b;
+                    font-size: $f-s-sm;
+                    color: $text;
+
+
+                    @media (max-width: 768px) {
+                      font-size: 12px;
+                    }
+                  }
+
+
+                  .review_date {
+                    font-size: $f-s-xs;
+                    color: $gray-600;
+
+
+                    @media (max-width: 768px) {
+                      font-size: 10px;
+                    }
+                  }
+                }
+
+
+                .review_text {
+                  font-size: $f-s-sm;
+                  color: $text;
+                  line-height: 1.5;
+                  word-wrap: break-word;
+
+
+                  @media (max-width: 768px) {
+                    font-size: 12px;
+                  }
+                }
+              }
+            }
+
+
+            .no_review {
+              color: $gray-500;
+              font-size: $f-s-sm;
+              text-align: center;
+              padding: 20px;
+              background-color: $gray-100;
+              border-radius: 8px;
+
+
+              @media (max-width: 768px) {
+                font-size: 12px;
+                padding: 15px;
+              }
+            }
+          }
+        }
+      }
+
+
+      // 攤位列表
+      .stall_list {
+        padding: 20px;
+        height: 100%;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+
+
+        @media (max-width: 768px) {
+          padding: 15px;
+        }
+
+
+        &::-webkit-scrollbar {
+          width: 8px;
+        }
+
+
+        &::-webkit-scrollbar-track {
+          background: $gray-200;
+          border-radius: 10px;
+        }
+
+
+        &::-webkit-scrollbar-thumb {
+          background: $gray-400;
+          border-radius: 10px;
+
+
+          &:hover {
+            background: $gray-500;
+          }
+        }
+
+
+        h2 {
+          font-size: $f-s-lg;
+          font-weight: $f-w-b;
+          margin-bottom: 15px;
+          color: $text;
+          flex-shrink: 0;
+
+
+          @media (max-width: 768px) {
+            font-size: $f-s-md;
+            margin-bottom: 12px;
+          }
+        }
+
+
+        .list_items {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          overflow-y: auto;
+          flex: 1;
+
+
+          @media (max-width: 768px) {
+            gap: 12px;
+          }
+
+
+          &::-webkit-scrollbar {
+            width: 8px;
+          }
+
+
+          &::-webkit-scrollbar-track {
+            background: $gray-200;
+            border-radius: 10px;
+          }
+
+
+          &::-webkit-scrollbar-thumb {
+            background: $gray-400;
+            border-radius: 10px;
+
+
+            &:hover {
+              background: $gray-500;
+            }
+          }
+
+
+          .list_item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            border: 1px solid $gray-300;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+
+
+            @media (max-width: 768px) {
+              gap: 12px;
+              padding: 12px;
+            }
+
+
+            &:hover {
+              border-color: $accent;
+              box-shadow: 0 4px 12px rgba($accent, 0.15);
+              transform: translateY(-2px);
+            }
+
+
+            .item_image {
+              width: 80px;
+              height: 80px;
+              border-radius: 8px;
+              overflow: hidden;
+              flex-shrink: 0;
+
+
+              @media (max-width: 768px) {
+                width: 70px;
+                height: 70px;
+              }
+
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+            }
+
+
+            .item_info {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+
+
+              .item_header {
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
 
 
+                .item_num {
+                  background-color: $accent;
+                  color: $white;
+                  padding: 3px 10px;
+                  border-radius: 12px;
+                  font-size: $f-s-xs;
+                  font-weight: $f-w-b;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-                select {
-                    padding-top: 1px;
-                    color: $text;
-                    font-size: $f-s-md ;
-                    font-weight: $f-w-b;
+                  @media (max-width: 768px) {
+                    font-size: 10px;
+                    padding: 2px 8px;
+                  }
                 }
+
+
+                .item_like {
+                  display: flex;
+                  align-items: center;
+                  gap: 4px;
+                  font-size: $f-s-xs;
+                  color: $gray-600;
+
+
+                  @media (max-width: 768px) {
+                    font-size: 10px;
+                  }
+
+
+                  img {
+                    width: 14px;
+
+
+                    @media (max-width: 768px) {
+                      width: 12px;
+                    }
+                  }
+                }
+              }
+
+
+              h3 {
+                font-size: $f-s-md;
+                font-weight: $f-w-b;
+                color: $text;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+
+                @media (max-width: 768px) {
+                  font-size: $f-s-sm;
+                }
+              }
+
+
+              .item_tags {
+                display: flex;
+                gap: 5px;
+                flex-wrap: wrap;
+
+
+                @media (max-width: 768px) {
+                  gap: 4px;
+                }
+
+
+                span {
+                  background-color: $primary;
+                  color: $text;
+                  padding: 2px 8px;
+                  border-radius: 10px;
+                  font-size: $f-s-xs;
+
+
+                  @media (max-width: 768px) {
+                    font-size: 10px;
+                    padding: 2px 6px;
+                  }
+                }
+              }
             }
+          }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        .stall_search_result {
-            width: 100%;
-            padding-top: $spacing-xl;
-            @extend %flex-wrap;
-            justify-content: flex-start;
-            gap: $spacing-lg;
-            overflow: auto;
-            height: 800px;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        }
+      }
     }
 
 
+    // 右側地圖區
+    .map_area {
+      flex: 1;
+      height: 90vh;
+      background-color: $white;
+      border-radius: 0 30px 30px 0;
+      display: block;
+      padding: 20px;
+      overflow: auto;
+      position: relative;
 
 
+      @media (max-width: 1024px) {
+        width: 100%;
+        height: 30vh;
+        border-radius: 30px 30px 0 0;
+        padding: 15px;
+      }
 
 
+@media (max-width: 768px) {
+  .stall_grid {
+    gap: 10px;
+    padding: 10px;
+  }
 
 
-    /* 攤位卡片 */
-    .stall_card {
-        width: 230px;
-        height: 300px;
-        border-radius: $rad-lg;
-        overflow: hidden;
-        border: 0.5px solid $text;
-        transition: all 0.3s ease;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  .grid_row {
+    grid-template-columns: repeat(10, 75px);
+    gap: 12px;
+  }
+
+
+  .grid_empty {
+    width: 75px;
+    height: 75px;
+    border: 3px dashed rgba($gray-300, 0.5);
+    border-radius: 10px;
+  }
+
+
+  .grid_stall {
+    width: 75px;
+    height: 75px;
+
+
+    .stall_icon {
+      border: 3px solid transparent;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+
+
+      img {
+        width: 40px;
+        height: 40px;
+      }
+
+
+      .stall_number {
+        font-size: 12px;
+        margin-top: 3px;
+        font-weight: $f-w-b;
+      }
+    }
+
+
+    &:hover .stall_icon {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+
+    &.selected .stall_icon {
+      transform: scale(1.1);
+      box-shadow: 0 5px 12px rgba($accent, 0.4);
+    }
+  }
+
+
+  .hover_card {
+    display: none;
+  }
+}
+  .grid_row {
+    grid-template-columns: repeat(10, 60px);
+    gap: 10px;
+  }
+
+
+  .grid_empty {
+    width: 60px;
+    height: 60px;
+    border: 2px dashed rgba($gray-300, 0.5);
+    border-radius: 8px;
+  }
+
+
+  .grid_stall {
+    width: 60px;
+    height: 60px;
+
+
+    .stall_icon {
+      border: 2px solid transparent;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+
+
+      img {
+        width: 32px;
+        height: 32px;
+      }
+
+
+      .stall_number {
+        font-size: 10px;
+        margin-top: 3px;
+      }
+    }
+
+
+    &:hover .stall_icon {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+    }
+
+
+    &.selected .stall_icon {
+      transform: scale(1.08);
+      box-shadow: 0 4px 10px rgba($accent, 0.35);
+    }
+  }
+
+
+  .hover_card {
+    display: none;
+  }
+}
+
+
+      // 自定義卷軸樣式
+      &::-webkit-scrollbar {
+        height: 10px;
+        width: 10px;
+
+
+        @media (max-width: 768px) {
+          height: 6px;
+          width: 6px;
+        }
+      }
+
+
+      &::-webkit-scrollbar-track {
+        background: rgba($gray-200, 0.3);
+        border-radius: 10px;
+      }
+
+
+      &::-webkit-scrollbar-thumb {
+        background: $gray-400;
+        border-radius: 10px;
 
 
         &:hover {
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+          background: $gray-500;
+        }
+      }
+
+
+      .stall_grid {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 30px;
+        background-color: transparent;
+        padding: 160px 50px 50px 50px;
+
+
+        @media (max-width: 1024px) {
+          gap: 15px;
+          padding: 100px 20px 20px 20px;
         }
 
 
-
-
-
-
-
-
-        p {
-            font-size: $f-s-xs;
+        @media (max-width: 768px) {
+          gap: 8px;
+          padding: 8px;
         }
 
 
+        .grid_row {
+          display: grid;
+          grid-template-columns: repeat(10, 120px);
+          gap: 25px;
 
 
+          @media (max-width: 1024px) {
+            grid-template-columns: repeat(10, 70px);
+            gap: 12px;
+          }
 
 
+          @media (max-width: 768px) {
+            grid-template-columns: repeat(10, 50px);
+            gap: 8px;
+          }
+        }
 
 
-        .stall_card_wrap {
+        .grid_empty {
+          width: 120px;
+          height: 120px;
+          border: 3px dashed rgba($gray-300, 0.5);
+          border-radius: 12px;
+          opacity: 0.3;
+
+
+          @media (max-width: 1024px) {
+            width: 70px;
+            height: 70px;
+            border: 2px dashed rgba($gray-300, 0.5);
+            border-radius: 8px;
+          }
+
+
+          @media (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed rgba($gray-300, 0.5);
+            border-radius: 6px;
+          }
+        }
+
+
+        .grid_stall {
+          position: relative;
+          width: 120px;
+          height: 120px;
+          cursor: pointer;
+
+
+          @media (max-width: 1024px) {
+            width: 70px;
+            height: 70px;
+          }
+
+
+          @media (max-width: 768px) {
+            width: 50px;
+            height: 50px;
+          }
+
+
+          .stall_icon {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 4px solid transparent;
+            border-radius: 12px;
             display: flex;
-            height: 145px;
             flex-direction: column;
-            justify-content: space-between;
-            outline: 1px solid $text;
-            background-image: url(/images/find_map/festival_img.jpg);
-            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 
 
-
-
-
-
-
-
-            .top {
-                display: flex;
-                justify-content: space-between;
-                margin: $spacing-xs;
-
-
-
-
-
-
-
-
-                .like,
-                .num {
-                    background-color: $accent;
-                    width: 45px;
-                    height: 17px;
-                    border-radius: $rad-ex;
-                    color: $white;
-                }
-
-
-
-
-
-
-
-
-                .like {
-                    display: flex;
-                    padding: 0 5px;
-                    gap: 5px;
-                    justify-content: center;
-                    align-items: center;
-
-
-
-
-
-
-
-
-                    p {
-                        padding-top: 1px;
-                    }
-
-
-
-
-
-
-
-
-                    img {
-                        padding-top: 1px;
-                        width: 12px;
-                    }
-                }
-
-
-
-
-
-
-
-
-                .num {
-                    @extend %flex-center;
-
-
-
-
-
-
-
-
-                    p {
-                        padding-top: 2px;
-                    }
-                }
+            @media (max-width: 1024px) {
+              border: 2px solid transparent;
+              border-radius: 8px;
             }
 
 
-
-
-
-
-
-
-            .bottom {
-                display: flex;
-                margin: $spacing-xs;
-                gap: $spacing-xxs ;
-
-
-
-
-
-
-
-
-                p {
-                    background-color: $accent;
-                    color: $white;
-                    @extend %flex-center;
-                    width: 56px;
-                    height: 18px;
-                    border-radius: $rad-ex;
-                }
+            @media (max-width: 768px) {
+              border: 2px solid transparent;
+              border-radius: 6px;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
-        }
-
-
-
-
-
-
-
-
-        .stall_card_body {
-            .title {
-                @extend %flex-center;
-                height: 33px;
-                padding: 0 $spacing-xs;
-
-
-
-
-
-
-
-
-                p {
-                    font-weight: $f-w-b;
-                    font-size: $f-s-md;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-
-
-
-
-                    &:hover {
-                        display: initial;
-                    }
-                }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-
-
-            button,
-            input {
-                @extend %remove_form_style;
-            }
-
-
-
-
-
-
-
-
-            .btn_box {
-                display: flex;
-                gap: $spacing-xxs;
-                justify-content: center;
-
-
-
-
-
-
-
-
-                .like_btn_box,
-                .social_btn_box {
-                    width: 100px;
-                    height: 25px;
-                    border-radius: 5px;
-                }
-
-
-
-
-
-
-
-
-                .like_btn_box {
-                    background-color: $accent;
-                    @extend %flex-center;
-
-
-
-
-
-
-
-
-                    button {
-                        color: $white;
-                        @extend %flex-center;
-                        gap: $spacing-xs;
-                        width: $w-100;
-                        cursor: pointer;
-
-
-
-
-                        img {
-                            width: 20px;
-                        }
-                    }
-                }
-
-
-
-
-
-
-
-
-                .social_btn_box {
-                    background-color: $dark;
-                    @extend %flex-center;
-                    gap: $spacing-xxs;
-
-
-
-
-
-
-
-
-                    button {
-                        img {
-                            width: 17px;
-                            height: 17px;
-                        }
-                    }
-                }
-            }
-
-
-
-
-
-
-
-
-            .review_box {
-                @extend %flex-center;
-                height: 30px;
-
-
-
-
-
-
-
-
-                .review {
-                    border-radius: 3px;
-                    border: 1px solid black;
-                    width: 210px;
-                    height: 17px;
-                    display: flex;
-
-
-
-
-
-
-
-
-                    input {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-            }
-
-
-
-
-
-
-
-
-            .stall_card_review {
-                p {
-                    font-size: $f-s-lg ;
-                    font-weight: $f-w-b;
-                    color: $gray-600;
-                    @extend %flex-center;
-                }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            }
-
-
-
-
-
-
-
-
-        }
-    }
-
-
-
-
-    /* 攤位陣列 */
-    .stalls_1 {
-        display: flex;
-        gap: $spacing-lg;
-
-
-
-
-        .stall_wrap1 {
-            padding: $spacing-md;
-            border: 2px dashed $gray-600;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: $spacing-md;
-            width: 150px;
-            height: 200px;
-            place-items: center;
-            border-radius: 10px;
-        }
-
-
-
-
-        .stalls_2 {
-            @extend %flex-column;
-            gap: $spacing-lg;
-
-
-
-
-            .stall_wrap2 {
-                padding: $spacing-md;
-                border: 2px dashed $gray-600;
-                display: flex;
-                gap: $spacing-md;
-                justify-content: center;
-                border-radius: 10px;
-            }
-
-
-
-
-            .stalls_3 {
-                display: flex;
-                gap: $spacing-md;
-            }
-
-
-
-
-            .stall_wrap3,
-            .stall_wrap4 {
-                padding: $spacing-md;
-                border: 2px dashed $gray-600;
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                gap: $spacing-md;
-                border-radius: 10px;
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-    /* 圖片裝飾 */
-    .stall_map_img1,
-    .stall_map_img2,
-    .stall_map_img3,
-    .stall_map_img4 {
-        position: absolute;
-    }
-
-
-
-
-
-
-
-
-    .stall_map_img1 {
-        z-index: 1;
-        right: 200px;
-        top: 200px;
-
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-    .stall_map_img2 {
-        z-index: 1;
-        right: 130px;
-        bottom: -760px;
-    }
-
-
-
-
-
-
-
-
-    .stall_map_img3 {
-        z-index: 1;
-        bottom: -760px;
-        left: 35px;
-    }
-
-
-
-
-
-
-
-
-    .stall_map_img4 {
-        z-index: -2;
-        top: 400px;
-        left: 0px;
-        width: 90%;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .stall_box {
-        position: relative;
-        display: inline-block;
-        transition: all 0.3s ease;
-
-
-        .stall_icon {
-            width: 40px;
-            cursor: pointer; // 顯示可點擊游標
-            transition: transform 0.2s ease;
 
 
             img {
-                width: 100%;
-                object-fit: cover;
-                transition: transform 0.2s ease;
+              width: 60px;
+              height: 55px;
+
+
+              @media (max-width: 1024px) {
+                width: 35px;
+                height: 35px;
+              }
+
+
+              @media (max-width: 768px) {
+                width: 26px;
+                height: 26px;
+              }
             }
 
 
-            // 圖標懸停效果
-            &:hover {
-                transform: scale(1.1);
+            .stall_number {
+              font-size: 16px;
+              font-weight: $f-w-b;
+              color: $text;
+              margin-top: 6px;
+
+
+              @media (max-width: 1024px) {
+                font-size: 10px;
+                margin-top: 2px;
+              }
+
+
+              @media (max-width: 768px) {
+                font-size: 8px;
+                margin-top: 2px;
+              }
             }
-        }
+          }
 
 
-        // 只有當懸停在 stall_box 上時才顯示 tooltip
-        &:hover {
-            .tooltip_card {
-                opacity: 1;
-                visibility: visible;
-                transform: translateX(-50%) translateY(0);
-                pointer-events: auto; // 允許與 tooltip 內容互動
+          &:hover .stall_icon {
+            background-color: $secondary;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+
+            @media (max-width: 768px) {
+              transform: translateY(-2px);
+              box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+            }
+          }
+
+
+          &.selected .stall_icon {
+            background-color: $accent;
+            border-color: $dark;
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba($accent, 0.4);
+
+
+            @media (max-width: 768px) {
+              transform: scale(1.08);
+              box-shadow: 0 3px 8px rgba($accent, 0.3);
             }
 
 
-            // 同時讓卡片內容也顯示動畫
-            .stall_map_card_sm {
-
-
-                .sm_card_wrap,
-                .body {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-
-
-                .tag_box p {
-                    opacity: 1;
-                    // transform: translateY(0);
-                }
+            .stall_number {
+              color: $white;
             }
-        }
-    }
+          }
 
 
-    // Tooltip 卡片
-    .tooltip_card {
-        position: absolute;
-        top: -230px; // 位置在圖標上方
-        left: 50%;
-        z-index: 99;
-
-
-        // 初始狀態：完全隱藏
-        opacity: 0;
-        visibility: hidden;
-        transform: translateX(-50%) translateY(15px) scale(0.95);
-        pointer-events: none; // 初始狀態不能互動
-
-
-        // 平滑動畫效果
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        transition-delay: 0.1s; // 稍微延遲避免意外觸發
-
-
-        // 加入陰影
-        filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
-    }
-
-
-    // Tooltip 內的小卡片
-    .stall_map_card_sm {
-        width: 190px;
-        height: 250px;
-        border-radius: $rad-lg;
-        background-color: $white;
-        border: 1px solid $black;
-        overflow: hidden;
-        display: block;
-
-
-        // 卡片內容初始狀態
-        .sm_card_wrap,
-        .body {
+          // Hover 卡片
+          .hover_card {
+            position: absolute;
+            bottom: 135px;
+            left: 50%;
+            transform: translateX(-50%) scale(0.95);
+            width: 240px;
+            background-color: $white;
+            border: 1px solid $gray-300;
+            border-radius: 12px;
+            padding: 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
             opacity: 0;
-            transform: translateY(10px);
+            visibility: hidden;
             transition: all 0.3s ease;
-            transition-delay: 0.2s; // 卡片顯示後再顯示內容
-        }
+            z-index: 100;
+            pointer-events: none;
 
 
-        .sm_card_wrap {
-            height: 135px;
-            background-image: url(/images/find_map/festival_img.jpg);
-            background-size: cover;
-            border-bottom: 1px solid $black;
-
-
-            .top {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px;
-
-
-                figure,
-                .num {
-                    @extend %flex-center;
-                    background-color: $accent;
-                    color: $white;
-                    width: 60px;
-                    border-radius: $rad-ex;
-                }
-
-
-                figure {
-                    gap: 10px;
-
-
-                    img {
-                        width: 12px;
-                    }
-                }
-            }
-        }
-
-
-        .body {
-            .title {
-                @extend %flex-center;
-                height: 40px;
-                padding-top: 10px;
-
-
-                p {
-                    padding: 0 $spacing-xs;
-                    overflow: hidden;
-                    // align-items: flex-start;
-                    // text-overflow: ellipsis;
-                    // white-space: nowrap;
-                    font-weight: $f-w-b;
-                    font-size: $f-s-md;
-                }
+            @media (max-width: 1024px) {
+              width: 180px;
+              padding: 12px;
+              bottom: 80px;
             }
 
 
-            .tag_box {
+            @media (max-width: 768px) {
+              display: none;
+            }
+
+
+            .hover_card_header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 12px;
+
+
+              .hover_num {
+                background-color: $accent;
+                color: $white;
+                padding: 4px 12px;
+                border-radius: 12px;
+                font-size: $f-s-sm;
+                font-weight: $f-w-b;
+              }
+
+
+              .hover_like {
                 display: flex;
-                flex-wrap: wrap;
+                align-items: center;
                 gap: 5px;
-                padding: 5px $spacing-xs;
+                font-size: $f-s-sm;
 
 
-
-
-                p {
-                    @extend %flex-center;
-                    white-space: nowrap;
-                    border-radius: $rad-ex;
-                    background-color: $accent;
-                    color: $white;
-                    padding: 1px 3px 0;
-
-
-                    // 標籤初始狀態
-                    opacity: 0;
-                    transform: translateY(5px);
-                    transition: all 0.3s ease;
-
-
-                    // 依序顯示
-                    &:nth-child(1) {
-                        transition-delay: 0.3s;
-                    }
-
-
-                    &:nth-child(2) {
-                        transition-delay: 0.35s;
-                    }
-
-
-                    &:nth-child(3) {
-                        transition-delay: 0.4s;
-                    }
+                img {
+                  width: 16px;
                 }
+              }
             }
+
+
+            h4 {
+              font-size: $f-s-md;
+              font-weight: $f-w-b;
+              margin-bottom: 10px;
+              color: $text;
+            }
+
+
+            .hover_tags {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 6px;
+
+
+              span {
+                background-color: $accent;
+                color: $white;
+                padding: 3px 10px;
+                border-radius: 12px;
+                font-size: 11px;
+              }
+            }
+
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: -8px;
+              left: 50%;
+              transform: translateX(-50%);
+              width: 0;
+              height: 0;
+              border-left: 8px solid transparent;
+              border-right: 8px solid transparent;
+              border-top: 8px solid $white;
+            }
+          }
+
+
+          &:hover .hover_card {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) scale(1);
+          }
         }
+      }
     }
-}
+  }
+
+
 
 
 

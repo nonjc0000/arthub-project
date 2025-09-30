@@ -35,7 +35,7 @@ const Order_management = () => {
                             </div>
                         </button>
 
-                        <Link to="/TripBookingPage#review-form" style={{ textDecoration: 'none' }} className='btn_comment'>
+                        <Link to="/TripBookingPage#reviews" style={{ textDecoration: 'none' }} className='btn_comment'>
                             <div className='btn_content'>
                                 <img src="./images/order_management/comment_icon.svg" alt="" />
                                 <span>評論</span>
