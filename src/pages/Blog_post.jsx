@@ -1,13 +1,22 @@
 import React, { useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import posts from "../data/posts.json";
-import ScrollToTop from '../components/ScrollToTop'
+import ScrollToTop from '../components/ScrollToTop';
+import PageTop from '../components/PageTop';
+
+
+
+
 
 
 
 
 function BlogPost() {
   const { id } = useParams();
+
+
+
+
 
 
 
@@ -21,13 +30,19 @@ function BlogPost() {
 
 
 
-    // 在 BlogPost 組件中添加分享功能
+
+
+
+
+  // 在 BlogPost 組件中添加分享功能
   const handleShare = async () => {
     const shareData = {
       title: post.title,
       text: `來看看這篇文章：${post.title}`,
       url: window.location.href
     };
+
+
 
 
     try {
@@ -70,6 +85,10 @@ function BlogPost() {
 
 
 
+
+
+
+
   // ====== 收藏（切換圖示，不記數；仍用 localStorage） ======
   const [postCollected, setPostCollected] = useState(() => {
     if (!post) return false;
@@ -82,6 +101,10 @@ function BlogPost() {
     setPostCollected(next);
     localStorage.setItem(`post:${post.id}:collected`, next ? "1" : "0");
   };
+
+
+
+
 
 
 
@@ -100,8 +123,16 @@ function BlogPost() {
 
 
 
+
+
+
+
   // 新增留言輸入框
   const [newComment, setNewComment] = useState("");
+
+
+
+
 
 
 
@@ -110,6 +141,10 @@ function BlogPost() {
   const handleAddComment = () => {
     const text = newComment.trim();
     if (!text || !post) return;
+
+
+
+
 
 
 
@@ -124,13 +159,21 @@ function BlogPost() {
 
 
 
+
+
+
+
     const item = {
-      name: "訪客",
+      name: "莊可蓮",
       avatar: "./images/blog/avatar.svg",
       time: stamp,
       text,
       likes: 0,
     };
+
+
+
+
 
 
 
@@ -141,6 +184,10 @@ function BlogPost() {
     setLikedComments((prev) => [false, ...prev]);
     setNewComment("");
   };
+
+
+
+
 
 
 
@@ -158,6 +205,10 @@ function BlogPost() {
       return next;
     });
   };
+
+
+
+
 
 
 
@@ -187,250 +238,321 @@ function BlogPost() {
 
 
 
+
+
+
+
   return (
-    <div
-      className="post-page-container"
-      style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}
-    >
-      <ScrollToTop/>
-      <div className="post-wrapper">
-        {/* 單欄版面（移除左側篩選欄） */}
-        <main className="post-content-panel">
-          {/* 返回列表膠囊 */}
-          <Link to="/blog" className="back-chip">
-            <img src="./images/blog/post_back.svg" alt="返回文章列表" />
-          </Link>
+    <div>
+      <div
+        className="post-page-container"
+        style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}
+      >
+        <ScrollToTop />
+        <div className="post-wrapper">
+          {/* 單欄版面（移除左側篩選欄） */}
+          <main className="post-content-panel">
+            {/* 返回列表膠囊 */}
+            <Link to="/blog" className="back-chip">
+              <img src="./images/blog/post_back.svg" alt="返回文章列表" />
+            </Link>
 
 
 
 
-          <article className="post-content">
-            <div className="post-header">
-              <h1 className="post-title">{post.title}</h1>
 
 
 
 
-              <div className="post-meta">
-                <div className="author-info">
-                  <img
-                    src={post.author.avatar}
-                    alt={post.author.name}
-                    className="avatar"
-                  />
-                  <span>{post.author.name}</span>
-                </div>
+            <article className="post-content">
+              <div className="post-header">
+                <h1 className="post-title">{post.title}</h1>
 
 
 
 
-                <span className="post-date">{post.dateText}</span>
 
 
 
 
-                <div className="post-stats">
-                  {/* Like */}
-                  <button
-                    type="button"
-                    className={`stat-item like ${postLiked ? "active" : ""}`}
-                    onClick={togglePostLike}
-                    aria-label={postLiked ? "收回讚" : "按讚"}
-                    title={postLiked ? "收回讚" : "按讚"}
-                  >
+                <div className="post-meta">
+                  <div className="author-info">
                     <img
-                      src={
-                        postLiked
-                          ? "./images/blog/comment_like1.svg"
-                          : "./images/blog/comment_like2.svg"
-                      }
-                      alt="Like"
+                      src={post.author.avatar}
+                      alt={post.author.name}
+                      className="avatar"
                     />
-                    <span>{postLikeCount}</span>
-                  </button>
+                    <span>{post.author.name}</span>
+                  </div>
 
 
 
 
-                  {/* 收藏 */}
-                  <button
-                    type="button"
-                    className={`stat-item collect ${postCollected ? "active" : ""}`}
-                    onClick={togglePostCollected}
-                    aria-label={postCollected ? "取消收藏" : "加入收藏"}
-                    title={postCollected ? "取消收藏" : "加入收藏"}
-                  >
-                    <img
-                      src={
-                        postCollected
-                          ? "./images/blog/collection1.svg"
-                          : "./images/blog/collection.svg"
-                      }
-                      alt="Collection"
-                    />
-                    <span>收藏</span>
-                  </button>
 
 
 
 
-                  {/* Comment：顯示目前 state 的留言數 */}
-                  <button
-                    className="stat-item"
-                    type="button"
-                    onClick={() => {
-                      const commentsSection = document.querySelector('.comments-section');
-                      if (commentsSection) {
-                        commentsSection.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                  >
-                    <img src="./images/blog/comment.svg" alt="Comment" />
-                    <span>{comments.length}</span>
-                  </button>
-
-
-                  {/* Share */}
-                  <button
-                    className="stat-item"
-                    type="button"
-                    onClick={handleShare}
-                    aria-label="分享文章"
-                    title="分享文章"
-                  >
-                    <img src="./images/blog/share.svg" alt="Share" />
-                    <span>分享</span>
-                  </button>
-                </div>
-              </div>
-            </div>
+                  <span className="post-date">{post.dateText}</span>
 
 
 
 
-            {/* 圓角大圖 */}
-            <div className="post-image-box hero-round">
-              <img src={post.cover} alt={post.title} />
-            </div>
 
 
 
 
-            {/* 文章內文 */}
-            <div
-              className="post-main-body"
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            />
+                  <div className="post-stats">
+                    {/* Like */}
+                    <button
+                      type="button"
+                      className={`stat-item like ${postLiked ? "active" : ""}`}
+                      onClick={togglePostLike}
+                      aria-label={postLiked ? "收回讚" : "按讚"}
+                      title={postLiked ? "收回讚" : "按讚"}
+                    >
+                      <img
+                        src={
+                          postLiked
+                            ? "./images/blog/comment_like1.svg"
+                            : "./images/blog/comment_like2.svg"
+                        }
+                        alt="Like"
+                      />
+                      <span>{postLikeCount}</span>
+                    </button>
 
 
 
 
-            {/* 虛線分隔 */}
-            <div className="dashed-sep" />
 
 
 
 
-            {/* 標籤 */}
-            <div className="post-tags">
-              {post.tags.map((t) => (
-                <Link
-                  key={t}
-                  to={`/blog?tag=${encodeURIComponent(t)}`}
-                  className="tag"
-                >
-                  #{t}
-                </Link>
-              ))}
-            </div>
-          </article>
+                    {/* 收藏 */}
+                    <button
+                      type="button"
+                      className={`stat-item collect ${postCollected ? "active" : ""}`}
+                      onClick={togglePostCollected}
+                      aria-label={postCollected ? "取消收藏" : "加入收藏"}
+                      title={postCollected ? "取消收藏" : "加入收藏"}
+                    >
+                      <img
+                        src={
+                          postCollected
+                            ? "./images/blog/collection1.svg"
+                            : "./images/blog/collection.svg"
+                        }
+                        alt="Collection"
+                      />
+                      <span>收藏</span>
+                    </button>
 
 
 
 
-          {/* 留言區 */}
-          <section className="comments-section">
-            {/* 分隔線裝飾 */}
-            <div className="comment-sep">
-              <img src="./images/blog/post_deco.svg" alt="分隔線" />
-            </div>
 
 
 
 
-            <div className="comment-input-area">
-              <div className="input-wrapper">
-                <input
-                  type="text"
-                  className="comment-input"
-                  placeholder="留言分享你的想法"
-                  value={newComment}
-                  onChange={(e) => setNewComment(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleAddComment()}
-                />
-                <button
-                  className="submit-btn"
-                  type="button"
-                  aria-label="送出留言"
-                  onClick={handleAddComment}
-                >
-                  <img src="./images/blog/summit.svg" alt="送出" />
-                </button>
-              </div>
-            </div>
+                    {/* Comment：顯示目前 state 的留言數 */}
+                    <button
+                      className="stat-item"
+                      type="button"
+                      onClick={() => {
+                        const commentsSection = document.querySelector('.comments-section');
+                        if (commentsSection) {
+                          commentsSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                    >
+                      <img src="./images/blog/comment.svg" alt="Comment" />
+                      <span>{comments.length}</span>
+                    </button>
 
 
 
 
-            <div className="comment-list">
-              {comments.map((c, i) => (
-                <div key={i} className="comment">
-                  <img
-                    src={c.avatar}
-                    alt={c.name}
-                    className="comment-avatar"
-                  />
-                  <div className="comment-content">
-                    <div className="comment-header">
-                      <div className="author-time">
-                        <span className="comment-author">{c.name}</span>
-                        <span className="comment-date">{c.time}</span>
-                      </div>
-
-
-
-
-                      <div className="comment-actions">
-                        <button
-                          type="button"
-                          className={`c-like ${likedComments[i] ? "active" : ""}`}
-                          onClick={() => toggleCommentLike(i)}
-                          aria-label={likedComments[i] ? "收回讚" : "按讚"}
-                          title={likedComments[i] ? "收回讚" : "按讚"}
-                        >
-                          <img
-                            src={
-                              likedComments[i]
-                                ? "./images/blog/comment_like1.svg"
-                                : "./images/blog/comment_like2.svg"
-                            }
-                            alt="like"
-                          />
-                          <span>{commentLikes[i]}</span>
-                        </button>
-                      </div>
-                    </div>
-
-
-
-
-                    <p className="comment-text">{c.text}</p>
+                    {/* Share */}
+                    <button
+                      className="stat-item"
+                      type="button"
+                      onClick={handleShare}
+                      aria-label="分享文章"
+                      title="分享文章"
+                    >
+                      <img src="./images/blog/share.svg" alt="Share" />
+                      <span>分享</span>
+                    </button>
                   </div>
                 </div>
-              ))}
-            </div>
-          </section>
-        </main>
+              </div>
+
+
+
+
+
+
+
+
+              {/* 圓角大圖 */}
+              <div className="post-image-box hero-round">
+                <img src={post.cover} alt={post.title} />
+              </div>
+
+
+
+
+
+
+
+
+              {/* 文章內文 */}
+              <div
+                className="post-main-body"
+                dangerouslySetInnerHTML={{ __html: post.html }}
+              />
+
+
+
+
+
+
+
+
+              {/* 虛線分隔 */}
+              <div className="dashed-sep" />
+
+
+
+
+
+
+
+
+              {/* 標籤 */}
+              <div className="post-tags">
+                {post.tags.map((t) => (
+                  <Link
+                    key={t}
+                    to={`/blog?tag=${encodeURIComponent(t)}`}
+                    className="tag"
+                  >
+                    #{t}
+                  </Link>
+                ))}
+              </div>
+            </article>
+
+
+
+
+
+
+
+
+            {/* 留言區 */}
+            <section className="comments-section">
+              {/* 分隔線裝飾 */}
+              <div className="comment-sep">
+                <img src="./images/blog/post_deco.svg" alt="分隔線" />
+              </div>
+
+
+
+
+
+
+
+
+              <div className="comment-input-area">
+                <div className="input-wrapper">
+                  <input
+                    type="text"
+                    className="comment-input"
+                    placeholder="留言分享你的想法"
+                    value={newComment}
+                    onChange={(e) => setNewComment(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleAddComment()}
+                  />
+                  <button
+                    className="submit-btn"
+                    type="button"
+                    aria-label="送出留言"
+                    onClick={handleAddComment}
+                  >
+                    <img src="./images/blog/summit.svg" alt="送出" />
+                  </button>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+              <div className="comment-list">
+                {comments.map((c, i) => (
+                  <div key={i} className="comment">
+                    <img
+                      src={c.avatar}
+                      alt={c.name}
+                      className="comment-avatar"
+                    />
+                    <div className="comment-content">
+                      <div className="comment-header">
+                        <div className="author-time">
+                          <span className="comment-author">{c.name}</span>
+                          <span className="comment-date">{c.time}</span>
+                        </div>
+
+
+
+
+
+
+
+
+                        <div className="comment-actions">
+                          <button
+                            type="button"
+                            className={`c-like ${likedComments[i] ? "active" : ""}`}
+                            onClick={() => toggleCommentLike(i)}
+                            aria-label={likedComments[i] ? "收回讚" : "按讚"}
+                            title={likedComments[i] ? "收回讚" : "按讚"}
+                          >
+                            <img
+                              src={
+                                likedComments[i]
+                                  ? "./images/blog/comment_like1.svg"
+                                  : "./images/blog/comment_like2.svg"
+                              }
+                              alt="like"
+                            />
+                            <span>{commentLikes[i]}</span>
+                          </button>
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+
+                      <p className="comment-text">{c.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </main>
+        </div>
+        <div className="post-footer-actions">
+          <PageTop />
+        </div>
       </div>
     </div>
   );
@@ -439,7 +561,23 @@ function BlogPost() {
 
 
 
+
+
+
+
 export default BlogPost;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,23 +1,24 @@
 import React from 'react'
 import User_sidebar_left from '../components/User_sidebar_left';
 import ScrollToTop from '../components/ScrollToTop'
+import markets from '../data/market.json';
 
 // 訂單卡片
-const Order_card = () => {
+const Order_card = ({ id, name, date, time, tag, day, venue, desc, imgUrl }) => {
     return (
         <div className='order_card'>
             <ScrollToTop/>
             <div className='order_image'>
-                <img src="./images/order_management/market1.png" alt="華山設計選物日" />
+                <img src={imgUrl} alt="華山設計選物日" />
                 <div className='order_date'>
-                    <span className='month'>8月</span>
-                    <span className='day'>24</span>
+                    <span className='month'>{`${date.slice(5, 7)}月`}</span>
+                    <span className='day'>{date.slice(8, 10)}</span>
                 </div>
                 <div className='order_status_badge upcoming'>即將到來</div>
             </div>
             <div className='order_info'>
-                <h3>華山設計選物日</h3>
-                <p className='order_location'>風格選物 × 咖啡散步 × 文創市集</p>
+                <h3>{name}</h3>
+                <p className='order_location'>{desc}</p>
                 <div className='order_actions'>
                     <button className='btn_pass'>
                         <div className='btn_content'>
@@ -82,10 +83,9 @@ const Order_management = () => {
 
                     <div className='order_content_layout'>
                         <div className='order_list'>
-                            <Order_card />
-                            <Order_card />
-                            <Order_card />
-                            <Order_card />
+                            {
+                                markets.map(market => <Order_card {...market} key={market.id}/>)
+                            }
                         </div>
 
                         <div className='recommended_section'>

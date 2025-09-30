@@ -114,7 +114,7 @@ const ReactAdvancedMarkers = ({ pois, onMarkerClick }) => {
           <div className="event_card_infowindow">
             {/* 圖片區域 */}
             <div className="event_image_placeholder">
-              {/* 可以根據 marketId 或其他屬性載入對應圖片 */}
+              {/* <img src={marketsData.imgUrl} alt="" /> */}
             </div>
 
             {/* 標籤顯示所有 tags */}

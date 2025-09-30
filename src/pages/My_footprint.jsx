@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
+import markets from '../data/market.json';
 import My_footprint_card from '../components/My_footprint_card';
 import User_sidebar_left from '../components/User_sidebar_left';
 import ScrollToTop from '../components/ScrollToTop'
+
 
 const My_footprint = () => {
 
     return (
         <main className='my_footprint_main'>
-            <ScrollToTop/>
+            <ScrollToTop />
             <h1 className='titleBox_h1'>
                 <img className='titleBox' src="./images/titlebox/my_footprint_titlebox.svg" alt='我的足跡My Footprints' />
             </h1>
@@ -16,7 +18,7 @@ const My_footprint = () => {
 
             <section className="footprint_content_box">
 
-                <User_sidebar_left/>
+                <User_sidebar_left />
 
                 <div className="footprint_content">
                     <div className='footprint_content_topbar'>
@@ -33,11 +35,9 @@ const My_footprint = () => {
                     </div>
 
                     <div className='footprint_result'>
-                        <My_footprint_card />
-                        <My_footprint_card />
-                        <My_footprint_card />
-                        <My_footprint_card />
-                        <My_footprint_card />
+                        {
+                            markets.map(market => <My_footprint_card {...market} key={market.id}/>)
+                        }
                     </div>
                 </div>
 

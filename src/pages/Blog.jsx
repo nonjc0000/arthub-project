@@ -4,6 +4,11 @@ import BlogSelect from "../components/blog/BlogSelect";
 import BlogCard from "../components/blog/BlogCard";
 import "../sass/all.scss";
 import ScrollToTop from '../components/ScrollToTop'
+import PageTop from '../components/PageTop';
+
+
+
+
 
 
 
@@ -17,6 +22,10 @@ function Blog() {
 
 
 
+
+
+
+
   // 18 篇文章資料，包含不同分類
   const allPosts = [
     {
@@ -26,6 +35,10 @@ function Blog() {
       img: "./images/blog/postimg/post_1.jpg",
       tags: ["布作服飾", "生活風格", "插畫紙品"],
       category: ["所有文章", "布作服飾", "插畫紙品"],
+
+
+
+
 
 
 
@@ -178,13 +191,23 @@ function Blog() {
 
 
 
+
+
+
+
   const postsPerPage = 9;
 
 
 
 
-    const filteredPosts = useMemo(() => {
+
+
+
+
+  const filteredPosts = useMemo(() => {
     let filtered = allPosts;
+
+
 
 
     // 分類篩選
@@ -198,6 +221,8 @@ function Blog() {
     }
 
 
+
+
     // 搜尋篩選
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase().trim();
@@ -207,6 +232,8 @@ function Blog() {
         post.tags.some(tag => tag.toLowerCase().includes(query))
       );
     }
+
+
 
 
     // 排序邏輯
@@ -229,13 +256,17 @@ function Blog() {
       filtered = filtered.sort((a, b) => {
         if (a.type === "熱門" && b.type !== "熱門") return -1;
         if (b.type === "熱門" && a.type !== "熱門") return 1;
-       
+
+
         if (a.type === "最新" && b.type !== "最新") return -1;
         if (b.type === "最新" && a.type !== "最新") return 1;
-       
+
+
         return a.id - b.id;
       });
     }
+
+
 
 
     return filtered;
@@ -244,8 +275,16 @@ function Blog() {
 
 
 
+
+
+
+
   // 計算總頁數
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
+
+
+
 
 
 
@@ -260,6 +299,10 @@ function Blog() {
 
 
 
+
+
+
+
   // 當篩選條件改變時，回到第一頁
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
@@ -269,10 +312,18 @@ function Blog() {
 
 
 
+
+
+
+
   const handleSearchChange = (query) => {
     setSearchQuery(query);
     setCurrentPage(1);
   };
+
+
+
+
 
 
 
@@ -290,9 +341,17 @@ function Blog() {
 
 
 
+
+
+
+
   // 分頁組件
   const BlogPagination = () => {
     if (totalPages <= 1) return null; // 如果只有一頁或沒有文章，不顯示分頁
+
+
+
+
 
 
 
@@ -308,6 +367,10 @@ function Blog() {
 
 
 
+
+
+
+
     const handlePageChange = (page) => {
       if (page >= 1 && page <= totalPages && page !== currentPage) {
         setCurrentPage(page);
@@ -318,7 +381,15 @@ function Blog() {
 
 
 
+
+
+
+
     const pages = generatePageNumbers();
+
+
+
+
 
 
 
@@ -333,6 +404,10 @@ function Blog() {
         >
           ‹
         </button>
+
+
+
+
 
 
 
@@ -352,6 +427,10 @@ function Blog() {
 
 
 
+
+
+
+
         <button
           className="page-btn next"
           aria-label="下一頁"
@@ -367,15 +446,22 @@ function Blog() {
 
 
 
+
+
+
+
   return (
     <div className="blog-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
-      <ScrollToTop/>
       {/* 1) 標題 */}
       <header className="blog-hero">
         <h1 className='titleBox_h1'>
           <img className='titleBox' src="./images/blog/blog_sign.svg" /* style={{ width: '510px' }} */ alt='市集地圖Market Map' />
         </h1>
       </header>
+
+
+
+
 
 
 
@@ -394,8 +480,16 @@ function Blog() {
 
 
 
+
+
+
+
       {/* 3) 彩色裝飾條 */}
       <div className="blog-deco" style={{ backgroundImage: 'url("./images/blog/blog_deco.svg")' }} />
+
+
+
+
 
 
 
@@ -413,6 +507,10 @@ function Blog() {
               <img src="./images/blog/women-two.svg" alt="blog illustration" />
             </div>
           </aside>
+
+
+
+
 
 
 
@@ -437,6 +535,10 @@ function Blog() {
                   最新
                 </button>
               </div>
+
+
+
+
 
 
 
@@ -472,6 +574,10 @@ function Blog() {
 
 
 
+
+
+
+
             {/* 搜尋結果提示 */}
             {(searchQuery || selectedCategory !== "所有文章") && (
               <div className="filter-info">
@@ -480,6 +586,10 @@ function Blog() {
                 {selectedCategory !== "所有文章" && ` (分類: ${selectedCategory})`}
               </div>
             )}
+
+
+
+
 
 
 
@@ -500,11 +610,18 @@ function Blog() {
 
 
 
+
+
+
+
             {/* 分頁導航 */}
             <BlogPagination />
           </main>
         </div>
       </section>
+      <div className="blog-footer-actions">
+        <PageTop />
+      </div>
     </div>
   );
 }
@@ -512,7 +629,15 @@ function Blog() {
 
 
 
+
+
+
+
 export default Blog;
+
+
+
+
 
 
 
@@ -540,6 +665,14 @@ export default Blog;
 // #     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // #
 // #                      佛祖保佑        
+
+
+
+
+
+
+
+
 
 
 

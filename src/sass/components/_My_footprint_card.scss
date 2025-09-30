@@ -35,10 +35,17 @@
     figure {
         width: 35%;
         height: 100%;
+        max-height: 150px;
+        border-radius: $rad-sm;
+        overflow: hidden;
+
 
         img{
             height: 100%;
+            // max-height: 200px;
+            width: 100%;
             object-fit: cover;
+            object-position: center;
         }
     }
 
@@ -50,8 +57,10 @@
         font-size: $f-s-md;
     }
 
-    img {
-        object-fit: cover;
-        border-radius: $rad-sm;
-    }
+    // img {
+        
+    //     height: 100%;
+    //     object-fit: cover;
+    //     border-radius: $rad-sm;
+    // }
 }

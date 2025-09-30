@@ -91,6 +91,7 @@
       font-size: $f-s-md;
       $line-height-basic: 150%;
       letter-spacing: .08em;
+      cursor: pointer;
 
       .sitemap_item_content {
           display: flex;
@@ -113,5 +114,6 @@
         color: $white;
         padding: $spacing-xxs $spacing-md;
         border-radius: $rad-basic;
+        cursor: pointer;
       }
   }
