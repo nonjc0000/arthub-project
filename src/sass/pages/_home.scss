@@ -6,16 +6,26 @@
 
 
 
+
+
+
+
+
+
 .home-bg {
     background-color: $background;
     overflow: hidden; // 隱藏水平滾動條
 }
 
 
+
+
 .home-wrap {
     width: $w-100;
     height: $h-100vh;
     margin: 5% 0 auto auto;
+
+
 
 
     @media (max-width: 992px) {
@@ -28,10 +38,14 @@
 }
 
 
+
+
 // 單純用flex並排
 .home-top {
     display: flex;
     justify-content: center;
+
+
 
 
     @media (max-width: 992px) {
@@ -45,6 +59,8 @@
 }
 
 
+
+
 .home-heading {
     width: $w-40;
     margin-left: 120px;
@@ -52,10 +68,14 @@
     margin-bottom: 250px;
 
 
+
+
     @media (max-width: 992px) {
         width: 100%;
         margin: 50px 0 auto;
     }
+
+
 
 
     h2 {
@@ -67,6 +87,8 @@
         color: $dark;
 
 
+
+
         @media (max-width:920px) {
             padding-left: 0;
             text-align: center;
@@ -75,10 +97,14 @@
     }
 
 
+
+
     .arrow {
         width: 4%;
         margin-top: 25px;
         margin-left: 60px;
+
+
 
 
         @media (max-width: 992px) {
@@ -88,11 +114,15 @@
 }
 
 
+
+
 .stall-wrap {
     margin: 0 auto;
     margin-right: 5%;
     width: $w-60;
     height: auto;
+
+
 
 
     @media (max-width: 992px) {
@@ -101,9 +131,13 @@
     }
 
 
+
+
     .stall-item {
         width: 100%;
         display: flex;
+
+
 
 
         @media (max-width:992px) {
@@ -112,9 +146,13 @@
         }
 
 
+
+
         a {
             display: block;
         }
+
+
 
 
         .stall-first {
@@ -130,10 +168,20 @@
 
 
 
+
+
+
+
+
+
+
+
             &:hover {
                 animation: paused;
                 transform: scale(1.1);
             }
+
+
 
 
             &:active {
@@ -141,6 +189,8 @@
                 transform: scale(1.1);
             }
         }
+
+
 
 
         .stall-second {
@@ -152,10 +202,14 @@
             animation: translatup 4s infinite;
 
 
+
+
             &:hover {
                 animation: paused;
                 transform: scale(1.1);
             }
+
+
 
 
             &:active {
@@ -163,6 +217,8 @@
                 transform: scale(1.1);
             }
         }
+
+
 
 
         .stall-third {
@@ -176,10 +232,16 @@
 
 
 
+
+
+
+
             &:hover {
                 animation: paused;
                 transform: scale(1.1);
             }
+
+
 
 
             &:active {
@@ -187,6 +249,16 @@
                 transform: scale(1.1);
             }
         }
+    }
+}
+
+
+.home-date {
+    margin-top: -230px;
+
+
+    @media (max-width: 992px) {
+        margin-top: 0;
     }
 }
 
@@ -203,10 +275,17 @@
     font-size: $f-s-xxxxl;
 
 
+
+
     @media (max-width: 992px) {
         margin: 0 auto;
         justify-content: center;
+        font-size: $f-s-xl;
     }
+
+
+
+
 
 
 
@@ -218,10 +297,14 @@
         transform: rotate(40deg) translatex(10px);
 
 
+
+
         @media (max-width: 1440px) {
             height: 4rem; // 稍微縮短
         }
     }
+
+
 
 
     .date-item {
@@ -231,10 +314,14 @@
         margin-top: 30px;
 
 
+
+
         @media (max-width: 1440px) {
             gap: 15px; // 縮小間距
         }
     }
+
+
 
 
     .weekday {
@@ -242,9 +329,13 @@
     }
 
 
+
+
     .weather {
         width: 65px;
         height: 65px;
+
+
 
 
         @media (max-width: 1440px) {
@@ -254,10 +345,14 @@
     }
 
 
+
+
     .situation {
         font-size: $f-s-xs;
     }
 }
+
+
 
 
 .home-dec {
@@ -265,9 +360,13 @@
     height: 30vh;
 
 
+
+
     @media (max-width:992px) {
         height: 10vh;
     }
+
+
 
 
     .home-dec-im {
@@ -279,16 +378,21 @@
 }
 
 
+
+
 // 第二塊
 .home-hot-wrap {
     width: 100%;
-    margin-top: 80px;
     position: relative;
+
+
 
 
     @media (max-width:992px) {
         margin-top: 0;
     }
+
+
 
 
     .home-drink {
@@ -300,6 +404,8 @@
     }
 
 
+
+
     .home-ring {
         max-width: 10%;
         position: absolute;
@@ -307,6 +413,8 @@
         top: 18%;
         right: 7%;
     }
+
+
 
 
     .home-hat {
@@ -318,6 +426,8 @@
     }
 
 
+
+
     .home-book {
         max-width: 8%;
         position: absolute;
@@ -327,15 +437,21 @@
     }
 
 
+
+
     .home-dec-im-tw {
         width: 20%;
         position: absolute;
         bottom: -35%;
         right: 0;
+
+
         @media (max-width:992px) {
-           bottom: -10%;
+            bottom: -10%;
         }
     }
+
+
 
 
     .home-hot {
@@ -345,14 +461,20 @@
         margin-bottom: 60px;
 
 
+
+
         h3 {
             font-size: $f-s-xxxxl;
+
+
 
 
             @media (max-width: 1440px) {
                 font-size: $f-s-xxxl; // 稍微縮小
             }
         }
+
+
 
 
         p {
@@ -363,9 +485,13 @@
 }
 
 
+
+
 .pic-wrap {
     max-width: 75%;
     margin: 0 auto;
+
+
 
 
     p {
@@ -373,6 +499,8 @@
         font-optical-sizing: auto;
         font-weight: 500;
     }
+
+
 
 
     .home-pic {
@@ -383,9 +511,13 @@
         gap: 16px;
 
 
+
+
         @media (max-width:992px) {
             flex-direction: column;
         }
+
+
 
 
         img {
@@ -393,6 +525,12 @@
             height: 100%;
             object-fit: cover;
         }
+
+
+
+
+
+
 
 
 
@@ -407,10 +545,14 @@
             position: relative;
 
 
+
+
             .home-pic-item {
                 display: flex;
                 justify-content: space-between;
                 gap: 16px;
+
+
 
 
                 img {
@@ -418,11 +560,17 @@
                 }
 
 
+
+
                 .home-type-one,
                 .home-type-two {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
+
+
 
 
 
@@ -447,6 +595,20 @@
                         line-height: 1;
 
 
+                        @media (max-width:992px) {
+                            font-size: 1.5rem;
+                        }
+
+
+                        @media (max-width:786px) {
+                            font-size: 1rem;
+                        }
+
+
+
+
+
+
 
 
                         span {
@@ -454,12 +616,26 @@
                             font-size: 1.5rem;
                             color: transparent;
                             -webkit-text-stroke: 0.5px $white;
+
+
+                            @media (max-width:992px) {
+                                font-size: 1.5rem;
+                            }
+
+
+                            @media (max-width:786px) {
+                                font-size: 1rem;
+                            }
                         }
+
+
 
 
                         &:active {
                             opacity: 1;
                         }
+
+
 
 
                         &:hover {
@@ -470,10 +646,14 @@
             }
 
 
+
+
             .home-type-three {
                 position: relative;
                 display: flex;
                 justify-content: center;
+
+
 
 
                 .text-three {
@@ -494,17 +674,43 @@
                     line-height: 1;
 
 
+                    @media (max-width:992px) {
+                        font-size: 1.5rem;
+                    }
+
+
+                    @media (max-width:786px) {
+                        font-size: 1rem;
+                    }
+
+
+
+
                     span {
                         font-family: "DM Sans", sans-serif;
                         font-size: 1.5rem;
                         color: transparent;
                         -webkit-text-stroke: 0.5px $white;
+
+
+                        @media (max-width:992px) {
+                            font-size: 1.5rem;
+                        }
+
+
+                        @media (max-width:786px) {
+                            font-size: 1rem;
+                        }
                     }
+
+
 
 
                     &:active {
                         opacity: 1;
                     }
+
+
 
 
                     &:hover {
@@ -517,10 +723,16 @@
 
 
 
+
+
+
+
         @media (max-width:992px) {
             .home-pic-fsb {
                 width: 100%;
             }
+
+
 
 
             .home-type-one,
@@ -534,13 +746,23 @@
 
 
 
+
+
+
+
+
+
         >div:last-child {
             flex: 1; // 讓下方大圖佔剩餘空間
+
+
 
 
             a {
                 display: block;
                 height: 100%;
+
+
 
 
                 img {
@@ -552,6 +774,8 @@
         }
 
 
+
+
         .home-pic-se {
             max-width: 50%;
             flex: 1;
@@ -560,16 +784,22 @@
             gap: 16px;
 
 
+
+
             .type-img-fo {
                 width: 50%;
                 display: flex;
                 flex: 1;
 
 
+
+
                 .home-type-four {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
 
 
                     .text-four {
@@ -590,12 +820,38 @@
                         line-height: 1;
 
 
+                        @media (max-width:992px) {
+                            font-size: 1.5rem;
+                        }
+
+
+                        @media (max-width:786px) {
+                            font-size: 1rem;
+                        }
+
+
+
+
                         span {
                             // font-family: "DM Sans", sans-serif;
                             font-size: 1.5rem;
                             color: transparent;
                             -webkit-text-stroke: 0.5px $white;
+
+
+                            @media (max-width:992px) {
+                                font-size: 1.5rem;
+                            }
+
+
+                            @media (max-width:786px) {
+                                font-size: 1rem;
+                            }
                         }
+
+
+
+
 
 
 
@@ -603,6 +859,8 @@
                         &:active {
                             opacity: 1;
                         }
+
+
 
 
                         &:hover {
@@ -613,6 +871,8 @@
             }
 
 
+
+
             .type-img {
                 width: 50%;
                 display: flex;
@@ -620,10 +880,14 @@
                 gap: 16px;
 
 
+
+
                 .home-type-five {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
 
 
                     .text-five {
@@ -644,17 +908,43 @@
                         line-height: 1;
 
 
+                        @media (max-width:992px) {
+                            font-size: 1.5rem;
+                        }
+
+
+                        @media (max-width:786px) {
+                            font-size: 1rem;
+                        }
+
+
+
+
                         span {
                             // font-family: "DM Sans", sans-serif;
                             font-size: 1.5rem;
                             color: transparent;
                             -webkit-text-stroke: 0.5px $white;
+
+
+                            @media (max-width:992px) {
+                                font-size: 1.5rem;
+                            }
+
+
+                            @media (max-width:786px) {
+                                font-size: 1rem;
+                            }
                         }
+
+
 
 
                         &:active {
                             opacity: 1;
                         }
+
+
 
 
                         &:hover {
@@ -664,10 +954,14 @@
                 }
 
 
+
+
                 .home-type-six {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
 
 
                     .text-six {
@@ -688,17 +982,43 @@
                         line-height: 1;
 
 
+                        @media (max-width:992px) {
+                            font-size: 1.5rem;
+                        }
+
+
+                        @media (max-width:786px) {
+                            font-size: 1rem;
+                        }
+
+
+
+
                         span {
                             // font-family: "DM Sans", sans-serif;
                             font-size: 1.5rem;
                             color: transparent;
                             -webkit-text-stroke: 0.5px $white;
+
+
+                            @media (max-width:992px) {
+                                font-size: 1.5rem;
+                            }
+
+
+                            @media (max-width:786px) {
+                                font-size: 1rem;
+                            }
                         }
+
+
 
 
                         &:active {
                             opacity: 1;
                         }
+
+
 
 
                         &:hover {
@@ -710,6 +1030,8 @@
         }
 
 
+
+
         img {
             max-width: 100%;
             height: auto;
@@ -717,6 +1039,8 @@
             object-fit: cover;
             display: block;
         }
+
+
 
 
         @media (max-width:992px) {
@@ -729,6 +1053,8 @@
 }
 
 
+
+
 // 第三塊
 .home-blog {
     margin-top: 112px;
@@ -739,15 +1065,21 @@
     transform: rotate(5deg);
 
 
+
+
     @media (max-width:992px) {
         margin: 24px auto;
     }
+
+
 
 
     h3 {
         font-family: $family-display;
         font-size: $f-s-xxxxl;
         display: inline-block;
+
+
 
 
         @media (max-width:992px) {
@@ -757,10 +1089,14 @@
 }
 
 
+
+
 .home-blog-item {
     display: flex;
     justify-content: center;
     position: relative;
+
+
 
 
     @media (max-width:992px) {
@@ -768,9 +1104,13 @@
     }
 
 
+
+
     @media (max-width: 1440px) {
         margin-bottom: 150px; // 稍微減少下邊距
     }
+
+
 
 
     .home-left-img {
@@ -781,8 +1121,12 @@
     }
 
 
+
+
     figure {
         position: relative;
+
+
 
 
         img {
@@ -790,6 +1134,8 @@
             border-top-right-radius: $rad-ex;
             border-bottom-right-radius: $rad-ex;
         }
+
+
 
 
         .bear {
@@ -800,6 +1146,8 @@
         }
 
 
+
+
         .crocodile {
             width: 15%;
             position: absolute;
@@ -808,11 +1156,15 @@
             left: 20%;
 
 
+
+
             @media (max-width:992px) {
                 bottom: -5%;
             }
         }
     }
+
+
 
 
     .home-right-blog {
@@ -828,9 +1180,13 @@
         z-index: 2;
 
 
+
+
         @media (max-width:992px) {
             margin-top: 100px;
         }
+
+
 
 
         &::before {
@@ -849,11 +1205,15 @@
         }
 
 
+
+
         .pic-dog {
             width: $w-50;
             position: absolute;
             top: -450px;
             left: 300px;
+
+
 
 
             @media (max-width:992px) {
@@ -862,9 +1222,13 @@
         }
 
 
+
+
         .homecard-ob {
             margin-bottom: 80px;
         }
+
+
 
 
         .home-right-txt {
@@ -874,12 +1238,18 @@
             margin-right: 115px;
 
 
+
+
             h3 {
                 font-weight: $f-w-b;
                 font-size: $f-s-xxxl;
 
 
+
+
             }
+
+
 
 
             p {
@@ -887,6 +1257,8 @@
                 font-size: $f-s-lg;
                 color: #697655;
             }
+
+
 
 
             // @media (max-width:1440px) {
@@ -903,7 +1275,16 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-button {
+    width: 100%;
     position: absolute;
     z-index: 3;
     display: flex;
@@ -911,7 +1292,18 @@
     top: 95%;
     justify-content: flex-end;
     align-items: flex-end;
+
+
+    @media (max-width:992px) {
+        width: 60%;
+        right: 5%;
+        top: 90%;
+    }
 }
+
+
+
+
 
 
 
@@ -923,12 +1315,16 @@
     justify-content: center;
 
 
+
+
     // figure {
     //     width: 90%;
     //     position: absolute;
     //     top: -350px;
     //     height: 100vh;
     // }
+
+
 
 
     @media (max-width: 1440px) {
@@ -942,10 +1338,40 @@
 
 
 
+
+
+
+
+
+
     .home-sign {
         position: absolute;
         bottom: -280px;
         left: 5%;
+
+
+        @media (max-width:992px) {
+            display: none;
+        }
+    }
+}
+
+
+.home-road-independ {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+
+
+    figure {
+        position: absolute;
+        top: -950px;
+        z-index: -1;
+    }
+
+
+    @media (max-width:992px) {
+        display: none;
     }
 }
 

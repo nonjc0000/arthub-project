@@ -1,4 +1,5 @@
 import Region_card from "../components/Find_schedule/Region_card";
+import ScrollToTop from '../components/ScrollToTop';
 
 
 const arrCards = [
@@ -33,6 +34,7 @@ const Find_schedule = () => {
   return (
     <>
       <div className="fs-container">
+        <ScrollToTop/>
         <div className="find_schedule_titlebox">
           <h1 className="titleBox_h1">
             <img

@@ -41,6 +41,7 @@ const ArtHub_App = () => {
         <Route path="/Find_map" element={<Find_map />}></Route>
         <Route path="/Find_schedule" element={<Find_schedule />}></Route>
         <Route path="/Blog" element={<Blog />}></Route>
+        <Route path="/blog/:id" element={<BlogPost />}></Route>
         <Route path="/About" element={<About />}></Route>
         <Route path="/My_footprint" element={<My_footprint />}></Route>
         <Route path="/Notifications" element={<Notifications />}></Route>

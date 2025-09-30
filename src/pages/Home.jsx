@@ -4,7 +4,9 @@ import HomeCard from '../components/HomeCard';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 
+
 const Home = () => {
+
 
   return (
     <>
@@ -36,7 +38,7 @@ const Home = () => {
         </section>
         {/* 日期 */}
         <section>
-          <div>
+          <div className='home-date'>
             <div className="date-box">
               <p>7</p>
               <div className='slash'></div>
@@ -69,59 +71,65 @@ const Home = () => {
               <div className='home-pic'>
                 <div className='home-pic-fsb'>
                   <div className='home-pic-item'>
-                    <div>
-                      <a className='home-type-one' href="#">
+                    <div className='home-type-one'>
+                      <Link to="/Find_type?type=美食飲品"
+                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
                         <img src="./images/home/home-pic-01.png" alt="種類圖01" />
                         <div className="text">
-                          <p>美食<br /><span>Food</span></p>
+                          <p>美食飲品<br /><span>Food and Beverages</span></p>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                     <div className='home-type-two'>
-                      <a href="#">
+                      <Link to="/Find_type?type=居家療育"
+                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
                         <img src="./images/home/home-pic-02.png" alt="種類圖02" />
                         <div className="text-two">
-                          <p>植物<br /><span>Plant</span></p>
+                          <p>居家療育<br /><span>Home therapy</span></p>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className='home-type-three'>
-                    <a href="#">
+                    <Link to="/Find_type?type=生活風格"
+                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
                       <img src="./images/home/home-pic-03.png" alt="種類圖03" />
                       <div className="text-three">
-                        <p>生活小品<br /><span>Daily trifles</span></p>
+                        <p>生活風格<br /><span>Daily trifles</span></p>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className='home-pic-se'>
                   <div className='type-img-fo'>
                     <div className='home-type-four'>
-                      <a href="#">
+                      <Link to="/Find_type?type=布作服飾"
+                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
                         <img src="./images/home/home-pic-04.png" alt="種類圖04" />
                         <div className="text-four">
-                          <p>服飾<br /><span>Apparel</span></p>
+                          <p>布作服飾<br /><span>Handmade Fashion</span></p>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                   <div className='type-img'>
                     <div className='home-type-five'>
-                      <a href="#">
+                      <Link to="/Find_type?type=飾品配件"
+                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
                         <img src="./images/home/home-pic-05.png" alt="種類圖05" />
                         <div className="text-five">
-                          <p>手做飾品<br /><span>Accessory</span></p>
+                          <p>飾品配件<br /><span>Accessory</span></p>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                     <div className='home-type-six'>
-                      <a href="#">
+                      <Link to="/Find_type?type=插畫紙品"
+                        onClick={() => {sessionStorage.setItem('navigatedFromHome', 'true');}}>
                         <img src="./images/home/home-pic-06.png" alt="種類圖06" />
                         <div className="text-six">
-                          <p>手繪商品<br /><span>Hand drawn items</span></p>
+                          <p>插畫紙品<br /><span>Hand drawn items</span></p>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -171,6 +179,11 @@ const Home = () => {
             </div>
           </div>
           <PageTop />
+          <div className='home-road-independ'>
+            <figure>
+              <img src="./images/home/Home-road.svg" alt="Home-road" />
+            </figure>
+          </div>
         </section>
       </main>
     </>
@@ -180,7 +193,23 @@ const Home = () => {
 
 
 
+
+
+
+
 export default Home
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
