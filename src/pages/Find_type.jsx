@@ -286,7 +286,7 @@ const Find_type = () => {
             })
             // 3. 活動類型篩選
             .filter((market) => {
-                return selectedActivityType === '' || market.category === selectedActivityType;
+                return selectedActivityType === '' || market.category.includes(selectedActivityType);
             })
             // 4. 關鍵字搜尋
             .filter((market) => {

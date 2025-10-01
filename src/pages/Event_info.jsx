@@ -288,10 +288,30 @@ const Event_info = () => {
                 <div className='type_box'>
                   <p className='title'>市集類型</p>
                   <div className="tag_box">
-                    <Link to='/Find_type'><p>美食飲品</p></Link>
-                    <Link to='/Find_type'><p>文創設計</p></Link>
-                    <Link to='/Find_type'><p>飾品配件</p></Link>
-                    <Link to='/Find_type'><p>二手選物</p></Link>
+                    <Link
+                      to='/Find_type?type=美食飲品'
+                      onClick={() => sessionStorage.setItem('navigatedFromHome', 'true')}
+                    >
+                      <p>美食飲品</p>
+                    </Link>
+                    <Link
+                      to='/Find_type?type=文創設計'
+                      onClick={() => sessionStorage.setItem('navigatedFromHome', 'true')}
+                    >
+                      <p>文創設計</p>
+                    </Link>
+                    <Link
+                      to='/Find_type?type=飾品配件'
+                      onClick={() => sessionStorage.setItem('navigatedFromHome', 'true')}
+                    >
+                      <p>飾品配件</p>
+                    </Link>
+                    <Link
+                      to='/Find_type?type=二手選品'
+                      onClick={() => sessionStorage.setItem('navigatedFromHome', 'true')}
+                    >
+                      <p>二手選品</p>
+                    </Link>
                   </div>
                 </div>
               </div>
