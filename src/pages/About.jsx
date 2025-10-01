@@ -8,7 +8,7 @@ const About = () => {
             {/* Hero Section */}
             <section className='hero_section'>
                 <div className='hero_image'>
-                    <img src="./images/About/about_img.png" alt="關於我們圖片" />
+                    <img src="./images/About/about_img.jpg" alt="關於我們圖片" />
                 </div>
             </section>
 

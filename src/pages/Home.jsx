@@ -10,10 +10,20 @@ import { useState } from 'react';
 
 
 
+
+
+
+
+
+
 const Home = () => {
 
 
+
+
   const [birdPosition, setBirdPosition] = useState({ x: 20, y: 20 });
+
+
 
 
   const handleClick = (e) => {
@@ -22,6 +32,12 @@ const Home = () => {
     const y = (e.clientY / window.innerHeight) * 100;
     setBirdPosition({ x, y });
   };
+
+
+
+
+
+
 
 
 
@@ -40,6 +56,8 @@ const Home = () => {
           }}>
               <img src="./images/cursor.gif" alt="cursor" />
           </div>
+
+
 
 
           <div className='home-wrap'>
@@ -68,13 +86,13 @@ const Home = () => {
         <section>
           <div className='home-date'>
             <div className="date-box">
-              <p>7</p>
+              <p>10</p>
               <div className='slash'></div>
               <div className='date-item'>
-                <p>22</p>
-                <p className="weekday">TUE.</p>
-                <p className='weather'><img src="./images/home/cloudy-day.png" alt="陰天" /></p>
-                <p className='temptemperature'>25°C<span className='situation'>多雲</span></p>
+                <p>03</p>
+                <p className="weekday">FRI.</p>
+                <p className='weather'><img src="./images/home/Sun.png" alt="SUN" /></p>
+                <p className='temptemperature'>32°C<span className='situation'>晴天</span></p>
               </div>
             </div>
             <div className='home-dec'>
@@ -235,7 +253,71 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

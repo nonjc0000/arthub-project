@@ -24,8 +24,35 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .home-bg {
     overflow: hidden; // 隱藏水平滾動條
+    background: none;
+
+
 
 
     .home-bird {
@@ -36,11 +63,15 @@
         z-index: $z-ex;
 
 
+
+
         @media (max-width:992px) {
             top: 10%;
             left: 10%;
             width: 15%;
         }
+
+
 
 
         @media (max-width:576px) {
@@ -51,7 +82,17 @@
     }
 
 
+
+
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -64,6 +105,14 @@
     width: $w-100;
     height: $h-100vh;
     margin: 5% 0 auto auto;
+
+
+
+
+
+
+
+
 
 
 
@@ -88,10 +137,26 @@
 
 
 
+
+
+
+
+
+
+
+
 // 單純用flex並排
 .home-top {
     display: flex;
     justify-content: center;
+
+
+
+
+
+
+
+
 
 
 
@@ -117,6 +182,14 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-heading {
     width: $w-40;
     margin-left: 120px;
@@ -130,10 +203,26 @@
 
 
 
+
+
+
+
+
+
+
+
     @media (max-width: 992px) {
         width: 100%;
         margin: 50px 0 auto;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -157,6 +246,14 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width:920px) {
             padding-left: 0;
             text-align: center;
@@ -171,10 +268,26 @@
 
 
 
+
+
+
+
+
+
+
+
     .arrow {
         width: 4%;
         margin-top: 25px;
         margin-left: 60px;
+
+
+
+
+
+
+
+
 
 
 
@@ -196,11 +309,27 @@
 
 
 
+
+
+
+
+
+
+
+
 .stall-wrap {
     margin: 0 auto;
     margin-right: 5%;
     width: $w-60;
     height: auto;
+
+
+
+
+
+
+
+
 
 
 
@@ -221,9 +350,25 @@
 
 
 
+
+
+
+
+
+
+
+
     .stall-item {
         width: 100%;
         display: flex;
+
+
+
+
+
+
+
+
 
 
 
@@ -244,9 +389,25 @@
 
 
 
+
+
+
+
+
+
+
+
         a {
             display: block;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -292,10 +453,50 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             &:hover {
                 animation: paused;
                 transform: scale(1.1);
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -309,6 +510,14 @@
                 transform: scale(1.1);
             }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -332,10 +541,26 @@
 
 
 
+
+
+
+
+
+
+
+
             &:hover {
                 animation: paused;
                 transform: scale(1.1);
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -349,6 +574,14 @@
                 transform: scale(1.1);
             }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -380,10 +613,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             &:hover {
                 animation: paused;
                 transform: scale(1.1);
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -403,8 +660,16 @@
 
 
 
+
+
+
+
 .home-date {
     margin-top: -230px;
+
+
+
+
 
 
 
@@ -413,6 +678,10 @@
         margin-top: 0;
     }
 }
+
+
+
+
 
 
 
@@ -427,6 +696,14 @@
     font-family: DM Sans;
     color: $dark;
     font-size: $f-s-xxxxl;
+
+
+
+
+
+
+
+
 
 
 
@@ -456,6 +733,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .slash {
         width: 2px;
         height: 5rem;
@@ -469,10 +762,26 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width: 1440px) {
             height: 4rem; // 稍微縮短
         }
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -494,10 +803,26 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width: 1440px) {
             gap: 15px; // 縮小間距
         }
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -517,9 +842,25 @@
 
 
 
+
+
+
+
+
+
+
+
     .weather {
         width: 65px;
         height: 65px;
+
+
+
+
+
+
+
+
 
 
 
@@ -541,10 +882,26 @@
 
 
 
+
+
+
+
+
+
+
+
     .situation {
         font-size: $f-s-xs;
     }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -564,9 +921,25 @@
 
 
 
+
+
+
+
+
+
+
+
     @media (max-width:992px) {
         height: 10vh;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -590,6 +963,14 @@
 
 
 
+
+
+
+
+
+
+
+
 // 第二塊
 .home-hot-wrap {
     width: 100%;
@@ -602,9 +983,25 @@
 
 
 
+
+
+
+
+
+
+
+
     @media (max-width:992px) {
         margin-top: 0;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -628,6 +1025,14 @@
 
 
 
+
+
+
+
+
+
+
+
     .home-ring {
         max-width: 10%;
         position: absolute;
@@ -635,6 +1040,14 @@
         top: 18%;
         right: 7%;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -658,6 +1071,14 @@
 
 
 
+
+
+
+
+
+
+
+
     .home-book {
         max-width: 8%;
         position: absolute;
@@ -665,6 +1086,14 @@
         right: 4%;
         bottom: 10%;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -682,10 +1111,22 @@
 
 
 
+
+
+
+
         @media (max-width:992px) {
             bottom: -10%;
         }
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -707,8 +1148,24 @@
 
 
 
+
+
+
+
+
+
+
+
         h3 {
             font-size: $f-s-xxxxl;
+
+
+
+
+
+
+
+
 
 
 
@@ -721,6 +1178,14 @@
                 font-size: $f-s-xxxl; // 稍微縮小
             }
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -743,9 +1208,25 @@
 
 
 
+
+
+
+
+
+
+
+
 .pic-wrap {
     max-width: 75%;
     margin: 0 auto;
+
+
+
+
+
+
+
+
 
 
 
@@ -759,6 +1240,14 @@
         font-optical-sizing: auto;
         font-weight: 500;
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -781,9 +1270,25 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width:992px) {
             flex-direction: column;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -797,6 +1302,30 @@
             height: 100%;
             object-fit: cover;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -835,10 +1364,26 @@
 
 
 
+
+
+
+
+
+
+
+
             .home-pic-item {
                 display: flex;
                 justify-content: space-between;
                 gap: 16px;
+
+
+
+
+
+
+
+
 
 
 
@@ -858,11 +1403,35 @@
 
 
 
+
+
+
+
+
+
+
+
                 .home-type-one,
                 .home-type-two {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -901,6 +1470,10 @@
 
 
 
+
+
+
+
                         @media (max-width:992px) {
                             font-size: 1.5rem;
                         }
@@ -908,9 +1481,29 @@
 
 
 
+
+
+
+
                         @media (max-width:786px) {
                             font-size: 1rem;
                         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -936,9 +1529,17 @@
 
 
 
+
+
+
+
                             @media (max-width:992px) {
                                 font-size: 1.5rem;
                             }
+
+
+
+
 
 
 
@@ -955,9 +1556,25 @@
 
 
 
+
+
+
+
+
+
+
+
                         &:active {
                             opacity: 1;
                         }
+
+
+
+
+
+
+
+
 
 
 
@@ -980,10 +1597,26 @@
 
 
 
+
+
+
+
+
+
+
+
             .home-type-three {
                 position: relative;
                 display: flex;
                 justify-content: center;
+
+
+
+
+
+
+
+
 
 
 
@@ -1012,6 +1645,10 @@
 
 
 
+
+
+
+
                     @media (max-width:992px) {
                         font-size: 1.5rem;
                     }
@@ -1019,9 +1656,21 @@
 
 
 
+
+
+
+
                     @media (max-width:786px) {
                         font-size: 1rem;
                     }
+
+
+
+
+
+
+
+
 
 
 
@@ -1039,9 +1688,17 @@
 
 
 
+
+
+
+
                         @media (max-width:992px) {
                             font-size: 1.5rem;
                         }
+
+
+
+
 
 
 
@@ -1058,9 +1715,25 @@
 
 
 
+
+
+
+
+
+
+
+
                     &:active {
                         opacity: 1;
                     }
+
+
+
+
+
+
+
+
 
 
 
@@ -1091,10 +1764,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         @media (max-width:992px) {
             .home-pic-fsb {
                 width: 100%;
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -1132,8 +1829,40 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         >div:last-child {
             flex: 1; // 讓下方大圖佔剩餘空間
+
+
+
+
+
+
+
+
 
 
 
@@ -1145,6 +1874,14 @@
             a {
                 display: block;
                 height: 100%;
+
+
+
+
+
+
+
+
 
 
 
@@ -1168,12 +1905,28 @@
 
 
 
+
+
+
+
+
+
+
+
         .home-pic-se {
             max-width: 50%;
             flex: 1;
             display: flex;
             justify-content: space-between;
             gap: 16px;
+
+
+
+
+
+
+
+
 
 
 
@@ -1194,10 +1947,26 @@
 
 
 
+
+
+
+
+
+
+
+
                 .home-type-four {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
+
+
+
+
+
+
 
 
 
@@ -1226,6 +1995,10 @@
 
 
 
+
+
+
+
                         @media (max-width:992px) {
                             font-size: 1.5rem;
                         }
@@ -1233,9 +2006,21 @@
 
 
 
+
+
+
+
                         @media (max-width:786px) {
                             font-size: 1rem;
                         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1253,9 +2038,17 @@
 
 
 
+
+
+
+
                             @media (max-width:992px) {
                                 font-size: 1.5rem;
                             }
+
+
+
+
 
 
 
@@ -1264,6 +2057,22 @@
                                 font-size: 1rem;
                             }
                         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1291,12 +2100,28 @@
 
 
 
+
+
+
+
+
+
+
+
                         &:hover {
                             opacity: 1;
                         }
                     }
                 }
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -1318,10 +2143,26 @@
 
 
 
+
+
+
+
+
+
+
+
                 .home-type-five {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
+
+
+
+
+
+
 
 
 
@@ -1350,6 +2191,10 @@
 
 
 
+
+
+
+
                         @media (max-width:992px) {
                             font-size: 1.5rem;
                         }
@@ -1357,9 +2202,21 @@
 
 
 
+
+
+
+
                         @media (max-width:786px) {
                             font-size: 1rem;
                         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1377,9 +2234,17 @@
 
 
 
+
+
+
+
                             @media (max-width:992px) {
                                 font-size: 1.5rem;
                             }
+
+
+
+
 
 
 
@@ -1396,9 +2261,25 @@
 
 
 
+
+
+
+
+
+
+
+
                         &:active {
                             opacity: 1;
                         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1420,10 +2301,26 @@
 
 
 
+
+
+
+
+
+
+
+
                 .home-type-six {
                     position: relative;
                     display: flex;
                     justify-content: center;
+
+
+
+
+
+
+
+
 
 
 
@@ -1452,6 +2349,10 @@
 
 
 
+
+
+
+
                         @media (max-width:992px) {
                             font-size: 1.5rem;
                         }
@@ -1459,9 +2360,21 @@
 
 
 
+
+
+
+
                         @media (max-width:786px) {
                             font-size: 1rem;
                         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1479,9 +2392,17 @@
 
 
 
+
+
+
+
                             @media (max-width:992px) {
                                 font-size: 1.5rem;
                             }
+
+
+
+
 
 
 
@@ -1498,9 +2419,25 @@
 
 
 
+
+
+
+
+
+
+
+
                         &:active {
                             opacity: 1;
                         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1524,6 +2461,14 @@
 
 
 
+
+
+
+
+
+
+
+
         img {
             max-width: 100%;
             height: auto;
@@ -1531,6 +2476,14 @@
             object-fit: cover;
             display: block;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1555,6 +2508,14 @@
 
 
 
+
+
+
+
+
+
+
+
 // 第三塊
 .home-blog {
     margin-top: 112px;
@@ -1563,6 +2524,14 @@
     text-align: center;
     color: $dark;
     transform: rotate(5deg);
+
+
+
+
+
+
+
+
 
 
 
@@ -1582,10 +2551,26 @@
 
 
 
+
+
+
+
+
+
+
+
     h3 {
         font-family: $family-display;
         font-size: $f-s-xxxxl;
         display: inline-block;
+
+
+
+
+
+
+
+
 
 
 
@@ -1607,10 +2592,26 @@
 
 
 
+
+
+
+
+
+
+
+
 .home-blog-item {
     display: flex;
     justify-content: center;
     position: relative;
+
+
+
+
+
+
+
+
 
 
 
@@ -1630,9 +2631,25 @@
 
 
 
+
+
+
+
+
+
+
+
     @media (max-width: 1440px) {
         margin-bottom: 150px; // 稍微減少下邊距
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -1655,8 +2672,24 @@
 
 
 
+
+
+
+
+
+
+
+
     figure {
         position: relative;
+
+
+
+
+
+
+
+
 
 
 
@@ -1670,6 +2703,14 @@
             border-top-right-radius: $rad-ex;
             border-bottom-right-radius: $rad-ex;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1692,6 +2733,14 @@
 
 
 
+
+
+
+
+
+
+
+
         .crocodile {
             width: 15%;
             position: absolute;
@@ -1706,11 +2755,27 @@
 
 
 
+
+
+
+
+
+
+
+
             @media (max-width:992px) {
                 bottom: -5%;
             }
         }
     }
+
+
+
+
+
+
+
+
 
 
 
@@ -1738,9 +2803,25 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width:992px) {
             margin-top: 100px;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1771,11 +2852,27 @@
 
 
 
+
+
+
+
+
+
+
+
         .pic-dog {
             width: $w-50;
             position: absolute;
             top: -450px;
             left: 300px;
+
+
+
+
+
+
+
+
 
 
 
@@ -1796,9 +2893,25 @@
 
 
 
+
+
+
+
+
+
+
+
         .homecard-ob {
             margin-bottom: 80px;
         }
+
+
+
+
+
+
+
+
 
 
 
@@ -1820,6 +2933,14 @@
 
 
 
+
+
+
+
+
+
+
+
             h3 {
                 font-weight: $f-w-b;
                 font-size: $f-s-xxxl;
@@ -1831,7 +2952,23 @@
 
 
 
+
+
+
+
+
+
+
+
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -1853,12 +2990,24 @@
 
 
 
+
+
+
+
+
+
+
+
             // @media (max-width:1440px) {
             //     margin-top: 10px;
             // }
         }
     }
 }
+
+
+
+
 
 
 
@@ -1876,12 +3025,32 @@
 
 
 
+
+
+
+
     @media (max-width:992px) {
         width: 60%;
         right: 5%;
         top: 90%;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1909,14 +3078,6 @@
 
 
 
-
-
-    // figure {
-    //     width: 90%;
-    //     position: absolute;
-    //     top: -350px;
-    //     height: 100vh;
-    // }
 
 
 
@@ -1954,10 +3115,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .home-sign {
         position: absolute;
         bottom: -280px;
         left: 5%;
+
+
+
+
 
 
 
@@ -1971,6 +3160,10 @@
 
 
 
+
+
+
+
 .home-road-independ {
     position: relative;
     width: 90%;
@@ -1979,11 +3172,22 @@
 
 
 
+
+
+
+
     figure {
         position: absolute;
-        top: -950px;
+        top: -1100px;
         z-index: -1;
+        @media (max-width:1440px) {
+            top: -1300px;
+        }
     }
+
+
+
+
 
 
 
@@ -1992,8 +3196,4 @@
         display: none;
     }
 }
-
-
-
-
 

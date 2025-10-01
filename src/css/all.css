@@ -151,6 +151,8 @@ video {
 body {
   background-color: #FDF7EB;
   background-image: url("/images/blog/blog_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #39413A;
   font-size: 100%;
   line-height: 1.5;
@@ -5868,6 +5870,7 @@ a {
 }
 .home-bg {
   overflow: hidden;
+  background: none;
 }
 .home-bg .home-bird {
   position: absolute;
@@ -6743,8 +6746,13 @@ a {
 }
 .home-road-independ figure {
   position: absolute;
-  top: -950px;
+  top: -1100px;
   z-index: -1;
+}
+@media (max-width: 1440px) {
+  .home-road-independ figure {
+    top: -1300px;
+  }
 }
 @media (max-width: 992px) {
   .home-road-independ {
