@@ -2,7 +2,7 @@
 @use '../functions/' as *;
 
 .order_success_main {
-    background-color: $background;
+    // background-color: $background;
     @extend %main_font-family_setting;
     min-height: $h-100vh;
     display: flex;
