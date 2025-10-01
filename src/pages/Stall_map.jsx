@@ -1,7 +1,5 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, useRef } from 'react'
 import stall from '../data/stall.json'
-
-
 
 
 const Stall_map = () => {
@@ -18,9 +16,24 @@ const Stall_map = () => {
   const [sortBy, setSortBy] = useState('編號');
   const [reviewInput, setReviewInput] = useState('');
  
+  // 地圖控制相關 state
+  const [scale, setScale] = useState(1);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const mapRef = useRef(null);
+
+
   const categories = ['全部', '#手作', '#美食', '#服飾', '#寵物', '#植栽'];
 
 
+  // 攤位佈局 - 重要：這個要保留！
+  const stallLayout = [
+    ['01', '02', null, null, '07', '08', '09', '10', '11', '12'],
+    ['03', '04', null, null, null, null, null, null, null, null],
+    ['05', '06', null, '13', '14', '15', null, '19', '20', '21'],
+    [null, null, null, '16', '17', '18', null, '22', '23', '24']
+  ];
 
 
   const filterStall = useMemo(() => {
@@ -36,38 +49,20 @@ const Stall_map = () => {
     });
 
 
-
-
-    // if (sortBy === '熱門') {
-    //   filtered = [...filtered].sort(() => Math.random() - 0.5);
-    // } else {
-    //   filtered = [...filtered].sort((a, b) => a.num.localeCompare(b.num));
-    // }
-
-
+    if (sortBy === '熱門') {
+      filtered = [...filtered].sort(() => Math.random() - 0.5);
+    } else {
+      filtered = [...filtered].sort((a, b) => a.num.localeCompare(b.num));
+    }
 
 
     return filtered;
   }, [search, selectedCategory, sortBy, arrStall]);
 
 
-
-
-  const stallLayout = [
-    ['01', '02', null, null, '07', '08', '09', '10', '11', '12'],
-    ['03', '04', null, null, null, null, null, null, null, null],
-    ['05', '06', null, '13', '14', '15', null, '19', '20', '21'],
-    [null, null, null, '16', '17', '18', null, '22', '23', '24']
-  ];
-
-
-
-
   const getStallByNum = (num) => {
     return arrStall.find(stall => stall.num === num);
   };
-
-
 
 
   const handleStallClick = (num) => {
@@ -81,8 +76,6 @@ const Stall_map = () => {
   };
 
 
-
-
   const handleLike = (stallNum) => {
     setArrStall(prevStalls =>
       prevStalls.map(s =>
@@ -94,8 +87,6 @@ const Stall_map = () => {
       setSelectedStall(prev => ({ ...prev, likes: prev.likes + 1 }));
     }
   };
-
-
 
 
   const handleAddReview = (stallNum) => {
@@ -132,14 +123,58 @@ const Stall_map = () => {
   };
 
 
-
-
   const handleCloseDetail = () => {
     setSelectedStall(null);
     setReviewInput('');
   };
 
 
+  // 地圖控制函數
+  const handleZoomIn = () => {
+    setScale(prev => Math.min(prev + 0.2, 2));
+  };
+
+
+  const handleZoomOut = () => {
+    setScale(prev => Math.max(prev - 0.2, 0.5));
+  };
+
+
+  const handleResetView = () => {
+    setScale(1);
+    setPosition({ x: 0, y: 0 });
+  };
+
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+  };
+
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+   
+    setPosition({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y
+    });
+  };
+
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.1 : 0.1;
+    setScale(prev => Math.max(0.5, Math.min(2, prev + delta)));
+  };
 
 
   return (
@@ -154,10 +189,8 @@ const Stall_map = () => {
       </h1>
 
 
-
-
       <div className='map_container'>
-        {/* 左側面板 */}
+        {/* 左側面板 - 保持原樣 */}
         <aside className='sidebar'>
           {/* 搜尋區 */}
           <div className='search_section'>
@@ -172,9 +205,6 @@ const Stall_map = () => {
             </div>
 
 
-
-
-            {/* 篩選控制 */}
             <div className='filter_controls'>
               <select
                 value={selectedCategory}
@@ -194,8 +224,6 @@ const Stall_map = () => {
               </select>
             </div>
           </div>
-
-
 
 
           {/* 內容區域 */}
@@ -220,8 +248,6 @@ const Stall_map = () => {
                 </div>
 
 
-
-
                 <div className='detail_body'>
                   <h2>{selectedStall.name}</h2>
                  
@@ -230,8 +256,6 @@ const Stall_map = () => {
                       <span key={index} className='tag'>{tag}</span>
                     ))}
                   </div>
-
-
 
 
                   <div className='detail_actions'>
@@ -249,8 +273,6 @@ const Stall_map = () => {
                       <a href='#'><img src="./images/Stall_map/icon_web.svg" alt="Website" /></a>
                     </div>
                   </div>
-
-
 
 
                   <div className='review_section'>
@@ -288,7 +310,7 @@ const Stall_map = () => {
                         ))}
                       </div>
                     ) : (
-                      <p className='no_review'>尚無評論，成為第一個評論的人！</p>
+                      <p className='no_review'>尚無評論,成為第一個評論的人！</p>
                     )}
                   </div>
                 </div>
@@ -330,54 +352,84 @@ const Stall_map = () => {
         </aside>
 
 
-
-
         {/* 右側地圖 */}
         <div className='map_area'>
-          <div className='stall_grid'>
-            {stallLayout.map((row, rowIndex) => (
-              <div key={rowIndex} className='grid_row'>
-                {row.map((stallNum, colIndex) => {
-                  if (stallNum === null) {
-                    return <div key={colIndex} className='grid_empty'></div>;
-                  }
-                 
-                  const stallData = getStallByNum(stallNum);
-                  const isSelected = selectedStall?.num === stallNum;
-                 
-                  return (
-                    <div
-                      key={colIndex}
-                      className={`grid_stall ${isSelected ? 'selected' : ''}`}
-                      onClick={() => handleStallClick(stallNum)}
-                    >
-                      <div className='stall_icon'>
-                        <img src="./images/Stall_map/stall.svg" alt={`攤位${stallNum}`} />
-                        <span className='stall_number'>{stallNum}</span>
-                      </div>
-                     
-                      {stallData && (
-                        <div className='hover_card'>
-                          <div className='hover_card_header'>
-                            <span className='hover_num'>#{stallData.num}</span>
-                            <span className='hover_like'>
-                              <img src="./images/Stall_map/icon_like.svg" alt="喜歡" />
-                              {stallData.likes}
-                            </span>
-                          </div>
-                          <h4>{stallData.name}</h4>
-                          <div className='hover_tags'>
-                            {stallData.tag.map((tag, index) => (
-                              <span key={index}>{tag}</span>
-                            ))}
-                          </div>
+          {/* 控制按鈕 */}
+          <div className='map_controls'>
+            <button className='control_btn' onClick={handleZoomIn} title="放大">
+              <span style={{ fontSize: '20px', fontWeight: 'bold' }}>+</span>
+            </button>
+            <button className='control_btn' onClick={handleZoomOut} title="縮小">
+              <span style={{ fontSize: '20px', fontWeight: 'bold' }}>−</span>
+            </button>
+            <button className='control_btn' onClick={handleResetView} title="重置">
+              <span style={{ fontSize: '16px', fontWeight: 'bold' }}>⟲</span>
+            </button>
+          </div>
+
+
+          {/* 地圖容器 */}
+          <div
+            className='map_wrapper'
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onWheel={handleWheel}
+            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          >
+            <div
+              className='stall_grid'
+              ref={mapRef}
+              style={{
+                transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+                transformOrigin: 'center center'
+              }}
+            >
+              {stallLayout.map((row, rowIndex) => (
+                <div key={rowIndex} className='grid_row'>
+                  {row.map((stallNum, colIndex) => {
+                    if (stallNum === null) {
+                      return <div key={colIndex} className='grid_empty'></div>;
+                    }
+                   
+                    const stallData = getStallByNum(stallNum);
+                    const isSelected = selectedStall?.num === stallNum;
+                   
+                    return (
+                      <div
+                        key={colIndex}
+                        className={`grid_stall ${isSelected ? 'selected' : ''}`}
+                        onClick={() => handleStallClick(stallNum)}
+                      >
+                        <div className='stall_icon'>
+                          <img src="./images/Stall_map/stall.svg" alt={`攤位${stallNum}`} />
+                          <span className='stall_number'>{stallNum}</span>
                         </div>
-                      )}
-                    </div>
-                  );
-                })}
-              </div>
-            ))}
+                       
+                        {stallData && (
+                          <div className='hover_card'>
+                            <div className='hover_card_header'>
+                              <span className='hover_num'>#{stallData.num}</span>
+                              <span className='hover_like'>
+                                <img src="./images/Stall_map/icon_like.svg" alt="喜歡" />
+                                {stallData.likes}
+                              </span>
+                            </div>
+                            <h4>{stallData.name}</h4>
+                            <div className='hover_tags'>
+                              {stallData.tag.map((tag, index) => (
+                                <span key={index}>{tag}</span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -386,13 +438,7 @@ const Stall_map = () => {
 };
 
 
-
-
 export default Stall_map;
-
-
-
-
 
 
 
