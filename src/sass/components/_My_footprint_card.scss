@@ -1,66 +1,241 @@
-@use '../variables/' as *;
-@use '../functions/' as *;
+@use "../variables/" as *;
+@use "../functions/" as *;
+
 
 .footprint_card {
-    height: 25%;
+  height: 25%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $spacing-lg;
+  padding: $spacing-sm;
+  background-color: $white;
+  border-radius: $rad-basic;
+  margin-bottom: $spacing-lg;
+  @extend %main_font-family_setting;
+  max-height: 175px;
+  min-width: 530px;
+
+
+  // 平板
+  @media (max-width: 1024px) {
+    min-width: 400px;
+    max-height: 160px;
+    gap: $spacing-md;
+    padding: $spacing-xs;
+  }
+
+
+  // 手機橫式
+  @media (max-width: 768px) {
+    min-width: 100%;
+    max-height: 140px;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
+
+
+  // 手機直式 - 改為垂直排列
+  @media (max-width: 480px) {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+    min-width: 100%;
+    gap: $spacing-md;
+    padding: $spacing-md;
+    margin-bottom: $spacing-sm;
+  }
+
+
+  .date {
+    width: 20%;
+    border-right: solid 2px $dark;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: $spacing-lg;
-    padding: $spacing-sm;
-    background-color: $white;
-    border-radius: $rad-basic;
-    margin-bottom: $spacing-lg;
-    @extend %main_font-family_setting;
-    max-height: 175px;
-    min-width: 530px;
+    flex-direction: column;
+    text-align: center;
+    padding-right: $spacing-sm;
+    gap: $spacing-xxs;
 
-    .date {
-        width: 20%;
-        border-right: solid 2px $dark;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-right: $spacing-sm;
-        gap: $spacing-xxs;
+
+    @media (max-width: 1024px) {
+      width: 22%;
+      padding-right: $spacing-xs;
     }
 
-    .location {
-        width: 30%;
-        display: flex;
-        flex-direction: column;
-        gap: $spacing-xs;
+
+    @media (max-width: 768px) {
+      width: 25%;
+      font-size: 0.9em;
     }
 
-    figure {
-        width: 35%;
-        height: 100%;
-        max-height: 150px;
-        border-radius: $rad-sm;
-        overflow: hidden;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      border-right: none;
+      border-bottom: solid 2px $dark;
+      padding-right: 0;
+      padding-bottom: $spacing-sm;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: $spacing-sm;
+    }
+  }
 
 
-        img{
-            height: 100%;
-            // max-height: 200px;
-            width: 100%;
-            object-fit: cover;
-            object-position: center;
+  .location {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+
+
+    @media (max-width: 1024px) {
+      width: 33%;
+      gap: $spacing-xxs;
+    }
+
+
+    @media (max-width: 768px) {
+      width: 35%;
+    }
+
+
+    @media (max-width: 480px) {
+      width: 100%;
+      gap: $spacing-xs;
+      order: 2; // 排在圖片後面
+    }
+  }
+
+
+  figure {
+    width: 35%;
+    height: 100%;
+    max-height: 150px;
+    border-radius: $rad-sm;
+    overflow: hidden;
+    flex-shrink: 0;
+
+
+    @media (max-width: 1024px) {
+      width: 40%;
+      max-height: 140px;
+    }
+
+
+    @media (max-width: 768px) {
+      width: 35%;
+      max-height: 120px;
+    }
+
+
+    @media (max-width: 480px) {
+      width: 100%;
+      height: 200px;
+      max-height: 200px;
+      order: 1; // 排在中間
+    }
+
+
+    @media (max-width: 380px) {
+      height: 180px;
+      max-height: 180px;
+    }
+
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+
+      @media (max-width: 480px) {
+        &:hover {
+          transform: none; // 手機版移除 hover 效果
         }
+      }
+    }
+  }
+
+
+  h2 {
+    font-size: $f-s-xl;
+    line-height: 1.3;
+    margin: 0;
+
+
+    @media (max-width: 1024px) {
+      font-size: $f-s-lg;
     }
 
-    h2 {
-        font-size: $f-s-xl;
+
+    @media (max-width: 768px) {
+      font-size: $f-s-md;
     }
 
-    p {
-        font-size: $f-s-md;
+
+    @media (max-width: 480px) {
+      font-size: $f-s-lg;
+    }
+  }
+
+
+  p {
+    font-size: $f-s-md;
+    line-height: 1.4;
+    margin: 0;
+
+
+    @media (max-width: 1024px) {
+      font-size: $f-s-sm;
     }
 
-    // img {
-        
-    //     height: 100%;
-    //     object-fit: cover;
-    //     border-radius: $rad-sm;
-    // }
+
+    @media (max-width: 768px) {
+      font-size: $f-s-xs;
+    }
+
+
+    @media (max-width: 480px) {
+      font-size: $f-s-sm;
+    }
+  }
 }
+
+
+// 額外：如果需要在卡片內加上更多細節控制
+.footprint_card {
+  // 確保卡片在小螢幕上有適當的觸控區域
+  @media (max-width: 768px) {
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+
+  // 改善可讀性
+  @media (max-width: 480px) {
+    .date,
+    .location {
+      * {
+        word-break: break-word;
+      }
+    }
+  }
+}
+
+
+

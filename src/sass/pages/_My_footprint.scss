@@ -1,65 +1,530 @@
-@use '../variables/' as *;
-@use '../functions/' as *;
+@use "../variables/" as *;
+@use "../functions/" as *;
+
 
 .my_footprint_main {
-    // background-color: $background;
-    padding: $spacing-xl;
-    @extend %main_font-family_setting;
-    color: $text;
-    margin-bottom: $h-10vh;
+  padding: $spacing-xl;
+  @extend %main_font-family_setting;
+  color: $text;
+  margin-bottom: $h-10vh;
+
+
+  // 平板
+  @media (max-width: 1024px) {
+    padding: $spacing-lg $spacing-md;
+    margin-bottom: $spacing-xxl;
+  }
+
+
+  // 手機
+  @media (max-width: 768px) {
+    padding: $spacing-md $spacing-sm;
+    margin-bottom: $spacing-xl;
+  }
+
+
+  @media (max-width: 480px) {
+    padding: $spacing-sm;
+    margin-bottom: $spacing-lg;
+  }
 }
+
+
+// 標題圖片
+.titleBox_h1 {
+  text-align: center;
+  margin-bottom: $spacing-lg;
+
+
+  @media (max-width: 768px) {
+    margin-bottom: $spacing-md;
+  }
+
+
+  .titleBox {
+    max-width: 100%;
+    height: auto;
+
+
+    @media (max-width: 768px) {
+      width: 85%;
+    }
+
+
+    @media (max-width: 480px) {
+      width: 95%;
+    }
+  }
+}
+
 
 .hr_square_deco {
-    width: 100%;
-    height: 70px;
-    background-position: center;
-    background-repeat: no-repeat;
-    margin-bottom: $spacing-xxl;
+  width: 100%;
+  height: 70px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-bottom: $spacing-xxl;
+
+
+  @media (max-width: 1024px) {
+    height: 60px;
+    margin-bottom: $spacing-xl;
+  }
+
+
+  @media (max-width: 768px) {
+    height: 50px;
+    margin-bottom: $spacing-lg;
+  }
+
+
+  @media (max-width: 480px) {
+    height: 40px;
+    margin-bottom: $spacing-md;
+  }
 }
+
 
 .footprint_content_box {
-    @extend %flex-space-between;
-    align-items: flex-start;
-    padding: $spacing-md $spacing-xl;
-    height: $h-100vh;
+  @extend %flex-space-between;
+  align-items: flex-start;
+  padding: $spacing-md $spacing-xl;
+  height: $h-100vh;
+  gap: $spacing-lg;
+
+
+  // 大平板
+  @media (max-width: 1200px) {
+    padding: $spacing-md $spacing-lg;
+    gap: $spacing-md;
+  }
+
+
+  // 平板
+  @media (max-width: 1024px) {
+    padding: $spacing-md;
+    gap: $spacing-sm;
+    height: auto;
+    min-height: 70vh;
+  }
+
+
+  // 手機 - 改為垂直排列
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: $spacing-sm;
+    gap: $spacing-lg;
+    height: auto;
+  }
+
+
+  @media (max-width: 480px) {
+    padding: $spacing-xs;
+    gap: $spacing-md;
+  }
 }
+
 
 .footprint_content {
-    @extend %flex-column;
-    align-items: center;
-    width: 55%;
-    height: 100%;
+  @extend %flex-column;
+  align-items: center;
+  width: 55%;
+  height: 100%;
 
-    .footprint_content_topbar {
-        width: $w-100;
-        @extend %flex-center;
-        margin-bottom: $spacing-lg;
 
-        .footprint_content_topbar_wrapper {
-            width: $w-100;
-            @extend %flex-center;
-            gap: 10px;
+  // 大平板
+  @media (max-width: 1200px) {
+    width: 58%;
+  }
 
-            .year_box {
-                width: 95px;
-                height: 35px;
-                padding: 2.5px $spacing-xxs 0;
-                background-color: $primary;
-                @include bordered;
-                font-size: $f-s-xxl;
-                @extend %text-center;
-            }
 
+  // 平板
+  @media (max-width: 1024px) {
+    width: 62%;
+  }
+
+
+  // 手機
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
+
+
+  .footprint_content_topbar {
+    width: $w-100;
+    @extend %flex-center;
+    margin-bottom: $spacing-lg;
+
+
+    @media (max-width: 1024px) {
+      margin-bottom: $spacing-md;
+    }
+
+
+    @media (max-width: 768px) {
+      margin-bottom: $spacing-sm;
+    }
+
+
+    .footprint_content_topbar_wrapper {
+      width: $w-100;
+      @extend %flex-center;
+      gap: 10px;
+
+
+      @media (max-width: 768px) {
+        gap: 8px;
+      }
+
+
+      @media (max-width: 480px) {
+        gap: 5px;
+        flex-wrap: nowrap;
+      }
+
+
+      .year_box {
+        width: 95px;
+        height: 35px;
+        padding: 2.5px $spacing-xxs 0;
+        background-color: $primary;
+        @include bordered;
+        font-size: $f-s-xxl;
+        @extend %text-center;
+        flex-shrink: 0;
+
+
+        @media (max-width: 1024px) {
+          width: 85px;
+          height: 32px;
+          font-size: $f-s-xl;
+          padding-top: 3px;
         }
+
+
+        @media (max-width: 768px) {
+          width: 75px;
+          height: 30px;
+          font-size: $f-s-lg;
+          padding-top: 4px;
+        }
+
+
+        @media (max-width: 480px) {
+          width: 65px;
+          height: 28px;
+          font-size: $f-s-md;
+          padding: 4px $spacing-xxs 0;
+        }
+      }
+
+
+      // SVG 長條
+      svg:first-of-type {
+        flex: 1;
+        min-width: 0;
+        height: auto;
+
+
+        @media (max-width: 768px) {
+          max-height: 19px;
+        }
+
+
+        @media (max-width: 480px) {
+          max-height: 16px;
+        }
+      }
+
+
+      // SVG 三角形
+      svg:last-of-type {
+        flex-shrink: 0;
+        height: auto;
+
+
+        @media (max-width: 768px) {
+          width: 18px;
+          max-height: 19px;
+        }
+
+
+        @media (max-width: 480px) {
+          width: 15px;
+          max-height: 16px;
+        }
+      }
+    }
+  }
+
+
+  .footprint_result {
+    height: 100%;
+    width: $w-90;
+    overflow: auto;
+    // 移除 display: grid，讓卡片自己的樣式生效
+    padding: $spacing-xs;
+
+
+    // 大平板
+    @media (max-width: 1200px) {
+      width: 95%;
     }
 
-    .footprint_result {
-        height: 100%;
-        width: $w-90;
-        overflow: auto;
+
+    // 平板
+    @media (max-width: 1024px) {
+      width: 100%;
+      height: auto;
+      max-height: 65vh;
     }
+
+
+    // 手機 - 限定高度並加卷軸 ⭐
+    @media (max-width: 768px) {
+      height: 60vh; // 固定高度
+      max-height: 60vh;
+      overflow-y: auto; // 確保有垂直卷軸
+      overflow-x: hidden; // 防止水平卷軸
+      padding: 0;
+    }
+
+
+    @media (max-width: 480px) {
+      height: 55vh; // 稍微調低高度
+      max-height: 55vh;
+    }
+
+
+    // 極小螢幕
+    @media (max-width: 360px) {
+      height: 50vh;
+      max-height: 50vh;
+    }
+
+
+    // 滾動條樣式
+    &::-webkit-scrollbar {
+      width: 10px;
+
+
+      @media (max-width: 1024px) {
+        width: 8px;
+      }
+
+
+      @media (max-width: 768px) {
+        width: 6px;
+      }
+
+
+      @media (max-width: 480px) {
+        width: 5px;
+      }
+    }
+
+
+    &::-webkit-scrollbar-track {
+      background: rgba($primary, 0.1);
+      border-radius: 5px;
+
+
+      @media (max-width: 768px) {
+        background: rgba($primary, 0.05);
+      }
+    }
+
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($primary, 0.4);
+      border-radius: 5px;
+      transition: background 0.3s ease;
+
+
+      &:hover {
+        background: rgba($primary, 0.6);
+      }
+
+
+      @media (max-width: 768px) {
+        background: rgba($primary, 0.35);
+      }
+    }
+
+
+    // 手機版滾動提示(可選)
+    @media (max-width: 768px) {
+      // 添加漸層提示還有更多內容
+      position: relative;
+
+
+      &::after {
+        content: "";
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba($background, 0.8)
+        );
+        pointer-events: none;
+      }
+    }
+  }
 }
 
+
+// 左側邊欄
+.user_sidebar_left {
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: $spacing-md;
+    order: -1;
+  }
+}
+
+
+// 右側時間軸
 .user_sidebar_right {
-    margin-left: 7%;
+  margin-left: 7%;
+  flex-shrink: 0;
+
+
+  // 大平板
+  @media (max-width: 1200px) {
+    margin-left: 5%;
+
+
+    svg {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  // 平板
+  @media (max-width: 1024px) {
+    margin-left: 3%;
+
+
+    svg {
+      transform: scale(0.75);
+      transform-origin: left top;
+    }
+  }
+
+
+  // 手機 - 隱藏
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
+
+
+// 裝飾元素
+.map_deco1 {
+  @media (max-width: 1024px) {
+    transform: scale(0.8);
+  }
+
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+
+// 通用優化
+@media (max-width: 768px) {
+  // 確保所有內容不會溢出
+  * {
+    max-width: 100%;
+  }
+
+
+  // 改善觸控體驗
+  button,
+  a,
+  [role="button"],
+  [onclick] {
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+  }
+
+
+  // 防止文字被選取時的視覺問題
+  *::selection {
+    background-color: rgba($primary, 0.2);
+  }
+}
+
+
+// 極小螢幕優化
+@media (max-width: 360px) {
+  .my_footprint_main {
+    padding: $spacing-xs;
+  }
+
+
+  .footprint_content_box {
+    padding: 0;
+  }
+
+
+  .footprint_content {
+    .footprint_content_topbar {
+      .footprint_content_topbar_wrapper {
+        .year_box {
+          width: 60px;
+          height: 26px;
+          font-size: $f-s-sm;
+        }
+      }
+    }
+  }
+}
+
+
+// 橫向模式優化(手機橫放)
+@media (max-width: 768px) and (orientation: landscape) {
+  .footprint_content_box {
+    flex-direction: row;
+    height: auto;
+    min-height: 50vh;
+  }
+
+
+  .footprint_content {
+    width: 70%;
+  }
+
+
+  .user_sidebar_left {
+    width: 28%;
+    order: 0;
+    margin-bottom: 0;
+  }
+
+
+  .user_sidebar_right {
+    display: none;
+  }
+
+
+  .footprint_content {
+    .footprint_result {
+      height: 55vh; // 橫向模式固定高度
+      max-height: 55vh;
+      overflow-y: auto;
+    }
+  }
+}
+
+
+
