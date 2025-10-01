@@ -2,6 +2,8 @@ import React, { useState, useMemo } from 'react'
 import stall from '../data/stall.json'
 
 
+
+
 const Stall_map = () => {
   // 使用真實攤位資料
   const [arrStall, setArrStall] = useState(stall.map(s => ({
@@ -19,6 +21,8 @@ const Stall_map = () => {
   const categories = ['全部', '#手作', '#美食', '#服飾', '#寵物', '#植栽'];
 
 
+
+
   const filterStall = useMemo(() => {
     let filtered = arrStall.filter((stall) => {
       const searchLower = search.toLowerCase();
@@ -32,15 +36,21 @@ const Stall_map = () => {
     });
 
 
-    if (sortBy === '熱門') {
-      filtered = [...filtered].sort(() => Math.random() - 0.5);
-    } else {
-      filtered = [...filtered].sort((a, b) => a.num.localeCompare(b.num));
-    }
+
+
+    // if (sortBy === '熱門') {
+    //   filtered = [...filtered].sort(() => Math.random() - 0.5);
+    // } else {
+    //   filtered = [...filtered].sort((a, b) => a.num.localeCompare(b.num));
+    // }
+
+
 
 
     return filtered;
   }, [search, selectedCategory, sortBy, arrStall]);
+
+
 
 
   const stallLayout = [
@@ -51,9 +61,13 @@ const Stall_map = () => {
   ];
 
 
+
+
   const getStallByNum = (num) => {
     return arrStall.find(stall => stall.num === num);
   };
+
+
 
 
   const handleStallClick = (num) => {
@@ -67,6 +81,8 @@ const Stall_map = () => {
   };
 
 
+
+
   const handleLike = (stallNum) => {
     setArrStall(prevStalls =>
       prevStalls.map(s =>
@@ -78,6 +94,8 @@ const Stall_map = () => {
       setSelectedStall(prev => ({ ...prev, likes: prev.likes + 1 }));
     }
   };
+
+
 
 
   const handleAddReview = (stallNum) => {
@@ -114,10 +132,14 @@ const Stall_map = () => {
   };
 
 
+
+
   const handleCloseDetail = () => {
     setSelectedStall(null);
     setReviewInput('');
   };
+
+
 
 
   return (
@@ -130,6 +152,8 @@ const Stall_map = () => {
           alt='攤位地圖'
         />
       </h1>
+
+
 
 
       <div className='map_container'>
@@ -146,6 +170,8 @@ const Stall_map = () => {
               />
               <img src="./images/find_map/magnifier.svg" alt="搜尋" />
             </div>
+
+
 
 
             {/* 篩選控制 */}
@@ -170,6 +196,8 @@ const Stall_map = () => {
           </div>
 
 
+
+
           {/* 內容區域 */}
           <div className='content_area'>
             {selectedStall ? (
@@ -180,7 +208,7 @@ const Stall_map = () => {
                
                 <div className='detail_header'>
                   <div className='detail_image'>
-                    <img src="/images/find_map/festival_img.jpg" alt={selectedStall.name} />
+                    <img src={selectedStall.imgUrl} alt={selectedStall.name} />
                   </div>
                   <div className='detail_info'>
                     <div className='detail_num'>#{selectedStall.num}</div>
@@ -192,6 +220,8 @@ const Stall_map = () => {
                 </div>
 
 
+
+
                 <div className='detail_body'>
                   <h2>{selectedStall.name}</h2>
                  
@@ -200,6 +230,8 @@ const Stall_map = () => {
                       <span key={index} className='tag'>{tag}</span>
                     ))}
                   </div>
+
+
 
 
                   <div className='detail_actions'>
@@ -217,6 +249,8 @@ const Stall_map = () => {
                       <a href='#'><img src="./images/Stall_map/icon_web.svg" alt="Website" /></a>
                     </div>
                   </div>
+
+
 
 
                   <div className='review_section'>
@@ -270,7 +304,7 @@ const Stall_map = () => {
                       onClick={() => handleStallClick(stall.num)}
                     >
                       <div className='item_image'>
-                        <img src="/images/find_map/festival_img.jpg" alt={stall.name} />
+                        <img src={stall.imgUrl} alt={stall.name} />
                       </div>
                       <div className='item_info'>
                         <div className='item_header'>
@@ -294,6 +328,8 @@ const Stall_map = () => {
             )}
           </div>
         </aside>
+
+
 
 
         {/* 右側地圖 */}
@@ -350,5 +386,13 @@ const Stall_map = () => {
 };
 
 
+
+
 export default Stall_map;
+
+
+
+
+
+
 

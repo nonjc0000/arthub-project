@@ -1,10 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import{ useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import Find_type_card from '../components/Find_type_card'
-import '../css/all.css'
 import markets from '../data/market.json'
 import cityDistrictData from '../data/taiwan_admin_divisions.json'
-import PageTop from '../components/PageTop';
+
+
+
+
 
 
 const Find_type = () => {
@@ -12,9 +14,13 @@ const Find_type = () => {
     const [searchParams] = useSearchParams();
 
 
+
+
     // 市集&地區資料
     const [arrMarkets] = useState(markets);
     const cities = Object.keys(cityDistrictData);
+
+
 
 
     // 地區篩選
@@ -23,16 +29,24 @@ const Find_type = () => {
     const districts = selectedCity ? cityDistrictData[selectedCity] : [];
 
 
+
+
     // 活動類型篩選 - 預設為空
     const [selectedActivityType, setSelectedActivityType] = useState('');
+
+
 
 
     // 搜尋
     const [search, setSearch] = useState('');
 
 
+
+
     // 時間篩選
     const [activeFilter, setActiveFilter] = useState('all');
+
+
 
 
     // 日期篩選
@@ -41,13 +55,19 @@ const Find_type = () => {
     const [endDate, setEndDate] = useState('');
 
 
+
+
     // 手機版選單展開控制
     const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+
+
 
 
     const getDateFilters = () => {
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+
 
 
         // 本週的開始 (週日)
@@ -56,19 +76,27 @@ const Find_type = () => {
         weekStart.setDate(today.getDate() - currentDay);
 
 
+
+
         // 本週的結束 (週六)
         const weekEnd = new Date(weekStart);
         weekEnd.setDate(weekStart.getDate() + 6);
+
+
 
 
         return { today, weekStart, weekEnd };
     };
 
 
+
+
     // 檢查日期是否在指定範圍內
     const isDateInRange = (dateString, rangeStart, rangeEnd = null) => {
         const targetDate = new Date(dateString);
         const targetDateOnly = new Date(targetDate.getFullYear(), targetDate.getMonth(), targetDate.getDate());
+
+
 
 
         if (rangeEnd) {
@@ -79,14 +107,20 @@ const Find_type = () => {
     };
 
 
+
+
     // 檢查是否從其他頁面跳轉而來（而非重新整理）
     useEffect(() => {
         const typeFromUrl = searchParams.get('type');
 
 
+
+
         if (typeFromUrl) {
             // 檢查是否有導航標記（表示是從其他頁面跳轉）
             const navigationFlag = sessionStorage.getItem('navigatedFromHome');
+
+
 
 
             if (navigationFlag) {
@@ -100,6 +134,8 @@ const Find_type = () => {
     }, [searchParams]);
 
 
+
+
     // 地區選擇處理
     const handleCityChange = (e) => {
         const newCity = e.target.value;
@@ -108,15 +144,21 @@ const Find_type = () => {
     };
 
 
+
+
     const handleDistrictChange = (e) => {
         setSelectedDistrict(e.target.value);
     };
+
+
 
 
     // 活動類型選擇處理
     const handleActivityTypeChange = (e) => {
         setSelectedActivityType(e.target.value);
     };
+
+
 
 
     // 時間篩選按鈕
@@ -136,10 +178,14 @@ const Find_type = () => {
     };
 
 
+
+
     // 手機版漢堡選單切換
     const toggleMenu = () => {
         setIsMenuExpanded(!isMenuExpanded);
     };
+
+
 
 
     // 日期範圍
@@ -151,6 +197,8 @@ const Find_type = () => {
     };
 
 
+
+
     // 清除日期範圍
     const clearDateRange = () => {
         setStartDate('');
@@ -160,10 +208,14 @@ const Find_type = () => {
     };
 
 
+
+
     // 搜尋處理
     const handleSearchChange = (e) => {
         setSearch(e.target.value);
     };
+
+
 
 
     // 表單提交處理
@@ -173,13 +225,19 @@ const Find_type = () => {
     };
 
 
+
+
     // 解析日期範圍函數
     const parseDateRange = (dateString) => {
         if (!dateString) return { start: null, end: null };
 
 
+
+
         // 處理格式: "2025.07.14-07.15" 或 "2025.07.14"
         const parts = dateString.split('-');
+
+
 
 
         if (parts.length === 2) {
@@ -188,6 +246,8 @@ const Find_type = () => {
             const [year, month] = startPart.split('.').slice(0, 2);
             const startDay = startPart.split('.')[2];
             const endDay = endPart.split('.')[1] || endPart; // 處理 "07.15" 或 "15"
+
+
 
 
             return {
@@ -206,9 +266,13 @@ const Find_type = () => {
     };
 
 
+
+
     // 各種資料篩選
     const filteredMarkets = useMemo(() => {
         const { today, weekStart, weekEnd } = getDateFilters();
+
+
 
 
         return [...arrMarkets]
@@ -236,11 +300,17 @@ const Find_type = () => {
                 }
 
 
+
+
                 // 解析市集的日期範圍
                 const { start: mStart, end: mEnd } = parseDateRange(market.date);
 
 
+
+
                 if (!mStart) return true; // 如果沒有日期資料，預設顯示
+
+
 
 
                 switch (activeFilter) {
@@ -248,8 +318,12 @@ const Find_type = () => {
                         return mStart <= today && mEnd >= today;
 
 
+
+
                     case 'week': // 本週的活動
                         return mStart <= weekEnd && mEnd >= weekStart;
+
+
 
 
                     case 'date': // 日期範圍篩選
@@ -257,8 +331,12 @@ const Find_type = () => {
                         if (!startDate && !endDate) return true;
 
 
+
+
                         const userStart = startDate ? new Date(startDate) : null;
                         const userEnd = endDate ? new Date(endDate) : null;
+
+
 
 
                         // 如果只有開始日期：顯示活動結束日期在選擇日期之後的活動
@@ -276,11 +354,17 @@ const Find_type = () => {
                         return true;
 
 
+
+
                     default:
                         return true;
                 }
             });
     }, [search, selectedCity, selectedDistrict, selectedActivityType, arrMarkets, activeFilter, startDate, endDate]);
+
+
+
+
 
 
 
@@ -291,6 +375,8 @@ const Find_type = () => {
     };
 
 
+
+
     return (
         <section className='find_type_main'>
             <h1 className='titleBox_h1'>
@@ -299,8 +385,12 @@ const Find_type = () => {
             <div className='find_type_content_box'>
 
 
+
+
                 {/* 搜尋表單 */}
                 <form className={`type_search-box ${isMenuExpanded ? 'expanded' : ''}`} id='type_serch' method="post" acceptCharset="UTF-8" onSubmit={handleSubmit}>
+
+
 
 
                     <div className='search-wrap'>
@@ -328,6 +418,8 @@ const Find_type = () => {
                     </div>
 
 
+
+
                     {/* 可展開的搜尋選項區域 */}
                     <div className='search-options'>
                         {/* 選擇縣市 */}
@@ -347,6 +439,8 @@ const Find_type = () => {
                         </div>
 
 
+
+
                         {/* 選擇地區 */}
                         <div className='select'>
                             <select
@@ -363,6 +457,8 @@ const Find_type = () => {
                                 }
                             </select>
                         </div>
+
+
 
 
                         {/* 按鈕篩選 */}
@@ -385,6 +481,8 @@ const Find_type = () => {
                         </div>
 
 
+
+
                         {/* 日期選擇器 */}
                         {showDatePicker && (
                             <div className='date-picker-panel'>
@@ -400,6 +498,8 @@ const Find_type = () => {
                                     </div>
 
 
+
+
                                     <div className='date-input-group'>
                                         <label htmlFor="endDate">結束日期</label>
                                         <input
@@ -411,6 +511,8 @@ const Find_type = () => {
                                         />
                                     </div>
                                 </div>
+
+
 
 
                                 <div className='date-picker-actions'>
@@ -433,6 +535,8 @@ const Find_type = () => {
                         )}
 
 
+
+
                         <div className='select'>
                             <select
                                 name="activityType"
@@ -452,6 +556,8 @@ const Find_type = () => {
                         </div>
                     </div>
                 </form>
+
+
 
 
                 <div className='result_box'>
@@ -480,13 +586,22 @@ const Find_type = () => {
                     </div>
                 </div>
             </div>
-            <PageTop />
         </section>
     )
 }
 
 
+
+
 export default Find_type
+
+
+
+
+
+
+
+
 
 
 

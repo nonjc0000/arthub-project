@@ -8,7 +8,7 @@ import PageTop from "../components/PageTop"
 
 const arrData = [
   {
-    image: "./images/Find_schedule/north_travel01.jpg",
+    image: "./images/Find_schedule/south_slide_02.jpg",
     title: "駁二藝術特區 × 哈瑪星｜港邊藝術與鐵道風情",
     description:
       "從駁二市集開始，欣賞手作、文創品牌，接著漫步哈瑪星鐵道文化園區，體驗港邊的歷史與設計。晚上走到棧貳庫或西子灣，看夕陽、吹海風，完美收尾。",
@@ -17,7 +17,7 @@ const arrData = [
     url: "/TripBookingPage",
   },
   {
-    image: "./images/Find_schedule/north_travel02.jpg",
+    image: "./images/Find_schedule/south_slide_05.jpg",
     title: "台南藍晒圖 × 正興街｜老宅裡的青春創意",
     description:
       "上午在藍晒圖文創園區逛市集，感受塗鴉與設計小店氛圍。午後轉往正興街、小西門一帶尋寶，冰品、特色甜點一網打盡。晚上可散步至台南孔廟或府中街，感受古城夜色。",
@@ -26,7 +26,7 @@ const arrData = [
     url: "/TripBookingPage",
   },
   {
-    image: "./images/Find_schedule/north_travel03.jpg",
+    image: "./images/Find_schedule/south_slide_01.jpg",
     title: "鹽埕大舞台 × 愛河之心｜老城街頭的藝文脈動",
     description:
       "在鹽埕區市集感受在地藝術與街頭表演，午後沿著愛河之心散步或搭乘小船，欣賞城市水岸風景。傍晚可延伸到六合夜市或美麗島光之穹頂，體驗南部熱鬧的夜生活。",
@@ -84,7 +84,13 @@ const Find_schedule_region_south = () => {
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
-        <h1>南部地區</h1>
+      <h1 className="titleBox_h1">
+            <img
+              className="titlebox"
+              src="./images/titlebox/south.svg"
+              alt="活動行程"
+            />
+          </h1>
       </div>
 
 

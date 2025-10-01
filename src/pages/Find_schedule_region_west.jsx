@@ -8,7 +8,7 @@ import PageTop from "../components/PageTop"
 
 const arrData = [
   {
-    image: "./images/Find_schedule/north_travel01.jpg",
+    image: "./images/Find_schedule/west_slide_02.jpg",
     title: "審計新村 × 草悟道文創散步｜設計靈感與綠意漫步",
     description:
       "從審計新村市集出發，逛逛文創小店、選物品牌，再延伸至草悟道，午後到國美館欣賞展覽，晚上回到柳川或美村路小店小酌，文青氣息滿滿的一日。",
@@ -17,7 +17,7 @@ const arrData = [
     url: "/TripBookingPage",
   },
   {
-    image: "./images/Find_schedule/north_travel02.jpg",
+    image: "./images/Find_schedule/west_slide_05.jpg",
     title: "台中文學館市集 × 綠光聚落｜老宅裡的創意風景",
     description:
       "在台中文學館舉辦的市集，感受人文氛圍，之後步行到綠光計劃聚落，在老宅裡的咖啡館和設計展間穿梭，最後可延伸到忠信市場夜間展演，體驗台中文創的多層次。",
@@ -26,7 +26,7 @@ const arrData = [
     url: "/TripBookingPage",
   },
   {
-    image: "./images/Find_schedule/north_travel03.jpg",
+    image: "./images/Find_schedule/west_slide_01.jpg",
     title: "勤美誠品 × 草悟系市集｜城市核心的藝文生活",
     description:
       "白天在勤美誠品與草悟廣場逛草悟系市集，午後到勤美術館欣賞當代展覽，傍晚沿草悟道散步，晚上可轉往公益路享用特色餐廳，從白天到黑夜都能充滿藝術與風格。",
@@ -84,7 +84,13 @@ const Find_schedule_region_west = () => {
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
-        <h1>中部地區</h1>
+       <h1 className="titleBox_h1">
+            <img
+              className="titlebox"
+              src="./images/titlebox/west.svg"
+              alt="活動行程"
+            />
+          </h1>
       </div>
 
 

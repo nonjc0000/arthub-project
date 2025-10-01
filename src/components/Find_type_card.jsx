@@ -2,33 +2,28 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
-
-
-
-
-const Find_type_card = ({ id, name, date, time, tag, desc, district }) => {
-    // 處理愛心按鈕點擊
-      const [isLiked, setIsLiked] = useState(false);
+const Find_type_card = ({ name, date, time, tag, desc, district, imgUrl }) => {
+    const [isLiked, setIsLiked] = useState(false);
+   
     const handleLike = () => {
-        let newLikeCount;
-
-
         if (isLiked) {
             setIsLiked(false);
         } else {
             setIsLiked(true);
         }
-
-
-        setLikes(newLikeCount);
-
-
-       
     };
+
+
     return (
         <div className='find_type_card'>
             <Link to='/Event_info'>
-                <div className='find_type_card_wrap'>
+                {/* 使用 inline style 設定背景圖片 */}
+                <div
+                    className='find_type_card_wrap'
+                    style={{
+                        backgroundImage: `url(${imgUrl})`
+                    }}
+                >
                     <div className='top'>
                         <div className='date'>
                             <figure>
@@ -40,17 +35,6 @@ const Find_type_card = ({ id, name, date, time, tag, desc, district }) => {
                                 <p>{time}</p>
                             </figure>
                         </div>
-                        {/* <button
-                            className={`like_button ${isLiked ? 'liked' : ''}`}
-                            onClick={handleLike}
-                            type="button"
-                            aria-label={isLiked ? '取消按讚' : '按讚'}
-                        >
-                            <img
-                                src={isLiked ? "./images/Event_info/btn_like_active.svg" : "./images/Event_info/btn_like.svg"}
-                                alt="愛心按鈕"
-                            />
-                        </button> */}
                     </div>
                     <div className='find_type_tag_box'>
                         <div className='tag_wrapper'>
@@ -71,11 +55,4 @@ const Find_type_card = ({ id, name, date, time, tag, desc, district }) => {
 }
 
 
-
-
 export default Find_type_card
-
-
-
-
-

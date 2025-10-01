@@ -5,6 +5,8 @@ import PageTop from '../components/PageTop';
 import ScrollToTop from '../components/ScrollToTop'
 
 
+
+
 const arrReview = [
   {
     id: 1,
@@ -33,9 +35,13 @@ const arrReview = [
 ];
 
 
+
+
 const Event_info = () => {
   // 小圖換大圖
   const [curImg, setCurImg] = useState(0);
+
+
 
 
   // 留言相關狀態
@@ -45,16 +51,23 @@ const Event_info = () => {
   const [activeSortBtn, setActiveSortBtn] = useState('newest');
 
 
+
+
   const arrPhotos = [
     {
-      imgName: "./images/Event_info/pic_3.jpg"
+      imgName: "./images/Stall_info/kayle-kaupanger-J8ksCswaBYo-unsplash.jpg"
     },
     {
-      imgName: "./images/Event_info/pic_2.jpg"
+      imgName: "./images/Stall_info/grigorii-shcheglov-tCLgdsF4IVk-unsplash_11zon.jpg"
     },
+    {
+      imgName: "./images/Stall_info/jonathan-borba-PTBqz_jdM2s-unsplash.jpg"
+    }
 
 
   ];
+
+
 
 
   // 新增留言功能
@@ -62,20 +75,26 @@ const Event_info = () => {
     if (newComment.trim() === '') return;
 
 
+
+
     const newReview = {
       id: reviews.length + 1,
       img: "./images/Event_info/dog_pic.png", // 預設頭像
-      name: "訪客", // 可以改成登入用戶的名稱
+      name: "莊可蓮", // 可以改成登入用戶的名稱
       date: new Date().toISOString().split('T')[0].replace(/-/g, '/'), // 當前日期
       review: newComment,
       like_num: 0,
     };
 
 
+
+
     // 新留言加到最前面
     setReviews([newReview, ...reviews]);
     setNewComment(''); // 清空輸入框
   };
+
+
 
 
   // 處理 Enter 鍵送出
@@ -86,9 +105,13 @@ const Event_info = () => {
   };
 
 
+
+
   // 排序留言功能
   const getSortedReviews = () => {
     let sortedReviews = [...reviews];
+
+
 
 
     switch (sortBy) {
@@ -97,9 +120,13 @@ const Event_info = () => {
         return sortedReviews.sort((a, b) => b.like_num - a.like_num);
 
 
+
+
       case 'oldest':
         // 按日期由舊到新排序（假設 id 越小越舊）
         return sortedReviews.sort((a, b) => a.id - b.id);
+
+
 
 
       case 'newest':
@@ -110,11 +137,15 @@ const Event_info = () => {
   };
 
 
+
+
   // 處理排序按鈕點擊
   const handleSortChange = (sortType) => {
     setSortBy(sortType);
     setActiveSortBtn(sortType);
   };
+
+
 
 
   // 處理按讚數更新（從 Review_card 回調）
@@ -129,33 +160,51 @@ const Event_info = () => {
   };
 
 
+
+
   return (
     <main className='event_info_main'>
       <ScrollToTop />
 
 
+
+
+
+
       {/* 標題 */}
       <h1 className='titleBox_h1'>
-        <img className='titleBox' src="./images/titlebox/find_type_titlebox.svg" alt='市集分類Market Type' />
+        <img className='titleBox' src="./images/titlebox/event_titlebox.svg" alt='市集分類Market Type' />
       </h1>
+
+
+
+
 
 
       <div className='box_center'>
         <article className='info_box'>
 
 
+
+
           {/* 市集基本資訊 */}
           <section className='event_info_container'>
+
+
 
 
             {/* 照片區 */}
             <div className='pic_box'>
 
 
+
+
               {/* 大圖 */}
               <div className='main_pic'>
                 <img src={arrPhotos[curImg].imgName} alt={`市集照片 ${curImg + 1}`} />
               </div>
+
+
 
 
               {/* 縮圖 */}
@@ -175,11 +224,19 @@ const Event_info = () => {
             </div>
 
 
+
+
             {/* 市集名稱&時間&tag */}
             <div className='info'>
               <div>
                 {/* 名稱 */}
                 <h2 className='event_name'>台北 - 夏日微光季</h2>
+
+
+
+
+
+
 
 
 
@@ -193,6 +250,8 @@ const Event_info = () => {
                 </div>
 
 
+
+
                 {/* 位置 */}
                 <div className='place'>
                   <p>活動位置</p>
@@ -202,7 +261,7 @@ const Event_info = () => {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className='btn-box'>
                 {/* 攤位地圖&攤位登記按鈕 */}
                 <div className='stall_btn_box'>
                   <Link to='/Stall_map'>
@@ -217,6 +276,8 @@ const Event_info = () => {
                       <div className='column'>
                         <p>輸入攤位資訊</p>
                         <p>(商家專屬)</p>
+
+
 
 
                       </div>
@@ -238,7 +299,17 @@ const Event_info = () => {
 
 
 
+
+
+
+
             </div>
+
+
+
+
+
+
 
 
 
@@ -248,8 +319,12 @@ const Event_info = () => {
           </section>
 
 
+
+
           {/* 市集詳細內容 */}
           <section className='detail_info_container'>
+
+
 
 
             {/* 裝飾線 */}
@@ -258,19 +333,29 @@ const Event_info = () => {
             </figure>
 
 
+
+
             <h4>活動資訊</h4>
 
 
+
+
             <figure className='detail_pic'>
-              <img src="./images/Event_info/pic_1.png" alt="市集照片" />
+              <img src="./images/Stall_info/mehrsa-MYqhyDFHiBo-unsplash_11zon.jpg" alt="市集照片" />
             </figure>
+
+
 
 
             {/* 文字說明區 */}
             <article className='info_desc'>
 
 
+
+
               <p className='title'>市集活動邀你一起感受生活的溫度</p>
+
+
 
 
               <p className='content'>
@@ -278,6 +363,8 @@ const Event_info = () => {
                 <br />
                 我們邀請你走出日常，走進這個充滿創意、手感與人情味的空間──來自全台各地的手作職人、文創品牌、美食攤位、生活選物，以及街頭藝人和現場音樂演出，共同打造屬於每個人的慢生活片刻。
               </p>
+
+
 
 
               <ul className='content'>
@@ -288,6 +375,8 @@ const Event_info = () => {
                 <li>假日午後限定，溫柔系 live 音樂演出</li>
                 <li>親子友善、毛孩可入場，一起共享療癒時光</li>
               </ul>
+
+
 
 
               <p className='content'>
@@ -301,14 +390,22 @@ const Event_info = () => {
               </p>
 
 
+
+
             </article>
+
+
 
 
           </section>
 
 
+
+
           {/* 市集評論區 */}
           <section className='review_container'>
+
+
 
 
             {/* 留言輸入框 */}
@@ -327,6 +424,8 @@ const Event_info = () => {
                 </button>
               </div>
             </div>
+
+
 
 
             {/* 留言控制按鈕 */}
@@ -355,6 +454,8 @@ const Event_info = () => {
             </div>
 
 
+
+
             {/* 評論結果 */}
             <div className='event_review_box'>
               {getSortedReviews().map((review) => {
@@ -377,11 +478,21 @@ const Event_info = () => {
       </div>
 
 
+
+
       {/* <PageTop /> */}
     </main>
   )
 }
 
 
+
+
 export default Event_info
+
+
+
+
+
+
 

@@ -2,22 +2,30 @@
 @use "../functions/" as *;
 
 
-.region_title h1 {
-  text-align: center;
-  margin-top: 60px;
+
+
+
+
+.region_title {
+  display: flex;
+  justify-content: center;
+
+
 
 
   @media ($mediaMd) {
-    margin: $spacing-y-md;
-    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    transform: scale(0.8);
   }
+
+
 
 
   @media ($mediaSm) {
-    margin-top: 90px;
-    font-size: clamp(1.5rem, 5vw, 1.8rem);
+    transform: scale(0.7);
   }
 }
+
+
 
 
 .region_carousel {
@@ -31,15 +39,21 @@
   margin-top: 60px;
 
 
+
+
   @media ($mediaMd) {
     gap: 15px;
     flex-wrap: wrap;
   }
 
 
+
+
   @media ($mediaSm) {
     gap: 10px;
     padding: 60px $spacing-xs;
+
+
 
 
     /* 手機版隱藏輪播尖頭/箭頭 */
@@ -55,6 +69,8 @@
 }
 
 
+
+
 /* 純圖片按鈕 - 響應式優化 */
 .img-btn {
   border: none;
@@ -68,8 +84,12 @@
   transition: transform 0.2s ease;
 
 
+
+
   /* 移除瀏覽器預設 focus 外框 */
   outline: none;
+
+
 
 
   /* 只在鍵盤 Tab 聚焦時顯示自訂 focus 樣式 */
@@ -79,14 +99,20 @@
   }
 
 
+
+
   &:hover {
     transform: scale(1.05);
+
+
 
 
     @media ($mediaSm) {
       display: none;
     }
   }
+
+
 
 
   img {
@@ -96,11 +122,15 @@
     border-radius: 4px;
 
 
+
+
     @media ($mediaSm) {
       display: none;
     }
   }
 }
+
+
 
 
 .carousel-image {
@@ -111,9 +141,13 @@
   z-index: 2;
 
 
+
+
   @media ($mediaMd) {
     max-width: min(45vw, 450px);
   }
+
+
 
 
   @media ($mediaSm) {
@@ -123,10 +157,14 @@
 }
 
 
+
+
 .region_introduction {
   position: relative;
   overflow: visible;
   min-height: clamp(500px, 60vh, 600px);
+
+
 
 
   @media ($mediaMd) {
@@ -134,10 +172,14 @@
   }
 
 
+
+
   @media ($mediaSm) {
     min-height: clamp(350px, 40vh, 450px);
   }
 }
+
+
 
 
 /* 用偽元素做背景，響應式控制背景位置 */
@@ -153,9 +195,13 @@
   z-index: -1;
 
 
+
+
   @media ($mediaMd) {
     top: clamp(-40px, -6vh, -60px);
   }
+
+
 
 
   @media ($mediaSm) {
@@ -166,10 +212,14 @@
 }
 
 
+
+
 .region_introduction .region_txt {
   position: relative;
   z-index: 1;
 }
+
+
 
 
 .region_txt {
@@ -181,12 +231,16 @@
   font-size: clamp(1rem, 2.2vw, 1.1rem);
 
 
+
+
   @media ($mediaMd) {
     padding: clamp(60px, 12vh, 120px) clamp(15px, 3%, 25px);
     line-height: 1.6;
     font-size: clamp(0.95rem, 2.5vw, 1.05rem);
     max-width: min(680px, 85%);
   }
+
+
 
 
   @media ($mediaSm) {
@@ -197,12 +251,16 @@
   }
 
 
+
+
   @media (max-width: 480px) {
     padding: clamp(30px, 6vh, 60px) 15px;
     font-size: clamp(0.85rem, 4vw, 0.95rem);
     max-width: 95%;
   }
 }
+
+
 
 
 /* 裝飾元素 - 響應式定位 */
@@ -215,10 +273,14 @@
   z-index: 2;
 
 
+
+
   @media ($mediaMd) {
     width: clamp(80px, 15%, 200px);
     left: clamp(60px, 8%, 80px);
   }
+
+
 
 
   @media ($mediaSm) {
@@ -226,6 +288,8 @@
     left: clamp(30px, 6%, 50px);
   }
 }
+
+
 
 
 .camera {
@@ -237,11 +301,15 @@
   z-index: 2;
 
 
+
+
   @media ($mediaMd) {
     width: clamp(60px, 8%, 150px);
     right: clamp(30px, 6%, 80px);
     top: clamp(-20px, -10vh, -40px);
   }
+
+
 
 
   @media ($mediaSm) {
@@ -250,6 +318,8 @@
     top: clamp(-10px, -8vh, -20px);
   }
 }
+
+
 
 
 .travelCard {
@@ -263,11 +333,15 @@
   padding-right: $spacing-sm;
 
 
+
+
   @media ($mediaMd) {
     gap: $spacing-md;
     margin-top: clamp(30px, 6vh, 50px);
     padding-bottom: $spacing-lg;
   }
+
+
 
 
   @media ($mediaSm) {
@@ -280,6 +354,8 @@
 }
 
 
+
+
 .surp-cord {
   position: absolute;
   left: clamp(30px, 6%, 60px);
@@ -289,11 +365,15 @@
   z-index: 2;
 
 
+
+
   @media ($mediaMd) {
     left: clamp(20px, 4%, 50px);
     bottom: clamp(-15px, -2vh, -25px);
     width: clamp(40px, 6%, 100px);
   }
+
+
 
 
   @media ($mediaSm) {
@@ -302,6 +382,8 @@
     width: clamp(45px, 10%, 100px);
   }
 }
+
+
 
 
 /* 專門針對輪播箭頭/尖頭的隱藏規則 */
@@ -326,12 +408,16 @@
 }
 
 
+
+
 /* 觸控裝置優化 */
 @media (hover: none) and (pointer: coarse) {
   .img-btn {
     &:active {
       transform: scale(0.95);
     }
+
+
 
 
     img {
@@ -342,10 +428,14 @@
 }
 
 
+
+
 /* 減少動畫偏好支援 */
 @media (prefers-reduced-motion: reduce) {
   .img-btn {
     transition: none;
+
+
 
 
     &:hover {
@@ -355,11 +445,15 @@
 }
 
 
+
+
 /* 超小螢幕額外優化 */
 @media (max-width: 320px) {
   .region_carousel {
     gap: 5px;
   }
+
+
 
 
   .region_txt {
@@ -368,12 +462,20 @@
   }
 
 
+
+
   .womwen-three,
   .camera,
   .surp-cord {
     width: clamp(30px, 8%, 60px);
   }
 }
+
+
+
+
+
+
 
 
 

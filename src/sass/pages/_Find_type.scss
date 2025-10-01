@@ -3,7 +3,26 @@
 @use '../functions/' as *;
 
 
+
+
 .find_type_main {
+
+
+    .titleBox_h1 {
+        @media ($mediaSm) {
+
+
+            min-width: 300px;
+            margin-top: 100px;
+        }
+    }
+
+
+    .titleBox {
+
+
+        margin: 0 auto;
+    }
 
 
     .find_type_content_box {
@@ -13,11 +32,15 @@
         padding: 20px 0;
 
 
+
+
         @media (max-width:1140px) {
             flex-direction: column;
             align-items: center;
             gap: $spacing-lg;
         }
+
+
 
 
         .result_box {
@@ -32,9 +55,13 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 
+
+
             @media (max-width:1190px) {
                 width: $w-90;
             }
+
+
 
 
             @media (max-width:1140px) {
@@ -44,6 +71,8 @@
             }
 
 
+
+
             @media (max-width:768px) {
                 width: 95%;
                 height: 500px;
@@ -51,6 +80,8 @@
                 margin-left: 2.5%;
                 margin-right: 2.5%;
             }
+
+
 
 
             @media (max-width:576px) {
@@ -63,15 +94,19 @@
         }
 
 
+
+
         .find_type_result {
             width: 85%;
             height: $w-100;
             padding: 10px 0 0 0;
             background-color: $white;
             display: grid;
-            grid-template-columns: repeat(auto-fill,minmax(220px,1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
             overflow: auto;
+
+
 
 
             @media (max-width:1870px) {
@@ -79,9 +114,13 @@
             }
 
 
+
+
             @media (max-width:1730px) {
                 width: 95%;
             }
+
+
 
 
             @media (max-width:1643px) {
@@ -89,33 +128,44 @@
             }
 
 
+
+
             @media(max-width:1410px) {
                 width: 90%;
             }
+
+
 
 
             @media(max-width:1305px) {
                 width: 90%;
                 gap: $spacing-xxs ;
             }
-           
+
+
             @media (max-width:1140px) {
-                grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
                 width: 92%;
                 gap: 15px;
             }
 
 
+
+
             @media (max-width:768px) {
-                grid-template-columns: repeat(auto-fill,minmax(150px,1fr));
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
                 gap: 12px;
             }
+
+
 
 
             @media (max-width:576px) {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
+
+
 
 
             // 空結果提示樣式
@@ -130,10 +180,14 @@
                 min-height: 400px;
 
 
+
+
                 @media (max-width:768px) {
                     padding: 40px 15px;
                     min-height: 300px;
                 }
+
+
 
 
                 @media (max-width:576px) {
@@ -142,8 +196,12 @@
                 }
 
 
+
+
                 .no_results_icon {
                     margin-bottom: 20px;
+
+
 
 
                     @media (max-width:768px) {
@@ -151,9 +209,13 @@
                     }
 
 
+
+
                     @media (max-width:576px) {
                         margin-bottom: 10px;
                     }
+
+
 
 
                     img {
@@ -162,9 +224,13 @@
                         opacity: 0.7;
 
 
+
+
                         @media (max-width:768px) {
                             width: 100px;
                         }
+
+
 
 
                         @media (max-width:576px) {
@@ -174,6 +240,8 @@
                 }
 
 
+
+
                 h3 {
                     font-size: 24px;
                     font-weight: $f-w-b;
@@ -181,10 +249,14 @@
                     margin-bottom: 10px;
 
 
+
+
                     @media (max-width:768px) {
                         font-size: 20px;
                         margin-bottom: 8px;
                     }
+
+
 
 
                     @media (max-width:576px) {
@@ -194,11 +266,15 @@
                 }
 
 
-                > p {
+
+
+                >p {
                     font-size: $f-s-basic;
                     color: $text;
                     margin-bottom: 30px;
                     max-width: 500px;
+
+
 
 
                     @media (max-width:768px) {
@@ -207,11 +283,15 @@
                     }
 
 
+
+
                     @media (max-width:576px) {
                         font-size: 13px;
                         margin-bottom: 15px;
                     }
                 }
+
+
 
 
                 .suggestions {
@@ -222,10 +302,14 @@
                     width: 100%;
 
 
+
+
                     @media (max-width:768px) {
                         padding: 15px 20px;
                         max-width: 350px;
                     }
+
+
 
 
                     @media (max-width:576px) {
@@ -234,7 +318,9 @@
                     }
 
 
-                    > p {
+
+
+                    >p {
                         font-size: $f-s-sm;
                         font-weight: $f-w-b;
                         color: $text;
@@ -242,10 +328,14 @@
                         text-align: center;
 
 
+
+
                         @media (max-width:768px) {
                             font-size: 13px;
                             margin-bottom: 8px;
                         }
+
+
 
 
                         @media (max-width:576px) {
@@ -255,19 +345,25 @@
                     }
 
 
+
+
                     ul {
                         list-style: none;
                         padding: 0;
                         margin: 0;
 
 
+
+
                         li {
                             font-size: $f-s-sm;
-                            color:$text;
+                            color: $text;
                             padding: 5px 0;
                             text-align: left;
                             position: relative;
                             padding-left: 20px;
+
+
 
 
                             @media (max-width:768px) {
@@ -277,11 +373,15 @@
                             }
 
 
+
+
                             @media (max-width:576px) {
                                 font-size: 12px;
                                 padding: 3px 0;
                                 padding-left: 16px;
                             }
+
+
 
 
                             &::before {
@@ -299,11 +399,15 @@
     }
 
 
+
+
     .find_type_img1,
     .find_type_img2 {
         position: absolute;
         width: 200px;
     }
+
+
 
 
     .find_type_img1 {
@@ -313,11 +417,15 @@
     }
 
 
+
+
     .find_type_img2 {
         bottom: -675px;
         left: 365px;
         transform: rotate(2deg);
     }
+
+
 
 
     .type_search-box {
@@ -338,6 +446,8 @@
         transition: all 0.3s ease;
 
 
+
+
         @media (max-width:1440px) {
             width: 28%;
             padding: 40px $spacing-md;
@@ -345,11 +455,15 @@
         }
 
 
+
+
         @media (max-width:1280px) {
             width: 30%;
             padding: 35px $spacing-sm;
             gap: 40px;
         }
+
+
 
 
         @media (max-width:1140px) {
@@ -361,7 +475,8 @@
             gap: 0;
             margin-bottom: $spacing-lg;
             overflow: visible;
-           
+
+
             .search-options {
                 max-height: 0;
                 opacity: 0;
@@ -369,7 +484,8 @@
                 transition: max-height 0.5s ease, opacity 0.4s ease;
                 margin-top: 0;
             }
-           
+
+
             &.expanded {
                 .search-options {
                     max-height: 2000px;
@@ -377,10 +493,14 @@
                     margin-top: 20px;
                     overflow: visible;
                 }
-               
-             
+
+
+
+
             }
         }
+
+
 
 
         @media (max-width:768px) {
@@ -392,6 +512,8 @@
         }
 
 
+
+
         @media (max-width:576px) {
             width: 90%;
             border-radius: $rad-md;
@@ -401,17 +523,27 @@
         }
 
 
-        .search-wrap{
+
+
+        .search-wrap {
             display: flex;
             width: $w-100;
             align-items: center;
             justify-content: center;
-           
+
+
             @media (max-width:1140px) {
                 justify-content: space-between;
                 padding-left: 5%;
-               
+
+
             }
+
+
+
+
+
+
 
 
 
@@ -421,8 +553,9 @@
             @media (max-width:768px) {
                 gap: 8px;
             }
-           
-            .search_hamburger{
+
+
+            .search_hamburger {
                 @extend %remove_form_style;
                 width: 50px;
                 height: 50px;
@@ -433,25 +566,32 @@
                 cursor: pointer;
                 background-color: $white;
                 border-radius: 8px;
-               
+
+
                 @media (max-width:1140px) {
                     display: flex;
                 }
+
+
 
 
                 @media (max-width:576px) {
                     width: 45px;
                     height: 45px;
                 }
-               
+
+
                 &.is-active {
                     transform: rotate(180deg);
                 }
-               
+
+
                 img {
                     width: 24px;
                     height: 24px;
                     transition: transform 0.3s ease;
+
+
 
 
                     @media (max-width:576px) {
@@ -463,25 +603,33 @@
         }
 
 
+
+
         .search-options {
             display: flex;
             flex-direction: column;
             width: 100%;
             gap: 60px;
             align-items: center;
-           
+
+
             @media (max-width:1440px) {
                 gap: 50px;
             }
 
 
+
+
             @media (max-width:1280px) {
                 gap: 40px;
             }
-           
+
+
             @media (max-width: 1140px) {
                 gap: 18px;
             }
+
+
 
 
             @media (max-width: 768px) {
@@ -489,10 +637,14 @@
             }
 
 
+
+
             @media (max-width: 576px) {
                 gap: 12px;
             }
         }
+
+
 
 
         .select {
@@ -504,9 +656,13 @@
             background-size: 22px;
 
 
+
+
             @media (max-width:1280px) {
                 width: 80%;
             }
+
+
 
 
             @media (max-width:1140px) {
@@ -515,16 +671,22 @@
             }
 
 
+
+
             @media (max-width:768px) {
                 width: 95%;
                 height: 42px;
             }
 
 
+
+
             select {
                 @extend %remove_form_style;
                 width: $w-100;
                 font-size: $f-s-basic;
+
+
 
 
                 @media (max-width:768px) {
@@ -534,8 +696,12 @@
         }
 
 
+
+
         .button_box {
             width: $w-80;
+
+
 
 
             @media (max-width:1280px) {
@@ -543,9 +709,13 @@
             }
 
 
+
+
             @media (max-width:1140px) {
                 width: 90%;
             }
+
+
 
 
             @media (max-width:768px) {
@@ -553,10 +723,14 @@
             }
 
 
+
+
             p {
                 padding-left: $spacing-xxs;
                 text-align: left;
                 font-size: $f-s-sm;
+
+
 
 
                 @media (max-width:768px) {
@@ -566,12 +740,16 @@
                 }
 
 
+
+
                 @media (max-width:576px) {
                     font-size: 12px;
                     margin-bottom: 6px;
                 }
             }
         }
+
+
 
 
         .find_type_btn_box {
@@ -583,9 +761,13 @@
             gap: 25px;
 
 
+
+
             @media (max-width:1280px) {
                 gap: 20px;
             }
+
+
 
 
             @media (max-width:1140px) {
@@ -595,6 +777,8 @@
             }
 
 
+
+
             @media (max-width:768px) {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
@@ -602,10 +786,14 @@
             }
 
 
+
+
             @media (max-width:576px) {
                 gap: 6px;
                 padding-top: 4px;
             }
+
+
 
 
             button {
@@ -622,10 +810,14 @@
                 white-space: nowrap;
 
 
+
+
                 @media (max-width:1280px) {
                     height: 42px;
                     font-size: $f-s-sm;
                 }
+
+
 
 
                 @media (max-width:1140px) {
@@ -636,11 +828,15 @@
                 }
 
 
+
+
                 @media (max-width:768px) {
                     height: 36px;
                     font-size: 11.5px;
                     padding: 0 4px;
                 }
+
+
 
 
                 @media (max-width:576px) {
@@ -650,10 +846,14 @@
                 }
 
 
+
+
                 &:hover {
                     background-color: $accent;
                     color: $white;
                 }
+
+
 
 
                 &.active {
@@ -665,11 +865,15 @@
                 }
 
 
+
+
                 &:active {
                     transform: translateY(0);
                 }
             }
         }
+
+
 
 
         .date-picker-panel {
@@ -682,9 +886,13 @@
             box-sizing: border-box;
 
 
+
+
             @media (max-width: 1280px) {
                 width: 80%;
             }
+
+
 
 
             @media (max-width: 1140px) {
@@ -694,11 +902,15 @@
             }
 
 
+
+
             @media (max-width: 768px) {
                 width: 95%;
                 padding: 10px;
                 margin-top: 8px;
             }
+
+
 
 
             @media (max-width: 576px) {
@@ -709,16 +921,22 @@
         }
 
 
+
+
         @keyframes slideDown {
             from {
                 opacity: 0;
                 transform: translateY(-10px);
             }
+
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+
 
 
         .date-inputs {
@@ -728,10 +946,14 @@
             margin-bottom: 12px;
 
 
+
+
             @media (max-width: 768px) {
                 gap: 8px;
                 margin-bottom: 8px;
             }
+
+
 
 
             @media (max-width: 576px) {
@@ -742,6 +964,8 @@
         }
 
 
+
+
         .date-input-group {
             display: flex;
             flex-direction: column;
@@ -749,9 +973,13 @@
             min-width: 0;
 
 
+
+
             @media (max-width: 576px) {
                 gap: 4px;
             }
+
+
 
 
             label {
@@ -760,15 +988,21 @@
                 font-weight: 500;
 
 
+
+
                 @media (max-width: 768px) {
                     font-size: 12px;
                 }
+
+
 
 
                 @media (max-width: 576px) {
                     font-size: 11px;
                 }
             }
+
+
 
 
             input[type="date"] {
@@ -782,10 +1016,14 @@
                 box-sizing: border-box;
 
 
+
+
                 @media (max-width: 768px) {
                     padding: 7px;
                     font-size: 12px;
                 }
+
+
 
 
                 @media (max-width: 576px) {
@@ -794,9 +1032,13 @@
                 }
 
 
+
+
                 &:focus {
                     border-color: $accent;
                 }
+
+
 
 
                 &::-webkit-calendar-picker-indicator {
@@ -806,10 +1048,14 @@
         }
 
 
+
+
         .date-picker-actions {
             display: flex;
             justify-content: flex-end;
             gap: 8px;
+
+
 
 
             @media (max-width: 576px) {
@@ -817,11 +1063,15 @@
             }
 
 
+
+
             .btn-secondary,
             .btn-primary {
                 box-sizing: border-box;
                 white-space: nowrap;
             }
+
+
 
 
             .btn-secondary {
@@ -835,10 +1085,14 @@
                 transition: all 0.2s;
 
 
+
+
                 @media (max-width: 768px) {
                     padding: 7px 12px;
                     font-size: 12px;
                 }
+
+
 
 
                 @media (max-width: 576px) {
@@ -847,10 +1101,14 @@
                 }
 
 
+
+
                 &:hover {
                     background-color: #f5f5f5;
                 }
             }
+
+
 
 
             .btn-primary {
@@ -865,10 +1123,14 @@
                 transition: all 0.2s;
 
 
+
+
                 @media (max-width: 768px) {
                     padding: 7px 12px;
                     font-size: 12px;
                 }
+
+
 
 
                 @media (max-width: 576px) {
@@ -877,11 +1139,15 @@
                 }
 
 
+
+
                 &:hover {
-                    background-color:$accent;
+                    background-color: $accent;
                     transform: translateY(-1px);
                     box-shadow: 0 2px 8px rgba($accent, 0.3);
                 }
+
+
 
 
                 &:active {
@@ -889,6 +1155,8 @@
                 }
             }
         }
+
+
 
 
         .search {
@@ -899,11 +1167,14 @@
             width: $w-80;
             height: 40px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-           
+
+
             @media (max-width:1280px) {
                 width: 85%;
                 padding: $spacing-xxs $spacing-md;
             }
+
+
 
 
             @media (max-width:1140px) {
@@ -913,10 +1184,14 @@
             }
 
 
+
+
             @media (max-width:768px) {
                 height: 42px;
                 padding: $spacing-xxs $spacing-sm;
             }
+
+
 
 
             @media (max-width:576px) {
@@ -925,10 +1200,14 @@
             }
 
 
+
+
             input {
                 @extend %remove_form_style;
                 width: $w-100;
                 font-size: $f-s-basic;
+
+
 
 
                 @media (max-width:768px) {
@@ -936,9 +1215,13 @@
                 }
 
 
+
+
                 @media (max-width:576px) {
                     font-size: 13px;
                 }
+
+
 
 
                 &::placeholder {
@@ -949,9 +1232,13 @@
             }
 
 
+
+
             button {
                 @extend %remove_form_style;
                 margin-left: 50px;
+
+
 
 
                 img {
@@ -959,10 +1246,14 @@
                     height: 25px;
 
 
+
+
                     @media (max-width:768px) {
                         width: 22px;
                         height: 22px;
                     }
+
+
 
 
                     @media (max-width:576px) {
@@ -973,6 +1264,8 @@
             }
         }
     }
+
+
 
 
     .find_type_card {
@@ -986,9 +1279,13 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
 
+
+
         @media (max-width:1140px) {
             height: 280px;
         }
+
+
 
 
         @media (max-width:768px) {
@@ -996,9 +1293,13 @@
         }
 
 
+
+
         @media (max-width:576px) {
             height: 240px;
         }
+
+
 
 
         &:hover {
@@ -1007,13 +1308,16 @@
         }
 
 
+
+
         .find_type_card_wrap {
             height: 200px;
-            background-image: url(/images/find_map/festival_img.jpg);
             background-size: cover;
             background-position: center;
             padding: 10px;
             @extend %flex-column;
+
+
 
 
             @media (max-width:1140px) {
@@ -1022,9 +1326,13 @@
             }
 
 
+
+
             @media (max-width:768px) {
                 height: 160px;
             }
+
+
 
 
             @media (max-width:576px) {
@@ -1033,12 +1341,18 @@
             }
 
 
+
+
             .top {
                 @extend %flex-space-between;
 
 
+
+
                 .like_button {
                     @extend %remove_form_style;
+
+
 
 
                     img {
@@ -1046,9 +1360,13 @@
                         height: auto;
 
 
+
+
                         @media (max-width:768px) {
                             width: 22px;
                         }
+
+
 
 
                         @media (max-width:576px) {
@@ -1059,9 +1377,13 @@
             }
 
 
+
+
             .date {
                 @extend %flex-column;
                 gap: $spacing-xxs;
+
+
 
 
                 figure {
@@ -1074,10 +1396,14 @@
                     gap: $spacing-xs;
 
 
+
+
                     @media (max-width:768px) {
                         padding: 2px 6px;
                         gap: 4px;
                     }
+
+
 
 
                     @media (max-width:576px) {
@@ -1086,13 +1412,19 @@
                     }
 
 
+
+
                     p {
                         font-size: 12px;
+
+
 
 
                         @media (max-width:768px) {
                             font-size: 11px;
                         }
+
+
 
 
                         @media (max-width:576px) {
@@ -1101,15 +1433,21 @@
                     }
 
 
+
+
                     img {
                         width: 16px;
                         height: 16px;
+
+
 
 
                         @media (max-width:768px) {
                             width: 14px;
                             height: 14px;
                         }
+
+
 
 
                         @media (max-width:576px) {
@@ -1119,16 +1457,22 @@
                     }
 
 
+
+
                     .icon_time {
                         width: 16px;
                         height: 19px;
                         padding: 1px 0 0 0;
 
 
+
+
                         @media (max-width:768px) {
                             width: 14px;
                             height: 17px;
                         }
+
+
 
 
                         @media (max-width:576px) {
@@ -1138,6 +1482,8 @@
                     }
                 }
             }
+
+
 
 
             .find_type_tag_box {
@@ -1150,10 +1496,14 @@
                 width: 100%;
 
 
+
+
                 .tag_wrapper {
                     display: flex;
                     gap: $spacing-xs;
                     animation: marquee-smooth 15s linear infinite;
+
+
 
 
                     &:hover {
@@ -1162,16 +1512,22 @@
                 }
 
 
+
+
                 @keyframes marquee-smooth {
                     0% {
                         transform: translateX(100%);
                     }
 
 
+
+
                     100% {
                         transform: translateX(-100%);
                     }
                 }
+
+
 
 
                 button {
@@ -1186,10 +1542,14 @@
                     font-size: $f-s-xs;
 
 
+
+
                     @media (max-width:768px) {
                         font-size: 11px;
                         padding: 0px 4px;
                     }
+
+
 
 
                     @media (max-width:576px) {
@@ -1201,6 +1561,8 @@
         }
 
 
+
+
         .find_type_card_desc {
             h2 {
                 font-size: $f-s-basic;
@@ -1209,10 +1571,14 @@
                 padding: $spacing-xxs $spacing-xs 0 $spacing-xs;
 
 
+
+
                 @media (max-width:768px) {
                     font-size: $f-s-sm;
                     padding: 6px 8px 0 8px;
                 }
+
+
 
 
                 @media (max-width:576px) {
@@ -1220,6 +1586,8 @@
                     padding: 4px 6px 0 6px;
                 }
             }
+
+
 
 
             p {
@@ -1233,12 +1601,16 @@
                 -webkit-line-clamp: 3;
 
 
+
+
                 @media (max-width:768px) {
                     font-size: 12px;
                     padding: 0 8px;
                     padding-bottom: 8px;
                     -webkit-line-clamp: 2;
                 }
+
+
 
 
                 @media (max-width:576px) {

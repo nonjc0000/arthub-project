@@ -84,7 +84,13 @@ const Find_schedule_region_north = () => {
     <div className="region_page">
       <ScrollToTop />
       <div className="region_title">
-        <h1>北部地區</h1>
+        <h1 className="titleBox_h1">
+            <img
+              className="titlebox"
+              src="./images/titlebox/north.svg"
+              alt="活動行程"
+            />
+          </h1>
       </div>
 
 
