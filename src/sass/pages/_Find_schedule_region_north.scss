@@ -2,50 +2,21 @@
 @use "../functions/" as *;
 
 
-
-
-
-
-
-
-
-
-
-
 .region_title {
-  display: flex;
-  justify-content: center;
+  padding: 30px 0 0 25px;
   margin: 0 auto;
-  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  //   // @media ($mediaMd) {
+  //   //   transform: scale(0.8);
+  //   // }
 
 
-
-
-
-
-
-
-  @media ($mediaMd) {
-    transform: scale(0.8);
-  }
-
-
-
-
-
-
-
-
-  @media ($mediaSm) {
-    transform: scale(0.7);
-  }
+  //   // @media ($mediaSm) {
+  //   //   transform: scale(0.7);
+  //   // }
 }
-
-
-
-
-
-
 
 
 .region_carousel {
@@ -56,13 +27,7 @@
   gap: clamp(15px, 3vw, 20px);
   z-index: 2;
   padding: 0 $spacing-sm;
-
-
-margin: 60px auto 0;
-
-
-
-
+  margin: 0 auto;
 
 
   @media ($mediaMd) {
@@ -71,22 +36,15 @@ margin: 60px auto 0;
   }
 
 
-
-
-
-
   @media ($mediaSm) {
     gap: 10px;
-    padding: 60px $spacing-xs;
+    padding: 30px $spacing-xs;
     flex-direction: column;
-
-
+    margin: 20px auto 0;
     @media (max-width: 428px) {
       padding: 40px 10px;
       gap: 0;
     }
-
-
 
 
     /* 手機版隱藏輪播尖頭/箭頭 */
@@ -102,12 +60,6 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 /* 純圖片按鈕 - 響應式優化 */
 .img-btn {
   border: none;
@@ -121,20 +73,8 @@ margin: 60px auto 0;
   transition: transform 0.2s ease;
 
 
-
-
-
-
-
-
   /* 移除瀏覽器預設 focus 外框 */
   outline: none;
-
-
-
-
-
-
 
 
   /* 只在鍵盤 Tab 聚焦時顯示自訂 focus 樣式 */
@@ -144,32 +84,14 @@ margin: 60px auto 0;
   }
 
 
-
-
-
-
-
-
   &:hover {
     transform: scale(1.05);
-
-
-
-
-
-
 
 
     @media ($mediaSm) {
       display: none;
     }
   }
-
-
-
-
-
-
 
 
   img {
@@ -179,23 +101,11 @@ margin: 60px auto 0;
     border-radius: 4px;
 
 
-
-
-
-
-
-
     @media ($mediaSm) {
       display: none;
     }
   }
 }
-
-
-
-
-
-
 
 
 .carousel-image {
@@ -206,21 +116,9 @@ margin: 60px auto 0;
   z-index: 2;
 
 
-
-
-
-
-
-
   @media ($mediaMd) {
     max-width: min(45vw, 450px);
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -230,22 +128,10 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 .region_introduction {
   position: relative;
   overflow: visible;
   min-height: clamp(500px, 60vh, 600px);
-
-
-
-
-
-
 
 
   @media ($mediaMd) {
@@ -253,22 +139,10 @@ margin: 60px auto 0;
   }
 
 
-
-
-
-
-
-
   @media ($mediaSm) {
     min-height: clamp(350px, 40vh, 450px);
   }
 }
-
-
-
-
-
-
 
 
 /* 用偽元素做背景，響應式控制背景位置 */
@@ -279,25 +153,14 @@ margin: 60px auto 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url("/images/Find_schedule/greenBg.png") no-repeat center bottom / cover;
+  background: url("/images/Find_schedule/greenBg.png") no-repeat center bottom /
+    cover;
   z-index: -1;
-
-
-
-
-
-
 
 
   @media ($mediaMd) {
     top: clamp(-40px, -6vh, -60px);
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -308,22 +171,10 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 .region_introduction .region_txt {
   position: relative;
   z-index: 1;
 }
-
-
-
-
-
-
 
 
 .region_txt {
@@ -335,24 +186,12 @@ margin: 60px auto 0;
   font-size: clamp(1rem, 2.2vw, 1.1rem);
 
 
-
-
-
-
-
-
   @media ($mediaMd) {
     padding: clamp(60px, 12vh, 120px) clamp(15px, 3%, 25px);
     line-height: 1.6;
     font-size: clamp(0.95rem, 2.5vw, 1.05rem);
     max-width: min(680px, 85%);
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -363,24 +202,12 @@ margin: 60px auto 0;
   }
 
 
-
-
-
-
-
-
   @media (max-width: 480px) {
     padding: clamp(30px, 6vh, 60px) 15px;
     font-size: clamp(0.85rem, 4vw, 0.95rem);
     max-width: 95%;
   }
 }
-
-
-
-
-
-
 
 
 /* 裝飾元素 - 響應式定位 */
@@ -393,22 +220,10 @@ margin: 60px auto 0;
   z-index: 2;
 
 
-
-
-
-
-
-
   @media ($mediaMd) {
     width: clamp(80px, 15%, 200px);
     left: clamp(60px, 8%, 80px);
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -416,12 +231,6 @@ margin: 60px auto 0;
     left: clamp(30px, 6%, 50px);
   }
 }
-
-
-
-
-
-
 
 
 .camera {
@@ -433,23 +242,11 @@ margin: 60px auto 0;
   z-index: 2;
 
 
-
-
-
-
-
-
   @media ($mediaMd) {
     width: clamp(60px, 8%, 150px);
     right: clamp(30px, 6%, 80px);
     top: clamp(-20px, -10vh, -40px);
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -458,12 +255,6 @@ margin: 60px auto 0;
     top: clamp(-10px, -8vh, -20px);
   }
 }
-
-
-
-
-
-
 
 
 .travelCard {
@@ -477,23 +268,11 @@ margin: 60px auto 0;
   padding-right: $spacing-sm;
 
 
-
-
-
-
-
-
   @media ($mediaMd) {
     gap: $spacing-md;
     margin-top: clamp(30px, 6vh, 50px);
     padding-bottom: $spacing-lg;
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -506,12 +285,6 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 .surp-cord {
   position: absolute;
   left: clamp(30px, 6%, 60px);
@@ -521,23 +294,11 @@ margin: 60px auto 0;
   z-index: 2;
 
 
-
-
-
-
-
-
   @media ($mediaMd) {
     left: clamp(20px, 4%, 50px);
     bottom: clamp(-15px, -2vh, -25px);
     width: clamp(40px, 6%, 100px);
   }
-
-
-
-
-
-
 
 
   @media ($mediaSm) {
@@ -548,16 +309,8 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 /* 專門針對輪播箭頭/尖頭的隱藏規則 */
 @media ($mediaSm) {
-
-
   .carousel-arrow,
   .carousel-navigation,
   .swiper-button-prev,
@@ -578,24 +331,12 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 /* 觸控裝置優化 */
 @media (hover: none) and (pointer: coarse) {
   .img-btn {
     &:active {
       transform: scale(0.95);
     }
-
-
-
-
-
-
 
 
     img {
@@ -606,22 +347,10 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 /* 減少動畫偏好支援 */
 @media (prefers-reduced-motion: reduce) {
   .img-btn {
     transition: none;
-
-
-
-
-
-
 
 
     &:hover {
@@ -631,23 +360,11 @@ margin: 60px auto 0;
 }
 
 
-
-
-
-
-
-
 /* 超小螢幕額外優化 */
 @media (max-width: 320px) {
   .region_carousel {
     gap: 5px;
   }
-
-
-
-
-
-
 
 
   .region_txt {
@@ -656,16 +373,12 @@ margin: 60px auto 0;
   }
 
 
-
-
-
-
-
-
   .womwen-three,
   .camera,
   .surp-cord {
     width: clamp(30px, 8%, 60px);
   }
 }
+
+
 

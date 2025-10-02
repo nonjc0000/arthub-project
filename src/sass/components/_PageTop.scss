@@ -42,6 +42,10 @@
     @media (max-width:578px) {
         bottom: 35%;
     }
+
+    @media ($mediaSm) {
+        display: none;
+    }
    
     // 顯示狀態
     &.show {
