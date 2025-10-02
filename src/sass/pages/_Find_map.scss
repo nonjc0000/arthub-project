@@ -84,13 +84,15 @@
 
             #map_search_filter {
                 display: flex;
-                justify-content: space-between;
+                // justify-content: start;
                 align-items: center;
                 margin-bottom: $spacing-lg;
+                gap: $spacing-md;
 
 
                 // RWD 時啟用橫向滾動
                 @media ($mediaLg) {
+                    justify-content: space-between;
                     overflow-x: auto;
                     overflow-y: hidden;
                     flex-wrap: nowrap; 
@@ -157,10 +159,12 @@
                     padding: $spacing-xxs $spacing-lg;
                     width: 35%;
                     height: 100%;
+                    // margin-left: $spacing-xs;
 
                     @media ($mediaLg) {
                         width: 50%;
                         max-height: 31px;
+                        // margin-left: 0;
                     }
 
 

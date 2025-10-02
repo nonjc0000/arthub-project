@@ -2,11 +2,15 @@
 @use "../functions/" as *;
 
 
+
+
 .my_footprint_main {
   padding: $spacing-xl;
   @extend %main_font-family_setting;
   color: $text;
   margin-bottom: $h-10vh;
+
+
 
 
   // 平板
@@ -16,6 +20,8 @@
   }
 
 
+
+
   // 手機
   @media (max-width: 768px) {
     padding: $spacing-md $spacing-sm;
@@ -23,11 +29,16 @@
   }
 
 
+
+
   @media (max-width: 480px) {
     padding: $spacing-sm;
     margin-bottom: $spacing-lg;
   }
-}
+
+
+
+
 
 
 // 標題圖片
@@ -36,9 +47,13 @@
   margin-bottom: $spacing-lg;
 
 
+
+
   @media (max-width: 768px) {
     margin-bottom: $spacing-md;
   }
+
+
 
 
   .titleBox {
@@ -46,9 +61,13 @@
     height: auto;
 
 
+
+
     @media (max-width: 768px) {
       width: 85%;
     }
+
+
 
 
     @media (max-width: 480px) {
@@ -56,6 +75,8 @@
     }
   }
 }
+
+
 
 
 .hr_square_deco {
@@ -67,10 +88,14 @@
   margin-bottom: $spacing-xxl;
 
 
+
+
   @media (max-width: 1024px) {
     height: 60px;
     margin-bottom: $spacing-xl;
   }
+
+
 
 
   @media (max-width: 768px) {
@@ -79,11 +104,15 @@
   }
 
 
+
+
   @media (max-width: 480px) {
     height: 40px;
     margin-bottom: $spacing-md;
   }
 }
+
+
 
 
 .footprint_content_box {
@@ -94,11 +123,15 @@
   gap: $spacing-lg;
 
 
+
+
   // 大平板
   @media (max-width: 1200px) {
     padding: $spacing-md $spacing-lg;
     gap: $spacing-md;
   }
+
+
 
 
   // 平板
@@ -110,6 +143,8 @@
   }
 
 
+
+
   // 手機 - 改為垂直排列
   @media (max-width: 768px) {
     flex-direction: column;
@@ -119,11 +154,15 @@
   }
 
 
+
+
   @media (max-width: 480px) {
     padding: $spacing-xs;
     gap: $spacing-md;
   }
 }
+
+
 
 
 .footprint_content {
@@ -133,16 +172,22 @@
   height: 100%;
 
 
+
+
   // 大平板
   @media (max-width: 1200px) {
     width: 58%;
   }
 
 
+
+
   // 平板
   @media (max-width: 1024px) {
     width: 62%;
   }
+
+
 
 
   // 手機
@@ -152,10 +197,14 @@
   }
 
 
+
+
   .footprint_content_topbar {
     width: $w-100;
     @extend %flex-center;
     margin-bottom: $spacing-lg;
+
+
 
 
     @media (max-width: 1024px) {
@@ -163,9 +212,13 @@
     }
 
 
+
+
     @media (max-width: 768px) {
       margin-bottom: $spacing-sm;
     }
+
+
 
 
     .footprint_content_topbar_wrapper {
@@ -174,15 +227,21 @@
       gap: 10px;
 
 
+
+
       @media (max-width: 768px) {
         gap: 8px;
       }
+
+
 
 
       @media (max-width: 480px) {
         gap: 5px;
         flex-wrap: nowrap;
       }
+
+
 
 
       .year_box {
@@ -196,6 +255,8 @@
         flex-shrink: 0;
 
 
+
+
         @media (max-width: 1024px) {
           width: 85px;
           height: 32px;
@@ -204,12 +265,16 @@
         }
 
 
+
+
         @media (max-width: 768px) {
           width: 75px;
           height: 30px;
           font-size: $f-s-lg;
           padding-top: 4px;
         }
+
+
 
 
         @media (max-width: 480px) {
@@ -221,6 +286,8 @@
       }
 
 
+
+
       // SVG 長條
       svg:first-of-type {
         flex: 1;
@@ -228,9 +295,13 @@
         height: auto;
 
 
+
+
         @media (max-width: 768px) {
           max-height: 19px;
         }
+
+
 
 
         @media (max-width: 480px) {
@@ -239,16 +310,22 @@
       }
 
 
+
+
       // SVG 三角形
       svg:last-of-type {
         flex-shrink: 0;
         height: auto;
 
 
+
+
         @media (max-width: 768px) {
           width: 18px;
           max-height: 19px;
         }
+
+
 
 
         @media (max-width: 480px) {
@@ -260,6 +337,8 @@
   }
 
 
+
+
   .footprint_result {
     height: 100%;
     width: $w-90;
@@ -268,10 +347,14 @@
     padding: $spacing-xs;
 
 
+
+
     // 大平板
     @media (max-width: 1200px) {
       width: 95%;
     }
+
+
 
 
     // 平板
@@ -280,6 +363,8 @@
       height: auto;
       max-height: 65vh;
     }
+
+
 
 
     // 手機 - 限定高度並加卷軸 ⭐
@@ -292,10 +377,14 @@
     }
 
 
+
+
     @media (max-width: 480px) {
       height: 55vh; // 稍微調低高度
       max-height: 55vh;
     }
+
+
 
 
     // 極小螢幕
@@ -305,9 +394,13 @@
     }
 
 
+
+
     // 滾動條樣式
     &::-webkit-scrollbar {
       width: 10px;
+
+
 
 
       @media (max-width: 1024px) {
@@ -315,9 +408,13 @@
       }
 
 
+
+
       @media (max-width: 768px) {
         width: 6px;
       }
+
+
 
 
       @media (max-width: 480px) {
@@ -326,9 +423,13 @@
     }
 
 
+
+
     &::-webkit-scrollbar-track {
       background: rgba($primary, 0.1);
       border-radius: 5px;
+
+
 
 
       @media (max-width: 768px) {
@@ -337,15 +438,21 @@
     }
 
 
+
+
     &::-webkit-scrollbar-thumb {
       background: rgba($primary, 0.4);
       border-radius: 5px;
       transition: background 0.3s ease;
 
 
+
+
       &:hover {
         background: rgba($primary, 0.6);
       }
+
+
 
 
       @media (max-width: 768px) {
@@ -354,10 +461,14 @@
     }
 
 
+
+
     // 手機版滾動提示(可選)
     @media (max-width: 768px) {
       // 添加漸層提示還有更多內容
       position: relative;
+
+
 
 
       &::after {
@@ -379,6 +490,8 @@
 }
 
 
+
+
 // 左側邊欄
 .user_sidebar_left {
   @media (max-width: 768px) {
@@ -389,15 +502,21 @@
 }
 
 
+
+
 // 右側時間軸
 .user_sidebar_right {
   margin-left: 7%;
   flex-shrink: 0;
 
 
+
+
   // 大平板
   @media (max-width: 1200px) {
     margin-left: 5%;
+
+
 
 
     svg {
@@ -407,9 +526,13 @@
   }
 
 
+
+
   // 平板
   @media (max-width: 1024px) {
     margin-left: 3%;
+
+
 
 
     svg {
@@ -419,11 +542,15 @@
   }
 
 
+
+
   // 手機 - 隱藏
   @media (max-width: 768px) {
     display: none;
   }
 }
+
+
 
 
 // 裝飾元素
@@ -433,10 +560,14 @@
   }
 
 
+
+
   @media (max-width: 768px) {
     display: none;
   }
 }
+
+
 
 
 // 通用優化
@@ -445,6 +576,8 @@
   * {
     max-width: 100%;
   }
+
+
 
 
   // 改善觸控體驗
@@ -458,11 +591,15 @@
   }
 
 
+
+
   // 防止文字被選取時的視覺問題
   *::selection {
     background-color: rgba($primary, 0.2);
   }
 }
+
+
 
 
 // 極小螢幕優化
@@ -472,9 +609,13 @@
   }
 
 
+
+
   .footprint_content_box {
     padding: 0;
   }
+
+
 
 
   .footprint_content {
@@ -491,6 +632,8 @@
 }
 
 
+
+
 // 橫向模式優化(手機橫放)
 @media (max-width: 768px) and (orientation: landscape) {
   .footprint_content_box {
@@ -500,9 +643,13 @@
   }
 
 
+
+
   .footprint_content {
     width: 70%;
   }
+
+
 
 
   .user_sidebar_left {
@@ -512,9 +659,13 @@
   }
 
 
+
+
   .user_sidebar_right {
     display: none;
   }
+
+
 
 
   .footprint_content {
@@ -527,4 +678,9 @@
 }
 
 
+
+
+
+
+}
 

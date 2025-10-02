@@ -5,11 +5,19 @@
 
 
 
+
+
+
+
 .find_type_main {
+
+
 
 
     .titleBox_h1 {
         @media ($mediaSm) {
+
+
 
 
             min-width: 300px;
@@ -18,11 +26,17 @@
     }
 
 
+
+
     .titleBox {
+
+
 
 
         margin: 0 auto;
     }
+
+
 
 
     .find_type_content_box {
@@ -34,11 +48,19 @@
 
 
 
+
+
+
+
         @media (max-width:1140px) {
             flex-direction: column;
             align-items: center;
             gap: $spacing-lg;
         }
+
+
+
+
 
 
 
@@ -57,9 +79,17 @@
 
 
 
+
+
+
+
             @media (max-width:1190px) {
                 width: $w-90;
             }
+
+
+
+
 
 
 
@@ -69,6 +99,10 @@
                 height: 70vh;
                 padding: 20px 0;
             }
+
+
+
+
 
 
 
@@ -84,6 +118,10 @@
 
 
 
+
+
+
+
             @media (max-width:576px) {
                 width: 90%;
                 height: auto;
@@ -92,6 +130,10 @@
                 margin-right: 5%;
             }
         }
+
+
+
+
 
 
 
@@ -109,9 +151,17 @@
 
 
 
+
+
+
+
             @media (max-width:1870px) {
                 width: 90%;
             }
+
+
+
+
 
 
 
@@ -123,9 +173,17 @@
 
 
 
+
+
+
+
             @media (max-width:1643px) {
                 width: 83%;
             }
+
+
+
+
 
 
 
@@ -137,10 +195,16 @@
 
 
 
+
+
+
+
             @media(max-width:1305px) {
                 width: 90%;
                 gap: $spacing-xxs ;
             }
+
+
 
 
             @media (max-width:1140px) {
@@ -148,6 +212,10 @@
                 width: 92%;
                 gap: 15px;
             }
+
+
+
+
 
 
 
@@ -160,10 +228,18 @@
 
 
 
+
+
+
+
             @media (max-width:576px) {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
+
+
+
+
 
 
 
@@ -182,10 +258,18 @@
 
 
 
+
+
+
+
                 @media (max-width:768px) {
                     padding: 40px 15px;
                     min-height: 300px;
                 }
+
+
+
+
 
 
 
@@ -198,8 +282,16 @@
 
 
 
+
+
+
+
                 .no_results_icon {
                     margin-bottom: 20px;
+
+
+
+
 
 
 
@@ -211,9 +303,17 @@
 
 
 
+
+
+
+
                     @media (max-width:576px) {
                         margin-bottom: 10px;
                     }
+
+
+
+
 
 
 
@@ -226,9 +326,17 @@
 
 
 
+
+
+
+
                         @media (max-width:768px) {
                             width: 100px;
                         }
+
+
+
+
 
 
 
@@ -242,6 +350,10 @@
 
 
 
+
+
+
+
                 h3 {
                     font-size: 24px;
                     font-weight: $f-w-b;
@@ -251,10 +363,18 @@
 
 
 
+
+
+
+
                     @media (max-width:768px) {
                         font-size: 20px;
                         margin-bottom: 8px;
                     }
+
+
+
+
 
 
 
@@ -268,11 +388,19 @@
 
 
 
+
+
+
+
                 >p {
                     font-size: $f-s-basic;
                     color: $text;
                     margin-bottom: 30px;
                     max-width: 500px;
+
+
+
+
 
 
 
@@ -285,11 +413,19 @@
 
 
 
+
+
+
+
                     @media (max-width:576px) {
                         font-size: 13px;
                         margin-bottom: 15px;
                     }
                 }
+
+
+
+
 
 
 
@@ -304,6 +440,10 @@
 
 
 
+
+
+
+
                     @media (max-width:768px) {
                         padding: 15px 20px;
                         max-width: 350px;
@@ -312,10 +452,18 @@
 
 
 
+
+
+
+
                     @media (max-width:576px) {
                         padding: 12px 15px;
                         max-width: 100%;
                     }
+
+
+
+
 
 
 
@@ -330,10 +478,18 @@
 
 
 
+
+
+
+
                         @media (max-width:768px) {
                             font-size: 13px;
                             margin-bottom: 8px;
                         }
+
+
+
+
 
 
 
@@ -347,10 +503,18 @@
 
 
 
+
+
+
+
                     ul {
                         list-style: none;
                         padding: 0;
                         margin: 0;
+
+
+
+
 
 
 
@@ -366,6 +530,10 @@
 
 
 
+
+
+
+
                             @media (max-width:768px) {
                                 font-size: 13px;
                                 padding: 4px 0;
@@ -375,11 +543,19 @@
 
 
 
+
+
+
+
                             @media (max-width:576px) {
                                 font-size: 12px;
                                 padding: 3px 0;
                                 padding-left: 16px;
                             }
+
+
+
+
 
 
 
@@ -401,29 +577,19 @@
 
 
 
-    .find_type_img1,
-    .find_type_img2 {
-        position: absolute;
-        width: 200px;
-    }
 
 
 
 
-    .find_type_img1 {
-        bottom: -640px;
-        left: 110px;
-        z-index: 2;
-    }
 
 
 
 
-    .find_type_img2 {
-        bottom: -675px;
-        left: 365px;
-        transform: rotate(2deg);
-    }
+
+
+
+
+ 
 
 
 
@@ -448,6 +614,10 @@
 
 
 
+
+
+
+
         @media (max-width:1440px) {
             width: 28%;
             padding: 40px $spacing-md;
@@ -457,11 +627,19 @@
 
 
 
+
+
+
+
         @media (max-width:1280px) {
             width: 30%;
             padding: 35px $spacing-sm;
             gap: 40px;
         }
+
+
+
+
 
 
 
@@ -477,6 +655,8 @@
             overflow: visible;
 
 
+
+
             .search-options {
                 max-height: 0;
                 opacity: 0;
@@ -484,6 +664,8 @@
                 transition: max-height 0.5s ease, opacity 0.4s ease;
                 margin-top: 0;
             }
+
+
 
 
             &.expanded {
@@ -497,8 +679,16 @@
 
 
 
+
+
+
+
             }
         }
+
+
+
+
 
 
 
@@ -514,6 +704,10 @@
 
 
 
+
+
+
+
         @media (max-width:576px) {
             width: 90%;
             border-radius: $rad-md;
@@ -525,6 +719,10 @@
 
 
 
+
+
+
+
         .search-wrap {
             display: flex;
             width: $w-100;
@@ -532,12 +730,28 @@
             justify-content: center;
 
 
+
+
             @media (max-width:1140px) {
                 justify-content: space-between;
                 padding-left: 5%;
 
 
+
+
             }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -553,6 +767,8 @@
             @media (max-width:768px) {
                 gap: 8px;
             }
+
+
 
 
             .search_hamburger {
@@ -568,9 +784,15 @@
                 border-radius: 8px;
 
 
+
+
                 @media (max-width:1140px) {
                     display: flex;
                 }
+
+
+
+
 
 
 
@@ -581,15 +803,23 @@
                 }
 
 
+
+
                 &.is-active {
                     transform: rotate(180deg);
                 }
+
+
 
 
                 img {
                     width: 24px;
                     height: 24px;
                     transition: transform 0.3s ease;
+
+
+
+
 
 
 
@@ -605,12 +835,18 @@
 
 
 
+
+
+
+
         .search-options {
             display: flex;
             flex-direction: column;
             width: 100%;
             gap: 60px;
             align-items: center;
+
+
 
 
             @media (max-width:1440px) {
@@ -620,14 +856,24 @@
 
 
 
+
+
+
+
             @media (max-width:1280px) {
                 gap: 40px;
             }
 
 
+
+
             @media (max-width: 1140px) {
                 gap: 18px;
             }
+
+
+
+
 
 
 
@@ -639,10 +885,18 @@
 
 
 
+
+
+
+
             @media (max-width: 576px) {
                 gap: 12px;
             }
         }
+
+
+
+
 
 
 
@@ -658,9 +912,17 @@
 
 
 
+
+
+
+
             @media (max-width:1280px) {
                 width: 80%;
             }
+
+
+
+
 
 
 
@@ -673,6 +935,10 @@
 
 
 
+
+
+
+
             @media (max-width:768px) {
                 width: 95%;
                 height: 42px;
@@ -681,10 +947,18 @@
 
 
 
+
+
+
+
             select {
                 @extend %remove_form_style;
                 width: $w-100;
                 font-size: $f-s-basic;
+
+
+
+
 
 
 
@@ -698,8 +972,16 @@
 
 
 
+
+
+
+
         .button_box {
             width: $w-80;
+
+
+
+
 
 
 
@@ -711,9 +993,17 @@
 
 
 
+
+
+
+
             @media (max-width:1140px) {
                 width: 90%;
             }
+
+
+
+
 
 
 
@@ -725,10 +1015,18 @@
 
 
 
+
+
+
+
             p {
                 padding-left: $spacing-xxs;
                 text-align: left;
                 font-size: $f-s-sm;
+
+
+
+
 
 
 
@@ -742,12 +1040,20 @@
 
 
 
+
+
+
+
                 @media (max-width:576px) {
                     font-size: 12px;
                     margin-bottom: 6px;
                 }
             }
         }
+
+
+
+
 
 
 
@@ -763,9 +1069,17 @@
 
 
 
+
+
+
+
             @media (max-width:1280px) {
                 gap: 20px;
             }
+
+
+
+
 
 
 
@@ -779,6 +1093,10 @@
 
 
 
+
+
+
+
             @media (max-width:768px) {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
@@ -788,10 +1106,18 @@
 
 
 
+
+
+
+
             @media (max-width:576px) {
                 gap: 6px;
                 padding-top: 4px;
             }
+
+
+
+
 
 
 
@@ -812,10 +1138,18 @@
 
 
 
+
+
+
+
                 @media (max-width:1280px) {
                     height: 42px;
                     font-size: $f-s-sm;
                 }
+
+
+
+
 
 
 
@@ -830,11 +1164,19 @@
 
 
 
+
+
+
+
                 @media (max-width:768px) {
                     height: 36px;
                     font-size: 11.5px;
                     padding: 0 4px;
                 }
+
+
+
+
 
 
 
@@ -848,10 +1190,18 @@
 
 
 
+
+
+
+
                 &:hover {
                     background-color: $accent;
                     color: $white;
                 }
+
+
+
+
 
 
 
@@ -867,11 +1217,19 @@
 
 
 
+
+
+
+
                 &:active {
                     transform: translateY(0);
                 }
             }
         }
+
+
+
+
 
 
 
@@ -888,9 +1246,17 @@
 
 
 
+
+
+
+
             @media (max-width: 1280px) {
                 width: 80%;
             }
+
+
+
+
 
 
 
@@ -904,11 +1270,19 @@
 
 
 
+
+
+
+
             @media (max-width: 768px) {
                 width: 95%;
                 padding: 10px;
                 margin-top: 8px;
             }
+
+
+
+
 
 
 
@@ -923,6 +1297,10 @@
 
 
 
+
+
+
+
         @keyframes slideDown {
             from {
                 opacity: 0;
@@ -930,11 +1308,17 @@
             }
 
 
+
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+
+
+
 
 
 
@@ -948,10 +1332,18 @@
 
 
 
+
+
+
+
             @media (max-width: 768px) {
                 gap: 8px;
                 margin-bottom: 8px;
             }
+
+
+
+
 
 
 
@@ -966,6 +1358,10 @@
 
 
 
+
+
+
+
         .date-input-group {
             display: flex;
             flex-direction: column;
@@ -975,9 +1371,17 @@
 
 
 
+
+
+
+
             @media (max-width: 576px) {
                 gap: 4px;
             }
+
+
+
+
 
 
 
@@ -990,9 +1394,17 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     font-size: 12px;
                 }
+
+
+
+
 
 
 
@@ -1001,6 +1413,10 @@
                     font-size: 11px;
                 }
             }
+
+
+
+
 
 
 
@@ -1018,10 +1434,18 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     padding: 7px;
                     font-size: 12px;
                 }
+
+
+
+
 
 
 
@@ -1034,9 +1458,17 @@
 
 
 
+
+
+
+
                 &:focus {
                     border-color: $accent;
                 }
+
+
+
+
 
 
 
@@ -1050,10 +1482,18 @@
 
 
 
+
+
+
+
         .date-picker-actions {
             display: flex;
             justify-content: flex-end;
             gap: 8px;
+
+
+
+
 
 
 
@@ -1065,11 +1505,19 @@
 
 
 
+
+
+
+
             .btn-secondary,
             .btn-primary {
                 box-sizing: border-box;
                 white-space: nowrap;
             }
+
+
+
+
 
 
 
@@ -1087,10 +1535,18 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     padding: 7px 12px;
                     font-size: 12px;
                 }
+
+
+
+
 
 
 
@@ -1103,10 +1559,18 @@
 
 
 
+
+
+
+
                 &:hover {
                     background-color: #f5f5f5;
                 }
             }
+
+
+
+
 
 
 
@@ -1125,6 +1589,10 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     padding: 7px 12px;
                     font-size: 12px;
@@ -1133,10 +1601,18 @@
 
 
 
+
+
+
+
                 @media (max-width: 576px) {
                     padding: 6px 10px;
                     font-size: 11px;
                 }
+
+
+
+
 
 
 
@@ -1150,11 +1626,19 @@
 
 
 
+
+
+
+
                 &:active {
                     transform: translateY(0);
                 }
             }
         }
+
+
+
+
 
 
 
@@ -1169,10 +1653,16 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 
+
+
             @media (max-width:1280px) {
                 width: 85%;
                 padding: $spacing-xxs $spacing-md;
             }
+
+
+
+
 
 
 
@@ -1186,10 +1676,18 @@
 
 
 
+
+
+
+
             @media (max-width:768px) {
                 height: 42px;
                 padding: $spacing-xxs $spacing-sm;
             }
+
+
+
+
 
 
 
@@ -1202,10 +1700,18 @@
 
 
 
+
+
+
+
             input {
                 @extend %remove_form_style;
                 width: $w-100;
                 font-size: $f-s-basic;
+
+
+
+
 
 
 
@@ -1217,9 +1723,17 @@
 
 
 
+
+
+
+
                 @media (max-width:576px) {
                     font-size: 13px;
                 }
+
+
+
+
 
 
 
@@ -1234,6 +1748,10 @@
 
 
 
+
+
+
+
             button {
                 @extend %remove_form_style;
                 margin-left: 50px;
@@ -1241,9 +1759,17 @@
 
 
 
+
+
+
+
                 img {
                     width: 25px;
                     height: 25px;
+
+
+
+
 
 
 
@@ -1256,14 +1782,22 @@
 
 
 
+
+
+
+
                     @media (max-width:576px) {
                         width: 30px;
-                        height: 20px;
+                        height: 30px;
                     }
                 }
             }
         }
     }
+
+
+
+
 
 
 
@@ -1281,9 +1815,17 @@
 
 
 
+
+
+
+
         @media (max-width:1140px) {
             height: 280px;
         }
+
+
+
+
 
 
 
@@ -1295,9 +1837,17 @@
 
 
 
+
+
+
+
         @media (max-width:576px) {
-            height: 240px;
+            height: 230px;
         }
+
+
+
+
 
 
 
@@ -1306,6 +1856,10 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transform: translateY(-2px);
         }
+
+
+
+
 
 
 
@@ -1320,6 +1874,10 @@
 
 
 
+
+
+
+
             @media (max-width:1140px) {
                 height: 180px;
                 padding: 8px;
@@ -1328,9 +1886,17 @@
 
 
 
+
+
+
+
             @media (max-width:768px) {
                 height: 160px;
             }
+
+
+
+
 
 
 
@@ -1343,14 +1909,26 @@
 
 
 
+
+
+
+
             .top {
                 @extend %flex-space-between;
 
 
 
 
+
+
+
+
                 .like_button {
                     @extend %remove_form_style;
+
+
+
+
 
 
 
@@ -1362,9 +1940,17 @@
 
 
 
+
+
+
+
                         @media (max-width:768px) {
                             width: 22px;
                         }
+
+
+
+
 
 
 
@@ -1379,9 +1965,17 @@
 
 
 
+
+
+
+
             .date {
                 @extend %flex-column;
                 gap: $spacing-xxs;
+
+
+
+
 
 
 
@@ -1398,10 +1992,18 @@
 
 
 
+
+
+
+
                     @media (max-width:768px) {
                         padding: 2px 6px;
                         gap: 4px;
                     }
+
+
+
+
 
 
 
@@ -1414,8 +2016,16 @@
 
 
 
+
+
+
+
                     p {
                         font-size: 12px;
+
+
+
+
 
 
 
@@ -1423,6 +2033,10 @@
                         @media (max-width:768px) {
                             font-size: 11px;
                         }
+
+
+
+
 
 
 
@@ -1435,9 +2049,17 @@
 
 
 
+
+
+
+
                     img {
                         width: 16px;
                         height: 16px;
+
+
+
+
 
 
 
@@ -1446,6 +2068,10 @@
                             width: 14px;
                             height: 14px;
                         }
+
+
+
+
 
 
 
@@ -1459,6 +2085,10 @@
 
 
 
+
+
+
+
                     .icon_time {
                         width: 16px;
                         height: 19px;
@@ -1467,10 +2097,18 @@
 
 
 
+
+
+
+
                         @media (max-width:768px) {
                             width: 14px;
                             height: 17px;
                         }
+
+
+
+
 
 
 
@@ -1486,6 +2124,8 @@
 
 
 
+
+
             .find_type_tag_box {
                 margin-top: auto;
                 display: flex;
@@ -1496,14 +2136,11 @@
                 width: 100%;
 
 
-
-
                 .tag_wrapper {
                     display: flex;
                     gap: $spacing-xs;
                     animation: marquee-smooth 15s linear infinite;
-
-
+                    align-items: center;
 
 
                     &:hover {
@@ -1512,14 +2149,10 @@
                 }
 
 
-
-
                 @keyframes marquee-smooth {
                     0% {
                         transform: translateX(100%);
                     }
-
-
 
 
                     100% {
@@ -1528,37 +2161,37 @@
                 }
 
 
-
-
                 button {
                     @extend %remove_form_style;
-                    background-color: $accent;
-                    color: $white;
-                    border-radius: $rad-ex;
-                    flex-shrink: 0;
-                    white-space: nowrap;
-                    padding: 0px 5px;
-                    min-width: fit-content;
-                    font-size: $f-s-xs;
+                    background-color: $accent ;
+                    color: $white ;
+                    display: inline-flex;
+                    align-items: center ;
+                    justify-content: center ;
+                    height: 24px ;
+                    padding: 0 10px;
+                    font-size: 12px ;
+                    line-height: 1 ;
+                    border-radius: 50px;
+                    border: none ;
+                    box-sizing: border-box ;
+                    white-space: nowrap ;
+                    flex-shrink: 0 ;
+                    min-width: fit-content ;
+                    text-align: center ;
+                    vertical-align: middle ;
+                    margin: 0 ;
 
 
-
-
-                    @media (max-width:768px) {
-                        font-size: 11px;
-                        padding: 0px 4px;
-                    }
-
-
-
-
-                    @media (max-width:576px) {
-                        font-size: 10px;
-                        padding: 0px 3px;
-                    }
                 }
             }
+
+
         }
+
+
+
+
 
 
 
@@ -1573,10 +2206,19 @@
 
 
 
+
+
+
+
                 @media (max-width:768px) {
                     font-size: $f-s-sm;
                     padding: 6px 8px 0 8px;
+                   
                 }
+
+
+
+
 
 
 
@@ -1586,6 +2228,10 @@
                     padding: 4px 6px 0 6px;
                 }
             }
+
+
+
+
 
 
 
@@ -1603,12 +2249,21 @@
 
 
 
+
+
+
+
                 @media (max-width:768px) {
                     font-size: 12px;
                     padding: 0 8px;
                     padding-bottom: 8px;
                     -webkit-line-clamp: 2;
+                    height: 50px;
                 }
+
+
+
+
 
 
 

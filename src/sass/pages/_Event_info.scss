@@ -56,11 +56,71 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .event_info_main {
+
+
 
 
     .titleBox_h1 {
         @media ($mediaSm) {
+
+
 
 
             min-width: 300px;
@@ -69,11 +129,19 @@
     }
 
 
+
+
     .titleBox {
+
+
 
 
         margin: 0 auto;
     }
+
+
+
+
 
 
 
@@ -109,6 +177,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .info_box {
         @extend %flex-center;
         flex-direction: column;
@@ -118,8 +202,20 @@
 
 
 
+
+
+
+
         border-radius: 0 0 50px 50px;
-        padding: 200px 0 0px 0; // 增加底部padding
+        padding: 200px 0 0px 0;
+
+
+
+
+
+
+
+
 
 
 
@@ -131,6 +227,10 @@
         @media (max-width:1024px) {
             width: 95%;
         }
+
+
+
+
 
 
 
@@ -156,7 +256,49 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -195,12 +337,24 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width:992px) {
             width: $w-50;
             gap: 0;
             flex-direction: column;
             align-items: center;
         }
+
+
+
+
 
 
 
@@ -216,11 +370,18 @@
 
 
 
+
+
+
+
+
+
+
+
         .pic_box {
             margin-top: 35px;
             display: flex;
             flex-direction: column;
-            // justify-content: center;
             padding: 10px;
             overflow: hidden;
             width: 600px;
@@ -233,14 +394,26 @@
 
 
 
+
+
+
+
+
+
+
+
             // 大圖固定尺寸設定
             .main_pic {
                 overflow: hidden;
-                width: 100%; // 固定寬度
-                height: 400px; // 固定高度
+                width: 100%;
+                height: 400px;
                 max-width: 600px;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 position: relative;
+
+
+
+
 
 
 
@@ -261,14 +434,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
                 img {
                     width: 100%;
                     height: 100%;
-                    object-fit: cover; // 填滿容器，保持比例，裁切多餘部分
-                    object-position: center; // 圖片置中
+                    object-fit: cover;
+                    object-position: center;
                     display: block;
                     transition: transform 0.3s ease;
                 }
+
+
+
+
+
+
+
+
 
 
 
@@ -289,11 +482,27 @@
 
 
 
+
+
+
+
+
+
+
+
             .thumbnail_container {
                 width: 100%;
                 overflow: hidden;
                 position: relative;
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -319,8 +528,24 @@
 
 
 
+
+
+
+
+
+
+
+
                 /* 支持觸控設備的滑動 */
                 -webkit-overflow-scrolling: touch;
+
+
+
+
+
+
+
+
 
 
 
@@ -340,9 +565,25 @@
 
 
 
+
+
+
+
+
+
+
+
                 &::-webkit-scrollbar {
                     display: none;
                 }
+
+
+
+
+
+
+
+
 
 
 
@@ -362,18 +603,28 @@
 
 
 
+
+
+
+
+
+
+
+
                 // 縮圖按鈕固定尺寸設定
                 .thumb {
                     @extend %remove_form_style;
                     flex: 0 0 auto;
-                    width: 80px; // 固定寬度
-                    height: 60px; // 固定高度
+                    width: 80px;
+                    height: 60px;
                     border-radius: 8px;
                     overflow: hidden;
                     background: none;
                     cursor: pointer;
                     transition: all 0.3s ease;
                     position: relative;
+
+
 
 
                     @media (max-width:770px) {
@@ -386,17 +637,31 @@
 
 
 
+
+
+
+
+
+
                     img {
                         width: 100%;
                         height: 100%;
-                        object-fit: cover; // 填滿容器，保持比例，裁切多餘部分
-                        object-position: center; // 圖片置中
+                        object-fit: cover;
+                        object-position: center;
                         display: block;
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                         transition: all 0.3s ease;
                         user-select: none;
                         -webkit-user-drag: none;
                     }
+
+
+
+
+
+
+
+
 
 
 
@@ -417,11 +682,27 @@
 
 
 
+
+
+
+
+
+
+
+
                         img {
                             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
                             transform: scale(1.1);
                         }
                     }
+
+
+
+
+
+
+
+
 
 
 
@@ -471,6 +752,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .event_name {
             width: 300px;
             color: $text;
@@ -478,11 +791,6 @@
             margin-bottom: $spacing-xxl;
 
 
-
-
-            @media (max-width:992px) {
-                // text-align: center;
-            }
         }
 
 
@@ -516,8 +824,40 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .info {
-            // outline: 1px solid red;
+ 
 
 
 
@@ -536,6 +876,14 @@
 
 
 
+
+
+
+
+
+
+
+
             width: 19%;
             padding-top: $spacing-xxl;
 
@@ -544,9 +892,14 @@
 
 
 
+
+
+
+
+
+
             @media (max-width:992px) {
-                gap: 10%;
-                width: 100%;
+                width: 90%;
                 flex-direction: row;
                 justify-content: center;
             }
@@ -558,10 +911,87 @@
 
 
 
+
+
+
+
+
+
+
+
             @media (max-width:768px) {
-                flex-direction: column;
+     
                 width: 100%;
             }
+
+
+            @media (max-width:660px) {
+                flex-direction: column;
+             
+                align-items: center;
+            }
+
+
+
+
+
+
+            .detail {
+                @media (max-width:780px) {
+
+
+                    width: 220px;
+                    height: fit-content;
+
+
+                }
+
+
+
+
+            }
+
+
+            .btn-wrap {
+                @media (max-width:992px) {
+                    display: flex;
+                    width: 40%;
+                    justify-content: space-between;
+
+
+                }
+
+
+                @media (max-width:660px) {
+
+
+                    width: 65%;
+
+
+
+
+                }
+
+
+                @media (max-width:425px) {
+                    width: 70%;
+                    flex-direction: column;
+
+
+
+
+                }
+
+
+            }
+
+
+
+
+
+
+
+
 
 
 
@@ -589,8 +1019,32 @@
 
 
 
+
+
+
+
+
+
+
+
                 }
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -615,7 +1069,41 @@
                 align-items: center;
 
 
+
+
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -650,6 +1138,38 @@
 
             .place {
                 margin: $spacing-sm 0 35px 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -750,6 +1270,70 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
@@ -759,8 +1343,26 @@
 
 
 
+
+
+
+
+
+
+
+
         .type_box {
-            // outline: 1px solid red;
+            @media (max-width:425px) {
+                width: 100%;
+            }
+
+
+
+
+
+
+
+
 
 
 
@@ -805,11 +1407,83 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             .tag_box {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 grid-column-gap: 5%;
                 grid-row-gap: 13px;
+
+
+                @media (max-width:992px) {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+
+                @media (max-width:425px) {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -877,8 +1551,31 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .stall_btn_box {
-            // outline: 1px solid red;
             display: flex;
             flex-direction: column;
             gap: $spacing-md ;
@@ -891,15 +1588,42 @@
 
 
 
+
+
+
+
+
+
+
+
             figure {
-                // outline: 1px solid red;
                 background-color: $secondary ;
                 width: $w-100;
                 height: 80px;
                 border-radius: 20px;
                 @extend %flex-center;
-                // flex-direction: column;
                 gap: $spacing-sm;
+
+
+                @media (max-width:992px) {
+                    flex-direction: column;
+                    display: flex;
+                    gap: 0;
+                    height: 120px;
+                    width: 120px;
+                }
+
+
+                @media (max-width:425px) {
+                    flex-direction: row;
+                    width: 100%;
+                    height: 100px;
+                    gap: 10px;
+                }
+
+
+
+
 
 
 
@@ -913,6 +1637,38 @@
                     flex-direction: column;
                     align-items: center;
                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1017,7 +1773,103 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1111,6 +1963,62 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /* 照片區 */
     .deco_line {
         width: 75%;
@@ -1147,14 +2055,80 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .detail_pic {
         width: $w-70;
+
+
 
 
         @media (max-width:770px) {
             width: 90%;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1224,6 +2198,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // 文字說明區
     .info_desc {
         @extend %flex-column;
@@ -1232,9 +2238,43 @@
         margin: $spacing-xl 0;
 
 
+
+
         @media (max-width:770px) {
             width: 90%;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1304,6 +2344,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .content {
             color: $text;
         }
@@ -1339,8 +2411,72 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         ul {
             list-style: disc;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1409,8 +2545,72 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1479,8 +2679,48 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     border-top: 2px dashed $gray-500;
     width: $w-70;
+
+
+
+
+
+
+
+
 
 
 
@@ -1492,6 +2732,12 @@
     @media (max-width:770px) {
         width: 95%;
     }
+
+
+
+
+
+
 
 
 
@@ -1518,6 +2764,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .review_input_box {
         display: flex;
         align-items: center;
@@ -1525,6 +2787,27 @@
         width: $w-90;
         height: 75px;
         padding-top: $spacing-xl ;
+
+
+        @media (max-width:768px) {
+            margin-bottom: 10px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1578,11 +2861,81 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         .input {
             background-color: $primary;
             border-radius: $rad-ex;
             width: $w-90;
             display: flex;
+            padding: 4px 6px 4px 20px;
+
+
+            @media (max-width:768px) {
+                padding: 4px 6px 4px 16px;
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1626,13 +2979,36 @@
 
 
 
+
+
+
+
+
+
+
+
                 &::placeholder {
-                    // outline: 1px solid red;
                     margin-top: 5px;
                     padding-left: 10px;
                     color: $white;
                     font-size: 16px;
                 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1685,11 +3061,64 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             input {
                 width: $w-100;
             }
+
+
+            input:focus {
+                color: $white;
+            }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1721,14 +3150,36 @@
 
 
 
+
+
+
+
+
+
+
+
         @media (max-width:625px) {
             padding-top: 5px;
             flex-direction: column;
             align-items: flex-start;
             gap: 5px;
-            margin-bottom: 10px;
-            height: 70px;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1748,6 +3199,22 @@
         p {
             font-size: $f-s-lg;
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1785,6 +3252,22 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             button {
                 @extend %remove_form_style;
                 height: 24px;
@@ -1802,10 +3285,26 @@
 
 
 
+
+
+
+
+
+
+
+
                 &:hover {
                     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 }
             }
+
+
+
+
+
+
+
+
 
 
 
@@ -1827,8 +3326,34 @@
 
 
 
+
+
+
+
+
+
+
+
         }
+
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1867,9 +3392,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .review_card {
         display: flex;
         width: $w-100;
+
+
+
+
+
+
+
+
 
 
 
@@ -1890,8 +3439,24 @@
 
 
 
+
+
+
+
+
+
+
+
             .like_box {
                 @extend %flex-center;
+
+
+
+
+
+
+
+
 
 
 
@@ -1911,7 +3476,23 @@
 
 
 
+
+
+
+
+
+
+
+
                     img {
+
+
+
+
+
+
+
+
 
 
 
@@ -1928,6 +3509,22 @@
                 }
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1962,9 +3559,33 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             .regular_info {
                 display: flex;
                 gap: $spacing-xs;
+
+
+
+
+
+
+
+
 
 
 
@@ -1994,7 +3615,39 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

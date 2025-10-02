@@ -2,12 +2,15 @@ import React, { useState, useMemo, useRef } from 'react'
 import stall from '../data/stall.json'
 
 
+
+
 const Stall_map = () => {
-  // 使用真實攤位資料
+  // 使用真實攤位資料，添加 isLiked 狀態，隨機生成愛心數
   const [arrStall, setArrStall] = useState(stall.map(s => ({
     ...s,
-    likes: 12,
-    reviews: []
+    likes: Math.floor(Math.random() * 50) + 5, // 隨機生成 5-54 之間的愛心數
+    reviews: [],
+    isLiked: false
   })));
  
   const [selectedStall, setSelectedStall] = useState(null);
@@ -21,19 +24,26 @@ const Stall_map = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [hasMoved, setHasMoved] = useState(false);
   const mapRef = useRef(null);
+
+
 
 
   const categories = ['全部', '#手作', '#美食', '#服飾', '#寵物', '#植栽'];
 
 
-  // 攤位佈局 - 重要：這個要保留！
+
+
+  // 攤位佈局
   const stallLayout = [
     ['01', '02', null, null, '07', '08', '09', '10', '11', '12'],
     ['03', '04', null, null, null, null, null, null, null, null],
     ['05', '06', null, '13', '14', '15', null, '19', '20', '21'],
     [null, null, null, '16', '17', '18', null, '22', '23', '24']
   ];
+
+
 
 
   const filterStall = useMemo(() => {
@@ -49,15 +59,21 @@ const Stall_map = () => {
     });
 
 
+
+
     if (sortBy === '熱門') {
-      filtered = [...filtered].sort(() => Math.random() - 0.5);
+      filtered = [...filtered].sort((a, b) => b.likes - a.likes); // 按愛心數從高到低排序
     } else {
       filtered = [...filtered].sort((a, b) => a.num.localeCompare(b.num));
     }
 
 
+
+
     return filtered;
   }, [search, selectedCategory, sortBy, arrStall]);
+
+
 
 
   const getStallByNum = (num) => {
@@ -65,7 +81,15 @@ const Stall_map = () => {
   };
 
 
-  const handleStallClick = (num) => {
+
+
+  const handleStallClick = (num, e) => {
+    // 如果正在拖移，不觸發點擊
+    if (hasMoved) {
+      e?.stopPropagation();
+      return;
+    }
+   
     const stall = getStallByNum(num);
    
     if (selectedStall?.num === num) {
@@ -76,17 +100,32 @@ const Stall_map = () => {
   };
 
 
+
+
+  // 切換推薦/取消推薦
   const handleLike = (stallNum) => {
     setArrStall(prevStalls =>
       prevStalls.map(s =>
-        s.num === stallNum ? { ...s, likes: s.likes + 1 } : s
+        s.num === stallNum
+          ? {
+              ...s,
+              likes: s.isLiked ? s.likes - 1 : s.likes + 1,
+              isLiked: !s.isLiked
+            }
+          : s
       )
     );
    
     if (selectedStall?.num === stallNum) {
-      setSelectedStall(prev => ({ ...prev, likes: prev.likes + 1 }));
+      setSelectedStall(prev => ({
+        ...prev,
+        likes: prev.isLiked ? prev.likes - 1 : prev.likes + 1,
+        isLiked: !prev.isLiked
+      }));
     }
   };
+
+
 
 
   const handleAddReview = (stallNum) => {
@@ -123,21 +162,126 @@ const Stall_map = () => {
   };
 
 
+
+
   const handleCloseDetail = () => {
     setSelectedStall(null);
     setReviewInput('');
   };
 
 
-  // 地圖控制函數
+
+
+  // 地圖控制函數 - 滑鼠事件
+  const handleMouseDown = (e) => {
+    // 如果點擊的是攤位，不啟動拖移
+    if (e.target.closest('.grid_stall')) {
+      return;
+    }
+   
+    setIsDragging(true);
+    setHasMoved(false);
+    setDragStart({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y
+    });
+  };
+
+
+
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+   
+    const newX = e.clientX - dragStart.x;
+    const newY = e.clientY - dragStart.y;
+   
+    // 檢查是否真的有移動
+    if (Math.abs(newX - position.x) > 3 || Math.abs(newY - position.y) > 3) {
+      setHasMoved(true);
+    }
+   
+    setPosition({
+      x: newX,
+      y: newY
+    });
+  };
+
+
+
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setTimeout(() => setHasMoved(false), 50);
+  };
+
+
+
+
+  // 觸控事件處理（手機）
+  const handleTouchStart = (e) => {
+    // 如果觸碰的是攤位，不啟動拖移
+    if (e.target.closest('.grid_stall')) {
+      return;
+    }
+   
+    const touch = e.touches[0];
+    setIsDragging(true);
+    setHasMoved(false);
+    setDragStart({
+      x: touch.clientX - position.x,
+      y: touch.clientY - position.y
+    });
+  };
+
+
+
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+   
+    // 防止頁面滾動
+    e.preventDefault();
+   
+    const touch = e.touches[0];
+    const newX = touch.clientX - dragStart.x;
+    const newY = touch.clientY - dragStart.y;
+   
+    // 檢查是否真的有移動
+    if (Math.abs(newX - position.x) > 3 || Math.abs(newY - position.y) > 3) {
+      setHasMoved(true);
+    }
+   
+    setPosition({
+      x: newX,
+      y: newY
+    });
+  };
+
+
+
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    setTimeout(() => setHasMoved(false), 50);
+  };
+
+
+
+
+  // 縮放控制
   const handleZoomIn = () => {
     setScale(prev => Math.min(prev + 0.2, 2));
   };
 
 
+
+
   const handleZoomOut = () => {
     setScale(prev => Math.max(prev - 0.2, 0.5));
   };
+
+
 
 
   const handleResetView = () => {
@@ -146,28 +290,6 @@ const Stall_map = () => {
   };
 
 
-  const handleMouseDown = (e) => {
-    setIsDragging(true);
-    setDragStart({
-      x: e.clientX - position.x,
-      y: e.clientY - position.y
-    });
-  };
-
-
-  const handleMouseMove = (e) => {
-    if (!isDragging) return;
-   
-    setPosition({
-      x: e.clientX - dragStart.x,
-      y: e.clientY - dragStart.y
-    });
-  };
-
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
 
 
   const handleWheel = (e) => {
@@ -175,6 +297,8 @@ const Stall_map = () => {
     const delta = e.deltaY > 0 ? -0.1 : 0.1;
     setScale(prev => Math.max(0.5, Math.min(2, prev + delta)));
   };
+
+
 
 
   return (
@@ -187,6 +311,8 @@ const Stall_map = () => {
           alt='攤位地圖'
         />
       </h1>
+
+
 
 
       <div className='map_container'>
@@ -203,6 +329,8 @@ const Stall_map = () => {
               />
               <img src="./images/find_map/magnifier.svg" alt="搜尋" />
             </div>
+
+
 
 
             <div className='filter_controls'>
@@ -224,6 +352,8 @@ const Stall_map = () => {
               </select>
             </div>
           </div>
+
+
 
 
           {/* 內容區域 */}
@@ -248,6 +378,8 @@ const Stall_map = () => {
                 </div>
 
 
+
+
                 <div className='detail_body'>
                   <h2>{selectedStall.name}</h2>
                  
@@ -258,13 +390,15 @@ const Stall_map = () => {
                   </div>
 
 
+
+
                   <div className='detail_actions'>
                     <button
-                      className='recommend_btn'
+                      className={`recommend_btn ${selectedStall.isLiked ? 'liked' : ''}`}
                       onClick={() => handleLike(selectedStall.num)}
                     >
                       <img src="./images/Stall_map/icon_like.svg" alt="推薦" />
-                      推薦 ({selectedStall.likes})
+                      {selectedStall.isLiked ? '已推薦' : '推薦'} ({selectedStall.likes})
                     </button>
                    
                     <div className='social_links'>
@@ -273,6 +407,8 @@ const Stall_map = () => {
                       <a href='#'><img src="./images/Stall_map/icon_web.svg" alt="Website" /></a>
                     </div>
                   </div>
+
+
 
 
                   <div className='review_section'>
@@ -302,7 +438,7 @@ const Stall_map = () => {
                         {selectedStall.reviews.map((review) => (
                           <div key={review.id} className='review_item'>
                             <div className='review_header'>
-                              <span className='review_author'>匿名用戶</span>
+                              <span className='review_author'>莊可蓮</span>
                               <span className='review_date'>{review.date}</span>
                             </div>
                             <p className='review_text'>{review.text}</p>
@@ -323,7 +459,7 @@ const Stall_map = () => {
                     <div
                       key={stall.id}
                       className='list_item'
-                      onClick={() => handleStallClick(stall.num)}
+                      onClick={(e) => handleStallClick(stall.num, e)}
                     >
                       <div className='item_image'>
                         <img src={stall.imgUrl} alt={stall.name} />
@@ -352,6 +488,8 @@ const Stall_map = () => {
         </aside>
 
 
+
+
         {/* 右側地圖 */}
         <div className='map_area'>
           {/* 控制按鈕 */}
@@ -368,6 +506,8 @@ const Stall_map = () => {
           </div>
 
 
+
+
           {/* 地圖容器 */}
           <div
             className='map_wrapper'
@@ -375,8 +515,14 @@ const Stall_map = () => {
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
             onWheel={handleWheel}
-            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+            style={{
+              cursor: isDragging ? 'grabbing' : 'grab',
+              touchAction: 'none'
+            }}
           >
             <div
               className='stall_grid'
@@ -400,7 +546,7 @@ const Stall_map = () => {
                       <div
                         key={colIndex}
                         className={`grid_stall ${isSelected ? 'selected' : ''}`}
-                        onClick={() => handleStallClick(stallNum)}
+                        onClick={(e) => handleStallClick(stallNum, e)}
                       >
                         <div className='stall_icon'>
                           <img src="./images/Stall_map/stall.svg" alt={`攤位${stallNum}`} />
@@ -436,6 +582,8 @@ const Stall_map = () => {
     </main>
   );
 };
+
+
 
 
 export default Stall_map;

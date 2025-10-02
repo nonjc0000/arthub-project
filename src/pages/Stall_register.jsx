@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
+
+
 const Stall_register = () => {
   // 步驟控制
   const [currentStep, setCurrentStep] = useState(1);
@@ -19,14 +21,20 @@ const Stall_register = () => {
   });
 
 
+
+
   // 選中的攤位編號
   const [selectedStallNumber, setSelectedStallNumber] = useState(null);
+
+
 
 
   // 處理攤位按鈕點擊
   const handleStallClick = (stallNumber) => {
     setSelectedStallNumber(stallNumber);
   };
+
+
 
 
   // 處理checkbox變化
@@ -41,6 +49,8 @@ const Stall_register = () => {
   };
 
 
+
+
   // 處理輸入變化
   const handleInputChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -51,6 +61,8 @@ const Stall_register = () => {
   };
 
 
+
+
   // 步驟1：選擇攤位後繼續
   const handleStepOneNext = () => {
     if (!selectedStallNumber) {
@@ -59,6 +71,8 @@ const Stall_register = () => {
     }
     setCurrentStep(2);
   };
+
+
 
 
   // 步驟2：表單驗證並提交
@@ -81,10 +95,14 @@ const Stall_register = () => {
     }
 
 
+
+
     if (formData.categories.length === 0) {
       alert("請至少選擇一個類別");
       return;
     }
+
+
 
 
     if (!formData.introImage) {
@@ -102,10 +120,14 @@ const Stall_register = () => {
   };
 
 
+
+
   // 返回上一步
   const handleBack = () => {
     setCurrentStep(currentStep - 1);
   };
+
+
 
 
   return (
@@ -120,6 +142,8 @@ const Stall_register = () => {
             alt='攤位登記'
           />
         </h1>
+
+
 
 
         {/* 步驟指示器 */}
@@ -139,6 +163,8 @@ const Stall_register = () => {
             <p>完成登記</p>
           </div>
         </div>
+
+
 
 
         {/* 步驟1: 選擇攤位 */}
@@ -178,6 +204,8 @@ const Stall_register = () => {
               </div>
 
 
+
+
               {/* 第2排: 03 04 空 空 空 空 空 空 空 空 */}
               <div className='stall_row'>
                 <div className={`stall_btn ${selectedStallNumber === '03' ? 'selected' : ''}`} onClick={() => handleStallClick('03')}>
@@ -195,6 +223,8 @@ const Stall_register = () => {
                 <div className='stall_empty'></div>
                 <div className='stall_empty'></div>
               </div>
+
+
 
 
               {/* 第3排: 05 06 空 13 14 15 空 19 20 21 */}
@@ -226,6 +256,8 @@ const Stall_register = () => {
                   <p>21</p>
                 </div>
               </div>
+
+
 
 
               {/* 第4排: 空 空 空 16 17 18 空 22 23 24 */}
@@ -265,6 +297,8 @@ const Stall_register = () => {
         )}
 
 
+
+
         {/* 步驟2: 填寫資訊 */}
         {currentStep === 2 && (
           <div className='register'>
@@ -274,7 +308,7 @@ const Stall_register = () => {
               <form className='register_form'>
                 <div className='contact'>
                   <div className="input">
-                    <label>商家名稱 <span style={{color: 'red'}}>*</span></label>
+                    <label>商家名稱 <span style={{color: '#ed972e'}}>*</span></label>
                     <input
                       type="text"
                       name="name"
@@ -284,7 +318,7 @@ const Stall_register = () => {
                     />
                   </div>
                   <div className="input">
-                    <label>電子信箱 <span style={{color: 'red'}}>*</span></label>
+                    <label>電子信箱 <span style={{color: '#ed972e'}}>*</span></label>
                     <input
                       type="email"
                       name="email"
@@ -295,7 +329,9 @@ const Stall_register = () => {
                   </div>
 
 
-                  <p className='checkbox_title'>類別 <span style={{color: 'red'}}>*</span></p>
+
+
+                  <p className='checkbox_title'>類別 <span style={{color: '#ed972e'}}>*</span></p>
                   <div className='checkbox'>
                     {['手作', '美食', '服飾', '寵物', '植栽', '文創', '二手', '其他'].map((type, index) => (
                       <div className="type_box" key={index}>
@@ -313,9 +349,13 @@ const Stall_register = () => {
                 </div>
 
 
+
+
                 <div className='contact'>
                   <div className="input">
                     <label>社群連結</label>
+
+
 
 
                     <div className='social'>
@@ -332,6 +372,8 @@ const Stall_register = () => {
                     </div>
 
 
+
+
                     <div className='social'>
                       <figure>
                         <img src="./images/Stall_register/icon_ig.svg" alt="Instagram" />
@@ -344,6 +386,8 @@ const Stall_register = () => {
                         placeholder='請輸入連結'
                       />
                     </div>
+
+
 
 
                     <div className='social'>
@@ -362,7 +406,7 @@ const Stall_register = () => {
                  
                   <div className='file'>
                     <div className='file_box'>
-                      <label>攤位介紹圖片 <span style={{color: 'red'}}>*</span></label>
+                      <label>攤位介紹圖片 <span style={{color: '#ed972e'}}>*</span></label>
                       <input
                         type="file"
                         id="input1"
@@ -372,7 +416,7 @@ const Stall_register = () => {
                       />
                     </div>
                     <div className='file_box'>
-                      <label>主辦方申請證明 <span style={{color: 'red'}}>*</span></label>
+                      <label>主辦方申請證明 <span style={{color: '#ed972e'}}>*</span></label>
                       <input
                         type="file"
                         id="input2"
@@ -395,6 +439,8 @@ const Stall_register = () => {
             </div>
           </div>
         )}
+
+
 
 
         {/* 步驟3: 完成登記 */}
@@ -433,6 +479,8 @@ const Stall_register = () => {
               </div>
 
 
+
+
               <div className='completion_actions'>
                 <Link to='/'>
                   <button className='home_btn'>返回首頁</button>
@@ -450,5 +498,11 @@ const Stall_register = () => {
 }
 
 
+
+
 export default Stall_register
+
+
+
+
 

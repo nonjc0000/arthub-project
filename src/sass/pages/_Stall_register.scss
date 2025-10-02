@@ -4,13 +4,21 @@
 
 
 
+
+
+
+
 .stall_register_main {
     min-height: 100vh;
     padding-bottom: 60px;
 
 
+
+
     .titleBox_h1 {
         @media ($mediaSm) {
+
+
 
 
             min-width: 300px;
@@ -19,11 +27,19 @@
     }
 
 
+
+
     .titleBox {
+
+
 
 
         margin: 0 auto;
     }
+
+
+
+
 
 
 
@@ -38,6 +54,10 @@
 
 
 
+
+
+
+
         h1 {
             @extend %flex-center;
         }
@@ -45,7 +65,11 @@
 
 
 
-        // 步驟指示器
+
+
+
+
+     
         .step_indicator {
             display: flex;
             align-items: center;
@@ -55,10 +79,18 @@
 
 
 
+
+
+
+
             @media (max-width: 768px) {
                 gap: 10px;
                 margin: 30px 0;
             }
+
+
+
+
 
 
 
@@ -74,8 +106,16 @@
 
 
 
+
+
+
+
                 &.active {
                     opacity: 1;
+
+
+
+
 
 
 
@@ -90,11 +130,19 @@
 
 
 
+
+
+
+
                     p {
                         color: $accent;
                         font-weight: $f-w-b;
                     }
                 }
+
+
+
+
 
 
 
@@ -113,6 +161,10 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         width: 40px;
                         height: 40px;
@@ -120,6 +172,10 @@
                         border-width: 2px;
                     }
                 }
+
+
+
+
 
 
 
@@ -133,6 +189,10 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         font-size: $f-s-xs;
                     }
@@ -142,10 +202,18 @@
 
 
 
+
+
+
+
             .step_line {
                 width: 80px;
                 height: 3px;
                 background-color: $gray-300;
+
+
+
+
 
 
 
@@ -160,7 +228,11 @@
 
 
 
-        // 步驟1: 選擇攤位
+
+
+
+
+ 
         .stall_num {
             width: 90%;
             max-width: 800px;
@@ -177,11 +249,19 @@
 
 
 
+
+
+
+
             @media (max-width: 768px) {
                 width: 95%;
                 padding: 25px 15px;
                 gap: 20px;
             }
+
+
+
+
 
 
 
@@ -196,11 +276,19 @@
 
 
 
+
+
+
+
             .event_name {
                 font-size: $f-s-xl;
                 font-weight: $f-w-b;
                 color: $text;
                 margin-bottom: 20px;
+
+
+
+
 
 
 
@@ -214,6 +302,10 @@
 
 
 
+
+
+
+
             .all_btn_box {
                 display: flex;
                 flex-direction: column;
@@ -223,7 +315,12 @@
 
 
 
-                // 1024px 以下開始可以左右滑動
+
+
+
+
+
+
                 @media (max-width: 1024px) {
                     overflow-x: auto;
                     overflow-y: visible;
@@ -236,6 +333,10 @@
 
 
 
+
+
+
+
                     &::-webkit-scrollbar {
                         height: 6px;
                     }
@@ -243,9 +344,17 @@
 
 
 
+
+
+
+
                     &::-webkit-scrollbar-track {
                         background: transparent;
                     }
+
+
+
+
 
 
 
@@ -259,6 +368,10 @@
 
 
 
+
+
+
+
                 .stall_row {
                     display: grid;
                     grid-template-columns: repeat(10, 1fr);
@@ -267,12 +380,20 @@
 
 
 
-                    // 1024px 以下固定寬度,可滑動
+
+
+
+
+     
                     @media (max-width: 1024px) {
                         grid-template-columns: repeat(10, 70px);
                         gap: 12px;
                         min-width: max-content;
                     }
+
+
+
+
 
 
 
@@ -285,11 +406,19 @@
 
 
 
+
+
+
+
                     @media (max-width: 480px) {
                         grid-template-columns: repeat(10, 50px);
                         gap: 8px;
                     }
                 }
+
+
+
+
 
 
 
@@ -304,11 +433,19 @@
 
 
 
+
+
+
+
                     @media (max-width: 1024px) {
                         width: 70px;
                         height: 70px;
                         border-width: 1.5px;
                     }
+
+
+
+
 
 
 
@@ -322,11 +459,19 @@
 
 
 
+
+
+
+
                     @media (max-width: 480px) {
                         width: 50px;
                         height: 50px;
                     }
                 }
+
+
+
+
 
 
 
@@ -344,11 +489,19 @@
 
 
 
+
+
+
+
                     @media (max-width: 1024px) {
                         width: 70px;
                         height: 70px;
                         border-width: 2.5px;
                     }
+
+
+
+
 
 
 
@@ -362,11 +515,19 @@
 
 
 
+
+
+
+
                     @media (max-width: 480px) {
                         width: 50px;
                         height: 50px;
                         border-width: 2px;
                     }
+
+
+
+
 
 
 
@@ -380,11 +541,19 @@
 
 
 
+
+
+
+
                     &.selected {
                         background-color: $accent;
                         border-color: $dark;
                         transform: scale(1.05);
                         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+
+
+
 
 
 
@@ -398,10 +567,18 @@
 
 
 
+
+
+
+
                     p {
                         font-size: $f-s-lg;
                         font-weight: $f-w-b;
                         color: $text;
+
+
+
+
 
 
 
@@ -413,9 +590,17 @@
 
 
 
+
+
+
+
                         @media (max-width: 768px) {
                             font-size: $f-s-sm;
                         }
+
+
+
+
 
 
 
@@ -430,7 +615,11 @@
 
 
 
-            // 確保步驟按鈕在步驟1也能正常顯示
+
+
+
+
+   
             >.step_actions {
                 width: 100%;
                 margin-top: 10px;
@@ -441,11 +630,19 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     margin-top: 15px;
                     flex-direction: column;
                     gap: 15px;
                 }
+
+
+
+
 
 
 
@@ -464,6 +661,10 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         width: 100%;
                         padding: 12px 30px;
@@ -473,11 +674,19 @@
 
 
 
+
+
+
+
                     &:hover {
                         background-color: $accent;
                         transform: translateY(-2px);
                         box-shadow: 0 4px 12px rgba($accent, 0.3);
                     }
+
+
+
+
 
 
 
@@ -492,7 +701,11 @@
 
 
 
-        // 步驟2: 填寫資訊
+
+
+
+
+     
         .register {
             width: 90%;
             max-width: 900px;
@@ -503,9 +716,17 @@
 
 
 
+
+
+
+
             @media (max-width: 768px) {
                 width: 95%;
             }
+
+
+
+
 
 
 
@@ -519,10 +740,18 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     font-size: $f-s-lg;
                 }
             }
+
+
+
+
 
 
 
@@ -536,9 +765,17 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     padding: 25px 15px;
                 }
+
+
+
+
 
 
 
@@ -553,11 +790,19 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         font-size: $f-s-md;
                         margin-bottom: 20px;
                     }
                 }
+
+
+
+
 
 
 
@@ -570,9 +815,17 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         gap: 20px;
                     }
+
+
+
+
 
 
 
@@ -585,9 +838,17 @@
 
 
 
+
+
+
+
                         @media (max-width: 768px) {
                             gap: 15px;
                         }
+
+
+
+
 
 
 
@@ -600,6 +861,10 @@
 
 
 
+
+
+
+
                             label {
                                 font-weight: $f-w-b;
                                 color: $text;
@@ -608,10 +873,18 @@
 
 
 
+
+
+
+
                                 @media (max-width: 768px) {
                                     font-size: $f-s-sm;
                                 }
                             }
+
+
+
+
 
 
 
@@ -626,10 +899,18 @@
 
 
 
+
+
+
+
                                 @media (max-width: 768px) {
                                     padding: 10px 12px;
                                     font-size: $f-s-sm;
                                 }
+
+
+
+
 
 
 
@@ -643,11 +924,19 @@
 
 
 
+
+
+
+
                                 &::placeholder {
                                     color: $gray-400;
                                 }
                             }
                         }
+
+
+
+
 
 
 
@@ -661,11 +950,19 @@
 
 
 
+
+
+
+
                             @media (max-width: 768px) {
                                 font-size: $f-s-sm;
                                 margin-top: 5px;
                             }
                         }
+
+
+
+
 
 
 
@@ -678,6 +975,10 @@
 
 
 
+
+
+
+
                             @media (max-width: 768px) {
                                 grid-template-columns: repeat(2, 1fr);
                                 gap: 12px;
@@ -686,30 +987,70 @@
 
 
 
+
+
+
+
+             
+
+
                             .type_box {
                                 display: flex;
                                 align-items: center;
                                 gap: 8px;
 
 
-
-
                                 input[type="checkbox"] {
                                     width: 20px;
                                     height: 20px;
                                     cursor: pointer;
-                                    accent-color: $accent;
-
-
+                                    appearance: none;
+                                    border: 2px solid $accent;
+                                    border-radius: 4px;
+                                    position: relative;
+                                    transition: all 0.3s ease;
 
 
                                     @media (max-width: 768px) {
                                         width: 18px;
                                         height: 18px;
                                     }
+
+
+                     
+                                    &:checked {
+                                        background-color: $accent;
+                                        border-color: $accent;
+
+
+                       
+                                        &::after {
+                                            content: "";
+                                            position: absolute;
+                                            left: 5px;
+                                            top: 2px;
+                                            width: 5px;
+                                            height: 10px;
+                                            border: solid white;
+                                            border-width: 0 2px 2px 0;
+                                            transform: rotate(45deg);
+
+
+                                            @media (max-width: 768px) {
+                                                left: 4px;
+                                                top: 1px;
+                                                width: 4px;
+                                                height: 8px;
+                                                border-width: 0 1.5px 1.5px 0;
+                                            }
+                                        }
+                                    }
+
+
+                                    &:hover {
+                                        border-color: darken($accent, 10%);
+                                    }
                                 }
-
-
 
 
                                 label {
@@ -718,14 +1059,16 @@
                                     color: $text;
 
 
-
-
                                     @media (max-width: 768px) {
                                         font-size: $f-s-xs;
                                     }
                                 }
                             }
                         }
+
+
+
+
 
 
 
@@ -742,9 +1085,17 @@
 
 
 
+
+
+
+
                             @media (max-width: 768px) {
                                 padding: 6px 10px;
                             }
+
+
+
+
 
 
 
@@ -753,6 +1104,10 @@
                                 border-color: $accent;
                                 box-shadow: 0 0 0 3px rgba($accent, 0.1);
                             }
+
+
+
+
 
 
 
@@ -766,10 +1121,18 @@
 
 
 
+
+
+
+
                                 @media (max-width: 768px) {
                                     width: 25px;
                                     height: 25px;
                                 }
+
+
+
+
 
 
 
@@ -784,6 +1147,10 @@
 
 
 
+
+
+
+
                             input {
                                 flex: 1;
                                 border: none;
@@ -793,9 +1160,17 @@
 
 
 
+
+
+
+
                                 @media (max-width: 768px) {
                                     font-size: $f-s-sm;
                                 }
+
+
+
+
 
 
 
@@ -809,6 +1184,10 @@
 
 
 
+
+
+
+
                         .file {
                             display: flex;
                             flex-direction: column;
@@ -817,9 +1196,17 @@
 
 
 
+
+
+
+
                             @media (max-width: 768px) {
                                 gap: 15px;
                             }
+
+
+
+
 
 
 
@@ -832,6 +1219,10 @@
 
 
 
+
+
+
+
                                 label {
                                     font-weight: $f-w-b;
                                     color: $text;
@@ -840,10 +1231,18 @@
 
 
 
+
+
+
+
                                     @media (max-width: 768px) {
                                         font-size: $f-s-sm;
                                     }
                                 }
+
+
+
+
 
 
 
@@ -859,10 +1258,18 @@
 
 
 
+
+
+
+
                                     @media (max-width: 768px) {
                                         padding: 10px;
                                         font-size: $f-s-xs;
                                     }
+
+
+
+
 
 
 
@@ -882,7 +1289,10 @@
 
 
 
-        // 步驟3: 完成頁面
+
+
+
+
         .completion_page {
             width: 90%;
             max-width: 700px;
@@ -893,10 +1303,18 @@
 
 
 
+
+
+
+
             @media (max-width: 768px) {
                 width: 95%;
                 padding: 20px 0;
             }
+
+
+
+
 
 
 
@@ -912,9 +1330,17 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     padding: 40px 20px;
                 }
+
+
+
+
 
 
 
@@ -926,6 +1352,10 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         margin-bottom: 20px;
                     }
@@ -933,9 +1363,17 @@
 
 
 
+
+
+
+
                     svg {
                         width: 120px;
                         height: 120px;
+
+
+
+
 
 
 
@@ -950,11 +1388,19 @@
 
 
 
+
+
+
+
                 h2 {
                     font-size: $f-s-xxl;
                     font-weight: $f-w-b;
                     color: $accent;
                     margin-bottom: 20px;
+
+
+
+
 
 
 
@@ -968,6 +1414,10 @@
 
 
 
+
+
+
+
                 .completion_message {
                     font-size: $f-s-lg;
                     color: $text;
@@ -976,10 +1426,18 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         font-size: $f-s-md;
                         margin-bottom: 12px;
                     }
+
+
+
+
 
 
 
@@ -993,11 +1451,19 @@
 
 
 
+
+
+
+
                 .completion_desc {
                     font-size: $f-s-md;
                     color: $gray-600;
                     line-height: 1.6;
                     margin-bottom: 40px;
+
+
+
+
 
 
 
@@ -1011,10 +1477,18 @@
 
 
 
+
+
+
+
                     strong {
                         color: $text;
                     }
                 }
+
+
+
+
 
 
 
@@ -1029,10 +1503,18 @@
 
 
 
+
+
+
+
                     @media (max-width: 768px) {
                         padding: 20px;
                         margin-bottom: 30px;
                     }
+
+
+
+
 
 
 
@@ -1047,6 +1529,10 @@
 
 
 
+
+
+
+
                         @media (max-width: 768px) {
                             flex-direction: column;
                             align-items: flex-start;
@@ -1057,9 +1543,17 @@
 
 
 
+
+
+
+
                         &:last-child {
                             border-bottom: none;
                         }
+
+
+
+
 
 
 
@@ -1072,6 +1566,10 @@
 
 
 
+
+
+
+
                             @media (max-width: 768px) {
                                 font-size: $f-s-sm;
                             }
@@ -1080,10 +1578,18 @@
 
 
 
+
+
+
+
                         .info_value {
                             font-size: $f-s-md;
                             color: $text;
                             font-weight: $f-w-b;
+
+
+
+
 
 
 
@@ -1098,10 +1604,18 @@
 
 
 
+
+
+
+
                 .completion_actions {
                     display: flex;
                     gap: 20px;
                     justify-content: center;
+
+
+
+
 
 
 
@@ -1114,8 +1628,16 @@
 
 
 
+
+
+
+
                     a {
                         text-decoration: none;
+
+
+
+
 
 
 
@@ -1124,6 +1646,10 @@
                             width: 100%;
                         }
                     }
+
+
+
+
 
 
 
@@ -1140,6 +1666,10 @@
 
 
 
+
+
+
+
                         @media (max-width: 768px) {
                             width: 100%;
                             padding: 12px 30px;
@@ -1150,9 +1680,17 @@
 
 
 
+
+
+
+
                     .home_btn {
                         background-color: $accent;
                         color: $white;
+
+
+
+
 
 
 
@@ -1167,10 +1705,18 @@
 
 
 
+
+
+
+
                     .event_btn {
                         background-color: $white;
                         color: $accent;
                         border: 2px solid $accent;
+
+
+
+
 
 
 
@@ -1189,7 +1735,8 @@
 
 
 
-        // 步驟操作按鈕 (所有步驟使用)
+
+
         .step_actions {
             display: flex !important;
             gap: 20px;
@@ -1198,6 +1745,10 @@
             width: 100%;
             visibility: visible !important;
             opacity: 1 !important;
+
+
+
+
 
 
 
@@ -1211,12 +1762,20 @@
 
 
 
+
+
+
+
             @media (max-width: 640px) {
                 flex-direction: column;
                 gap: 15px;
                 margin-top: 20px;
                 padding: 0 10px;
             }
+
+
+
+
 
 
 
@@ -1235,11 +1794,19 @@
 
 
 
+
+
+
+
                 @media (max-width: 768px) {
                     width: 100%;
                     padding: 12px 30px;
                     font-size: $f-s-sm;
                 }
+
+
+
+
 
 
 
@@ -1254,6 +1821,10 @@
 
 
 
+
+
+
+
             .next_btn,
             .submit_btn {
                 background-color: $accent;
@@ -1262,10 +1833,18 @@
 
 
 
+
+
+
+
                 @media (max-width: 640px) {
                     background-color: $accent !important;
                     color: $white !important;
                 }
+
+
+
+
 
 
 
@@ -1279,10 +1858,18 @@
 
 
 
+
+
+
+
                 &:active {
                     transform: translateY(0);
                 }
             }
+
+
+
+
 
 
 
@@ -1295,11 +1882,19 @@
 
 
 
+
+
+
+
                 &:hover {
                     background-color: $gray-100;
                     border-color: $gray-600;
                     transform: translateY(-2px);
                 }
+
+
+
+
 
 
 
@@ -1315,7 +1910,6 @@
 
 
 
-// 全域強制顯示按鈕 - 最高優先級
 .stall_register {
     .step_actions {
         @media (max-width: 640px) {
@@ -1328,6 +1922,10 @@
             opacity: 1 !important;
             position: relative !important;
             z-index: 999 !important;
+
+
+
+
 
 
 
@@ -1351,7 +1949,10 @@
 
 
 
-// 確保步驟1的按鈕在所有尺寸都能顯示
+
+
+
+
 .stall_register_main .stall_num .step_actions {
     display: flex !important;
     flex-direction: row !important;
@@ -1367,11 +1968,19 @@
 
 
 
+
+
+
+
     @media (max-width: 768px) {
         margin-top: 20px !important;
         flex-direction: column !important;
         gap: 15px !important;
     }
+
+
+
+
 
 
 
@@ -1382,6 +1991,10 @@
         gap: 15px !important;
         padding: 0 10px !important;
     }
+
+
+
+
 
 
 
@@ -1403,11 +2016,19 @@
 
 
 
+
+
+
+
         @media (max-width: 768px) {
             width: 100% !important;
             padding: 12px 30px !important;
             font-size: 14px !important;
         }
+
+
+
+
 
 
 
@@ -1423,11 +2044,19 @@
 
 
 
+
+
+
+
         &:hover {
             background-color: #D32F2F !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(229, 115, 115, 0.3) !important;
         }
+
+
+
+
 
 
 

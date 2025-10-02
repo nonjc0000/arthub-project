@@ -1,23 +1,50 @@
+
+
+
+
 @use '../variables/' as *;
 @use '../functions/' as *;
 
 
-
-
-.pageTop_box{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 5%;
-    margin-right: 5%;
+.pageTop_box {
+    position: fixed;
+    bottom: 22%;
+    right: 5%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
     transition: all 0.3s ease;
+    z-index: 1000;
+   
+    // 顯示狀態
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+   
     .pageTop_link {
         cursor: pointer;
         border: none;
         background-color: transparent;
         position: relative;
+        transition: transform 0.3s ease;
+       
+        &:hover {
+            transform: translateY(-5px);
+        }
+       
+        &:active {
+            transform: translateY(-2px);
+        }
+       
         .pageTop_text {
             animation: rotate 20s linear infinite;
+            @media (max-width:578px) {
+                display: none;
+            }
         }
+       
         .pageTop_finger {
             position: absolute;
             bottom: 25%;
@@ -28,11 +55,11 @@
 
 
 @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 

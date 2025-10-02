@@ -88,13 +88,14 @@ const Find_map = () => {
               </div>
 
               {/* 選擇地區 */}
+              {selectedCity && (
               <div className='select_border'>
                 <select
                   name="district"
                   id="district"
                   value={selectedDistrict}
                   onChange={handleDistrictChange}
-                  disabled={!selectedCity}
+                  // disabled={!selectedCity}
                 >
                   <option value="">選擇地區</option>
                   {districts.map((district, index) => (
@@ -104,6 +105,7 @@ const Find_map = () => {
                   ))}
                 </select>
               </div>
+              )}
 
               {/* 關鍵字搜尋 */}
               <div className='input_border'>

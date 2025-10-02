@@ -7,6 +7,10 @@ import ScrollToTop from '../components/ScrollToTop'
 
 
 
+
+
+
+
 const arrReview = [
   {
     id: 1,
@@ -37,9 +41,17 @@ const arrReview = [
 
 
 
+
+
+
+
 const Event_info = () => {
   // 小圖換大圖
   const [curImg, setCurImg] = useState(0);
+
+
+
+
 
 
 
@@ -49,6 +61,10 @@ const Event_info = () => {
   const [newComment, setNewComment] = useState('');
   const [sortBy, setSortBy] = useState('newest'); // 'popular', 'oldest', 'newest'
   const [activeSortBtn, setActiveSortBtn] = useState('newest');
+
+
+
+
 
 
 
@@ -65,7 +81,13 @@ const Event_info = () => {
     }
 
 
+
+
   ];
+
+
+
+
 
 
 
@@ -73,6 +95,10 @@ const Event_info = () => {
   // 新增留言功能
   const handleAddComment = () => {
     if (newComment.trim() === '') return;
+
+
+
+
 
 
 
@@ -89,10 +115,18 @@ const Event_info = () => {
 
 
 
+
+
+
+
     // 新留言加到最前面
     setReviews([newReview, ...reviews]);
     setNewComment(''); // 清空輸入框
   };
+
+
+
+
 
 
 
@@ -107,9 +141,17 @@ const Event_info = () => {
 
 
 
+
+
+
+
   // 排序留言功能
   const getSortedReviews = () => {
     let sortedReviews = [...reviews];
+
+
+
+
 
 
 
@@ -122,9 +164,17 @@ const Event_info = () => {
 
 
 
+
+
+
+
       case 'oldest':
         // 按日期由舊到新排序（假設 id 越小越舊）
         return sortedReviews.sort((a, b) => a.id - b.id);
+
+
+
+
 
 
 
@@ -139,11 +189,19 @@ const Event_info = () => {
 
 
 
+
+
+
+
   // 處理排序按鈕點擊
   const handleSortChange = (sortType) => {
     setSortBy(sortType);
     setActiveSortBtn(sortType);
   };
+
+
+
+
 
 
 
@@ -162,9 +220,19 @@ const Event_info = () => {
 
 
 
+
+
+
+
   return (
     <main className='event_info_main'>
       <ScrollToTop />
+
+
+
+
+
+
 
 
 
@@ -181,8 +249,18 @@ const Event_info = () => {
 
 
 
+
+
+
+
+
+
       <div className='box_center'>
         <article className='info_box'>
+
+
+
+
 
 
 
@@ -193,8 +271,16 @@ const Event_info = () => {
 
 
 
+
+
+
+
             {/* 照片區 */}
             <div className='pic_box'>
+
+
+
+
 
 
 
@@ -203,6 +289,10 @@ const Event_info = () => {
               <div className='main_pic'>
                 <img src={arrPhotos[curImg].imgName} alt={`市集照片 ${curImg + 1}`} />
               </div>
+
+
+
+
 
 
 
@@ -226,11 +316,27 @@ const Event_info = () => {
 
 
 
+
+
+
+
             {/* 市集名稱&時間&tag */}
             <div className='info'>
-              <div>
+              <div className='detail'>
                 {/* 名稱 */}
                 <h2 className='event_name'>台北 - 夏日微光季</h2>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -252,6 +358,10 @@ const Event_info = () => {
 
 
 
+
+
+
+
                 {/* 位置 */}
                 <div className='place'>
                   <p>活動位置</p>
@@ -261,7 +371,7 @@ const Event_info = () => {
                   </a>
                 </div>
               </div>
-              <div className='btn-box'>
+              <div className='btn-wrap'>
                 {/* 攤位地圖&攤位登記按鈕 */}
                 <div className='stall_btn_box'>
                   <Link to='/Stall_map'>
@@ -276,6 +386,10 @@ const Event_info = () => {
                       <div className='column'>
                         <p>輸入攤位資訊</p>
                         <p>(商家專屬)</p>
+
+
+
+
 
 
 
@@ -323,7 +437,27 @@ const Event_info = () => {
 
 
 
+
+
+
+
+
+
+
+
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -341,8 +475,16 @@ const Event_info = () => {
 
 
 
+
+
+
+
           {/* 市集詳細內容 */}
           <section className='detail_info_container'>
+
+
+
+
 
 
 
@@ -355,7 +497,15 @@ const Event_info = () => {
 
 
 
+
+
+
+
             <h4>活動資訊</h4>
+
+
+
+
 
 
 
@@ -367,8 +517,16 @@ const Event_info = () => {
 
 
 
+
+
+
+
             {/* 文字說明區 */}
             <article className='info_desc'>
+
+
+
+
 
 
 
@@ -378,11 +536,19 @@ const Event_info = () => {
 
 
 
+
+
+
+
               <p className='content'>
                 這不只是一場市集，更是一場充滿故事與靈感的相遇。
                 <br />
                 我們邀請你走出日常，走進這個充滿創意、手感與人情味的空間──來自全台各地的手作職人、文創品牌、美食攤位、生活選物，以及街頭藝人和現場音樂演出，共同打造屬於每個人的慢生活片刻。
               </p>
+
+
+
+
 
 
 
@@ -399,10 +565,14 @@ const Event_info = () => {
 
 
 
+
+
+
+
               <p className='content'>
-                活動時間：（建議填入：例如 8/10-8/11，週六日 11:00 - 18:00）
+                活動時間：8/10-8/11(六、日) 11:00 - 18:00
                 <br />
-                活動地點：（建議填入地點 + 附近地標）
+                活動地點：西門紅樓(捷運西門站1號出口)
                 <br />
                 入場方式：免費參加，無需預約
                 <br />
@@ -412,7 +582,15 @@ const Event_info = () => {
 
 
 
+
+
+
+
             </article>
+
+
+
+
 
 
 
@@ -422,8 +600,16 @@ const Event_info = () => {
 
 
 
+
+
+
+
           {/* 市集評論區 */}
           <section className='review_container'>
+
+
+
+
 
 
 
@@ -444,6 +630,10 @@ const Event_info = () => {
                 </button>
               </div>
             </div>
+
+
+
+
 
 
 
@@ -476,6 +666,10 @@ const Event_info = () => {
 
 
 
+
+
+
+
             {/* 評論結果 */}
             <div className='event_review_box'>
               {getSortedReviews().map((review) => {
@@ -500,6 +694,10 @@ const Event_info = () => {
 
 
 
+
+
+
+
       {/* <PageTop /> */}
     </main>
   )
@@ -508,7 +706,23 @@ const Event_info = () => {
 
 
 
+
+
+
+
 export default Event_info
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

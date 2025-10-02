@@ -16,12 +16,32 @@ import { useState } from 'react';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 const Home = () => {
 
 
 
 
+
+
+
+
   const [birdPosition, setBirdPosition] = useState({ x: 20, y: 20 });
+
+
+
+
 
 
 
@@ -32,6 +52,18 @@ const Home = () => {
     const y = (e.clientY / window.innerHeight) * 100;
     setBirdPosition({ x, y });
   };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,6 +88,10 @@ const Home = () => {
           }}>
               <img src="./images/cursor.gif" alt="cursor" />
           </div>
+
+
+
+
 
 
 
@@ -226,7 +262,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <PageTop />
+            <PageTop />
           <div className='home-road-independ'>
             <figure>
               <img src="./images/home/Home-road.svg" alt="Home-road" />
@@ -269,7 +305,135 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default Home
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

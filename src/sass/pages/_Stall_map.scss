@@ -2,14 +2,20 @@
 @use '../functions/' as *;
 
 
+
+
 .stall_map_google_main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 
 
+
+
   .titleBox_h1 {
     @media ($mediaSm) {
+
+
 
 
       min-width: 300px;
@@ -18,11 +24,17 @@
   }
 
 
+
+
   .titleBox {
+
+
 
 
     margin: 0 auto;
   }
+
+
 
 
   .map_container {
@@ -31,6 +43,8 @@
     height: 100vh;
     overflow: hidden;
     padding: 0 30px;
+
+
 
 
     @media (max-width: 1350px) {
@@ -42,11 +56,17 @@
     }
 
 
+
+
     @media (max-width: 768px) {
       padding: 0 15px 15px 15px;
 
 
+
+
     }
+
+
 
 
     // 左側面板
@@ -61,6 +81,8 @@
       border-radius: 30px 0 0 30px;
 
 
+
+
       @media (max-width: 1350px) {
         width: 100%;
         height: 45vh;
@@ -70,9 +92,13 @@
       }
 
 
+
+
       @media (max-width: 768px) {
         height: 50vh;
       }
+
+
 
 
       // 搜尋區
@@ -83,9 +109,13 @@
         flex-shrink: 0;
 
 
+
+
         @media (max-width: 768px) {
           padding: 15px;
         }
+
+
 
 
         .search_box {
@@ -95,9 +125,13 @@
           margin-bottom: 15px;
 
 
+
+
           @media (max-width: 768px) {
             margin-bottom: 12px;
           }
+
+
 
 
           input {
@@ -109,10 +143,14 @@
             transition: all 0.3s ease;
 
 
+
+
             @media (max-width: 768px) {
               padding: 10px 35px 10px 14px;
               font-size: $f-s-sm;
             }
+
+
 
 
             &:focus {
@@ -123,11 +161,15 @@
           }
 
 
+
+
           img {
             position: absolute;
             right: 15px;
             width: 20px;
             opacity: 0.5;
+
+
 
 
             @media (max-width: 768px) {
@@ -138,14 +180,20 @@
         }
 
 
+
+
         .filter_controls {
           display: flex;
           gap: 10px;
 
 
+
+
           @media (max-width: 768px) {
             gap: 8px;
           }
+
+
 
 
           select {
@@ -161,10 +209,14 @@
             transition: all 0.3s ease;
 
 
+
+
             @media (max-width: 768px) {
               padding: 8px 10px;
               font-size: 12px;
             }
+
+
 
 
             &:focus {
@@ -173,12 +225,16 @@
             }
 
 
+
+
             &:hover {
               background-color: $accent;
             }
           }
         }
       }
+
+
 
 
       // 內容區域
@@ -191,6 +247,8 @@
       }
 
 
+
+
       // 攤位詳情
       .stall_detail {
         position: relative;
@@ -201,9 +259,13 @@
         flex-direction: column;
 
 
+
+
         &::-webkit-scrollbar {
           width: 8px;
         }
+
+
 
 
         &::-webkit-scrollbar-track {
@@ -212,15 +274,21 @@
         }
 
 
+
+
         &::-webkit-scrollbar-thumb {
           background: $gray-400;
           border-radius: 10px;
+
+
 
 
           &:hover {
             background: $gray-500;
           }
         }
+
+
 
 
         .close_btn {
@@ -240,10 +308,14 @@
           transition: all 0.3s ease;
 
 
+
+
           &:hover {
             background-color: $white;
             transform: scale(1.1);
           }
+
+
 
 
           img {
@@ -252,10 +324,14 @@
         }
 
 
+
+
         .detail_header {
           position: relative;
           height: 200px;
           flex-shrink: 0;
+
+
 
 
           @media (max-width: 1024px) {
@@ -263,14 +339,20 @@
           }
 
 
+
+
           @media (max-width: 768px) {
             height: 150px;
           }
 
 
+
+
           .detail_image {
             width: 100%;
             height: 100%;
+
+
 
 
             img {
@@ -279,6 +361,8 @@
               object-fit: cover;
             }
           }
+
+
 
 
           .detail_info {
@@ -291,6 +375,8 @@
             align-items: center;
 
 
+
+
             .detail_num {
               background-color: $accent;
               color: $white;
@@ -300,11 +386,15 @@
               font-size: $f-s-md;
 
 
+
+
               @media (max-width: 768px) {
                 font-size: $f-s-sm;
                 padding: 4px 12px;
               }
             }
+
+
 
 
             .detail_like {
@@ -316,8 +406,12 @@
               gap: 5px;
 
 
+
+
               img {
                 width: 16px;
+
+
 
 
                 @media (max-width: 768px) {
@@ -326,9 +420,13 @@
               }
 
 
+
+
               span {
                 font-weight: $f-w-b;
                 font-size: $f-s-sm;
+
+
 
 
                 @media (max-width: 768px) {
@@ -340,14 +438,20 @@
         }
 
 
+
+
         .detail_body {
           padding: 20px;
           flex: 1;
 
 
+
+
           @media (max-width: 768px) {
             padding: 15px;
           }
+
+
 
 
           h2 {
@@ -360,11 +464,15 @@
             white-space: nowrap;
 
 
+
+
             @media (max-width: 768px) {
               font-size: $f-s-lg;
               margin-bottom: 12px;
             }
           }
+
+
 
 
           .detail_tags {
@@ -374,10 +482,14 @@
             margin-bottom: 20px;
 
 
+
+
             @media (max-width: 768px) {
               gap: 6px;
               margin-bottom: 15px;
             }
+
+
 
 
             .tag {
@@ -388,6 +500,8 @@
               font-size: $f-s-sm;
 
 
+
+
               @media (max-width: 768px) {
                 font-size: 12px;
                 padding: 4px 10px;
@@ -396,16 +510,22 @@
           }
 
 
+
+
           .detail_actions {
             display: flex;
             gap: 15px;
             margin-bottom: 25px;
 
 
+
+
             @media (max-width: 768px) {
               gap: 10px;
               margin-bottom: 20px;
             }
+
+
 
 
             .recommend_btn {
@@ -424,10 +544,14 @@
               transition: all 0.3s ease;
 
 
+
+
               @media (max-width: 768px) {
                 padding: 10px;
                 font-size: $f-s-sm;
               }
+
+
 
 
               &:hover {
@@ -436,8 +560,12 @@
               }
 
 
+
+
               img {
                 width: 18px;
+
+
 
 
                 @media (max-width: 768px) {
@@ -447,14 +575,20 @@
             }
 
 
+
+
             .social_links {
               display: flex;
               gap: 10px;
 
 
+
+
               @media (max-width: 768px) {
                 gap: 8px;
               }
+
+
 
 
               a {
@@ -468,10 +602,14 @@
                 transition: all 0.3s ease;
 
 
+
+
                 @media (max-width: 768px) {
                   width: 40px;
                   height: 40px;
                 }
+
+
 
 
                 &:hover {
@@ -480,8 +618,12 @@
                 }
 
 
+
+
                 img {
                   width: 20px;
+
+
 
 
                   @media (max-width: 768px) {
@@ -493,9 +635,13 @@
           }
 
 
+
+
           .review_section {
             border-top: 1px solid $gray-300;
             padding-top: 20px;
+
+
 
 
             @media (max-width: 768px) {
@@ -503,10 +649,14 @@
             }
 
 
+
+
             h3 {
               font-size: $f-s-lg;
               font-weight: $f-w-b;
               margin-bottom: 15px;
+
+
 
 
               @media (max-width: 768px) {
@@ -516,16 +666,22 @@
             }
 
 
+
+
             .review_input {
               margin-bottom: 15px;
               display: flex;
               gap: 10px;
 
 
+
+
               @media (max-width: 768px) {
                 gap: 8px;
                 margin-bottom: 12px;
               }
+
+
 
 
               input {
@@ -536,10 +692,14 @@
                 font-size: $f-s-sm;
 
 
+
+
                 @media (max-width: 768px) {
                   padding: 10px;
                   font-size: 12px;
                 }
+
+
 
 
                 &:focus {
@@ -547,6 +707,8 @@
                   border-color: $accent;
                 }
               }
+
+
 
 
               .submit_review_btn {
@@ -561,10 +723,14 @@
                 white-space: nowrap;
 
 
+
+
                 @media (max-width: 768px) {
                   padding: 10px 16px;
                   font-size: 12px;
                 }
+
+
 
 
                 &:hover {
@@ -573,11 +739,15 @@
                 }
 
 
+
+
                 &:active {
                   transform: translateY(0);
                 }
               }
             }
+
+
 
 
             .reviews_list {
@@ -589,15 +759,21 @@
               padding-right: 5px;
 
 
+
+
               @media (max-width: 768px) {
                 max-height: 200px;
                 gap: 10px;
               }
 
 
+
+
               &::-webkit-scrollbar {
                 width: 6px;
               }
+
+
 
 
               &::-webkit-scrollbar-track {
@@ -606,15 +782,21 @@
               }
 
 
+
+
               &::-webkit-scrollbar-thumb {
                 background: $gray-400;
                 border-radius: 10px;
+
+
 
 
                 &:hover {
                   background: $gray-500;
                 }
               }
+
+
 
 
               .review_item {
@@ -624,9 +806,13 @@
                 border-left: 3px solid $accent;
 
 
+
+
                 @media (max-width: 768px) {
                   padding: 10px;
                 }
+
+
 
 
                 .review_header {
@@ -636,9 +822,13 @@
                   margin-bottom: 8px;
 
 
+
+
                   @media (max-width: 768px) {
                     margin-bottom: 6px;
                   }
+
+
 
 
                   .review_author {
@@ -647,15 +837,21 @@
                     color: $text;
 
 
+
+
                     @media (max-width: 768px) {
                       font-size: 12px;
                     }
                   }
 
 
+
+
                   .review_date {
                     font-size: $f-s-xs;
                     color: $gray-600;
+
+
 
 
                     @media (max-width: 768px) {
@@ -665,11 +861,15 @@
                 }
 
 
+
+
                 .review_text {
                   font-size: $f-s-sm;
                   color: $text;
                   line-height: 1.5;
                   word-wrap: break-word;
+
+
 
 
                   @media (max-width: 768px) {
@@ -680,6 +880,8 @@
             }
 
 
+
+
             .no_review {
               color: $gray-500;
               font-size: $f-s-sm;
@@ -687,6 +889,8 @@
               padding: 20px;
               background-color: $gray-100;
               border-radius: 8px;
+
+
 
 
               @media (max-width: 768px) {
@@ -699,6 +903,8 @@
       }
 
 
+
+
       // 攤位列表
       .stall_list {
         padding: 20px;
@@ -709,14 +915,20 @@
         flex-direction: column;
 
 
+
+
         @media (max-width: 768px) {
           padding: 15px;
         }
 
 
+
+
         &::-webkit-scrollbar {
           width: 8px;
         }
+
+
 
 
         &::-webkit-scrollbar-track {
@@ -725,15 +937,21 @@
         }
 
 
+
+
         &::-webkit-scrollbar-thumb {
           background: $gray-400;
           border-radius: 10px;
+
+
 
 
           &:hover {
             background: $gray-500;
           }
         }
+
+
 
 
         h2 {
@@ -744,11 +962,15 @@
           flex-shrink: 0;
 
 
+
+
           @media (max-width: 768px) {
             font-size: $f-s-md;
             margin-bottom: 12px;
           }
         }
+
+
 
 
         .list_items {
@@ -759,14 +981,20 @@
           flex: 1;
 
 
+
+
           @media (max-width: 768px) {
             gap: 12px;
           }
 
 
+
+
           &::-webkit-scrollbar {
             width: 8px;
           }
+
+
 
 
           &::-webkit-scrollbar-track {
@@ -775,15 +1003,21 @@
           }
 
 
+
+
           &::-webkit-scrollbar-thumb {
             background: $gray-400;
             border-radius: 10px;
+
+
 
 
             &:hover {
               background: $gray-500;
             }
           }
+
+
 
 
           .list_item {
@@ -797,10 +1031,14 @@
             flex-shrink: 0;
 
 
+
+
             @media (max-width: 768px) {
               gap: 12px;
               padding: 12px;
             }
+
+
 
 
             &:hover {
@@ -808,6 +1046,8 @@
               box-shadow: 0 4px 12px rgba($accent, 0.15);
               transform: translateY(-2px);
             }
+
+
 
 
             .item_image {
@@ -818,10 +1058,14 @@
               flex-shrink: 0;
 
 
+
+
               @media (max-width: 768px) {
                 width: 70px;
                 height: 70px;
               }
+
+
 
 
               img {
@@ -832,6 +1076,8 @@
             }
 
 
+
+
             .item_info {
               flex: 1;
               display: flex;
@@ -840,10 +1086,14 @@
               min-width: 0;
 
 
+
+
               .item_header {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+
+
 
 
                 .item_num {
@@ -855,11 +1105,15 @@
                   font-weight: $f-w-b;
 
 
+
+
                   @media (max-width: 768px) {
                     font-size: 10px;
                     padding: 2px 8px;
                   }
                 }
+
+
 
 
                 .item_like {
@@ -870,13 +1124,19 @@
                   color: $gray-600;
 
 
+
+
                   @media (max-width: 768px) {
                     font-size: 10px;
                   }
 
 
+
+
                   img {
                     width: 14px;
+
+
 
 
                     @media (max-width: 768px) {
@@ -885,6 +1145,8 @@
                   }
                 }
               }
+
+
 
 
               h3 {
@@ -896,10 +1158,14 @@
                 white-space: nowrap;
 
 
+
+
                 @media (max-width: 768px) {
                   font-size: $f-s-sm;
                 }
               }
+
+
 
 
               .item_tags {
@@ -908,9 +1174,13 @@
                 flex-wrap: wrap;
 
 
+
+
                 @media (max-width: 768px) {
                   gap: 4px;
                 }
+
+
 
 
                 span {
@@ -919,6 +1189,8 @@
                   padding: 2px 8px;
                   border-radius: 10px;
                   font-size: $f-s-xs;
+
+
 
 
                   @media (max-width: 768px) {
@@ -934,6 +1206,8 @@
     }
 
 
+
+
     // 右側地圖區
     .map_area {
       flex: 1;
@@ -945,6 +1219,8 @@
       padding: 0;
 
 
+
+
       @media (max-width: 1350px) {
         width: 100%;
         height: 45vh;
@@ -953,10 +1229,14 @@
       }
 
 
+
+
       @media (max-width: 768px) {
         height: 40vh;
         min-height: 300px;
       }
+
+
 
 
       // 控制按鈕區域
@@ -970,11 +1250,15 @@
         z-index: 10;
 
 
+
+
         @media (max-width: 1350px) {
           top: 15px;
           right: 15px;
           gap: 8px;
           opacity: 0.9;
+
+
 
 
           &:hover {
@@ -983,11 +1267,15 @@
         }
 
 
+
+
         @media (max-width: 768px) {
           top: 10px;
           right: 10px;
           gap: 6px;
         }
+
+
 
 
         .control_btn {
@@ -1004,16 +1292,22 @@
           box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 
 
+
+
           @media (max-width: 1350px) {
             width: 40px;
             height: 40px;
           }
 
 
+
+
           @media (max-width: 768px) {
             width: 35px;
             height: 35px;
           }
+
+
 
 
           &:hover {
@@ -1023,10 +1317,14 @@
             box-shadow: 0 4px 12px rgba($accent, 0.3);
 
 
+
+
             span {
               color: $white;
             }
           }
+
+
 
 
           &:active {
@@ -1034,8 +1332,12 @@
           }
 
 
+
+
           span {
             transition: color 0.3s ease;
+
+
 
 
             @media (max-width: 768px) {
@@ -1044,6 +1346,8 @@
           }
         }
       }
+
+
 
 
       // 地圖容器
@@ -1059,16 +1363,22 @@
         padding: 10px;
 
 
+
+
         @media (max-width: 1350px) {
           padding: 5px;
           height: 50vh;
         }
 
 
+
+
         @media (max-width: 768px) {
           padding: 3px;
         }
       }
+
+
 
 
       .stall_grid {
@@ -1079,14 +1389,20 @@
         will-change: transform;
 
 
+
+
         @media (max-width: 1024px) {
           gap: 10px;
         }
 
 
+
+
         @media (max-width: 768px) {
           gap: 8px;
         }
+
+
 
 
         .grid_row {
@@ -1095,10 +1411,14 @@
           gap: 15px;
 
 
+
+
           @media (max-width: 1024px) {
             grid-template-columns: repeat(10, 50px);
             gap: 10px;
           }
+
+
 
 
           @media (max-width: 768px) {
@@ -1106,6 +1426,8 @@
             gap: 8px;
           }
         }
+
+
 
 
         .grid_empty {
@@ -1116,11 +1438,15 @@
           opacity: 0.3;
 
 
+
+
           @media (max-width: 1024px) {
             width: 50px;
             height: 50px;
             border-radius: 8px;
           }
+
+
 
 
           @media (max-width: 768px) {
@@ -1131,11 +1457,15 @@
         }
 
 
+
+
         .grid_stall {
           position: relative;
           width: 70px;
           height: 70px;
           cursor: pointer;
+
+
 
 
           @media (max-width: 1024px) {
@@ -1144,10 +1474,14 @@
           }
 
 
+
+
           @media (max-width: 768px) {
             width: 40px;
             height: 40px;
           }
+
+
 
 
           .stall_icon {
@@ -1164,10 +1498,14 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
 
 
+
+
             @media (max-width: 1024px) {
               border: 2px solid transparent;
               border-radius: 8px;
             }
+
+
 
 
             @media (max-width: 768px) {
@@ -1177,15 +1515,21 @@
             }
 
 
+
+
             img {
-              width: 35px;
+              width: 40px;
               height: 35px;
+
+
 
 
               @media (max-width: 1024px) {
                 width: 25px;
                 height: 25px;
               }
+
+
 
 
               @media (max-width: 768px) {
@@ -1195,6 +1539,8 @@
             }
 
 
+
+
             .stall_number {
               font-size: 12px;
               font-weight: $f-w-b;
@@ -1202,10 +1548,14 @@
               margin-top: 3px;
 
 
+
+
               @media (max-width: 1024px) {
                 font-size: 10px;
                 margin-top: 2px;
               }
+
+
 
 
               @media (max-width: 768px) {
@@ -1216,10 +1566,14 @@
           }
 
 
+
+
           &:hover .stall_icon {
             background-color: $secondary;
             transform: translateY(-3px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+
+
 
 
             @media (max-width: 768px) {
@@ -1229,11 +1583,15 @@
           }
 
 
+
+
           &.selected .stall_icon {
             background-color: $accent;
             border-color: $dark;
             transform: scale(1.1);
             box-shadow: 0 5px 12px rgba($accent, 0.4);
+
+
 
 
             @media (max-width: 768px) {
@@ -1242,10 +1600,14 @@
             }
 
 
+
+
             .stall_number {
               color: $white;
             }
           }
+
+
 
 
           // Hover 卡片
@@ -1267,9 +1629,13 @@
             pointer-events: none;
 
 
+
+
             @media (max-width: 1024px) {
               display: none;
             }
+
+
 
 
             .hover_card_header {
@@ -1277,6 +1643,8 @@
               justify-content: space-between;
               align-items: center;
               margin-bottom: 10px;
+
+
 
 
               .hover_num {
@@ -1289,6 +1657,8 @@
               }
 
 
+
+
               .hover_like {
                 display: flex;
                 align-items: center;
@@ -1296,11 +1666,15 @@
                 font-size: $f-s-sm;
 
 
+
+
                 img {
                   width: 14px;
                 }
               }
             }
+
+
 
 
             h4 {
@@ -1314,10 +1688,14 @@
             }
 
 
+
+
             .hover_tags {
               display: flex;
               flex-wrap: wrap;
               gap: 5px;
+
+
 
 
               span {
@@ -1328,6 +1706,8 @@
                 font-size: 11px;
               }
             }
+
+
 
 
             &::after {
@@ -1345,6 +1725,8 @@
           }
 
 
+
+
           &:hover .hover_card {
             opacity: 1;
             visibility: visible;
@@ -1355,6 +1737,14 @@
     }
   }
 }
+
+
+
+
+
+
+
+
 
 
 
