@@ -317,10 +317,19 @@
             gap: $spacing-xs;
             margin-bottom: $spacing-xs;
 
+            @media (max-width:1200px) {
+              align-content: flex-start;
+              flex-direction: column;
+            }
+
 
             .stars {
               color: $accent;
               font-size: $f-s-sm;
+
+              @media (max-width:1200px) {
+                align-self: flex-start;
+              }
             }
 
 
@@ -603,7 +612,6 @@
               margin-bottom: 0.5rem;
               gap: 0.5rem;
 
-
               .stars {
                 color: #ffd700;
               }
@@ -875,6 +883,3 @@
     }
   }
 }
-
-
-

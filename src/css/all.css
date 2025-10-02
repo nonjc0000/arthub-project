@@ -6283,7 +6283,7 @@ a {
   max-width: 10%;
   width: 6%;
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   top: 18%;
   right: 7%;
 }
@@ -6916,6 +6916,11 @@ a {
     right: 5%;
     top: 90%;
   }
+}
+
+.page-top {
+  position: relative;
+  z-index: 999;
 }
 
 .home-road {
@@ -8080,9 +8085,20 @@ a {
   gap: 10px;
   margin-bottom: 10px;
 }
+@media (max-width: 1200px) {
+  .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating {
+    align-content: flex-start;
+    flex-direction: column;
+  }
+}
 .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating .stars {
   color: #ED972E;
   font-size: 0.875rem;
+}
+@media (max-width: 1200px) {
+  .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating .stars {
+    align-self: flex-start;
+  }
 }
 .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating .rating_text {
   font-size: 0.75rem;
@@ -14039,6 +14055,17 @@ a {
   }
   50% {
     transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes arrowY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
   100% {
     transform: translateY(0);

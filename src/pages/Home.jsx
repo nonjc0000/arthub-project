@@ -28,6 +28,30 @@ import { useState } from 'react';
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Home = () => {
 
 
@@ -37,7 +61,23 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
   const [birdPosition, setBirdPosition] = useState({ x: 20, y: 20 });
+
+
+
+
+
+
+
+
 
 
 
@@ -76,6 +116,30 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <>
       <ScrollToTop />
@@ -88,6 +152,14 @@ const Home = () => {
           }}>
               <img src="./images/cursor.gif" alt="cursor" />
           </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -262,7 +334,9 @@ const Home = () => {
               </div>
             </div>
           </div>
+          <div className='page-top'>
             <PageTop />
+          </div>
           <div className='home-road-independ'>
             <figure>
               <img src="./images/home/Home-road.svg" alt="Home-road" />
@@ -279,5 +353,15 @@ const Home = () => {
 
 
 
+
+
+
+
+
+
 export default Home
+
+
+
+
 
