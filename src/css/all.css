@@ -8085,7 +8085,7 @@ a {
   gap: 10px;
   margin-bottom: 10px;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating {
     align-content: flex-start;
     flex-direction: column;
@@ -8095,7 +8095,7 @@ a {
   color: #ED972E;
   font-size: 0.875rem;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .order_management_content .order_content_layout .recommended_section .recommended_card .recommended_info .recommended_rating .stars {
     align-self: flex-start;
   }
