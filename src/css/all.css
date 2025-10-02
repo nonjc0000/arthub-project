@@ -290,6 +290,11 @@ a {
   position: relative;
   transition: transform 0.3s ease;
 }
+@media (max-width: 578px) {
+  .pageTop_box .pageTop_link {
+    right: -30%;
+  }
+}
 .pageTop_box .pageTop_link:hover {
   transform: translateY(-5px);
 }
@@ -4734,7 +4739,7 @@ a {
 @media (max-width:640px) {
   .blog-page .blog-desc {
     margin-top: 30px;
-    padding: 0 12px;
+    padding: 50px 25px 0px 25px !important;
   }
 }
 .blog-page .blog-desc .desc {
