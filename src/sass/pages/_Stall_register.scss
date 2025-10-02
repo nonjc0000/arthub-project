@@ -2,46 +2,22 @@
 @use '../functions/' as *;
 
 
-
-
-
-
-
-
 .stall_register_main {
     min-height: 100vh;
     padding-bottom: 60px;
 
 
-
-
     .titleBox_h1 {
         @media ($mediaSm) {
-
-
-
-
             min-width: 300px;
             margin-top: 100px;
         }
     }
 
 
-
-
     .titleBox {
-
-
-
-
         margin: 0 auto;
     }
-
-
-
-
-
-
 
 
     .stall_register {
@@ -52,24 +28,14 @@
         padding: 40px 20px;
 
 
-
-
-
-
-
-
         h1 {
-            @extend %flex-center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
 
-
-
-
-
-
-
-     
+        // 步驟指示器
         .step_indicator {
             display: flex;
             align-items: center;
@@ -77,22 +43,10 @@
             margin: 40px 0;
 
 
-
-
-
-
-
-
             @media (max-width: 768px) {
                 gap: 10px;
                 margin: 30px 0;
             }
-
-
-
-
-
-
 
 
             .step {
@@ -104,20 +58,8 @@
                 transition: all 0.3s ease;
 
 
-
-
-
-
-
-
                 &.active {
                     opacity: 1;
-
-
-
-
-
-
 
 
                     .step_circle {
@@ -128,12 +70,6 @@
                     }
 
 
-
-
-
-
-
-
                     p {
                         color: $accent;
                         font-weight: $f-w-b;
@@ -141,28 +77,26 @@
                 }
 
 
-
-
-
-
-
-
                 .step_circle {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
                     border: 3px solid $accent;
-                    @extend %flex-center;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
                     font-size: $f-s-lg;
                     font-weight: $f-w-b;
                     background-color: $white;
                     transition: all 0.3s ease;
-
-
-
-
-
-
+                    padding: 0;
+                    margin: 0;
+                   
+                    span {
+                        display: block;
+                        line-height: 1;
+                        transform: translateY(0);
+                    }
 
 
                     @media (max-width: 768px) {
@@ -174,23 +108,11 @@
                 }
 
 
-
-
-
-
-
-
                 p {
                     font-size: $f-s-sm;
                     color: $gray-500;
                     transition: all 0.3s ease;
                     white-space: nowrap;
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -200,22 +122,10 @@
             }
 
 
-
-
-
-
-
-
             .step_line {
                 width: 80px;
                 height: 3px;
                 background-color: $gray-300;
-
-
-
-
-
-
 
 
                 @media (max-width: 768px) {
@@ -226,13 +136,7 @@
         }
 
 
-
-
-
-
-
-
- 
+        // 步驟1: 選擇攤位
         .stall_num {
             width: 90%;
             max-width: 800px;
@@ -247,23 +151,11 @@
             overflow: visible !important;
 
 
-
-
-
-
-
-
             @media (max-width: 768px) {
                 width: 95%;
                 padding: 25px 15px;
                 gap: 20px;
             }
-
-
-
-
-
-
 
 
             @media (max-width: 640px) {
@@ -274,23 +166,11 @@
             }
 
 
-
-
-
-
-
-
             .event_name {
                 font-size: $f-s-xl;
                 font-weight: $f-w-b;
                 color: $text;
                 margin-bottom: 20px;
-
-
-
-
-
-
 
 
                 @media (max-width: 768px) {
@@ -300,25 +180,11 @@
             }
 
 
-
-
-
-
-
-
             .all_btn_box {
                 display: flex;
                 flex-direction: column;
                 gap: 15px;
                 width: 100%;
-
-
-
-
-
-
-
-
 
 
                 @media (max-width: 1024px) {
@@ -331,32 +197,14 @@
                     margin-bottom: 10px;
 
 
-
-
-
-
-
-
                     &::-webkit-scrollbar {
                         height: 6px;
                     }
 
 
-
-
-
-
-
-
                     &::-webkit-scrollbar-track {
                         background: transparent;
                     }
-
-
-
-
-
-
 
 
                     &::-webkit-scrollbar-thumb {
@@ -366,36 +214,17 @@
                 }
 
 
-
-
-
-
-
-
                 .stall_row {
                     display: grid;
                     grid-template-columns: repeat(10, 1fr);
                     gap: 15px;
 
 
-
-
-
-
-
-
-     
                     @media (max-width: 1024px) {
                         grid-template-columns: repeat(10, 70px);
                         gap: 12px;
                         min-width: max-content;
                     }
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -404,23 +233,11 @@
                     }
 
 
-
-
-
-
-
-
                     @media (max-width: 480px) {
                         grid-template-columns: repeat(10, 50px);
                         gap: 8px;
                     }
                 }
-
-
-
-
-
-
 
 
                 .stall_empty {
@@ -431,23 +248,11 @@
                     opacity: 0.3;
 
 
-
-
-
-
-
-
                     @media (max-width: 1024px) {
                         width: 70px;
                         height: 70px;
                         border-width: 1.5px;
                     }
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -457,12 +262,6 @@
                     }
 
 
-
-
-
-
-
-
                     @media (max-width: 480px) {
                         width: 50px;
                         height: 50px;
@@ -470,14 +269,10 @@
                 }
 
 
-
-
-
-
-
-
                 .stall_btn {
-                    @extend %flex-center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     width: 100%;
                     aspect-ratio: 1;
                     background-color: $primary;
@@ -487,23 +282,11 @@
                     border: 3px solid transparent;
 
 
-
-
-
-
-
-
                     @media (max-width: 1024px) {
                         width: 70px;
                         height: 70px;
                         border-width: 2.5px;
                     }
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -513,23 +296,11 @@
                     }
 
 
-
-
-
-
-
-
                     @media (max-width: 480px) {
                         width: 50px;
                         height: 50px;
                         border-width: 2px;
                     }
-
-
-
-
-
-
 
 
                     &:hover {
@@ -539,23 +310,11 @@
                     }
 
 
-
-
-
-
-
-
                     &.selected {
                         background-color: $accent;
                         border-color: $dark;
                         transform: scale(1.05);
                         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-
-
-
-
-
-
 
 
                         p {
@@ -565,22 +324,10 @@
                     }
 
 
-
-
-
-
-
-
                     p {
                         font-size: $f-s-lg;
                         font-weight: $f-w-b;
                         color: $text;
-
-
-
-
-
-
 
 
                         @media (max-width: 1024px) {
@@ -588,21 +335,9 @@
                         }
 
 
-
-
-
-
-
-
                         @media (max-width: 768px) {
                             font-size: $f-s-sm;
                         }
-
-
-
-
-
-
 
 
                         @media (max-width: 480px) {
@@ -613,14 +348,7 @@
             }
 
 
-
-
-
-
-
-
-   
-            >.step_actions {
+            > .step_actions {
                 width: 100%;
                 margin-top: 10px;
                 display: flex;
@@ -628,23 +356,11 @@
                 justify-content: center;
 
 
-
-
-
-
-
-
                 @media (max-width: 768px) {
                     margin-top: 15px;
                     flex-direction: column;
                     gap: 15px;
                 }
-
-
-
-
-
-
 
 
                 button {
@@ -659,12 +375,6 @@
                     color: $white;
 
 
-
-
-
-
-
-
                     @media (max-width: 768px) {
                         width: 100%;
                         padding: 12px 30px;
@@ -672,23 +382,11 @@
                     }
 
 
-
-
-
-
-
-
                     &:hover {
                         background-color: $accent;
                         transform: translateY(-2px);
                         box-shadow: 0 4px 12px rgba($accent, 0.3);
                     }
-
-
-
-
-
-
 
 
                     &:active {
@@ -699,13 +397,7 @@
         }
 
 
-
-
-
-
-
-
-     
+        // 步驟2: 填寫資訊
         .register {
             width: 90%;
             max-width: 900px;
@@ -714,21 +406,9 @@
             gap: 20px;
 
 
-
-
-
-
-
-
             @media (max-width: 768px) {
                 width: 95%;
             }
-
-
-
-
-
-
 
 
             .title {
@@ -738,22 +418,10 @@
                 text-align: center;
 
 
-
-
-
-
-
-
                 @media (max-width: 768px) {
                     font-size: $f-s-lg;
                 }
             }
-
-
-
-
-
-
 
 
             .register_box {
@@ -763,21 +431,9 @@
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 
-
-
-
-
-
-
                 @media (max-width: 768px) {
                     padding: 25px 15px;
                 }
-
-
-
-
-
-
 
 
                 .register_stall_num {
@@ -788,23 +444,11 @@
                     text-align: center;
 
 
-
-
-
-
-
-
                     @media (max-width: 768px) {
                         font-size: $f-s-md;
                         margin-bottom: 20px;
                     }
                 }
-
-
-
-
-
-
 
 
                 .register_form {
@@ -813,21 +457,9 @@
                     gap: 30px;
 
 
-
-
-
-
-
-
                     @media (max-width: 768px) {
                         gap: 20px;
                     }
-
-
-
-
-
-
 
 
                     .contact {
@@ -836,21 +468,9 @@
                         gap: 20px;
 
 
-
-
-
-
-
-
                         @media (max-width: 768px) {
                             gap: 15px;
                         }
-
-
-
-
-
-
 
 
                         .input {
@@ -859,34 +479,16 @@
                             gap: 8px;
 
 
-
-
-
-
-
-
                             label {
                                 font-weight: $f-w-b;
                                 color: $text;
                                 font-size: $f-s-md;
 
 
-
-
-
-
-
-
                                 @media (max-width: 768px) {
                                     font-size: $f-s-sm;
                                 }
                             }
-
-
-
-
-
-
 
 
                             input {
@@ -897,22 +499,10 @@
                                 transition: all 0.3s ease;
 
 
-
-
-
-
-
-
                                 @media (max-width: 768px) {
                                     padding: 10px 12px;
                                     font-size: $f-s-sm;
                                 }
-
-
-
-
-
-
 
 
                                 &:focus {
@@ -922,23 +512,11 @@
                                 }
 
 
-
-
-
-
-
-
                                 &::placeholder {
                                     color: $gray-400;
                                 }
                             }
                         }
-
-
-
-
-
-
 
 
                         .checkbox_title {
@@ -948,23 +526,11 @@
                             margin-top: 10px;
 
 
-
-
-
-
-
-
                             @media (max-width: 768px) {
                                 font-size: $f-s-sm;
                                 margin-top: 5px;
                             }
                         }
-
-
-
-
-
-
 
 
                         .checkbox {
@@ -973,25 +539,10 @@
                             gap: 15px;
 
 
-
-
-
-
-
-
                             @media (max-width: 768px) {
                                 grid-template-columns: repeat(2, 1fr);
                                 gap: 12px;
                             }
-
-
-
-
-
-
-
-
-             
 
 
                             .type_box {
@@ -1009,6 +560,10 @@
                                     border-radius: 4px;
                                     position: relative;
                                     transition: all 0.3s ease;
+                                    display: inline-flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    flex-shrink: 0;
 
 
                                     @media (max-width: 768px) {
@@ -1017,28 +572,24 @@
                                     }
 
 
-                     
                                     &:checked {
                                         background-color: $accent;
                                         border-color: $accent;
 
 
-                       
                                         &::after {
                                             content: "";
                                             position: absolute;
-                                            left: 5px;
-                                            top: 2px;
+                                            left: 50%;
+                                            top: 50%;
                                             width: 5px;
                                             height: 10px;
                                             border: solid white;
                                             border-width: 0 2px 2px 0;
-                                            transform: rotate(45deg);
+                                            transform: translate(-50%, -60%) rotate(45deg);
 
 
                                             @media (max-width: 768px) {
-                                                left: 4px;
-                                                top: 1px;
                                                 width: 4px;
                                                 height: 8px;
                                                 border-width: 0 1.5px 1.5px 0;
@@ -1067,12 +618,6 @@
                         }
 
 
-
-
-
-
-
-
                         .social {
                             display: flex;
                             align-items: center;
@@ -1083,21 +628,9 @@
                             transition: all 0.3s ease;
 
 
-
-
-
-
-
-
                             @media (max-width: 768px) {
                                 padding: 6px 10px;
                             }
-
-
-
-
-
-
 
 
                             &:focus-within {
@@ -1106,35 +639,19 @@
                             }
 
 
-
-
-
-
-
-
                             figure {
                                 width: 30px;
                                 height: 30px;
-                                @extend %flex-center;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
                                 flex-shrink: 0;
-
-
-
-
-
-
 
 
                                 @media (max-width: 768px) {
                                     width: 25px;
                                     height: 25px;
                                 }
-
-
-
-
-
-
 
 
                                 img {
@@ -1145,12 +662,6 @@
                             }
 
 
-
-
-
-
-
-
                             input {
                                 flex: 1;
                                 border: none;
@@ -1158,21 +669,9 @@
                                 font-size: $f-s-md;
 
 
-
-
-
-
-
-
                                 @media (max-width: 768px) {
                                     font-size: $f-s-sm;
                                 }
-
-
-
-
-
-
 
 
                                 &::placeholder {
@@ -1182,33 +681,15 @@
                         }
 
 
-
-
-
-
-
-
                         .file {
                             display: flex;
                             flex-direction: column;
                             gap: 20px;
 
 
-
-
-
-
-
-
                             @media (max-width: 768px) {
                                 gap: 15px;
                             }
-
-
-
-
-
-
 
 
                             .file_box {
@@ -1217,34 +698,16 @@
                                 gap: 8px;
 
 
-
-
-
-
-
-
                                 label {
                                     font-weight: $f-w-b;
                                     color: $text;
                                     font-size: $f-s-md;
 
 
-
-
-
-
-
-
                                     @media (max-width: 768px) {
                                         font-size: $f-s-sm;
                                     }
                                 }
-
-
-
-
-
-
 
 
                                 input[type="file"] {
@@ -1256,22 +719,10 @@
                                     font-size: $f-s-sm;
 
 
-
-
-
-
-
-
                                     @media (max-width: 768px) {
                                         padding: 10px;
                                         font-size: $f-s-xs;
                                     }
-
-
-
-
-
-
 
 
                                     &:hover {
@@ -1287,12 +738,7 @@
         }
 
 
-
-
-
-
-
-
+        // 步驟3: 完成登記
         .completion_page {
             width: 90%;
             max-width: 700px;
@@ -1301,22 +747,10 @@
             padding: 40px 0;
 
 
-
-
-
-
-
-
             @media (max-width: 768px) {
                 width: 95%;
                 padding: 20px 0;
             }
-
-
-
-
-
-
 
 
             .completion_content {
@@ -1328,32 +762,16 @@
                 width: 100%;
 
 
-
-
-
-
-
-
                 @media (max-width: 768px) {
                     padding: 40px 20px;
                 }
 
 
-
-
-
-
-
-
                 .success_icon {
-                    @extend %flex-center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                     margin-bottom: 30px;
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -1361,21 +779,9 @@
                     }
 
 
-
-
-
-
-
-
                     svg {
                         width: 120px;
                         height: 120px;
-
-
-
-
-
-
 
 
                         @media (max-width: 768px) {
@@ -1386,23 +792,11 @@
                 }
 
 
-
-
-
-
-
-
                 h2 {
                     font-size: $f-s-xxl;
                     font-weight: $f-w-b;
                     color: $accent;
                     margin-bottom: 20px;
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -1412,34 +806,16 @@
                 }
 
 
-
-
-
-
-
-
                 .completion_message {
                     font-size: $f-s-lg;
                     color: $text;
                     margin-bottom: 15px;
 
 
-
-
-
-
-
-
                     @media (max-width: 768px) {
                         font-size: $f-s-md;
                         margin-bottom: 12px;
                     }
-
-
-
-
-
-
 
 
                     strong {
@@ -1449,23 +825,11 @@
                 }
 
 
-
-
-
-
-
-
                 .completion_desc {
                     font-size: $f-s-md;
                     color: $gray-600;
                     line-height: 1.6;
                     margin-bottom: 40px;
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -1475,22 +839,10 @@
                     }
 
 
-
-
-
-
-
-
                     strong {
                         color: $text;
                     }
                 }
-
-
-
-
-
-
 
 
                 .completion_info {
@@ -1501,22 +853,10 @@
                     text-align: left;
 
 
-
-
-
-
-
-
                     @media (max-width: 768px) {
                         padding: 20px;
                         margin-bottom: 30px;
                     }
-
-
-
-
-
-
 
 
                     .info_item {
@@ -1527,12 +867,6 @@
                         border-bottom: 1px solid $gray-300;
 
 
-
-
-
-
-
-
                         @media (max-width: 768px) {
                             flex-direction: column;
                             align-items: flex-start;
@@ -1541,21 +875,9 @@
                         }
 
 
-
-
-
-
-
-
                         &:last-child {
                             border-bottom: none;
                         }
-
-
-
-
-
-
 
 
                         .info_label {
@@ -1564,34 +886,16 @@
                             font-weight: $f-w-b;
 
 
-
-
-
-
-
-
                             @media (max-width: 768px) {
                                 font-size: $f-s-sm;
                             }
                         }
 
 
-
-
-
-
-
-
                         .info_value {
                             font-size: $f-s-md;
                             color: $text;
                             font-weight: $f-w-b;
-
-
-
-
-
-
 
 
                             @media (max-width: 768px) {
@@ -1602,22 +906,10 @@
                 }
 
 
-
-
-
-
-
-
                 .completion_actions {
                     display: flex;
                     gap: 20px;
                     justify-content: center;
-
-
-
-
-
-
 
 
                     @media (max-width: 768px) {
@@ -1626,32 +918,14 @@
                     }
 
 
-
-
-
-
-
-
                     a {
                         text-decoration: none;
-
-
-
-
-
-
 
 
                         @media (max-width: 768px) {
                             width: 100%;
                         }
                     }
-
-
-
-
-
-
 
 
                     button {
@@ -1664,12 +938,6 @@
                         transition: all 0.3s ease;
 
 
-
-
-
-
-
-
                         @media (max-width: 768px) {
                             width: 100%;
                             padding: 12px 30px;
@@ -1678,21 +946,9 @@
                     }
 
 
-
-
-
-
-
-
                     .home_btn {
                         background-color: $accent;
                         color: $white;
-
-
-
-
-
-
 
 
                         &:hover {
@@ -1703,22 +959,10 @@
                     }
 
 
-
-
-
-
-
-
                     .event_btn {
                         background-color: $white;
                         color: $accent;
                         border: 2px solid $accent;
-
-
-
-
-
-
 
 
                         &:hover {
@@ -1733,10 +977,7 @@
         }
 
 
-
-
-
-
+        // 通用按鈕區域樣式
         .step_actions {
             display: flex !important;
             gap: 20px;
@@ -1747,23 +988,11 @@
             opacity: 1 !important;
 
 
-
-
-
-
-
-
             @media (max-width: 768px) {
                 flex-direction: column;
                 gap: 15px;
                 margin-top: 20px;
             }
-
-
-
-
-
-
 
 
             @media (max-width: 640px) {
@@ -1772,12 +1001,6 @@
                 margin-top: 20px;
                 padding: 0 10px;
             }
-
-
-
-
-
-
 
 
             button {
@@ -1792,23 +1015,11 @@
                 visibility: visible !important;
 
 
-
-
-
-
-
-
                 @media (max-width: 768px) {
                     width: 100%;
                     padding: 12px 30px;
                     font-size: $f-s-sm;
                 }
-
-
-
-
-
-
 
 
                 @media (max-width: 640px) {
@@ -1819,34 +1030,16 @@
             }
 
 
-
-
-
-
-
-
             .next_btn,
             .submit_btn {
                 background-color: $accent;
                 color: $white;
 
 
-
-
-
-
-
-
                 @media (max-width: 640px) {
                     background-color: $accent !important;
                     color: $white !important;
                 }
-
-
-
-
-
-
 
 
                 &:hover {
@@ -1856,22 +1049,10 @@
                 }
 
 
-
-
-
-
-
-
                 &:active {
                     transform: translateY(0);
                 }
             }
-
-
-
-
-
-
 
 
             .back_btn {
@@ -1880,23 +1061,11 @@
                 border: 2px solid $gray-400;
 
 
-
-
-
-
-
-
                 &:hover {
                     background-color: $gray-100;
                     border-color: $gray-600;
                     transform: translateY(-2px);
                 }
-
-
-
-
-
-
 
 
                 &:active {
@@ -1908,8 +1077,7 @@
 }
 
 
-
-
+// 額外的針對性修正（確保手機版顯示正常）
 .stall_register {
     .step_actions {
         @media (max-width: 640px) {
@@ -1922,12 +1090,6 @@
             opacity: 1 !important;
             position: relative !important;
             z-index: 999 !important;
-
-
-
-
-
-
 
 
             button {
@@ -1947,12 +1109,6 @@
 }
 
 
-
-
-
-
-
-
 .stall_register_main .stall_num .step_actions {
     display: flex !important;
     flex-direction: row !important;
@@ -1966,23 +1122,11 @@
     min-height: 50px !important;
 
 
-
-
-
-
-
-
     @media (max-width: 768px) {
         margin-top: 20px !important;
         flex-direction: column !important;
         gap: 15px !important;
     }
-
-
-
-
-
-
 
 
     @media (max-width: 640px) {
@@ -1991,12 +1135,6 @@
         gap: 15px !important;
         padding: 0 10px !important;
     }
-
-
-
-
-
-
 
 
     button {
@@ -2014,23 +1152,11 @@
         opacity: 1 !important;
 
 
-
-
-
-
-
-
         @media (max-width: 768px) {
             width: 100% !important;
             padding: 12px 30px !important;
             font-size: 14px !important;
         }
-
-
-
-
-
-
 
 
         @media (max-width: 640px) {
@@ -2042,23 +1168,11 @@
         }
 
 
-
-
-
-
-
-
         &:hover {
             background-color: #D32F2F !important;
             transform: translateY(-2px) !important;
             box-shadow: 0 4px 12px rgba(229, 115, 115, 0.3) !important;
         }
-
-
-
-
-
-
 
 
         &:active {

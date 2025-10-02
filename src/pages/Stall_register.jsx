@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom'
 
 
 
+
+
+
+
 const Stall_register = () => {
   // 步驟控制
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,8 +27,16 @@ const Stall_register = () => {
 
 
 
+
+
+
+
   // 選中的攤位編號
   const [selectedStallNumber, setSelectedStallNumber] = useState(null);
+
+
+
+
 
 
 
@@ -33,6 +45,10 @@ const Stall_register = () => {
   const handleStallClick = (stallNumber) => {
     setSelectedStallNumber(stallNumber);
   };
+
+
+
+
 
 
 
@@ -51,6 +67,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
   // 處理輸入變化
   const handleInputChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -63,6 +83,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
   // 步驟1：選擇攤位後繼續
   const handleStepOneNext = () => {
     if (!selectedStallNumber) {
@@ -71,6 +95,10 @@ const Stall_register = () => {
     }
     setCurrentStep(2);
   };
+
+
+
+
 
 
 
@@ -97,10 +125,18 @@ const Stall_register = () => {
 
 
 
+
+
+
+
     if (formData.categories.length === 0) {
       alert("請至少選擇一個類別");
       return;
     }
+
+
+
+
 
 
 
@@ -122,10 +158,18 @@ const Stall_register = () => {
 
 
 
+
+
+
+
   // 返回上一步
   const handleBack = () => {
     setCurrentStep(currentStep - 1);
   };
+
+
+
+
 
 
 
@@ -146,23 +190,31 @@ const Stall_register = () => {
 
 
 
+
+
+
+
         {/* 步驟指示器 */}
         <div className='step_indicator'>
           <div className={`step ${currentStep >= 1 ? 'active' : ''}`}>
-            <div className='step_circle'>1</div>
+            <div className='step_circle'><span>1</span></div>
             <p>選擇攤位</p>
           </div>
           <div className='step_line'></div>
           <div className={`step ${currentStep >= 2 ? 'active' : ''}`}>
-            <div className='step_circle'>2</div>
+            <div className='step_circle'><span>2</span></div>
             <p>填寫資訊</p>
           </div>
           <div className='step_line'></div>
           <div className={`step ${currentStep >= 3 ? 'active' : ''}`}>
-            <div className='step_circle'>3</div>
+            <div className='step_circle'><span>3</span></div>
             <p>完成登記</p>
           </div>
         </div>
+
+
+
+
 
 
 
@@ -206,6 +258,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
               {/* 第2排: 03 04 空 空 空 空 空 空 空 空 */}
               <div className='stall_row'>
                 <div className={`stall_btn ${selectedStallNumber === '03' ? 'selected' : ''}`} onClick={() => handleStallClick('03')}>
@@ -223,6 +279,10 @@ const Stall_register = () => {
                 <div className='stall_empty'></div>
                 <div className='stall_empty'></div>
               </div>
+
+
+
+
 
 
 
@@ -256,6 +316,10 @@ const Stall_register = () => {
                   <p>21</p>
                 </div>
               </div>
+
+
+
+
 
 
 
@@ -299,6 +363,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
         {/* 步驟2: 填寫資訊 */}
         {currentStep === 2 && (
           <div className='register'>
@@ -331,6 +399,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
                   <p className='checkbox_title'>類別 <span style={{color: '#ed972e'}}>*</span></p>
                   <div className='checkbox'>
                     {['手作', '美食', '服飾', '寵物', '植栽', '文創', '二手', '其他'].map((type, index) => (
@@ -351,9 +423,17 @@ const Stall_register = () => {
 
 
 
+
+
+
+
                 <div className='contact'>
                   <div className="input">
                     <label>社群連結</label>
+
+
+
+
 
 
 
@@ -374,6 +454,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
                     <div className='social'>
                       <figure>
                         <img src="./images/Stall_register/icon_ig.svg" alt="Instagram" />
@@ -386,6 +470,10 @@ const Stall_register = () => {
                         placeholder='請輸入連結'
                       />
                     </div>
+
+
+
+
 
 
 
@@ -443,6 +531,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
         {/* 步驟3: 完成登記 */}
         {currentStep === 3 && (
           <div className='completion_page'>
@@ -481,6 +573,10 @@ const Stall_register = () => {
 
 
 
+
+
+
+
               <div className='completion_actions'>
                 <Link to='/'>
                   <button className='home_btn'>返回首頁</button>
@@ -500,7 +596,21 @@ const Stall_register = () => {
 
 
 
+
+
+
+
 export default Stall_register
+
+
+
+
+
+
+
+
+
+
 
 
 

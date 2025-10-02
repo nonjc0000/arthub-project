@@ -2,13 +2,10 @@ import React, { useState, useMemo, useRef } from 'react'
 import stall from '../data/stall.json'
 
 
-
-
 const Stall_map = () => {
-  // 使用真實攤位資料，添加 isLiked 狀態，隨機生成愛心數
   const [arrStall, setArrStall] = useState(stall.map(s => ({
     ...s,
-    likes: Math.floor(Math.random() * 50) + 5, // 隨機生成 5-54 之間的愛心數
+    likes: Math.floor(Math.random() * 50) + 5,
     reviews: [],
     isLiked: false
   })));
@@ -23,27 +20,23 @@ const Stall_map = () => {
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
-  const [hasMoved, setHasMoved] = useState(false);
+ 
+  // 使用 ref 來追蹤拖移狀態，避免 state 更新導致的延遲
+  const dragStartRef = useRef({ x: 0, y: 0 });
+  const hasMovedRef = useRef(false);
+  const lastPositionRef = useRef({ x: 0, y: 0 });
   const mapRef = useRef(null);
-
-
 
 
   const categories = ['全部', '#手作', '#美食', '#服飾', '#寵物', '#植栽'];
 
 
-
-
-  // 攤位佈局
   const stallLayout = [
     ['01', '02', null, null, '07', '08', '09', '10', '11', '12'],
     ['03', '04', null, null, null, null, null, null, null, null],
     ['05', '06', null, '13', '14', '15', null, '19', '20', '21'],
     [null, null, null, '16', '17', '18', null, '22', '23', '24']
   ];
-
-
 
 
   const filterStall = useMemo(() => {
@@ -59,21 +52,15 @@ const Stall_map = () => {
     });
 
 
-
-
     if (sortBy === '熱門') {
-      filtered = [...filtered].sort((a, b) => b.likes - a.likes); // 按愛心數從高到低排序
+      filtered = [...filtered].sort((a, b) => b.likes - a.likes);
     } else {
       filtered = [...filtered].sort((a, b) => a.num.localeCompare(b.num));
     }
 
 
-
-
     return filtered;
   }, [search, selectedCategory, sortBy, arrStall]);
-
-
 
 
   const getStallByNum = (num) => {
@@ -81,11 +68,8 @@ const Stall_map = () => {
   };
 
 
-
-
   const handleStallClick = (num, e) => {
-    // 如果正在拖移，不觸發點擊
-    if (hasMoved) {
+    if (hasMovedRef.current) {
       e?.stopPropagation();
       return;
     }
@@ -100,9 +84,6 @@ const Stall_map = () => {
   };
 
 
-
-
-  // 切換推薦/取消推薦
   const handleLike = (stallNum) => {
     setArrStall(prevStalls =>
       prevStalls.map(s =>
@@ -124,8 +105,6 @@ const Stall_map = () => {
       }));
     }
   };
-
-
 
 
   const handleAddReview = (stallNum) => {
@@ -162,119 +141,103 @@ const Stall_map = () => {
   };
 
 
-
-
   const handleCloseDetail = () => {
     setSelectedStall(null);
     setReviewInput('');
   };
 
 
-
-
-  // 地圖控制函數 - 滑鼠事件
+  // 滑鼠事件 - 保持原樣
   const handleMouseDown = (e) => {
-    // 如果點擊的是攤位，不啟動拖移
     if (e.target.closest('.grid_stall')) {
       return;
     }
    
     setIsDragging(true);
-    setHasMoved(false);
-    setDragStart({
+    hasMovedRef.current = false;
+    dragStartRef.current = {
       x: e.clientX - position.x,
       y: e.clientY - position.y
-    });
+    };
+    lastPositionRef.current = position;
   };
-
-
 
 
   const handleMouseMove = (e) => {
     if (!isDragging) return;
    
-    const newX = e.clientX - dragStart.x;
-    const newY = e.clientY - dragStart.y;
+    const newX = e.clientX - dragStartRef.current.x;
+    const newY = e.clientY - dragStartRef.current.y;
    
-    // 檢查是否真的有移動
-    if (Math.abs(newX - position.x) > 3 || Math.abs(newY - position.y) > 3) {
-      setHasMoved(true);
+    if (Math.abs(newX - lastPositionRef.current.x) > 3 ||
+        Math.abs(newY - lastPositionRef.current.y) > 3) {
+      hasMovedRef.current = true;
     }
    
-    setPosition({
-      x: newX,
-      y: newY
-    });
+    setPosition({ x: newX, y: newY });
   };
-
-
 
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setTimeout(() => setHasMoved(false), 50);
+    setTimeout(() => {
+      hasMovedRef.current = false;
+    }, 100);
   };
 
 
-
-
-  // 觸控事件處理（手機）
+  // 改善後的觸控事件處理
   const handleTouchStart = (e) => {
-    // 如果觸碰的是攤位，不啟動拖移
     if (e.target.closest('.grid_stall')) {
       return;
     }
    
     const touch = e.touches[0];
     setIsDragging(true);
-    setHasMoved(false);
-    setDragStart({
+    hasMovedRef.current = false;
+   
+    dragStartRef.current = {
       x: touch.clientX - position.x,
       y: touch.clientY - position.y
-    });
+    };
+    lastPositionRef.current = position;
   };
-
-
 
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
    
-    // 防止頁面滾動
+    // 防止頁面滾動和彈跳效果
     e.preventDefault();
    
     const touch = e.touches[0];
-    const newX = touch.clientX - dragStart.x;
-    const newY = touch.clientY - dragStart.y;
+    const newX = touch.clientX - dragStartRef.current.x;
+    const newY = touch.clientY - dragStartRef.current.y;
    
-    // 檢查是否真的有移動
-    if (Math.abs(newX - position.x) > 3 || Math.abs(newY - position.y) > 3) {
-      setHasMoved(true);
+    // 降低移動閾值，使觸控更靈敏
+    if (Math.abs(newX - lastPositionRef.current.x) > 2 ||
+        Math.abs(newY - lastPositionRef.current.y) > 2) {
+      hasMovedRef.current = true;
     }
    
-    setPosition({
-      x: newX,
-      y: newY
+    // 使用 requestAnimationFrame 來平滑更新位置
+    requestAnimationFrame(() => {
+      setPosition({ x: newX, y: newY });
     });
   };
 
 
-
-
   const handleTouchEnd = () => {
     setIsDragging(false);
-    setTimeout(() => setHasMoved(false), 50);
+    setTimeout(() => {
+      hasMovedRef.current = false;
+    }, 100);
   };
 
 
-
-
-  // 縮放控制
   const handleZoomIn = () => {
     setScale(prev => Math.min(prev + 0.2, 2));
   };
-
-
 
 
   const handleZoomOut = () => {
@@ -282,14 +245,11 @@ const Stall_map = () => {
   };
 
 
-
-
   const handleResetView = () => {
     setScale(1);
     setPosition({ x: 0, y: 0 });
+    lastPositionRef.current = { x: 0, y: 0 };
   };
-
-
 
 
   const handleWheel = (e) => {
@@ -297,8 +257,6 @@ const Stall_map = () => {
     const delta = e.deltaY > 0 ? -0.1 : 0.1;
     setScale(prev => Math.max(0.5, Math.min(2, prev + delta)));
   };
-
-
 
 
   return (
@@ -313,12 +271,8 @@ const Stall_map = () => {
       </h1>
 
 
-
-
       <div className='map_container'>
-        {/* 左側面板 - 保持原樣 */}
         <aside className='sidebar'>
-          {/* 搜尋區 */}
           <div className='search_section'>
             <div className='search_box'>
               <input
@@ -329,8 +283,6 @@ const Stall_map = () => {
               />
               <img src="./images/find_map/magnifier.svg" alt="搜尋" />
             </div>
-
-
 
 
             <div className='filter_controls'>
@@ -354,9 +306,6 @@ const Stall_map = () => {
           </div>
 
 
-
-
-          {/* 內容區域 */}
           <div className='content_area'>
             {selectedStall ? (
               <div className='stall_detail'>
@@ -378,8 +327,6 @@ const Stall_map = () => {
                 </div>
 
 
-
-
                 <div className='detail_body'>
                   <h2>{selectedStall.name}</h2>
                  
@@ -388,8 +335,6 @@ const Stall_map = () => {
                       <span key={index} className='tag'>{tag}</span>
                     ))}
                   </div>
-
-
 
 
                   <div className='detail_actions'>
@@ -407,8 +352,6 @@ const Stall_map = () => {
                       <a href='#'><img src="./images/Stall_map/icon_web.svg" alt="Website" /></a>
                     </div>
                   </div>
-
-
 
 
                   <div className='review_section'>
@@ -488,11 +431,7 @@ const Stall_map = () => {
         </aside>
 
 
-
-
-        {/* 右側地圖 */}
         <div className='map_area'>
-          {/* 控制按鈕 */}
           <div className='map_controls'>
             <button className='control_btn' onClick={handleZoomIn} title="放大">
               <span style={{ fontSize: '20px', fontWeight: 'bold' }}>+</span>
@@ -506,9 +445,6 @@ const Stall_map = () => {
           </div>
 
 
-
-
-          {/* 地圖容器 */}
           <div
             className='map_wrapper'
             onMouseDown={handleMouseDown}
@@ -521,7 +457,9 @@ const Stall_map = () => {
             onWheel={handleWheel}
             style={{
               cursor: isDragging ? 'grabbing' : 'grab',
-              touchAction: 'none'
+              touchAction: 'none',
+              WebkitUserSelect: 'none',
+              userSelect: 'none'
             }}
           >
             <div
@@ -529,7 +467,9 @@ const Stall_map = () => {
               ref={mapRef}
               style={{
                 transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
-                transformOrigin: 'center center'
+                transformOrigin: 'center center',
+                transition: isDragging ? 'none' : 'transform 0.1s ease-out',
+                willChange: 'transform'
               }}
             >
               {stallLayout.map((row, rowIndex) => (
@@ -582,8 +522,6 @@ const Stall_map = () => {
     </main>
   );
 };
-
-
 
 
 export default Stall_map;

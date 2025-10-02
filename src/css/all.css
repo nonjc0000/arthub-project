@@ -4,7 +4,7 @@
   font-family: "DM Sans", "Noto Sans TC", san-serif;
 }
 
-.member_login_main .login_right .login_form .form_options .remember_me, .Find_schedule_order_wrap .receipt .select_border, .stall_register_main .stall_register h1, .stall_register_main .stall_register .step_indicator .step .step_circle, .stall_register_main .stall_register .stall_num .all_btn_box .stall_btn, .stall_register_main .stall_register .register .register_box .register_form .contact .social figure, .stall_register_main .stall_register .completion_page .completion_content .success_icon, .event_info_main .box_center, .event_info_main .info_box, .event_info_main .event_info_container .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .my_footprint_main .footprint_content .footprint_content_topbar, .my_footprint_main .footprint_content .footprint_content_topbar .footprint_content_topbar_wrapper, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
+.member_login_main .login_right .login_form .form_options .remember_me, .Find_schedule_order_wrap .receipt .select_border, .event_info_main .box_center, .event_info_main .info_box, .event_info_main .event_info_container .type_box .tag_box p, .event_info_main .event_info_container .stall_btn_box figure, .detail_info_container, .review_container, .review_container .review_card .card_box .like_box, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_pass .btn_content, .order_management_content .order_content_layout .order_list .order_card .order_info .order_actions .btn_comment .btn_content, .my_footprint_main .footprint_content .footprint_content_topbar, .my_footprint_main .footprint_content .footprint_content_topbar .footprint_content_topbar_wrapper, .find_type_main .find_type_card .find_type_card_desc p, .find_map_main .find_map_content_box .map_search-box #map_search_filter .select_border {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10080,6 +10080,11 @@ a {
   gap: 40px;
   padding: 40px 20px;
 }
+.stall_register_main .stall_register h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .stall_register_main .stall_register .step_indicator {
   display: flex;
   align-items: center;
@@ -10118,10 +10123,20 @@ a {
   height: 50px;
   border-radius: 50%;
   border: 3px solid #ED972E;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: 1.25rem;
   font-weight: 700;
   background-color: #fff;
   transition: all 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+.stall_register_main .stall_register .step_indicator .step .step_circle span {
+  display: block;
+  line-height: 1;
+  transform: translateY(0);
 }
 @media (max-width: 768px) {
   .stall_register_main .stall_register .step_indicator .step .step_circle {
@@ -10272,6 +10287,9 @@ a {
   }
 }
 .stall_register_main .stall_register .stall_num .all_btn_box .stall_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   aspect-ratio: 1;
   background-color: #CBD4C1;
@@ -10516,6 +10534,10 @@ a {
   border-radius: 4px;
   position: relative;
   transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 @media (max-width: 768px) {
   .stall_register_main .stall_register .register .register_box .register_form .contact .checkbox .type_box input[type=checkbox] {
@@ -10530,18 +10552,16 @@ a {
 .stall_register_main .stall_register .register .register_box .register_form .contact .checkbox .type_box input[type=checkbox]:checked::after {
   content: "";
   position: absolute;
-  left: 5px;
-  top: 2px;
+  left: 50%;
+  top: 50%;
   width: 5px;
   height: 10px;
   border: solid white;
   border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
+  transform: translate(-50%, -60%) rotate(45deg);
 }
 @media (max-width: 768px) {
   .stall_register_main .stall_register .register .register_box .register_form .contact .checkbox .type_box input[type=checkbox]:checked::after {
-    left: 4px;
-    top: 1px;
     width: 4px;
     height: 8px;
     border-width: 0 1.5px 1.5px 0;
@@ -10581,6 +10601,9 @@ a {
 .stall_register_main .stall_register .register .register_box .register_form .contact .social figure {
   width: 30px;
   height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 @media (max-width: 768px) {
@@ -10678,6 +10701,9 @@ a {
   }
 }
 .stall_register_main .stall_register .completion_page .completion_content .success_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 30px;
 }
 @media (max-width: 768px) {
