@@ -6920,7 +6920,7 @@ a {
 
 .page-top {
   position: relative;
-  z-index: 999;
+  z-index: 5;
 }
 
 .home-road {
