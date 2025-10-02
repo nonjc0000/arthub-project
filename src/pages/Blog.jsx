@@ -452,6 +452,7 @@ function Blog() {
 
   return (
     <div className="blog-page" style={{ backgroundImage: 'url("./images/blog/blog_bg.jpg")' }}>
+      <ScrollToTop/>
       {/* 1) 標題 */}
       <header className="blog-hero">
         <h1 className='titleBox_h1'>
