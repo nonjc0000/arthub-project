@@ -75,7 +75,7 @@ const Footer = () => {
                     )}
                 </li>
             </ul>
-            <small className='copyright'>&copy; 2025 art hub</small>
+            <small className='copyright'>Copyright &copy; 2025 art.hub 保留一切權利。</small>
         </div>
     )
 }

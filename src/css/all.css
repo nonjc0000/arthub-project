@@ -2994,6 +2994,7 @@ a {
 @media (max-width:970px) {
   .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border {
     width: 50%;
+    max-height: 31px;
   }
 }
 @media (max-width: 420px) {
@@ -3003,6 +3004,11 @@ a {
 }
 .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border input {
   width: 100%;
+}
+@media (max-width:970px) {
+  .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button {
+    display: none;
+  }
 }
 .find_map_main .find_map_content_box .map_search-box #map_search_filter .input_border button img {
   object-fit: cover;
@@ -3123,6 +3129,11 @@ a {
 .find_map_main .map_deco-box {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width:640px) {
+  .find_map_main .map_deco-box {
+    display: none;
+  }
 }
 .find_map_main .map_deco-box .map_deco1 {
   position: relative;

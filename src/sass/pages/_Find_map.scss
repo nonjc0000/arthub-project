@@ -93,7 +93,7 @@
                 @media ($mediaLg) {
                     overflow-x: auto;
                     overflow-y: hidden;
-                    flex-wrap: nowrap; // 確保不換行
+                    flex-wrap: nowrap; 
                     gap: $spacing-md; // 增加間距
                     padding-bottom: $spacing-xs; // 為滾動條留空間
 
@@ -160,6 +160,7 @@
 
                     @media ($mediaLg) {
                         width: 50%;
+                        max-height: 31px;
                     }
 
 
@@ -174,6 +175,10 @@
 
                     button {
                         @extend %remove_form_style;
+
+                        @media ($mediaLg) {
+                            display: none;
+                        }
 
 
                         img {
@@ -330,6 +335,10 @@
         display: flex;
         justify-content: space-between;
         // position: relative;
+
+        @media ($mediaSm) {
+            display: none;
+        }
 
         .map_deco1 {
             // margin-top: 40px;
