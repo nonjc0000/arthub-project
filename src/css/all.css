@@ -961,6 +961,10 @@ a {
   background-color: #DEBFA0;
   border-radius: 15px;
   margin-bottom: 25px;
+  transition: 0.3s all ease-in-out;
+}
+.find_map_card:hover {
+  background-color: #D1B294;
 }
 @media (max-width:970px) {
   .find_map_card {
@@ -1765,6 +1769,11 @@ a {
 .topbar .logo {
   width: 60px;
 }
+@media (max-width:640px) {
+  .topbar .logo {
+    width: 50px;
+  }
+}
 .topbar .navbar {
   display: flex;
   flex-direction: column;
@@ -1778,11 +1787,25 @@ a {
   margin-bottom: 5px;
   margin-top: 5px;
 }
+@media (max-width:640px) {
+  .topbar .hamburger {
+    gap: 10px;
+  }
+}
 .topbar .hamburger .bar {
   display: block;
   height: 2px;
   background-color: #413B35;
   transition: all 0.5s ease;
+}
+@media (max-width:640px) {
+  .topbar .hamburger .bar {
+    transform: scale(0.8);
+    margin-left: auto;
+  }
+  .topbar .hamburger .bar:first-child {
+    margin-top: 10px;
+  }
 }
 .topbar .hamburger.is-active .bar:nth-child(1) {
   transform: rotate(20deg) translate(7px, 9px);
@@ -2790,6 +2813,64 @@ a {
     font-weight: 500;
   }
 }
+.breadcrumb {
+  padding: 16px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.breadcrumb__item--active .breadcrumb__text {
+  color: #39413A;
+  font-weight: 500;
+}
+
+.breadcrumb__link {
+  color: #39413A;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+}
+
+.breadcrumb__link:hover {
+  color: #ED972E;
+  background-color: #f0f0f0;
+}
+
+.breadcrumb__link:active {
+  transform: scale(0.98);
+}
+
+.breadcrumb__separator {
+  margin: 0 8px;
+  color: #999;
+  user-select: none;
+}
+
+.breadcrumb__text {
+  color: #666;
+  padding: 6px 10px;
+}
+
 .find_map_main {
   height: 100vh;
   padding: 30px;
@@ -3056,6 +3137,12 @@ a {
   width: 10%;
   min-width: 150px;
   margin-right: 20%;
+}
+@media (max-width:640px) {
+  .find_map_main .titleBox_h1 {
+    min-width: 350px;
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width:640px) {

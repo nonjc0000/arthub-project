@@ -14,6 +14,11 @@
     background-color: $secondary;
     border-radius: $rad-basic;
     margin-bottom: $spacing-lg;
+    transition: .3s all ease-in-out;
+
+    &:hover{
+        background-color: $secondary-600;
+    }
 
 
     @media ($mediaLg) {

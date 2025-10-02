@@ -355,4 +355,13 @@
 
     }
 
+
+
+.titleBox_h1{
+    @media ($mediaSm) {
+        min-width: 350px;
+        margin-bottom: 0;
+    }
+}
+
 }

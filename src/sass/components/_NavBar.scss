@@ -14,6 +14,10 @@
 
       .logo {
           width: 60px;
+
+          @media ($mediaSm) {
+              width: 50px;
+          }
       }
 
       .navbar {
@@ -32,11 +36,24 @@
           margin-bottom: $spacing-xxs;
           margin-top: $spacing-xxs;
 
+          @media ($mediaSm) {
+              gap: $spacing-xs;
+          }
+
           .bar {
               display: block;
               height: 2px;
               background-color: $dark;
               transition: all 0.5s ease;
+
+              @media ($mediaSm) {
+                  transform: scale(.8);
+                  margin-left: auto;
+
+                  &:first-child {
+                      margin-top: $spacing-xs;
+                  }
+              }
           }
 
           &.is-active {
@@ -108,12 +125,12 @@
       }
 
       button {
-        margin-left: $spacing-md;
-        @extend %remove_form_style;
-        background-color: $accent;
-        color: $white;
-        padding: $spacing-xxs $spacing-md;
-        border-radius: $rad-basic;
-        cursor: pointer;
+          margin-left: $spacing-md;
+          @extend %remove_form_style;
+          background-color: $accent;
+          color: $white;
+          padding: $spacing-xxs $spacing-md;
+          border-radius: $rad-basic;
+          cursor: pointer;
       }
   }

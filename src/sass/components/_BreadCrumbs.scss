@@ -1,0 +1,72 @@
+@use "../variables/" as *;
+@use "../functions/" as *;
+
+
+
+
+.breadcrumb {
+  padding: 16px 0;
+  position: relative;
+  z-index: 10;
+}
+
+
+.breadcrumb__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+
+.breadcrumb__item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+
+.breadcrumb__item--active .breadcrumb__text {
+  color: $text;
+  font-weight: 500;
+}
+
+
+.breadcrumb__link {
+  color:$text;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  z-index: 100;
+}
+
+
+.breadcrumb__link:hover {
+  color: $accent;
+  background-color: #f0f0f0;
+}
+
+
+.breadcrumb__link:active {
+  transform: scale(0.98);
+}
+
+
+.breadcrumb__separator {
+  margin: 0 8px;
+  color: #999;
+  user-select: none;
+}
+
+
+.breadcrumb__text {
+  color: #666;
+  padding: 6px 10px;
+}
+

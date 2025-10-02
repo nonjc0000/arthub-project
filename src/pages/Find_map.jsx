@@ -69,7 +69,7 @@ const Find_map = () => {
 
         <section className='find_map_content_box'>
           <div className='map_search-box'>
-            <div name="map_search_filter" id="map_search_filter" method="post" acceptCharSet="UTF-8">
+            <div name="map_search_filter" id="map_search_filter" method="post" acceptCharset="UTF-8">
               {/* 選擇縣市 */}
               <div className='select_border'>
                 <select
