@@ -6,6 +6,11 @@ import ScrollToTop from "../components/ScrollToTop";
 import PageTop from "../components/PageTop";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import BreadCrumb from "../components/BreadCrumb";
+
+
+
+
 
 
 
@@ -13,6 +18,8 @@ import 'aos/dist/aos.css';
 
 
 const STOPS = [
+
+
 
 
   {
@@ -25,6 +32,8 @@ const STOPS = [
   {
 
 
+
+
     time: "10:30",
     title: "在 simple kaffa 享用早午餐",
     desc: "台北的精品人氣咖啡館，享受一份簡單早午餐與城市美味，為一天充電。",
@@ -33,6 +42,8 @@ const STOPS = [
     duration: "停留 90 分鐘",
   },
   {
+
+
 
 
     time: "12:00",
@@ -45,6 +56,8 @@ const STOPS = [
   {
 
 
+
+
     time: "14:00",
     title: "市集散策",
     desc: "逛設計手作小市集，尋寶限定款，打卡與朋友分享今日的小驚喜。",
@@ -52,6 +65,8 @@ const STOPS = [
     duration: "停留 60 分鐘",
   },
   {
+
+
 
 
     time: "16:00",
@@ -64,6 +79,8 @@ const STOPS = [
   {
 
 
+
+
     time: "18:00",
     title: "返程與散場",
     desc: "用在地夜市(遼寧街夜市)結束這趟旅程，從食物中補充能量與情感記憶。",
@@ -71,6 +88,14 @@ const STOPS = [
     duration: "自由安排時間",
   },
 ];
+
+
+
+
+
+
+
+
 
 
 
@@ -120,6 +145,10 @@ function RatingStars({ score = 4.8 }) {
 
 
 
+
+
+
+
 function Accordion({ title, children, defaultOpen = false }) {
   const [open, setOpen] = useState(defaultOpen);
   return (
@@ -144,6 +173,10 @@ function Accordion({ title, children, defaultOpen = false }) {
 
 
 
+
+
+
+
 export default function TripBookingPage() {
   const location = useLocation();
   const [arrSchedule] = useState(schedule);
@@ -157,6 +190,7 @@ export default function TripBookingPage() {
     [adult, child]
   );
 
+
   useEffect(() => {
     if (location.hash) {
       setTimeout(() => {
@@ -167,7 +201,7 @@ export default function TripBookingPage() {
       }, 100);
     }
   }, [location]);
-  
+ 
   // 評論
   const [reviews, setReviews] = useState([
     {
@@ -192,10 +226,18 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
   const [sortDesc, setSortDesc] = useState(true);
   const [starFilter, setStarFilter] = useState(0);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(2);
+
+
+
+
 
 
 
@@ -224,6 +266,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
   const sorted = [...reviews].sort((a, b) =>
     sortDesc ? b.date.localeCompare(a.date) : a.date.localeCompare(b.date)
   );
@@ -235,17 +281,37 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
   const avgRating = (
     reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length
   ).toFixed(1);
   useEffect(() => {
     AOS.init();
   }, []);
+
+
+
+
+ const breadcrumbItems = [
+    { label: '找行程', to: '/Find_schedule' },
+    { label: '北部地區', to: '/North' },
+    { label: '當前頁面' }
+  ];
+
+
+
+
   return (
     <div className="tb-page">
       <ScrollToTop />
       {/* Hero */}
       <section className="tb-hero">
+        <div className="tb-breadcrumbItems">
+       <BreadCrumb items={breadcrumbItems} />
+       </div>
         <div className="tb-container tb-hero__grid">
           <div className="tb-hero__gallery">
             {[
@@ -282,6 +348,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
       {/* 行程亮點 */}
       <section id="feature" className="tb-section">
         <div className="tb-container">
@@ -300,6 +370,10 @@ export default function TripBookingPage() {
           </div>
         </div>
       </section>
+
+
+
+
 
 
 
@@ -337,6 +411,10 @@ export default function TripBookingPage() {
           </Accordion>
         </div>
       </section>
+
+
+
+
 
 
 
@@ -383,6 +461,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
           {/* Booking Card */}
           <aside id="book" className="aside">
             <div className="card-box">
@@ -397,6 +479,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
               <div className="field">
                 <label className="label">出發日期</label>
                 <input
@@ -406,6 +492,10 @@ export default function TripBookingPage() {
                   onChange={(e) => setDate(e.target.value)}
                 />
               </div>
+
+
+
+
 
 
 
@@ -452,6 +542,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
               <div className="subtotal">
                 <div className="subtotal__row">
                   <span>小計</span>
@@ -484,11 +578,19 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
           {/* 工具列 */}
           <div className="review-toolbar">
             <button className="review-btn" onClick={() => setSortDesc((v) => !v)}>
               日期排序：{sortDesc ? "新→舊" : "舊→新"}
             </button>
+
+
+
+
 
 
 
@@ -512,6 +614,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
             <label style={{ marginLeft: "8px" }}>每頁顯示</label>
             <select
               className="page-select"
@@ -526,6 +632,10 @@ export default function TripBookingPage() {
               <option value={10}>10</option>
             </select>
           </div>
+
+
+
+
 
 
 
@@ -562,6 +672,10 @@ export default function TripBookingPage() {
 
 
 
+
+
+
+
           <div className="review-list">
             {paged.map((r) => (
               <div key={r.id} className="review-item">
@@ -573,6 +687,10 @@ export default function TripBookingPage() {
               </div>
             ))}
           </div>
+
+
+
+
 
 
 
@@ -603,4 +721,8 @@ export default function TripBookingPage() {
     </div>
   );
 }
+
+
+
+
 

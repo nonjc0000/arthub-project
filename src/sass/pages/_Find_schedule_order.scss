@@ -230,6 +230,7 @@
 
         .select_border {
             @extend %flex-center;
+            max-width: 320px;
             border: $primary-600 solid 1px;
             border-radius: $rad-ex;
             background-color: $white;

@@ -6,10 +6,34 @@
 
 
 
+
+
+
+
+
+
 .tb-container {
     max-width: 1152px;
     margin: 0 auto;
     padding: 16px;
+}
+
+
+.tb-breadcrumbItems {
+    position: relative;
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 16px;
+
+
+    @media (max-width: 768px) {
+        padding-top: 10px;
+    }
+
+
+    @media (max-width: 480px) {
+        padding-top: 15px;
+    }
 }
 
 
@@ -21,16 +45,22 @@
     margin-top: 72px;
 
 
+
+
     &__grid {
         display: grid;
         gap: 24px;
         grid-template-columns: 1fr;
 
 
+
+
         @media (min-width: 960px) {
             grid-template-columns: 1fr 1fr;
         }
     }
+
+
 
 
     &__gallery {
@@ -40,10 +70,14 @@
     }
 
 
+
+
     &__title {
         font-weight: 600;
         font-size: 28px;
     }
+
+
 
 
     &__desc {
@@ -55,12 +89,16 @@
     }
 
 
+
+
     &__meta {
         display: flex;
         gap: 16px;
         align-items: center;
         margin-top: 12px;
     }
+
+
 
 
     &__price {
@@ -72,11 +110,15 @@
 }
 
 
+
+
 .card {
     background: #fff;
     border-radius: var(--radius);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     padding: 8px;
+
+
 
 
     img {
@@ -86,11 +128,15 @@
         border-radius: 12px;
 
 
+
+
         @media (min-width: 960px) {
             height: 300px;
         }
     }
 }
+
+
 
 
 .pill {
@@ -105,6 +151,8 @@
 }
 
 
+
+
 .rating {
     display: flex;
     align-items: center;
@@ -112,11 +160,15 @@
     color: #eab308;
 
 
+
+
     &__icon {
         width: 20px;
         height: 20px;
         fill: currentColor;
     }
+
+
 
 
     &__text {
@@ -127,8 +179,12 @@
 }
 
 
+
+
 .tb-section {
     padding: 40px 0;
+
+
 
 
     &__title {
@@ -139,10 +195,14 @@
 }
 
 
+
+
 .chips {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+
+
 
 
     .chip {
@@ -156,11 +216,15 @@
 }
 
 
+
+
 .acc {
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     margin-bottom: 12px;
+
+
 
 
     &__btn {
@@ -177,6 +241,8 @@
     }
 
 
+
+
     &__panel {
         border-top: 1px solid var(--ring);
         padding: 12px 16px;
@@ -185,9 +251,13 @@
     }
 
 
+
+
     &__icon {
         transition: transform 0.15s ease;
     }
+
+
 
 
     &.is-open &__icon {
@@ -196,10 +266,14 @@
 }
 
 
+
+
 .main {
     display: grid;
     gap: 24px;
     grid-template-columns: 1fr;
+
+
 
 
     @media (min-width: 960px) {
@@ -208,9 +282,13 @@
 }
 
 
+
+
 .timeline {
     position: relative;
     padding-left: 24px;
+
+
 
 
     &:before {
@@ -224,13 +302,17 @@
 }
 
 
+
+
 .stop {
     position: relative;
-    background:rgba(255, 255, 255, 0.45);
+    background: rgba(255, 255, 255, 0.45);
     border-radius: 12px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
     padding: 16px;
     margin-bottom: 16px;
+
+
 
 
     &__grid {
@@ -239,10 +321,14 @@
         grid-template-columns: 1fr;
 
 
+
+
         @media (min-width: 860px) {
             grid-template-columns: 120px minmax(0, 1fr);
         }
     }
+
+
 
 
     &__time {
@@ -250,11 +336,15 @@
         color: #6b7280;
 
 
+
+
         strong {
             display: block;
             color: #374151;
         }
     }
+
+
 
 
     &__badge {
@@ -270,6 +360,8 @@
     }
 
 
+
+
     &__img {
         width: 100%;
         height: 240px;
@@ -280,7 +372,13 @@
 
 
 
+
+
+
+
 }
+
+
 
 
 .aside {
@@ -290,8 +388,10 @@
 }
 
 
+
+
 .card-box {
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     padding: 18px;
@@ -299,9 +399,13 @@
 }
 
 
+
+
 .field {
     margin-bottom: 12px;
 }
+
+
 
 
 .label {
@@ -310,6 +414,8 @@
     font-weight: 600;
     margin-bottom: 6px;
 }
+
+
 
 
 .date-input {
@@ -322,6 +428,8 @@
 }
 
 
+
+
 .form-input {
     width: 100%;
     padding: 10px 12px;
@@ -331,8 +439,13 @@
     outline: none;
 
 
- 
+
+
+
+
 }
+
+
 
 
 .qty {
@@ -341,6 +454,10 @@
     gap: 12px;
     background: #fff;
 }
+
+
+
+
 
 
 
@@ -354,6 +471,8 @@
     padding: 10px;
 
 
+
+
     button {
         width: 32px;
         height: 32px;
@@ -365,12 +484,16 @@
 }
 
 
+
+
 .subtotal {
-    background:$gray-200;
+    background: $gray-200;
     border-radius: 12px;
     padding: 12px;
     font-size: 14px;
     margin: 12px 0;
+
+
 
 
     &__row {
@@ -379,6 +502,8 @@
         justify-content: space-between;
     }
 }
+
+
 
 
 .btn-primary {
@@ -390,6 +515,8 @@
 }
 
 
+
+
 .note {
     color: #6b7280;
     font-size: 12px;
@@ -398,15 +525,21 @@
 }
 
 
+
+
 .related {
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr;
 
 
+
+
     @media (min-width: 960px) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+
+
 
 
     a {
@@ -420,9 +553,13 @@
         transition: box-shadow 0.15s ease;
 
 
+
+
         &:hover {
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
         }
+
+
 
 
         img {
@@ -433,6 +570,10 @@
         }
     }
 }
+
+
+
+
 
 
 
@@ -448,6 +589,10 @@
 
 
 
+
+
+
+
 .review-btn {
     background-color: $secondary-300;
     padding: 8px;
@@ -455,6 +600,8 @@
     cursor: pointer;
     border: 1px solid $secondary-300;
     transition: all 0.3s ease;
+
+
 
 
     &:hover {
@@ -467,18 +614,26 @@
 
 
 
+
+
+
+
     &:active {
         transform: translateY(0);
     }
 }
-.page-more-btn{
-     background-color: $secondary-300;
+
+
+.page-more-btn {
+    background-color: $secondary-300;
     padding: 8px;
     border-radius: $rad-lg;
     cursor: pointer;
     border: 1px solid $secondary-300;
     margin-top: 20px;
 }
+
+
 .review-form {
     display: grid;
     gap: 10px;
@@ -493,6 +648,10 @@
 
 
 
+
+
+
+
 .review-filter-select {
     padding: 8px;
     border-radius: $rad-lg;
@@ -500,11 +659,15 @@
 }
 
 
+
+
 .page-select {
     padding: 8px;
     border-radius: $rad-lg;
     cursor: pointer;
 }
+
+
 
 
 .review-form .input,
@@ -516,7 +679,11 @@
     font-size: 14px;
 
 
+
+
 }
+
+
 
 
 .review-form-textarea {
@@ -527,13 +694,21 @@
     border: 1px solid #e5e7eb;
 
 
+
+
 }
+
+
 
 
 .review-list {
     display: grid;
     gap: 12px;
 }
+
+
+
+
 
 
 
@@ -547,12 +722,17 @@
 }
 
 
-.review-select,.page-select{
+
+
+.review-select,
+.page-select {
     background: #fff;
     border: 1px solid #e5e7eb;
     border-radius: 20px;
     padding: 10px;
 }
+
+
 .review-head {
     font-size: 14px;
     color: #111827;
@@ -562,11 +742,17 @@
 
 
 
+
+
+
+
 .review-text {
     font-size: 14px;
     line-height: 1.6;
     color: #374151;
 }
+
+
 
 
 .textarea-btn {
@@ -581,10 +767,16 @@
 
 
 
+
+
+
+
 .tb-deco-line {
     width: 80%;
     margin: 20px auto;
 }
+
+
 
 
 //相關行程卡片容器//
@@ -593,6 +785,8 @@
     margin: 0 auto;
     padding: 0 30px;
 }
+
+
 
 
 .trip_card_container {
@@ -605,12 +799,16 @@
 }
 
 
+
+
 // 平板
 @media (min-width: 600px) {
     .trip_card_container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
+
 
 
 // 小桌機
@@ -621,11 +819,15 @@
 }
 
 
+
+
 @media (min-width: 1185px) and (max-width: 1199px) {
     .trip_card_container {
         grid-template-columns: repeat(3, 1fr) !important;
     }
 }
+
+
 
 
 // 桌機 / 寬螢幕
@@ -638,9 +840,17 @@
 
 
 
+
+
+
+
 .trip_card_container>* {
     min-width: 0;
 }
+
+
+
+
 
 
 

@@ -2,6 +2,8 @@
 @use '../functions/' as *;
 
 
+
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -10,6 +12,8 @@
     opacity: 1;
   }
 }
+
+
 
 
 @keyframes slideUp {
@@ -22,6 +26,8 @@
     opacity: 1;
   }
 }
+
+
 
 
 // Modal 遮罩
@@ -39,11 +45,15 @@
   padding: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   animation: fadeIn 0.3s ease;
+  // margin-top: 60px;
 }
+
+
 
 
 // Modal 內容容器
 .voucher-modal-content {
+  margin-top: 60px;
    position: relative;
   max-width: 900px;
   width: 100%;
@@ -57,15 +67,19 @@
  
 
 
+
+
  
 }
+
+
 
 
 // 關閉按鈕
 .voucher-close-button {
   position: sticky;
   top: 0;
-  left: calc(100% - 50px);
+  right: 10px; // 改用 right 定位,更可靠
   width: 40px;
   height: 40px;
   background: white;
@@ -76,6 +90,7 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   z-index: 10;
   margin-bottom: -40px;
+  margin-left: auto; // 確保靠右對齊
   transition: all 0.2s;
 
 
@@ -91,6 +106,8 @@
 }
 
 
+
+
 // 憑證卡片主體
 .voucher-modal-card {
   background: white;
@@ -98,6 +115,8 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
+
+
 
 
 // Header 區域
@@ -112,6 +131,8 @@
   gap: 1rem;
 
 
+
+
   .logo-section {
     .logo {
       font-size: 1.75rem;
@@ -120,11 +141,15 @@
     }
 
 
+
+
     .subtitle {
       font-size: 0.9rem;
       opacity: 0.9;
     }
   }
+
+
 
 
   .status-badge {
@@ -138,6 +163,8 @@
 }
 
 
+
+
 // 憑證編號區域
 .voucher-number-section {
   background: linear-gradient(to right, #f8f9fa, #ffffff);
@@ -146,11 +173,15 @@
   text-align: center;
 
 
+
+
   .label {
     font-size: 0.85rem;
     color: #666;
     margin-bottom: 0.5rem;
   }
+
+
 
 
   .voucher-number {
@@ -162,11 +193,15 @@
   }
 
 
+
+
   .booking-ref {
     font-size: 0.9rem;
     color: #888;
   }
 }
+
+
 
 
 // 主要內容區域
@@ -177,10 +212,14 @@
   gap: 2rem;
 
 
+
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 }
+
+
 
 
 // 左側內容
@@ -189,9 +228,13 @@
     margin-bottom: 2rem;
 
 
+
+
     &:last-child {
       margin-bottom: 0;
     }
+
+
 
 
     .section-title {
@@ -204,9 +247,13 @@
     }
 
 
+
+
     .info-grid {
       display: grid;
       gap: 1rem;
+
+
 
 
       .info-item {
@@ -215,11 +262,15 @@
         gap: 0.25rem;
 
 
+
+
         .info-label {
           font-size: 0.85rem;
           color: #666;
           font-weight: 500;
         }
+
+
 
 
         .info-value {
@@ -231,11 +282,15 @@
   }
 
 
+
+
   // 付款資訊樣式
   .payment-info {
     background: #f8f9fa;
     padding: 1.25rem;
     border-radius: 8px;
+
+
 
 
     .payment-row {
@@ -245,10 +300,14 @@
       padding: 0.5rem 0;
 
 
+
+
       &:not(:last-child) {
         border-bottom: 1px solid #e0e0e0;
         margin-bottom: 0.5rem;
       }
+
+
 
 
       .payment-amount {
@@ -256,6 +315,8 @@
         font-weight: bold;
         color: $accent;
       }
+
+
 
 
       .payment-status {
@@ -267,11 +328,15 @@
 }
 
 
+
+
 // 右側內容 - QR Code
 .voucher-content-right {
   display: flex;
   align-items: flex-start;
   justify-content: center;
+
+
 
 
   .qr-section {
@@ -283,12 +348,16 @@
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.1);
 
 
+
+
     .qr-title {
       font-weight: 600;
       color: $accent;
       margin-bottom: 1rem;
       font-size: 1.1rem;
     }
+
+
 
 
     .qr-code {
@@ -300,6 +369,8 @@
     }
 
 
+
+
     .qr-instruction {
       font-size: 0.85rem;
       color: #666;
@@ -309,11 +380,15 @@
 }
 
 
+
+
 // 重要事項區域
 .voucher-notes-section {
   background:$background;
   padding: 1.5rem 2rem;
   border-top: 2px dashed #e0e0e0;
+
+
 
 
   .section-title {
@@ -326,10 +401,14 @@
   }
 
 
+
+
   .notes-list {
     list-style: none;
     padding: 0;
     margin: 0;
+
+
 
 
     li {
@@ -338,6 +417,8 @@
       position: relative;
       color: #555;
       line-height: 1.6;
+
+
 
 
       &:before {
@@ -352,6 +433,8 @@
 }
 
 
+
+
 // Footer 區域
 .voucher-modal-footer {
   background: #f8f9fa;
@@ -364,11 +447,15 @@
   gap: 1rem;
 
 
+
+
   .footer-info {
     font-size: 0.85rem;
     color: #666;
     line-height: 1.6;
   }
+
+
 
 
   .print-button {
@@ -383,10 +470,14 @@
     font-size: 1rem;
 
 
+
+
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
+
+
 
 
     &:active {
@@ -396,11 +487,15 @@
 }
 
 
+
+
 // 響應式設計
 @media (max-width: 768px) {
   .voucher-modal-content {
     max-height: 95vh;
   }
+
+
 
 
   .voucher-modal-header {
@@ -409,9 +504,13 @@
   }
 
 
+
+
   .voucher-content-grid {
     grid-template-columns: 1fr;
   }
+
+
 
 
   .voucher-modal-footer {
@@ -420,10 +519,14 @@
   }
 
 
+
+
   .voucher-close-button {
     left: calc(100% - 45px);
   }
 }
+
+
 
 
 // 列印樣式
@@ -435,9 +538,13 @@
   }
 
 
+
+
   .voucher-modal-content {
     max-height: none;
   }
+
+
 
 
   .voucher-close-button,
@@ -446,8 +553,12 @@
   }
 
 
+
+
   .voucher-modal-card {
     box-shadow: none;
   }
 }
+
+
 

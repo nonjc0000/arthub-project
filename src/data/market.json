@@ -205,7 +205,7 @@
     "lat": 24.151577,
     "lng": 120.664747,
     "day": "MON-TUE",
-    "imgUrl": "/images/Market/13.jpg"
+    "imgUrl": "./images/Market/13.jpg"
   },
   {
     "id": 14,
